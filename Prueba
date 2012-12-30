@@ -1,0 +1,71 @@
+\documentclass[spanish, a4paper, 12pt]{article} 	%idioma, tamaño, tamaño letra, tipo de documento (articulo, libro, report)
+\usepackage[spanish, activeacute]{babel}		%babel para tildes: á = \´{a}	
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+
+\newtheorem{theorema}{Teorema}
+
+\begin{document}						%Entornos: documento, citas, cuadros de texto -> \begin{quotation, verse/*al final de cada linea se pone: // */, quote, itemize/*cada item: \item, y se anida con otro begin, se puede mezclar*/, enumerate}
+
+%\pagestyle{myheadings}
+%\markright{Cursillo de \LaTeX}
+
+\title{Primer documento con \LaTeX}
+\author{Iker Prado\thanks{hello, hello}}
+\maketitle							%dentro de document siempre
+
+\part{Introducción. Conceptos básicos}
+\section*{Para empezar}					%El asterisco quita los numeros
+\subsection{Hola1}
+\subsubsection{Hola 2}
+\paragraph{Hola 3}
+\subparagraph{} El teorema siguiente...		%Esta es la jerarquia
+
+
+\newpage 							%Nuevo folio %\pagebreak junta lo del final...
+El nuevo \hspace {5cm} teorema  es:			%Espacio horizontal
+								%Este hueco es necesario para que funcione vspace
+\vspace {2cm} 
+ESTE
+\pagestyle{empty}						%\thispagestyle{empty} solo en una pagina
+
+
+Saltos de linea:						%indent y noindent para la sangria
+\ \\								%Preferible
+\newline
+\par
+
+\newpage 							%Negrita, cursiva y subrayado, y tambien alineacion en el pdf (justificado por defecto)
+Hola \textbf {primero en negrita} tio \textit{en italica} y con \underline{subrayado!}
+
+
+\begin{minipage}[c]{3cm}
+	\begin{tabular}{|c|} \hline
+	Cuadro con texto \\
+	\hline
+	\end{tabular}
+\end{minipage}
+
+\begin{multicols} {3}
+Esta deberia ser la primera columna
+
+ \columnbreak 
+Y esta la segunda 
+
+\columnbreak
+Por ultimo seria la tercera
+\end{multicols}
+
+								%Nota al pie: \footnote{blablabla} y puedo poner \footnote[1]{blablabla} y luego footnotemark[1] para hacer referencia a la misma cosa
+								%Nota al margen: \marginpar{} o [] /*Llaves derecha, corchetes izquierda*/
+								%Referencias cruzadas: \label{ecuacion1} y la nombro asi: \ref{ecuacion1} (en la pagina \pageref{ecuacion1})
+								%Tabular: entorno para texto, array: entorno para matematicas
+
+$$\displaystyle{\sum_{i = 0}^{\infty}x_i}\quad\mbox{ \huge{Y esa es la formula para hallar} } \quad\cos(\alpha)$$
+
+\begin{theorema}[de Dini]
+Para todo x
+
+\end{theorema}
+
+\end{document}
