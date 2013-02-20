@@ -4,29 +4,49 @@
 %Cuando acabemos la SRS hacemos la matriz de traza, creo que seria bueno porque es muy visual (TEMA 3, diapositiva 29)
 
 
-\documentclass[spanish, a4paper, 12pt]{article} 	%idioma, tamaño, tamaño letra, tipo de documento (articulo, libro, report)
-\usepackage[english, activeacute]{babel}		%babel para tildes: á = \´{a}	
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\usepackage{multicol}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
+%%%%% PAQUETES %%%%%
+\documentclass[spanish,a4paper,12pt]{report}		% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+\usepackage[spanish,activeacute]{babel}		% Acentuación
+\usepackage[utf8]{inputenc}						% Codificacion UTF8 (para tildes)	
+\usepackage{amsmath}							% Amercian Matematics Society entorno
+\usepackage{amssymb}							% Tipografía mathbb y otros símbolos
+\usepackage{amsthm}							% Paquete AMS theorem
+\usepackage{amsfonts}							% Paquete con símbolos y mas
+\usepackage{multicol}							% Escritura en varias columnas
+\usepackage{graphics}							% Inclusión de imágenes
+\usepackage{nicefrac}							% Fracciones bonitas
+\usepackage{geometry}							% Formato de la pagina
 \usepackage{fancyhdr}
+
+%%%%% DECLARACIONES %%%%%
 \geometry{a4paper, textwidth=16cm, textheight=20cm}
 \pagestyle{fancy}
-%\usepackage{nicefrac}
-%\setlenght{\parskip}{1}
 \lhead{Ingeniería del Software}
-\rhead{\bfseries Especificación de requisitos}
+\rhead{\bfseries Documento de casos de uso}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+
+%%%%% CUERPO %%%%%
 \begin{document}
-\title{\textbf{Documento de especificación de requisitos Software}}
+
+\title{\textbf{\huge{Documento de especificación de \\ requisitos Software}}}
+\author{ Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\today}
 \maketitle
-\author{\center{Jesús Aguirre Pemán \\ Enrique Ballesteros Horcajo \\ Jaime Dan Porras Rhee \\ Ignacio Iker Prado Rujas \\ \hspace{5.35 true cm} Alejandro Villarín Prieto }}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}
+
+
+\tableofcontents 		%INDICE
+
 \newpage
 \mbox{}
 \thispagestyle{empty}
