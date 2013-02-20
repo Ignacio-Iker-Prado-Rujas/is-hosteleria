@@ -2,41 +2,56 @@
 %que describe la secuencia de pasos que  un actor (un agente externo, que no tiene por que ser una persona, es un rol) realiza con el sistema para completar un proceso.
 %El tema de casos de uso de IS es el TEMA 3
 
-\documentclass[spanish, a4paper, 12pt]{article} 	%idioma, tamaño, tamaño letra, tipo de documento (articulo, libro, report)
-\usepackage[english, activeacute]{babel}		%babel para tildes: á = \´{a}	
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\usepackage{multicol}
-\usepackage{amsmath}
-\usepackage{amssymb}
-%\usepackage{amsttthm}
-\usepackage{graphics}
+
+%%%%% PAQUETES %%%%%
+\documentclass[spanish,a4paper,12pt]{report}		% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+\usepackage[spanish,activeacute]{babel}		% Acentuación
+\usepackage[utf8]{inputenc}						% Codificacion UTF8 (para tildes)	
+\usepackage{amsmath}							% Amercian Matematics Society entorno
+\usepackage{amssymb}							% Tipografía mathbb y otros símbolos
+\usepackage{amsthm}							% Paquete AMS theorem
+\usepackage{amsfonts}							% Paquete con símbolos y mas
+\usepackage{multicol}							% Escritura en varias columnas
+\usepackage{graphics}							% Inclusión de imágenes
+\usepackage{nicefrac}							% Fracciones bonitas
+\usepackage{geometry}							% Formato de la pagina
 \usepackage{fancyhdr}
+
+%%%%% DECLARACIONES %%%%%
 \geometry{a4paper, textwidth=16cm, textheight=20cm}
 \pagestyle{fancy}
-%\usepackage{nicefrac}
-%\setlenght{\parskip}{1}
 \lhead{Ingeniería del Software}
 \rhead{\bfseries Documento de casos de uso}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+
+%%%%% CUERPO %%%%%
 \begin{document}
-\title{\textbf{Documento de casos de uso}}
+
+\title{\textbf{\huge{Documento de \\ casos de uso}}}
+\author{ Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\today}
 \maketitle
-\author{\center{Jesús Aguirre Pemán \\ Enrique Ballesteros Horcajo \\ Jaime Dan Porras Rhee \\ Ignacio Iker Prado Rujas \\ \hspace{5.6 true cm} Alejandro Villarín Prieto }}
-\newpage
 
 \newpage
 \mbox{}
 \thispagestyle{empty}
 
 
-
+\tableofcontents 		%INDICE
 
 \newpage
-\part{Abstract}
+\mbox{}
+\thispagestyle{empty}
+\newpage
+
+\part{Extracto} %%% PARTE 1: EXTRACTO %%%______________________________________________________________________________________________
 En nuestro proyecto trataremos de desarrollar una aplicación software (y su correspondiente documentación) de la administración de un negocio de hostelería. Se tratará de un Hotel con Restaurante- Bar. La aplicación recogerá toda la información necesaria para el desarrollo próspero de dicho negocio, ésto es, existencias de los productos, gastos de todo tipo, base de datos con los clientes, generación de las cuentas a cobrar, reservas de los clientes, habitaciones disponibles/ ocupadas, mobiliario del que se dispone, balances económicos (accesible sólo al administrador)... Es importante también centrarse en el entorno de la empresa: pequeña, mediana, gran empresa; situación geográfica (no es lo mismo que se emplace en una gran ciudad o en mitad de los Pirineos); gama de productos que se ofrecen (cocina mediterránea, vasca, italiana, china...); tamaño del local... \\
 
 En primer lugar, debemos identificar el problema a solventar, dar su descripción y un minucioso análisis. El problema es idear un software que facilite a sus usuarios el trabajo descrito arriba. Para ello, debe ser sencillo e intuitivo a la vez que seguro y adaptado a los intereses de la empresa que lo solicita. Además hay que centrarse en describir detalladamente las funcionalidades que tendrá. Una vez completa la especificación del sistema, se puede abordar la implementación. Es fundamental que la especificación sea clara y sobre todo precisa, ha de responder a cualquier pregunta sobre su uso y diseño. Una vez terminado, debe someterse a las pruebas correspondientes y a la más importante: ¿el usuario queda satisfecho con los resultados?, ¿la aplicación hace lo que él espera que haga y como él espera que lo haga? Tras esto, con toda seguridad habrá una tarea de mantenimiento, solventando errores que surjan, hasta que, eventualmente, el programa caiga en desuso (obsolescencia).
@@ -46,10 +61,11 @@ En primer lugar, debemos identificar el problema a solventar, dar su descripció
 
 
 
-\part{Casos de uso}
+\part{Casos de uso} %%% PARTE 2: CASOS DE USO %%%_____________________________________________________________________________________
 
 \section{Catálogo de casos de uso}		%AQUI ira una lista con los casos de uso, ordenada por IMPORTANCIA
-\subsection*{Primarios} 				%Los procesos principales, que sean mas comunes de realizar
+En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos en primarios y secundarios, para tener una visión general de los mismos.
+\subsection{Primarios} 				%Los procesos principales, que sean mas comunes de realizar
 	\begin{itemize}
 %%	INSERTAR ORDENADAMENTE LOS CASOS DE USO, MÁS O MENOS COMO ESTÁN EN EL DOCUMENTO LISTA DE TODOS LOS CASOS DE USO (BRAINSTORMING PARA JESÚS)
 %%	HAY QUE TENER EN CUENTA QUE DESPUÉS HAY QUE PONERLOS ABAJO EN EL MISMO ORDEN
@@ -85,7 +101,7 @@ En primer lugar, debemos identificar el problema a solventar, dar su descripció
 	
 	\end{itemize}
 
-\subsection*{Secundarios}			%Cosas secundarias (pero importantes) que se usaran menos en la aplicacion
+\subsection{Secundarios}			%Cosas secundarias (pero importantes) que se usaran menos en la aplicacion
 	\begin{itemize}
 	\item \textbf{Añadir un nuevo empleado}
 	\item \textbf{Dar de baja un empleado}
@@ -103,11 +119,11 @@ En primer lugar, debemos identificar el problema a solventar, dar su descripció
 
 
 
-
+\newpage
 \section{Especificación de casos de uso}	%AQUI se detallan los casos de uso, ordenado IGUAL QUE ARRIBA
-
+Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso.
 %%	LAS PLANTILLAS ESTÁN DESPUÉS DEL \end{document}
-\subsection*{Primarios}		 		
+\subsection{Primarios}		 		
 	\begin{itemize} 	
 
 %LOG IN
@@ -696,7 +712,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %%%%%%CASOS DE USO SECUNDARIOS%%%%%%_____________________________________________________________________________________________________________________________________________________
 
-\subsection*{Secundarios}	
+\subsection{Secundarios}	
 	\begin{itemize}
 
 %AÑADIR EMPLEADO
