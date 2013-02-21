@@ -74,6 +74,8 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 	\item \textbf{Acceder a la ficha de un empleado}
 	\item \textbf{Añadir cliente}
 	\item \textbf{Ver ficha de cliente}
+	\item \textbf{Editar cliente}
+	\item \textbf{Dar de baja cliente}
 	\item \textbf{Organizar tareas de la limpieza}
 	\item \textbf{Revisión de limpieza}
 	\item \textbf{Consultar tareas}
@@ -133,7 +135,6 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\item \textbf{Actores:} Todos.
 			\item \textbf{Propósito:} Acceder a tu perfil de empleado, o de jefe.
 			\item \textbf{Visión general:} La aplicación exigirá autentificación para permitir realizar las operaciones relacionadas con cada tipo de trabajador. El número de pestañas que mostrará dependerá de la posición en la jerarquía de la empresa. 
-			\item \textbf{Incluye ($<<$include$>>$):} El resto de casos de uso.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -179,8 +180,20 @@ El único que tendrá acceso a esa base de datos (y por tanto el encargado de mo
 	\item \textbf{Acceder a la ficha de un empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleados.
-			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado para consultar su horario de trabajo.
-			\item \textbf{Visión general:} El jefe accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. En el buscador introduce el nombre deseado. Tras acceder a su ficha, se desplaza al apartado 4 (horario) de ésta. Consulta su horario y cierra la aplicación. 
+			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
+			\item \textbf{Visión general:}El jefe accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. En el buscador introduce el nombre deseado. Consulta su ficha y cierra la aplicación. \\
+Para cada empleado se tendrán los siguientes campos:
+				\begin{itemize}
+				\item 	 Nombre y apellidos
+				\item 	 DNI
+				\item 	 Puesto o labor que desempeña
+				\item 	 Horario
+				\item 	 Salario
+				\item 	 Vacaciones
+				\item 	 Fecha de entrada al negocio
+				\item 	 Historial
+				\item 	 Comentarios
+				\end {itemize}
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -235,7 +248,7 @@ El único que tendrá acceso a esa base de datos (y por tanto el encargado de mo
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito: } Acceder a la ficha de un cliente.
-			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes. Buscan al cliente por nombre y/o apellidos . Tras haber acceder a su ficha, consulta los datos que desée. Cierra la aplicación. 
+			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes. Busca al cliente por nombre y/o apellidos . Tras haber acceder a su ficha, consulta los datos que desee. Cierra la aplicación. 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -249,8 +262,62 @@ El único que tendrá acceso a esa base de datos (y por tanto el encargado de mo
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 6:} Ese cliente no existe, vuelve a la línea 7.
+			\item  \textbf{Línea 6:} Ese cliente no existe, vuelve a la línea 5.
 			\item  \textbf{Línea 5:}Tras pasar por el curso alternativo anterior y ver que el cliente no existe, sale de la aplicación.
+			\end {itemize}
+		\end{itemize}%FIn de caso de uso
+
+
+%EDITAR CLIENTE
+
+	\item \textbf{Editar cliente} 	%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)		
+			\begin{itemize}
+			\item \textbf{Actor:} Jefe, recepcionista.
+			\item \textbf{Propósito: } Editar la ficha de un cliente.
+			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes. Busca al cliente por nombre y/o apellidos. Se muestra la ficha del cliente, dando la opción de editar los campos que sean necesarios. Comprueba que las ediciones son correctas. Cierra la aplicación. 
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
+				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
+				\textbf{5.} Clica en "Buscar cliente".	& \textbf{6.} Muesta la ficha del cliente. \\ \hline
+				\textbf{7.}Edita los campos que desee. & \textbf{8.} Se asegura de que el formato de los nuevos datos es correcto y muestra la ficha actualizada del cliente.\\ \hline
+				\textbf{9.}Comprueba que los datos editados son correctos y cierra la aplicación. & \textbf{} \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} 
+			\begin{itemize}
+			\item  \textbf{Línea 6:} Ese cliente no existe, vuelve a la línea 5.
+			\item  \textbf{Línea 8:}Algún campo de los editados es incorrecto. El programa regresa a la línea 7.
+			\item  \textbf{Línea 9:}El actor se ha equivocado al rellenar un campo. El programa le devuelve a la linea 7.
+			\end {itemize}
+		\end{itemize}%FIn de caso de uso
+
+
+%DAR DE BAJA CLIENTE
+	\newpage
+	\item \textbf{Dar de baja cliente} 	%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)		
+			\begin{itemize}
+			\item \textbf{Actor:} Jefe, recepcionista.
+			\item \textbf{Propósito: } Elimina de la base de datos de clientes la ficha de un cliente.
+			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes.  Busca al cliente por nombre y/o apellidos. Clica en "Eliminar a este cliente". El programa pide confirmación al actor de que realmente desea eliminar al cliente de la base de datos. Cierra la aplicación. 
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
+				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
+				\textbf{5.} Clica en "Buscar cliente".	& \textbf{6.} Muesta la ficha del cliente. \\ \hline
+				\textbf{7.}Clica en "Eliminar cliente". & \textbf{8.} Pide confirmación al actor.\\ \hline
+				\textbf{9.}Confirma y cierra la aplicación. & \textbf{} \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} 
+			\begin{itemize}
+			\item  \textbf{Línea 6:} Ese cliente no existe, vuelve a la línea 5.
+			\item  \textbf{Línea 8:}El actor se ha equivocado y no desea eliminar al cliente de la base de datos. El programa le devuelve a la línea 6.
+			\item  \textbf{Línea 9:}El actor se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
 			\end {itemize}
 		\end{itemize}%FIn de caso de uso
 
