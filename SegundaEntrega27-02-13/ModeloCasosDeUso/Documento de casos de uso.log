@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  21 FEB 2013 19:53
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.7)  20 FEB 2013 23:36
 entering extended mode
-**Documento*de*casos*de*uso.tex
+**C:/Users/enrique*ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-13/
+ModeloCasosDeUso/Documento*de*casos*de*uso.tex
 
-("C:\Users\Jesús\Documents\SUBVERSION\is-hosteleria\SegundaEntrega27-02-13\Mod
-eloCasosDeUso\Documento de casos de uso.tex"
+("C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-13/
+ModeloCasosDeUso/Documento de casos de uso.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,63 +16,68 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+("C:\Program Files\MiKTeX2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX2.9\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files\MiKTeX2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files\MiKTeX2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\spanish.ldf"
+("C:\Program Files\MiKTeX2.9\tex\generic\babel\spanish.ldf"
 Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files\MiKTeX2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count88
+\babel@savecnt=\count87
 \U@D=\dimen103
 )
-\es@datefmt=\count89
+\es@datefmt=\count88
 \es@quottoks=\toks14
-\es@quotdepth=\count90
+\es@quotdepth=\count89
 Package babel Info: Making " an active character on input line 492.
 Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 Package babel Info: Making ' an active character on input line 657.
+)
+("C:\Program Files\MiKTeX2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Program Files\MiKTeX2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Program Files\MiKTeX2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -221,7 +227,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Program Files\MiKTeX2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -252,7 +258,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Program Files\MiKTeX2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -276,108 +282,62 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
-Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip43
+("C:\Program Files\MiKTeX2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
 
-For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
-Package: amstext 2000/06/29 v2.01
+("C:\Program Files\MiKTeX2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+("C:\Program Files\MiKTeX2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files\MiKTeX2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks18
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
-File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks17
-\ex@=\dimen104
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
-Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen105
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
-Package: amsopn 1999/12/14 v2.01 operator names
-)
-\inf@bad=\count91
-LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count92
-\leftroot@=\count93
-LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count94
-\DOTSCASE@=\count95
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen106
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
-\dotsspace@=\muskip10
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
-\tag@help=\toks18
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
-\andhelp@=\toks19
-\eqnshift@=\dimen107
-\alignsep@=\dimen108
-\tagshift@=\dimen109
-\tagwidth@=\dimen110
-\totwidth@=\dimen111
-\lineht@=\dimen112
-\@envbody=\toks20
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
-Package: amssymb 2009/06/22 v3.00
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
-Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks22
-\thm@bodyfont=\toks23
-\thm@headfont=\toks24
-\thm@notefont=\toks25
-\thm@headpunct=\toks26
-\thm@preskip=\skip46
-\thm@postskip=\skip47
-\thm@headsep=\skip48
-\dth@everypar=\toks27
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+("C:\Program Files\MiKTeX2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
-\c@tracingmulticols=\count103
-\mult@box=\box28
-\multicol@leftmargin=\dimen113
-\c@unbalance=\count104
-\c@collectmore=\count105
-\doublecol@number=\count106
-\multicoltolerance=\count107
-\multicolpretolerance=\count108
-\full@width=\dimen114
-\page@free=\dimen115
-\premulticols=\dimen116
-\postmulticols=\dimen117
-\multicolsep=\skip49
-\multicolbaselineskip=\skip50
-\partial@page=\box29
-\last@line=\box30
-\mult@rightbox=\box31
-\mult@grightbox=\box32
-\mult@gfirstbox=\box33
-\mult@firstbox=\box34
+\c@tracingmulticols=\count93
+\mult@box=\box26
+\multicol@leftmargin=\dimen112
+\c@unbalance=\count94
+\c@collectmore=\count95
+\doublecol@number=\count96
+\multicoltolerance=\count97
+\multicolpretolerance=\count98
+\full@width=\dimen113
+\page@free=\dimen114
+\premulticols=\dimen115
+\postmulticols=\dimen116
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
 \@tempa=\box35
 \@tempa=\box36
 \@tempa=\box37
@@ -393,120 +353,131 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \@tempa=\box47
 \@tempa=\box48
 \@tempa=\box49
-\@tempa=\box50
-\@tempa=\box51
-\c@columnbadness=\count109
-\c@finalcolumnbadness=\count110
-\last@try=\dimen118
-\multicolovershoot=\dimen119
-\multicolundershoot=\dimen120
-\mult@nat@firstbox=\box52
-\colbreak@box=\box53
-\multicol@sort@counter=\count111
+\c@columnbadness=\count99
+\c@finalcolumnbadness=\count100
+\last@try=\dimen117
+\multicolovershoot=\dimen118
+\multicolundershoot=\dimen119
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count101
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen120
+))
+("C:\Program Files\MiKTeX2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen121
+)
+("C:\Program Files\MiKTeX2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count102
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count103
+\leftroot@=\count104
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count105
+\DOTSCASE@=\count106
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count107
+\c@MaxMatrixCols=\count108
+\dotsspace@=\muskip10
+\c@parentequation=\count109
+\dspbrk@lvl=\count110
+\tag@help=\toks20
+\row@=\count111
+\column@=\count112
+\maxfields@=\count113
+\andhelp@=\toks21
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks22
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+("C:\Program Files\MiKTeX2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count112
+\Gread@gobject=\count114
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\units\nicefrac.sty"
-Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip51
-\L@UnitsRaiseTextstyle=\skip52
-\L@UnitsRaiseScriptstyle=\skip53
+("C:\Program Files\MiKTeX2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip48
+\f@ncyO@elh=\skip49
+\f@ncyO@erh=\skip50
+\f@ncyO@olh=\skip51
+\f@ncyO@orh=\skip52
+\f@ncyO@elf=\skip53
+\f@ncyO@erf=\skip54
+\f@ncyO@olf=\skip55
+\f@ncyO@orf=\skip56
+)
+("C:\Users\enrique ballesteros\Desktop\IS\is-hosteleria\SegundaEntrega27-02-13\
+ModeloCasosDeUso\Documento de casos de uso.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
-Package: geometry 2010/09/12 v5.6 Page Geometry
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks28
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count113
-\Gm@cntv=\count114
-\c@Gm@tempcnt=\count115
-\Gm@bindingoffset=\dimen121
-\Gm@wd@mp=\dimen122
-\Gm@odd@mp=\dimen123
-\Gm@even@mp=\dimen124
-\Gm@layoutwidth=\dimen125
-\Gm@layoutheight=\dimen126
-\Gm@layouthoffset=\dimen127
-\Gm@layoutvoffset=\dimen128
-\Gm@dimlist=\toks29
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
-\fancy@headwidth=\skip54
-\f@ncyO@elh=\skip55
-\f@ncyO@erh=\skip56
-\f@ncyO@olh=\skip57
-\f@ncyO@orh=\skip58
-\f@ncyO@elf=\skip59
-\f@ncyO@erf=\skip60
-\f@ncyO@olf=\skip61
-\f@ncyO@orf=\skip62
-)
-("C:\Users\Jesús\Documents\SUBVERSION\is-hosteleria\SegundaEntrega27-02-13\Mod
-eloCasosDeUso\Documento de casos de uso.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen129
-\scratchbox=\box54
-\nofMPsegments=\count117
-\nofMParguments=\count118
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen130
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
-\everyMPtoPDFconversion=\toks31
-)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -541,26 +512,36 @@ LaTeX Font Info:    ... okay on input line 31.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Program Files\MiKTeX2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count115
+\scratchdimen=\dimen129
+\scratchbox=\box54
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen130
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks25
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+ ("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1
+)
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [1]
-("C:\Users\Jesús\Documents\SUBVERSION\is-hosteleria\SegundaEntrega27-02-13\Mod
-eloCasosDeUso\Documento de casos de uso.toc")
-\tf@toc=\write3
- [2
+LaTeX Warning: No \author given.
 
-] [3] [4
+[1
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
@@ -570,327 +551,446 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5] [6
-
-] [7] [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 135.
-
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
+ ("C:\Program Files\MiKTeX2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--146
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+ [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 121--129
 
  []
 
-<Empleados.png, id=36, 561.59813pt x 261.97874pt>
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+<Empleados.png, id=24, 561.59813pt x 261.97874pt>
 File: Empleados.png Graphic file (type png)
  <use Empleados.png>
-Package pdftex.def Info: Empleados.png used on input line 158.
+Package pdftex.def Info: Empleados.png used on input line 141.
 (pdftex.def)             Requested size: 561.59676pt x 261.9781pt.
 
-Overfull \hbox (19.57938pt too wide) in paragraph at lines 157--159
+Overfull \hbox (19.57938pt too wide) in paragraph at lines 140--142
 []  [] 
  []
 
-[10 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Empleados.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 197--209
+[7 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-1
+3/ModeloCasosDeUso/Empleados.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]\OT1/cmr/bx/n/12 2.\OT1/cmr/m/n/12 Presenta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--180
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-<Cliente.png, id=44, 692.5875pt x 295.1025pt>
+<Cliente.png, id=32, 692.5875pt x 295.1025pt>
 File: Cliente.png Graphic file (type png)
  <use Cliente.png>
-Package pdftex.def Info: Cliente.png used on input line 221.
+Package pdftex.def Info: Cliente.png used on input line 192.
 (pdftex.def)             Requested size: 692.5858pt x 295.10176pt.
 
-Overfull \hbox (27.40642pt too wide) in paragraph at lines 220--222
+Overfull \hbox (27.40642pt too wide) in paragraph at lines 191--193
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--237
-
- []
-
-[12 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Cliente.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 252--263
-
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+[]\OT1/cmr/bx/n/12 2.\OT1/cmr/m/n/12 Presenta las pesta~nas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--289
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]\OT1/cmr/bx/n/12 3. \OT1/cmr/m/n/12 Se-lec-ciona la pesta~na
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--208
 
  []
 
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 305--316
+[9 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-1
+3/ModeloCasosDeUso/Cliente.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]\OT1/cmr/bx/n/12 3. \OT1/cmr/m/n/12 Se-lec-ciona la pesta~na
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--234
 
  []
 
-[15] <OrganizacionLimpieza.png, id=59, 462.72874pt x 265.99374pt>
+[10] <OrganizacionLimpieza.png, id=39, 462.72874pt x 265.99374pt>
 File: OrganizacionLimpieza.png Graphic file (type png)
 
 <use OrganizacionLimpieza.png>
-Package pdftex.def Info: OrganizacionLimpieza.png used on input line 330.
+Package pdftex.def Info: OrganizacionLimpieza.png used on input line 247.
 (pdftex.def)             Requested size: 462.72762pt x 265.99309pt.
- [16 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13
-/ModeloCasosDeUso/OrganizacionLimpieza.png>]
-<Limpieza.png, id=63, 386.44376pt x 299.1175pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--257
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las op-ciones
+ []
+
+[11 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-
+13/ModeloCasosDeUso/OrganizacionLimpieza.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 286--286
+\OT1/cmr/m/n/12 vuelve a a~nadir a la lista de
+ []
+
+<Limpieza.png, id=43, 386.44376pt x 299.1175pt>
 File: Limpieza.png Graphic file (type png)
  <use Limpieza.png>
-Package pdftex.def Info: Limpieza.png used on input line 381.
+Package pdftex.def Info: Limpieza.png used on input line 298.
 (pdftex.def)             Requested size: 386.44281pt x 299.11676pt.
- [17]
-[18 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Limpieza.png>]
-Underfull \hbox (badness 1062) in paragraph at lines 423--423
-[]\OT1/cmr/bx/n/12 2.\OT1/cmr/m/n/12 Muestra los cam-pos "Lugar[]
+ [12]
+[13 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-
+13/ModeloCasosDeUso/Limpieza.png>]
+Overfull \hbox (21.61275pt too wide) in paragraph at lines 334--335
+[]\OT1/cmr/bx/n/12 Proposito: \OT1/cmr/m/n/12 In-for-mar de in-ci-den-cias de 
+man-ten-imiento que re-quieran de reparacion. 
  []
 
-<Mantenimiento.png, id=71, 532.99126pt x 286.06876pt>
+<Mantenimiento.png, id=51, 532.99126pt x 286.06876pt>
 File: Mantenimiento.png Graphic file (type png)
  <use Mantenimiento.png>
-Package pdftex.def Info: Mantenimiento.png used on input line 436.
+Package pdftex.def Info: Mantenimiento.png used on input line 353.
 (pdftex.def)             Requested size: 532.98996pt x 286.06805pt.
 
-Overfull \hbox (13.75027pt too wide) in paragraph at lines 435--437
+Overfull \hbox (13.75027pt too wide) in paragraph at lines 352--354
 []  [] 
  []
 
-[19] [20 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-0
-2-13/ModeloCasosDeUso/Mantenimiento.png>]
-<Restaurante.png, id=78, 814.54312pt x 367.3725pt>
+[14] [15 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega2
+7-02-13/ModeloCasosDeUso/Mantenimiento.png>]
+<Restaurante.png, id=58, 814.54312pt x 367.3725pt>
 File: Restaurante.png Graphic file (type png)
  <use Restaurante.png>
-Package pdftex.def Info: Restaurante.png used on input line 457.
+Package pdftex.def Info: Restaurante.png used on input line 374.
 (pdftex.def)             Requested size: 814.54112pt x 367.37158pt.
 
-Overfull \hbox (37.90201pt too wide) in paragraph at lines 456--458
+Overfull \hbox (37.90201pt too wide) in paragraph at lines 373--375
 []  [] 
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 471--471
-[]\OT1/cmr/bx/n/12 10. \OT1/cmr/m/n/12 La apli-ca-cion mues-tra un
+Underfull \hbox (badness 1014) in paragraph at lines 388--388
+[]\OT1/cmr/bx/n/12 9. \OT1/cmr/m/n/12 El usuario se-lec-ciona una
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--475
+Underfull \hbox (badness 10000) in paragraph at lines 380--392
 
  []
 
-[21 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Restaurante.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 491--502
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 515--526
-
- []
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 550--561
-
+[16 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-
+13/ModeloCasosDeUso/Restaurante.png>]
+Underfull \hbox (badness 1048) in paragraph at lines 413--413
+[]\OT1/cmr/bx/n/12 3. \OT1/cmr/m/n/12 Se-lec-ciona la opcion an-u-
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 582--582
-[]\OT1/cmr/bx/n/12 10. \OT1/cmr/m/n/12 Mues-tra un men-sa-je de
+Underfull \hbox (badness 1406) in paragraph at lines 413--413
+[]\OT1/cmr/bx/n/12 4. \OT1/cmr/m/n/12 El pro-grama mues-tra las
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--586
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+\OT1/cmr/m/n/12 mesas reser-vadas, in-cluyendo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--419
 
  []
 
-[24] [25] <Notas.png, id=97, 434.62375pt x 260.975pt>
+[17]
+Underfull \hbox (badness 1184) in paragraph at lines 436--436
+\OT1/cmr/m/n/12 cacion (nor-mal-mente queda en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--443
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 467--478
+
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 496--496
+\OT1/cmr/m/n/12 fac-tura, den-tro de la pesta~na
+ []
+
+
+Underfull \hbox (badness 2698) in paragraph at lines 496--496
+[]\OT1/cmr/bx/n/12 4. \OT1/cmr/m/n/12 Mues-tra las mesas ocu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--503
+
+ []
+
+[19] [20] <Notas.png, id=77, 434.62375pt x 260.975pt>
 File: Notas.png Graphic file (type png)
  <use Notas.png>
-Package pdftex.def Info: Notas.png used on input line 610.
+Package pdftex.def Info: Notas.png used on input line 527.
 (pdftex.def)             Requested size: 434.62268pt x 260.97437pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 617--628
+Underfull \hbox (badness 10000) in paragraph at lines 534--545
 
  []
 
-[26 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Notas.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 644--644
-[]\OT1/cmr/bx/n/12 6. \OT1/cmr/m/n/12 La apli-ca-cion pre-gun-ta:
+[21 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-
+13/ModeloCasosDeUso/Notas.png>]
+Underfull \hbox (badness 4328) in paragraph at lines 561--561
+[]\OT1/cmr/bx/n/12 6. \OT1/cmr/m/n/12 La apli-cacion pre-gunta:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 638--649
+Underfull \hbox (badness 10000) in paragraph at lines 555--566
 
  []
 
-<Contabilidad.png, id=101, 858.20625pt x 390.45876pt>
+<Contabilidad.png, id=81, 858.20625pt x 390.45876pt>
 File: Contabilidad.png Graphic file (type png)
  <use Contabilidad.png>
-Package pdftex.def Info: Contabilidad.png used on input line 658.
+Package pdftex.def Info: Contabilidad.png used on input line 575.
 (pdftex.def)             Requested size: 858.20416pt x 390.4578pt.
 
-Overfull \hbox (34.76393pt too wide) in paragraph at lines 657--659
+Overfull \hbox (34.76393pt too wide) in paragraph at lines 574--576
 []  [] 
  []
 
-[27 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Contabilidad.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 686--687
+[22 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-
+13/ModeloCasosDeUso/Contabilidad.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
-<Habitaciones.png, id=105, 788.9475pt x 362.35374pt>
+<Habitaciones.png, id=85, 788.9475pt x 362.35374pt>
 File: Habitaciones.png Graphic file (type png)
  <use Habitaciones.png>
-Package pdftex.def Info: Habitaciones.png used on input line 692.
+Package pdftex.def Info: Habitaciones.png used on input line 609.
 (pdftex.def)             Requested size: 788.94556pt x 362.35286pt.
 
-Overfull \hbox (32.64598pt too wide) in paragraph at lines 691--693
+Overfull \hbox (32.64598pt too wide) in paragraph at lines 608--610
 []  [] 
  []
 
-[28 <C:/Users/Jesús/Documents/SUBVERSION/is-hosteleria/SegundaEntrega27-02-13/
-ModeloCasosDeUso/Habitaciones.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 699--709
+[23 <C:/Users/enrique ballesteros/Desktop/IS/is-hosteleria/SegundaEntrega27-02-
+13/ModeloCasosDeUso/Habitaciones.png>]
+Underfull \hbox (badness 1275) in paragraph at lines 620--620
+[]\OT1/cmr/bx/n/12 1. \OT1/cmr/m/n/12 Pin-cha en la pesta~na de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--626
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--727
+Underfull \hbox (badness 1275) in paragraph at lines 638--638
+[]\OT1/cmr/bx/n/12 1. \OT1/cmr/m/n/12 Pin-cha en la pesta~na de
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 640--640
+[]\OT1/cmr/bx/n/12 6. \OT1/cmr/m/n/12 Se mues-tran las op-ciones
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 730--731
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+[24]
+Underfull \hbox (badness 1275) in paragraph at lines 662--662
+[]\OT1/cmr/bx/n/12 1. \OT1/cmr/m/n/12 Pin-cha en la pesta~na de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--666
+
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 687--687
+[]\OT1/cmr/bx/n/12 1. \OT1/cmr/m/n/12 Pin-cha en la pesta~na de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--693
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 713--713
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--720
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--750
+
+ []
+
+[26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 774--774
+\OT1/cmr/m/n/12 son cor-rec-tos y cierra la apli-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 765--777
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 796--805
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 823--823
+[]\OT1/cmr/bx/n/12 3. \OT1/cmr/m/n/12 Se-lec-ciona la pesta~na
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--830
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 741--749
-
+Underfull \hbox (badness 10000) in paragraph at lines 849--849
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Pre-senta las pesta~nas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--776
+Underfull \hbox (badness 1043) in paragraph at lines 854--854
+\OT1/cmr/m/n/12 son cor-rec-tos y cierra la apli-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 845--857
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 792--803
+Underfull \hbox (badness 1189) in paragraph at lines 888--888
+\OT1/cmr/m/n/12 estan dis-tribuidas las mesas y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 883--893
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+[]\OT1/cmr/bx/n/12 2. \OT1/cmr/m/n/12 Mues-tras las op-ciones
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--917
+
+ []
+
+[32]
+Underfull \hbox (badness 1102) in paragraph at lines 939--939
+\OT1/cmr/m/n/12 sec-cion "Mod-i-ficar plato". Si
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 933--943
 
  []
 
 
-Overfull \hbox (4.20749pt too wide) in paragraph at lines 819--820
-[]\OT1/cmr/bx/n/12 Proposi-to:  \OT1/cmr/m/n/12 Trans-fe-rir la fi-cha de un e
-m-plea-do de .[]pleados actuales.[] .[]ntiguos
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 821--833
-
- []
-
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 848--860
+Underfull \hbox (badness 10000) in paragraph at lines 948--958
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 879--888
+Underfull \hbox (badness 10000) in paragraph at lines 965--975
 
  []
 
 
-Overfull \hbox (4.20749pt too wide) in paragraph at lines 899--900
-[]\OT1/cmr/bx/n/12 Proposi-to:  \OT1/cmr/m/n/12 Trans-fe-rir la fi-cha de un e
-m-plea-do de .[]pleados actuales.[] .[]ntiguos
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 901--913
-
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 928--940
-
- []
-
-[35]
-Underfull \hbox (badness 1189) in paragraph at lines 971--971
-\OT1/cmr/m/n/12 estan dis-tri-bui-das las me-sas y
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 966--976
-
- []
-
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 990--1000
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1026
+Underfull \hbox (badness 10000) in paragraph at lines 984--992
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1031--1041
-
+Overfull \hbox (6.8852pt too wide) in paragraph at lines 1005--1006
+[]\OT1/cmr/bx/n/12 Descripcion: \OT1/cmr/m/n/12 Desde la pan-talla de ver habi
+ta-ciones, puedes ed-i-tar la habitacion. 
  []
 
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1058
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1067--1075
-
- []
-
-[39] [40]
-("C:\Users\Jesús\Documents\SUBVERSION\is-hosteleria\SegundaEntrega27-02-13\Mod
-eloCasosDeUso\Documento de casos de uso.aux") ) 
+[34] [35]
+("C:\Users\enrique ballesteros\Desktop\IS\is-hosteleria\SegundaEntrega27-02-13\
+ModeloCasosDeUso\Documento de casos de uso.aux") ) 
 Here is how much of TeX's memory you used:
- 3760 strings out of 494045
- 48510 string characters out of 3146016
- 123864 words of memory out of 3000000
- 6986 multiletter control sequences out of 15000+200000
- 13316 words of font info for 51 fonts, out of 3000000 for 9000
+ 3561 strings out of 494045
+ 45522 string characters out of 3145927
+ 118155 words of memory out of 3000000
+ 6795 multiletter control sequences out of 15000+200000
+ 13017 words of font info for 50 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,12n,43p,1048b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb>
-Output written on "Documento de casos de uso.pdf" (41 pages, 195786 bytes).
+ 27i,11n,43p,1142b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX2.9/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX2.9/fonts/type
+1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/
+amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb>
+Output written on "Documento de casos de uso.pdf" (35 pages, 172087 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
+ 141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
