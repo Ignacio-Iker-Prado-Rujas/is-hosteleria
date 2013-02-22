@@ -125,12 +125,11 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 \section{Especificación de casos de uso}	%AQUI se detallan los casos de uso, ordenado IGUAL QUE ARRIBA
 Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso.
 %%	LAS PLANTILLAS ESTÁN DESPUÉS DEL \end{document}
-\subsection{Primarios}		 		
-	\begin{itemize} 	
+\subsection{Primarios}		 			
 
 %LOG IN
 
-	\item \textbf{Log in}		
+	\subsection \textbf{Log in}		
 			\begin{itemize}
 			\item \textbf{Actores:} Todos.
 			\item \textbf{Propósito:} Acceder a tu perfil de empleado, o de jefe.
@@ -152,7 +151,7 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 
 %GESTIONAR EMPLEADOS
 	\newpage
-	\item \textbf{Gestionar Empleados} \\ 
+	\subsection \textbf{Gestionar Empleados} \\ 
 	
 	\hspace{-2.2 true cm}	
 		\scalebox{0.9}{\includegraphics{Empleados}}
@@ -177,7 +176,7 @@ El único que tendrá acceso a esa base de datos (y por tanto el encargado de mo
 		
 %ACCEDER A LA FICHA DE UN EMPLEADO
 
-	\item \textbf{Acceder a la ficha de un empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
+	\subsection\textbf{Acceder a la ficha de un empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleados.
 			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
@@ -215,7 +214,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %AÑADIR CLIENTE
 	\newpage
-	\item \textbf{Añadir cliente} \\		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
+	\subsection \textbf{Añadir cliente} \\		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 		
 		\hspace{-1.2 true cm}	
 			\scalebox{0.7}{\includegraphics{Cliente}} 
@@ -244,7 +243,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %VER FICHA DE CLIENTE
 
-	\item \textbf{Ver ficha de cliente}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
+	\subsection \textbf{Ver ficha de cliente}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito: } Acceder a la ficha de un cliente.
@@ -270,7 +269,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %EDITAR CLIENTE
 
-	\item \textbf{Editar cliente} 	%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)		
+	\subsection \textbf{Editar cliente} 	%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista.
 			\item \textbf{Propósito: } Editar la ficha de un cliente.
@@ -297,7 +296,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %DAR DE BAJA CLIENTE
 	\newpage
-	\item \textbf{Dar de baja cliente} 	%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)		
+	\subsection \textbf{Dar de baja cliente} 	%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista.
 			\item \textbf{Propósito: } Elimina de la base de datos de clientes la ficha de un cliente.
@@ -328,7 +327,7 @@ Para cada empleado se tendrán los siguientes campos:
 	\newpage	
 	\hspace{0.6 true cm}
 	\scalebox{0.7}{\includegraphics{OrganizacionLimpieza}}
-	\item \textbf{Organizar tareas de limpieza}				%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
+	\subsection \textbf{Organizar tareas de limpieza}				%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 			\begin{itemize}
 			\item \textbf{Actor: }Jefe de limpieza.
 			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el trabajo entre los empleados de limpieza y organizando los horarios. 		
@@ -354,7 +353,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %REVISAR LIMPIEZA
 
-\item \textbf{Revisión de limpieza}
+\subsection \textbf{Revisión de limpieza}
 			\begin{itemize}
 			\item \textbf{Actor: }Jefe de limpieza.
 			\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de comprobar que aquellos lugares que ya han sido marcados como "limpiados" por los trabajadores de limpieza, efectivamente lo están.  		
@@ -379,7 +378,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 	\hspace{0.7 true cm}
 	\scalebox{0.9}{\includegraphics{Limpieza}} 
-		\item \textbf{Consultar tareas}				
+		\subsection\textbf{Consultar tareas}				
 				\begin{itemize}
 					\item \textbf{Actor: }Personal de limpieza.
 					\item \textbf{Descrición: }Permite al personal de limpieza consultar las tareas que el encargado de limpieza les ha asignado. 		
@@ -388,7 +387,7 @@ Para cada empleado se tendrán los siguientes campos:
 %CONFIRMAR LIMPIEZA DE HABITACION
 
 	
-		\item \textbf{Confirmar limpieza de habitación}
+		\subsection \textbf{Confirmar limpieza de habitación}
 			\begin{itemize}
 			\item \textbf{Actor: }Personal de limpieza.
 			\item \textbf{Propósito: }Eliminar de la lista de tareas una tarea que ha sido completada.
@@ -411,7 +410,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %INFORMAR DE INCIDENCIAS
 
-		\item \textbf{Informar de incidencias}	
+		\subsection \textbf{Informar de incidencias}	
 			\begin{itemize}
 				\item \textbf{Actor: }Todos los usuarios.
 				\item \textbf{Propósito: }Informar de incidencias de mantenimiento que requieran de reparación. 		
@@ -434,7 +433,7 @@ Para cada empleado se tendrán los siguientes campos:
 %CONSULTAR TAREAS DE MANTENIMIENTO
 		\hspace{-1.5 true cm}
 		\scalebox{0.9}{\includegraphics{Mantenimiento}} 
-		\item \textbf{Consultar tareas de mantenimiento}
+		\subsection \textbf{Consultar tareas de mantenimiento}
 			\begin{itemize}
 			\item \textbf{Actor: }Encargado de mantenimiento.
 			\item \textbf{Propósito: }Consultar incidencias de mantenimiento, y tachar de la lista aquellas incidencias que han sido resueltas. 
@@ -455,7 +454,7 @@ Para cada empleado se tendrán los siguientes campos:
 		\newpage
 		\hspace{-2.4 true cm}	
 		\scalebox{0.65}{\includegraphics{Restaurante}}
-		\item \textbf{Reservar mesa} 
+		\subsection\textbf{Reservar mesa} 
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito: } Reservar una mesa en el restaurante para comer.
@@ -482,7 +481,7 @@ Para cada empleado se tendrán los siguientes campos:
 		
 %ANULAR RESERVA
 
-		\item \textbf{Anular reserva}
+		\subsection\textbf{Anular reserva}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito: } Anular una reserva realizada con anterioridad.
@@ -507,7 +506,7 @@ Para cada empleado se tendrán los siguientes campos:
 	
 %GENERAR UN PEDIDO PARA UNA MESA
 
-		\item \textbf{Generar un pedido para una mesa}
+		\subsection \textbf{Generar un pedido para una mesa}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Pedir un plato a la cocina.
@@ -532,7 +531,7 @@ Para cada empleado se tendrán los siguientes campos:
 		
 %MODIFICAR UN PEDIDO
 		
-	\item \textbf{Modificar un pedido}
+	\subsection \textbf{Modificar un pedido}
 			\begin{itemize}
 			\item \textbf{Actores:} Camareros, maître.
 			\item \textbf{Descripción:} Se pueden acceder a los pedidos realizados por un cliente y modificarlos, en caso de que no se trate de lo que ellos deseaban.
@@ -541,7 +540,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %CANCELAR UN PEDIDO
 
-		\item \textbf{Cancelar un pedido}
+		\subsection\textbf{Cancelar un pedido}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Anular un pedido realizado.
@@ -566,7 +565,7 @@ Para cada empleado se tendrán los siguientes campos:
 		
 %GENERAR FACTURA A UN CLIENTE
 
-		\item \textbf{Generar factura a un cliente}
+		\subsection \textbf{Generar factura a un cliente}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Proporcionar la factura para cobrar al cliente.
@@ -592,7 +591,7 @@ Para cada empleado se tendrán los siguientes campos:
 		
 %VER MENU		
  	
-	\item \textbf{Ver menú}
+	\subsection\textbf{Ver menú}
 			\begin{itemize}
 			\item \textbf{Actores:} Camareros, maître, cocineros, chef y jefe.
 			\item \textbf{Descripción:} Muestra pon pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
@@ -608,7 +607,7 @@ Para cada empleado se tendrán los siguientes campos:
 	\newpage
 	\hspace{0.5 true cm}	
 	\scalebox{0.8}{\includegraphics{Notas}}
-	\item \textbf{Añadir nota} 
+	\subsection \textbf{Añadir nota} 
 			\begin{itemize}
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito: } Crear una nota y añadirla al tablón.
@@ -630,7 +629,7 @@ pestaña de notas es la única común a todos los empleados.
 
 
 %BORRAR NOTA
-		\item \textbf{Borrar nota}
+		\subsection \textbf{Borrar nota}
 			\begin{itemize}
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito: } Borra una nota del tablón.
@@ -656,7 +655,7 @@ pestaña de notas es la única común a todos los empleados.
 	
 	\hspace{-2 true cm}
 	\scalebox{0.6}{\includegraphics{Contabilidad}} 
-	\item \textbf{Ver cuenta diaria de la caja de recepción}
+	\subsection \textbf{Ver cuenta diaria de la caja de recepción}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Descrición:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja de la recepción.	
@@ -664,7 +663,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %VER CUENTA DIARIA DE LA CAJA DEL RESTAURANTE.
 
-	\item \textbf{Ver cuenta diaria de la caja del restaurante}
+	\subsection \textbf{Ver cuenta diaria de la caja del restaurante}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Descrición:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja del restaurante.	
@@ -672,7 +671,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %CONSULTAR LIBRO DIARIO
 
-\item \textbf{Consultar libro diario}
+	\subsection \textbf{Consultar libro diario}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Descrición:} El jefe ve los últimos apuntes del libro diario, pudiendo ascender si lo desea hasta el asiento de apertura.	
@@ -680,7 +679,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %CONSULTAR LIBRO MAYOR
 
-\item \textbf{Consultar libro mayor}
+	\subsection \textbf{Consultar libro mayor}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Descrición:} El jefe ve los últimos apuntes en las cuentas del libro mayor. \\
@@ -690,7 +689,7 @@ pestaña de notas es la única común a todos los empleados.
 	
 	\hspace{-2 true cm}
 	\scalebox{0.65}{\includegraphics{Habitaciones}}
-	\item \textbf{Ver habitaciones}
+	\subsection \textbf{Ver habitaciones}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
@@ -709,7 +708,7 @@ pestaña de notas es la única común a todos los empleados.
 		\end {itemize}
 		
 %RESERVAR HABITACION
-	\item \textbf{Reservar habitacion}
+	\subsection \textbf{Reservar habitacion}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Reservar una habitación del hotel.
@@ -732,7 +731,7 @@ pestaña de notas es la única común a todos los empleados.
 		\end {itemize}
 
 %VER RESERVAS
-	\item \textbf{Ver reservas}
+	\subsection \textbf{Ver reservas}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver la reserva de habitaciones del hotel.
@@ -750,7 +749,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %ANULAR RESERVAS
 
-	\item \textbf{Anular reservas}
+	\subsection \textbf{Anular reservas}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Descrición:}Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
@@ -758,7 +757,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %GENERAR FACTURA DEL HOTEL
 
-	\item \textbf{Generar factura del hotel}
+	\subsection \textbf{Generar factura del hotel}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Generar una factura para un cliente.
@@ -780,11 +779,10 @@ pestaña de notas es la única común a todos los empleados.
 %%%%%%CASOS DE USO SECUNDARIOS%%%%%%_____________________________________________________________________________________________________________________________________________________
 
 \subsection{Secundarios}	
-	\begin{itemize}
 
 %AÑADIR EMPLEADO
 
-	\item \textbf{Añadir un nuevo empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
+	\subsection \textbf{Añadir un nuevo empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito: } Crear una nueva ficha de empleado.
@@ -813,7 +811,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %DAR DE BAJA A UN EMPLEADO
 
-	\item \textbf{Dar de baja a un empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
+	\subsection \textbf{Dar de baja a un empleado}		%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleado.
 			\item \textbf{Propósito: } Transferir la ficha de un empleado de "Empleados actuales" a "Antiguos empleados" .
@@ -839,7 +837,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %MODIFICAR LA FICHA DE UN EMPLEADO
 
-	\item \textbf{Modificar la ficha de un empleado}		
+	\subsection\textbf{Modificar la ficha de un empleado}		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito: } Acceder a la ficha de un empleado y modificarla" .
@@ -869,7 +867,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %VER CURRICULUM DE EMPLEADO
 
-	\item \textbf{Ver el currículum de un empleado}		
+	\subsection \textbf{Ver el currículum de un empleado}		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito: } Acceder al currículum vitae de un trabajador  .
@@ -893,7 +891,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %DAR DE BAJA A UN CLIENTE
 
-	\item \textbf{Dar de baja a un cliente}
+	\subsection \textbf{Dar de baja a un cliente}
 			\begin{itemize}
 			\item \textbf{Actor:} Recepcionista.
 			\item \textbf{Propósito: } Transferir la ficha de un empleado de "Empleados actuales" a "Antiguos empleados" .
@@ -920,7 +918,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %EDITAR UN CLIENTE
 
-	\item \textbf{Modificar la ficha de un cliente}		
+	\subsection\textbf{Modificar la ficha de un cliente}		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito: } Acceder a la ficha de un cliente y modificarla.
@@ -949,7 +947,7 @@ pestaña de notas es la única común a todos los empleados.
 %COMPROBAR DISTRIBUCIÓN Y NÚMERO DE LAS MESAS EN EL COMEDOR
 
 		%\begin{itemize} 	
-		\item \textbf{Comprobar distribución y número de las mesas en el comedor}
+		\subsection \textbf{Comprobar distribución y número de las mesas en el comedor}
 			\begin{itemize}
 				\item \textbf{Actores:} Camareros, maître, jefe.
 				\item \textbf{Descripción:} Se puede acceder a un mapa que indica como están distribuidas las mesas en el restaurante, el numero de comensales que caben en cada mesa y las mesas preferidas por los clientes.
@@ -957,7 +955,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %MODIFICAR DISTRIBUCIÓN DEL RESTAURANTE
 
-		\item \textbf{Modificar distribución del restaurante}
+		\subsection \textbf{Modificar distribución del restaurante}
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, Jefe.
 			\item \textbf{Propósito: } Modificar la distribución de las mesas en el restaurante.
@@ -981,7 +979,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %REALIZAR RECUENTO DE ALIMENTOS
 
-	\item \textbf{Realizar recuento de alimentos}
+	\subsection \textbf{Realizar recuento de alimentos}
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, jefe, jefe de cocina.
 			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
@@ -1007,7 +1005,7 @@ pestaña de notas es la única común a todos los empleados.
 
 %MODIFICAR MENU
 
-		\item \textbf{Modificar menú}
+		\subsection\textbf{Modificar menú}
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, Jefe, Jefe de cocina.
 			\item \textbf{Propósito: } Modificar el menú del restaurante.
@@ -1082,7 +1080,7 @@ pestaña de notas es la única común a todos los empleados.
 
 
 %EDITAR HABITACIONES
-	\item \textbf{Editar habitaciones}
+	\subsection \textbf{Editar habitaciones}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Descripción:} Desde la pantalla de ver habitaciones, puedes editar la habitación.	
@@ -1091,7 +1089,9 @@ pestaña de notas es la única común a todos los empleados.
 
 
 %FINAL DOCUMENTO CASOS DE USO
-	\end{itemize}
+
+
+
 \end{document}
 
 
