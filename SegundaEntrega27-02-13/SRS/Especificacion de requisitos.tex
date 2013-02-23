@@ -71,39 +71,33 @@
 \part{Introducción}
 \section{Propósito}
  	Este documento trata sobre la especificación de los requisitos de la aplicación KIKE HOSTELERÍA®.
-\begin{itemize}
-		\item \textbf{Propósito:} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\\\
-KIKE HOSTELERÍA® incluye bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros), con una interfaz simple e intuitiva que permitirá a sus usuarios una rápida adaptación a su uso.\\\\
-La aplicación está pensada para todos los empleados del negocio, y por tanto, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\\\
+		\subsection{Propósito:} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\\\
+KIKE HOSTELERÍA® incluye bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros), con una interfaz simple e intuitiva que permitirá a sus usuarios una rápida adaptación a su uso.\\
+
+La aplicación está pensada para todos los empleados del negocio, y por tanto, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\
+
 La comunicación entre usuarios mediante la aplicación se hará con un sistema de tablón de notas, común a todos los usuarios.\\\\
-Cada empleado tendrá su nombre de usuario y su contraseña, que le permitirán hacer Log in en la aplicación y así comenzar a usarla. El nombre de usuario es personal e instransferible.\\\\
-El jefe del negocio tendrá acceso a todas las características principales de la aplicación, pudiendo acceder tanto a la contabilidad de la empresa, como a las bases de datos anteriormente mencionadas. \\\\
+Cada empleado tendrá su nombre de usuario y su contraseña, que le permitirán hacer Log in en la aplicación y así comenzar a usarla. El nombre de usuario es personal e instransferible.\\
+
+El jefe del negocio tendrá acceso a todas las características principales de la aplicación, pudiendo acceder tanto a la contabilidad de la empresa, como a las bases de datos anteriormente mencionadas. \\
 
 
-		\item \textbf{Audiencia:} La aplicación está pensada para hoteles y/o restaurantes de capacidad media/baja, pero podría ampliarse para capacidades mayores. \\
-No obstante, el negocio debe poseer la capacidad económica suficiente para sufragar los gastos del hardware que necesita la aplicación.
-	\end{itemize}
+
+		\subsection{Audiencia:} La aplicación está pensada para hoteles y/o restaurantes de capacidad media/baja, pero podría ampliarse para capacidades mayores sin dificultad. \\
+
+No obstante, el negocio debe poseer la capacidad económica suficiente para sufragar los gastos del hardware que necesita la aplicación, pues para que reporte un beneficio se deberían usar varios dispositivos.
 
 \section{Alcance}
-Esta subdivisión debe:
-a) Identifique el producto (s) del software para ser diseñado por el nombre (por ejemplo,
-Anfitrión DBMS, el Generador del Reporte, etc.);
-b) Explique eso que el producto (s) del software que hará y que no hará.
-c) Describe la aplicación del software especificándose los beneficios pertinentes,
-objetivos, y metas;
-d) Sea consistente con las declaraciones similares en las especificaciones de niveles
-superiores (por ejemplo, las especificaciones de los requisitos del sistema), si ellos
-existen.
 
-\hspace {0.8 true cm} Para que la aplicación pueda funcionar en todos sus ámbitos debemos disponir de un cierto hardware para que varios de sus usuarios puedan acceder a ella a un tiempo simultáneo.\\
+Para que la aplicación pueda funcionar en todos sus ámbitos debemos disponer de un cierto hardware para que varios usuarios puedan acceder a la misma y a la vez.\\
 
-\hspace {0.15 true cm} Cada empleado deberá disponer de un dispositivo móvil con sistema operativo Android o IOS para poder acceder a la aplicación y asi ver sus horarios, tareas... Además cada habitación del hotel dispone también de dispositivos con dichos sistemas operativos con los cuales podra acceder a la aplicación del hotel en modo cliente. \\
+ El jefe y cada empleado deberá disponer de un dispositivo móvil con sistema operativo Android o IOS para poder acceder a la aplicación y asi ver sus horarios, tareas... En su defecto, puede haber varios de estos dispositivos comunes en el área de trabajo, al menos uno por cada tres empleados para un uso adecuado. \\
 
-\hspace {0.35 true cm}Todos estos dispositivos serán controlados a través de un servidor interno, el cual debe contar con suficiente capacidad y rapidez de actuación como para que los dispositivos puedan funcionar sin esperas.\\
+Todos estos dispositivos serán controlados a través de un servidor interno, el cual debe contar con suficiente capacidad y rapidez de actuación como para que los dispositivos puedan funcionar sin esperas.\\
 
-\hspace {0.35 true cm}Los camareros podrán realizar pedidos a través de sus dispositivos sin necesidad de hablar con los cocineros, los cuales veran las comandas a través de una pantalla situada en la cocina, ganandose así velocidad y evitando confusiones. También permite generar facturas y poder aplicárselo a la cuenta de la habitación pues los clientes están vinculados.
+Los camareros podrán realizar pedidos a través de sus dispositivos sin necesidad de hablar con los cocineros, los cuales veran las comandas a través de una pantalla situada en la cocina, ganandose así velocidad y evitando confusiones. También permite generar facturas y poder añadirlo a la cuenta de la habitación pues los clientes están vinculados.
 
-\rhead{}		%Encabezado a la derecha AQUI LO QUITO PORQUE SE PISA
+
 \section{Definiciones, acrónimos y abreviaturas}
 
 Todo lo referente a esta sección se encuentra en el documento anexo \texttt{Definiciones, acrónimos y abreviaturas}. Ahí se detallan las palabras poco comunes, los anglicísmos y abreviaturas que se emplean.
@@ -117,7 +111,6 @@ Todo lo referente a esta sección se encuentra en el documento anexo \texttt{Def
 
 	\end{itemize}
 
-\rhead{\bfseries Especificación de requisitos}		%Encabezado a la derecha
 \section{Resumen}
 
 En este documento veremos las funciones de las que dispone nuestra aplicación, requisitos presentes y futuros, restricciones y atributos de la aplicación, adentrándonos en cada apartado y profundizando en las propiedades de nuestro software.
