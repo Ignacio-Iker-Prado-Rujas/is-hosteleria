@@ -1,59 +1,189 @@
 %Documento con el plan de proyecto, estimacion etc. segun PRESSMAN
 
-%%%%% PAQUETES %%%%%
-\documentclass[spanish,a4paper,12pt]{report}		% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
-\usepackage[spanish,activeacute]{babel}				% Acentuación
-\usepackage[utf8]{inputenc}						% Codificacion UTF8 (para tildes)	
-\usepackage{amsmath}							% Amercian Matematics Society entorno
-\usepackage{amssymb}							% Tipografía mathbb y otros símbolos
-\usepackage{amsthm}							% Paquete AMS theorem
-\usepackage{amsfonts}							% Paquete con símbolos y mas
-\usepackage{multicol}							% Escritura en varias columnas
-\usepackage{graphics}							% Inclusión de imágenes
-\usepackage{nicefrac}							% Fracciones bonitas
-\usepackage{geometry}							% Formato de la pagina
-\usepackage{fancyhdr}
+\documentclass[spanish,a4paper,12pt]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
 
-%%%%% DECLARACIONES %%%%%
-\geometry{a4paper, textwidth=16cm, textheight=20cm}
-\pagestyle{fancy}
-\lhead{Ingeniería del Software}
-\rhead{\bfseries{Plan de proyecto}}
-\cfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
+\rhead{\bfseries Plan de proyecto}				%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
 
 
 %%%%% CUERPO %%%%%
 \begin{document}
 
-\title{\textbf{\huge{Plan de proyecto}}}
+\title{\textbf{\huge{Plan de proyecto}} \\ \vspace{0.3cm}
+	\Large{Ingeniería del Software}}
 \author{ Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
 	 Alejandro Villarín Prieto }
-\date{\today}
+\date{\Today}
 \maketitle
 
 \newpage
 \mbox{}
-\thispagestyle{empty}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
 
 
-\tableofcontents 		%INDICE
+\tableofcontents 							%INDICE hipervinculado
 
 \newpage
 \mbox{}
-\thispagestyle{empty}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
 
-
-%INTRODUCCiÓn HECHA POR PERELMANIYA
-\part{Introducción}h
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
 
+%INTRODUCCIÓN HECHA POR PERELMANIYA
+\part{Introducción}
 
+	\section{Propósito del plan}
+
+	\section{Ámbito del proyecto y objetivos}
+
+		\subsection{Declaración del ámbito}
+
+		\subsection{Funciones principales}
+
+		\subsection{Aspectos de rendimiento}
+
+		\subsection{Restricciones y técnicas de gestión}
+
+	\section{Modelo de proceso}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+
+%IKER
+\part{Estimaciones del proyecto}
+
+	\section{Datos históricos}
+
+	\section{Técnicas de estimación}
+
+	\section{Estimaciones de esfuerzo, coste y duración}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+
+%VILLARIN & JAIME
+\part{Estrategia de gestión del riesgo}
+
+	\section{Análisis del riesgo}
+
+	\section{Estudio de los riesgos}
+
+	\section{Plan de gestión del riesgo}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+
+%KIKE
+\part{Planificación temporal}
+
+	\section{Planificación temporal}
+
+	\section{Gráfico de  Gantt}
+
+	\section{Red de tareas}
+
+	\section{Tabla de uso de recursos}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+
+%JAIME
+
+\part{Recursos del proyecto}
+
+	\section{Personal}
+
+	\section{Hardware y software}
+
+	\section{Lista de recursos}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+
+%JESUS
+
+\part{Organización del personal}
+
+	\section{Estructura de equipo}
+
+	\section{Informes de gestión}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+
+%KIKE & JESUS
+
+\part{Mecanismos de seguimiento y control}
+
+	\section{Garantía de calidad y control}
+
+	\section{Gestión y control de cambios}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+\setcounter{section}{0}
+\part{Apéndices}
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada, al final del documento
+\newpage
 
 \end{document}
 
@@ -64,10 +194,10 @@
 1. Introducción
 	1.1 Propósito del plan
 	1.2 Ámbito del proyecto y objetivos
-	1.2.1 Declaración del ámbito
-	1.2.2 Funciones principales
-	1.2.3 Aspectos de rendimiento
-	1.2.4 Restricciones y técnicas de gestión
+		1.2.1 Declaración del ámbito
+		1.2.2 Funciones principales
+		1.2.3 Aspectos de rendimiento
+		1.2.4 Restricciones y técnicas de gestión
 	1.3 Modelo de proceso
 
 %IKER
