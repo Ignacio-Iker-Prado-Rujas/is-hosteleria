@@ -1,60 +1,75 @@
- 		%El objetivo de este documento es identificar, detallar y documentar los requisitos de software de nuestra aplicación, es decir, determinar las CARACTERISTICAS 
+ %El objetivo de este documento es identificar, detallar y documentar los requisitos de software de nuestra aplicación, es decir, determinar las CARACTERISTICAS 
 %que debera tener el sistema o las RESTRICCIONES que debera cumplir para que sea aceptado por el cliente y los futuros usuarios del sistema de software.
 %El tema de requisitos de IS es el TEMA 3
 %Cuando acabemos la SRS hacemos la matriz de traza, creo que seria bueno porque es muy visual (TEMA 3, diapositiva 29)
 
 
-%%%%% PAQUETES %%%%%
-\documentclass[spanish,a4paper,12pt]{report}		% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
-\usepackage[spanish,activeacute]{babel}		% Acentuación
-\usepackage[utf8]{inputenc}						% Codificacion UTF8 (para tildes)	
-\usepackage{amsmath}							% Amercian Matematics Society entorno
-\usepackage{amssymb}							% Tipografía mathbb y otros símbolos
-\usepackage{amsthm}							% Paquete AMS theorem
-\usepackage{amsfonts}							% Paquete con símbolos y mas
-\usepackage{multicol}							% Escritura en varias columnas
-\usepackage{graphics}							% Inclusión de imágenes
-\usepackage{nicefrac}							% Fracciones bonitas
-\usepackage{geometry}							% Formato de la pagina
-\usepackage{fancyhdr}
-\usepackage{hyperref}	%Habla con Peñas, Iker
+\documentclass[spanish,a4paper,12pt]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
 
-%%%%% DECLARACIONES %%%%%
-\geometry{a4paper, textwidth=16cm, textheight=20cm}
-\pagestyle{fancy}
-\lhead{Ingeniería del Software}
-\rhead{\bfseries{Especificación de requisitos}}
-\cfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
+\rhead{\bfseries Especificación de requisitos}		%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
 
 
 %%%%% CUERPO %%%%%
 \begin{document}
 
-\title{\textbf{\huge{Documento de especificación de \\ requisitos Software}}}
+\title{\textbf{\huge{Documento de especificación de \\ 
+	requisitos Software}} \\ \vspace{0.3cm}
+	\Large{Ingeniería del Software}}
 \author{ Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
 	 Alejandro Villarín Prieto }
-\date{\today}
+\date{\Today}
 \maketitle
 
 \newpage
 \mbox{}
-\thispagestyle{empty}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
 
 
-\tableofcontents 		%INDICE
+\tableofcontents 							%INDICE
 
 \newpage
 \mbox{}
-\thispagestyle{empty}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
-\chapter{}
-\section{Introducción}
-\subsection{Propósito}
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+\part{Introducción}
+\section{Propósito}
  	Este documento trata sobre la especificación de los requisitos de la aplicación KIKE HOSTELERÍA®.
 \begin{itemize}
 		\item \textbf{Propósito:} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\\\
@@ -69,7 +84,7 @@ El jefe del negocio tendrá acceso a todas las características principales de l
 No obstante, el negocio debe poseer la capacidad económica suficiente para sufragar los gastos del hardware que necesita la aplicación.
 	\end{itemize}
 
-\subsection{Alcance}
+\section{Alcance}
 Esta subdivisión debe:
 a) Identifique el producto (s) del software para ser diseñado por el nombre (por ejemplo,
 Anfitrión DBMS, el Generador del Reporte, etc.);
@@ -88,7 +103,7 @@ existen.
 
 \hspace {0.35 true cm}Los camareros podrán realizar pedidos a través de sus dispositivos sin necesidad de hablar con los cocineros, los cuales veran las comandas a través de una pantalla situada en la cocina, ganandose así velocidad y evitando confusiones. También permite generar facturas y poder aplicárselo a la cuenta de la habitación pues los clientes están vinculados.
 
-\subsection{Definiciones, acrónimos y abreviaturas}
+\section{Definiciones, acrónimos y abreviaturas}
 	\begin{itemize}
 		\item \textbf{Maître:} Jefe de comedor en un restaurante. 
 		\item \textbf{Comanda:} Pedido que se hace al camarero en un restaurante.
@@ -99,7 +114,7 @@ existen.
 
 	\end{itemize}
 
-\subsection{Referencias}
+\section{Referencias}
 	\begin{itemize}
 		\item Nuestro propio documento de "Casos de uso"
 		\item  IEEE standard 830-1998
@@ -108,7 +123,7 @@ existen.
 
 	\end{itemize}
 
-\subsection{Resumen}
+\section{Resumen}
 
 En este documento veremos las funciones de las que dispone nuestra aplicación, requisitos presentes y futuros, restricciones y atributos de la aplicación, adentrándonos en cada apartado y profundizando en las propiedades de nuestro software.
 Constará de los siguientes apartados:
@@ -127,9 +142,16 @@ Constará de los siguientes apartados:
 		\item \textbf{Atributos del sistema software:} Propiedades que tendrá la aplicacion una vez instalada en la empresa.
 	\end{itemize}
 
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
 
-\section{Descripción general}
-\subsection{Perspectiva del producto}
+\setcounter{section}{0}
+
+%%% SEGUNDA PARTE____________________________________________________________________________________________________________________
+\part{Descripción general}
+\section{Perspectiva del producto}
 
 Suponemos que se trata de una empresa española, que posee infraestructuras para el desarrollo de un hotel con restaurante- bar. Nuestro producto entra en escena para facilitar las necesidades que tal negocio genera, y para simplificar la comunicación entre trabajadores del mismo. Así, permite llevar el control de la empresa, para un mejor desarrollo de ésta, mientrás que guarda la información que de otra manera sería fácil traspapelar o confundir. Como ejemplo más sencillo, se puede poner el control del menú. Siempre está actualizado: en función de los ingredientes disponibles, los actores eliminan o añaden los platos correspondientes. 
 
@@ -139,7 +161,7 @@ La interfaz se basará en una disposición en pestañas. En función de qué tip
 
 
 
-\subsection{Funciones del producto}
+\section{Funciones del producto}
 	\begin{itemize}
 		\item El programa pide necesariamente un usuario y una contraseña para funcionar. Una vez introducido un usuario y una contraseña si estos son correctos comienza la aplicación. En función del tipo de usuario que la utilice apareceran diferentes opciones las cuales veremos a continuación:
 		\begin{itemize}
@@ -156,10 +178,11 @@ La interfaz se basará en una disposición en pestañas. En función de qué tip
 	
 		\item Va a ser la base fundamental para organizar el trabajo que deben realizar los usuarios. El jefe podra organizar a todos sus empleados a través de la aplicación, pero no solo se trata de organizarlos, también los empleados necesitan constatemente la aplicación pues los camareros notificaran a los cocineros los platos y organizaran el restaurante entre ellos  a traves de la aplicación. Los empleados de la limpieza por su parte se coordinan con el encargado el cual reparte las tareas y los organiza a través de la aplicación. Por ultimo tambien se usara como base de datos de clientes y provisiones, puediendo avisarnos en caso necesario, como cuando sea necesario abastecer el almacen o un cliente no realice un pago.
 	\end{itemize}
-\subsection{Características del usuario}
+
+\section{Características del usuario}
 	En general el usuario no requiere ningún tipo de formación especifica, tan solo con la básica es suficiente. Por el contrario debe ser ágil con el uso de la tecnología pues el día a día de su trabajo se va a basar en usar la aplicación. Podemos distinguir claramente dos tipos de usuarios: el usuario cotidiano que serán los empleados y un usuario ocasional que son los clientes. Los clientes no necesitan formación en absoluto, ya que todo lo que la aplicación realiza pueden realizarlo ellos mismos a través de los empleados. Sin embargo, los empleados necesitan una cierta experiencia en el ámbito tecnológico. Un camarero jamás podra ser eficiente si no es capaz de tomar nota de los platos a una velocidad considerable. Por ello también sera positivo que el usuario empleado posea una buena capacidad para aprender a manejar nuevo software rapidamente pues es muy posible que la aplicación acabe extendiendose a un ámbito más amplio.
 
-\subsection{Restricciones}
+\section{Restricciones}
 
 Teniendo en cuenta la ley de protección de datos, si un cliente o un empleado solicita que le quiten de la base de datos, se procederá a la eliminación del mismo. El sistema lo permite fácilmente. 
 
@@ -168,13 +191,13 @@ El hardware sobre el que se supone que correrá, viene desarrollado en el siguie
 Al iniciar la aplicación, si tras cuatro intentos la combinación Usuario + Contraseña no es correcta, el sistema se bloqueará durante 3 minutos, mejorando la seguridad de la aplicación. Además, continuamente se realizarán copias de seguridad de los elementos modificados (reservas, cambios en la distribución de las mesas...), para que en caso de que se agote la batería del equipo, no se pierda información. Todo queda recogido en el servidor. Cada vez, que un campo se modifique, se actualiza en el servidor.
 
 
-\subsection{Supuestos y dependencias}	
+\section{Supuestos y dependencias}	
 	El software estará enfocado para ser utilizado en dispositivos con sistema operativo Android o Windows, aunque al estar escrito en java esto nos permitira camiar de sistema operativo sin demasiados cambios debido a que la implementación cambiara solo en casos muy especificos, así que podriamos decir que depende relativamente del sistema operativo.  Por el contrario, si que va a depender mucho del hardware, puesto que necesitará sincronizarse con un sistema central que organice y distribuya toda la información de los dispositivos de los empleados, por tanto necesitaremos un procesador muy rapido que organice todo. También será necesario un servidor interno que distribuya la información entre los distintos dispositivos.	\\
 
 En definitiva,  nuestro cliente necesitará tener Windows XP, Vista o 7, o Android 2.3 (Gingerbread) o superior (hasta android Jelly Bean).
 Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesador Dual Core 2GHz. para ordenadores fijos.
 
-\subsection{Requisitos futuros}
+\section{Requisitos futuros}
 	\begin{itemize}
 		\item Para versiones futuras nuestro software podrá disponer de nuevas funcionalidades, como permitir que los clientes del hotel accedan al servidor interno en modo "invitado" puediendo realizar algunas funciones como reservar mesa, anular reserva de mesa, realizar pedido o anular pedido.
 
@@ -187,12 +210,19 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 		\item El cliente podrá configurar el programa para que cuando las existencias se encuentre bajo un mínimo importante se genere automaticamente un pedido.
 	\end{itemize}
 
-%%SUBSECCION REQUISITOS ESPECÍFICOS
-\section{Requisitos específicos}
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\setcounter{section}{0}
+
+%%% TERCERA PARTE______________________________________________________________________________________________________________________
+\part{Requisitos específicos}
 
 
 
-		\subsection{Interfaces externos}
+		\section{Interfaces externos}
 			
 			El usuario tendrá varias maneras de interactuar con el programa. El programa le permite hacerlo mediante botones y campos. Los botones pueden servir para elegir pestañas concretas o acceder a un determinado sitio, es decir, para obtener datos del sistema. Los campos sirven para enviar información al sistema y a otros usuarios, y se pueden rellenar mediante cuadros de texto (por ejemplo, para enviar la descripción de una incidencia) o marcando las opciones disponibles (por ejemplo, al hacer un pedido en el restaurante). Aquí también intervienen los botones, ya que se puede aceptar para enviar la información, o cancelar si hemos cometido un error, para volver a rellenar los campos. En el programa hay varias ventanas con varias opciones, pensadas para los distintos tipos de usuario.
 			\begin{itemize}
@@ -249,7 +279,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 %Sección funciones
 
-\subsection{Funciones}
+\section{Funciones}
 %%Plantilla de funciones al final del documento
 
 	\begin{itemize}%Comienzan las funciones
@@ -848,13 +878,13 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 \end{itemize}%Fin de todas las funciones
 
-\subsection{Requisitos de rendimiento}
+\section{Requisitos de rendimiento}
 \begin{itemize}
 	\item El sistema debe soportar al menos diez usuarios conectados simultáneamente con tablet y cinco con ordenador personal.
 	\item El sistema debe por lo tanto soportar también diez pedidos por segundo y la creación de dos clientes por segundo. 
 \end{itemize}
 
-\subsection{Requisitos lógicos de la base de datos}
+\section{Requisitos lógicos de la base de datos}
 \begin{itemize}
 	\item Existen varias restricciones importantes en el diseño, especialmente en cuanto a limitaciones de hardware:
 	\begin{itemize}
@@ -865,7 +895,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 	\end{itemize}
 \end{itemize}
 
-\subsection{Restricciones de diseño}
+\section{Restricciones de diseño}
 \begin{itemize}
 	\item En todo momento debe existir una copia de todos los pedidos por si se produce 	un apagón.
 	\item La base de datos de clientes debe estar claramente separada de la de empleados, para que no haya conflicto en caso de que un empleado también sea cliente.
@@ -873,7 +903,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 \end{itemize}
 
 
-\subsection{Atributos del sistema software}
+\section{Atributos del sistema software}
 \begin{itemize}
 	\item Una vez creado el servidor seguirá funcionando permanentemente.
 	\item Al estar programado en java, la portabilidad o la ampliación a cualquier sistema operativo  nuevo será sencilla. 
@@ -881,12 +911,14 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 \end{itemize}
 
 
-
-
-
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
 
 \end{document}
-
+ 
+%%% FINAL DEL DOCUMENTO Y PLANTILLAS _____________________________________________________________________________________________
 
 
 \item \textbf{} %Nombre de la función
