@@ -1,1 +1,8 @@
 \select@language {spanish}
+\contentsline {part}{I\hspace {1em}Identificaci\IeC {\'o}n de los riesgos}{\es@scroman {iii}}{part.1}
+\contentsline {part}{II\hspace {1em}An\IeC {\'a}lisis del riesgo}{\es@scroman {vi}}{part.2}
+\contentsline {section}{\numberline {1}Defciencias del personal}{\es@scroman {vii}}{section.0.1}
+\contentsline {section}{\numberline {2}Planificaciones y presupuestos poco realistas}{\es@scroman {vii}}{section.0.2}
+\contentsline {section}{\numberline {3}Desarrollo de las funciones y propiedades err\IeC {\'o}neas}{\es@scroman {viii}}{section.0.3}
+\contentsline {section}{\numberline {4}Continua corriente de cambios en los requisitos}{\es@scroman {viii}}{section.0.4}
+\contentsline {part}{III\hspace {1em}Priorizaci\IeC {\'o}n del riesgo}{\es@scroman {x}}{part.3}
