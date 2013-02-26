@@ -28,12 +28,12 @@
 \pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
 %\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
 %\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
-\rhead{\bfseries Estimación del proyecto}			%Encabezado a la derecha
+\rhead{\bfseries Estimación del proyecto}		%Encabezado a la derecha
 \cfoot{\thepage}							% Numero de pagina centrado en el pie
-%\cfoot{\thepage\ de \pageref{LastPage}}			% Numero de pagina centrado en el pie asi: n de m
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
 \renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
-\renewcommand*{\thesection}{\arabic{section}}		% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
 
 
 %%%%% CUERPO %%%%%
@@ -65,6 +65,37 @@
 
 \pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
-\part{} %%% PARTE 1:  %%%______________________________________________________________________________________________
+\part{Extracto} %%% PARTE 1 %%%___________________________________________________________________________________________________
+Este documento se puede considerar como una ampliación de una parte del \texttt{Plan de proyecto}. Más concretamente, vamos a estimar esfuerzo, coste y duración mediante la técnica de Puntos de Función, un procedimiento de descomposición basado en el problema.
+
+\vspace{0.35cm}
+
+Comenzaremos diviendo el producto en partes más pequeñas para luego centrarnos en cada una de ellas, pues de eso trata una técnica basada en descomposición. De cada una de estas fracciones obtendremos, tras un análisis, un determinado número de puntos de función, obedeciendo al número de entradas-salidas, los ficheros accedidos y las interfaces, así como la dificultad de los mismos. 
+
+\vspace{0.35cm}
+
+Una vez vez hecho esto, estaremos en condiciones de estimar. % Bla bla bla
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\part{Técnicas de estimación} %%% PARTE 2 %%%_________________________________________________________________________________________
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+
+\part{Estimaciones de esfuerzo, coste y duración} %%% PARTE 3 %%%__________________________________________________________
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada al final del documento
+\newpage
 
 \end{document}
