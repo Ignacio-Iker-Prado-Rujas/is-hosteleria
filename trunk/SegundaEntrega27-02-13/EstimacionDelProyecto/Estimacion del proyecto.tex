@@ -66,29 +66,308 @@
 \pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
 \part{Extracto} %%% PARTE 1 %%%___________________________________________________________________________________________________
-Este documento se puede considerar como una ampliación de una parte del \texttt{Plan de proyecto}. Más concretamente, vamos a estimar esfuerzo, coste y duración mediante la técnica de Puntos de Función, un procedimiento de descomposición basado en el problema.
+Este documento se puede considerar como una ampliación de una parte del \texttt{Plan de proyecto} del desarrollo de una aplicación para el campo de la hostelería. Más concretamente, vamos a estimar esfuerzo, coste y duración mediante la técnica de Puntos de Función (también conocida como FPA o Function Point Analysis), un procedimiento de descomposición basado en el problema. Esta métrica fue introducida en 1979 por Allan Albrecht, y existen distintas metodologías de medición. La más conocida es la del IFPUG (International Function Points Users Group), que es una organización que ofrece certificación a especialistas de puntos de función de todo el mundo. 
 
 \vspace{0.35cm}
 
-Comenzaremos diviendo el producto en partes más pequeñas para luego centrarnos en cada una de ellas, pues de eso trata una técnica basada en descomposición. De cada una de estas fracciones obtendremos, tras un análisis, un determinado número de puntos de función, obedeciendo al número de entradas-salidas, los ficheros accedidos y las interfaces, así como la dificultad de los mismos. 
+En cuanto al documento en sí, comenzaremos diviendo el producto en partes más pequeñas para luego centrarnos en cada una de ellas, pues de eso trata una técnica basada en descomposición. De cada una de estas fracciones obtendremos, tras un análisis, un determinado número de puntos de función, obedeciendo al número de entradas-salidas, los ficheros accedidos y las interfaces, así como la dificultad de los mismos. 
 
 \vspace{0.35cm}
 
-Una vez vez hecho esto, estaremos en condiciones de estimar. % Bla bla bla
+Una vez vez hecho esto, estaremos en condiciones de estimar y obtener unos resultados que se podrán aplicar al proyecto. % Bla bla bla
 
 \newpage
 \mbox{}
 \thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
+\setcounter{section}{0}
 
 \part{Técnicas de estimación} %%% PARTE 2 %%%_________________________________________________________________________________________
+%DETERMINACION DEL TIPO DE CUENTA: ESTIMACION DE PUNTOS DE FUNCION EN UN PROYECTO DE DESARROLLO
+%DEFINICION DE LOS LIMITES DEL SISTEMA
+%INFORMACION DE PARTIDA(CALCULO DE LOS PF SIN AJUSTAR): E-S, INTERFACES, FICHEROS, PROCESOS
+%EN FUNCION DE COMPLEJUDAD, PESO Y E-S, ILF... SE SACA EL TOTAL DE PF
+%FACTOR DE AJUSTE Y CARACTERISTICAS GENERALES¿??¿??¿
+%CALCULO DE PF AJUSTADOS
+\section{Determinación del tipo de cuenta de PF}
+Al tratarse del inicio del proyecto, estamos trabajando con una estimación de los puntos de función, que diferirá de los puntos de función de la aplicación ya finalizada, dependiendo de los cambios que se vayan produciendo. 
+
+Por otro lado, estamos trabajando en un proyecto de desarrollo de un programa para la gestión de un negocio hostelero, no se trata del mantenimiento o mejora de otro ya existente.
+
+\section{Determinación de los límites del sistema}
+En esta sección se concreta el límite entre la aplicación de hostelería y otros sistemas que serán necesarios para su uso adecuado.
+
+El sistema tiene una serie de funcionalidades, que se pueden revisar en el \texttt{Documento de especificación de requisitos Software}, pero no todas nacen de la propia aplicación. Las facturas y los C.V. se abren en PDF, utilizando el visor de PDF que tenga el equipo sobre el que estemos. También permite, al generar las facturas, exportarlas a PDF para enviárselas por correo electrónico a los clientes si así lo solicitan. La modificación de información, se actualizará rápidamente para un mejor funcionamiento del negocio. Cuanto más veloz es, más rápidamente se producen las acciones y por tanto más eficiente puede ser el negocio.
+Por otro lado, en la aplicación o en los PDFs pueden aparecer hiperenlaces a una dirección de Internet (página web de la lavandería, del hotel...), que si se selecionan lanzarían el navegador por defecto del equipo.
+
+En cuanto a la gestión de toda esta información, los datos se recogerán en ficheros auxiliares, protegidos en un servidor interno. Principalmente podemos diferenciar tres módulos o partes: lo relacionado con empleados, con clientes y datos de la aplicación (como el menú, las existencias, manteles en la lavandería, preferencias del sistema...). Los ficheros estarán ocultos, y solo la aplicación podrá acceder a ellos. En principio, el sistema trabajará directamente sobre los mismos, salvándolos al menos una vez por minuto (protegiéndose así de los apagones o el agotamiento de batería).
+
+\section{Cálculo de los PF sin ajustar}
+	\subsection{Entradas Externas}
+	Las Entradas Externas o EI (External Innings) son procesos que hacen llegar información desde el exterior a nuestra aplicación, ya sea desde un usuario o desde otra aplicación. Siempre que tengamos una entrada externa, se modificará un ILF (luego pasaremos a estudiarlos). A continuación se estudia cuántas EI hay y qué complejidad tienen. La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y modifica un ILF, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Entonces la complejidad queda: 
+
+\vspace{0.35cm}
+
+			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
+				\hline
+				\textbf{FTR$\backslash$DET} & \textbf{De 1 a 4 DET} & \textbf{De 5 a 15 DET} & \textbf{16  o más DET} \\ \hline \hline
+				\textbf{0 o 1 FTR} & Baja & Baja & Media \\ \hline 
+				\textbf{2 FTR} & Baja & Media & Alta \\ \hline 
+				\textbf{3 o más FTR} & Media & Alta & Alta \\ \hline 
+			\end{tabular}
+
+\vspace{0.35cm}
+
+	Pasamos a detallar las EI:
+	\begin{itemize}
+		\item{Log In:} 
+		\begin{itemize}
+ 			\item{DET:} Dos campos (Usuario y contraseña) en el caso de acceder mediante teclado, y un sólo campo si se accede mediante lectura de un código de barras (o similares) de una tarjeta del empleado. Contamos dos.
+			\item{FTR:} \textit{Log In} es el único fichero al que se accede, donde se encuentra la información de los empleados, que permite acceder al sistema.
+			\item{Complejidad:} Baja.
+		\end{itemize}	
+		\item{Cuenta de caja:} 
+		\begin{itemize}
+ 			\item{DET:} Tres campos, caja de recepción o de restaurante, ingreso o gasto y concepto.
+			\item{FTR:} \textit{Cuenta de caja de recepción} y \textit{Cuenta de caja de restaurante} son los ficheros que se modifican, pero cada vez que añades algo sólo modificas uno.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Libro diario:} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos: cantidad de la cuenta del debe, concepto del debe, cantidad de la cuenta del haber y concepto del haber.
+			\item{FTR:} \textit{Libro diario} sólo.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Libro mayor:} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos: fecha, contrapartida, importe y saldo total del ejercicio.
+			\item{FTR:} \textit{Libro mayor}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Empleados:} 
+		\begin{itemize}
+ 			\item{DET:} Para dar de alta a un nuevo empleado hacen falta doce campos, y son nombre completo, DNI, sexo, edad, domicilio, nacionalidad, estado civil, número de teléfono, salario bruto, fotografía de carnet, C.V. y comentarios.
+			\item{FTR:} Interviene el fichero \textit{Empleados} y \textit{Curriculums}.
+			\item{Complejidad:} Media.
+		\end{itemize}
+		\item{Clientes:} 
+		\begin{itemize}
+ 			\item{DET:} Para añadir un nuevo cliente, son necesarios siete campos: nombre completo, DNI, número de teléfono, V.I.P., facturas, número de visitas en los últimos 12 meses, comentarios.
+			\item{FTR:} Fichero \textit{Clientes.}
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Reservas para el restaurante:} 
+		\begin{itemize}
+ 			\item{DET:} Para hacer una reserva en el restaurante, cuatro campos: fecha, hora, nombre y número de comensales.
+			\item{FTR:} \textit{Reservas restaurante.}
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Pedidos:} 
+		\begin{itemize}
+ 			\item{DET:} Tres campos, a saber, número de mesa, elemento solicitado y cantidad.
+			\item{FTR:} \textit{Pedidos}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Generar factura del restaurante:} 
+		\begin{itemize}
+ 			\item{DET:} Número de mesa.
+			\item{FTR:} Se accede a \textit{Pedidos} y \textit{Clientes} para adjuntar la factura al cliente correspondiente.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Existencias:} 
+		\begin{itemize}
+ 			\item{DET:} Para llevar el control de existencias, se puede guardar qué se necesita comprar y en qué cantidad: dos campos.
+			\item{FTR:} \textit{Existencias.}
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Reservas para el hotel:} 
+		\begin{itemize}
+ 			\item{DET:} Siete campos, nombre, fecha de inicio, fecha de salida, número de inquilinos, número de niños, tipo de pensión y número de habitación.
+			\item{FTR:} El fichero \textit{Reservas habitaciones.}
+			\item{Complejidad:} Baja.	
+		\end{itemize}		
+		\item{Generar factura del hotel:} 
+		\begin{itemize}
+ 			\item{DET:} Número de habitación.
+			\item{FTR:} Se accede a \textit{Reservas habitaciones} y a \textit{Clientes}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Añadir notas:} 
+		\begin{itemize}
+ 			\item{DET:} El cuerpo de la nota. Recordamos que las notas son una vía de comunicación entre todos los trabajadores del negocio.
+			\item{FTR:} Un fichero con las notas (\textit{Notas}).
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Notificar incidencias:} 
+		\begin{itemize}
+ 			\item{DET:} Dos campos: lugar y descripción.
+			\item{FTR:} \textit{Incidencias.}
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Determinar tareas a realizar (limpieza):} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos, que son: empleado, fecha, hora y descripción de la tarea.
+			\item{FTR:} El fichero \textit{Tareas limpieza} solamente.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Notificar tareas realizadas (limpieza):} 
+		\begin{itemize}
+ 			\item{DET:} Un campo, la tarea que se ha realizado.
+			\item{FTR:} \textit{Tareas limpieza} es el único fichero involucrado.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Lavandería:} 
+		\begin{itemize}
+ 			\item{DET:} Fecha de salida a lavandería, número de mateles, número de servilletas, número de paquetes de sábanas y número de toallas, lo cual son cinco campos.
+			\item{FTR:} Fichero \textit{Lavandería}.
+			\item{Complejidad:} Baja.
+		\end{itemize}		
+	\end{itemize}
+
+	Por tanto podemos clasificar las EI en función de su complejidad usando la tabla antes presentada:
+	\begin{itemize}
+	\item{BAJA:} 16 entradas externas.
+	\item{MEDIA:} 1 entradas externas.
+	\item{ALTA:} Ninguna.
+	\end{itemize}
+	
+	La forma en que hemos procedido es la siguiente en todos los casos: Primero, fijándonos en el número de campos, identificamos en qué columna estamos de la tabla, y después, con el número de FTRs la fila. Por ejemplo para el primer caso, el Log In, vimos que había dos campos (usuario y contraseña), por lo que con dos DET estamos en la segunda columna de la tabla (\textbf{De 1 a 4 DET}) y un sólo fichero \textit{Log In}, que nos sitúa en la segunda columna (\textbf{0 o 1 FTR}). Por tanto la entrada del Log In tiene una complejidad baja.
+
+	\subsection{Salidas Externas}
+	Las Salidas Externas o EO (External Outings) son procesos que hacen llegar información desde la aplicación al exterior, ya sea a un usuario o a otra aplicación.  A continuación se estudia cuántas EO hay y qué complejidad tienen. La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y aparece en la EO, y FTR (File Type Referenced), que es el ILF o EIF que interviene. La complejidad es bastante parecida a las EI: 
+
+\vspace{0.35cm}
+
+			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
+				\hline
+				\textbf{FTR$\backslash$DET} & \textbf{De 1 a 5 DET} & \textbf{De 6 a 19 DET} & \textbf{20  o más DET} \\ \hline \hline
+				\textbf{0 o 1 FTR} & Baja & Baja & Media \\ \hline 
+				\textbf{2 o 3 FTR} & Baja & Media & Alta \\ \hline 
+				\textbf{4 o más FTR} & Media & Alta & Alta \\ \hline 
+			\end{tabular}
+
+\vspace{0.35cm}
+
+	Pasamos a detallar las EO:
+	\begin{itemize}
+		\item{} 
+		\begin{itemize}
+ 			\item{DET:}
+			\item{FTR}
+		\end{itemize}	
+		\item{} 
+		\begin{itemize}
+ 			\item{DET:}
+			\item{FTR}
+		\end{itemize}
+		\item{} 
+		\begin{itemize}
+ 			\item{DET:}
+			\item{FTR}
+		\end{itemize}
+
+	\end{itemize}
+
+
+
+	\subsection{Consultas Externas}
+	Las Consultas Externas o EQ (External Query) son procesos que combinan la entrada y salida de información, dando lugar a una consulta a los datos. Cuando se produce una EQ no se modifican los datos del sistema. A continuación se estudia cuántas EQ hay y qué complejidad tienen. La complejidad viene dada por dos conceptos, como siempre: DET (Data Element Type), que es un campo individual identificable por el usuario de entrada o salida, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Es importante notar que ahora la complejidad no se obtiene como una suma, si no como el máximo entre la consulta de entrada y la de salida. La complejidad queda como en las EI: 
+
+\vspace{0.35cm}
+
+			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
+				\hline
+				\textbf{FTR$\backslash$DET} & \textbf{De 1 a 4 DET} & \textbf{De 5 a 15 DET} & \textbf{16  o más DET} \\ \hline \hline
+				\textbf{0 o 1 FTR} & Baja & Baja & Media \\ \hline 
+				\textbf{2 FTR} & Baja & Media & Alta \\ \hline 
+				\textbf{3 o más FTR} & Media & Alta & Alta \\ \hline 
+			\end{tabular}
+
+\vspace{0.35cm}
+
+	Pasamos a detallar las EQ:
+	\begin{itemize}
+		\item{} 
+		\begin{itemize}
+ 			\item{DET:}
+			\item{FTR}
+		\end{itemize}	
+		\item{} 
+		\begin{itemize}
+ 			\item{DET:}
+			\item{FTR}
+		\end{itemize}
+		\item{} 
+		\begin{itemize}
+ 			\item{DET:}
+			\item{FTR}
+		\end{itemize}
+
+	\end{itemize}
+
+
+
+
+	\subsection{Ficheros Lógicos Internos}
+	Los Ficheros Lógicos Internos o ILF (Internal Logical Files) son un conjunto de datos que el usuario puede identificar, que están relacionados entre sí, y que son mantenidos por la aplicación. A continuación se estudia cuántos ILF hay y qué complejidad tienen. La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario, y RET (Record Element Type), que es un subgrupo de datos. Entonces la complejidad queda: 
+
+\vspace{0.35cm}
+
+			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
+				\hline
+				\textbf{RET$\backslash$DET} & \textbf{De 1 a 19 DET} & \textbf{De 20 a 50 DET} & \textbf{51  o más DET} \\ \hline \hline
+				\textbf{1 RET} & Baja & Baja & Media \\ \hline 
+				\textbf{De 2 a 5 RET} & Baja & Media & Alta \\ \hline 
+				\textbf{6 o más RET} & Media & Alta & Alta \\ \hline 
+			\end{tabular}
+
+\vspace{0.35cm}
+
+	Pasamos a detallar los ILF:
+	\begin{itemize}
+		\item{} 
+
+	\end{itemize}
+
+	
+
+	\subsection{Ficheros de Interfaz Externos}
+		Los Ficheros de Interfaz Externos o EIF (External Interface Files) son un conjunto de datos que el usuario puede identificar y que la aplicación referencia, pero son mantenidos por otra aplicación. Vamos a estudiar cuántos EIF hay y qué complejidad tienen. La complejidad viene dada de la misma forma que en los ILF, y se resume en esta tabla: 
+
+\vspace{0.35cm}
+
+			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
+				\hline
+				\textbf{RET$\backslash$DET} & \textbf{De 1 a 19 DET} & \textbf{De 20 a 50 DET} & \textbf{51  o más DET} \\ \hline \hline
+				\textbf{1 RET} & Baja & Baja & Media \\ \hline 
+				\textbf{De 2 a 5 RET} & Baja & Media & Alta \\ \hline 
+				\textbf{6 o más RET} & Media & Alta & Alta \\ \hline 
+			\end{tabular}
+
+\vspace{0.35cm}
+
+	Pasamos a detallar los EIF:
+	\begin{itemize}
+		\item{} 
+
+	\end{itemize}
+
+
+
+	\subsection{Cálculo efectivo de los PF sin ajustar}
+
+
+\section{Cálculo del factor de ajuste}
+
+
+\section{Cálculo de los PF ajustados}
 
 
 \newpage
 \mbox{}
 \thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
-
+\setcounter{section}{0}
 
 \part{Estimaciones de esfuerzo, coste y duración} %%% PARTE 3 %%%__________________________________________________________
 
