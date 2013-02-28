@@ -272,7 +272,47 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 	\begin{itemize}%Comienzan las funciones
 
+
+
+		\item \textbf{Log In}  %Nombre de la función
+
+			\begin{itemize}
+			\item \textbf{Prioridad: }Alta.
+			\item \textbf{Estabilidad: }Alta.
+			\item \textbf{Descripción: }Cada usuario que quiera utilizar la aplicacion debe introducir su nombre y contraseña.
+			\item \textbf{Entrada: } Nombre de usuario y contraseña.
+			\item \textbf{Salida: }Aplicación desbloqueada.
+			\item \textbf{Origen: }Equipo del usuario.
+			\item \textbf{Destino: }Equipo del usuario.
+			\item \textbf{Necesita: }Base de datos de empleados.
+			\item \textbf{Acción: }Procesa el nombre de usuario y la contraseña, cotejándolos con los de la base de datos, y en caso de que sean correctos, abre la aplicación.
+			\item \textbf{Precondición: }Base de datos implementada, y el cliente no pone impedimentos en formar parte de ella.
+			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
+			\item \textvf{Efectos laterales: } Si los datos son erróneos, no permite la entrada a la aplicación.
+
+
+		\end{itemize}%Fin de la función
+
 		
+		\item \textbf{Acceder a la ficha de un empleado}  %Done
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe abre la ficha de un empleado de la base de datos.
+			\item \textbf{Entrada: } Nombre o DNI del empleado.
+			\item \textbf{Salida: }Ficha del empleado.
+			\item \textbf{Origen: }Equipo del jefe.
+			\item \textbf{Destino: }Base de datos de empleados. 
+			\item \textbf{Necesita: }Nombre/DNI del empleado que se desea consultar. 
+			\item \textbf{Acción: }Muestra la ficha del empleado.
+			\item \textbf{Precondición: }Base de datos de empleados implementada, el empleado perteneciente a ella
+			\item \textbf{Poscondición: } Ficha mostrada por pantalla. 
+			\item \textbf{Efectos laterales: } Nombre erróneo, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+
 		\item \textbf{Añadir cliente}  %Nombre de la función
 
 			\begin{itemize}
@@ -461,7 +501,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 %%CASOS DE USO LIMPIEZA
 
-	\item \textbf{Crear lista de tareas de limpieza} %Nombre de la función
+	\item \textbf{Organizar tareas de limpieza} %Nombre de la función
 
 		\begin{itemize}
 			\item \textbf{Prioridad: }Media.
