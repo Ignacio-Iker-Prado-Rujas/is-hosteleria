@@ -18,4 +18,3 @@
 \contentsline {subsection}{\numberline {17}Procesador:}{\es@scroman {v}}{subsection.0.0.17}
 \contentsline {subsection}{\numberline {18}Base de datos:}{\es@scroman {vi}}{subsection.0.0.18}
 \contentsline {subsection}{\numberline {19}Benchmark:}{\es@scroman {vi}}{subsection.0.0.19}
-\contentsline {subsection}{\numberline {20}}{\es@scroman {vi}}{subsection.0.0.20}
