@@ -17,13 +17,13 @@
 \contentsline {section}{\numberline {3}Plan de gesti\IeC {\'o}n del riesgo}{8}{section.3.3}
 \contentsline {chapter}{\numberline {IV}Planificaci\IeC {\'o}n temporal}{10}{chapter.4}
 \contentsline {section}{\numberline {1}Estructura de descomposici\IeC {\'o}n del trabajo, Planificaci\IeC {\'o}n temporal}{10}{section.4.1}
-\contentsline {section}{\numberline {2}Gr\IeC {\'a}fico de Gantt}{10}{section.4.2}
-\contentsline {section}{\numberline {3}Red de tareas}{11}{section.4.3}
-\contentsline {section}{\numberline {4}Tabla de uso de recursos}{11}{section.4.4}
-\contentsline {chapter}{\numberline {V}Recursos del proyecto}{13}{chapter.5}
-\contentsline {section}{\numberline {1}Personal}{13}{section.5.1}
-\contentsline {section}{\numberline {2}Hardware y software}{13}{section.5.2}
-\contentsline {section}{\numberline {3}Lista de recursos}{13}{section.5.3}
-\contentsline {chapter}{\numberline {VI}Mecanismos de seguimiento y control}{15}{chapter.6}
-\contentsline {section}{\numberline {1}Garant\IeC {\'\i }a de calidad y control}{15}{section.6.1}
-\contentsline {section}{\numberline {2}Gesti\IeC {\'o}n y control de cambios}{15}{section.6.2}
+\contentsline {section}{\numberline {2}Gr\IeC {\'a}fico de Gantt}{12}{section.4.2}
+\contentsline {section}{\numberline {3}Red de tareas}{13}{section.4.3}
+\contentsline {section}{\numberline {4}Tabla de uso de recursos}{14}{section.4.4}
+\contentsline {chapter}{\numberline {V}Recursos del proyecto}{16}{chapter.5}
+\contentsline {section}{\numberline {1}Personal}{16}{section.5.1}
+\contentsline {section}{\numberline {2}Hardware y software}{16}{section.5.2}
+\contentsline {section}{\numberline {3}Lista de recursos}{16}{section.5.3}
+\contentsline {chapter}{\numberline {VI}Mecanismos de seguimiento y control}{18}{chapter.6}
+\contentsline {section}{\numberline {1}Garant\IeC {\'\i }a de calidad y control}{18}{section.6.1}
+\contentsline {section}{\numberline {2}Gesti\IeC {\'o}n y control de cambios}{18}{section.6.2}
