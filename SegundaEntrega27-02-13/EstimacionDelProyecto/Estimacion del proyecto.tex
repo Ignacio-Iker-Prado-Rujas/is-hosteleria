@@ -74,7 +74,10 @@ En cuanto al documento en sí, comenzaremos diviendo el producto en partes más 
 
 \vspace{0.35cm}
 
-Una vez vez hecho esto, estaremos en condiciones de estimar y obtener unos resultados que se podrán aplicar al proyecto. % Bla bla bla
+Una vez vez hecho esto, calcularemos el factor de ajuste para obtener los puntos de función ajustados. Entonces estaremos en condiciones de estimar y obtener unos resultados que se podrán aplicar al proyecto. Par ello utilizaremos la herramienta \texttt{COCOMO II.2000.4}, que se puede encontrar en 
+
+\texttt{http://csse.usc.edu/csse/research/COCOMOII/cocomo\_downloads.htm}
+
 
 \newpage
 \mbox{}
@@ -87,8 +90,9 @@ Una vez vez hecho esto, estaremos en condiciones de estimar y obtener unos resul
 %DEFINICION DE LOS LIMITES DEL SISTEMA
 %INFORMACION DE PARTIDA(CALCULO DE LOS PF SIN AJUSTAR): E-S, INTERFACES, FICHEROS, PROCESOS
 %EN FUNCION DE COMPLEJUDAD, PESO Y E-S, ILF... SE SACA EL TOTAL DE PF
-%FACTOR DE AJUSTE Y CARACTERISTICAS GENERALES¿??¿??¿
+%FACTOR DE AJUSTE Y CARACTERISTICAS GENERALES
 %CALCULO DE PF AJUSTADOS
+\rhead{}
 \section{Determinación del tipo de cuenta de PF}
 Al tratarse del inicio del proyecto, estamos trabajando con una estimación de los puntos de función, que diferirá de los puntos de función de la aplicación ya finalizada, dependiendo de los cambios que se vayan produciendo. 
 
@@ -104,12 +108,12 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 \section{Cálculo de los PF sin ajustar}
 	\subsection{Entradas Externas}
-	Las Entradas Externas o EI (External Innings) son procesos que hacen llegar información desde el exterior a nuestra aplicación, ya sea desde un usuario o desde otra aplicación. Siempre que tengamos una entrada externa, se modificará un ILF (luego pasaremos a estudiarlos). A continuación se estudia cuántas EI hay y qué complejidad tienen. 
+	Las Entradas Externas o EI (External Inputs) son procesos que hacen llegar información desde el exterior a nuestra aplicación, ya sea desde un usuario o desde otra aplicación. Siempre que tengamos una entrada externa, se modificará un ILF (luego pasaremos a estudiarlos). A continuación se estudia cuántas EI hay y qué complejidad tienen. 
 
 	La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y modifica un ILF, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Entonces la complejidad queda: 
 
 \vspace{0.35cm}
-
+\rhead{\bfseries Estimación del proyecto}
 			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
 				\hline
 				\textbf{FTR$\backslash$DET} & \textbf{De 1 a 4 DET} & \textbf{De 5 a 15 DET} & \textbf{16  o más DET} \\ \hline \hline
@@ -236,7 +240,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 	La forma en que hemos procedido es la siguiente en todos los casos: Primero, fijándonos en el número de campos, identificamos en qué columna estamos de la tabla, y después, con el número de FTRs la fila. Por ejemplo para el primer caso, el Log In, vimos que había dos campos (usuario y contraseña), por lo que con dos DET estamos en la segunda columna de la tabla (\textbf{De 1 a 4 DET}) y un sólo fichero \textit{Log In}, que nos sitúa en la segunda columna (\textbf{0 o 1 FTR}). Por tanto la entrada del Log In tiene una complejidad baja.
 
 	\subsection{Salidas Externas}
-	Las Salidas Externas o EO (External Outings) son procesos que hacen llegar información desde la aplicación al exterior, ya sea a un usuario o a otra aplicación. A continuación se estudia cuántas EO hay y qué complejidad tienen. 
+	Las Salidas Externas o EO (External Outputs) son procesos que hacen llegar información desde la aplicación al exterior, ya sea a un usuario o a otra aplicación. A continuación se estudia cuántas EO hay y qué complejidad tienen. 
 
 	La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y aparece en la EO, y FTR (File Type Referenced), que es el ILF o EIF que interviene. La complejidad es bastante parecida a las EI: 
 
@@ -356,7 +360,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 	El procedimiento para la obtención de la complejidad ha sido exactamente el mismo que antes, pero con la tabla correspondiente.
 
 	\subsection{Consultas Externas}
-	Las Consultas Externas o EQ (External Query) son procesos que combinan la entrada y salida de información, dando lugar a una consulta a los datos. Cuando se produce una EQ no se modifican los datos del sistema. A continuación se estudia cuántas EQ hay y qué complejidad tienen. 
+	Las Consultas Externas o EQ (External Queries) son procesos que combinan la entrada y salida de información, dando lugar a una consulta a los datos. Cuando se produce una EQ no se modifican los datos del sistema. A continuación se estudia cuántas EQ hay y qué complejidad tienen. 
 
 	La complejidad viene dada por dos conceptos, como siempre: DET (Data Element Type), que es un campo individual identificable por el usuario de entrada o salida, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Es importante notar que ahora la complejidad no se obtiene como una suma, si no como el máximo entre la consulta de entrada y la de salida. La complejidad queda como en las EI: 
 
@@ -584,12 +588,115 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 \vspace{0.35cm}
 \scalebox{0.6}{\includegraphics{PFsinAjustar}} 
+\vspace{0.35cm}
+
+	Por tanto tenemos un total de 267 puntos de función sin ajustar. Ahora procedemos a calcular el factor de ajuste.
 
 \section{Cálculo del factor de ajuste}
+	Existen catorce factores de complejidad, y a cada uno de ellos se le asocia un grado de influencia, entre cero y cinco:
+	\begin{itemize}
+	\item{\textbf{0:}} Sin influencia. 
+	\item{\textbf{1:}} Influencia mínima.
+	\item{\textbf{2:}} Influencia moderada.
+	\item{\textbf{3:}} Influencia moderada.
+	\item{\textbf{4:}} Influencia significativa.
+	\item{\textbf{5:}} Influencia apreciable.
+	\end{itemize}
+	
+	\textbf{1} \textbf{Comunicación de datos:} 2, ya que utiliza entrada y salida con impresión remotos (por ejemplo para que los cocineros vean lo que tienen que hacer).
+	
+	\vspace{0.15cm}
+ 
+	\textbf{2} \textbf{Proceso distribuido:} 0, ya que no existen.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{3} \textbf{Objetivos de rendimiento:} 1, porque no estamos con un sistema crítico, pero hay requisitos de rendimiento para soportar varias operaciones con un mínimo de eficiencia.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{4} \textbf{Integración de la aplicación:} 2, pues debe de responder en la tablet o equipo correspondiente aunque haya más aplicaciones abiertas. Además tiene restricciones de seguridad, no todos los empleados pueden ver toda la información del sistema.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{5} \textbf{Tasa de transacciones:} 3. Habrá horas punta (como la comida), en las que haya más transacciones de información.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{6} \textbf{Entrada de datos interactiva:} 5, ya que más del 30\% de las entradas son interactivas.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{7} \textbf{Eficiencia para el usuario final:} 3. Hay más de seis factores, seleción de datos de la pantalla, pantallas con muchos campos y colores, ventanas pop-up, efecto scroll, uso de ratón (en ordenadores), menús...
+	
+	\vspace{0.15cm}
+ 
+	\textbf{8} \textbf{Actualizaciones interactivas:} 5. Como hemos dicho, al menos una vez por minuto se deben guardar las modificaciones que el usuario haga para evitar la pérdida de información por apagones o agotamiento de batería.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{9} \textbf{Lógica de proceso interna compleja:} 1, ya que no lleva una lógica muy complicada,  pero hay sistema de seguridad.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{10} \textbf{Reusabilidad del código:} 4. En principio, con pocas modificaciones de código se podría adaptar para otra empresa hostelera.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{11} \textbf{Conversión e instalación:} 1, ya que no se defininen requisitos especiales para la instalación, pero tiene que cumplir unas características para que sea sencillo.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{12} \textbf{Facilidad de operación:} 4. Se presta gran atención al diseño, convirtiéndola en una aplicación vistosa pero sencilla, fácil de aprender a manejar. En posteriores documentos se profundizará en esto. 
+	
+	\vspace{0.15cm}
+ 
+	\textbf{13} \textbf{Instalaciones múltiples:} 4, ya que se planea al menos tres plataformas (iOS, Android y Windows) con distinto hardware (tablets, smartphones  computadora) y también se documenta.
+	
+	\vspace{0.15cm}
+ 
+	\textbf{14} \textbf{Facilidad de cambios:} 4. Consultas flexibles del usuario: medias (condiciones lógicas sobre más de un fichero lógico), y el cambio de parámetros de la aplicación con tablas ajenas al código es interactivo.
 
+
+\vspace{0.35cm}
+
+	En la siguiente tabla se resume el cáculo del factor de complejidad total:
+
+\vspace{0.35cm}
+
+		\begin{tabular}{|p{1cm}||p{8cm}||p{4cm}|}
+			\hline
+			\textbf{Id.} & \textbf{Factor de complejidad} & \textbf{Grado de influencia} \\ \hline \hline
+			\textbf{1} & \textbf{Comunicación de datos} & 2 \\ \hline 
+			\textbf{2} & \textbf{Proceso distribuido} & 0 \\ \hline 
+			\textbf{3} & \textbf{Objetivos de rendimiento} & 1 \\ \hline 
+			\textbf{4} & \textbf{Integración de la aplicación} & 2 \\ \hline 
+			\textbf{5} & \textbf{Tasa de transacciones} & 3 \\ \hline 
+			\textbf{6} & \textbf{Entrada de datos interactiva} & 5 \\ \hline 
+			\textbf{7} & \textbf{Eficiencia para el usuario final} & 3 \\ \hline 
+			\textbf{8} & \textbf{Actualizaciones interactivas} & 5 \\ \hline 
+			\textbf{9} & \textbf{Lógica de proceso interna compleja} & 1 \\ \hline 
+			\textbf{10} & \textbf{Reusabilidad del código} & 4 \\ \hline 
+			\textbf{11} & \textbf{Conversión e instalación} & 1 \\ \hline 
+			\textbf{12} & \textbf{Facilidad de operación} & 4 \\ \hline 
+			\textbf{13} & \textbf{Instalaciones múltiples} & 4 \\ \hline 
+			\textbf{14} & \textbf{Facilidad de cambios} & 4 \\ \hline 
+		\end{tabular}
+\vspace{0.35cm}
+
+	Por tanto el factor de complejidad total o FCT es 39.
+
+	Finalmente, estamos en condiciones de calcular el factor de ajuste o AF:
+	
+	$$AF = FCT \cdot 0.01 + 0.65 \Rightarrow AF = 39 \cdot 0.01 + 0.65 = 1.04$$
 
 \section{Cálculo de los PF ajustados}
+	Al fin, estamos en condiciones de calcular los puntos de función ajustados (PFA)
 
+	$$ \boxed{PFA = PFSA \cdot AF = 267 \cdot 1.04 = 277.7}$$
+
+	, siendo PFSA los puntos de función sin ajustar.
+	
 
 \newpage
 \mbox{}
@@ -598,7 +705,49 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 \setcounter{section}{0}
 
 \part{Estimaciones de esfuerzo, coste y duración} %%% PARTE 3 %%%__________________________________________________________
+Para esta parte, como se dijo en el \textit{Extracto}, se ha utilizado la herramienta \texttt{COCOMO II.2000.4}.
 
+En primer lugar, se introdujo un nuevo módulo: \textit{Hostelería}. Posteriormente, en \textit{Module size} se añadió los datos sobre PF. El peso de cada uno es el habitual, seleccionado así:
+
+\vspace{0.35cm}
+\hspace{3.5cm}
+\scalebox{0.5}{\includegraphics{PFCOCOMOpeso}} 
+\vspace{0.35cm}
+
+El número de entradas, salidas etc. exactamente igual que antes:
+
+\vspace{0.35cm}
+\hspace{2.9cm}
+\scalebox{0.55}{\includegraphics{PFCOCOMO}} 
+\vspace{0.35cm}
+
+Con ello obtenemos una medida del tamaño de la aplicación. Nos da 14151 líneas de código.
+
+También se detalló el factor de complejidad, 1.04 (en el programa, denominado \textit{EAF}), el salario en dólares por mes (que aparece como \textit{LABOR RATE (\$/month)}). Suponiendo un salario humilde, estimamos unos 700 \$/mes. Además, añadimos el lenguaje de programación elegido: Java, como ya hemos dicho en varias ocasiones. 
+
+
+\vspace{0.35cm}
+\hspace{-2.8cm}
+\scalebox{0.45}{\includegraphics{COCOMOTODO2}} 
+\vspace{0.35cm}
+
+Tras todas estas consideraciones, el programa nos da las estimaciones:
+
+\vspace{0.35cm}
+\hspace{-2.7cm}
+\scalebox{0.42}{\includegraphics{COCOMOTODO1}} 
+\vspace{0.35cm}
+
+\begin{itemize}
+	\item{\bfseries{Estimación de esfuerzo:}}
+	Según la herramienta, lo más probable es que se necesiten \textbf{\underline{51 personas por mes}}, aunque el valor optimista es de 40.8 y el pesimista de 63.7, conviertiéndolo en un proyecto de bastante envergadura.
+	\item{\bfseries{Estimación de coste:}}
+	La estimación del coste, como hemos comentado antes, está hecha con un supuesto de un salario de 700 \$/mes, aunque esto son sólo suposiciones ya que se trata de un proyecto académico. Así, salen \textbf{\underline{35686.24 dólares}}, que son 27272.63 euros. Además, se puede apreciar que se estima un precio de unos 2.5 \$ por cada instrucción de la aplicación.
+	\item{\bfseries{Estimación de duración:}}
+	Según el COCOMO II, durará \textbf{\underline{12.5 meses}}, aproximadamente un año, entre 11.6 y 13.3 meses en el mejor y peor caso respectivamente.
+\end{itemize}
+
+\textbf{\underline{Nota:}} Lo que aparece entre la duración y el coste en la herramienta es la productividad, que se obtiene de dividir SLOC entre el esfuerzo más probable, y obtenemos que es 277.6 SLOC/pm.
 
 \newpage
 \mbox{}
