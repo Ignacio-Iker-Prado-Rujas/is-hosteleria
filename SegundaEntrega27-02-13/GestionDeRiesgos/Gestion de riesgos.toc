@@ -3,14 +3,14 @@
 \contentsline {part}{II\hspace {1em}An\IeC {\'a}lisis del riesgo}{5}{part.2}
 \contentsline {section}{\numberline {1}Deficiencias del personal}{6}{section.0.1}
 \contentsline {section}{\numberline {2}Planificaciones y presupuestos poco realistas}{7}{section.0.2}
-\contentsline {section}{\numberline {3}Desarrollo de las funciones y propiedades err\IeC {\'o}neas}{8}{section.0.3}
-\contentsline {section}{\numberline {4}Desarrollo err\IeC {\'o}neo del interfaz de usuario}{10}{section.0.4}
+\contentsline {section}{\numberline {3}Desarrollo de las funciones y propiedades err\IeC {\'o}neas}{7}{section.0.3}
+\contentsline {section}{\numberline {4}Desarrollo err\IeC {\'o}neo del interfaz de usuario}{9}{section.0.4}
 \contentsline {section}{\numberline {5}Chapado}{10}{section.0.5}
-\contentsline {section}{\numberline {6}Continua corriente de cambios en los requisitos}{11}{section.0.6}
+\contentsline {section}{\numberline {6}Continua corriente de cambios en los requisitos}{10}{section.0.6}
 \contentsline {section}{\numberline {7}Deficiencias en componentes proporcionados externamente}{11}{section.0.7}
-\contentsline {section}{\numberline {8}Deficiencias en tareas desarrolladas externamente}{12}{section.0.8}
+\contentsline {section}{\numberline {8}Deficiencias en tareas desarrolladas externamente}{11}{section.0.8}
 \contentsline {section}{\numberline {9}Deficiencias en rendimiento en tiempo real}{12}{section.0.9}
-\contentsline {section}{\numberline {10}Exprimir las capacidades inform\IeC {\'a}ticas}{13}{section.0.10}
+\contentsline {section}{\numberline {10}Exprimir las capacidades inform\IeC {\'a}ticas}{12}{section.0.10}
 \contentsline {part}{III\hspace {1em}Priorizaci\IeC {\'o}n del riesgo}{15}{part.3}
 \contentsline {section}{\numberline {1}Deficiencias del personal}{16}{section.0.1}
 \contentsline {section}{\numberline {2}Planificaciones y presupuestos poco realistas}{16}{section.0.2}
