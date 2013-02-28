@@ -35,8 +35,12 @@
 \renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
 
 
+
+
 %%%%% CUERPO %%%%%
 \begin{document}
+\renewcommand{\chaptername}{Parte}			% Renombrar "Capítulo" como "Parte"
+\renewcommand{\thechapter}{\Roman{chapter}}		% Cambio la numeración de los capítulos a números romanos en mayúsculas
 
 \title{\textbf{\huge{Plan de proyecto}} \\ \vspace{0.3cm}
 	\Large{Ingeniería del Software}}
@@ -65,7 +69,7 @@
 
 
 %INTRODUCCIÓN HECHA POR PERELMANIYA, petaqueo total
-\part{Introducción}
+\chapter{Introducción}
 
 	\section{Propósito del plan}
 El propósito del Plan de Desarrollo de Software es ofrecer toda la información necesaria para controlar el desarrollo de nuestro proyecto KIKE HOSTELERIA.
@@ -129,7 +133,7 @@ El \textbf{Hardware} utilizado será Windows (Windows 7 para ordenadores de sobr
 \setcounter{section}{0}
 
 %IKER
-\part{Estimaciones del proyecto}
+\chapter{Estimaciones del proyecto}
 
 La estimación en un proyecto software es una de las partes indispensables dentro de la planificación, aunque es complicada y requiere experiencia. Por otro lado, es claro que nunca podrá ser definitiva y perfecta, pues el desarrollo de software sufre continuos cambios a lo largo de su vida. 
 
@@ -161,7 +165,7 @@ De todos modos, una buena estimación resulta beneficiosa, pues ahorra bastante 
 \setcounter{section}{0}
 
 %VILLARIN & JAIME
-\part{Estrategia de gestión del riesgo}
+\chapter{Estrategia de gestión del riesgo}
 
 	\section{Análisis del riesgo}
 
@@ -176,11 +180,19 @@ De todos modos, una buena estimación resulta beneficiosa, pues ahorra bastante 
 \setcounter{section}{0}
 
 %KIKE
-\part{Planificación temporal}
+\chapter{Planificación temporal}
 
 	\section{Estructura de descomposición del trabajo, Planificación temporal}
 
 	\section{Gráfico de  Gantt}
+
+	Aquí vemos primero un gráfico de Gant general de todo el proyecto:
+
+	\includegraphics[scale=0.5]{GraficoGantt.png}
+
+	Aquí tenemos las tareas desglosadas con las fechas:
+
+	Y aquí un gráfico de Gantt desglosado con lo hecho hasta la entrega del proyecto:
 
 	\section{Red de tareas}
 
@@ -193,7 +205,7 @@ De todos modos, una buena estimación resulta beneficiosa, pues ahorra bastante 
 \setcounter{section}{0}
 
 %JAIME
-\part{Recursos del proyecto}
+\chapter{Recursos del proyecto}
 
 	\section{Personal}
 		Para el desarrollo del producto se cuenta con un equipo de 5 personas. Este equipo se encargará de seguir todos los pasos para conseguir el producto, es decir,
@@ -220,7 +232,7 @@ De todos modos, una buena estimación resulta beneficiosa, pues ahorra bastante 
 %KIKE & JESUS
 %ESTO PARA LA PROXIMA ENTREGA PERO NO SE QUITA, SE QUEDA
 %HABRIA QUE DECIRLO AUNQUE SEA
-\part{Mecanismos de seguimiento y control} La garantía de calidad y el control de cambios serán profundamente analizados en la próxima entrega de documentación.
+\chapter{Mecanismos de seguimiento y control} La garantía de calidad y el control de cambios serán profundamente analizados en la próxima entrega de documentación.
 
 	\section{Garantía de calidad y control} 
 En este apartado comentaremos las revisiones técnicas sobre el producto KIKE HOSTELERIA. Las revisiones formales comenzarán con la fase de codificación.
