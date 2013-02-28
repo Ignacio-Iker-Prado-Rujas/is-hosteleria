@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  28 FEB 2013 21:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  28 FEB 2013 21:36
 entering extended mode
 **Especificacion*de*requisitos.tex
 
@@ -685,11 +685,10 @@ te ignored
                    \relax 
 l.59 \newpage
               [1]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+("C:\Users\Jesús\Documents\SUBVERSION\IS\is-hosteleria\SegundaEntrega27-02-13\
+SRS\Especificacion de requisitos.toc")
 \tf@toc=\write4
-[2
+ [2
 
 ] [3] [1
 
@@ -756,4 +755,150 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-Underfull \hbox (badness 10000) in 
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Overfull \hbox (18.63016pt too wide) in paragraph at lines 103--104
+[]\OT1/cmr/m/n/12 Todo lo re-fe-ren-te a es-ta sec-cion se en-cuen-tra en el d
+o-cu-men-to anexo \OT1/cmtt/m/n/12 Definiciones,
+ []
+
+[3] [4] [5] [6
+
+]pdfTeX warning (ext4): destination with the same identifier (name{section.0.1}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.142 \section{Perspectiva del producto}
+                                        
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 142.
+
+pdfTeX warning (ext4): destination with the same identifier (name{section.0.2})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.152 \section{Funciones del producto}
+                                       [7] [8]pdfTeX warning (ext4): destinatio
+n with the same identifier (name{section.0.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.170 \section{Características del usuario}
+                                            pdfTeX warning (ext4): destination 
+with the same identifier (name{section.0.4}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.173 \section{Restricciones}
+                              [9]pdfTeX warning (ext4): destination with the sa
+me identifier (name{section.0.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.182 \section{Supuestos y dependencias}
+                                        
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+[10] [11] [12] [13
+
+]pdfTeX warning (ext4): destination with the same identifier (name{section.0.1}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.213 		\section{Interfaces externos}
+                                     
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 213.
+
+
+Overfull \hbox (4.79167pt too wide) in paragraph at lines 225--226
+\OT1/cmr/m/n/12 ser-va, Dis-tri-bu-cion de me-sas, Can-ti-dad de exis-ten-cias
+, Ge-ne-rar/modificar
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+ []
+
+[15] [16]pdfTeX warning (ext4): destination with the same identifier (name{sect
+ion.0.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.270 \section{Funciones}
+                          [17] [18] [19] [20] [21] [22] [23] [24] [25] [26]
+[27] [28] [29] [30] [31] [32] [33]pdfTeX warning (ext4): destination with the s
+ame identifier (name{section.0.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.907 \section{Requisitos de rendimiento}
+                                         pdfTeX warning (ext4): destination wit
+h the same identifier (name{section.0.4}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.913 ...{Requisitos lógicos de la base de datos}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{section.0.5}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.924 \section{Restricciones de diseño}
+                                         [34]pdfTeX warning (ext4): destination
+ with the same identifier (name{section.0.6}) has been already used, duplicate 
+ignored
+<to be read again> 
+                   \relax 
+l.932 \section{Atributos del sistema software}
+                                               [35] [36]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 945.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 945.
+
+("C:\Users\Jesús\Documents\SUBVERSION\IS\is-hosteleria\SegundaEntrega27-02-13\
+SRS\Especificacion de requisitos.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 945.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 945.
+Package rerunfilecheck Info: File `Especificacion*de*requisitos.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: <no file>.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 945.
+ ) 
+Here is how much of TeX's memory you used:
+ 7400 strings out of 494045
+ 104180 string characters out of 3146016
+ 207094 words of memory out of 3000000
+ 10546 multiletter control sequences out of 15000+200000
+ 14138 words of font info for 54 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 29i,11n,43p,1003b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "Especificacion de requisitos.pdf" (40 pages, 186247 bytes).
+PDF statistics:
+ 323 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+
