@@ -174,13 +174,13 @@ La interfaz se basará en una disposición en pestañas. En función de qué tip
 
 Teniendo en cuenta la ley de protección de datos, si un cliente o un empleado solicita que le quiten de la base de datos, se procederá a la eliminación del mismo. El sistema lo permite fácilmente. 
 
-El hardware sobre el que se supone que correrá, viene desarrollado en el siguiente punto. El lenguaje de alto nivel: Java, por su versatilidad de plataformas para su ejecución. En cuanto a otras aplicaciones, las facturas y los C.V. se abren en pdf, utilizando el visor de pdf que tenga el equipo sobre el que estémos. También permite, al generar las facturas, exportarlas a pdf. Las modificaciones de campos como pedidos, se actualizará rápidamente para un mejor funcionamiento del negocio. Cuanto más rapido es, más efectivas se vuelven las acciones.
+El hardware sobre el que se supone que correrá, viene desarrollado en el siguiente punto. El lenguaje de alto nivel: Java, por su versatilidad de plataformas para su ejecución. En cuanto a otras aplicaciones, las facturas y los C.V. se abren en pdf, utilizando el visor de pdf que tenga el equipo sobre el que estémos. También permite, al generar las facturas, exportarlas a pdf. Las modificaciones de campos como pedidos, se actualizará rápidamente para un mejor funcionamiento del negocio. Cuanto más rápido es, más efectivas se vuelven las acciones.
 
 Al iniciar la aplicación, si tras cuatro intentos la combinación Usuario + Contraseña no es correcta, el sistema se bloqueará durante 3 minutos, mejorando la seguridad de la aplicación. Además, continuamente se realizarán copias de seguridad de los elementos modificados (reservas, cambios en la distribución de las mesas...), para que en caso de que se agote la batería del equipo, no se pierda información. Todo queda recogido en el servidor. Cada vez, que un campo se modifique, se actualiza en el servidor.
 
 
 \section{Supuestos y dependencias}	
-	El software estará enfocado para ser utilizado en dispositivos con sistema operativo Android o Windows, aunque al estar escrito en java esto nos permitira camiar de sistema operativo sin demasiados cambios debido a que la implementación cambiara solo en casos muy especificos, así que podriamos decir que depende relativamente del sistema operativo.  Por el contrario, si que va a depender mucho del hardware, puesto que necesitará sincronizarse con un sistema central que organice y distribuya toda la información de los dispositivos de los empleados, por tanto necesitaremos un procesador muy rapido que organice todo. También será necesario un servidor interno que distribuya la información entre los distintos dispositivos.	\\
+	El software estará enfocado para ser utilizado en dispositivos con sistema operativo Android o Windows, aunque al estar escrito en Java esto nos permitira cambiar de sistema operativo sin demasiadas modificaciones debido a que la implementación cambiará solo en casos muy especificos, así que podriamos decir que depende relativamente del sistema operativo.  Por el contrario, si que va a depender mucho del hardware, puesto que necesitará sincronizarse con un sistema central que organice y distribuya toda la información de los dispositivos de los empleados, por tanto necesitaremos un procesador muy rapido que organice todo. También será necesario un servidor interno que distribuya la información entre los distintos dispositivos.	\\
 
 En definitiva,  nuestro cliente necesitará tener Windows XP, Vista o 7, o Android 2.3 (Gingerbread) o superior (hasta android Jelly Bean).
 Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesador Dual Core 2GHz. para ordenadores fijos.
@@ -191,11 +191,11 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 		\item También se diseñara una opción que ayude a organizar mesas y sillas en función del numero de comensales por mesa y como queramos distribuirlos. Esta nueva función permitirá estructurar nuestro restaurante para eventos especiales tales como bodas, reuniones de trabajo, celebraciones...
 
-		\item El cliente estaba pensando en hacer una página web para hacer reservas, ver habitaciones, ver precios... Por tanto diseñaríamos una página web con un formato similar bansadonos en el programa que ahora nos ha pedido.
+		\item El cliente estaba pensando en hacer una página web para hacer reservas, ver habitaciones, ver precios... Por tanto diseñaríamos una página web con un formato similar basándonos en el programa que ahora nos ha pedido.
 
 		\item La aplicación se implementará para otros sistemas operativos de forma que aumentaremos el mercado hacia el que va destinado. Con esta futura versión desvincularíamos el proyecto de nuestro cliente para pasar a vender nuestra aplicación a cualquier cliente que la requiera.
 		
-		\item El cliente podrá configurar el programa para que cuando las existencias se encuentre bajo un mínimo importante se genere automaticamente un pedido.
+		\item El cliente podrá configurar el programa para que cuando las existencias se encuentre bajo un mínimo importante se genere automáticamente un pedido.
 	\end{itemize}
 
 \newpage
@@ -262,7 +262,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 						\item \textbf{Consultar tareas: }Aparece el campo día. Abajo aparecen las descripciones de las tareas de ese día. 
 						 \item \textbf{Notificar tareas realizadas (hoy): }Aparecen las tareas a realizar por el trabajador. A la izquierda de cada tarea aparece un tick para marcar la tarea como realizada. 
 					\end{itemize}
-				 \item \textbf{Ventana "Mantenimiento" } El encargado de mantenimiento verá las pestañas "Notificaciones" y "Notas". En "Notificaciones" habrá una tabla con tres columnas: "Lugar", "Descripción" y "Hecho", donde se podrá marcar la incidencia como resuelta. 
+				 \item \textbf{Ventana "Mantenimiento" } El encargado de mantenimiento verá las pestañas "Notificaciones'' y "Notas". En "Notificaciones" habrá una tabla con tres columnas: "Lugar", "Descripción'' y "Hecho", donde se podrá marcar la incidencia como resuelta. 
 			\end{itemize}
 
 %Sección funciones
@@ -822,7 +822,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Descripción: }Permite hacer la reserva de una habitación en un período de tiempo.
 			\item \textbf{Entrada: } Fecha de llegada, fecha de salida, inquilinos, niños, tipo de pensión y número de habitación.
 			\item \textbf{Salida: } Habitación reservada
-			\item \textbf{Origen: } Tablet o terminal con sesión de metre, jefe o recepcionista.
+			\item \textbf{Origen: } Tablet o terminal con sesión de maître, jefe o recepcionista.
 			\item \textbf{Destino: } Sistema que guarda las reservas
 			\item \textbf{Necesita: } Número de habitación.
 			\item \textbf{Acción: } Reservar habitación
@@ -839,7 +839,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Descripción: }Elimina del listado con las reservas pendientes
 			\item \textbf{Entrada: }Acceder al listado, y seleccionar la reserva a eliminar
 			\item \textbf{Salida: }Listado sin la reserva eliminada
-			\item \textbf{Origen: }Tablet o terminal de maitre, jefe o recepcionista
+			\item \textbf{Origen: }Tablet o terminal de maître, jefe o recepcionista
 			\item \textbf{Destino: }Sistema de almacenamiento de reservas
 			\item \textbf{Necesita: } Listado de reservas
 			\item \textbf{Acción: }Eliminar reservas
@@ -857,7 +857,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Descripción: }Genera  una factura para el cliente del hotel
 			\item \textbf{Entrada: }Datos completos del cliente, guardados en el sistema más las modificaciones pertinentes que realice el empleado que cobra
 			\item \textbf{Salida: }Factura para un cliente
-			\item \textbf{Origen: }Generalmente terminal de recepcionista, también tablet o terminal del jefe o del maitre
+			\item \textbf{Origen: }Generalmente terminal de recepcionista, también tablet o terminal del jefe o del maître
 			\item \textbf{Destino: }Generador de facturas
 			\item \textbf{Necesita: }Datos cliente hotel
 			\item \textbf{Acción: }Generar factura
@@ -875,7 +875,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Descripción: }Modifica las características de una habitación
 			\item \textbf{Entrada: }Número de habitación, campos que se modifican y nuevos datos.
 			\item \textbf{Salida: }Habitación modificada
-			\item \textbf{Origen: }Tablet o Terminal conectado al sistema( Maitre, Jefe o recepcionista)
+			\item \textbf{Origen: }Tablet o Terminal conectado al sistema( Maître, Jefe o recepcionista)
 			\item \textbf{Destino: }Sistema que almacena la información de laas habitaciones
 			\item \textbf{Necesita: }Número de habitación
 			\item \textbf{Acción: }Editar habitación
@@ -916,7 +916,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 	\begin{itemize}
 		\item El diseño debe funcionar tanto en tablet como en ordenador de sobremesa,  pero solo sobre windows y android.
 		\item Debido a nuestro desconocimiento de bases de datos, no podremos implementar en una base de datos real.
-		\item Por al elevado coste, que lo hace inviable, no podemos instalar un hardware en cada habitación que permita crear pedidos y reservar en el restaurante a los propios clientes.
+		\item Por el elevado coste, que lo hace inviable, no podemos instalar un hardware en cada habitación que permita crear pedidos y reservar en el restaurante a los propios clientes.
 		\item El cocinero no podrá manipular hardware con las manos, por lo que no actuará sobre el sistema. Sin embargo, el sistema debe interactuar eficientemente con él.
 	\end{itemize}
 \end{itemize}
@@ -933,7 +933,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 \begin{itemize}
 	\item Una vez creado el servidor seguirá funcionando permanentemente.
 	\item Al estar programado en java, la portabilidad o la ampliación a cualquier sistema operativo  nuevo será sencilla. 
-	\item La conexión de las tablets por wifi estará cifrada. El acceso directo estará controlado por el login, que exige usuario y contraseña para conectarse al sistema.
+	\item La conexión de las tablets por Wi-Fi estará cifrada. El acceso directo estará controlado por el login, que exige usuario y contraseña para conectarse al sistema.
 \end{itemize}
 
 
