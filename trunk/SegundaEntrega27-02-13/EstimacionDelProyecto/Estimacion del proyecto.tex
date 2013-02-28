@@ -128,7 +128,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 		\end{itemize}	
 		\item{Cuenta de caja:} 
 		\begin{itemize}
- 			\item{DET:} Tres campos, caja de recepción o de restaurante, ingreso o gasto y concepto.
+ 			\item{DET:} Tres atributos, caja de recepción o de restaurante, ingreso o gasto y concepto.
 			\item{FTR:} \textit{Cuenta de caja de recepción} y \textit{Cuenta de caja de restaurante} son los ficheros que se modifican, pero cada vez que añades algo sólo modificas uno.
 			\item{Complejidad:} Baja.
 		\end{itemize}
@@ -152,7 +152,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 		\end{itemize}
 		\item{Clientes:} 
 		\begin{itemize}
- 			\item{DET:} Para añadir un nuevo cliente, son necesarios siete campos: nombre completo, DNI, número de teléfono, V.I.P., facturas, número de visitas en los últimos 12 meses, comentarios.
+ 			\item{DET:} Para añadir un nuevo cliente, son necesarios siete atributos: nombre completo, DNI, número de teléfono, V.I.P., facturas, número de visitas en los últimos 12 meses, comentarios.
 			\item{FTR:} Fichero \textit{Clientes.}
 			\item{Complejidad:} Baja.
 		\end{itemize}
@@ -206,7 +206,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 		\end{itemize}
 		\item{Determinar tareas a realizar (limpieza):} 
 		\begin{itemize}
- 			\item{DET:} Cuatro campos, que son: empleado, fecha, hora y descripción de la tarea.
+ 			\item{DET:} Cuatro atributos, que son: empleado, fecha, hora y descripción de la tarea.
 			\item{FTR:} El fichero \textit{Tareas limpieza} solamente.
 			\item{Complejidad:} Baja.
 		\end{itemize}
@@ -226,9 +226,9 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 	Por tanto podemos clasificar las EI en función de su complejidad usando la tabla antes presentada:
 	\begin{itemize}
-	\item{BAJA:} 16 entradas externas.
-	\item{MEDIA:} 1 entradas externas.
-	\item{ALTA:} Ninguna.
+	\item{\textbf{BAJA:}} \textbf{16 entradas externas.}
+	\item{\textbf{MEDIA:}} \textbf{1 entradas externas.}
+	\item{\textbf{ALTA:}} \textbf{Ninguna.}
 	\end{itemize}
 	
 	La forma en que hemos procedido es la siguiente en todos los casos: Primero, fijándonos en el número de campos, identificamos en qué columna estamos de la tabla, y después, con el número de FTRs la fila. Por ejemplo para el primer caso, el Log In, vimos que había dos campos (usuario y contraseña), por lo que con dos DET estamos en la segunda columna de la tabla (\textbf{De 1 a 4 DET}) y un sólo fichero \textit{Log In}, que nos sitúa en la segunda columna (\textbf{0 o 1 FTR}). Por tanto la entrada del Log In tiene una complejidad baja.
@@ -250,25 +250,106 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 	Pasamos a detallar las EO:
 	\begin{itemize}
-		\item{} 
+		\item{Cuenta de caja:} 
 		\begin{itemize}
- 			\item{DET:}
-			\item{FTR}
+ 			\item{DET:} Muestra tres atributos, caja de recepción o de restaurante, ingreso o gasto y concepto.
+			\item{FTR:} \textit{Cuenta de caja de recepción} y \textit{Cuenta de caja de restaurante} son los ficheros de donde se lee.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Libro diario:} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos: la cantidad de la cuenta del debe, el concepto del debe, la cantidad de la cuenta del haber y el concepto del haber.
+			\item{FTR:} \textit{Libro diario} sólo.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Libro mayor:} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos: la fecha, la contrapartida, el importe y el saldo total del ejercicio, mostrados por columnas.
+			\item{FTR:} \textit{Libro mayor}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Empleados:} 
+		\begin{itemize}
+ 			\item{DET:} Al mostrar la información de un empleado hay dos formas, en modo lista, donde sólo se muestra nombre completo, foto, y si trabaja actualmente en la empresa, o la versión detallada, con doce campos, los cuales son nombre completo, DNI, sexo, edad, domicilio, nacionalidad, estado civil, número de teléfono, salario bruto, fotografía de carnet, C.V. y comentarios. Como son independientes (pues en principio el usuario estará mirando en modo lista y luego clicará uno para verlo en detalle) cuentan como dos salidas distintas.
+			\item{FTR:} Interviene el fichero \textit{Empleados} y \textit{Curriculums}.
+			\item{Complejidad:} El primero (vista sencilla) baja, y el segundo (detallada) Media.
+		\end{itemize}
+		\item{Clientes:} 
+		\begin{itemize}
+ 			\item{DET:} De igual manera, aquí también tenemos dos salidas independientes. En la vista de lista aparecerá nombre completo, número telefónico y si es o no V.I.P., mientras que en la vista detallada los atributos son: nombre completo, DNI, número de teléfono, V.I.P., facturas, número de visitas en los últimos 12 meses, comentarios.
+			\item{FTR:} Fichero \textit{Clientes}, que contiene toda la información de los mismos.
+			\item{Complejidad:} Ambos baja.
+		\end{itemize}
+		\item{Ver las reservas del restaurante:} 
+		\begin{itemize}
+ 			\item{DET:} En las reservas del restaurante aparecen cinco campos: día, hora, nombre, número de comensales y número de mesa.
+			\item{FTR:} \textit{Reservas restaurante.}
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Ver la distribución de las mesas:} 
+		\begin{itemize}
+ 			\item{DET:} Requiere de muchos atributos, además de la forma de la sala donde está el restaurante, para cada mesa el tamaño y la posición. 
+			\item{FTR:} \textit{Dimensiones restaurante}, \textit{Mesas del restaurante} y \textit{Posición de las mesas}.
+			\item{Complejidad:} Alta, teniendo en cuenta el número de mesas y los ficheros a los que accede.
+		\end{itemize}
+		\item{Ver un pedido:} 
+		\begin{itemize}
+ 			\item{DET:} Varía en función del momento en el que se consulte y de la mesa, pero teniendo en cuenta bebida, comida, precio y cantidad de cada uno de esos items habrá más de 20 (si simplemente se tienen tres bebidas distintas y cuatro entrantes ya hay 21 atributos). 
+			\item{FTR:} \textit{Pedidos}.
+			\item{Complejidad:} Media.
+		\end{itemize}
+		\item{Ver el menú:} 
+		\begin{itemize}
+ 			\item{DET:} Debido a la extensión de un Menú habitual, se superarán las 20.
+			\item{FTR:} Se accede a \textit{Menú} y \textit{Existencias}.
+			\item{Complejidad:} Alta.
+		\end{itemize}
+		\item{Ver las existencias:} 
+		\begin{itemize}
+ 			\item{DET:} Por el mismo motivo que en el caso anterior, se maneja mucha información.
+			\item{FTR:} \textit{Existencias.}
+			\item{Complejidad:} Media.
+		\end{itemize}
+		\item{Ver las reservas del hotel:} 
+		\begin{itemize}
+ 			\item{DET:} Se muestran siete campos en modo lista, nombre, fecha de inicio, fecha de salida, número de inquilinos, número de niños, tipo de pensión y número de habitación, con sólo tres reservas ya se superan los 20 campos.
+			\item{FTR:} El fichero \textit{Reservas habitaciones.}
+			\item{Complejidad:} Alta.	
+		\end{itemize}		
+		\item{Ver un habitación:} 
+		\begin{itemize}
+ 			\item{DET:} Permite conocer para una cierta habitación la planta en la que se encuentra, si se accede mediante ascensor o escaleras, el tipo de ducha (bañera/jacuzzi), y una breve descripción de la misma.
+			\item{FTR:} Se accede a \textit{Habitaciones}.
+			\item{Complejidad:} Media, debido al número de habitaciones y a que sólo se accede a un fichero.
+		\end{itemize}
+		\item{Ver las notas:} 
+		\begin{itemize}
+ 			\item{DET:} El cuerpo de la nota  de varias notas (al menos el comienzo).
+			\item{FTR:} Un fichero con las notas (\textit{Notas}).
+			\item{Complejidad:} Media si se utiliza mínimamente este servicio, y se supone que así será pues para eso lo encarga el cliente.
+		\end{itemize}
+		\item{Ver las incidencias:} 
+		\begin{itemize}
+ 			\item{DET:} Para cada incidencia, dos campos: lugar y descripción.
+			\item{FTR:} \textit{Incidencias.}
+			\item{Complejidad:} Baja en principio, a no ser que se tengan continuas averías y por tanto haya más de diez incidencias a la vez.
+		\end{itemize}
+		\item{Ver las tareas a realizar (limpieza):} 
+		\begin{itemize}
+ 			\item{DET:} Tres atributos, la fecha, la hora y la descripción de la tarea por realizar.
+			\item{FTR:} \textit{Tareas limpieza} es el único fichero involucrado.
+			\item{Complejidad:} Baja.
 		\end{itemize}	
-		\item{} 
-		\begin{itemize}
- 			\item{DET:}
-			\item{FTR}
-		\end{itemize}
-		\item{} 
-		\begin{itemize}
- 			\item{DET:}
-			\item{FTR}
-		\end{itemize}
-
 	\end{itemize}
 
+	Por tanto podemos clasificar las EO en función de su complejidad usando la tabla antes presentada:
+	\begin{itemize}
+	\item{\textbf{BAJA:}} \textbf{9 salidas externas.}
+	\item{\textbf{MEDIA:}} \textbf{5 salidas externas.}
+	\item{\textbf{ALTA:}} \textbf{3 salidas externas.}
+	\end{itemize}
 
+	El procedimiento para la obtención de la complejidad ha sido exactamente el mismo que antes, pero con la tabla correspondiente.
 
 	\subsection{Consultas Externas}
 	Las Consultas Externas o EQ (External Query) son procesos que combinan la entrada y salida de información, dando lugar a una consulta a los datos. Cuando se produce una EQ no se modifican los datos del sistema. A continuación se estudia cuántas EQ hay y qué complejidad tienen. La complejidad viene dada por dos conceptos, como siempre: DET (Data Element Type), que es un campo individual identificable por el usuario de entrada o salida, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Es importante notar que ahora la complejidad no se obtiene como una suma, si no como el máximo entre la consulta de entrada y la de salida. La complejidad queda como en las EI: 
@@ -287,25 +368,56 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 	Pasamos a detallar las EQ:
 	\begin{itemize}
-		\item{} 
+		\item{Editar un empleado:} 
 		\begin{itemize}
- 			\item{DET:}
-			\item{FTR}
-		\end{itemize}	
-		\item{} 
-		\begin{itemize}
- 			\item{DET:}
-			\item{FTR}
+ 			\item{DET:} Como al editar los datos de un empleado el usuario como mucho va a modificar todos los campos, la información de salida será siempre mayor o igual que los elementos de entrada. Como antes hemos visto que hay doce campos  para un empleado, ese es el número de atributos.
+			\item{FTR:} \textit{Empleados} y \textit{Curriculums} son los ficheros a los que se accede.
+			\item{Complejidad:} Media, por tener 12 atributos y dos FTRs.
 		\end{itemize}
-		\item{} 
+		\item{Editar un cliente:} 
 		\begin{itemize}
- 			\item{DET:}
-			\item{FTR}
+ 			\item{DET:} Razonando igual, obtenemos siete atributos.
+			\item{FTR:} \textit{Clientes} sólo.
+			\item{Complejidad:} Baja.
 		\end{itemize}
-
+		\item{Exportar a PDF:} 
+		\begin{itemize}
+ 			\item{DET:} Se podrán exportar a PDF datos del libro mayor o diario, facturas... Hay más datos de salida, que trabajan con el programa de conversión a PDFs correspondiente.
+			\item{FTR:} En función de lo que se exporte se tratará de un fichero u otro, pero sólo uno.
+			\item{Complejidad:} Media.
+		\end{itemize}
+		\item{Ver y cuantificar existencias:} 
+		\begin{itemize}
+ 			\item{DET:} Mientras navegas entre las existencias, puedes marcar las que sean escasas. Por suspuesto, la información de salida es mucho mayor que la de entrada, pues muestra todas las existencias, y cada una con dos campos: concepto y cantidad. 
+			\item{FTR:} El fichero de \textit{Existencias}.
+			\item{Complejidad:} Media.
+		\end{itemize}
+		\item{Editar la distribución de las mesas:} 
+		\begin{itemize}
+ 			\item{DET:} Aquí aparecen muchos atributos, además de la forma de la sala donde está el restaurante, para cada mesa el tamaño y la posición. Por supuesto, tomamos los datos de salida por ser mayores o iguales en número que los de entrada.
+			\item{FTR:}  Los ficheros son \textit{Dimensiones restaurante}, \textit{Mesas del restaurante} y \textit{Posición de las mesas}.
+			\item{Complejidad:} Alta, pues maneja tres ficheros y mucha información.
+		\end{itemize}
+		\item{Editar una habitación:} 
+		\begin{itemize}
+ 			\item{DET:} Se pueden modificar campos de la descripción de las habitaciones, lo cual puede pasar por ejemplo tras una reforma, o una renovación del mobiliario. El número de entradas es menor o igual que el de salidas, que es cuatro (visto en la sección de EO).
+			\item{FTR:} El fichero \textit{Habitaciones}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Editar una nota:} 
+		\begin{itemize}
+ 			\item{DET:} Las notas se pueden modificar, o eliminar permanentemente. Hay un único campo, sea de entrada o salida, con el cuerpo de la nota.
+			\item{FTR:} El fichero con las \textit{Notas}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
 	\end{itemize}
 
-
+	Por tanto podemos clasificar las EQ en función de su complejidad usando la tabla antes presentada:
+	\begin{itemize}
+	\item{\textbf{BAJA:}} \textbf{3 consultas externas.}
+	\item{\textbf{MEDIA:}} \textbf{3 consultas externas.}
+	\item{\textbf{ALTA:}} \textbf{1 consulta externa.}
+	\end{itemize}
 
 
 	\subsection{Ficheros Lógicos Internos}
