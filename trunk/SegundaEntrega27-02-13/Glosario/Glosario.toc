@@ -1,0 +1,21 @@
+\select@language {spanish}
+\contentsline {subsection}{\numberline {1}Ma\IeC {\^\i }tre:}{\es@scroman {iv}}{subsection.0.0.1}
+\contentsline {subsection}{\numberline {2}Comanda:}{\es@scroman {iv}}{subsection.0.0.2}
+\contentsline {subsection}{\numberline {3}Log in:}{\es@scroman {iv}}{subsection.0.0.3}
+\contentsline {subsection}{\numberline {4}Comensal:}{\es@scroman {iv}}{subsection.0.0.4}
+\contentsline {subsection}{\numberline {5}Pitanza:}{\es@scroman {iv}}{subsection.0.0.5}
+\contentsline {subsection}{\numberline {6}Chef:}{\es@scroman {iv}}{subsection.0.0.6}
+\contentsline {subsection}{\numberline {7}PDF:}{\es@scroman {iv}}{subsection.0.0.7}
+\contentsline {subsection}{\numberline {8}C.V.:}{\es@scroman {iv}}{subsection.0.0.8}
+\contentsline {subsection}{\numberline {9}Tablet:}{\es@scroman {iv}}{subsection.0.0.9}
+\contentsline {subsection}{\numberline {10}Hardware:}{\es@scroman {v}}{subsection.0.0.10}
+\contentsline {subsection}{\numberline {11}Software:}{\es@scroman {v}}{subsection.0.0.11}
+\contentsline {subsection}{\numberline {12}Windows:}{\es@scroman {v}}{subsection.0.0.12}
+\contentsline {subsection}{\numberline {13}Android:}{\es@scroman {v}}{subsection.0.0.13}
+\contentsline {subsection}{\numberline {14}iOS:}{\es@scroman {v}}{subsection.0.0.14}
+\contentsline {subsection}{\numberline {15}Java:}{\es@scroman {v}}{subsection.0.0.15}
+\contentsline {subsection}{\numberline {16}Wi-Fi:}{\es@scroman {v}}{subsection.0.0.16}
+\contentsline {subsection}{\numberline {17}Procesador:}{\es@scroman {v}}{subsection.0.0.17}
+\contentsline {subsection}{\numberline {18}Base de datos:}{\es@scroman {vi}}{subsection.0.0.18}
+\contentsline {subsection}{\numberline {19}Benchmark:}{\es@scroman {vi}}{subsection.0.0.19}
+\contentsline {subsection}{\numberline {20}}{\es@scroman {vi}}{subsection.0.0.20}
