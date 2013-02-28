@@ -104,7 +104,9 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 \section{Cálculo de los PF sin ajustar}
 	\subsection{Entradas Externas}
-	Las Entradas Externas o EI (External Innings) son procesos que hacen llegar información desde el exterior a nuestra aplicación, ya sea desde un usuario o desde otra aplicación. Siempre que tengamos una entrada externa, se modificará un ILF (luego pasaremos a estudiarlos). A continuación se estudia cuántas EI hay y qué complejidad tienen. La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y modifica un ILF, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Entonces la complejidad queda: 
+	Las Entradas Externas o EI (External Innings) son procesos que hacen llegar información desde el exterior a nuestra aplicación, ya sea desde un usuario o desde otra aplicación. Siempre que tengamos una entrada externa, se modificará un ILF (luego pasaremos a estudiarlos). A continuación se estudia cuántas EI hay y qué complejidad tienen. 
+
+	La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y modifica un ILF, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Entonces la complejidad queda: 
 
 \vspace{0.35cm}
 
@@ -218,7 +220,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 		\end{itemize}
 		\item{Lavandería:} 
 		\begin{itemize}
- 			\item{DET:} Fecha de salida a lavandería, número de mateles, número de servilletas, número de paquetes de sábanas y número de toallas, lo cual son cinco campos.
+ 			\item{DET:} Habitualmente, la limpieza de sábanas, toallas, servilletas y manteles no se realiza en el propio hotel-restaurante, si no que se subcontrata a una empresa de lavandería para que lo haga. Esta funcionalidad permite llevar un recuento de los envíos que se han realizado. Fecha de salida a lavandería, número de mateles, número de servilletas, número de paquetes de sábanas y número de toallas, lo cual son cinco campos.
 			\item{FTR:} Fichero \textit{Lavandería}.
 			\item{Complejidad:} Baja.
 		\end{itemize}		
@@ -234,7 +236,9 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 	La forma en que hemos procedido es la siguiente en todos los casos: Primero, fijándonos en el número de campos, identificamos en qué columna estamos de la tabla, y después, con el número de FTRs la fila. Por ejemplo para el primer caso, el Log In, vimos que había dos campos (usuario y contraseña), por lo que con dos DET estamos en la segunda columna de la tabla (\textbf{De 1 a 4 DET}) y un sólo fichero \textit{Log In}, que nos sitúa en la segunda columna (\textbf{0 o 1 FTR}). Por tanto la entrada del Log In tiene una complejidad baja.
 
 	\subsection{Salidas Externas}
-	Las Salidas Externas o EO (External Outings) son procesos que hacen llegar información desde la aplicación al exterior, ya sea a un usuario o a otra aplicación.  A continuación se estudia cuántas EO hay y qué complejidad tienen. La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y aparece en la EO, y FTR (File Type Referenced), que es el ILF o EIF que interviene. La complejidad es bastante parecida a las EI: 
+	Las Salidas Externas o EO (External Outings) son procesos que hacen llegar información desde la aplicación al exterior, ya sea a un usuario o a otra aplicación. A continuación se estudia cuántas EO hay y qué complejidad tienen. 
+
+	La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y aparece en la EO, y FTR (File Type Referenced), que es el ILF o EIF que interviene. La complejidad es bastante parecida a las EI: 
 
 \vspace{0.35cm}
 
@@ -352,7 +356,9 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 	El procedimiento para la obtención de la complejidad ha sido exactamente el mismo que antes, pero con la tabla correspondiente.
 
 	\subsection{Consultas Externas}
-	Las Consultas Externas o EQ (External Query) son procesos que combinan la entrada y salida de información, dando lugar a una consulta a los datos. Cuando se produce una EQ no se modifican los datos del sistema. A continuación se estudia cuántas EQ hay y qué complejidad tienen. La complejidad viene dada por dos conceptos, como siempre: DET (Data Element Type), que es un campo individual identificable por el usuario de entrada o salida, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Es importante notar que ahora la complejidad no se obtiene como una suma, si no como el máximo entre la consulta de entrada y la de salida. La complejidad queda como en las EI: 
+	Las Consultas Externas o EQ (External Query) son procesos que combinan la entrada y salida de información, dando lugar a una consulta a los datos. Cuando se produce una EQ no se modifican los datos del sistema. A continuación se estudia cuántas EQ hay y qué complejidad tienen. 
+
+	La complejidad viene dada por dos conceptos, como siempre: DET (Data Element Type), que es un campo individual identificable por el usuario de entrada o salida, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Es importante notar que ahora la complejidad no se obtiene como una suma, si no como el máximo entre la consulta de entrada y la de salida. La complejidad queda como en las EI: 
 
 \vspace{0.35cm}
 
@@ -412,7 +418,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 		\end{itemize}
 	\end{itemize}
 
-	Por tanto podemos clasificar las EQ en función de su complejidad usando la tabla antes presentada:
+	Por ello, podemos clasificar las EQ en función de su complejidad usando la tabla antes presentada:
 	\begin{itemize}
 	\item{\textbf{BAJA:}} \textbf{3 consultas externas.}
 	\item{\textbf{MEDIA:}} \textbf{3 consultas externas.}
@@ -421,7 +427,9 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 
 	\subsection{Ficheros Lógicos Internos}
-	Los Ficheros Lógicos Internos o ILF (Internal Logical Files) son un conjunto de datos que el usuario puede identificar, que están relacionados entre sí, y que son mantenidos por la aplicación. A continuación se estudia cuántos ILF hay y qué complejidad tienen. La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario, y RET (Record Element Type), que es un subgrupo de datos. Entonces la complejidad queda: 
+	Los Ficheros Lógicos Internos o ILF (Internal Logical Files) son un conjunto de datos que el usuario puede identificar, que están relacionados entre sí, y que son mantenidos por la aplicación. A continuación se estudia cuántos ILF hay y qué complejidad tienen. 
+
+	La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario, y RET (Record Element Type), que es un subgrupo de datos. Entonces la complejidad queda: 
 
 \vspace{0.35cm}
 
@@ -437,14 +445,97 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 	Pasamos a detallar los ILF:
 	\begin{itemize}
-		\item{} 
-
+		\item{Log In:} 
+		\begin{itemize}
+ 			\item{DET:} Tres campos en la tabla, como mucho: usuario, contraseña y código para el acceso mediante tarjeta.
+			\item{RET:} Una única tabla en el \textit{Log In}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Cuenta de caja (restaurante y recepción):} 
+		\begin{itemize}
+ 			\item{DET:} Tres campos, tipo de caja, cantidad del ingreso o gasto y concepto.
+			\item{RET:} Dos ficheros: \textit{Cuenta de caja de restaurante} y \textit{Cuenta de caja de recepción}. Por tanto dos tablas.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Libros de contabilidad (diario y mayor):} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos en cada uno (descritos anteriormente).
+			\item{RET:} Dos tablas que se corresponden con \textit{Libro diario} y \textit{Libro mayor}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Empleados:} 
+		\begin{itemize}
+ 			\item{DET:} Dos tablas, una con los datos del empleado que se muestran (doce campos), y otra con los C.V.
+			\item{RET:} Ficheros que intervienen: \textit{Empleados} y \textit{Curriculums}, con una tabla en cada uno.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Clientes:} 
+		\begin{itemize}
+ 			\item{DET:} Anteriormente vimos que son siete los atributos.
+			\item{RET:} \textit{Clientes} es el único fichero, con una tabla para la información del cliente y otra con las facturas de cada cliente.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Reservas del restaurante:} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos.
+			\item{RET:} Una tabla de \textit{Reservas restaurante}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Pedidos del restaurante:} 
+		\begin{itemize}
+ 			\item{DET:} Se puede considerar que los campos son todos los que ofrece el menú, y para cada uno de ellos la cantidad. Además de esto, el número de mesa.
+			\item{RET:} Una tabla en \textit{Pedidos}.
+			\item{Complejidad:} Si la carta es muy extensa puede llegar a ser de complejidad media, pero vamos a suponer baja, ya que más de 51 DETs en el menú es mucho.
+		\end{itemize}
+		\item{Existencias:} 
+		\begin{itemize}
+ 			\item{DET:} Dos campos, elemento a comprar y cantidad.
+			\item{RET:} En \textit{Existencias} una única tabla.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Reservas del hotel:} 
+		\begin{itemize}
+ 			\item{DET:} Siete campos, analizados antes.
+			\item{RET:} En \textit{Reservas habitaciones} sólo una tabla.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Notas:} 
+		\begin{itemize}
+ 			\item{DET:} Sólo el cuerpo de la nota.
+			\item{RET:} Una tabla con las \textit{Notas}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Incidencias:} 
+		\begin{itemize}
+ 			\item{DET:} Atributos de lugar y descripción.
+			\item{RET:} Una tabla en \textit{Incidencias}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Tareas a realizar (limpieza):} 
+		\begin{itemize}
+ 			\item{DET:} Cuatro campos.
+			\item{RET:} Sólo una tabla, que se corresponde con el fichero de \textit{Tareas de limpieza}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Envíos a lavandería:} 
+		\begin{itemize}
+ 			\item{DET:} Cinco campos, estudiados con anterioridad.
+			\item{RET:} Una tabla con los envíos, relativa a \textit{Lavandería}.
+			\item{Complejidad:} Baja.
+		\end{itemize}
 	\end{itemize}
 
-	
+	Tras este análisis, podemos clasificar los ILF en función de su complejidad usando la tabla antes presentada:
+	\begin{itemize}
+	\item{\textbf{BAJA:}} \textbf{13 ficheros lógicos internos.}
+	\item{\textbf{MEDIA:}} \textbf{Ninguno.}
+	\item{\textbf{ALTA:}} \textbf{Ninguno.}
+	\end{itemize}
 
 	\subsection{Ficheros de Interfaz Externos}
-		Los Ficheros de Interfaz Externos o EIF (External Interface Files) son un conjunto de datos que el usuario puede identificar y que la aplicación referencia, pero son mantenidos por otra aplicación. Vamos a estudiar cuántos EIF hay y qué complejidad tienen. La complejidad viene dada de la misma forma que en los ILF, y se resume en esta tabla: 
+		Los Ficheros de Interfaz Externos o EIF (External Interface Files) son un conjunto de datos que el usuario puede identificar y que la aplicación referencia, pero son mantenidos por otra aplicación. Son los ILF pertenecientes a otra aplicación. Vamos a estudiar cuántos EIF hay y qué complejidad tienen. 
+
+	La complejidad viene dada de la misma forma que en los ILF, y se resume en esta tabla: 
 
 \vspace{0.35cm}
 
@@ -458,16 +549,41 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 
 \vspace{0.35cm}
 
-	Pasamos a detallar los EIF:
+	Apenas hay EIF en la aplicación, pues prácticamente toda la información se introduce manualmente o proviene de los ILFs del propio sistema. Aún así podemos distinguir tres casos:
 	\begin{itemize}
-		\item{} 
+		\item{Abrir un PDF:} 
+		\begin{itemize}
+ 			\item{DET:} Nombre del documento que se desea abrir.
+			\item{RET:} Una sola tabla.
+			\item{Complejidad:} Baja.
+		\end{itemize}		
+		\item{Exportar a PDF:} 
+		\begin{itemize}
+ 			\item{DET:} Texto que contendrá el PDF.
+			\item{RET:} Una única tabla con dicha información. El fichero accedido dependerá de lo que se exporte (por ejemplo para exportar datos del libro diario se accedería a \textit{Libro diario}).
+			\item{Complejidad:} Baja.
+		\end{itemize}
+		\item{Lanzar el explorador de Internet:} 
+		\begin{itemize}
+ 			\item{DET:} Solamente la dirección web a la que se quiere acceder.
+			\item{RET:} Una tabla.
+			\item{Complejidad:} Baja.
+		\end{itemize}
+	\end{itemize}
 
+	Así, podemos clasificar estos tres EIF utilizando su tabla:
+	\begin{itemize}
+	\item{\textbf{BAJA:}} \textbf{3 ficheros de interfaz externos.}
+	\item{\textbf{MEDIA:}} \textbf{Ninguno.}
+	\item{\textbf{ALTA:}} \textbf{Ninguno.}
 	\end{itemize}
 
 
-
 	\subsection{Cálculo efectivo de los PF sin ajustar}
+	Para el cálculo de los puntos de función sin ajustar, utilizamos la información que acabamos de obtener. Sabemos ya, para cada tipo, la cantidad de elementos de cada complejidad, y para cada uno de éstos se define un peso. Utilizando estos datos, los PF sin ajustar se pueden resumir en la siguiente tabla: 
 
+\vspace{0.35cm}
+\scalebox{0.6}{\includegraphics{PFsinAjustar}} 
 
 \section{Cálculo del factor de ajuste}
 
