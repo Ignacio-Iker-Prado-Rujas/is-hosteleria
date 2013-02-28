@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  28 FEB 2013 20:59
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  28 FEB 2013 21:07
 entering extended mode
 **Documento*de*casos*de*uso.tex
 
@@ -905,12 +905,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 730--741
 
  []
 
-
-Overfull \hbox (12.3437pt too wide) in paragraph at lines 757--758
-[]\OT1/cmr/bx/n/12 Proposi-to: \OT1/cmr/m/n/12 Trans-fe-rir la fi-cha de un em
--plea-do de .[]pleados actuales.[] .[]ntiguos
- []
-
 [28]
 Underfull \hbox (badness 10000) in paragraph at lines 759--770
 
@@ -986,10 +980,10 @@ ed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1031.
  ) 
 Here is how much of TeX's memory you used:
- 7503 strings out of 494045
- 106181 string characters out of 3146016
+ 7496 strings out of 494045
+ 106076 string characters out of 3146016
  210060 words of memory out of 3000000
- 10605 multiletter control sequences out of 15000+200000
+ 10598 multiletter control sequences out of 15000+200000
  13969 words of font info for 53 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  30i,11n,43p,1060b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -998,13 +992,11 @@ Here is how much of TeX's memory you used:
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "Documento de casos de uso.pdf" (43 pages, 275726 bytes).
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "Documento de casos de uso.pdf" (43 pages, 259870 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
+ 481 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)
  409 words of extra memory for PDF output out of 10000 (max. 10000000)
 
