@@ -24,10 +24,7 @@
 \contentsline {section}{\numberline {1}Personal}{16}{section.0.1}
 \contentsline {section}{\numberline {2}Hardware y software}{16}{section.0.2}
 \contentsline {section}{\numberline {3}Lista de recursos}{16}{section.0.3}
-\contentsline {part}{VI\hspace {1em}Organizaci\IeC {\'o}n del personal}{18}{part.6}
-\contentsline {section}{\numberline {1}Estructura de equipo}{19}{section.0.1}
-\contentsline {section}{\numberline {2}Informes de gesti\IeC {\'o}n}{19}{section.0.2}
-\contentsline {part}{VII\hspace {1em}Mecanismos de seguimiento y control}{21}{part.7}
-\contentsline {section}{\numberline {1}Garant\IeC {\'\i }a de calidad y control}{22}{section.0.1}
-\contentsline {section}{\numberline {2}Gesti\IeC {\'o}n y control de cambios}{22}{section.0.2}
-\contentsline {part}{VIII\hspace {1em}Ap\IeC {\'e}ndices}{24}{part.8}
+\contentsline {part}{VI\hspace {1em}Mecanismos de seguimiento y control}{18}{part.6}
+\contentsline {section}{\numberline {1}Garant\IeC {\'\i }a de calidad y control}{19}{section.0.1}
+\contentsline {section}{\numberline {2}Gesti\IeC {\'o}n y control de cambios}{19}{section.0.2}
+\contentsline {part}{VII\hspace {1em}Ap\IeC {\'e}ndices}{21}{part.7}
