@@ -1,0 +1,75 @@
+%
+
+
+\documentclass[spanish,a4paper,12pt]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
+\rhead{\bfseries Gestión de la configuración}		%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+
+
+%%%%% CUERPO %%%%%
+\begin{document}
+
+\title{\textbf{\huge{Gestión de la \\ 
+	configuración Software}} \\ \vspace{0.3cm}
+	\Large{Ingeniería del Software}}
+\author{ Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\Today}
+\maketitle
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+
+\tableofcontents 							%INDICE hipervinvulado
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada al final del documento
+\newpage
+
+\end{document}
