@@ -1,7 +1,7 @@
 %
 
 
-\documentclass[spanish,a4paper,12pt]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+\documentclass[spanish,a4paper,12pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
 
 %%% PAQUETES
 \usepackage[spanish,activeacute]{babel}				
@@ -38,6 +38,8 @@
 
 %%%%% CUERPO %%%%%
 \begin{document}
+\renewcommand{\chaptername}{Parte}			% Renombrar "Capítulo" como "Parte"
+\renewcommand{\thechapter}{\Roman{chapter}}	% Cambio la numeración de los capítulos a números romanos en mayúsculas
 
 \title{\textbf{\huge{Garantía de \\ 
 	calidad del Software}} \\ \vspace{0.3cm}
@@ -67,9 +69,10 @@
 
 
 %INTRODUCCIÓN HECHA POR KIKE, petaqueo total
-\chapter{Propósito del plan de garantía de calidad}
+\chapter{ Propósito del plan de garantía de calidad}
 	El propósito de este plan es servir como guía de las actividades destinadas a garantizar que 
-	kike-hostelería cumple los requisitos especificados en la documentación.
+	KIKE- Hostelería ® cumple los requisitos especificados en la documentación.
+	
 	(-Delinea el propósito específico y el alcance del plan
 	SQA.
 	- Lista los nombres de los elementos software
@@ -77,11 +80,23 @@
 	elementos.		
 	- Determina la porción del ciclo de vida cubierta por
 	el plan para cada elemento software.)
-\chapter{Documentos de referencia}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Documentos de referencia}
 	(- Proporciona una lista completa de cualquier
 	documento referenciado en el plan o utilizado en su
 	elaboración.)
-\chapter{Gestión}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Gestión}
 	(Tareas relacionadas con la SQA.
 	- Idealmente redactado en formato IEEE Std. 1058-
 	1998, IEEE Standard for Software Project
@@ -95,52 +110,132 @@
 	- Identifica las tareas asociadas al proceso SQA.
 	- Identifica la relación entre estas tareas y las de la
 	planificación temporal)
-\chapter{Documentación}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Documentación}
+	\section{Propósito}
+	\section{Requisitos mínimos de documentación}
+	\section{Otra documentación}
+
 	(- Define toda la documentación que se va a generar
 	durante el proceso de desarrollo.
 	- Lista los documentos que serán revisados o
 	auditados, así como los criterios de revisión.)
-\chapter{Estándares, prácticas convenciones y métricas}
-	(- Esta sección es un poco miscelánea en SQA.)
-\chapter{Revisiones del software}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Estándares, prácticas convenciones y métricas}
+	(- Esta sección es un poco miscelánea en SQA.) %Osea, ¿¿la quitamos?? (by Iker)
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Revisiones del software}
+	\section{Propósito}
+	\section{Requisitos mínimos}
+	\section{Otras revisiones y auditorias}
+
 	(-Determina las revisiones del software.
 	- Define los tipos de revisión.
 	- Define los productos a revisar.)
-\chapter{Prueba}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Prueba}
 	(- Identifica todas las pruebas no incluidas en el plan
 	de verificación y validación.)
-\chapter{Informe de problemas y acción correctiva}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ \hspace{0.25cm}Informe de problemas y acción correctiva}
 	(- Describe las prácticas y procedimientos de informe,
 	seguimiento y resolución de problemas, tanto a nivel	
 	producto como proceso.
 	- Determina las responsabilidades organizativas
 	relativas a su implementación.)
-\chapter{Herramientas, técnicas y metodologías}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Herramientas, técnicas y metodologías}
 	(- Herramientas, técnicas y metodologías utilizadas
 	para soportar el proceso de SQA.)
-\chapter{Control de medios}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Control de medios}
 	(- Determina los métodos para:
 	- Identificar el medio físico de cada producto software.
 	- Protegerlo de daños durante el proceso.)
-\chapter{Control de proveedor}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Control de proveedor}
 	(- Determina las técnicas para garantizar que el
 	software proporcionado por proveedores externos
 	cumple sus requisitos.
 	- También es aplicable a código heredado.)
-\chapter{Colección de registros, mantenimiento y conservación}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Colección de registros, mantenimiento y conservación}
 	(- Identifica la documentación SQA que no se debe
 	tirar tras acabar el proceso.
 	- Determina los métodos y medios para ensamblar,
 	archivar, salvaguardar y mantener la documentación.
 	- Fija el periodo de conservación de la información.)
-\chapter{Formación}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ \hspace{0.25cm}Formación}
 	(- Identifica las actividades de formación necesarias
 	para satisfacer las necesidades del plan SQA.)
-\chapter{Gestión del riesgo}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ \hspace{0.25cm}Gestión del riesgo}
 	Está hecho en un documento aparte.
-\chapter{Glosario}
-	(- Términos específicos del plan SQA.)
-\chapter{Procedimiento de cambio e historia del plan SQA}
+
+%\chapter{Glosario} (- Términos específicos del plan SQA.) 					EL GLOSARIO VA A PARTE
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Procedimiento de cambio e historia del plan SQA}
 	(- Procedimientos de modificación del plan SQA.
 	- Procedimientos de mantenimiento del historial de
 	cambios.
@@ -154,3 +249,59 @@
 \newpage
 
 \end{document}
+
+%KIKE, ya que lo has empezado jajajaja
+1. Propósito
+
+%KIKE (creo que este es corto)
+2. Documentos de referencia 
+
+%KIKE
+3. Gestión
+
+%JAIME
+4. Documentación
+	4.1 Propósito
+	4.2 Requisitos mínimos de documentación 
+	4.3 Otra documentación
+
+%A LO MEJOR SE QUITA, COMO DIGA KIKE
+5. Estándares, prácticas, convenciones y métricas 
+	5.1 Propósito
+	5.2 Contenido
+
+%JAIME
+6. Revisiones del software 
+	6.1 Propósito
+	6.2 Requisitos mínimos
+	6.3 Otras revisiones y auditorias 
+
+%JAIME (creo que este es corto)
+7. Pruebas
+
+%ALEX
+8. Informe de errores y acciones correctoras 
+
+%ALEX (creo que este es corto)
+9. Herramientas, técnicas y metodologías 
+
+%ALEX (creo que este es corto)
+10. Control de medios
+
+%JESUS (creo que este es corto)
+11. Control de proveedor
+
+%JESUS
+12. Colección de registros, mantenimiento y conservación
+
+%IKER (npi de que va este)
+13. Formación
+
+%ESTA HECHO A PARTE BY ALEX & JAIME
+14. Gestión del riesgo
+
+%ESTA EN UN DOCUMENTO A PARTE
+15. Glosario
+
+%IKER
+16. Procedimiento de cambio e historial del plan de SQA
