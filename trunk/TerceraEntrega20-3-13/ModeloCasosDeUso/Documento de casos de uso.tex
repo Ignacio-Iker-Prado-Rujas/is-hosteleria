@@ -88,7 +88,7 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 	\begin{itemize}
 %%	INSERTAR ORDENADAMENTE LOS CASOS DE USO, MÁS O MENOS COMO ESTÁN EN EL DOCUMENTO LISTA DE TODOS LOS CASOS DE USO (BRAINSTORMING PARA JESÚS)
 %%	HAY QUE TENER EN CUENTA QUE DESPUÉS HAY QUE PONERLOS ABAJO EN EL MISMO ORDEN
-	\item \textbf{Login}	
+	\item \textbf{Log in}	
 	\item \textbf{Acceder a la ficha de un empleado}
 	\item \textbf{Añadir cliente}
 	\item \textbf{Ver ficha de cliente}
@@ -145,7 +145,7 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 \setcounter{section}{0}
 
 \part{Especificación de los casos de uso} %%% PARTE 2: ESPECIFICACION CASOS DE USO %%%_______________________________________________
-Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso.
+Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso. Los actores son todos los usuarios o sistemas externos que interactúan con el sistema KIKE- Hostelería ®. Éstos son: Jefe, recepcionista, maître, camareros, chef, cocineros, jefe de limpieza, personal de limpieza, encargado de mantenimiento, 
 %%	LAS PLANTILLAS ESTÁN DESPUÉS DEL \end{document}
 \section{Primarios}		 			
 
@@ -153,7 +153,7 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 
 	\subsection{Log in}		
 			\begin{itemize}
-			\item \textbf{Actores:} Todos.
+			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito:} Acceder a tu perfil de empleado, o de jefe.
 			\item \textbf{Visión general:} La aplicación exigirá autentificación para permitir realizar las operaciones relacionadas con cada tipo de trabajador. El número de pestañas que mostrará dependerá de la posición en la jerarquía de la empresa. 
 			\item \textbf{Precondiciones:} 
@@ -183,19 +183,25 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleados.
 			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
-			\item \textbf{Visión general:} El jefe accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. En el buscador introduce el nombre deseado. Consulta su ficha y cierra la aplicación.
+			\item \textbf{Visión general:} El jefe accede a la base de datos de los empleados. Se elige el método de búsqueda (nombre, NIF, puesto en la empresa) y se introduce la información. Consulta su ficha.
 
 Para cada empleado se tendrán los siguientes campos:
 				\begin{itemize}
 				\item 	 Nombre y apellidos
-				\item 	 DNI
+				\item 	 NIF
+				\item 	 Nacionalidad
+				\item 	Fecha de nacimiento
+				\item 	Sexo
+				\item 	Estado civil
+				\item 	Número de teléfono
+				\item 	Domicilio
 				\item 	 Puesto o labor que desempeña
 				\item 	 Horario
 				\item 	 Salario
 				\item 	 Vacaciones
 				\item 	 Fecha de entrada al negocio
-				\item 	 Historial
 				\item 	 Comentarios
+				\item 	Enlace a C.V.
 				\end {itemize}
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
@@ -211,7 +217,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 7:} No existe un empleado actual con ese nombre. Vuelve a la línea 5 y se ofrecen al administrador 2 opciones: Introducir otro nombre o buscar por NIF. 
+			\item  \textbf{Línea 7:} No se encuentra nada con la búsqueda actual. Vuelve a la línea 5 para introducir otra información.
 			\end {itemize}
 		\end{itemize}%FIn de caso de uso
 
@@ -240,7 +246,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 8:} Algún campo es incorrecto o está sin rellenar. El programa regresa a la línea 7.
+			\item  \textbf{Línea 8:} Algún campo es incorrecto o está sin rellenar. El programa nos dice qué está mal (o si no se detecta el tipo de error será uno genérico) y regresa a la línea 7.
 			\item  \textbf{Línea 9:} El actor se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
 			\end {itemize}
 		\end{itemize}%FIn de caso de uso
@@ -502,7 +508,7 @@ Para cada empleado se tendrán los siguientes campos:
 		
 	\subsection{Modificar un pedido}
 			\begin{itemize}
-			\item \textbf{Actores:} Camareros, maître.
+			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Visión general:} Se pueden acceder a los pedidos realizados por un cliente y modificarlos, en caso de que no se trate de lo que ellos deseaban.
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
@@ -568,7 +574,7 @@ Para cada empleado se tendrán los siguientes campos:
  	
 	\subsection{Ver menú}
 			\begin{itemize}
-			\item \textbf{Actores:} Camareros, maître, cocineros, chef y jefe.
+			\item \textbf{Actor:} Camareros, maître, cocineros, chef y jefe.
 			\item \textbf{Visión general:} Muestra pon pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
 			\begin{itemize}
 				\item 	 Entrantes
@@ -838,7 +844,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito:} Acceder a la ficha de un empleado y modificarla.
 			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado, accede a su ficha y la modifica. Cierra la aplicación. 
-	\newpage
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -869,7 +874,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Propósito:} Acceder al currículum vítae de un trabajador  .
 			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado, accede a su ficha y desde ahí a su currículum. Cierra la aplicación. 
 			\item \textbf{Extiende ($<<$extends$>>$):} Ver ficha de empleado.
-	\newpage
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -942,7 +946,7 @@ Para cada empleado se tendrán los siguientes campos:
 			
 		\subsection{Comprobar distribución y número de mesas del comedor}
 			\begin{itemize}
-				\item \textbf{Actores:} Camareros, maître, jefe.
+				\item \textbf{Actor:} Camareros, maître, jefe.
 				\item \textbf{Visión general:} Se puede acceder a un mapa que indica como están distribuidas las mesas en el restaurante, el numero de comensales que caben en cada mesa y las mesas preferidas por los clientes.
 			\end {itemize}
 
@@ -1002,7 +1006,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Maître, Jefe, Jefe de cocina.
 			\item \textbf{Propósito:} Modificar el menú del restaurante.
 			\item \textbf{Visión general:} Se pueden incluir nuevos platos, modificar algunos ya existentes y borrar otros.
-	\newpage
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -1034,7 +1037,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item  \textbf{Línea 5:} Los ingredientes introducidos no están en la base de datos. Se pide al usuario que introduzca otros ingredientes.
 			\end {itemize}
 			
-	\newpage
 			\item \textbf{Seccion Modificar plato:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -1086,90 +1088,3 @@ Para cada empleado se tendrán los siguientes campos:
 \newpage
 
 \end{document}
- 
-%%% FINAL DEL DOCUMENTO Y PLANTILLAS _____________________________________________________________________________________________
-
-
-
-%DAR DE BAJA A UN CLIENTE
-
-	\subsection{Dar de baja a un cliente}
-			\begin{itemize}
-			\item \textbf{Actor:} Recepcionista.
-			\item \textbf{Propósito: } Transferir la ficha de un empleado de "Empleados actuales" a "Antiguos empleados" .
-			\item \textbf{Visión general:} El recepcionista accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes. Busca un cliente y da de baja su ficha. Cierra la aplicación. 
-			\item \textbf{Curso típico de eventos:} 	\\
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}   El empleado hace Log In satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en "Buscar cliente".	& \textbf{6.} Procesa la búsqueda y muestra la ficha del cliente. \\ \hline
-				\textbf{7.}Selecciona "Dar de baja a este cliente". & \textbf{8.}Pide confirmación para dar de baja al cliente.\\ \hline
-				\textbf{9.}Confirma. & \textbf{} \\ \hline
-				\textbf{11.}Cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 6:}El empleado buscado no se encuentra en la base de datos. El programa le devuelve a la línea 5.
-			\item  \textbf{Línea 6:}El recepcionista se ha equivocado y no quiere dar de baja a ese cliente. El programa le devuelve a la línea 5.
-			\end {itemize}
-		\end{itemize}%FIn de caso de uso
-
-
-%EDITAR UN CLIENTE
-
-	\subsection{Modificar la ficha de un cliente}		
-			\begin{itemize}
-			\item \textbf{Actor:} Jefe.
-			\item \textbf{Propósito: } Acceder a la ficha de un cliente y modificarla.
-			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes. Busca un cliente, accede a su ficha y la modifica. Cierra la aplicación. 
-			\item \textbf{Curso típico de eventos:} 	\\
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}   El jefe hace Log in satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{3.} Selecciona la pestaña “Empleados”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en "Buscar cliente".	& \textbf{6.} Procesa la búsqueda y muestra la ficha del cliente. \\ \hline
-				\textbf{7.}Selecciona "Modificar ficha". & \textbf{8.}Muestra la ficha lista para su modificacion.\\ \hline
-				\textbf{9.}Cambia los campos que considere. & \textbf{10.} Muestra la ficha con los cambios realizados \\ \hline
-				\textbf{11.}Comprueba que los cambios son correctos y cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 6:} El cliente buscado no se encuentra en la base de datos. El programa le devuelve a la línea 5.
-			\item  \textbf{Línea 10:} Algún cambio realizado no es correcto. El programa le devuelve a la línea 11.
-			\item  \textbf{Línea 11:}El jefe se ha equivocado al introducir algún dato y desea volver a modificar la ficha. El programa le devuelve a la línea 5.
-			
-			\end {itemize}
-		\end{itemize}%FIn de caso de uso
-
-\item \textbf{}				%Esta es la plantilla para la descripción de un caso de uso de alto nivel (que no requiere demasiado detalle)
-			\begin{itemize}
-			\item \textbf{Actor:}
-			\item \textbf{Descrición:} 		
-		\end {itemize}
-		
-	\item \textbf{}				%Esta es la plantilla para la descripción de un caso de uso expandido (que es importante y requiere detalle)
-			\begin{itemize}
-			\item \textbf{Actor:}
-			\item \textbf{Propósito:} 		
-			\item \textbf{Visión general:} 
-			\item \textbf{Extiende ($<<$extends$>>$):} 
-			\item \textbf{Incluye ($<<$include$>>$):} 
-			\item \textbf{Curso típico de eventos:} 	%El curso tipico de eventos se hace en dos columnas (Accion del actor 		Respuesta del sistema), es que no me acuerdo como se ponia el Latex las columnas, si eso recuadrado
-\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Este caso de uso comienza al abrir la aplicación & \textbf{2.}Pide la clave de identificación.\\ \hline 
-				\textbf{3.}Introduce la clave. & \textbf{4.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{5.} Selecciona la pestaña “Empleados actuales”. & \textbf{6.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{7.} Busca el nombre del empleado.	& \textbf{8.} Procesa la búsqueda y muestra la ficha del empleado. \\ \hline
-				\textbf{9.}Se desplaza al apartado correspondiente. & \textbf{10.} Consulta el horario.\\ \hline
-				\textbf{11.}Cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-			\item \textbf{Cursos alternativos:} 
-		\end {itemize}
-	%\end{itemize}
