@@ -3,7 +3,7 @@
 %El tema de casos de uso de IS es el TEMA 3
 
 
-\documentclass[spanish,a4paper,12pt]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+\documentclass[spanish,a4paper,11pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
 
 %%% PAQUETES
 \usepackage[spanish,activeacute]{babel}				
@@ -50,6 +50,10 @@
 	 Ignacio Iker Prado Rujas \\
 	 Alejandro Villarín Prieto }
 \date{\Today}
+	%\begin{figure}[!h]
+	%\centering
+	%\includegraphics[scale=0.15]{ucm.png}
+	%\end{figure}
 \maketitle
 
 \newpage
@@ -67,10 +71,12 @@
 
 \pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
-\part{Extracto} %%% PARTE 1: EXTRACTO %%%______________________________________________________________________________________________
-En nuestro proyecto trataremos de desarrollar una aplicación software (y su correspondiente documentación) de la administración de un negocio de hostelería. Se tratará de un Hotel con Restaurante- Bar. La aplicación recogerá toda la información necesaria para el desarrollo próspero de dicho negocio, ésto es, existencias de los productos, gastos de todo tipo, base de datos con los clientes, generación de las cuentas a cobrar, reservas de los clientes, habitaciones disponibles/ ocupadas, mobiliario del que se dispone, balances económicos (accesible sólo al administrador)... Es importante también centrarse en el entorno de la empresa: pequeña, mediana, gran empresa; situación geográfica (no es lo mismo que se emplace en una gran ciudad o en mitad de los Pirineos); gama de productos que se ofrecen (cocina mediterránea, vasca, italiana, china...); tamaño del local... \\
+\begin{abstract} %%%EXTRACTO %%%____________________________________________________________________________________________
+
+En nuestro proyecto trataremos de desarrollar una aplicación software denominada KIKE- Hostelería ®, así como su correspondiente documentación, para la administración de un negocio de hostelería. Se tratará de un Hotel con Restaurante- Bar. La aplicación recogerá toda la información necesaria para el desarrollo próspero de dicho negocio, ésto es, existencias de los productos, gastos de todo tipo, base de datos con los clientes, generación de las cuentas a cobrar, reservas de los clientes, habitaciones disponibles/ ocupadas, mobiliario del que se dispone, balances económicos (accesibles sólo para el administrador)... Es importante también centrarse en el entorno de la empresa: pequeña, mediana, gran empresa; situación geográfica (no es lo mismo que se emplace en una gran ciudad o en mitad de los Pirineos); gama de productos que se ofrecen (cocina mediterránea, vasca, italiana, china...); tamaño del local... \\
 
 En primer lugar, debemos identificar el problema a solventar, dar su descripción y un minucioso análisis. El problema es idear un software que facilite a sus usuarios el trabajo descrito arriba. Para ello, debe ser sencillo e intuitivo a la vez que seguro y adaptado a los intereses de la empresa que lo solicita. Además hay que centrarse en describir detalladamente las funcionalidades que tendrá. Una vez completa la especificación del sistema, se puede abordar la implementación. Es fundamental que la especificación sea clara y sobre todo precisa, ha de responder a cualquier pregunta sobre su uso y diseño. Una vez terminado, debe someterse a las pruebas correspondientes y a la más importante: ¿el usuario queda satisfecho con los resultados?, ¿la aplicación hace lo que él espera que haga y como él espera que lo haga? Tras esto, con toda seguridad habrá una tarea de mantenimiento, solventando errores que surjan, hasta que, eventualmente, el programa caiga en desuso (obsolescencia).
+\end{abstract}
 
 \newpage
 \mbox{}
@@ -79,7 +85,7 @@ En primer lugar, debemos identificar el problema a solventar, dar su descripció
 
 \setcounter{section}{0}
 
-\part{Catálogo de casos de uso} %%% PARTE 2: CATALOGO CASOS DE USO %%%____________________________________________________________
+\part{Catálogo de casos de uso} %%% PARTE 1: CATALOGO CASOS DE USO %%%____________________________________________________________
 En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos en primarios y secundarios, para tener una visión general de los mismos.
 \section{Primarios} 				%Los procesos principales, que sean mas comunes de realizar
 	\begin{itemize}
@@ -141,7 +147,7 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 
 \setcounter{section}{0}
 
-\part{Especificación de los casos de uso} %%% PARTE 3: ESPECIFICACION CASOS DE USO %%%_______________________________________________
+\part{Especificación de los casos de uso} %%% PARTE 2: ESPECIFICACION CASOS DE USO %%%_______________________________________________
 Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso.
 %%	LAS PLANTILLAS ESTÁN DESPUÉS DEL \end{document}
 \section{Primarios}		 			
