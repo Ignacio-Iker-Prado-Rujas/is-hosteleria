@@ -26,8 +26,10 @@
 % Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
 \pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
 %\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
-%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
-%\rhead{\bfseries Gestión de riesgos}			%Encabezado a la derecha
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Gestión de riesgos} 	%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
 \cfoot{\thepage}							% Numero de pagina centrado en el pie
 %\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
@@ -38,14 +40,12 @@
 %%%%% CUERPO %%%%%
 \begin{document}
 
-
-\title{\textbf{\huge{Gestión de \\ riesgos Software}}}
-
 \title{\textbf{\huge{Gestión de \\ 
 	riesgos Software}} \\ \vspace{0.3cm}
-	\Large{Ingeniería del Software}}
-
-\author{ Jesús Aguirre Pemán \\
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
@@ -119,7 +119,7 @@ En esta parte se identificarán todos los riesgos que pueden afectar a nuestro p
 	\end{itemize}
 \item \textbf {Deficiencias en componentes proporcionados externamente}
 	\begin{itemize}
-		\item {Las librerías de java no son eficientes para nuestro proyecto}
+		\item {Las librerías de Java no son eficientes para nuestro proyecto}
 		\item {Los programas proporcionados son muy difíciles de usar y poco efectivos}
 		\item {Los recursos son proporcionados demasiado tarde}
 
@@ -351,7 +351,7 @@ explicando la consecuencia que tendrían si llegaran a producirse.
 %
 \section{Deficiencias en componentes proporcionados externamente}
 
-	\subsection*{Las librerías de java no son eficientes para nuestro proyecto}	
+	\subsection*{Las librerías de Java no son eficientes para nuestro proyecto}	
 		\begin{itemize}
 			\item \textbf {Probabilidad: }Improbable.
 			\item \textbf {Consecuencia: }Crítica. Sería necesario implementar funciones que pueden llegar a ser muy complejas.
@@ -611,7 +611,7 @@ sección serán ordenados según su prioridad.
 				\item \textbf{Prioridad: }Alta.
 			\end{itemize}
 
-		\item \textbf{Las librerías de java no son eficientes para nuestro proyecto}	
+		\item \textbf{Las librerías de Java no son eficientes para nuestro proyecto}	
 			\begin{itemize}
 				\item \textbf{Prioridad: }Baja.
 			\end{itemize}
@@ -725,12 +725,12 @@ sección serán ordenados según su prioridad.
 				\ \\
 			%\textbf{Baja}\\
 			
-			\begin{tabular}{|p{12cm}|}
+			\begin{tabular}{|p{12cm}|} 
 				\hline
 				\textbf{Riesgos con prioridad Baja}\\ \hline \hline
 				\textbf{33.} Baja del supervisor del proyecto.\\ \hline 
 				\textbf{34.} El lenguaje no permite realizar todas las funciones.\\ \hline
-				\textbf{35.} Las librerías de java no son eficientes para nuestro proyecto. \\ \hline
+				\textbf{35.} Las librerías de Java no son eficientes para nuestro proyecto. \\ \hline
 				%\textbf{34.} Poco tiempo para asimilar los pasos a seguir. \\ \hline
 				%\textbf{35.} Falta de conocimiento por parte de los componentes del equipo.\\ \hline
 			\end{tabular}

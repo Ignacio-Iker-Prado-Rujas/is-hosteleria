@@ -27,8 +27,10 @@
 % Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
 \pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
 %\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
-%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
-\rhead{\bfseries Estimación del proyecto}		%Encabezado a la derecha
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Estimación del proyecto} 	%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries ...}						%Encabezado a la derecha
 \cfoot{\thepage}							% Numero de pagina centrado en el pie
 %\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
@@ -39,10 +41,12 @@
 %%%%% CUERPO %%%%%
 \begin{document}
 
-\title{\textbf{\huge{Estimación del \\ 
+\title{\textbf{\huge{ Estimación del \\ 
 	proyecto Software}} \\ \vspace{0.3cm}
-	\Large{Ingeniería del Software}}
-\author{ Jesús Aguirre Pemán \\
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
@@ -63,9 +67,8 @@
 \thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
 
-\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+\begin{abstract} %%% Extracto%%%___________________________________________________________________________________________________
 
-\part{Extracto} %%% PARTE 1 %%%___________________________________________________________________________________________________
 Este documento se puede considerar como una ampliación de una parte del \texttt{Plan de proyecto} del desarrollo de una aplicación para el campo de la hostelería. Más concretamente, vamos a estimar esfuerzo, coste y duración mediante la técnica de Puntos de Función (también conocida como FPA o Function Point Analysis), un procedimiento de descomposición basado en el problema. Esta métrica fue introducida en 1979 por Allan Albrecht, y existen distintas metodologías de medición. La más conocida es la del IFPUG (International Function Points Users Group), que es una organización que ofrece certificación a especialistas de puntos de función de todo el mundo. 
 
 \vspace{0.35cm}
@@ -77,7 +80,7 @@ En cuanto al documento en sí, comenzaremos diviendo el producto en partes más 
 Una vez vez hecho esto, calcularemos el factor de ajuste para obtener los puntos de función ajustados. Entonces estaremos en condiciones de estimar y obtener unos resultados que se podrán aplicar al proyecto. Par ello utilizaremos la herramienta \texttt{COCOMO II.2000.4}, que se puede encontrar en 
 
 \texttt{http://csse.usc.edu/csse/research/COCOMOII/cocomo\_downloads.htm}
-
+\end{abstract}
 
 \newpage
 \mbox{}
@@ -85,14 +88,15 @@ Una vez vez hecho esto, calcularemos el factor de ajuste para obtener los puntos
 \newpage
 \setcounter{section}{0}
 
-\part{Técnicas de estimación} %%% PARTE 2 %%%_________________________________________________________________________________________
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+\part{Técnicas de estimación} %%% PARTE 1 %%%_________________________________________________________________________________________
 %DETERMINACION DEL TIPO DE CUENTA: ESTIMACION DE PUNTOS DE FUNCION EN UN PROYECTO DE DESARROLLO
 %DEFINICION DE LOS LIMITES DEL SISTEMA
 %INFORMACION DE PARTIDA(CALCULO DE LOS PF SIN AJUSTAR): E-S, INTERFACES, FICHEROS, PROCESOS
 %EN FUNCION DE COMPLEJUDAD, PESO Y E-S, ILF... SE SACA EL TOTAL DE PF
 %FACTOR DE AJUSTE Y CARACTERISTICAS GENERALES
 %CALCULO DE PF AJUSTADOS
-\rhead{}
 \section{Determinación del tipo de cuenta de PF}
 Al tratarse del inicio del proyecto, estamos trabajando con una estimación de los puntos de función, que diferirá de los puntos de función de la aplicación ya finalizada, dependiendo de los cambios que se vayan produciendo. 
 
@@ -113,7 +117,6 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 	La complejidad viene dada por dos conceptos: DET (Data Element Type), que es un campo individual identificable por el usuario y modifica un ILF, y FTR (File Type Referenced), que es el ILF o EIF que interviene. Entonces la complejidad queda: 
 
 \vspace{0.35cm}
-\rhead{\bfseries Estimación del proyecto}
 			\begin{tabular}{|p{3cm}||p{3cm}|p{3.2cm}|p{3cm}|}
 				\hline
 				\textbf{FTR$\backslash$DET} & \textbf{De 1 a 4 DET} & \textbf{De 5 a 15 DET} & \textbf{16  o más DET} \\ \hline \hline
@@ -704,7 +707,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 \newpage
 \setcounter{section}{0}
 
-\part{Estimaciones de esfuerzo, coste y duración} %%% PARTE 3 %%%__________________________________________________________
+\part{Estimaciones de esfuerzo, coste y duración} %%% PARTE 2 %%%__________________________________________________________
 Para esta parte, como se dijo en el \textit{Extracto}, se ha utilizado la herramienta \texttt{COCOMO II.2000.4}.
 
 En primer lugar, se introdujo un nuevo módulo: \textit{Hostelería}. Posteriormente, en \textit{Module size} se añadió los datos sobre PF. El peso de cada uno es el habitual, seleccionado así:

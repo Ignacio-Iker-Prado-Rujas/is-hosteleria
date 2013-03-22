@@ -27,8 +27,10 @@
 % Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
 \pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
 %\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
-%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
-\rhead{\bfseries Garantía de calidad}			%Encabezado a la derecha
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Garantía de calidad} 	%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
 \cfoot{\thepage}							% Numero de pagina centrado en el pie
 %\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
@@ -38,13 +40,16 @@
 
 %%%%% CUERPO %%%%%
 \begin{document}
+
 \renewcommand{\chaptername}{Parte}			% Renombrar "Capítulo" como "Parte"
 \renewcommand{\thechapter}{\Roman{chapter}}	% Cambio la numeración de los capítulos a números romanos en mayúsculas
 
 \title{\textbf{\huge{Garantía de \\ 
-	calidad del Software}} \\ \vspace{0.3cm}
-	\Large{Ingeniería del Software}}
-\author{ Jesús Aguirre Pemán \\
+	calidad Software}} \\ \vspace{0.3cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
