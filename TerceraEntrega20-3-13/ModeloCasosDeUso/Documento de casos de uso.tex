@@ -197,6 +197,8 @@ Para cada empleado se tendrán los siguientes campos:
 				\item 	 Historial
 				\item 	 Comentarios
 				\end {itemize}
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -223,6 +225,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito:} Crear una nueva ficha de cliente.
 			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo, y entra en la base de datos de los clientes. Rellena la ficha con los datos del cliente. Tras haberla completado, comprueba que los datos introducidos son correctos. Cierra la aplicación. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -249,6 +253,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito:} Acceder a la ficha de un cliente.
 			\item \textbf{Visión general:} El actor entra al programa de gestión de empleados desde su ordenador, y accede a la base de datos de los clientes. Busca al cliente por nombre y/o apellidos . Una vez que lo encuentra, consulta los datos que desee. Cierra la aplicación. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -278,7 +284,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor: }Jefe de limpieza.
 			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el trabajo entre los empleados de limpieza y organizando los horarios. 		
 			\item \textbf{Visión general: }El jefe de limpieza accede al programa a través de su dispositivo. Debe introducir su nombre de usuario y contraseña. Una vez ha accedido, tiene la opción de organizar las tareas de limpieza. Pulsando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas entre los trabajadores de limpieza. 
-			\item \textbf{Curso típico de eventos:} \\	%El curso tipico de eventos se hace en dos columnas (Accion del actor 		Respuesta del sistema), es que no me acuerdo como se ponia el Latex las columnas, si eso recuadrado
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} \\
 \begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
@@ -304,7 +312,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor: }Jefe de limpieza.
 			\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de comprobar que aquellos lugares que ya han sido marcados como “limpiados"  por los trabajadores de limpieza, efectivamente lo están.  		
 			\item \textbf{Visión general: }Anteriormente, el jefe ha creado una lista de tareas, que pueden consultar los trabajadores de limpieza. Cada vez que se limpia un sitio, este se tacha de la lista de “Sitios por limpiar'' y se añade a la de “Sitios limpiados".  
-			\item \textbf{Curso típico de eventos:}\\ 	%El curso tipico de eventos se hace en dos columnas (Accion del actor 		Respuesta del sistema), es que no me acuerdo como se ponia el Latex las columnas, si eso recuadrado
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:}\\ 
 \begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
@@ -328,6 +338,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 				\item \textbf{Actor:} Personal de limpieza.
 				\item \textbf{Visión general:} Permite al personal de limpieza consultar las tareas que el encargado de limpieza les ha asignado. 		
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\end {itemize}
 
 %CONFIRMAR LIMPIEZA DE HABITACION
@@ -338,7 +350,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Personal de limpieza.
 			\item \textbf{Propósito: }Eliminar de la lista de tareas una tarea que ha sido completada.
 			\item \textbf{Visión general: }El jefe de limpieza envía a los trabajadores de limpieza una lista con las tareas que deben hacer. Una vez que estas tareas han sido realizadas, los trabajadores de limpieza deben eliminarlas de la lista de "Tareas por realizar".
-			\item \textbf{Curso típico de eventos:}\\ 	%El curso tipico de eventos se hace en dos columnas (Accion del actor 		Respuesta del sistema), es que no me acuerdo como se ponia el Latex las columnas, si eso recuadrado
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
 					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
@@ -352,7 +366,7 @@ Para cada empleado se tendrán los siguientes campos:
 					\item \textbf{Línea 3:} Puede que el trabajador no haya podido realizar una tarea en el momento en el que le fue propuesta (por ejemplo, habitación con "no molestar").
  En este caso, puede elegir una opción que diga ''Recordar para más tarde".
 				\end{itemize}
-		\end {itemize}%FIn de caso de uso
+		\end {itemize}
 
 %ANOTAR INCIDENCIAS
 
@@ -360,7 +374,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 				\item \textbf{Actor:} Todos los usuarios.
 				\item \textbf{Propósito:} Informar de incidencias de mantenimiento que requieran de reparación. 		
-				\item \textbf{Visión general:} Cuando se detecta una avería, o alguna otra incidencia de mantenimiento, se informa de ésta al encargado de mantenimiento a través de la aplicación.  
+				\item \textbf{Visión general:} Cuando se detecta una avería, o alguna otra incidencia de mantenimiento, se informa de ésta al encargado de mantenimiento a través de la aplicación.
+				\item \textbf{Precondiciones:} 
+				\item \textbf{Postcondiciones:}   
 				\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
@@ -384,7 +400,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor: }Encargado de mantenimiento.
 			\item \textbf{Propósito: }Consultar incidencias de mantenimiento, y tachar de la lista aquellas incidencias que han sido resueltas. 
 			\item \textbf{Visión general: }El personal del hotel informa al encargado de mantenimiento de incidencias que hayan ocurrido en el hotel a través de notificaciones. Cuando se resuelve una incidencia, el encargado de mantenimiento la elimina de su lista. 
-			\item \textbf{Curso típico de eventos:}\\ 	%El curso tipico de eventos se hace en dos columnas (Accion del actor 		Respuesta del sistema), es que no me acuerdo como se ponia el Latex las columnas, si eso recuadrado
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} \\ 
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
@@ -404,6 +422,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Reservar una mesa en el restaurante para comer.
 			\item \textbf{Visión general:} El empleado que va a realizar la reserva selecciona una de las mesas disponibles en función del número de comensales.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -431,6 +451,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Anular una reserva realizada con anterioridad.
 			\item \textbf{Visión general:} El empleado que desea anular una reserva inicia la aplicación, se identifica y selecciona la reserva que se va a anular.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Extiende ($<<$extends$>>$):} Reservar Mesa
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -456,6 +478,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Pedir un plato a la cocina.
 			\item \textbf{Visión general:} El camarero o el maître realiza la petición de un plato directamente a la cocina.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -479,7 +503,9 @@ Para cada empleado se tendrán los siguientes campos:
 	\subsection{Modificar un pedido}
 			\begin{itemize}
 			\item \textbf{Actores:} Camareros, maître.
-			\item \textbf{Descripción:} Se pueden acceder a los pedidos realizados por un cliente y modificarlos, en caso de que no se trate de lo que ellos deseaban.
+			\item \textbf{Visión general:} Se pueden acceder a los pedidos realizados por un cliente y modificarlos, en caso de que no se trate de lo que ellos deseaban.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 
@@ -490,6 +516,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Anular un pedido realizado.
 			\item \textbf{Visión general:} El cliente puede pedir a un empleado que anule un pedido que realizó siempre que no haya comenzado a prepararse.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Extiende ($<<$extends$>>$):} Generar un pedido.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -515,6 +543,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Proporcionar la factura para cobrar al cliente.
 			\item \textbf{Visión general:} Se selecciona el cliente del cual se desea obtener la factura y se imprime. Se da la opción al cliente de pagar en el momento o que se lo carguen en la cuenta de la habitación, si es que está alojado en el hotel.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -539,13 +569,15 @@ Para cada empleado se tendrán los siguientes campos:
 	\subsection{Ver menú}
 			\begin{itemize}
 			\item \textbf{Actores:} Camareros, maître, cocineros, chef y jefe.
-			\item \textbf{Descripción:} Muestra pon pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
+			\item \textbf{Visión general:} Muestra pon pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
 			\begin{itemize}
 				\item 	 Entrantes
 				\item 	 Principales
 				\item 	 Segundos
 				\item 	 Postres
 				\end {itemize}
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %AÑADIR NOTA
@@ -556,8 +588,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito:} Crear una nota y añadirla al tablón.
-			\item \textbf{Visión general:} Las notas son el principal medio de comunicación escrito entre los empleados del negocio. 		Así pues, todos tendrán acceso a esta pestaña y podrán subir sus notas y ver las de los demás. La
-pestaña de notas es la única común a todos los empleados.
+			\item \textbf{Visión general:} Las notas son el principal medio de comunicación escrito entre los empleados del negocio. 		Así pues, todos tendrán acceso a esta pestaña y podrán subir sus notas y ver las de los demás. La pestaña de notas es la única común a todos los empleados.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -579,6 +612,8 @@ pestaña de notas es la única común a todos los empleados.
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito:} Borra una nota del tablón.
 			\item \textbf{Visión general:} Selecciona una nota del tablón y la elimina, tanto para él como para el resto de empleados.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -603,7 +638,9 @@ pestaña de notas es la única común a todos los empleados.
 	\subsection{Ver cuenta diaria de la caja de recepción}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
-			\item \textbf{Descrición:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja de la recepción.	
+			\item \textbf{Visión general:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja de la recepción.	
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %VER CUENTA DIARIA DE LA CAJA DEL RESTAURANTE.
@@ -611,7 +648,9 @@ pestaña de notas es la única común a todos los empleados.
 	\subsection{Ver cuenta diaria de la caja del restaurante}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
-			\item \textbf{Descrición:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja del restaurante.	
+			\item \textbf{Visión general:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja del restaurante.	
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %CONSULTAR LIBRO DIARIO
@@ -619,7 +658,9 @@ pestaña de notas es la única común a todos los empleados.
 	\subsection{Consultar libro diario}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
-			\item \textbf{Descrición:} El jefe ve los últimos apuntes del libro diario, pudiendo ascender si lo desea hasta el asiento de apertura.	
+			\item \textbf{Visión general:} El jefe ve los últimos apuntes del libro diario, pudiendo ascender si lo desea hasta el asiento de apertura.	
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %CONSULTAR LIBRO MAYOR
@@ -627,7 +668,9 @@ pestaña de notas es la única común a todos los empleados.
 	\subsection{Consultar libro mayor}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
-			\item \textbf{Descrición:} El jefe ve los últimos apuntes en las cuentas del libro mayor. \\
+			\item \textbf{Visión general:} El jefe ve los últimos apuntes en las cuentas del libro mayor. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %VER HABITACIONES
@@ -639,6 +682,8 @@ pestaña de notas es la única común a todos los empleados.
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
 			\item \textbf{Visión general:} Se muestran las características de cada habitación seleccionada.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Incluye ($<<$include$>>$):} Modificar habitaciones.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -658,6 +703,8 @@ pestaña de notas es la única común a todos los empleados.
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Reservar una habitación del hotel.
 			\item \textbf{Visión general:} Cuando un cliente reserva una habitación, se guarda toda la información de la reserva.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -681,6 +728,8 @@ pestaña de notas es la única común a todos los empleados.
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Ver la reserva de habitaciones del hotel.
 			\item \textbf{Visión general:} Se ve el total de las futuras reservas de habitaciones del hotel ordenadas por fecha.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Incluye ($<<$include$>>$):} Anular reserva.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -697,7 +746,9 @@ pestaña de notas es la única común a todos los empleados.
 	\subsection{Anular reservas}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
-			\item \textbf{Descripción:} Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
+			\item \textbf{Visión general:} Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %GENERAR FACTURA DEL HOTEL
@@ -707,6 +758,8 @@ pestaña de notas es la única común a todos los empleados.
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Generar una factura para un cliente.
 			\item \textbf{Visión general:} Cuando un cliente quiere pagar la factura del hotel, se genera la factura correspondiente.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -890,7 +943,7 @@ pestaña de notas es la única común a todos los empleados.
 		\subsection{Comprobar distribución y número de mesas del comedor}
 			\begin{itemize}
 				\item \textbf{Actores:} Camareros, maître, jefe.
-				\item \textbf{Descripción:} Se puede acceder a un mapa que indica como están distribuidas las mesas en el restaurante, el numero de comensales que caben en cada mesa y las mesas preferidas por los clientes.
+				\item \textbf{Visión general:} Se puede acceder a un mapa que indica como están distribuidas las mesas en el restaurante, el numero de comensales que caben en cada mesa y las mesas preferidas por los clientes.
 			\end {itemize}
 
 %MODIFICAR DISTRIBUCIÓN DEL RESTAURANTE
@@ -1022,7 +1075,7 @@ pestaña de notas es la única común a todos los empleados.
 	\subsection{Editar habitaciones}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
-			\item \textbf{Descripción:} Desde la pantalla de ver habitaciones, puedes editar la habitación.	
+			\item \textbf{Visión general:} Desde la pantalla de ver habitaciones, puedes editar la habitación.	
 		\end {itemize}
 
 
