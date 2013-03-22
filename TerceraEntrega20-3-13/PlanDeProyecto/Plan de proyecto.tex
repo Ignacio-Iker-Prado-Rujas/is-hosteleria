@@ -26,8 +26,10 @@
 % Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
 \pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
 %\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
-%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
-\rhead{\bfseries Plan de proyecto}				%Encabezado a la derecha
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Plan de proyecto} 	%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries ...}						%Encabezado a la derecha
 \cfoot{\thepage}							% Numero de pagina centrado en el pie
 %\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
@@ -35,16 +37,17 @@
 \renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
 
 
-
-
 %%%%% CUERPO %%%%%
 \begin{document}
 \renewcommand{\chaptername}{Parte}			% Renombrar "Capítulo" como "Parte"
-\renewcommand{\thechapter}{\Roman{chapter}}		% Cambio la numeración de los capítulos a números romanos en mayúsculas
+\renewcommand{\thechapter}{\Roman{chapter}}	% Cambio la numeración de los capítulos a números romanos en mayúsculas
 
-\title{\textbf{\huge{Plan de proyecto}} \\ \vspace{0.3cm}
-	\Large{Ingeniería del Software}}
-\author{ Jesús Aguirre Pemán \\
+\title{\textbf{\huge{Plan de \\ 
+	proyecto Software}} \\ \vspace{0.3cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
@@ -166,7 +169,7 @@ El \textbf{Hardware} utilizado será Windows (Windows 7 para ordenadores de sobr
 		Para más detalle, se dispone del documento adjunto \texttt{Estimación del
 		proyecto Software}, donde se estudia en profundidad el número de puntos de
 		función y su origen.
-\rhead{}
+
 	\section{Estimaciones de esfuerzo, coste y duración}
 	%ESFUERZO: Personas por mes; COSTE: €; DURACION: Tiempo, supongo que en funcion del nº personas (5)
 		Como conclusión del apartado anterior y utilizando la herramienta \texttt{COCOMO II.2000.4} (COnstructive COst MOdel), podemos obtener una estimación en esfuerzo, dinero y tiempo para el producto.
@@ -177,12 +180,7 @@ El \textbf{Hardware} utilizado será Windows (Windows 7 para ordenadores de sobr
 		documento anexo \texttt{Estimación del proyecto Software}.
 
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
 \setcounter{section}{0}
-\rhead{\bfseries Plan de proyecto}	
 %VILLARIN & JAIME
 \chapter{Estrategia de gestión del riesgo}
 
@@ -289,14 +287,7 @@ El \textbf{Hardware} utilizado será Windows (Windows 7 para ordenadores de sobr
 	\caption{Uso de los recursos2}
 	\end{figure}
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
+
 
 \setcounter{section}{0}
 
@@ -410,10 +401,7 @@ El \textbf{Hardware} utilizado será Windows (Windows 7 para ordenadores de sobr
 					\end{itemize}
 			\end{itemize} 
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
+
 \setcounter{section}{0}
 
 
@@ -424,7 +412,7 @@ El \textbf{Hardware} utilizado será Windows (Windows 7 para ordenadores de sobr
 \chapter{Mecanismos de seguimiento y control} La garantía de calidad y el control de cambios serán profundamente analizados en la próxima entrega de documentación.
 
 	\section{Garantía de calidad y control} 
-En este apartado comentaremos las revisiones técnicas sobre el producto KIKE HOSTELERIA. Las revisiones formales comenzarán con la fase de codificación.
+En este apartado comentaremos las revisiones técnicas sobre el producto KIKE- Hostelería ®. Las revisiones formales comenzarán con la fase de codificación.
 
 	\section{Gestión y control de cambios}
 Aquí identificaremos, controlaremos y garantizaremos la corrección de la implementación de los cambios, informando de ellos al personal que lo necesite.

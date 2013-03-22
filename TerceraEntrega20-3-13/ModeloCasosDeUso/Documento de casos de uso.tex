@@ -29,8 +29,10 @@
 % Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
 \pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
 %\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
-%\lhead{Encabezado a la izquierda}				% Encabezado a la izquierda
-\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Casos de uso} 		%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
 \cfoot{\thepage}							% Numero de pagina centrado en el pie
 %\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
@@ -43,17 +45,15 @@
 
 \title{\textbf{\huge{Documento de \\ 
 	casos de uso}} \\ \vspace{0.3cm}
-	\Large{Ingeniería del Software}}
-\author{ Jesús Aguirre Pemán \\
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
 	 Ignacio Iker Prado Rujas \\
 	 Alejandro Villarín Prieto }
 \date{\Today}
-	%\begin{figure}[!h]
-	%\centering
-	%\includegraphics[scale=0.15]{ucm.png}
-	%\end{figure}
 \maketitle
 
 \newpage
@@ -69,7 +69,6 @@
 \thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
 
-\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
 \begin{abstract} %%%EXTRACTO %%%____________________________________________________________________________________________
 
@@ -78,10 +77,8 @@ En nuestro proyecto trataremos de desarrollar una aplicación software denominad
 En primer lugar, debemos identificar el problema a solventar, dar su descripción y un minucioso análisis. El problema es idear un software que facilite a sus usuarios el trabajo descrito arriba. Para ello, debe ser sencillo e intuitivo a la vez que seguro y adaptado a los intereses de la empresa que lo solicita. Además hay que centrarse en describir detalladamente las funcionalidades que tendrá. Una vez completa la especificación del sistema, se puede abordar la implementación. Es fundamental que la especificación sea clara y sobre todo precisa, ha de responder a cualquier pregunta sobre su uso y diseño. Una vez terminado, debe someterse a las pruebas correspondientes y a la más importante: ¿el usuario queda satisfecho con los resultados?, ¿la aplicación hace lo que él espera que haga y como él espera que lo haga? Tras esto, con toda seguridad habrá una tarea de mantenimiento, solventando errores que surjan, hasta que, eventualmente, el programa caiga en desuso (obsolescencia).
 \end{abstract}
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
 \setcounter{section}{0}
 
@@ -159,6 +156,8 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\item \textbf{Actores:} Todos.
 			\item \textbf{Propósito:} Acceder a tu perfil de empleado, o de jefe.
 			\item \textbf{Visión general:} La aplicación exigirá autentificación para permitir realizar las operaciones relacionadas con cada tipo de trabajador. El número de pestañas que mostrará dependerá de la posición en la jerarquía de la empresa. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -184,7 +183,8 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleados.
 			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
-			\item \textbf{Visión general:} El jefe accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. En el buscador introduce el nombre deseado. Consulta su ficha y cierra la aplicación. \\
+			\item \textbf{Visión general:} El jefe accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. En el buscador introduce el nombre deseado. Consulta su ficha y cierra la aplicación.
+
 Para cada empleado se tendrán los siguientes campos:
 				\begin{itemize}
 				\item 	 Nombre y apellidos
