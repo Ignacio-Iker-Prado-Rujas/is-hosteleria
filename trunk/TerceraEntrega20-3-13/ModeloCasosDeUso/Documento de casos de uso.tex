@@ -450,9 +450,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\end {itemize}
 		\end {itemize}
 		
-%ANULAR RESERVA
+%ANULAR RESERVA DEL RESTAURANTE
 
-		\subsection{Anular reserva}
+		\subsection{Anular reserva del restaurante}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Anular una reserva realizada con anterioridad.
@@ -521,7 +521,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Anular un pedido realizado.
-			\item \textbf{Visión general:} El cliente puede pedir a un empleado que anule un pedido que realizó siempre que no haya comenzado a prepararse.
+			\item \textbf{Visión general:} El cliente puede pedir a un empleado que anule un pedido que realizó.
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
 			\item \textbf{Extiende ($<<$extends$>>$):} Generar un pedido.
@@ -544,7 +544,7 @@ Para cada empleado se tendrán los siguientes campos:
 		
 %GENERAR FACTURA A UN CLIENTE
 
-		\subsection{Generar factura a un cliente}
+		\subsection{Generar factura del restaurante}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Proporcionar la factura para cobrar al cliente.
@@ -575,7 +575,7 @@ Para cada empleado se tendrán los siguientes campos:
 	\subsection{Ver menú}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, cocineros, chef y jefe.
-			\item \textbf{Visión general:} Muestra pon pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
+			\item \textbf{Visión general:} Muestra por pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
 			\begin{itemize}
 				\item 	 Entrantes
 				\item 	 Principales
@@ -687,7 +687,7 @@ Para cada empleado se tendrán los siguientes campos:
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
-			\item \textbf{Visión general:} Se muestran las características de cada habitación seleccionada.
+			\item \textbf{Visión general:} Se muestran las características (planta en la que está, ascensor, bañera o jacuzzi, mobiliario) de cada habitación seleccionada.
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
 			\item \textbf{Incluye ($<<$include$>>$):} Modificar habitaciones.
@@ -704,7 +704,7 @@ Para cada empleado se tendrán los siguientes campos:
 		\end {itemize}
 		
 %RESERVAR HABITACION
-	\subsection{Reservar habitacion}
+	\subsection{Reservar habitación}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Reservar una habitación del hotel.
@@ -728,8 +728,18 @@ Para cada empleado se tendrán los siguientes campos:
 			\end {itemize}
 		\end {itemize}
 
+%ANULAR RESERVA DEL HOTEL
+
+	\subsection{Anular reserva del hotel}
+		\begin{itemize}
+			\item \textbf{Actor:} Recepcionista, maître, jefe.
+			\item \textbf{Visión general:} Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+		\end {itemize}
+
 %VER RESERVAS
-	\subsection{Ver reservas}
+	\subsection{Ver reservas del hotel}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Ver la reserva de habitaciones del hotel.
@@ -745,16 +755,6 @@ Para cada empleado se tendrán los siguientes campos:
 				\textbf{3.} Selecciona ver/anular reservas. & \textbf{4.}Se muestran la lista de reservas \\ \hline
 			\end{tabular}
 			\\
-		\end {itemize}
-
-%ANULAR RESERVAS
-
-	\subsection{Anular reservas}
-		\begin{itemize}
-			\item \textbf{Actor:} Recepcionista, maître, jefe.
-			\item \textbf{Visión general:} Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
 		\end {itemize}
 
 %GENERAR FACTURA DEL HOTEL
@@ -920,7 +920,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista.
 			\item \textbf{Propósito:} Elimina de la base de datos de clientes la ficha de un cliente.
-			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los clientes.  Busca al cliente por nombre y/o apellidos. Clica en “Eliminar a este cliente". El programa pide confirmación al actor de que realmente desea eliminar al cliente de la base de datos. Cierra la aplicación. 
+			\item \textbf{Visión general:} El actor accede a la base de datos de los clientes.  Busca al cliente y si lo desea se elimina.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -1012,7 +1012,7 @@ Para cada empleado se tendrán los siguientes campos:
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.}    El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
 				\textbf{3.} Selecciona la opción modificar menú. & \textbf{4.} Muestra las siguientes opciones: Añadir plato. Modificar plato. Eliminar plato. \\ \hline
-				\textbf{5.} Selecciona una opción.	& \textbf{6.} Si se selecciono Añadir plato ver seccion “Añadir plato". Si se seleccionó modificar plato ver seccion “Modificar plato". Si se seleccionó Eliminar plato ver sección “Eliminar plato". \\ \hline
+				\textbf{5.} Selecciona una opción.	& \textbf{6.} Si se seleccionó Añadir plato ver sección “Añadir plato". Si se seleccionó modificar plato ver sección “Modificar plato". Si se seleccionó Eliminar plato ver sección “Eliminar plato". \\ \hline
 				\textbf{7.} Cierra la aplicación. &  \\ \hline
 			\end{tabular}
 			\\
@@ -1025,16 +1025,14 @@ Para cada empleado se tendrán los siguientes campos:
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El usuario indica el nombre del plato nuevo. & \textbf{2.} Pide una breve descripción del plato y como cocinarlo. \\ \hline
-				\textbf{3.} Introduce la descripción.	& \textbf{4.} Pide los ingredientes necesarios para prepararlo. \\ \hline
-				\textbf{5.} Introduce los ingredientes.	& \textbf{6.} Pide el precio que llevara el plato. \\ \hline
-				\textbf{7.} Introduce el precio. & \textbf{8.} Se procesa el palto y se añade al menú. \\ \hline
+				\textbf{1.} El usuario indica el nombre del plato nuevo. & \textbf{2.} Pide una breve descripción del plato. \\ \hline
+				\textbf{3.} Introduce la descripción.	& \textbf{4.} Pide el precio que llevará el plato. \\ \hline
+				\textbf{5.} Introduce el precio. & \textbf{6.} Se procesa el palto y se añade al menú. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
 			\item  \textbf{Línea 1:} El plato introducido ya existe. Se pide al usuario otro nombre y se le da la opción de cancelar.
-			\item  \textbf{Línea 5:} Los ingredientes introducidos no están en la base de datos. Se pide al usuario que introduzca otros ingredientes.
 			\end {itemize}
 			
 			\item \textbf{Seccion Modificar plato:} 	\\
@@ -1042,18 +1040,15 @@ Para cada empleado se tendrán los siguientes campos:
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} El usuario indica el nombre del plato a modificar. & \textbf{2.} Pregunta al usuario si desea modificar la descripción. \\ \hline
-				\textbf{3.} Introduce la descripción.	& \textbf{4.} Pregunta si desea modificar los ingredientes necesarios. \\ \hline
-				\textbf{5.} Introduce los ingredientes.	& \textbf{6.} Pregunta al usuario si quiere cambiar el precio. \\ \hline
-				\textbf{7.} Introduce el precio. & \textbf{8.} Se procesa el palto y se modifica. \\ \hline
+				\textbf{3.} Introduce la descripción.	& \textbf{4.} Pregunta al usuario si quiere cambiar el precio. \\ \hline
+				\textbf{5.} Introduce el precio. & \textbf{6.} Se procesa el palto y se modifica. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
 			\item  \textbf{Línea 1:} El plato introducido no existe. Se pide al usuario otro nombre y se le da la opción de cancelar.
 			\item  \textbf{Línea 2:} El cliente no desea modificar la descripción. Se salta al paso 4.
-			\item  \textbf{Línea 4:} El cliente no desea modificar los ingredientes. Se salta al paso 6.
-			\item  \textbf{Línea 5:} Los ingredientes introducidos no están en la base de datos. Se pide al usuario que introduzca otros ingredientes.
-			\item  \textbf{Línea 6:} El cliente no desea modificar el precio. Se salta al paso 8.
+
 			\end {itemize}
 			
 			\item \textbf{Sección Borrar plato:} 	\\
@@ -1061,7 +1056,7 @@ Para cada empleado se tendrán los siguientes campos:
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Introduce el nombre del plato que quiere borrar. & \textbf{2.} Muestra un mensaje con la descripción, ingredientes y precio, y pregunta al usuario si realmente desea borrarlo.\\ \hline 
-				\textbf{3.} Selecciona borrar. & \textbf{4.} El plato desaparece del menú y queda almacenado en una base de datos para su posible uso posterior. \\ \hline
+				\textbf{3.} Selecciona borrar. & \textbf{4.} El plato desaparece del menú. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
