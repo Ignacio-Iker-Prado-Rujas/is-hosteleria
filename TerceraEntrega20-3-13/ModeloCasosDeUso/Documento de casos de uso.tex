@@ -144,7 +144,7 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 
 \part{Especificación de los casos de uso} %%% PARTE 2: ESPECIFICACION CASOS DE USO %%%_______________________________________________
 Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso. Los actores son todos los usuarios o sistemas externos que interactúan con el sistema KIKE- Hostelería ®. Éstos son: Jefe, recepcionista, maître, camareros, chef, cocineros, jefe de limpieza, personal de limpieza y encargado de mantenimiento.
-%%	LAS PLANTILLAS ESTÁN DESPUÉS DEL \end{document}
+
 \section{Primarios}		 			
 
 %LOG IN
@@ -201,8 +201,8 @@ Para cada empleado se tendrán los siguientes campos:
 				\item 	 Comentarios
 				\item 	Enlace a C.V.
 				\end {itemize}
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Haber accedido al sistema siendo un usuario jefe.
+			\item \textbf{Postcondiciones:} Si se cumle la precondición se muestra la ficha.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -217,7 +217,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item  \textbf{Línea 7:} No se encuentra nada con la búsqueda actual. Vuelve a la línea 5 para introducir otra información.
 			\end {itemize}
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 %VER FICHA DE CLIENTE
 
@@ -226,8 +226,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito:} Acceder a la ficha de un cliente.
 			\item \textbf{Visión general:} El actor entra al programa de gestión de empleados desde su ordenador, y accede a la base de datos de los clientes. Busca al cliente por nombre y/o apellidos . Una vez que lo encuentra, consulta los datos que desee. Cierra la aplicación. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Haber accedido al sistema correctamente y formar parte del personal de limpieza o mantenimiento, pues estos no tienen acceso a la base de datos de los clientes.
+			\item \textbf{Postcondiciones:} Se muestra la ficha.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -244,7 +244,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item  \textbf{Línea 6:} Ese cliente no existe, vuelve a la línea 5.
 			\item  \textbf{Línea 5:} Tras pasar por el curso alternativo anterior y ver que el cliente no existe, sale de la aplicación.
 			\end {itemize}
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 
 %AÑADIR CLIENTE
@@ -255,9 +255,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito:} Crear una nueva ficha de cliente.
-			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo, y entra en la base de datos de los clientes. Rellena la ficha con los datos del cliente. Tras haberla completado, comprueba que los datos introducidos son correctos. Cierra la aplicación. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo, y entra en la base de datos de los clientes. Rellena la ficha con los datos del cliente. Tras haberla completado, comprueba que los datos introducidos son correctos. 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Se añade el nuevo cliente a la base de datos.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -287,8 +287,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Reservar una mesa en el restaurante para comer.
 			\item \textbf{Visión general:} El empleado que va a realizar la reserva selecciona una de las mesas disponibles en función del número de comensales.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya al menos una mesa libre.
+			\item \textbf{Postcondiciones:} La mesa correspondiente queda reservada para la fecha y hora indicada.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -316,9 +316,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Anular una reserva realizada con anterioridad.
 			\item \textbf{Visión general:} El empleado que desea anular una reserva inicia la aplicación, se identifica y selecciona la reserva que se va a anular.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Extiende ($<<$extends$>>$):} Reservar Mesa
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya al menos una mesa reservada.
+			\item \textbf{Postcondiciones:} La mesa correspondiente pasa a estar libre.
+			\item \textbf{Extiende ($<<$extends$>>$):} Reservar mesa.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -343,8 +343,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Pedir un plato a la cocina.
 			\item \textbf{Visión general:} El camarero o el maître realiza la petición de un plato directamente a la cocina.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Se añade una comanda.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -369,8 +369,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Visión general:} Se pueden acceder a los pedidos realizados por un cliente y modificarlos, en caso de que no se trate de lo que ellos deseaban.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya alguna comanda en curso.
+			\item \textbf{Postcondiciones:} Se añaden o eliminan elementos de la comanda correspondiente.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -389,8 +389,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Proporcionar la factura para cobrar al cliente.
 			\item \textbf{Visión general:} Se selecciona el cliente del cual se desea obtener la factura y se imprime. Se da la opción al cliente de pagar en el momento o que se lo carguen en la cuenta de la habitación, si es que está alojado en el hotel.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya al menos una comanda en curso.
+			\item \textbf{Postcondiciones:} Se genera una factura en formato PDF.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -422,8 +422,8 @@ Para cada empleado se tendrán los siguientes campos:
 				\item 	 Segundos
 				\item 	 Postres
 				\end {itemize}
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Ninguna, el actor sólo observa.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -441,7 +441,9 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, jefe, chef, cocineros.
 			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
-			\item \textbf{Visión general:} Cuando finaliza la jornada, el maître o el jefe realizan un recuento de todas las existencias que quedan en el almacen y lo anotan en la base de datos, la cual mandará una notificación cuando sea necesario reponer algun alimento.
+			\item \textbf{Visión general:} Cuando finaliza la jornada, el actor realiza un recuento de todas las existencias que quedan en el almacen y lo anotan en la base de datos, la cual mandará una notificación cuando sea necesario reponer algun alimento.
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Se añaden o quitan elementos a comprar.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -470,8 +472,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
 			\item \textbf{Visión general:} Se muestran las características (planta en la que está, ascensor, bañera o jacuzzi, mobiliario) de cada habitación seleccionada.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Ninguna, sólo se mira las características de una habitación.
 			\item \textbf{Incluye ($<<$include$>>$):} Modificar habitaciones.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -491,8 +493,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Reservar una habitación del hotel.
 			\item \textbf{Visión general:} Cuando un cliente reserva una habitación, se guarda toda la información de la reserva.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya alguna libre.
+			\item \textbf{Postcondiciones:} La habitación que corresponda queda reservada.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -516,8 +518,10 @@ Para cada empleado se tendrán los siguientes campos:
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Visión general:} Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya alguna reservada.
+			\item \textbf{Postcondiciones:} Se anula la reserva seleccionada.
+			\item \textbf{Extiende ($<<$extends$>>$):} Reservar habitación.
+			\item \textbf{Incluye ($<<$include$>>$):} Ver reservas.
 			\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
@@ -534,8 +538,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Ver la reserva de habitaciones del hotel.
 			\item \textbf{Visión general:} Se ve el total de las futuras reservas de habitaciones del hotel ordenadas por fecha.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Ninguna.
 			\item \textbf{Incluye ($<<$include$>>$):} Anular reserva.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -554,8 +558,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Generar una factura para un cliente.
 			\item \textbf{Visión general:} Cuando un cliente quiere pagar la factura del hotel, se genera la factura correspondiente.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Postcondiciones:} Que haya alguna reserva de donde generar la factura.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -579,8 +583,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor: }Jefe de limpieza.
 			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el trabajo entre los empleados de limpieza y organizando los horarios. 		
 			\item \textbf{Visión general: }El jefe de limpieza accede al programa a través de su dispositivo. Debe introducir su nombre de usuario y contraseña. Una vez ha accedido, tiene la opción de organizar las tareas de limpieza. Pulsando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas entre los trabajadores de limpieza. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Ser el jefe de limpieza.
+			\item \textbf{Postcondiciones:} Puede haberse añadido tareas nuevas de limpieza.
 			\item \textbf{Curso típico de eventos:} \\
 \begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -602,13 +606,13 @@ Para cada empleado se tendrán los siguientes campos:
 
 %REVISAR LIMPIEZA
 
-\subsection{Revisar tareas de limpieza}
+	\subsection{Revisar tareas de limpieza}
 			\begin{itemize}
 			\item \textbf{Actor: }Jefe de limpieza.
 			\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de comprobar que aquellos lugares que ya han sido marcados como “limpiados"  por los trabajadores de limpieza, efectivamente lo están.  		
 			\item \textbf{Visión general: }Anteriormente, el jefe ha creado una lista de tareas, que pueden consultar los trabajadores de limpieza. Cada vez que se limpia un sitio, este se tacha de la lista de “Sitios por limpiar'' y se añade a la de “Sitios limpiados".  
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Ser el jefe de limpieza.
+			\item \textbf{Postcondiciones:} Se marca una tarea como realizada correctamente. 
 			\item \textbf{Curso típico de eventos:}\\ 
 \begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -633,8 +637,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 				\item \textbf{Actor:} Personal de limpieza.
 				\item \textbf{Visión general:} Permite al personal de limpieza consultar las tareas que el encargado de limpieza les ha asignado. 		
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Ser un empleado de limpieza.
+			\item \textbf{Postcondiciones:}  Ninguna, solo se consultan las tareas pendientes.
 			\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
@@ -643,16 +647,17 @@ Para cada empleado se tendrán los siguientes campos:
 				\end{tabular}
 			\end {itemize}
 
-%CONFIRMAR LIMPIEZA DE HABITACION
 
+%CONFIRMAR LIMPIEZA DE HABITACION
 	
 		\subsection{Confirmar tareas de limpieza}
 			\begin{itemize}
 			\item \textbf{Actor:} Personal de limpieza.
 			\item \textbf{Propósito: }Eliminar de la lista de tareas una tarea de limpieza que ha sido completada.
 			\item \textbf{Visión general: }El jefe de limpieza envía a los trabajadores de limpieza una lista con las tareas que deben hacer. Una vez que estas tareas han sido realizadas, los trabajadores de limpieza deben eliminarlas de la lista de "Tareas por realizar".
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Formar parte del personal de limpieza.
+			\item \textbf{Postcondiciones:} Una tarea se marca como realizada.
+			\item \textbf{Incluye ($<<$include$>>$):} Consultar tareas de limpieza.
 			\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
@@ -676,8 +681,8 @@ Para cada empleado se tendrán los siguientes campos:
 				\item \textbf{Actor:} Todos los usuarios.
 				\item \textbf{Propósito:} Informar de incidencias de mantenimiento que requieran de reparación. 		
 				\item \textbf{Visión general:} Cuando se detecta una avería, o alguna otra incidencia de mantenimiento, se informa de ésta al encargado de mantenimiento a través de la aplicación.
-				\item \textbf{Precondiciones:} 
-				\item \textbf{Postcondiciones:}   
+				\item \textbf{Precondiciones:} Ninguna, todos pueden anotar incidencias.
+				\item \textbf{Postcondiciones:}  Se añade una nueva incidencia para el encargado de mantenimiento.
 				\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
@@ -701,8 +706,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor: }Encargado de mantenimiento.
 			\item \textbf{Propósito: }Consultar incidencias de mantenimiento, y tachar de la lista aquellas incidencias que han sido resueltas. 
 			\item \textbf{Visión general: }El personal del hotel informa al encargado de mantenimiento de incidencias que hayan ocurrido en el hotel a través de notificaciones. Cuando se resuelve una incidencia, el encargado de mantenimiento la elimina de su lista. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Ser el encargado de mantenimiento.
+			\item \textbf{Postcondiciones:} Ninguna.
 			\item \textbf{Curso típico de eventos:} \\ 
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -722,8 +727,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito:} Crear una nota y añadirla al tablón.
 			\item \textbf{Visión general:} Las notas son el principal medio de comunicación escrito entre los empleados del negocio. 		Así pues, todos tendrán acceso a esta pestaña y podrán subir sus notas y ver las de los demás. La pestaña de notas es la única común a todos los empleados.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Ninguna, todos pueden añadir notas.
+			\item \textbf{Postcondiciones:} Se añade una nueva nota al tablón.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -745,8 +750,8 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito:} Borra una nota del tablón.
 			\item \textbf{Visión general:} Selecciona una nota del tablón y la elimina, tanto para él como para el resto de empleados.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Que hubiera alguna nota para borrar.
+			\item \textbf{Postcondiciones:} Se elimina la nota seleccionada.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -793,7 +798,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item  \textbf{Línea 6:}Algún campo es incorrecto o está sin rellenar. El programa regresa a la línea 7.
 			\item  \textbf{Línea 7:}El jefe se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
 			\end {itemize}
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 
 
@@ -805,7 +810,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito:} Acceder a la ficha de un empleado y modificarla.
 			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado, accede a su ficha y la modifica. Cierra la aplicación. 
-			\item \textbf{Extiende ($<<$extends$>>$):}
 			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de empleado.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -826,7 +830,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item  \textbf{Línea 11:}El jefe se ha equivocado al introducir algún dato y desea volver a modificar la ficha. El programa le devuelve a la línea 5.
 			
 			\end {itemize}
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 
 
@@ -837,7 +841,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe, empleado.
 			\item \textbf{Propósito:} Transferir la ficha de un empleado de “Empleados actuales” a “Antiguos empleados" .
 			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado y da de baja su ficha. Cierra la aplicación. 
-			\item \textbf{Extiende ($<<$extends$>>$):}
 			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de empleado.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -854,7 +857,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item  \textbf{Línea 6:}El empleado buscado no se encuentra en la base de datos. El programa le devuelve a la línea 5.
 			\end {itemize}
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 
 %VER CURRICULUM DE EMPLEADO
@@ -875,7 +878,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} No hay cursos alternativos para este caso de uso.
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 
 
@@ -886,6 +889,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe, recepcionista.
 			\item \textbf{Propósito:} Editar la ficha de un cliente.
 			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo. Busca al cliente por nombre y/o apellidos. Se muestra la ficha del cliente, dando la opción de editar lo que sea necesario. Comprueba que las ediciones son ''consistentes''. Cierra la aplicación. 
+			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de cliente.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -895,7 +899,7 @@ Para cada empleado se tendrán los siguientes campos:
 				\textbf{5.} Clica en “Buscar cliente".	& \textbf{6.} Muesta la ficha del cliente. \\ \hline
 				\textbf{7.} Edita los campos que desee. & \textbf{8.} Se asegura de que el formato de los nuevos datos es correcto y muestra la ficha actualizada del cliente.\\ \hline
 				\textbf{9.} Comprueba que los datos editados son correctos y cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
+				\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
@@ -912,16 +916,17 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Jefe, recepcionista.
 			\item \textbf{Propósito:} Elimina de la base de datos de clientes la ficha de un cliente.
 			\item \textbf{Visión general:} El actor accede a la base de datos de los clientes.  Busca al cliente y si lo desea se elimina.
+  			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de cliente.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
-				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en “Buscar cliente".	& \textbf{6.} Muesta la ficha del cliente. \\ \hline
-				\textbf{7.} Clica en “Eliminar a este cliente". & \textbf{8.} Pide confirmación al actor.\\ \hline
-				\textbf{9.} Confirma y cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
+					\hline
+					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+					\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
+					\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
+					\textbf{5.} Clica en “Buscar cliente".	& \textbf{6.} Muesta la ficha del cliente. \\ \hline
+					\textbf{7.} Clica en “Eliminar a este cliente". & \textbf{8.} Pide confirmación al actor.\\ \hline
+					\textbf{9.} Confirma y cierra la aplicación. & \textbf{} \\ \hline
+				\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
@@ -938,7 +943,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Anular un pedido realizado.
 			\item \textbf{Visión general:} El cliente puede pedir a un empleado que anule un pedido que realizó.
-			\item \textbf{Extiende ($<<$extends$>>$):} Generar un pedido.
+			\item \textbf{Extiende ($<<$extends$>>$):} Tomar comanda.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -973,14 +978,14 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Maître, Jefe.
 			\item \textbf{Propósito:} Modificar la distribución de las mesas en el restaurante.
 			\item \textbf{Visión general:} Se puede modificar la distribución del mobiliario en el restaurante para cambiar el estilo o simplemente para un evento puntual como podría ser una boda.
-			\item \textbf{Extiende ($<<$extends$>>$):} Comprobar distribución y número de las mesas en el comedor
+			\item \textbf{Extiende ($<<$extends$>>$):} Ver distribución y número de mesas del restaurante.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} El empleado hace Log in satisfactoriamente. & \textbf{2.} El programa da la bienvenida y le muestra las opciones. \\ \hline
 				\textbf{3.} Selecciona la opción modificar distribución. & \textbf{4.} Muestra un plano de como están distribuidas las mesas y permite mover, añadir y borrar mesas. \\ \hline
-				\textbf{5.} El usuario hace los cambios que considere oportunos.	& \textbf{6.} La aplicación muestra un mensaje indicando que se modifico correctamente. \\ \hline
+				\textbf{5.} El usuario hace los cambios que considere oportunos.	& \textbf{6.} La aplicación muestra un mensaje indicando que se modificó correctamente. \\ \hline
 				\textbf{7.} Cierra la aplicación. & \textbf{} \\ \hline
 			\end{tabular}
 			\\
@@ -997,6 +1002,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Actor:} Maître, Jefe, Jefe de cocina.
 			\item \textbf{Propósito:} Modificar el menú del restaurante.
 			\item \textbf{Visión general:} Se pueden incluir nuevos platos, modificar algunos ya existentes y borrar otros.
+			\item \textbf{Incluye ($<<$include$>>$):} Ver menú.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -1064,6 +1070,7 @@ Para cada empleado se tendrán los siguientes campos:
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Visión general:} Desde la pantalla de ver habitaciones, puedes editar la habitación.	
+			\item \textbf{Incluye ($<<$include$>>$):} Ver habitación.
 		\end {itemize}
 
 %VER CUENTA DIARIA DE LA CAJA DE RECEPCIÓN.
