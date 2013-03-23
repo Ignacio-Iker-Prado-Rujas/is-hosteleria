@@ -73,11 +73,11 @@ Este documento se puede considerar como una ampliación de una parte del \texttt
 
 \vspace{0.35cm}
 
-En cuanto al documento en sí, comenzaremos diviendo el producto en partes más pequeñas para luego centrarnos en cada una de ellas, pues de eso trata una técnica basada en descomposición. De cada una de estas fracciones obtendremos, tras un análisis, un determinado número de puntos de función, obedeciendo al número de entradas-salidas, los ficheros accedidos y las interfaces, así como la dificultad de los mismos. 
+En cuanto al documento en sí, comenzaremos diviendo el producto en partes más pequeñas para luego centrarnos en cada una de ellas, pues de eso trata una técnica basada en descomposición. Éstas partes, de forma general, son clientes, empleados, restaurante, hotel. De cada una de estas fracciones obtendremos, tras un análisis, un determinado número de puntos de función, obedeciendo al número de entradas-salidas, los ficheros accedidos y las interfaces, así como la dificultad de los mismos. 
 
 \vspace{0.35cm}
 
-Una vez vez hecho esto, calcularemos el factor de ajuste para obtener los puntos de función ajustados. Entonces estaremos en condiciones de estimar y obtener unos resultados que se podrán aplicar al proyecto. Par ello utilizaremos la herramienta \texttt{COCOMO II.2000.4}, que se puede encontrar en 
+Una vez vez hecho esto, calcularemos el factor de ajuste para obtener los puntos de función ajustados. Entonces estaremos en condiciones de estimar y obtener unos resultados que se podrán aplicar al proyecto. Para ello utilizaremos la herramienta \texttt{COCOMO II.2000.4}, que se puede encontrar en 
 
 \texttt{http://csse.usc.edu/csse/research/COCOMOII/cocomo\_downloads.htm}
 \end{abstract}
@@ -108,7 +108,7 @@ En esta sección se concreta el límite entre la aplicación de hostelería y ot
 El sistema tiene una serie de funcionalidades, que se pueden revisar en el \texttt{Documento de especificación de requisitos Software}, pero no todas nacen de la propia aplicación. Las facturas y los C.V. se abren en PDF, utilizando el visor de PDF que tenga el equipo sobre el que estemos. También permite, al generar las facturas, exportarlas a PDF para enviárselas por correo electrónico a los clientes si así lo solicitan. La modificación de información, se actualizará rápidamente para un mejor funcionamiento del negocio. Cuanto más veloz es, más rápidamente se producen las acciones y por tanto más eficiente puede ser el negocio.
 Por otro lado, en la aplicación o en los PDFs pueden aparecer hiperenlaces a una dirección de Internet (página web de la lavandería, del hotel...), que si se selecionan lanzarían el navegador por defecto del equipo.
 
-En cuanto a la gestión de toda esta información, los datos se recogerán en ficheros auxiliares, protegidos en un servidor interno. Principalmente podemos diferenciar tres módulos o partes: lo relacionado con empleados, con clientes y datos de la aplicación (como el menú, las existencias, manteles en la lavandería, preferencias del sistema...). Los ficheros estarán ocultos, y solo la aplicación podrá acceder a ellos. En principio, el sistema trabajará directamente sobre los mismos, salvándolos al menos una vez por minuto (protegiéndose así de los apagones o el agotamiento de batería).
+En cuanto a la gestión de toda esta información, los datos se recogerán en ficheros auxiliares, protegidos en un servidor interno. Principalmente podemos diferenciar tres partes: lo relacionado con empleados, con clientes y datos de la aplicación (como el menú, las existencias, manteles en la lavandería, preferencias del sistema...). Los ficheros estarán ocultos, y sólo la aplicación podrá acceder a ellos. En principio, el sistema trabajará directamente sobre los mismos, salvándolos al menos una vez por minuto (protegiéndose así de los apagones o el agotamiento de batería).
 
 \section{Cálculo de los PF sin ajustar}
 	\subsection{Entradas Externas}
@@ -708,6 +708,7 @@ En cuanto a la gestión de toda esta información, los datos se recogerán en fi
 \setcounter{section}{0}
 
 \part{Estimaciones de esfuerzo, coste y duración} %%% PARTE 2 %%%__________________________________________________________
+\section{Iniciando la herramienta}
 Para esta parte, como se dijo en el \textit{Extracto}, se ha utilizado la herramienta \texttt{COCOMO II.2000.4}.
 
 En primer lugar, se introdujo un nuevo módulo: \textit{Hostelería}. Posteriormente, en \textit{Module size} se añadió los datos sobre PF. El peso de cada uno es el habitual, seleccionado así:
@@ -726,6 +727,49 @@ El número de entradas, salidas etc. exactamente igual que antes:
 
 Con ello obtenemos una medida del tamaño de la aplicación. Nos da 14151 líneas de código.
 
+\section{Factores de escala}
+\begin {itemize}
+	\item {PREC: Precedentness}
+	\item {FLEX: Development Flexibility}
+	\item {RESL: Architecture/Risk Resolution}
+	\item {TEAM: Team Cohesion}
+	\item {PMAT: Process Maturity}
+\end{itemize}
+
+\section{Factor de ajuste del esfuerzo (EAF)}
+\begin {itemize}
+	\item{Factores del producto}
+		\begin{itemize}
+			\item{RELY: Required Software Reliability}
+			\item{DATA: Data Base Size}
+			\item{CPLX: Product Complexity}
+			\item{RUSE: Required Reusability}
+			\item{DOCU: Documentation Match to Life-Cycle Needs}
+		\end{itemize}
+	\item{Factores de la plataforma}
+		\begin{itemize}
+			\item{TIME: Execution Time Constraint}
+			\item{STOR: Main Storage Constraint}
+			\item{PVOL: Platform Volatility}
+		\end{itemize}
+	\item{Factores de personal}
+		\begin{itemize}
+			\item{ACAP: Analyst Capability}
+			\item{PCAP: Programmer Capability}
+			\item{AEXP: Application Experience}
+			\item{PEXP: Platform Experience}
+			\item{LTEXT: Language and Tool Experience}
+			\item{PCON: Personnel Continuity}
+		\end{itemize}
+	\item{Factores del proyecto}
+		\begin{itemize}
+			\item{TOOL: Use of Software Tools}
+			\item{SITE: Multisite development}
+			\item{SCED: Required Development Schedule} %creo que no sale en el cocomo
+		\end{itemize}
+\end{itemize}
+
+\section{Esfuerzo, coste  duración}
 También se detalló el factor de complejidad, 1.04 (en el programa, denominado \textit{EAF}), el salario en dólares por mes (que aparece como \textit{LABOR RATE (\$/month)}). Suponiendo un salario humilde, estimamos unos 700 \$/mes. Además, añadimos el lenguaje de programación elegido: Java, como ya hemos dicho en varias ocasiones. 
 
 
