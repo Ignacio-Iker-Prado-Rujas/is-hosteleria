@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  22 MAR 2013 20:49
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  23 MAR 2013 17:59
 entering extended mode
 **Especificacion*de*requisitos.tex
 
@@ -710,33 +710,28 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 78.
 
 
-Overfull \hbox (16.94556pt too wide) in paragraph at lines 78--80
+Overfull \hbox (16.94556pt too wide) in paragraph at lines 78--79
 []\OT1/cmr/m/n/10.95 El proposi-to de es-ta apli-ca-cion es ges-tio-nar el fu
 n-cio-na-mien-to de un ho-tel con restaurante-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
@@ -788,15 +783,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{section.0.2})
 <to be read again> 
                    \relax 
 l.156 \section{Funciones del producto}
-                                       [7]pdfTeX warning (ext4): destination wi
-th the same identifier (name{section.0.3}) has been already used, duplicate ign
-ored
+                                       [7] [8]pdfTeX warning (ext4): destinatio
+n with the same identifier (name{section.0.3}) has been already used, duplicate
+ ignored
 <to be read again> 
                    \relax 
 l.174 \section{Características del usuario}
-                                             [8]pdfTeX warning (ext4): destinat
-ion with the same identifier (name{section.0.4}) has been already used, duplica
-te ignored
+                                            pdfTeX warning (ext4): destination 
+with the same identifier (name{section.0.4}) has been already used, duplicate i
+gnored
 <to be read again> 
                    \relax 
 l.177 \section{Restricciones}
@@ -881,7 +876,7 @@ Here is how much of TeX's memory you used:
  10548 multiletter control sequences out of 15000+200000
  13693 words of font info for 51 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 30i,11n,43p,1003b,606s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,11n,43p,1006b,606s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
@@ -892,7 +887,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "Especificacion de requisitos.pdf" (36 pages, 542510 bytes).
+Output written on "Especificacion de requisitos.pdf" (36 pages, 542824 bytes).
 PDF statistics:
  313 PDF objects out of 1000 (max. 8388607)
  49 named destinations out of 1000 (max. 500000)

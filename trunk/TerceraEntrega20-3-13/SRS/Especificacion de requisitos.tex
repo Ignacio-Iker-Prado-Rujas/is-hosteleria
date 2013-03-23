@@ -39,7 +39,6 @@
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
 \renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
 \renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
-\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
 
 
 %%%%% CUERPO %%%%%
@@ -49,7 +48,7 @@
 	requisitos Software}} \\ \vspace{0.3cm}
 	\Large{Ingeniería del Software} \\
 	\includegraphics[scale=0.3]{ucm.pdf}}
-\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
+\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
 	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
@@ -76,13 +75,13 @@
 \part{Introducción}
 \section{Propósito}
  	Este documento trata sobre la especificación de los requisitos de la aplicación KIKE HOSTELERÍA®.
-		\subsection{Propósito} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\\\
-KIKE HOSTELERÍA® incluye bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros), con una interfaz simple e intuitiva que permitirá a sus usuarios una rápida adaptación a su uso.\\
+		\subsection{Propósito} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\
 
-La aplicación está pensada para todos los empleados del negocio, y por tanto, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\
+KIKE HOSTELERÍA® opera sobre bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros. Ya que la aplicación está pensada para todos los empleados del negocio, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\
 
-La comunicación entre usuarios mediante la aplicación se hará con un sistema de tablón de notas, común a todos los usuarios.\\\\
-Cada empleado tendrá su nombre de usuario y su contraseña, que le permitirán hacer Log In en la aplicación y así comenzar a usarla. El nombre de usuario es personal e instransferible.\\
+La comunicación entre usuarios mediante la aplicación se hará con un sistema de tablón de notas, común a todos los usuarios.\\
+
+Cada empleado tendrá su nombre de usuario y su contraseña, que le permitirán hacer Log in en la aplicación y así comenzar a usarla. El nombre de usuario es personal e instransferible.\\
 
 El jefe del negocio tendrá acceso a todas las características principales de la aplicación, pudiendo acceder tanto a la contabilidad de la empresa, como a las bases de datos anteriormente mencionadas. \\
 
@@ -96,7 +95,7 @@ No obstante, el negocio debe poseer la capacidad económica suficiente para sufr
 
 Para que la aplicación pueda funcionar en todos sus ámbitos debemos disponer de un cierto hardware para que varios usuarios puedan acceder a la misma y a la vez.\\
 
- El jefe y cada empleado deberán disponer de un dispositivo móvil con sistema operativo Android o IOS para poder acceder a la aplicación y asi ver sus horarios, tareas... En su defecto, puede haber varios de estos dispositivos comunes en el área de trabajo, al menos uno por cada tres empleados para un uso adecuado. \\
+ El jefe y cada empleado deberá disponer de un dispositivo móvil (preferiblemente tablet) con sistema operativo Android o IOS para poder acceder a la aplicación y asi ver sus horarios, tareas... En su defecto, puede haber varios de estos dispositivos comunes en el área de trabajo, al menos uno por cada tres empleados para un uso adecuado. \\
 
 Todos estos dispositivos serán controlados a través de un servidor interno, el cual debe contar con suficiente capacidad y rapidez de actuación como para que los dispositivos puedan funcionar sin esperas.\\
 
@@ -150,7 +149,7 @@ Suponemos que se trata de una empresa española, que posee infraestructuras para
 
 El sistema se comunica con los usuarios a través de distintos soportes. En general, para ver y modificar campos, se usará un smartphone, una tableta o un ordenador. Además, hay un caso especial: en cocina habrá una pantalla donde irán apareciendo y desapareciendo los pedidos cuando estén listos.
 
-La interfaz se basará en una disposición en pestañas. En función de qué tipo de usuario se trate, habrá unas u otras pestañas. Por ejemplo, el chef tendrá acceso a las pestañas “Restaurante" (ver y modificar el menú en función de la temporada) y la pestaña “Notas", que es el canal de comunicación entre todos los actores. Además, en cada pestañas puede haber botones que te manden a las distintas opciones de la pestaña en concreto. Por ejemplo, “Restaurante'' con el botón “Ver/ modificar menú".
+La interfaz se basará en una disposición en apartados. En función de qué tipo de usuario se trate, este verá unos u otros apartados. Por ejemplo, el chef tendrá acceso a los apartados “Restaurante" (ver y modificar el menú en función de la temporada) y  “Notas", que es el canal de comunicación entre todos los actores. Además, en cada apartado pueden verse las distintas opciones que este presenta. Por ejemplo, en “Restaurante'' está la opción de “Ver/ modificar menú".
 
 
 
@@ -159,21 +158,21 @@ La interfaz se basará en una disposición en pestañas. En función de qué tip
 		\item El programa pide necesariamente un usuario y una contraseña para funcionar. Una vez introducido un usuario y una contraseña si estos son correctos comienza la aplicación. En función del tipo de usuario que la utilice apareceran diferentes opciones las cuales veremos a continuación:
 		\begin{itemize}
 			\item \textbf{Contabilidad:} Solo es accesible para el jefe. Esta opción le permite acceder a una ventana donde se anotan los gastos e ingresos producidos y su cantidad. Además tiene un acceso al libro diario y al libro mayor, los cuales serán calculados de forma automática. Es una buena herramienta para facilitar la contabilidad de la empresa.
-			\item \textbf{Empleados:} De nuevo solo es accesible para el jefe. Muestra una lista con todos los empleados que trabajan actualmente en el negocio como los que ya no trabajan allí. Para cada empleado se muestra el nombre y apellidos, una foto y si trabaja o no actualmente en la empresa. Si pinchamos sobre un empleado podemos acceder a su ficha, donde se muestran mas datos.
+			\item \textbf{Empleados:} De nuevo solo es accesible para el jefe. Muestra una lista con todos los empleados que trabajan actualmente en el negocio como los que ya no trabajan allí. Para cada empleado se muestra el nombre y apellidos, una foto y si trabaja o no actualmente en la empresa. Desde aquí podremos acceder a la ficha de cada empleado, donde se muestran mas datos como el DNI o su horario de trabajo.
 			\item \textbf{Clientes:} A esta opción pueden acceder el jefe, el maître y los camareros. Muestra el nombre, los apellidos, un telefono de contacto y si es vip o no para cada cliente. Permite cargar en la cuenta de un cliente los gastos que haga en el restaurante. Además nos da la posibilidad de apuntar cualquier incidencia que pueda suceder durante su estancia en el hotel.
 			\item \textbf{Restaurante:} Esta opción dispone de diferentes enlaces a otras ventanas que permiten realizar diferentes funciones dependiendo del tipo de usuario que se ha registrado. Así, el jefe y el maître pueden acceder a todas, mientras que el camarero solo puede acceder a los enlaces de reservas, los cuales le permiten ver las reservas de mesas, modificarlas y anularla, de pedidos, que le permiten generar, modificar o anular un pedido, y de generación de facturas. El chef puede acceder a la gestión de existencias, para realizar el recuento de las existencias al final del día y así poder notificar que sea necesario comprar algo, y a la modificación del menú. Los clientes pueden acceder solo a sus pedidos y sus reservas, por tanto es algo mas restrictivo que para los camareros. Todos los empleados pueden notificar incidencias.
 			\item \textbf{Habitaciones:} Tanto el jefe como el recepcionista pueden acceder a esta opción, dentro de la cual pueden gestionar las reservas de las habitaciones, viendo las reservas, haciendo nuevas reservas o anulando algunas ya existentes, emitir facturas para los clientes y entrar a la descripcion de las habitaciones.
 			\item \textbf{Organización limpieza:} Solo el encargado de limpieza puede acceder a esta opción. Le permite determinar las tareas de cada empleado de la limpieza, revisar el trabajo de éstos y notificar incidencias. El encargado de la limpieza es responsable también de la limpieza del restaurante. Debido a la gran cantidad de ámbitos que abarca la limpieza tiene pestañas diferentes para la limpieza de habitaciones y para limpiar sábanas, manteles...
-			\item \textbf{Limpieza:} Los empleados de la limpieza son los únicos que pueden acceder a la ventana “Limpieza". Pueden consultar sus tareas del día, apuntar aquellas que ya hayan realizado y notificar las incidencias que se hayan podido apreciar durante el transcurso de su jornada (desperfectos en las habitaciones).
+			\item \textbf{Limpieza:} Los empleados de la limpieza son los únicos que pueden acceder a la opción “Limpieza". Pueden consultar sus tareas del día, apuntar aquellas que ya hayan realizado y notificar las incidencias que se hayan podido apreciar durante el transcurso de su jornada (desperfectos en las habitaciones).
 			\item \textbf{Mantenimiento:} Todas las notificaciones que agreguen el resto de usuarios podrán ser vistos por los empleados de mantenimiento. Realizaran su trabajo y una vez finalizado podran borrar las notificaciones correspondientes.
-			\item \textbf{Notas:} Todos los usuarios a excepción de los clientes pueden acceder a una pestaña de notas. Allí podran escribir aquello de lo que deseen dejar constancia, sea quien sea a quien va dirigido. Las notas podran ser leidas por todos los empleados, independientemente de quien lo haya escrito.
+			\item \textbf{Notas:} Todos los usuarios a excepción de los clientes pueden acceder al tablón de notas. Allí podran escribir aquello de lo que deseen dejar constancia, sea quien sea a quien va dirigido. Las notas podran ser leidas por todos los empleados, independientemente de quien lo haya escrito.
 		\end{itemize}
 	 
-		\item Va a ser la base fundamental para organizar el trabajo que deben realizar los usuarios. El jefe podra organizar a todos sus empleados a través de la aplicación, pero no solo se trata de organizarlos, también los empleados necesitan constatemente la aplicación pues los camareros notificaran a los cocineros los platos y organizaran el restaurante entre ellos  a traves de la aplicación. Los empleados de la limpieza por su parte se coordinan con el encargado el cual reparte las tareas y los organiza a través de la aplicación. Por ultimo tambien se usara como base de datos de clientes y provisiones, puediendo avisarnos en caso necesario, como cuando sea necesario abastecer el almacen o un cliente no realice un pago.
+		\item KIKE HOSTELERÍA® Va a ser la base fundamental para organizar el trabajo que deben realizar los usuarios. El jefe podra organizar a todos sus empleados a través de la aplicación, pero no solo se trata de organizarlos, también los empleados necesitan constatemente la aplicación pues los camareros notificaran a los cocineros los platos y organizaran el restaurante entre ellos  a traves de la aplicación. Los empleados de la limpieza por su parte se coordinan con el encargado el cual reparte las tareas y los organiza a través de la aplicación. Por ultimo tambien se usará como base de datos de clientes y provisiones, puediendo avisarnos en caso necesario, como cuando se deba abastecer el almacen o un cliente no realice un pago.
 	\end{itemize}
 
 \section{Características del usuario}
-	En general el usuario no requiere ningún tipo de formación especifica, tan solo con la básica es suficiente. Por el contrario debe ser ágil con el uso de la tecnología pues el día a día de su trabajo se va a basar en usar la aplicación. Podemos distinguir claramente dos tipos de usuarios: el usuario cotidiano que serán los empleados y un usuario ocasional que son los clientes. Los clientes no necesitan formación en absoluto, ya que todo lo que la aplicación realiza pueden realizarlo ellos mismos a través de los empleados. Sin embargo, los empleados necesitan una cierta experiencia en el ámbito tecnológico. Un camarero jamás podra ser eficiente si no es capaz de tomar nota de los platos a una velocidad considerable. Por ello también sera positivo que el usuario empleado posea una buena capacidad para aprender a manejar nuevo software rapidamente pues es muy posible que la aplicación acabe extendiendose a un ámbito más amplio.
+	En general el usuario no requiere ningún tipo de formación especifica, tan solo con la básica es suficiente. Por el contrario debe ser ágil con el uso de la tecnología pues el día a día de su trabajo se va a basar en usar la aplicación. Podemos distinguir claramente dos tipos de usuarios: el usuario cotidiano, que serán los empleados, y un usuario ocasional, que son los clientes. Los clientes no necesitan formación en absoluto, ya que todo lo que la aplicación realiza pueden realizarlo ellos mismos a través de los empleados. Sin embargo, los empleados necesitan una cierta experiencia en el ámbito tecnológico. Un camarero jamás podra ser eficiente si no es capaz de tomar nota de los platos a una velocidad considerable. Por ello también sera positivo que el usuario empleado posea una buena capacidad para aprender a manejar nuevo software rapidamente pues es muy posible que la aplicación acabe extendiendose a un ámbito más amplio.
 
 \section{Restricciones}
 
