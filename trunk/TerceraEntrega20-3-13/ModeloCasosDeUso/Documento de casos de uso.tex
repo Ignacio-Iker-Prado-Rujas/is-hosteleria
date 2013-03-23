@@ -90,51 +90,48 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 %%	INSERTAR ORDENADAMENTE LOS CASOS DE USO, MÁS O MENOS COMO ESTÁN EN EL DOCUMENTO LISTA DE TODOS LOS CASOS DE USO (BRAINSTORMING PARA JESÚS)
 %%	HAY QUE TENER EN CUENTA QUE DESPUÉS HAY QUE PONERLOS ABAJO EN EL MISMO ORDEN
 	\item \textbf{Log in}	
-	\item \textbf{Acceder a la ficha de un empleado}
-	\item \textbf{Añadir cliente}
+	\item \textbf{Ver ficha de empleado}
 	\item \textbf{Ver ficha de cliente}
-	\item \textbf{Organizar tareas de la limpieza}
-	\item \textbf{Revisión de limpieza}
-	\item \textbf{Consultar tareas}
-	\item \textbf{Confirmar limpieza de habitación}
-	\item \textbf{Anotar incidencias}	
-	\item \textbf{Consultar incidencias (mantenimiento)}
+	\item \textbf{Añadir cliente}
 	\item \textbf{Reservar mesa}
-	\item \textbf{Anular reserva}
-	\item \textbf{Generar un pedido para una mesa}
-	\item \textbf{Modificar un pedido}
-	\item \textbf{Cancelar un pedido}
-	\item \textbf{Generar factura a un cliente}
+	\item \textbf{Anular reserva del restaurante}
+	\item \textbf{Tomar comanda}
+	\item \textbf{Editar comanda}
+	\item \textbf{Generar factura del restaurante}
 	\item \textbf{Ver menú}
+	\item \textbf{Realizar recuento de existencias}
+	\item \textbf{Ver habitación}	
+	\item \textbf{Reservar habitación}
+	\item \textbf{Ver reservas del hotel}
+	\item \textbf{Anular reserva del hotel}
+	\item \textbf{Generar factura del hotel}
+	\item \textbf{Organizar tareas de limpieza}
+	\item \textbf{Revisar tareas de limpieza}
+	\item \textbf{Consultar tareas de limpieza}
+	\item \textbf{Confirmar tareas de limpieza}
+	\item \textbf{Anotar incidencias de mantenimiento}	
+	\item \textbf{Consultar incidencias  de mantenimiento}
 	\item \textbf{Añadir nota}
 	\item \textbf{Borrar nota}
-	\item \textbf{Ver cuenta diaria de la caja de recepción}
-	\item \textbf{Ver cuenta diaria de la caja del restaurante}
-	\item \textbf{Consultar libro diario}
-	\item \textbf{Consultar libro mayor}
-	\item \textbf{Ver habitaciones}	
-	\item \textbf{Reservar habitación}
-	\item \textbf{Ver reservas}
-	\item \textbf{Anular reservas}
-	\item \textbf{Generar factura hotel}
-	
 	\end{itemize}
 
 \section{Secundarios}			%Cosas secundarias (pero importantes) que se usaran menos en la aplicacion
 	\begin{itemize}
-	\item \textbf{Añadir un nuevo empleado}
-	\item \textbf{Dar de baja un empleado}
-	\item \textbf{Modificar la ficha de un empleado}
-	\item \textbf{Ver currículum de un empleado}
+	\item \textbf{Añadir empleado}
+	\item \textbf{Editar empleado}
+	\item \textbf{Dar de baja empleado}
+	\item \textbf{Ver C.V. empleado}
 	\item \textbf{Editar cliente}
-	\item \textbf{Editar la ficha de un cliente}
 	\item \textbf{Dar de baja un cliente}
-	\item \textbf{Comprobar distribución y número de las mesas en el comedor}
-	\item \textbf{Modificar distribución del restaurante}
-	\item \textbf{Realizar recuento de alimentos}
+	\item \textbf{Eliminar comanda}
+	\item \textbf{Ver distribución y número de mesas del comedor}
+	\item \textbf{Editar distribución del restaurante}
 	\item \textbf{Modificar menú}
 	\item \textbf{Editar habitaciones}
-
+	\item \textbf{Ver cuenta diaria de la caja de recepción}
+	\item \textbf{Ver cuenta diaria de la caja del restaurante}
+	\item \textbf{Consultar libro diario}
+	\item \textbf{Consultar libro mayor}
 	\end{itemize}
 
 
@@ -146,7 +143,7 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 \setcounter{section}{0}
 
 \part{Especificación de los casos de uso} %%% PARTE 2: ESPECIFICACION CASOS DE USO %%%_______________________________________________
-Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso. Los actores son todos los usuarios o sistemas externos que interactúan con el sistema KIKE- Hostelería ®. Éstos son: Jefe, recepcionista, maître, camareros, chef, cocineros, jefe de limpieza, personal de limpieza, encargado de mantenimiento, 
+Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso. Los actores son todos los usuarios o sistemas externos que interactúan con el sistema KIKE- Hostelería ®. Éstos son: Jefe, recepcionista, maître, camareros, chef, cocineros, jefe de limpieza, personal de limpieza y encargado de mantenimiento.
 %%	LAS PLANTILLAS ESTÁN DESPUÉS DEL \end{document}
 \section{Primarios}		 			
 
@@ -157,8 +154,8 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\item \textbf{Actor:} Todos.
 			\item \textbf{Propósito:} Acceder a tu perfil de empleado, o de jefe.
 			\item \textbf{Visión general:} La aplicación exigirá autentificación para permitir realizar las operaciones relacionadas con cada tipo de trabajador. El número de pestañas que mostrará dependerá de la posición en la jerarquía de la empresa. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Precondiciones:} Que el usuario esté registrado como empleado de la empresa.
+			\item \textbf{Postcondiciones:} El usuario tiene acceso a una determinada información si introduce los datos correctamente. Si no, el sistema no le permite acceder. 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -180,7 +177,7 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 		
 %ACCEDER A LA FICHA DE UN EMPLEADO
 
-	\subsection{Acceder a la ficha de un empleado}		
+	\subsection{Ver ficha de empleado}		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleados.
 			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
@@ -222,37 +219,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\end {itemize}
 		\end{itemize}%FIn de caso de uso
 
-
-%AÑADIR CLIENTE
-	\hspace{-1.2 true cm}	
-	\scalebox{0.9}{\includegraphics{Cliente}} 
-	\subsection{Añadir cliente}
-		
-			\begin{itemize}
-			\item \textbf{Actor:} Jefe, recepcionista, maître.
-			\item \textbf{Propósito:} Crear una nueva ficha de cliente.
-			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo, y entra en la base de datos de los clientes. Rellena la ficha con los datos del cliente. Tras haberla completado, comprueba que los datos introducidos son correctos. Cierra la aplicación. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Curso típico de eventos:} 	\\
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
-				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en “Añadir cliente".	& \textbf{6.} Muesta la ficha a rellenar. \\ \hline
-				\textbf{7.} Rellena la ficha. & \textbf{8.} Se asegura de que todos los campos obligatorios están completos y muestra los datos del nuevo cliente para comprobar que son correctos.\\ \hline
-				\textbf{9.} Lo comprueba y cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 8:} Algún campo es incorrecto o está sin rellenar. El programa nos dice qué está mal (o si no se detecta el tipo de error será uno genérico) y regresa a la línea 7.
-			\item  \textbf{Línea 9:} El actor se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
-			\end {itemize}
-		\end{itemize}%FIn de caso de uso
-
-
 %VER FICHA DE CLIENTE
 
 	\subsection{Ver ficha de cliente}
@@ -281,144 +247,36 @@ Para cada empleado se tendrán los siguientes campos:
 		\end{itemize}%FIn de caso de uso
 
 
-%%%%LIMPIEZA (CASOS DE USO)
-
-%ORGANIZAR TAREAS DE LIMPIEZA		
-	\hspace{0.6 true cm}
-	\scalebox{0.9}{\includegraphics{OrganizacionLimpieza}}
-	\subsection{Organizar tareas de limpieza}
-			\begin{itemize}
-			\item \textbf{Actor: }Jefe de limpieza.
-			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el trabajo entre los empleados de limpieza y organizando los horarios. 		
-			\item \textbf{Visión general: }El jefe de limpieza accede al programa a través de su dispositivo. Debe introducir su nombre de usuario y contraseña. Una vez ha accedido, tiene la opción de organizar las tareas de limpieza. Pulsando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas entre los trabajadores de limpieza. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Curso típico de eventos:} \\
-\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las opciones disponibles.\\ \hline
-				\textbf{3.} Selecciona la opción “Determinar lugares a limpiar”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Selecciona la opción de “Crear tarea".	& \textbf{6.} Muestra los campos “Lugar", “Empleado'' y “Comentarios". \\ \hline
-				\textbf{7.}Rellena los campos . & \textbf{8.} Envía una notificación al personal de limpieza correspondiente con los campos que ha rellenado el encargado de limpieza.\\ \hline
-				\textbf{9.}Cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-
-			\item \textbf{Cursos alternativos:} 
-				\begin {itemize}
-					
-					\item \textbf{Línea 8: } Al rellenar el campo del empleado, se elige uno que ha alcanzado el máximo de tareas a realizar en ese día. El sistema informa de esto, y el jefe debe volver a elegir a otro empleado.
-				\end {itemize}
-			\end{itemize}%Fin de caso de uso
-
-
-%REVISAR LIMPIEZA
-
-\subsection{Revisar limpieza}
-			\begin{itemize}
-			\item \textbf{Actor: }Jefe de limpieza.
-			\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de comprobar que aquellos lugares que ya han sido marcados como “limpiados"  por los trabajadores de limpieza, efectivamente lo están.  		
-			\item \textbf{Visión general: }Anteriormente, el jefe ha creado una lista de tareas, que pueden consultar los trabajadores de limpieza. Cada vez que se limpia un sitio, este se tacha de la lista de “Sitios por limpiar'' y se añade a la de “Sitios limpiados".  
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Curso típico de eventos:}\\ 
-\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{3.} Selecciona la pestaña “Revisión de limpieza”. & \textbf{4.} Muestra la lista de los sitios que han sido limpiados. \\ \hline
-				\textbf{5.} Va marcando en la lista aquellos sitios que ha comprobado que están limpios.	& \textbf{6.} Elimina de la lista los sitios marcados. \\ \hline
-				\textbf{7.} En aquellos sitios que no están limpios del todo, o en los que falta algo, puede pulsar la opción de “Agregar comentario". & \textbf{8.} Envía el comentario al personal de limpieza. El sitio se vuelve a añadir a la lista de “Sitios por limpiar".\\ \hline
-				\textbf{9.}Cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-			\item \textbf{Cursos alternativos:} 
-				\begin{itemize}
-					\item \textbf{Línea 9: }Si el comentario excede los 140 caracteres, el sistema informará de ésto al usuario, que podrá editar su comentario para que no exceda los 140 caracteres.
-				\end{itemize}
-		\end {itemize}
-
-%CONSULTAR TAREAS
-
-	\hspace{1 true cm}
-	\scalebox{0.9}{\includegraphics{Limpieza}} 
-	\subsection{Consultar tareas}				
-			\begin{itemize}
-				\item \textbf{Actor:} Personal de limpieza.
-				\item \textbf{Visión general:} Permite al personal de limpieza consultar las tareas que el encargado de limpieza les ha asignado. 		
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\end {itemize}
-
-%CONFIRMAR LIMPIEZA DE HABITACION
-
-	
-		\subsection{Confirmar limpieza de habitación}
-			\begin{itemize}
-			\item \textbf{Actor:} Personal de limpieza.
-			\item \textbf{Propósito: }Eliminar de la lista de tareas una tarea que ha sido completada.
-			\item \textbf{Visión general: }El jefe de limpieza envía a los trabajadores de limpieza una lista con las tareas que deben hacer. Una vez que estas tareas han sido realizadas, los trabajadores de limpieza deben eliminarlas de la lista de "Tareas por realizar".
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Curso típico de eventos:}\\ 
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-					\hline
-					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-					\textbf{1.} Selecciona el botón  “Confirmar limpieza de habitación". & \textbf{2.}Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
-					\textbf{3.}El usuario selecciona aquellas tareas que ha completado. & \textbf{4.} Presenta el botón de “Aceptar".\\ \hline
-					\textbf{5.} Pulsa el botón de aceptar. & \textbf{6.} Las tareas elegidas se eliminan de la lista de “Tareas a realizar". \\ \hline
-					\textbf{7.} Cierra la aplicación.	& \\ \hline	
-				\end{tabular}
-			\item \textbf{Cursos alternativos:} 
-				\begin{itemize}
-					\item \textbf{Línea 3:} Puede que el trabajador no haya podido realizar una tarea en el momento en el que le fue propuesta (por ejemplo, habitación con "no molestar").
- En este caso, puede elegir una opción que diga ''Recordar para más tarde".
-				\end{itemize}
-		\end {itemize}
-
-%ANOTAR INCIDENCIAS
-
-		\subsection{Anotar incidencias}	
-			\begin{itemize}
-				\item \textbf{Actor:} Todos los usuarios.
-				\item \textbf{Propósito:} Informar de incidencias de mantenimiento que requieran de reparación. 		
-				\item \textbf{Visión general:} Cuando se detecta una avería, o alguna otra incidencia de mantenimiento, se informa de ésta al encargado de mantenimiento a través de la aplicación.
-				\item \textbf{Precondiciones:} 
-				\item \textbf{Postcondiciones:}   
-				\item \textbf{Curso típico de eventos:}\\ 
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-					\hline
-					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-					\textbf{1.} Selecciona el botón “Notificar incidencia" & \textbf{2.}Muestra los campos “Lugar'' y “Descripción".\\ \hline 
-					\textbf{3.} Rellena dichos campos y pulsa el tick para aceptar. & \textbf{4.} Envía la notificación al encargado de mantenimiento.\\ \hline
-					\textbf{5.} Cierra sesión. & \\ \hline
-
-				\end{tabular}
-				\item \textbf{Cursos alternativos:} 
-					\begin{itemize}
-						\item \textbf{Línea 3: }El usuario tiene la opción de “Cancelar". Si pulsa esta opción la notificación no se enviará y el usuario volverá a su pantalla principal.
-					\end{itemize}
-			\end {itemize}
-
-%CONSULTAR INCIDENCIAS (MANTENIMIENTO)
-		\hspace{0.5 true cm}
-		\scalebox{0.9}{\includegraphics{Mantenimiento}} 
-		\subsection{Consultar incidencias (manteniminento)}
-			\begin{itemize}
-			\item \textbf{Actor: }Encargado de mantenimiento.
-			\item \textbf{Propósito: }Consultar incidencias de mantenimiento, y tachar de la lista aquellas incidencias que han sido resueltas. 
-			\item \textbf{Visión general: }El personal del hotel informa al encargado de mantenimiento de incidencias que hayan ocurrido en el hotel a través de notificaciones. Cuando se resuelve una incidencia, el encargado de mantenimiento la elimina de su lista. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Curso típico de eventos:} \\ 
-			\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Selecciona el botón “Notificaciones". & \textbf{2.}Muestra la lista de incidencias que el resto de usuarios ha enviado.\\ \hline 
-				\textbf{3.}El usuario selecciona aquellas tareas que ha completado. & \textbf{4.} Las tareas elegidas se eliminan de la lista de “Notificaciones pendientes".\\ \hline
-				\textbf{5.} Cierra sesión. & \\ \hline
-			\end{tabular}
-		\end {itemize}
+%AÑADIR CLIENTE
+	\hspace{-1.2 true cm}	
+	\scalebox{0.9}{\includegraphics{Cliente}} 
+	\subsection{Añadir cliente}
 		
+			\begin{itemize}
+			\item \textbf{Actor:} Jefe, recepcionista, maître.
+			\item \textbf{Propósito:} Crear una nueva ficha de cliente.
+			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo, y entra en la base de datos de los clientes. Rellena la ficha con los datos del cliente. Tras haberla completado, comprueba que los datos introducidos son correctos. Cierra la aplicación. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
+				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
+				\textbf{5.} Clica en “Añadir cliente".	& \textbf{6.} Muesta la ficha a rellenar. \\ \hline
+				\textbf{7.} Rellena la ficha. & \textbf{8.} Se asegura de que todos los campos obligatorios están completos y muestra los datos del nuevo cliente para comprobar que son correctos.\\ \hline
+				\textbf{9.} Lo comprueba y cierra la aplicación. & \textbf{} \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} 
+			\begin{itemize}
+			\item  \textbf{Línea 8:} Algún campo es incorrecto o está sin rellenar. El programa nos dice qué está mal (o si no se detecta el tipo de error será uno genérico) y regresa a la línea 7.
+			\item  \textbf{Línea 9:} El actor se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
+			\end {itemize}
+		\end{itemize}
+
+
 	% CASOS DE USO DE RESTAURANTE 
 		
 %RESERVAR MESA
@@ -480,7 +338,7 @@ Para cada empleado se tendrán los siguientes campos:
 	
 %GENERAR UN PEDIDO PARA UNA MESA
 
-		\subsection{Generar un pedido para una mesa}
+		\subsection{Tomar comanda}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Pedir un plato a la cocina.
@@ -491,10 +349,10 @@ Para cada empleado se tendrán los siguientes campos:
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El empleado reactiva la aplicación (normalmente queda en pausa porque no va a encenderlo cada vez que pide un plato). & \textbf{2.} Muestra las opciones.\\ \hline 
+				\textbf{1.} El empleado elige la parte de restaurante. & \textbf{2.} Muestra las opciones.\\ \hline 
 				\textbf{3.} Introduce la opcion generar un pedido. & \textbf{4.} Pide que introduzca los platos deseados. \\ \hline
 				\textbf{5.} Puede introducir un plato de la carta y personalizarlo introduciendo o eliminando ingredientes. & \textbf{6.} Da la opción al usuario de introducir más platos o terminar. \\ \hline
-				\textbf{7.} Selecciona no realizar más pedidos.	& \textbf{8.} El programa manda el pedido a la cocina. \\ \hline
+				\textbf{7.} Selecciona no realizar más pedidos.	& \textbf{8.} El programa manda el pedido a la cocina, donde aparece por un monitor para que el chef lo vea. \\ \hline
 				\textbf{9.} El empleado pone la aplicación en pausa. & \\ \hline
 			\end{tabular}
 			\\
@@ -507,42 +365,23 @@ Para cada empleado se tendrán los siguientes campos:
 		
 %MODIFICAR UN PEDIDO
 		
-	\subsection{Modificar un pedido}
+	\subsection{Editar comanda}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Visión general:} Se pueden acceder a los pedidos realizados por un cliente y modificarlos, en caso de que no se trate de lo que ellos deseaban.
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
-		\end {itemize}
-
-
-%CANCELAR UN PEDIDO
-
-		\subsection{Cancelar un pedido}
-			\begin{itemize}
-			\item \textbf{Actor:} Camareros, maître.
-			\item \textbf{Propósito: } Anular un pedido realizado.
-			\item \textbf{Visión general:} El cliente puede pedir a un empleado que anule un pedido que realizó.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-			\item \textbf{Extiende ($<<$extends$>>$):} Generar un pedido.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
-				\textbf{3.} Selecciona la opción cancelar pedido, dentro de la pestaña “Restaurante". & \textbf{4.} Muestra todos los pedidos. \\ \hline
-				\textbf{5.} Selecciona el pedido que desea anular	& \textbf{6.} Se muestra un mensaje con los datos del pedido para verificar que realmente se desea anular. \\ \hline
-				\textbf{7.} Selecciona continuar.	& \textbf{8.} La aplicación muestra un mensaje indicando que la anulación se realizó correctamente. \\ \hline
-				\textbf{9.} Cierra la aplicación. &  \\ \hline
+				\textbf{1.} El usuario abre la lista de comandas. & \textbf{2.} Muestra las comandas en curso.\\ \hline 
+				\textbf{3.} Elige a que quiere modificar. & \textbf{4.} Muestra la lista de cosas pedidas. \\ \hline
+				\textbf{4.} Modifica lo que corresponda (añadir, quitar...). & \textbf{5.} Muestra la lista de cosas pedidas actualizada. \\ \hline
 			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 7:} El usuario selecciona cancelar. La reserva no se anula. Puede elegir entre anular otra reserva o salir.
-			\end {itemize}
 		\end {itemize}
-		
+
+
 %GENERAR FACTURA A UN CLIENTE
 
 		\subsection{Generar factura del restaurante}
@@ -585,106 +424,48 @@ Para cada empleado se tendrán los siguientes campos:
 				\end {itemize}
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
-		\end {itemize}
-
-%AÑADIR NOTA
-	\newpage
-	\hspace{1 true cm}	
-	\scalebox{0.9}{\includegraphics{Notas}}
-	\subsection{Añadir nota} 
-			\begin{itemize}
-			\item \textbf{Actor:} Todos.
-			\item \textbf{Propósito:} Crear una nota y añadirla al tablón.
-			\item \textbf{Visión general:} Las notas son el principal medio de comunicación escrito entre los empleados del negocio. 		Así pues, todos tendrán acceso a esta pestaña y podrán subir sus notas y ver las de los demás. La pestaña de notas es la única común a todos los empleados.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}    El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
-				\textbf{3.} Selecciona la opción notas. & \textbf{4.} Muestra el tablón de notas. \\ \hline
-				\textbf{5.} Selecciona la opción “Crear nota".	& \textbf{6.} Se muestra el cuadro de texto a rellenar. \\ \hline
-				\textbf{7.} Escribe la nota.	& \textbf{8.}Muestra el tablón de notas con la nueva nota añadida. \\ \hline
-				\textbf{9.} Cierra la aplicación. &  \\ \hline
+				\textbf{1.} El usuario abre la parte de restaurante. & \textbf{2.} Muestra las opciones que corresponda.\\ \hline 
+				\textbf{3.} Elige la parte del menú. & \textbf{4.} Muestra el menú. \\ \hline
 			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} No hay cursos alternativos para este caso de uso.
 		\end {itemize}
 
 
-%BORRAR NOTA
-		\subsection{Borrar nota}
+
+%REALIZAR RECUENTO DE ALIMENTOS
+
+	\subsection{Realizar recuento de existencias}
 			\begin{itemize}
-			\item \textbf{Actor:} Todos.
-			\item \textbf{Propósito:} Borra una nota del tablón.
-			\item \textbf{Visión general:} Selecciona una nota del tablón y la elimina, tanto para él como para el resto de empleados.
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
+			\item \textbf{Actor:} Maître, jefe, chef, cocineros.
+			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
+			\item \textbf{Visión general:} Cuando finaliza la jornada, el maître o el jefe realizan un recuento de todas las existencias que quedan en el almacen y lo anotan en la base de datos, la cual mandará una notificación cuando sea necesario reponer algun alimento.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}    El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
-				\textbf{3.} Selecciona la opción notas. & \textbf{4.} Muestra el tablón de notas. \\ \hline
-				\textbf{5.} Selecciona una nota y la elimina.	& \textbf{6.} La aplicación pregunta: “¿Está seguro que desea eliminar esta nota?". \\ \hline
-				\textbf{7.} Confirma.	& \textbf{8.}Muestra el tablón de notas, sin la nota recién eliminada. \\ \hline
-				\textbf{9.} Cierra la aplicación. &  \\ \hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
+				\textbf{1.} El empleado hace Log In satisfactoriamente. & \textbf{2.} Muestras las opciones disponibles. \\ \hline
+				\textbf{3.} Selecciona la opción recuento de existencias. & \textbf{4.} Muestra una lista con todos los alimentos que había en el almacen tras el último recuento. \\ \hline
+				\textbf{5.} Introduce uno a uno la cantidad que hay de cada alimento. & \textbf{6.} Cuando se ha terminado el recuento Se vuelven a mostrar las opciones. \\ \hline
+				\textbf{7.}  Cierra la aplicación. &   \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 7:} El usuario no quiere eliminar la nota. la aplicación vuelve a la línea 6.
+			\item  \textbf{Línea 5:} Introduce intro en vez de la cantidad para no modificarlo.
+			\item  \textbf{Línea 5:} Puede terminar el recuento antes de llegar al ultimo elemento de la lista marcando la opción “Guardar y salir".
+			\item  \textbf{Línea 6:} Si algún alimento está por debajo del mínimo recomendado da la opción al usuario de realizar un pedido. Si lo realiza debe introducir la cantidad que desea pedir. (El mínimo se calcula mediante unas estadísticas realizadas a partir del consumo diario)
 			\end {itemize}
 		\end {itemize}
 
-%VER CUENTA DIARIA DE LA CAJA DE RECEPCIÓN.
-	
-	\hspace{-2 true cm}
-	\scalebox{0.8}{\includegraphics{Contabilidad}} 
-	\subsection{Ver cuenta diaria de la caja de recepción}
-		\begin{itemize}
-			\item \textbf{Actor:} Jefe.
-			\item \textbf{Visión general:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja de la recepción.	
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-		\end {itemize}
-
-%VER CUENTA DIARIA DE LA CAJA DEL RESTAURANTE.
-
-	\subsection{Ver cuenta diaria de la caja del restaurante}
-		\begin{itemize}
-			\item \textbf{Actor:} Jefe.
-			\item \textbf{Visión general:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja del restaurante.	
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-		\end {itemize}
-
-%CONSULTAR LIBRO DIARIO
-
-	\subsection{Consultar libro diario}
-		\begin{itemize}
-			\item \textbf{Actor:} Jefe.
-			\item \textbf{Visión general:} El jefe ve los últimos apuntes del libro diario, pudiendo ascender si lo desea hasta el asiento de apertura.	
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-		\end {itemize}
-
-%CONSULTAR LIBRO MAYOR
-
-	\subsection{Consultar libro mayor}
-		\begin{itemize}
-			\item \textbf{Actor:} Jefe.
-			\item \textbf{Visión general:} El jefe ve los últimos apuntes en las cuentas del libro mayor. 
-			\item \textbf{Precondiciones:} 
-			\item \textbf{Postcondiciones:} 
-		\end {itemize}
 
 %VER HABITACIONES
 	
 	\hspace{-1.7 true cm}
 	\scalebox{0.8}{\includegraphics{Habitaciones}}
-	\subsection{Ver habitaciones}
+	\subsection{Ver habitación}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
@@ -737,6 +518,14 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Visión general:} Desde la pantalla de ver reservas, se permite anular la reserva deseada. 		
 			\item \textbf{Precondiciones:} 
 			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:}\\ 
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+					\hline
+					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+					\textbf{1.} El usuario accede a la lista de reservas. & \textbf{2.} Muestra la lista de reservas.\\ \hline 
+					\textbf{3.} El usuario elige la que quiere elimnar. & \textbf{4.} Se da la opción de eliminar.\\ \hline 
+					\textbf{5.} Acepta. & \textbf{6.} Se informa de que se ha eliminado correctamente.\\ \hline 
+				\end{tabular}
 		\end {itemize}
 
 %VER RESERVAS
@@ -779,6 +568,202 @@ Para cada empleado se tendrán los siguientes campos:
 			\\
 		\end {itemize}
 
+
+%%%%LIMPIEZA (CASOS DE USO)
+
+%ORGANIZAR TAREAS DE LIMPIEZA		
+	\hspace{0.6 true cm}
+	\scalebox{0.9}{\includegraphics{OrganizacionLimpieza}}
+	\subsection{Organizar tareas de limpieza}
+			\begin{itemize}
+			\item \textbf{Actor: }Jefe de limpieza.
+			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el trabajo entre los empleados de limpieza y organizando los horarios. 		
+			\item \textbf{Visión general: }El jefe de limpieza accede al programa a través de su dispositivo. Debe introducir su nombre de usuario y contraseña. Una vez ha accedido, tiene la opción de organizar las tareas de limpieza. Pulsando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas entre los trabajadores de limpieza. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} \\
+\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las opciones disponibles.\\ \hline
+				\textbf{3.} Selecciona la opción “Determinar lugares a limpiar”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
+				\textbf{5.} Selecciona la opción de “Crear tarea".	& \textbf{6.} Muestra los campos “Lugar", “Empleado'' y “Comentarios". \\ \hline
+				\textbf{7.}Rellena los campos . & \textbf{8.} Envía una notificación al personal de limpieza correspondiente con los campos que ha rellenado el encargado de limpieza.\\ \hline
+				\textbf{9.}Cierra la aplicación. & \textbf{} \\ \hline
+			\end{tabular}
+
+			\item \textbf{Cursos alternativos:} 
+				\begin {itemize}
+					
+					\item \textbf{Línea 8: } Al rellenar el campo del empleado, se elige uno que ha alcanzado el máximo de tareas a realizar en ese día. El sistema informa de esto, y el jefe debe volver a elegir a otro empleado.
+				\end {itemize}
+			\end{itemize}%Fin de caso de uso
+
+
+%REVISAR LIMPIEZA
+
+\subsection{Revisar tareas de limpieza}
+			\begin{itemize}
+			\item \textbf{Actor: }Jefe de limpieza.
+			\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de comprobar que aquellos lugares que ya han sido marcados como “limpiados"  por los trabajadores de limpieza, efectivamente lo están.  		
+			\item \textbf{Visión general: }Anteriormente, el jefe ha creado una lista de tareas, que pueden consultar los trabajadores de limpieza. Cada vez que se limpia un sitio, este se tacha de la lista de “Sitios por limpiar'' y se añade a la de “Sitios limpiados".  
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:}\\ 
+\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
+				\textbf{3.} Selecciona la pestaña “Revisión de limpieza”. & \textbf{4.} Muestra la lista de los sitios que han sido limpiados. \\ \hline
+				\textbf{5.} Va marcando en la lista aquellos sitios que ha comprobado que están limpios.	& \textbf{6.} Elimina de la lista los sitios marcados. \\ \hline
+				\textbf{7.} En aquellos sitios que no están limpios del todo, o en los que falta algo, puede pulsar la opción de “Agregar comentario". & \textbf{8.} Envía el comentario al personal de limpieza. El sitio se vuelve a añadir a la lista de “Sitios por limpiar".\\ \hline
+				\textbf{9.}Cierra la aplicación. & \textbf{} \\ \hline
+			\end{tabular}
+			\item \textbf{Cursos alternativos:} 
+				\begin{itemize}
+					\item \textbf{Línea 9: }Si el comentario excede los 140 caracteres, el sistema informará de ésto al usuario, que podrá editar su comentario para que no exceda los 140 caracteres.
+				\end{itemize}
+		\end {itemize}
+
+%CONSULTAR TAREAS
+
+	\hspace{1 true cm}
+	\scalebox{0.9}{\includegraphics{Limpieza}} 
+	\subsection{Consultar tareas de limpieza}				
+			\begin{itemize}
+				\item \textbf{Actor:} Personal de limpieza.
+				\item \textbf{Visión general:} Permite al personal de limpieza consultar las tareas que el encargado de limpieza les ha asignado. 		
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:}\\ 
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+					\hline
+					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+					\textbf{1.} El usuario accede a sus tareas. & \textbf{2.} Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
+				\end{tabular}
+			\end {itemize}
+
+%CONFIRMAR LIMPIEZA DE HABITACION
+
+	
+		\subsection{Confirmar tareas de limpieza}
+			\begin{itemize}
+			\item \textbf{Actor:} Personal de limpieza.
+			\item \textbf{Propósito: }Eliminar de la lista de tareas una tarea de limpieza que ha sido completada.
+			\item \textbf{Visión general: }El jefe de limpieza envía a los trabajadores de limpieza una lista con las tareas que deben hacer. Una vez que estas tareas han sido realizadas, los trabajadores de limpieza deben eliminarlas de la lista de "Tareas por realizar".
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:}\\ 
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+					\hline
+					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+					\textbf{1.} Selecciona el botón  “Confirmar limpieza de habitación". & \textbf{2.}Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
+					\textbf{3.}El usuario selecciona aquellas tareas que ha completado. & \textbf{4.} Presenta el botón de “Aceptar".\\ \hline
+					\textbf{5.} Pulsa el botón de aceptar. & \textbf{6.} Las tareas elegidas se eliminan de la lista de “Tareas a realizar". \\ \hline
+					\textbf{7.} Cierra la aplicación.	& \\ \hline	
+				\end{tabular}
+			\item \textbf{Cursos alternativos:} 
+				\begin{itemize}
+					\item \textbf{Línea 3:} Puede que el trabajador no haya podido realizar una tarea en el momento en el que le fue propuesta (por ejemplo, habitación con "no molestar").
+ En este caso, puede elegir una opción que diga ''Recordar para más tarde".
+				\end{itemize}
+		\end {itemize}
+
+%ANOTAR INCIDENCIAS
+
+		\subsection{Anotar incidencias de mantenimiento}	
+			\begin{itemize}
+				\item \textbf{Actor:} Todos los usuarios.
+				\item \textbf{Propósito:} Informar de incidencias de mantenimiento que requieran de reparación. 		
+				\item \textbf{Visión general:} Cuando se detecta una avería, o alguna otra incidencia de mantenimiento, se informa de ésta al encargado de mantenimiento a través de la aplicación.
+				\item \textbf{Precondiciones:} 
+				\item \textbf{Postcondiciones:}   
+				\item \textbf{Curso típico de eventos:}\\ 
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+					\hline
+					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+					\textbf{1.} Selecciona el botón “Notificar incidencia" & \textbf{2.}Muestra los campos “Lugar'' y “Descripción".\\ \hline 
+					\textbf{3.} Rellena dichos campos y pulsa el tick para aceptar. & \textbf{4.} Envía la notificación al encargado de mantenimiento.\\ \hline
+					\textbf{5.} Cierra sesión. & \\ \hline
+
+				\end{tabular}
+				\item \textbf{Cursos alternativos:} 
+					\begin{itemize}
+						\item \textbf{Línea 3: }El usuario tiene la opción de “Cancelar". Si pulsa esta opción la notificación no se enviará y el usuario volverá a su pantalla principal.
+					\end{itemize}
+			\end {itemize}
+
+%CONSULTAR INCIDENCIAS (MANTENIMIENTO)
+		\hspace{0.5 true cm}
+		\scalebox{0.9}{\includegraphics{Mantenimiento}} 
+		\subsection{Consultar incidencias de manteniminento}
+			\begin{itemize}
+			\item \textbf{Actor: }Encargado de mantenimiento.
+			\item \textbf{Propósito: }Consultar incidencias de mantenimiento, y tachar de la lista aquellas incidencias que han sido resueltas. 
+			\item \textbf{Visión general: }El personal del hotel informa al encargado de mantenimiento de incidencias que hayan ocurrido en el hotel a través de notificaciones. Cuando se resuelve una incidencia, el encargado de mantenimiento la elimina de su lista. 
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} \\ 
+			\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} Selecciona el botón “Notificaciones". & \textbf{2.}Muestra la lista de incidencias que el resto de usuarios ha enviado.\\ \hline 
+				\textbf{3.}El usuario selecciona aquellas tareas que ha completado. & \textbf{4.} Las tareas elegidas se eliminan de la lista de “Notificaciones pendientes".\\ \hline
+				\textbf{5.} Cierra sesión. & \\ \hline
+			\end{tabular}
+		\end {itemize}
+		
+
+%AÑADIR NOTA
+	\hspace{1 true cm}	
+	\scalebox{0.9}{\includegraphics{Notas}}
+	\subsection{Añadir nota} 
+			\begin{itemize}
+			\item \textbf{Actor:} Todos.
+			\item \textbf{Propósito:} Crear una nota y añadirla al tablón.
+			\item \textbf{Visión general:} Las notas son el principal medio de comunicación escrito entre los empleados del negocio. 		Así pues, todos tendrán acceso a esta pestaña y podrán subir sus notas y ver las de los demás. La pestaña de notas es la única común a todos los empleados.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.}    El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
+				\textbf{3.} Selecciona la opción notas. & \textbf{4.} Muestra el tablón de notas. \\ \hline
+				\textbf{5.} Selecciona la opción “Crear nota".	& \textbf{6.} Se muestra el cuadro de texto a rellenar. \\ \hline
+				\textbf{7.} Escribe la nota.	& \textbf{8.}Muestra el tablón de notas con la nueva nota añadida. \\ \hline
+				\textbf{9.} Cierra la aplicación. &  \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} No hay cursos alternativos para este caso de uso.
+		\end {itemize}
+
+
+%BORRAR NOTA
+		\subsection{Borrar nota}
+			\begin{itemize}
+			\item \textbf{Actor:} Todos.
+			\item \textbf{Propósito:} Borra una nota del tablón.
+			\item \textbf{Visión general:} Selecciona una nota del tablón y la elimina, tanto para él como para el resto de empleados.
+			\item \textbf{Precondiciones:} 
+			\item \textbf{Postcondiciones:} 
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.}    El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
+				\textbf{3.} Selecciona la opción notas. & \textbf{4.} Muestra el tablón de notas. \\ \hline
+				\textbf{5.} Selecciona una nota y la elimina.	& \textbf{6.} La aplicación pregunta: “¿Está seguro que desea eliminar esta nota?". \\ \hline
+				\textbf{7.} Confirma.	& \textbf{8.}Muestra el tablón de notas, sin la nota recién eliminada. \\ \hline
+				\textbf{9.} Cierra la aplicación. &  \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} 
+			\begin{itemize}
+			\item  \textbf{Línea 7:} El usuario no quiere eliminar la nota. la aplicación vuelve a la línea 6.
+			\end {itemize}
+		\end {itemize}
+
 \newpage
 %%%%%%CASOS DE USO SECUNDARIOS%%%%%%_____________________________________________________________________________________________________________________________________________________
 
@@ -786,7 +771,8 @@ Para cada empleado se tendrán los siguientes campos:
 
 %AÑADIR EMPLEADO
 
-	\subsection{Añadir un nuevo empleado}	
+	\subsection{Añadir empleado}	
+	Este caso de uso se considera secundario a diferencia de Añadir cliente porque es mucho más habitual tener que añadir un cliente que un empleado.
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito:} Crear una nueva ficha de empleado.
@@ -812,39 +798,15 @@ Para cada empleado se tendrán los siguientes campos:
 
 
 
-
-%DAR DE BAJA A UN EMPLEADO
-
-	\subsection{Dar de baja a un empleado}	
-			\begin{itemize}
-			\item \textbf{Actor:} Jefe, empleado.
-			\item \textbf{Propósito:} Transferir la ficha de un empleado de “Empleados actuales” a “Antiguos empleados" .
-			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado y da de baja su ficha. Cierra la aplicación. 
-			\item \textbf{Curso típico de eventos:} 	\\
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}   El empleado hace Log in satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{3.} Selecciona la pestaña “Empleados”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en “Buscar empleado".	& \textbf{6.} Procesa la búsqueda y muestra la ficha del empleado. \\ \hline
-				\textbf{7.}Selecciona “Dar de baja a este empleado". & \textbf{8.}Pide confirmación para dar de baja al empleado.\\ \hline
-				\textbf{9.}Confirma y cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 6:}El empleado buscado no se encuentra en la base de datos. El programa le devuelve a la línea 5.
-			\end {itemize}
-		\end{itemize}%FIn de caso de uso
-
-
 %MODIFICAR LA FICHA DE UN EMPLEADO
 
-	\subsection{Modificar la ficha de un empleado}		
+	\subsection{Editar empleado}		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito:} Acceder a la ficha de un empleado y modificarla.
 			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado, accede a su ficha y la modifica. Cierra la aplicación. 
+			\item \textbf{Extiende ($<<$extends$>>$):}
+			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de empleado.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -867,9 +829,37 @@ Para cada empleado se tendrán los siguientes campos:
 		\end{itemize}%FIn de caso de uso
 
 
+
+%DAR DE BAJA A UN EMPLEADO
+
+	\subsection{Dar de baja empleado}	
+			\begin{itemize}
+			\item \textbf{Actor:} Jefe, empleado.
+			\item \textbf{Propósito:} Transferir la ficha de un empleado de “Empleados actuales” a “Antiguos empleados" .
+			\item \textbf{Visión general:} El jefe accede a la aplicación desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. Busca un empleado y da de baja su ficha. Cierra la aplicación. 
+			\item \textbf{Extiende ($<<$extends$>>$):}
+			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de empleado.
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.}   El empleado hace Log in satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
+				\textbf{3.} Selecciona la pestaña “Empleados”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
+				\textbf{5.} Clica en “Buscar empleado".	& \textbf{6.} Procesa la búsqueda y muestra la ficha del empleado. \\ \hline
+				\textbf{7.}Selecciona “Dar de baja a este empleado". & \textbf{8.}Pide confirmación para dar de baja al empleado.\\ \hline
+				\textbf{9.}Confirma y cierra la aplicación. & \textbf{} \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} 
+			\begin{itemize}
+			\item  \textbf{Línea 6:}El empleado buscado no se encuentra en la base de datos. El programa le devuelve a la línea 5.
+			\end {itemize}
+		\end{itemize}%FIn de caso de uso
+
+
 %VER CURRICULUM DE EMPLEADO
 
-	\subsection{Ver el currículum de un empleado}		
+	\subsection{Ver C.V. empleado}		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito:} Acceder al currículum vítae de un trabajador  .
@@ -895,7 +885,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista.
 			\item \textbf{Propósito:} Editar la ficha de un cliente.
-			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo. Busca al cliente por nombre y/o apellidos. Se muestra la ficha del cliente, dando la opción de editar los campos que sean necesarios. Comprueba que las ediciones son correctas. Cierra la aplicación. 
+			\item \textbf{Visión general:} El actor accede al programa de gestión de empleados desde su equipo. Busca al cliente por nombre y/o apellidos. Se muestra la ficha del cliente, dando la opción de editar lo que sea necesario. Comprueba que las ediciones son ''consistentes''. Cierra la aplicación. 
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
@@ -913,7 +903,7 @@ Para cada empleado se tendrán los siguientes campos:
 			\item  \textbf{Línea 8:} Algún campo de los editados es incorrecto. El programa regresa a la línea 7.
 			\item  \textbf{Línea 9:} El actor se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
 			\end {itemize}
-		\end{itemize}%FIn de caso de uso
+		\end{itemize}
 
 
 %DAR DE BAJA CLIENTE
@@ -941,11 +931,36 @@ Para cada empleado se tendrán los siguientes campos:
 			\end {itemize}
 		\end{itemize}
 
+%CANCELAR UN PEDIDO
+
+		\subsection{Eliminar comanda}
+			\begin{itemize}
+			\item \textbf{Actor:} Camareros, maître.
+			\item \textbf{Propósito: } Anular un pedido realizado.
+			\item \textbf{Visión general:} El cliente puede pedir a un empleado que anule un pedido que realizó.
+			\item \textbf{Extiende ($<<$extends$>>$):} Generar un pedido.
+			\item \textbf{Curso típico de eventos:} 	\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+				\hline
+				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+				\textbf{1.} El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
+				\textbf{3.} Selecciona la opción cancelar pedido, dentro de la pestaña “Restaurante". & \textbf{4.} Muestra todos los pedidos. \\ \hline
+				\textbf{5.} Selecciona el pedido que desea anular	& \textbf{6.} Se muestra un mensaje con los datos del pedido para verificar que realmente se desea anular. \\ \hline
+				\textbf{7.} Selecciona continuar.	& \textbf{8.} La aplicación muestra un mensaje indicando que la anulación se realizó correctamente. \\ \hline
+				\textbf{9.} Cierra la aplicación. &  \\ \hline
+			\end{tabular}
+			\\
+			\item \textbf{Cursos alternativos:} 
+			\begin{itemize}
+			\item  \textbf{Línea 7:} El usuario selecciona cancelar. La reserva no se anula. Puede elegir entre anular otra reserva o salir.
+			\end {itemize}
+		\end {itemize}
+		
 
 %COMPROBAR DISTRIBUCIÓN Y NÚMERO DE LAS MESAS EN EL COMEDOR
 
 			
-		\subsection{Comprobar distribución y número de mesas del comedor}
+		\subsection{Ver distribución y número de mesas del restaurante}
 			\begin{itemize}
 				\item \textbf{Actor:} Camareros, maître, jefe.
 				\item \textbf{Visión general:} Se puede acceder a un mapa que indica como están distribuidas las mesas en el restaurante, el numero de comensales que caben en cada mesa y las mesas preferidas por los clientes.
@@ -953,7 +968,7 @@ Para cada empleado se tendrán los siguientes campos:
 
 %MODIFICAR DISTRIBUCIÓN DEL RESTAURANTE
 
-		\subsection{Editar la distribución del restaurante}
+		\subsection{Editar distribución del restaurante}
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, Jefe.
 			\item \textbf{Propósito:} Modificar la distribución de las mesas en el restaurante.
@@ -972,31 +987,6 @@ Para cada empleado se tendrán los siguientes campos:
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
 			\item  \textbf{Línea 5:} Algún cambio no es posible hacerlo por falta de espacio o por otro tipo de incongruencias. El cambio se anula automaticamente y aparece un mensaje de error.
-			\end {itemize}
-		\end {itemize}
-
-%REALIZAR RECUENTO DE ALIMENTOS
-
-	\subsection{Realizar recuento de existencias}
-			\begin{itemize}
-			\item \textbf{Actor:} Maître, jefe, jefe de cocina.
-			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
-			\item \textbf{Visión general:} Cuando finaliza la jornada, el maître o el jefe realizan un recuento de todas las existencias que quedan en el almacen y lo anotan en la base de datos, la cual mandará una notificación cuando sea necesario reponer algun alimento.
-			\item \textbf{Curso típico de eventos:} 	\\
-				\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
-				\textbf{1.} El empleado hace Log In satisfactoriamente. & \textbf{2.} Muestras las opciones disponibles. \\ \hline
-				\textbf{3.} Selecciona la opción recuento de existencias. & \textbf{4.} Muestra una lista con todos los alimentos que había en el almacen tras el último recuento. \\ \hline
-				\textbf{5.} Introduce uno a uno la cantidad que hay de cada alimento. & \textbf{6.} Cuando se ha terminado el recuento Se vuelven a mostrar las opciones. \\ \hline
-				\textbf{7.}  Cierra la aplicación. &   \\ \hline
-			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 5:} Introduce intro en vez de la cantidad para no modificarlo.
-			\item  \textbf{Línea 5:} Puede terminar el recuento antes de llegar al ultimo elemento de la lista marcando la opción “Guardar y salir".
-			\item  \textbf{Línea 6:} Si algún alimento está por debajo del mínimo recomendado da la opción al usuario de realizar un pedido. Si lo realiza debe introducir la cantidad que desea pedir. (El mínimo se calcula mediante unas estadísticas realizadas a partir del consumo diario)
 			\end {itemize}
 		\end {itemize}
 
@@ -1074,6 +1064,40 @@ Para cada empleado se tendrán los siguientes campos:
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Visión general:} Desde la pantalla de ver habitaciones, puedes editar la habitación.	
+		\end {itemize}
+
+%VER CUENTA DIARIA DE LA CAJA DE RECEPCIÓN.
+	
+	\hspace{-2 true cm}
+	\scalebox{0.8}{\includegraphics{Contabilidad}} 
+	\subsection{Ver cuenta diaria de la caja de recepción}
+		\begin{itemize}
+			\item \textbf{Actor:} Jefe.
+			\item \textbf{Visión general:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja de la recepción.	
+		\end {itemize}
+
+%VER CUENTA DIARIA DE LA CAJA DEL RESTAURANTE.
+
+	\subsection{Ver cuenta diaria de la caja del restaurante}
+		\begin{itemize}
+			\item \textbf{Actor:} Jefe.
+			\item \textbf{Visión general:} El jefe ve los flujos de caja que se han producido durante el día, y la cantidad que debe haber en la caja del restaurante.	
+		\end {itemize}
+
+%CONSULTAR LIBRO DIARIO
+
+	\subsection{Consultar libro diario}
+		\begin{itemize}
+			\item \textbf{Actor:} Jefe.
+			\item \textbf{Visión general:} El jefe ve los últimos apuntes del libro diario, pudiendo ascender si lo desea hasta el asiento de apertura.	
+		\end {itemize}
+
+%CONSULTAR LIBRO MAYOR
+
+	\subsection{Consultar libro mayor}
+		\begin{itemize}
+			\item \textbf{Actor:} Jefe.
+			\item \textbf{Visión general:} El jefe ve los últimos apuntes en las cuentas del libro mayor. 
 		\end {itemize}
 
 
