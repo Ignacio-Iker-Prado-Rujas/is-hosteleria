@@ -184,7 +184,7 @@ Al iniciar la aplicación, si tras cuatro intentos la combinación Usuario + Con
 
 
 \section{Supuestos y dependencias}	
-	El software estará enfocado para ser utilizado en dispositivos con sistema operativo Android o Windows, aunque al estar escrito en java esto nos permitira camiar de sistema operativo sin demasiados cambios debido a que la implementación cambiara solo en casos muy especificos, así que podriamos decir que depende relativamente del sistema operativo.  Por el contrario, si que va a depender mucho del hardware, puesto que necesitará sincronizarse con un sistema central que organice y distribuya toda la información de los dispositivos de los empleados, por tanto necesitaremos un procesador muy rapido que organice todo. También será necesario un servidor interno que distribuya la información entre los distintos dispositivos.	\\
+	El software estará enfocado para ser utilizado en dispositivos con sistema operativo Android o Windows, aunque al estar programado en Java  nos permitirá cambiar de sistema operativo sin demasiados cambios debido a que la implementación cambiará solo en casos muy especificos, así que podriamos decir que depende relativamente del sistema operativo.  Por el contrario,la dependencia del hardware será mayor, puesto que necesitará sincronizarse con un sistema central que organice y distribuya toda la información de los dispositivos de los empleados,para lo que hará faltaun procesador muy rápido que organice todo. También será necesario un servidor interno que distribuya la información entre los distintos dispositivos.	\\
 
 En definitiva,  nuestro cliente necesitará tener Windows XP, Vista o 7, o Android 2.3 (Gingerbread) o superior (hasta android Jelly Bean).
 Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesador Dual Core 2GHz. para ordenadores fijos.
@@ -219,12 +219,11 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			El usuario tendrá varias maneras de interactuar con el programa. El programa le permite hacerlo mediante botones y campos. Los botones pueden servir para elegir pestañas concretas o acceder a un determinado sitio, es decir, para obtener datos del sistema. Los campos sirven para enviar información al sistema y a otros usuarios, y se pueden rellenar mediante cuadros de texto (por ejemplo, para enviar la descripción de una incidencia) o marcando las opciones disponibles (por ejemplo, al hacer un pedido en el restaurante). Aquí también intervienen los botones, ya que se puede aceptar para enviar la información, o cancelar si hemos cometido un error, para volver a rellenar los campos. En el programa hay varias ventanas con varias opciones, pensadas para los distintos tipos de usuario.
 			\begin{itemize}
 				% \item \textbf{}
-				\item \textbf{Pantalla de inicio} En la pantalla de inicio se mostrará a la derecha los distintos tipos de usuario que hay (Jefe, Maître, recepcionista, etc). En el centro se mostrarán dos campos a rellenar: usuario y contraseña. Ambos campos serán de una sola línea y tendrán un ancho de 39 caracteres. Debajo del campo “Contraseña'' está el botón “¿Has olvidado tu contraseña?".
-				\item \textbf{Ventana “Jefe"} En la parte superior de la ventana del Jefe se muestran las siguientes pestañas: contabilidad, empleados, cliente, restaurante, habitaciones y notas. En la esquina superior derecha habrá un botón para cerrar sesión. En la esquina inferior derecha se mostrará el tipo de usuario que está logueado, en este caso, el Jefe. 
+				\item \textbf{Pantalla de inicio} En la pantalla de inicio se mostrarán los distintos tipos de usuario que hay (Jefe, Maître, recepcionista, etc).También aparecerán dos campos a rellenar: usuario y contraseña. Debajo del campo “Contraseña'' aparecerá escrito “¿Has olvidado tu contraseña?", para poder recuperarla en caso de que sea necesario.
+				\item \textbf{Usuario “Jefe"} Para el Jefe se muestran los siguientes apartados: contabilidad, empleados, cliente, restaurante, habitaciones y notas. Además, tendremos un botón para cerrar sesión. En la pantalla se mostrará el tipo de usuario que está logueado, en este caso, el Jefe. 
 				\begin{itemize}
 					\item \textbf{Contabilidad: }Se mostrarán 4 opciones: Cuenta de caja: Recepción, Cuenta de caja: Restaurante, Acceso al libro diario y Acceso al libro mayor.En las dos primeras se mostrará una tabla con tres columnas: Ingreso, gasto y concepto.
-					 \item \textbf{Empleados: }Se mostrará una tabla con 4 columnas: foto, nombre, apellidos y “trabaja actualmente". En la parte superior habrá un botón de búsqueda, en el que se podrá elegir el campo (Nombre, apellidos, ...).
-						En la parte superior derecha hay un botón para añadir empleado. 
+					 \item \textbf{Empleados: }Se mostrará una tabla con 4 columnas: foto, nombre, apellidos y “trabaja actualmente". Tendremos la opción de "Búsqueda", en la que se podrá elegir el campo (Nombre, apellidos, ...), y la de "Añadir empleado". 
 					 \item \textbf{Clientes: }La parte superior será igual que en la pantalla de empleados. Se mostrará una tabla con 4 columnas: Nombre, apellidos, número de teléfono y VIP. 
 					 \item \textbf{Restaurante: }Se muestran 9 opciones: Realizar reserva, Ver/Anular reserva, Distribución de mesas, Cantidad de existencias, Generar/modificar pedido, Anular pedido, Generar factura, Ver/modificar menú y Notificar Incidencias.
 					\begin{itemize}
@@ -232,41 +231,41 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 						\item En “Ver/Anular reserva" se mostrará una tabla con los campos día, hora, nombre, número de comensales, mesa y un botón para anular. 
 						\item En “Distribución de mesas" se mostrará un mapa esquemático con las mesas del restaurante. 
 						\item En “Cantidad de existencias" se mostrarán los campos bebidas, vinos e ingredientes, y en cada uno de ellos se podrá elegir algo específico. 
-						\item En “Generar pedido" se mostrarán los campos número de mesa, bebidas, entrantes, vinos, primeros, segundos, postres, cafés e infusiones. A la derecha habrá una lista con todo lo que se haya pedido, y abajo habrá un tick y una cruz para generar o cancelar pedido. 
-						\item En “Anular pedido" aparecerá en un campo el número de mesa. Debajo aparecerá una lista con los pedidos de esa mesa y a la derecha habrá un botón para eliminar pedido. 
-						\item En “Generar factura" aparecerá el número de mesa junto con una lista con todos los pedidos de esa mesa. A la derecha habrá dos opciones, uno para generar factura y otro para añadir factura a habitación.
-						\item En “Ver/modificar menú'' aparecerán los mismos campos que en Generar pedido. Al seleccionar uno de ellos aparecerá una tabla con los elementos disponibles, que se pueden editar. De nuevo habrá tick para aceptar y cruz para cancelar. 
-						\item En “Notificar incidencias'' aparecerán los campos Lugar y Descripción, y en la parte inferior un tick y una cruz. 
+						\item En “Generar pedido" se mostrarán los campos número de mesa, bebidas, entrantes, vinos, primeros, segundos, postres, cafés e infusiones. Además, habrá una lista con todo lo que se haya pedido, las opciones de generar o cancelar pedido. 
+						\item En “Anular pedido" aparecerá en un campo el número de mesa. Debajo aparecerá una lista con los pedidos de esa mesa y a la opción de eliminar pedido. 
+						\item En “Generar factura" aparecerá el número de mesa junto con una lista con todos los pedidos de esa mesa. Ademas, dos opciones: generar factura y añadir factura a habitación.
+						\item En “Ver/modificar menú'' aparecerán los mismos campos que en Generar pedido. Al seleccionar uno de ellos aparecerá una tabla con los elementos disponibles, que se pueden editar. 
+						\item En “Notificar incidencias'' aparecerán los campos Lugar y Descripción.
 					\end{itemize}
 					
 					 \item \textbf{Habitaciones:} En la ventana habitaciones aparecerán las opciones: Realizar reserva, Ver/anular reserva, Generar factura, Ver habitaciones y Notificar incidencias. 
 					\begin{itemize}		
-							\item En “Realizar reserva'' aparecerán los campos Desde, Hasta, Número de inquilinos, Número de niños, Tipo de pensión, y Número de habitación. En la parte inferior habrá un tick y una cruz.
-							\item En “Anular reserva'' se verá una tabla con las columnas: Habitación, Desde, Hasta, Número de inquilinos/niños, Pensión, y un botón para anular.\\
-							\item En “Generar factura'' aparecerán los campos: Número de habitación, Desde, Hasta, Número de inquilinos, Número de niños, Tipo de pensión, Facturas de Restaurante y VIP. En la parte superior derecha aparecerá un botón de Generar Factura. \\
+							\item En “Realizar reserva'' aparecerán los campos Desde, Hasta, Número de inquilinos, Número de niños, Tipo de pensión, y Número de habitación.
+							\item En “Anular reserva'' se verá una tabla con las columnas: Habitación, Desde, Hasta, Número de inquilinos/niños, Pensión.\\
+							\item En “Generar factura'' aparecerán los campos: Número de habitación, Desde, Hasta, Número de inquilinos, Número de niños, Tipo de pensión, Facturas de Restaurante y VIP. \\
 							\item En “Ver habitaciones'' se verá el campo “Número de habitación''. Aparecerá una foto de la habitación en cuestión, y una descripción de la habitación en la que aparecerá: planta, ascensor, ducha y mobiliario. 
 					\end{itemize}
-					 \item \textbf{Notas:} En notas aparecerán las notas, que tendrán un botón en la parte superior izquierda para eliminar la nota. En la parte inferior izquierda de la pantalla aparecerá un botón para añadir nota. 
+					 \item \textbf{Notas:} En "Notas" aparecerán las notas, con la posibilidad de crear una nueva nota o eliminar una ya existente.
 				\end{itemize}
 				
-				 \item \textbf{Ventana “Maître/Recepcionista'' } El maître y recepcionista verán las pestañas: Clientes, Restaurante, Habitaciones y Notas. 
-				 \item \textbf{Ventana “Camareros" } El camarero verá las pestañas: Clientes, Restaurante y notas. 	
-				 \item \textbf{Ventana “Chef/Cocineros" } El chef y cocineros verán las pestañas Restaurante y Notas. 
-				 \item \textbf{Ventana “Organización limpieza" } El jefe de limpieza verá las pestañas Organización de limpieza y Notas. 
+				 \item \textbf{Usuario “Maître/Recepcionista'' } El maître y recepcionista verán las opciones: Clientes, Restaurante, Habitaciones y Notas. 
+				 \item \textbf{Usuario “Camareros" } El camarero verá los apartados: Clientes, Restaurante y Notas. 	
+				 \item \textbf{Usuario “Chef/Cocineros" } El chef y cocineros verán los apartados Restaurante y Notas. 
+				 \item \textbf{Usuario “Organización limpieza" } El jefe de limpieza verá los apartados Organización de limpieza y Notas. 
 					\begin{itemize}
-						 \item \textbf{Organización limpieza: }En la pestaña “Organización de limpieza" se mostrarán las opciones: Determinar tareas, Revisión de limpieza, Control de lavandería y Notificar incidencias. 
+						 \item \textbf{Organización limpieza: }En el apartado “Organización de limpieza" se mostrarán las opciones: Determinar tareas, Revisión de limpieza, Control de lavandería y Notificar incidencias. 
 						 \begin{itemize}
-							\item En “Determinar tareas'' aparecerán los campos Empleado y Día. Abajo habrá un botón para añadir tarea, en el que hay que indicar lugar, descripción de tarea y hora.
-							\item En “Control de lavandería'' aparecerán los campos: Día de salida a la lavandería, nº de manteles, nº de servilletas, nº de toallas y nº de pack de sábanas. A la derecha aparecerá un cuadro que se puede marcar cuando esté limpio. 
-							\item En “Revisión de limpieza'' aparecerá una tabla con las columnas Encargado, Limpiador y Descripción. En la columna Encargado se podrá marcar un tick. 	
+							\item En “Determinar tareas'' aparecerán los campos Empleado y Día. Se podrá añadir una tarea,indicando lugar, descripción de tarea y hora.
+							\item En “Control de lavandería'' aparecerán los campos: Día de salida a la lavandería, nº de manteles, nº de servilletas, nº de toallas y nº de pack de sábanas. Aparecerá un cuadro que se puede marcar cuando esté limpio. 
+							\item En “Revisión de limpieza'' aparecerá una tabla con las columnas Encargado, Limpiador y Descripción.	
 						\end{itemize}
 					\end{itemize}
-				 \item \textbf{Ventana “Limpieza" }El personal de limpieza verá las pestañas “Limpieza'' y “Notas". En la pestaña “Limpieza'' aparecen las opciones “Consultar tareas", “Notificar tareas realizadas (hoy)'' y “Notificar incidencias".
+				 \item \textbf{Usuario “Limpieza" }El personal de limpieza verá las pestañas “Limpieza'' y “Notas". En la pestaña “Limpieza'' aparecen las opciones “Consultar tareas", “Notificar tareas realizadas (hoy)'' y “Notificar incidencias".
 					\begin{itemize}
-						\item \textbf{Consultar tareas:} Aparece el campo día. Abajo aparecen las descripciones de las tareas de ese día. 
-						 \item \textbf{Notificar tareas realizadas (hoy): }Aparecen las tareas a realizar por el trabajador. A la izquierda de cada tarea aparece un tick para marcar la tarea como realizada. 
+						\item \textbf{Consultar tareas:} Aparece el campo Día, junto con las descripciones de las tareas de ese día. 
+						 \item \textbf{Notificar tareas realizadas (hoy): }Aparecen las tareas a realizar por el trabajador, pudiéndose marcar cada tarea como realizada. 
 					\end{itemize}
-				 \item \textbf{Ventana “Mantenimiento" } El encargado de mantenimiento verá las pestañas “Notificaciones'' y “Notas". En "Notificaciones'' habrá una tabla con tres columnas: “Lugar", “Descripción'' y “Hecho", donde se podrá marcar la incidencia como resuelta. 
+				 \item \textbf{Usuario “Mantenimiento" } El encargado de mantenimiento verá las pestañas “Notificaciones'' y “Notas". En "Notificaciones'' habrá una tabla con tres columnas: “Lugar", “Descripción'' y “Hecho", donde se podrá marcar la incidencia como resuelta. 
 			\end{itemize}
 
 %Sección funciones
@@ -910,7 +909,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 \section{Requisitos de rendimiento}
 \begin{itemize}
-	\item El sistema debe soportar al menos diez usuarios conectados simultáneamente con tablet y cinco con ordenador personal.
+	\item El sistema debe soportar al menos diez usuarios conectados simultáneamente con tablet y cinco con ordenador persona, que es la fuerza de trabajo máxima esperada en un negocio de carácter medio.
 	\item El sistema debe por lo tanto soportar también diez pedidos por segundo y la creación de dos clientes por segundo. 
 \end{itemize}
 
@@ -919,9 +918,9 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 	\item Existen varias restricciones importantes en el diseño, especialmente en cuanto a limitaciones de hardware:
 	\begin{itemize}
 		\item El diseño debe funcionar tanto en tablet como en ordenador de sobremesa,  pero solo sobre windows y android.
-		\item Debido a nuestro desconocimiento de bases de datos, no podremos implementar en una base de datos real.
+		\item Debido a nuestro desconocimiento de bases de datos, no podremos implementar en una base de datos real, por lo que los detalles sobre la base de datos, su seguridad y el intercambio de información que realiza con el sistema quedan reducidos a los datos mínimos necesarios para asegurar su correcto funcionamiento.
 		\item Por al elevado coste, que lo hace inviable, no podemos instalar un hardware en cada habitación que permita crear pedidos y reservar en el restaurante a los propios clientes.
-		\item El cocinero no podrá manipular hardware con las manos, por lo que no actuará sobre el sistema. Sin embargo, el sistema debe interactuar eficientemente con él.
+
 	\end{itemize}
 \end{itemize}
 
