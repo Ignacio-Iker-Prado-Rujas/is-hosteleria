@@ -716,86 +716,141 @@ En primer lugar, se introdujo un nuevo módulo: \textit{Hostelería}. Posteriorm
 
 \vspace{0.35cm}
 \hspace{3.5cm}
-\scalebox{0.5}{\includegraphics{PFCOCOMOpeso}} 
+\scalebox{0.45}{\includegraphics{PFCOCOMOpeso}} 
 \vspace{0.35cm}
 
 El número de entradas, salidas etc. exactamente igual que antes:
 
 \vspace{0.35cm}
 \hspace{2.9cm}
-\scalebox{0.55}{\includegraphics{PFCOCOMO}} 
+\scalebox{0.5}{\includegraphics{PFCOCOMO}} 
 \vspace{0.35cm}
 
 Con ello obtenemos una medida del tamaño de la aplicación. Nos da 14151 líneas de código.
 
-\section{Factores de escala}
+\section{Factores de escala (Scale Factor)}
 \begin {itemize}
 	\item {PREC: Precedentness}
+
+	El equipo de desarrolladores está compuesto por principiantes poco acostumbrados a trabajar con sistemas software, por tanto consideramos que este campo debe ser \textit{muy bajo}.
 	\item {FLEX: Development Flexibility}
+
+	La flexibilidad de desarrollo se fija como \textit{baja} ya que hay unos requisitos predefinidos y que estamos trabajando con  el Proceso Unificado.
 	\item {RESL: Architecture/Risk Resolution}
+
+	El estudio de los riesgos se puede examinar en el documento de \texttt{Gestión de riesgos Software}, donde se ve que tenemos 5 riesgos con un nivel intolerable. Debido a esto y a la arquitectura, fijamos este valor como \textit{bajo}.
 	\item {TEAM: Team Cohesion}
+
+	Ya que los miembros del equipo se conocen bien, hay buen ambiente de trabajo y se ven prácticamente todos los días, consideramos que la cohesión del equipo es \textit{alta}. Además, se tiene bastante capacidad de acomodación a los intereses de otros stakeholders.
 	\item {PMAT: Process Maturity}
+
+	Mirando el CMM Maturity Model hemos concluido que el proyecto se encuentra en un nivel 2, que es una madurez media. Por lo tanto queda como \textit{nominal}.
 \end{itemize}
+
+Con estos datos, la herramienta determina que el factor de escala es 22.77, como se ve en la imagen.
+
+\vspace{0.4cm}
+\hspace{3cm}
+\scalebox{0.9}{\includegraphics{sf}} 
+\vspace{0.35cm}
 
 \section{Factor de ajuste del esfuerzo (EAF)}
 \begin {itemize}
 	\item{Factores del producto}
 		\begin{itemize}
 			\item{RELY: Required Software Reliability}
+
+			El software debe tener una fiabilidad \textit{alta}, sobre todo si se trata de una empresa mediana- grande.
 			\item{DATA: Data Base Size}
+
+			Ya que se manejan bases de datos de clientes, empleados y platos, y que de nuevo cuanto más grande sea el negocio más crecen estas bases de datos, se fija como \textit{alta}.
 			\item{CPLX: Product Complexity}
+
+			\textit{Baja}, ya que aunque sea un software bastante grande, no es complejo ni tiene elementos sofisticados.
 			\item{RUSE: Required Reusability}
+
+			Se pretende que pueda ser adaptable con pocas modificaciones a distintos clientes, por lo que la reusabilidad es \textit{muy alta}.
 			\item{DOCU: Documentation Match to Life-Cycle Needs}
+
+			\textit{Nominal}, no es determinante.
 		\end{itemize}
 	\item{Factores de la plataforma}
 		\begin{itemize}
 			\item{TIME: Execution Time Constraint}
+
+			\textit{Nominal}, ya que no estamos trabajando con sistemas críticos o similares.
 			\item{STOR: Main Storage Constraint}
+
+			\textit{Nominal} por el mismo motivo.
 			\item{PVOL: Platform Volatility}
+
+			\textit{Nominal}.
 		\end{itemize}
 	\item{Factores de personal}
 		\begin{itemize}
 			\item{ACAP: Analyst Capability}
+
+			Ya que los integrantes del grupo tienen conocimientos fuera de la informática también, se considera que tienen una \textit{alta} capacidad de análisis.
 			\item{PCAP: Programmer Capability}
+	
+			Al tratarse de estudiantes todavía no se tienen unos conocimientos extensos de progamación, por lo que consideramos esta campo como \textit{bajo}.
 			\item{AEXP: Application Experience}
+
+			\textit{Nominal}.
 			\item{PEXP: Platform Experience}
+
+			\textit{Nominal}.
 			\item{LTEXT: Language and Tool Experience}
+
+			\textit{Alta} porque trabajamos con Java en un entorno al que estamos acostumbrados: Eclipse. La otra herrmaienta que utilizamos la mayor parte del tiempo es el TeXworks para escribir en \LaTeX, que también la dominamos bastante.
 			\item{PCON: Personnel Continuity}
+
+			\textit{Alta} salvo abandono.
 		\end{itemize}
 	\item{Factores del proyecto}
 		\begin{itemize}
 			\item{TOOL: Use of Software Tools}
+
+			\textit{Bajo} ya que apenas se utilizan herramientas.
 			\item{SITE: Multisite development}
-			\item{SCED: Required Development Schedule} %creo que no sale en el cocomo
+
+			\textit{Bajo}, ya que como se ha dicho antes, los integrantes del grupo se ven prácticamente todos los días.
 		\end{itemize}
 \end{itemize}
 
+Con estos datos, el COCOMO II determina un factor de ajuste del esfuerzo de 1.19, como se puede ver en la figura.
+
+\vspace{0.35cm}
+\hspace{3cm}
+\scalebox{0.9}{\includegraphics{eaf}} 
+\vspace{0.35cm}
+
 \section{Esfuerzo, coste  duración}
-También se detalló el factor de complejidad, 1.04 (en el programa, denominado \textit{EAF}), el salario en dólares por mes (que aparece como \textit{LABOR RATE (\$/month)}). Suponiendo un salario humilde, estimamos unos 700 \$/mes. Además, añadimos el lenguaje de programación elegido: Java, como ya hemos dicho en varias ocasiones. 
+También se detalló el salario en dólares por mes (que aparece como \textit{LABOR RATE (\$/month)}). Suponiendo un salario humilde, estimamos unos 700 \$/mes. Además, añadimos el lenguaje de programación elegido: Java, como ya hemos dicho en varias ocasiones. 
 
 
 \vspace{0.35cm}
-\hspace{-2.8cm}
-\scalebox{0.45}{\includegraphics{COCOMOTODO2}} 
+\hspace{-3.2cm}
+\scalebox{0.8}{\includegraphics{COCOMOTODO2}} 
 \vspace{0.35cm}
 
 Tras todas estas consideraciones, el programa nos da las estimaciones:
 
 \vspace{0.35cm}
-\hspace{-2.7cm}
-\scalebox{0.42}{\includegraphics{COCOMOTODO1}} 
+\hspace{-3.2cm}
+\scalebox{0.85}{\includegraphics{COCOMOTODO1}} 
 \vspace{0.35cm}
 
 \begin{itemize}
 	\item{\bfseries{Estimación de esfuerzo:}}
-	Según la herramienta, lo más probable es que se necesiten \textbf{\underline{51 personas por mes}}, aunque el valor optimista es de 40.8 y el pesimista de 63.7, conviertiéndolo en un proyecto de bastante envergadura.
+	Según la herramienta, lo más probable es que se necesiten \textbf{\underline{71.5 personas · mes}}, aunque el valor optimista es de 57.2 y el pesimista de 89.4, conviertiéndolo en un proyecto de envergadura media.
 	\item{\bfseries{Estimación de coste:}}
-	La estimación del coste, como hemos comentado antes, está hecha con un supuesto de un salario de 700 \$/mes, aunque esto son sólo suposiciones ya que se trata de un proyecto académico. Así, salen \textbf{\underline{35686.24 dólares}}, que son 27272.63 euros. Además, se puede apreciar que se estima un precio de unos 2.5 \$ por cada instrucción de la aplicación.
+	La estimación del coste, como hemos comentado antes, está hecha con un supuesto de un salario de 700 \$/mes, aunque esto son sólo conjeturas ya que se trata de un proyecto académico. Así, salen \textbf{\underline{50056.93 dólares}}, que son 38.544,637 euros. Además, se puede apreciar que se estima un precio de unos 3.5 \$ por cada instrucción de la aplicación.
 	\item{\bfseries{Estimación de duración:}}
-	Según el COCOMO II, durará \textbf{\underline{12.5 meses}}, aproximadamente un año, entre 11.6 y 13.3 meses en el mejor y peor caso respectivamente.
+	Según el COCOMO II, durará \textbf{\underline{14.7 meses}}, poco más de un año, entre 13.7 y 15.8 meses en el mejor y peor caso respectivamente. Es interesante ver que si dividimos el esfuerzo entre el tiempo obtenemos el número aproximado de personas que son necesarias cada mes, y en nuestro caso es 4.86, es decir unas 5 personas cada mes, justo el número de miembros del equipo.
 \end{itemize}
 
-\textbf{\underline{Nota:}} Lo que aparece entre la duración y el coste en la herramienta es la productividad, que se obtiene de dividir SLOC entre el esfuerzo más probable, y obtenemos que es 277.6 SLOC/pm.
+\textbf{\underline{Nota:}} Lo que aparece entre la duración y el coste en la herramienta es la productividad, que se obtiene de dividir SLOC entre el esfuerzo más probable, y obtenemos que es 197.9 SLOC/pm.
 
 \newpage
 \mbox{}
