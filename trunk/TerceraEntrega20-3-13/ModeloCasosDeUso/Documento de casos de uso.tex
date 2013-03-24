@@ -637,7 +637,8 @@
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Ver la reserva de habitaciones del hotel.
-			\item \textbf{Visión general:} Se ve el total de las futuras reservas de habitaciones del hotel ordenadas por fecha.
+			\item \textbf{Visión general:} Se ve el total de las futuras reservas de
+				habitaciones del hotel ordenadas por fecha.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
 			\item \textbf{Postcondiciones:} Ninguna.
 			\item \textbf{Incluye ($<<$include$>>$):} Anular reserva.
@@ -645,8 +646,9 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
-				\textbf{1.} Pincha en la pestaña de habitaciones & \textbf{2.}Se muestra la sección habitaciones \\ \hline 
-				\textbf{3.} Selecciona ver/anular reservas. & \textbf{4.}Se muestran la lista de reservas \\ \hline
+				\textbf{1.} Selecciona el apartado ``Habitaciones''. & 
+				\textbf{2.}Se muestra la sección ``habitaciones'', con sus correspondientes opciones. \\ \hline 
+				\textbf{3.} Selecciona ``ver/anular reservas''. & \textbf{4.}Se muestra la lista de reservas \\ \hline
 			\end{tabular}
 			\\
 		\end {itemize}
@@ -657,17 +659,24 @@
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito:} Generar una factura para un cliente.
-			\item \textbf{Visión general:} Cuando un cliente quiere pagar la factura del hotel, se genera la factura correspondiente.
-			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
-			\item \textbf{Postcondiciones:} Que haya alguna reserva de donde generar la factura.
-			\item \textbf{Curso típico de eventos:} 	\\
+			\item \textbf{Visión general:} Cuando un cliente quiere pagar la factura del
+					hotel, se genera la factura correspondiente.
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o
+					mantenimiento.
+			\item \textbf{Postcondiciones:} Que haya alguna reserva de donde generar la
+				factura.
+				\item \textbf{Curso típico de eventos:}  \\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
-				\textbf{1.} Pincha en la pestaña de habitaciones & \textbf{2.}Se muestra la sección habitaciones \\ \hline 
-				\textbf{3.} Selecciona generar factura & \textbf{4.}Se muestran los campos de la factura.  \\ \hline
-				\textbf{5.} Se modifican los campos deseados & \textbf{6.} Se muestra la factura final \\ \hline
-				\textbf{7.} Se confirma generar factura & \textbf{8.}Regresa a la pantalla general de habitaciones\\ \hline
+				\textbf{1.} Selecciona el apartado ``habitaciones''. & 
+				\textbf{2.} Se muestra la sección habitaciones \\ \hline 
+				\textbf{3.} Selecciona ``Generar factura''. & 
+				\textbf{4.} Se muestran los campos de la factura.  \\ \hline
+				\textbf{5.} Se modifican los campos deseados. & 
+				\textbf{6.} Se muestra la factura final. \\ \hline
+				\textbf{7.} Se confirma generar factura. & 
+				\textbf{8.} Regresa a la pantalla general de habitaciones.\\ \hline
 			\end{tabular}
 			\\
 		\end {itemize}
@@ -681,25 +690,33 @@
 	\subsection{Organizar tareas de limpieza}
 			\begin{itemize}
 			\item \textbf{Actor: }Jefe de limpieza.
-			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el trabajo entre los empleados de limpieza y organizando los horarios. 		
-			\item \textbf{Visión general: }El jefe de limpieza accede al programa a través de su dispositivo. Debe introducir su nombre de usuario y contraseña. Una vez ha accedido, tiene la opción de organizar las tareas de limpieza. Pulsando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas entre los trabajadores de limpieza. 
+			\item \textbf{Propósito: }Organizar las tareas de limpieza, repartiendo el
+				trabajo entre los empleados de limpieza y organizando los horarios.
+			\item \textbf{Visión general: }El jefe de limpieza accede al programa a través
+				de su dispositivo. Una vez ha accedido, tiene la opción de organizar las tareas de limpieza. 
+				Seleccionando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas
+				entre los trabajadores de limpieza.
 			\item \textbf{Precondiciones:} Ser el jefe de limpieza.
 			\item \textbf{Postcondiciones:} Puede haberse añadido tareas nuevas de limpieza.
 			\item \textbf{Curso típico de eventos:} \\
-\begin{tabular}{|p{6cm}||p{6cm}|}
+			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las opciones disponibles.\\ \hline
-				\textbf{3.} Selecciona la opción “Determinar lugares a limpiar”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Selecciona la opción de “Crear tarea".	& \textbf{6.} Muestra los campos “Lugar", “Empleado'' y “Comentarios". \\ \hline
-				\textbf{7.}Rellena los campos . & \textbf{8.} Envía una notificación al personal de limpieza correspondiente con los campos que ha rellenado el encargado de limpieza.\\ \hline
-				\textbf{9.}Cierra la aplicación. & \textbf{} \\ \hline
+				\textbf{1.} Selecciona la opción ``Determinar lugares a limpiar''. & 
+				\textbf{2.} Muestra dicho apartado, con las opciones correspondientes. \\ \hline
+				\textbf{3.} Selecciona la opción de ``Crear tarea''.	& 
+				\textbf{4.} Muestra la ficha de limpieza vacía. \\ \hline
+				\textbf{5.} Especifica los datos ``Lugar'', ``Empleado'' y ``Comentarios. & 
+				\textbf{6.} Crea la ficha de limpieza con los datos indicados y 
+					envía una notificación al personal de limpieza correspondiente. \\ \hline
 			\end{tabular}
 
 			\item \textbf{Cursos alternativos:} 
 				\begin {itemize}
 					
-					\item \textbf{Línea 8: } Al rellenar el campo del empleado, se elige uno que ha alcanzado el máximo de tareas a realizar en ese día. El sistema informa de esto, y el jefe debe volver a elegir a otro empleado.
+					\item \textbf{Línea 6: } Al rellenar el campo del empleado, se elige uno 
+					que ha alcanzado el máximo de tareas a realizar en ese día. 
+					El sistema informa de esto, y el jefe de limpieza debe volver a elegir a otro empleado.
 				\end {itemize}
 			\end{itemize}%Fin de caso de uso
 
@@ -708,24 +725,35 @@
 
 	\subsection{Revisar tareas de limpieza}
 			\begin{itemize}
-			\item \textbf{Actor: }Jefe de limpieza.
-			\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de comprobar que aquellos lugares que ya han sido marcados como “limpiados"  por los trabajadores de limpieza, efectivamente lo están.  		
-			\item \textbf{Visión general: }Anteriormente, el jefe ha creado una lista de tareas, que pueden consultar los trabajadores de limpieza. Cada vez que se limpia un sitio, este se tacha de la lista de “Sitios por limpiar'' y se añade a la de “Sitios limpiados".  
-			\item \textbf{Precondiciones:} Ser el jefe de limpieza.
-			\item \textbf{Postcondiciones:} Se marca una tarea como realizada correctamente. 
-			\item \textbf{Curso típico de eventos:}\\ 
-\begin{tabular}{|p{6cm}||p{6cm}|}
-				\hline
-				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{3.} Selecciona la pestaña “Revisión de limpieza”. & \textbf{4.} Muestra la lista de los sitios que han sido limpiados. \\ \hline
-				\textbf{5.} Va marcando en la lista aquellos sitios que ha comprobado que están limpios.	& \textbf{6.} Elimina de la lista los sitios marcados. \\ \hline
-				\textbf{7.} En aquellos sitios que no están limpios del todo, o en los que falta algo, puede pulsar la opción de “Agregar comentario". & \textbf{8.} Envía el comentario al personal de limpieza. El sitio se vuelve a añadir a la lista de “Sitios por limpiar".\\ \hline
-				\textbf{9.}Cierra la aplicación. & \textbf{} \\ \hline
-			\end{tabular}
+				\item \textbf{Actor: }Jefe de limpieza.
+				\item \textbf{Propósito: }Da la posibilidad al encargado de limpieza de
+					comprobar que aquellos lugares que ya han sido marcados como ``limpiados''  por
+					los trabajadores de limpieza, efectivamente lo están.
+				\item \textbf{Visión general: }Anteriormente, el jefe ha creado una lista de
+					tareas, que pueden consultar los trabajadores de limpieza. Cada vez que se
+					limpia un sitio, este se tacha de la lista de ``Sitios por limpiar'' y se añade a
+					la de ``Sitios limpiados''.
+				\item \textbf{Precondiciones:} Ser el jefe de limpieza.
+				\item \textbf{Postcondiciones:} Se marca una tarea como realizada correctamente.
+				\item \textbf{Extiende ($<<$extends$>>$):} Organizar tareas de limpieza.
+				\item \textbf{Curso típico de eventos:}\\
+				\begin{tabular}{|p{6cm}||p{6cm}|}
+					\hline
+					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
+					\textbf{1.} Entre los apartados disponibles, selecciona el apartado ``Revisión de limpieza''. &
+					\textbf{2.} Muestra la lista de los sitios que han sido limpiados. \\ \hline
+					\textbf{3.} Va marcando en la lista aquellos sitios que ha comprobado que están limpios.	& 
+					\textbf{4.} Elimina de la lista los sitios marcados. \\ \hline
+					\textbf{5.} En aquellos sitios que no están limpios del todo, o en los que falta
+						algo, puede pulsar la opción de ``Agregar comentario''. & 
+					\textbf{6.} Envía el comentario al personal de limpieza. El sitio se vuelve a añadir a la lista de
+						``Sitios por limpiar''.\\ \hline
+				\end{tabular}
 			\item \textbf{Cursos alternativos:} 
 				\begin{itemize}
-					\item \textbf{Línea 9: }Si el comentario excede los 140 caracteres, el sistema informará de ésto al usuario, que podrá editar su comentario para que no exceda los 140 caracteres.
+					\item \textbf{Línea 6: }Si el comentario excede los 140 caracteres, el sistema
+						informará de ésto al usuario, que podrá editar su comentario para que no exceda
+						los 140 caracteres.
 				\end{itemize}
 		\end {itemize}
 
@@ -736,14 +764,16 @@
 	\subsection{Consultar tareas de limpieza}				
 			\begin{itemize}
 				\item \textbf{Actor:} Personal de limpieza.
-				\item \textbf{Visión general:} Permite al personal de limpieza consultar las tareas que el encargado de limpieza les ha asignado. 		
+				\item \textbf{Visión general:} Permite al personal de limpieza consultar las
+					tareas que el encargado de limpieza les ha asignado.
 			\item \textbf{Precondiciones:} Ser un empleado de limpieza.
 			\item \textbf{Postcondiciones:}  Ninguna, solo se consultan las tareas pendientes.
 			\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
 					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-					\textbf{1.} El usuario accede a sus tareas. & \textbf{2.} Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
+					\textbf{1.} El usuario accede a sus tareas. & 
+					\textbf{2.} Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
 				\end{tabular}
 			\end {itemize}
 
@@ -754,23 +784,30 @@
 			\begin{itemize}
 			\item \textbf{Actor:} Personal de limpieza.
 			\item \textbf{Propósito: }Eliminar de la lista de tareas una tarea de limpieza que ha sido completada.
-			\item \textbf{Visión general: }El jefe de limpieza envía a los trabajadores de limpieza una lista con las tareas que deben hacer. Una vez que estas tareas han sido realizadas, los trabajadores de limpieza deben eliminarlas de la lista de "Tareas por realizar".
+			\item \textbf{Visión general: }El jefe de limpieza envía a los trabajadores de
+				limpieza una lista con las tareas que deben hacer. Una vez que estas tareas han
+				sido realizadas, los trabajadores de limpieza deben eliminarlas de la lista de
+				``Tareas por realizar''.
 			\item \textbf{Precondiciones:} Formar parte del personal de limpieza.
 			\item \textbf{Postcondiciones:} Una tarea se marca como realizada.
-			\item \textbf{Incluye ($<<$include$>>$):} Consultar tareas de limpieza.
+			\item \textbf{Incluye ($<<$include$>>$):} Consultar tareas de limpieza.%o debería ser extends?
 			\item \textbf{Curso típico de eventos:}\\ 
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
 					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-					\textbf{1.} Selecciona el botón  “Confirmar limpieza de habitación". & \textbf{2.}Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
-					\textbf{3.}El usuario selecciona aquellas tareas que ha completado. & \textbf{4.} Presenta el botón de “Aceptar".\\ \hline
-					\textbf{5.} Pulsa el botón de aceptar. & \textbf{6.} Las tareas elegidas se eliminan de la lista de “Tareas a realizar". \\ \hline
-					\textbf{7.} Cierra la aplicación.	& \\ \hline	
-				\end{tabular}
+					\textbf{1.} Selecciona la opción  ``Confirmar limpieza de habitación''. & 
+					\textbf{2.} Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
+					\textbf{3.} El usuario marca aquellas tareas que ha completado. & 
+					\textbf{4.} Da la opción de ``Confirmar''.\\ \hline
+					\textbf{5.} Confirma la limpieza. & 
+					\textbf{6.} Las tareas elegidas se eliminan de la lista de ``Tareas a realizar''. \\ \hline
+									\end{tabular}
 			\item \textbf{Cursos alternativos:} 
 				\begin{itemize}
-					\item \textbf{Línea 3:} Puede que el trabajador no haya podido realizar una tarea en el momento en el que le fue propuesta (por ejemplo, habitación con "no molestar").
- En este caso, puede elegir una opción que diga ''Recordar para más tarde".
+					\item \textbf{Línea 3:} Puede que el trabajador no haya podido realizar una
+					tarea en el momento en el que le fue propuesta (por ejemplo, habitación con "no
+					molestar").
+					En este caso, puede elegir una opción que diga ``Recordar tarea para más tarde''.
 				\end{itemize}
 		\end {itemize}
 
