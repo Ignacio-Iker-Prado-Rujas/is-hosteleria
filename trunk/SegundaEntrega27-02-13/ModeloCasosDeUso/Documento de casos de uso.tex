@@ -152,13 +152,13 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\begin{itemize}
 			\item \textbf{Actores:} Todos.
 			\item \textbf{Propósito:} Acceder a tu perfil de empleado, o de jefe.
-			\item \textbf{Visión general:} La aplicación exigirá autentificación para permitir realizar las operaciones relacionadas con cada tipo de trabajador. El número de pestañas que mostrará dependerá de la posición en la jerarquía de la empresa. 
+			\item \textbf{Visión general:} La aplicación exigirá autentificación para permitir realizar las operaciones relacionadas con cada tipo de trabajador.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Este caso de uso comienza al abrir la aplicación & \textbf{2.} Pide el nombre de usuario y  la clave de identificación.\\ \hline 
-				\textbf{3.} Introduce el usuario y  la clave. & \textbf{4.} Si es correcto presenta las pestañas disponibles para ese empleado.\\ \hline
+				\textbf{3.} Introduce el usuario y  la clave. & \textbf{4.} Si es correcto presenta el programa iniciado.\\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
@@ -178,7 +178,7 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleados.
 			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
-			\item \textbf{Visión general:} El jefe accede al programa de gestión de empleados desde su ordenador. Después de introducir su nombre de usuario y su contraseña, accede a la base de datos de los empleados. En el buscador introduce el nombre deseado. Consulta su ficha y cierra la aplicación. \\
+			\item \textbf{Visión general:}  En el buscador introduce el nombre deseado. y se le muestra la ficha del empleado(si existe). \\
 Para cada empleado se tendrán los siguientes campos:
 				\begin{itemize}
 				\item 	 Nombre y apellidos
@@ -188,9 +188,9 @@ Para cada empleado se tendrán los siguientes campos:
 				\item 	 Salario
 				\item 	 Vacaciones
 				\item 	 Fecha de entrada al negocio
-				\item 	 Historial
 				\item 	 Comentarios
 				\end {itemize}
+			\item \textbf{Incluye ($<<$include$>>$):} modificar empleado y dar de baja empleado.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
