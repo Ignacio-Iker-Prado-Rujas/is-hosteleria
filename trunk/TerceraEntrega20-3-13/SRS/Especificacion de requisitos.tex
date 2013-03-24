@@ -39,6 +39,7 @@
 \renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
 \renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
 \renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
 
 
 %%%%% CUERPO %%%%%
@@ -48,7 +49,7 @@
 	requisitos Software}} \\ \vspace{0.3cm}
 	\Large{Ingeniería del Software} \\
 	\includegraphics[scale=0.3]{ucm.pdf}}
-\author{ \textbf{\Large{PiKey Team- PKT:}} \vspace{0.2cm} \\
+\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
 	Jesús Aguirre Pemán \\
 	 Enrique Ballesteros Horcajo \\
 	 Jaime Dan Porras Rhee \\
@@ -74,10 +75,10 @@
 
 \part{Introducción}
 \section{Propósito}
- 	Este documento trata sobre la especificación de los requisitos de la aplicación KIKE HOSTELERÍA®.
+ 	Este documento trata sobre la especificación de los requisitos de la aplicación KIKE- Hostelería ®.
 		\subsection{Propósito} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\
 
-KIKE HOSTELERÍA® opera sobre bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros. Ya que la aplicación está pensada para todos los empleados del negocio, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\
+KIKE- Hostelería ® opera sobre bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros). Ya que la aplicación está pensada para todos los empleados del negocio, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\
 
 La comunicación entre usuarios mediante la aplicación se hará con un sistema de tablón de notas, común a todos los usuarios.\\
 
@@ -99,7 +100,7 @@ Para que la aplicación pueda funcionar en todos sus ámbitos debemos disponer d
 
 Todos estos dispositivos serán controlados a través de un servidor interno, el cual debe contar con suficiente capacidad y rapidez de actuación como para que los dispositivos puedan funcionar sin esperas.\\
 
-Los camareros podrán realizar pedidos a través de sus dispositivos sin necesidad de hablar con los cocineros, los cuales veran las comandas a través de una pantalla situada en la cocina, ganandose así velocidad y evitando confusiones. También permite generar facturas y poder añadirlo a la cuenta de la habitación pues los clientes están vinculados.
+Los camareros podrán realizar pedidos a través de sus dispositivos sin necesidad de hablar con los cocineros, los cuales veran las comandas a través de una pantalla situada en la cocina, ganandose así velocidad y evitando confusiones. También permite generar facturas y poder añadirlas a la cuenta de la habitación pues los clientes están vinculados.
 
 
 \section{Definiciones, acrónimos y abreviaturas}
@@ -134,10 +135,6 @@ Constará de los siguientes apartados:
 		\item \textbf{Atributos del sistema software:} Propiedades que tendrá la aplicacion una vez instalada en la empresa.
 	\end{itemize}
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
 
 \setcounter{section}{0}
 
@@ -168,7 +165,7 @@ La interfaz se basará en una disposición en apartados. En función de qué tip
 			\item \textbf{Notas:} Todos los usuarios a excepción de los clientes pueden acceder al tablón de notas. Allí podran escribir aquello de lo que deseen dejar constancia, sea quien sea a quien va dirigido. Las notas podran ser leidas por todos los empleados, independientemente de quien lo haya escrito.
 		\end{itemize}
 	 
-		\item KIKE HOSTELERÍA® Va a ser la base fundamental para organizar el trabajo que deben realizar los usuarios. El jefe podra organizar a todos sus empleados a través de la aplicación, pero no solo se trata de organizarlos, también los empleados necesitan constatemente la aplicación pues los camareros notificaran a los cocineros los platos y organizaran el restaurante entre ellos  a traves de la aplicación. Los empleados de la limpieza por su parte se coordinan con el encargado el cual reparte las tareas y los organiza a través de la aplicación. Por ultimo tambien se usará como base de datos de clientes y provisiones, puediendo avisarnos en caso necesario, como cuando se deba abastecer el almacen o un cliente no realice un pago.
+		\item KIKE- Hostelería ® va a ser la base fundamental para organizar el trabajo que deben realizar los usuarios. El jefe podra organizar a todos sus empleados a través de la aplicación, pero no solo se trata de organizarlos, también los empleados necesitan constatemente la aplicación pues los camareros notificaran a los cocineros los platos y organizaran el restaurante entre ellos  a traves de la aplicación. Los empleados de la limpieza por su parte se coordinan con el encargado el cual reparte las tareas y los organiza a través de la aplicación. Por ultimo tambien se usará como base de datos de clientes y provisiones, puediendo avisarnos en caso necesario, como cuando se deba abastecer el almacen o un cliente no realice un pago.
 	\end{itemize}
 
 \section{Características del usuario}
@@ -191,15 +188,15 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 \section{Requisitos futuros}
 	\begin{itemize}
-		\item Para versiones futuras nuestro software podrá disponer de nuevas funcionalidades, como permitir que los clientes del hotel accedan al servidor interno en modo "invitado" puediendo realizar algunas funciones como reservar mesa, anular reserva de mesa, realizar pedido o anular pedido.
+		\item Para versiones futuras nuestro software podrá disponer de nuevas funcionalidades, como permitir que los clientes del hotel accedan al servidor interno en modo invitado puediendo realizar algunas funciones como reservar mesa, anular reserva de mesa, realizar pedido o anular pedido.
 
 		\item También se diseñara una opción que ayude a organizar mesas y sillas en función del numero de comensales por mesa y como queramos distribuirlos. Esta nueva función permitirá estructurar nuestro restaurante para eventos especiales tales como bodas, reuniones de trabajo, celebraciones...
 
-		\item El cliente estaba pensando en hacer una página web para hacer reservas, ver habitaciones, ver precios... Por tanto diseñaríamos una página web con un formato similar bansadonos en el programa que ahora nos ha pedido.
+		\item El cliente estaba pensando en hacer una página web para hacer reservas, ver habitaciones, ver precios... Por tanto diseñaríamos una página web con un formato similar basándonos en el programa que ahora nos ha pedido.
 
 		\item La aplicación se implementará para otros sistemas operativos de forma que aumentaremos el mercado hacia el que va destinado. Con esta futura versión desvincularíamos el proyecto de nuestro cliente para pasar a vender nuestra aplicación a cualquier cliente que la requiera.
 		
-		\item El cliente podrá configurar el programa para que cuando las existencias se encuentre bajo un mínimo importante se genere automaticamente un pedido.
+		\item El cliente podrá configurar el programa para que cuando las existencias se encuentre bajo un mínimo importante se genere automáticamente un pedido.
 	\end{itemize}
 
 \newpage
@@ -223,7 +220,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 				\item \textbf{Usuario “Jefe"} Para el Jefe se muestran los siguientes apartados: contabilidad, empleados, cliente, restaurante, habitaciones y notas. Además, tendremos un botón para cerrar sesión. En la pantalla se mostrará el tipo de usuario que está logueado, en este caso, el Jefe. 
 				\begin{itemize}
 					\item \textbf{Contabilidad: }Se mostrarán 4 opciones: Cuenta de caja: Recepción, Cuenta de caja: Restaurante, Acceso al libro diario y Acceso al libro mayor.En las dos primeras se mostrará una tabla con tres columnas: Ingreso, gasto y concepto.
-					 \item \textbf{Empleados: }Se mostrará una tabla con 4 columnas: foto, nombre, apellidos y “trabaja actualmente". Tendremos la opción de "Búsqueda", en la que se podrá elegir el campo (Nombre, apellidos, ...), y la de "Añadir empleado". 
+					 \item \textbf{Empleados: }Se mostrará una tabla con 4 columnas: foto, nombre, apellidos y “trabaja actualmente". Tendremos la opción de "Búsqueda", en la que se podrá elegir el campo (Nombre, apellidos, ...), y la de ''Añadir empleado". 
 					 \item \textbf{Clientes: }La parte superior será igual que en la pantalla de empleados. Se mostrará una tabla con 4 columnas: Nombre, apellidos, número de teléfono y VIP. 
 					 \item \textbf{Restaurante: }Se muestran 9 opciones: Realizar reserva, Ver/Anular reserva, Distribución de mesas, Cantidad de existencias, Generar/modificar pedido, Anular pedido, Generar factura, Ver/modificar menú y Notificar Incidencias.
 					\begin{itemize}
@@ -935,7 +932,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 \section{Atributos del sistema software}
 \begin{itemize}
 	\item Una vez creado el servidor seguirá funcionando permanentemente.
-	\item Al estar programado en java, la portabilidad o la ampliación a cualquier sistema operativo  nuevo será sencilla. 
+	\item Al estar programado en Java, la portabilidad o la ampliación a cualquier sistema operativo  nuevo será sencilla. 
 	\item La conexión de las tablets por wifi estará cifrada. El acceso directo estará controlado por el login, que exige usuario y contraseña para conectarse al sistema.
 \end{itemize}
 
