@@ -1,0 +1,15 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Extracto}{1}{part.1}
+\contentsline {part}{II\hspace {1em}T\IeC {\'e}cnicas de estimaci\IeC {\'o}n}{4}{part.2}
+\contentsline {section}{\numberline {1}Determinaci\IeC {\'o}n del tipo de cuenta de PF}{5}{section.0.1}
+\contentsline {section}{\numberline {2}Determinaci\IeC {\'o}n de los l\IeC {\'\i }mites del sistema}{5}{section.0.2}
+\contentsline {section}{\numberline {3}C\IeC {\'a}lculo de los PF sin ajustar}{5}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Entradas Externas}{5}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Salidas Externas}{9}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Consultas Externas}{13}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Ficheros L\IeC {\'o}gicos Internos}{15}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Ficheros de Interfaz Externos}{18}{subsection.0.3.5}
+\contentsline {subsection}{\numberline {3.6}C\IeC {\'a}lculo efectivo de los PF sin ajustar}{19}{subsection.0.3.6}
+\contentsline {section}{\numberline {4}C\IeC {\'a}lculo del factor de ajuste}{20}{section.0.4}
+\contentsline {section}{\numberline {5}C\IeC {\'a}lculo de los PF ajustados}{20}{section.0.5}
+\contentsline {part}{III\hspace {1em}Estimaciones de esfuerzo, coste y duraci\IeC {\'o}n}{22}{part.3}
