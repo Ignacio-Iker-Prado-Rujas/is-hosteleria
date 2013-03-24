@@ -72,10 +72,33 @@
 
 
 \begin{abstract} %%%EXTRACTO %%%____________________________________________________________________________________________
-
-En nuestro proyecto trataremos de desarrollar una aplicación software denominada KIKE- Hostelería ®, así como su correspondiente documentación, para la administración de un negocio de hostelería. Se tratará de un Hotel con Restaurante- Bar. La aplicación recogerá toda la información necesaria para el desarrollo próspero de dicho negocio, ésto es, existencias de los productos, gastos de todo tipo, base de datos con los clientes, generación de las cuentas a cobrar, reservas de los clientes, habitaciones disponibles/ ocupadas, mobiliario del que se dispone, balances económicos (accesibles sólo para el administrador)... Es importante también centrarse en el entorno de la empresa: pequeña, mediana, gran empresa; situación geográfica (no es lo mismo que se emplace en una gran ciudad o en mitad de los Pirineos); gama de productos que se ofrecen (cocina mediterránea, vasca, italiana, china...); tamaño del local... \\
-
-En primer lugar, debemos identificar el problema a solventar, dar su descripción y un minucioso análisis. El problema es idear un software que facilite a sus usuarios el trabajo descrito arriba. Para ello, debe ser sencillo e intuitivo a la vez que seguro y adaptado a los intereses de la empresa que lo solicita. Además hay que centrarse en describir detalladamente las funcionalidades que tendrá. Una vez completa la especificación del sistema, se puede abordar la implementación. Es fundamental que la especificación sea clara y sobre todo precisa, ha de responder a cualquier pregunta sobre su uso y diseño. Una vez terminado, debe someterse a las pruebas correspondientes y a la más importante: ¿el usuario queda satisfecho con los resultados?, ¿la aplicación hace lo que él espera que haga y como él espera que lo haga? Tras esto, con toda seguridad habrá una tarea de mantenimiento, solventando errores que surjan, hasta que, eventualmente, el programa caiga en desuso (obsolescencia).
+	
+			En nuestro proyecto trataremos de desarrollar una aplicación software denominada
+			KIKE- Hostelería ®, así como su correspondiente documentación, para la
+			administración de un negocio de hostelería. Se tratará de un Hotel con
+			Restaurante- Bar. La aplicación recogerá toda la información necesaria para el
+			desarrollo próspero de dicho negocio, ésto es, existencias de los productos,
+			gastos de todo tipo, base de datos con los clientes, generación de las cuentas a
+			cobrar, reservas de los clientes, habitaciones disponibles/ ocupadas, mobiliario
+			del que se dispone, balances económicos (accesibles sólo para el
+			administrador)... Es importante también centrarse en el entorno de la empresa:
+			pequeña, mediana, gran empresa; situación geográfica (no es lo mismo que se
+			emplace en una gran ciudad o en mitad de los Pirineos); gama de productos que se
+			ofrecen (cocina mediterránea, vasca, italiana, china...); tamaño del local... \\
+				
+			En primer lugar, debemos identificar el problema a solventar, dar su descripción
+			y un minucioso análisis. El problema es idear un software que facilite a sus
+			usuarios el trabajo descrito arriba. Para ello, debe ser sencillo e intuitivo a
+			la vez que seguro y adaptado a los intereses de la empresa que lo solicita.
+			Además hay que centrarse en describir detalladamente las funcionalidades que
+			tendrá. Una vez completa la especificación del sistema, se puede abordar la
+			implementación. Es fundamental que la especificación sea clara y sobre todo
+			precisa, ha de responder a cualquier pregunta sobre su uso y diseño. Una vez
+			terminado, debe someterse a las pruebas correspondientes y a la más importante:
+			¿el usuario queda satisfecho con los resultados?, ¿la aplicación hace lo que él
+			espera que haga y como él espera que lo haga? Tras esto, con toda seguridad
+			habrá una tarea de mantenimiento, solventando errores que surjan, hasta que,
+			eventualmente, el programa caiga en desuso (obsolescencia).
 \end{abstract}
 
 
@@ -83,9 +106,13 @@ En primer lugar, debemos identificar el problema a solventar, dar su descripció
 
 \setcounter{section}{0}
 
-\part{Catálogo de casos de uso} %%% PARTE 1: CATALOGO CASOS DE USO %%%____________________________________________________________
-En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos en primarios y secundarios, para tener una visión general de los mismos.
-\section{Primarios} 				%Los procesos principales, que sean mas comunes de realizar
+\part{Catálogo de casos de uso} %%% PARTE 1: CATALOGO CASOS DE USO
+%%%____________________________________________________________ 
+	En esta primera
+	parte, simplemente enumeramos los casos de uso, clasificándolos en primarios y
+	secundarios, para tener una visión general de los mismos.
+\section{Primarios}     %
+	Los procesos principales, que sean mas comunes de realizar.
 	\begin{itemize}
 %%	INSERTAR ORDENADAMENTE LOS CASOS DE USO, MÁS O MENOS COMO ESTÁN EN EL DOCUMENTO LISTA DE TODOS LOS CASOS DE USO (BRAINSTORMING PARA JESÚS)
 %%	HAY QUE TENER EN CUENTA QUE DESPUÉS HAY QUE PONERLOS ABAJO EN EL MISMO ORDEN
@@ -143,7 +170,11 @@ En esta primera parte, simplemente enumeramos los casos de uso, clasificándolos
 \setcounter{section}{0}
 
 \part{Especificación de los casos de uso} %%% PARTE 2: ESPECIFICACION CASOS DE USO %%%_______________________________________________
-Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a uno los casos de uso. Los actores son todos los usuarios o sistemas externos que interactúan con el sistema KIKE- Hostelería ®. Éstos son: Jefe, recepcionista, maître, camareros, chef, cocineros, jefe de limpieza, personal de limpieza y encargado de mantenimiento.
+	Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a
+	uno los casos de uso. Los actores son todos los usuarios o sistemas externos que
+	interactúan con el sistema KIKE- Hostelería ®. Éstos son: Jefe, recepcionista,
+	maître, camareros, chef, cocineros, jefe de limpieza, personal de limpieza y
+	encargado de mantenimiento.
 
 \section{Primarios}		 			
 
@@ -161,7 +192,7 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Este caso de uso comienza al abrir la aplicación & \textbf{2.} Pide el nombre de usuario y  la clave de identificación.\\ \hline 
-				\textbf{3.} Introduce el usuario y  la clave. & \textbf{4.} Si es correcto presenta las pestañas disponibles para ese empleado.\\ \hline
+				\textbf{3.} Introduce el usuario y  la clave. & \textbf{4.} Si es correcto presenta las opciones disponibles para ese empleado.\\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
@@ -183,7 +214,7 @@ Una vez vista una visión general, ya nos dedicamos a analizar en detalle uno a 
 			\item \textbf{Propósito: } Acceder a la ficha de un determinado empleado.
 			\item \textbf{Visión general:} El jefe accede a la base de datos de los empleados. Se elige el método de búsqueda (nombre, NIF, puesto en la empresa) y se introduce la información. Consulta su ficha.
 
-Para cada empleado se tendrán los siguientes campos:
+				Para cada empleado se tendrán los siguientes campos:
 				\begin{itemize}
 				\item 	 Nombre y apellidos
 				\item 	 NIF
@@ -208,10 +239,11 @@ Para cada empleado se tendrán los siguientes campos:
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
-				\textbf{3.} Selecciona la pestaña “Empleados”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Busca el nombre del empleado.	& \textbf{6.} Procesa la búsqueda y muestra la ficha del empleado. \\ \hline
-				\textbf{7.} Consulta la ficha y cierra la aplicación.  & \textbf{} \\ \hline
+				\textbf{1.} Entre los apartados disponibles, el jefe escoge el apartado
+						``Empleados''. & \textbf{2.} Muestra las opciones correspondientes. \\ \hline
+				\textbf{3.} Busca el empleado, que puede ser por nombre, NIF, puesto en la
+						empresa. & \textbf{4.} Procesa la búsqueda y muestra la ficha del empleado. \\
+				\hline \textbf{5.} Consulta la ficha.  & \textbf{} \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
@@ -226,24 +258,29 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
 			\item \textbf{Propósito:} Acceder a la ficha de un cliente.
-			\item \textbf{Visión general:} El actor entra al programa de gestión de empleados desde su ordenador, y accede a la base de datos de los clientes. Busca al cliente por nombre y/o apellidos . Una vez que lo encuentra, consulta los datos que desee. Cierra la aplicación. 
-			\item \textbf{Precondiciones:} Haber accedido al sistema correctamente y formar parte del personal de limpieza o mantenimiento, pues estos no tienen acceso a la base de datos de los clientes.
+			\item \textbf{Visión general:} El actor entra al programa de gestión de
+						empleados desde su ordenador, y accede a la base de datos de los clientes. Busca
+						al cliente por nombre y/o apellidos . Una vez que lo encuentra, consulta los
+						datos que desee. Cierra la aplicación.
+			\item \textbf{Precondiciones:} Haber accedido al sistema correctamente y formar
+						parte del personal de limpieza o mantenimiento, pues estos no tienen acceso a la
+						base de datos de los clientes.
 			\item \textbf{Postcondiciones:} Se muestra la ficha.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente. & \textbf{2.} Presenta las pestañas disponibles.\\ \hline
-				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en “Buscar cliente".	& \textbf{6.} Procesa la búsqueda y muestra la ficha del cliente. \\ \hline
-				\textbf{7.} Consulta la ficha del cliente y cierra la aplicacion.& \\ \hline
+				\textbf{1.} Entre los apartados disponibles, el actor escoge el de “Clientes”. & 
+				\textbf{2.} Muestra las opciones correspondientes. \\ \hline 
+				\textbf{3.} Se busca el cliente por nombre o apellidos.  & 
+				\textbf{4.} Procesa la búsqueda y muestra la ficha del cliente. \\ \hline 
+				\textbf{5.} Consulta la ficha del cliente.& \\ \hline
 				
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 6:} Ese cliente no existe, vuelve a la línea 5.
-			\item  \textbf{Línea 5:} Tras pasar por el curso alternativo anterior y ver que el cliente no existe, sale de la aplicación.
+			\item  \textbf{Línea 4:} Ese cliente no existe, vuelve a la línea 3.
 			\end {itemize}
 		\end{itemize}
 
@@ -263,17 +300,22 @@ Para cada empleado se tendrán los siguientes campos:
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El Log in ha sido realizado satisfactoriamente & \textbf{2.}Presenta las pestañas disponibles.\\ \hline 
-				\textbf{3.} Selecciona la pestaña “Clientes”. & \textbf{4.} Muestra la pestaña, con las opciones correspondientes. \\ \hline
-				\textbf{5.} Clica en “Añadir cliente".	& \textbf{6.} Muesta la ficha a rellenar. \\ \hline
-				\textbf{7.} Rellena la ficha. & \textbf{8.} Se asegura de que todos los campos obligatorios están completos y muestra los datos del nuevo cliente para comprobar que son correctos.\\ \hline
-				\textbf{9.} Lo comprueba y cierra la aplicación. & \textbf{} \\ \hline
+				\textbf{1.} El actor entra en el apartado ``Clientes''. & 
+				\textbf{2.} Muestra la sección ``Cliente'', con las opciones correspondientes. \\ \hline
+				\textbf{3.} Elige la opción ``Añadir cliente''.	& 
+				\textbf{4.} Muesta la ficha a rellenar. \\ \hline
+				\textbf{5.} Rellena la ficha, poniendo los datos del cliente. & 
+				\textbf{6.} Se asegura de que todos los datos están completos y se 
+					los muestra de nuevo al usuario para comprobar que son correctos.\\ \hline
+				\textbf{7.} Comprueba los datos y crea la ficha del cliente. & \textbf{} \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 8:} Algún campo es incorrecto o está sin rellenar. El programa nos dice qué está mal (o si no se detecta el tipo de error será uno genérico) y regresa a la línea 7.
-			\item  \textbf{Línea 9:} El actor se ha equivocado al rellenar un campo. El programa le devuelve a la línea 7.
+				\item  \textbf{Línea 6:} Falta algún dato o hay datos incorrectos. El programa
+					nos informa del error y regresa a la línea 5.
+				%\item  \textbf{Línea 7:} El actor se ha equivocado al rellenar un campo. El
+				%		programa le devuelve a la línea 5.
 			\end {itemize}
 		\end{itemize}
 
@@ -287,27 +329,31 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Reservar una mesa en el restaurante para comer.
-			\item \textbf{Visión general:} El empleado que va a realizar la reserva selecciona una de las mesas disponibles en función del número de comensales.
-			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya al menos una mesa libre.
-			\item \textbf{Postcondiciones:} La mesa correspondiente queda reservada para la fecha y hora indicada.
+			\item \textbf{Visión general:} El empleado que va a realizar la reserva
+					selecciona una de las mesas disponibles en función del número de comensales.
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o
+					mantenimiento y que haya al menos una mesa libre.
+			\item \textbf{Postcondiciones:} La mesa correspondiente queda reservada para la
+					fecha y hora indicada.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}  El Log in ha sido realizado satisfactoriamente. & \textbf{2.} El programa da la bienvenida y le muestra las opciones. \\ \hline
-				\textbf{3.} Selecciona la opción reservar mesa. & \textbf{4.} El programa pide que se introduzca el número de comensales. \\ \hline
-				\textbf{5.} El usuario introduce el numero.	& \textbf{6.} Pide al usuario introducir una hora de llegada. \\ \hline
-				\textbf{7.} El usuario introduce la hora de la reserva.	& \textbf{8.} Muestra la distribución de las mesas y marca de verde las disponibles. \\ \hline
-				\textbf{9.} El usuario selecciona una mesa. & \textbf{10.} La aplicación muestra un mensaje indicando que la reserva se realizó correctamente. \\ \hline
-				\textbf{11.} Cierra la aplicación. & \textbf{} \\ \hline
+				  \textbf{1.} El actor elige el apartado ``Reservar mesa''. &
+				  \textbf{2.} El programa pide los datos de la reserva.		\\ \hline
+				  \textbf{3.} Rellena los datos, indicando número de comensales y hora de reserva. &
+				  \textbf{4.} Muestra la distribución de las mesas, y marca aquellas que están disponibles.	\\ \hline
+				  \textbf{5.} Selecciona una mesa. &
+				  \textbf{6.} Muestra los datos de la reserva, y da la opción de cambiar los datos o confirmar reserva.	
+				  	\\ \hline
 			\end{tabular}
 			\\
-			\item \textbf{Cursos alternativos:} 
-			\begin{itemize}
-			\item  \textbf{Línea 6:} El numero introducido es incorrecto. Se pide al usuario que introduzca otro numero. Si el usuario no desea continuar la reserva puede salir de la aplicación.
-			\item  \textbf{Línea 8:} La hora introducida es incorrecta. Se pide al usuario que introduzca otra hora. Si el usuario no desea continuar la reserva puede salir de la aplicación.
-			\item  \textbf{Línea 10:} El usuario selecciona una mesa no disponible. El Sistema indica que la mesa no esta disponible, y pide al usuario reservar otra mesa. Puede salir de la aplicación si no desea continuar la reserva.
-			\end {itemize}
+			%\item \textbf{Cursos alternativos:} 
+			%\begin{itemize}
+			%\item  \textbf{Línea 6:} El numero introducido es incorrecto. Se pide al usuario que introduzca otro numero. Si el usuario no desea continuar la reserva puede salir de la aplicación.
+			%\item  \textbf{Línea 8:} La hora introducida es incorrecta. Se pide al usuario que introduzca otra hora. Si el usuario no desea continuar la reserva puede salir de la aplicación.
+			%\item  \textbf{Línea 10:} El usuario selecciona una mesa no disponible. El Sistema indica que la mesa no esta disponible, y pide al usuario reservar otra mesa. Puede salir de la aplicación si no desea continuar la reserva.
+			%\end {itemize}
 		\end {itemize}
 		
 %ANULAR RESERVA DEL RESTAURANTE
@@ -316,24 +362,30 @@ Para cada empleado se tendrán los siguientes campos:
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
 			\item \textbf{Propósito:} Anular una reserva realizada con anterioridad.
-			\item \textbf{Visión general:} El empleado que desea anular una reserva inicia la aplicación, se identifica y selecciona la reserva que se va a anular.
-			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya al menos una mesa reservada.
+			\item \textbf{Visión general:} El empleado que desea anular una reserva inicia
+							la aplicación, se identifica y selecciona la reserva que se va a anular.
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o
+							mantenimiento y que haya al menos una mesa reservada.
 			\item \textbf{Postcondiciones:} La mesa correspondiente pasa a estar libre.
 			\item \textbf{Extiende ($<<$extends$>>$):} Reservar mesa.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}  El Log in ha sido realizado satisfactoriamente. & \textbf{2.} El programa da la bienvenida y le muestra las opciones. \\ \hline
-				\textbf{3.} Selecciona la opción anular reserva, dentro de la pestaña “Restaurante". & \textbf{4.} El programa muestra las mesas reservadas, incluyendo hora y numero de comensales. \\ \hline
-				\textbf{5.} El usuario selecciona la reserva que desea anular	& \textbf{6.} Se muestra un mensaje con los datos completos de la reserva (hora, comensales, propietario de la reserva...) para verificar que realmente se desea anular. \\ \hline
-				\textbf{7.} Selecciona continuar.	& \textbf{8.} La aplicación muestra un mensaje indicando que la anulación se realizó correctamente. \\ \hline
-				\textbf{9.} Cierra la aplicación. & \textbf{} \\ \hline
+				\textbf{1.} En el apartado ``Restaurante'' selecciona la opción ``Anular reserva''. & 
+				\textbf{2.} El programa muestra las mesas reservadas, incluyendo hora y numero de comensales. \\ \hline
+				\textbf{3.} El usuario selecciona la reserva que desea anular	& 
+				\textbf{4.} Se muestra un mensaje con los datos completos de la reserva (hora,
+					comensales, propietario de la reserva...) para verificar que realmente se desea
+					anular. \\ \hline
+				\textbf{5.} Selecciona continuar.	& 
+				\textbf{6.} La aplicación muestra un mensaje indicando que la anulación se realizó correctamente. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 7:} El usuario selecciona Cancelar. La reserva no se anula. Puede elegir entre anular otra reserva o salir.
+				\item  \textbf{Línea 5:} El usuario selecciona Cancelar. La reserva no se anula.
+										Puede elegir entre anular otra reserva o salir.
 			\end {itemize}
 		\end {itemize}
 	
