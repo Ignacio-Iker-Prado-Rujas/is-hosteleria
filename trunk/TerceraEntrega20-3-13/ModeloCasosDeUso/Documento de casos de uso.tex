@@ -463,18 +463,24 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.}   El empleado hace Log in satisfactoriamente. & \textbf{2.} Muestras las opciones que puede realizar. \\ \hline
-				\textbf{3.} Selecciona la opción generar factura, dentro de la pestaña “Restaurante''. & \textbf{4.} Muestra las mesas ocupadas de las cuales aún no se ha obtenido la factura. \\ \hline
-				\textbf{5.} Selecciona la mesa a cobrar.	& \textbf{6.} Se muestra un mensaje con el número de mesa, todos los pedidos realizados y el precio. \\ \hline
-				\textbf{7.} Selecciona imprimir.	& \textbf{8.} La aplicación muestra un mensaje indicando que la factura se imprimió. \\ \hline
-				\textbf{9.} El empleado cobre al cliente.	& \textbf{10.} Muestra un mensaje de “Cobrado con éxito''. \\ \hline
-				\textbf{11.} Cierra la aplicación. &  \\ \hline
+				%\textbf{1.}   El empleado hace Log in satisfactoriamente. & 
+				%\textbf{2.} Muestras las opciones que puede realizar. \\ \hline
+				\textbf{1.} Entre las opciones disponibles, escoge la opción generar factura, 
+					dentro del apartado ``Restaurante''. & 
+				\textbf{2.} Muestra las mesas ocupadas de las cuales aún no se ha obtenido la factura. \\ \hline
+				\textbf{3.} Selecciona la mesa a cobrar.	& 
+				\textbf{4.} Se muestra el número de mesa, todos los pedidos realizados y el precio. \\ \hline
+				\textbf{5.} Selecciona imprimir.	& 
+				\textbf{6.} La aplicación muestra un mensaje indicando que la factura se imprimió. \\ \hline
+				\textbf{7.} El empleado cobra al cliente.	& 
+				\textbf{8.} Muestra un mensaje de ``Cobrado con éxito''. \\ \hline
+				%\textbf{11.} Cierra la aplicación. &  \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 7:} El usuario selecciona Cancelar. No se genera la factura.
-			\item  \textbf{Línea 10:} El cobro no se ha realizado con éxito. La mesa sigue con deudas.
+			\item  \textbf{Línea 5:} El usuario selecciona Cancelar. No se genera la factura.
+			\item  \textbf{Línea 8:} El cobro no se ha realizado con éxito. La mesa sigue con deudas.
 			\end {itemize}
 		\end {itemize}
 		
@@ -483,7 +489,9 @@
 	\subsection{Ver menú}
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, cocineros, chef y jefe.
-			\item \textbf{Visión general:} Muestra por pantalla el menú ordenado por tipo de plato. En cada plato se puede pinchar para obtener una descripción del plato más precisa. Los platos se ordenarán del siguiente modo:
+			\item \textbf{Visión general:} Muestra por pantalla el menú ordenado por tipo de
+				plato. Se puede seleccionar cada plato para obtener una descripción del plato más
+				precisa. Los platos se ordenarán del siguiente modo:
 			\begin{itemize}
 				\item 	 Entrantes
 				\item 	 Principales
@@ -496,8 +504,10 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El usuario abre la parte de restaurante. & \textbf{2.} Muestra las opciones que corresponda.\\ \hline 
-				\textbf{3.} Elige la parte del menú. & \textbf{4.} Muestra el menú. \\ \hline
+				\textbf{1.} El usuario abre la parte de restaurante. & 
+				\textbf{2.} Muestra las opciones que corresponda.\\ \hline 
+				\textbf{3.} Elige la parte del menú. & 
+				\textbf{4.} Muestra el menú. \\ \hline
 			\end{tabular}
 		\end {itemize}
 
@@ -509,24 +519,33 @@
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, jefe, chef, cocineros.
 			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
-			\item \textbf{Visión general:} Cuando finaliza la jornada, el actor realiza un recuento de todas las existencias que quedan en el almacen y lo anotan en la base de datos, la cual mandará una notificación cuando sea necesario reponer algun alimento.
+			\item \textbf{Visión general:} Cuando finaliza la jornada, el actor realiza un
+				recuento de todas las existencias que quedan en el almacen y lo anotan en la
+				base de datos, la cual mandará una notificación cuando sea necesario reponer
+				algun alimento.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
 			\item \textbf{Postcondiciones:} Se añaden o quitan elementos a comprar.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
-				\textbf{1.} El empleado hace Log In satisfactoriamente. & \textbf{2.} Muestras las opciones disponibles. \\ \hline
-				\textbf{3.} Selecciona la opción recuento de existencias. & \textbf{4.} Muestra una lista con todos los alimentos que había en el almacen tras el último recuento. \\ \hline
-				\textbf{5.} Introduce uno a uno la cantidad que hay de cada alimento. & \textbf{6.} Cuando se ha terminado el recuento Se vuelven a mostrar las opciones. \\ \hline
-				\textbf{7.}  Cierra la aplicación. &   \\ \hline
+				\textbf{1.} Entre las opciones disponibles, selecciona la opción ``Recuento de existencias''. & 
+				\textbf{2.} Muestra una lista con todos los alimentos que había en el almacen tras el último recuento. \\ \hline
+				\textbf{3.} Introduce uno a uno la cantidad que hay de cada alimento. & 
+				\textbf{4.} Cuando se ha terminado el recuento Se vuelven a mostrar las opciones. \\ \hline
+				\textbf{5.}  Cierra la aplicación. &   \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 5:} Introduce intro en vez de la cantidad para no modificarlo.
-			\item  \textbf{Línea 5:} Puede terminar el recuento antes de llegar al ultimo elemento de la lista marcando la opción “Guardar y salir".
-			\item  \textbf{Línea 6:} Si algún alimento está por debajo del mínimo recomendado da la opción al usuario de realizar un pedido. Si lo realiza debe introducir la cantidad que desea pedir. (El mínimo se calcula mediante unas estadísticas realizadas a partir del consumo diario)
+				\item  \textbf{Línea 3:} Introduce intro en vez de la cantidad para no
+					modificarlo.
+				\item  \textbf{Línea 3:} Puede terminar el recuento antes de llegar al ultimo
+					elemento de la lista marcando la opción “Guardar y salir".
+				\item  \textbf{Línea 4:} Si algún alimento está por debajo del mínimo
+					recomendado da la opción al usuario de realizar un pedido. Si lo realiza debe
+					introducir la cantidad que desea pedir. (El mínimo se calcula mediante unas
+					estadísticas realizadas a partir del consumo diario)
 			\end {itemize}
 		\end {itemize}
 
@@ -539,18 +558,22 @@
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
-			\item \textbf{Visión general:} Se muestran las características (planta en la que está, ascensor, bañera o jacuzzi, mobiliario) de cada habitación seleccionada.
-			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Visión general:} Se muestran las características (planta en la que
+					está, ascensor, bañera o jacuzzi, mobiliario) de cada habitación seleccionada.
+			\item \textbf{Precondiciones:} Ninguna.
 			\item \textbf{Postcondiciones:} Ninguna, sólo se mira las características de una habitación.
 			\item \textbf{Incluye ($<<$include$>>$):} Modificar habitaciones.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
-				\textbf{1.} Pincha en la pestaña de habitaciones & \textbf{2.}Se muestra la sección habitaciones.\\ \hline 
-				\textbf{3.} Selecciona ver habitaciones. & \textbf{4.} Se muestran las características de la primera habitación  \\ \hline
-				\textbf{5.} Se selecciona otra habitación & \textbf{6.} Se muestran las características de la habitación seleccionada. \\ \hline
-				\textbf{7.} Continúa en la ventana hasta que se selecciona otra pestaña. & \\ \hline
+				\textbf{1.} Selecciona el apartado de ``habitaciones'' & 
+				\textbf{2.}Se muestra la sección ``habitaciones''.\\ \hline 
+				\textbf{3.} Selecciona ``ver habitaciones''. & 
+				\textbf{4.} Se muestran todas las habitaciones.  \\ \hline
+				\textbf{5.} Se selecciona la habitación que se desea ver. & 
+				\textbf{6.} Se muestran las características de la habitación seleccionada. \\ \hline
+				%\textbf{7.} Continúa en la ventana hasta que se selecciona otra pestaña. & \\ \hline
 			\end{tabular}
 			\\
 		\end {itemize}
@@ -560,17 +583,22 @@
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
 			\item \textbf{Propósito: } Reservar una habitación del hotel.
-			\item \textbf{Visión general:} Cuando un cliente reserva una habitación, se guarda toda la información de la reserva.
+			\item \textbf{Visión general:} Cuando un cliente reserva una habitación, se
+				guarda toda la información de la reserva.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya alguna libre.
 			\item \textbf{Postcondiciones:} La habitación que corresponda queda reservada.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
-				\textbf{1.} Pincha en la pestaña de habitaciones & \textbf{2.}Se muestra la sección habitaciones.\\ \hline 
-				\textbf{3.} Selecciona realizar reserva. & \textbf{4.}Se muestran los campos a completar  \\ \hline
-				\textbf{5.}Rellena los campos deseados & \textbf{6.} Se muestran las opciones elegidas y la disponibilidad de la habitación elegida \\ \hline
-				\textbf{7.} Se confirma la reserva & \textbf{8.}Regresa a la pantalla general de habitaciones\\ \hline
+				\textbf{1.} Selecciona el apartado  ``habitaciones''. & 
+				\textbf{2.} Se muestra la sección ``habitaciones''.\\ \hline 
+				\textbf{3.} Selecciona la opción ``realizar reserva''. & 
+				\textbf{4.} Muestra los datos que deben rellenarse  \\ \hline
+				\textbf{5.} Rellena los datos deseados. & 
+				\textbf{6.} Se muestran las opciones elegidas y la disponibilidad de la habitación elegida \\ \hline
+				\textbf{7.} Se confirma la reserva. & 
+				\textbf{8.} Regresa a la pantalla general de habitaciones\\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
@@ -594,9 +622,13 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
 					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-					\textbf{1.} El usuario accede a la lista de reservas. & \textbf{2.} Muestra la lista de reservas.\\ \hline 
-					\textbf{3.} El usuario elige la que quiere elimnar. & \textbf{4.} Se da la opción de eliminar.\\ \hline 
-					\textbf{5.} Acepta. & \textbf{6.} Se informa de que se ha eliminado correctamente.\\ \hline 
+					\textbf{1.} El usuario accede a la lista de reservas. & 
+					\textbf{2.} Muestra la lista de reservas.\\ \hline 
+					\textbf{3.} El usuario elige la que quiere elimnar. & 
+					\textbf{4.} Se muestran los datos del cliente que reservó la habitación, 
+					las características de la habitación y se da la opción de eliminar la reserva.\\ \hline 
+					\textbf{5.} Acepta. & 
+					\textbf{6.} Se informa de que se ha eliminado correctamente.\\ \hline 
 				\end{tabular}
 		\end {itemize}
 
