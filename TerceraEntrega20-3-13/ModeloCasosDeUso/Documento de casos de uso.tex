@@ -395,24 +395,33 @@
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Pedir un plato a la cocina.
-			\item \textbf{Visión general:} El camarero o el maître realiza la petición de un plato directamente a la cocina.
-			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
+			\item \textbf{Visión general:} El camarero o el maître realiza la petición de un
+				plato directamente a la cocina.
+			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o
+				mantenimiento.
 			\item \textbf{Postcondiciones:} Se añade una comanda.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El empleado elige la parte de restaurante. & \textbf{2.} Muestra las opciones.\\ \hline 
-				\textbf{3.} Introduce la opcion generar un pedido. & \textbf{4.} Pide que introduzca los platos deseados. \\ \hline
-				\textbf{5.} Puede introducir un plato de la carta y personalizarlo introduciendo o eliminando ingredientes. & \textbf{6.} Da la opción al usuario de introducir más platos o terminar. \\ \hline
-				\textbf{7.} Selecciona no realizar más pedidos.	& \textbf{8.} El programa manda el pedido a la cocina, donde aparece por un monitor para que el chef lo vea. \\ \hline
-				\textbf{9.} El empleado pone la aplicación en pausa. & \\ \hline
+				\textbf{1.} El empleado elige la parte de restaurante. & 
+				\textbf{2.} Muestra las opciones.\\ \hline 
+				\textbf{3.} Introduce la opción generar un pedido. & 
+				\textbf{4.} Pide que introduzca los platos deseados. \\ \hline
+				\textbf{5.} Elige los platos de la carta y puede personalizarlos introduciendo
+						o eliminando ingredientes. & 
+				\textbf{6.} Da la opción al usuario de introducir más platos o terminar. \\ \hline 
+				\textbf{7.} Selecciona ``Generar pedido''.	& 
+				\textbf{8.} El programa manda el pedido a la cocina, donde puede ser visto por el chef. \\ \hline 
+				%\textbf{9.} El empleado pone la	aplicación en pausa. & \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 5:} El plato introducido no existe. Se muestra un mensaje de error y se da la opción de seguir o terminar el pedido.
-			\item  \textbf{Línea 5:} Se ha introducido un plato de forma incorrecta y el camarero lo elimina o lo modifica.
+				\item  \textbf{Línea 6:} El plato introducido no está disponibe. Se muestra un mensaje
+					de error y se da la opción de seguir o terminar el pedido.
+				\item  \textbf{Línea 6:} Se ha introducido un plato de forma incorrecta y el
+					camarero lo elimina o lo modifica.
 			\end {itemize}
 		\end {itemize}
 		
