@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  24 MAR 2013 16:47
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.15)  24 MAR 2013 17:46
 entering extended mode
 **Documento*de*casos*de*uso.tex
 
@@ -583,7 +583,8 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip60
 \dth@everypar=\toks29
 )
-No file Documento*de*casos*de*uso.aux.
+("C:\Users\Jesús\Documents\SUBVERSION\IS\is-hosteleria\TerceraEntrega20-3-13\M
+odeloCasosDeUso\Documento de casos de uso.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
@@ -598,6 +599,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count126
@@ -659,9 +661,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 45.
 LaTeX Info: Redefining \pageref on input line 45.
 LaTeX Info: Redefining \nameref on input line 45.
+
+("C:\Users\Jesús\Documents\SUBVERSION\IS\is-hosteleria\TerceraEntrega20-3-13\M
+odeloCasosDeUso\Documento de casos de uso.out")
+("C:\Users\Jesús\Documents\SUBVERSION\IS\is-hosteleria\TerceraEntrega20-3-13\M
+odeloCasosDeUso\Documento de casos de uso.out")
 \@outlinefile=\write3
 
-<ucm.pdf, id=3, 597.23125pt x 844.15375pt>
+<ucm.pdf, id=181, 597.23125pt x 844.15375pt>
 File: ucm.pdf Graphic file (type pdf)
  <use ucm.pdf>
 Package pdftex.def Info: ucm.pdf used on input line 59.
@@ -680,11 +687,19 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Jesús/Documents
 /SUBVERSION/IS/is-hosteleria/TerceraEntrega20-3-13/ModeloCasosDeUso/ucm.pdf>] [
 2]
-\tf@toc=\write4
- [3
+("C:\Users\Jesús\Documents\SUBVERSION\IS\is-hosteleria\TerceraEntrega20-3-13\M
+odeloCasosDeUso\Documento de casos de uso.toc" [3
 
-]
-[4]
+])
+\tf@toc=\write4
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.4521pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4] [5]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 76.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -708,12 +723,6 @@ l.79 \end{abstract}
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 88.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [2] [3] [4] [5
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{section.0.1}
@@ -735,7 +744,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--167
 
  []
 
-<Empleados.png, id=61, 796.47563pt x 597.73312pt>
+<Empleados.png, id=284, 796.47563pt x 597.73312pt>
 File: Empleados.png Graphic file (type png)
  <use Empleados.png>
 Package pdftex.def Info: Empleados.png used on input line 175.
@@ -755,7 +764,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--243
 
  []
 
-[8] <Cliente.png, id=81, 519.44063pt x 221.32687pt>
+[8] <Cliente.png, id=301, 519.44063pt x 221.32687pt>
 File: Cliente.png Graphic file (type png)
  <use Cliente.png>
 Package pdftex.def Info: Cliente.png used on input line 253.
@@ -809,7 +818,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--458
 
  []
 
-<Habitaciones.png, id=115, 591.71063pt x 271.76532pt>
+<Habitaciones.png, id=328, 591.71063pt x 271.76532pt>
 File: Habitaciones.png Graphic file (type png)
  <use Habitaciones.png>
 Package pdftex.def Info: Habitaciones.png used on input line 470.
@@ -845,7 +854,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 564--574
 
  []
 
-[18] <OrganizacionLimpieza.png, id=139, 347.04657pt x 199.49532pt>
+[18] <OrganizacionLimpieza.png, id=346, 347.04657pt x 199.49532pt>
 File: OrganizacionLimpieza.png Graphic file (type png)
 
 <use OrganizacionLimpieza.png>
@@ -861,14 +870,14 @@ Underfull \hbox (badness 1117) in paragraph at lines 595--595
 Underfull \vbox (badness 5878) has occurred while \output is active []
 
  [20]
-<Limpieza.png, id=152, 289.83281pt x 224.33812pt>
+<Limpieza.png, id=357, 289.83281pt x 224.33812pt>
 File: Limpieza.png Graphic file (type png)
  <use Limpieza.png>
 Package pdftex.def Info: Limpieza.png used on input line 636.
 (pdftex.def)             Requested size: 289.83209pt x 224.33757pt.
  [21 <C:/Users/Jesús/Documents/SUBVERSION/IS/is-hosteleria/TerceraEntrega20-3-
 13/ModeloCasosDeUso/Limpieza.png>] [22]
-<Mantenimiento.png, id=165, 399.74344pt x 214.55156pt>
+<Mantenimiento.png, id=367, 399.74344pt x 214.55156pt>
 File: Mantenimiento.png Graphic file (type png)
  <use Mantenimiento.png>
 Package pdftex.def Info: Mantenimiento.png used on input line 704.
@@ -876,7 +885,7 @@ Package pdftex.def Info: Mantenimiento.png used on input line 704.
 
 [23 <C:/Users/Jesús/Documents/SUBVERSION/IS/is-hosteleria/TerceraEntrega20-3-1
 3/ModeloCasosDeUso/Mantenimiento.png>]
-<Notas.png, id=172, 325.96782pt x 195.73125pt>
+<Notas.png, id=373, 325.96782pt x 195.73125pt>
 File: Notas.png Graphic file (type png)
  <use Notas.png>
 Package pdftex.def Info: Notas.png used on input line 725.
@@ -977,7 +986,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1052--1060
 
  []
 
-<Contabilidad.png, id=224, 643.6547pt x 292.84406pt>
+<Contabilidad.png, id=413, 643.6547pt x 292.84406pt>
 File: Contabilidad.png Graphic file (type png)
  <use Contabilidad.png>
 Package pdftex.def Info: Contabilidad.png used on input line 1080.
@@ -1003,13 +1012,13 @@ ed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1118.
  ) 
 Here is how much of TeX's memory you used:
- 7448 strings out of 494045
- 104417 string characters out of 3146016
- 211048 words of memory out of 3000000
- 10560 multiletter control sequences out of 15000+200000
+ 7501 strings out of 494045
+ 106166 string characters out of 3146016
+ 211152 words of memory out of 3000000
+ 10604 multiletter control sequences out of 15000+200000
  13525 words of font info for 50 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 30i,10n,43p,1065b,548s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,11n,43p,1065b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
@@ -1019,9 +1028,9 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "Documento de casos de uso.pdf" (40 pages, 606382 bytes).
+Output written on "Documento de casos de uso.pdf" (41 pages, 629434 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
+ 406 words of extra memory for PDF output out of 10000 (max. 10000000)
 
