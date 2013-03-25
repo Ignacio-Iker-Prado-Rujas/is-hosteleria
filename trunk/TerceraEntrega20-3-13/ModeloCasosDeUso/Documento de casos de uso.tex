@@ -521,8 +521,6 @@
 			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
 			\item \textbf{Visión general:} Cuando finaliza la jornada, el actor realiza un
 				recuento de todas las existencias que quedan en el almacen y lo anota.
-				base de datos, la cual mandará una notificación cuando sea necesario reponer
-				algun alimento.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
 			\item \textbf{Postcondiciones:} Se añaden o quitan elementos a comprar.
 			\item \textbf{Curso típico de eventos:} 	\\
@@ -795,7 +793,7 @@
 					\textbf{1.} Selecciona la opción  ``Confirmar limpieza de habitación''. & 
 					\textbf{2.} Muestra la lista de tareas que el usuario debía realizar.\\ \hline 
 					\textbf{3.} El usuario marca aquellas tareas que ha completado. & 
-					\textbf{4.} Da la opción de ``Confirmar''.\\ \hline
+					\textbf{4.} Da la opción de ``confirmar''.\\ \hline
 					\textbf{5.} Confirma la limpieza. & 
 					\textbf{6.} Las tareas elegidas se eliminan de la lista de ``Tareas a realizar''. \\ \hline
 									\end{tabular}
@@ -823,17 +821,15 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 					\hline
 					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-					\textbf{1.} Selecciona el apartado ``Notificar incidencia''. & 
-					\textbf{2.} Muestra las opciones ``Lugar'' y ``Descripción''.\\ \hline 
-					\textbf{3.} Especifica los datos de ``Lugar'' y ``Descripción'', 
-						y selecciona la opción de ``Enviar notifiación''. & 
+					\textbf{1.} Selecciona``Notificar incidencia''. & 
+					\textbf{2.} Muestra las casillas para rellenar.\\ \hline 
+					\textbf{3.} Rellena los datos, y envía la notificación'. & 
 					\textbf{4.} Envía la notificación al encargado de mantenimiento.\\ \hline
 					
 				\end{tabular}
 				\item \textbf{Cursos alternativos:} 
 					\begin{itemize}
-						\item \textbf{Línea 3: }El usuario tiene la opción de ``Cancelar''. 
-						Si pulsa esta opción la notificación no se enviará y el usuario volverá a su pantalla principal.
+						\item \textbf{Línea 3: }Si el usuario elige cancelar, la notificación no se enviará y el usuario volverá a su pantalla principal.
 					\end{itemize}
 			\end {itemize}
 
@@ -850,14 +846,12 @@
 				notificaciones. Cuando se resuelve una incidencia, el encargado de mantenimiento
 				la elimina de su lista.
 			\item \textbf{Precondiciones:} Ser el encargado de mantenimiento.
-			\item \textbf{Postcondiciones:} Ninguna.
 			\item \textbf{Curso típico de eventos:} \\ 
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Selecciona el apartado ``Notificaciones''. & 
-				\textbf{2.} Muestra la lista de incidencias llamada ``Notificaciones pendientes'',
-						 que el resto de usuarios ha enviado.\\ \hline 
+				\textbf{1.} Selecciona la opciçon correspondiente a las``Notificaciones''. & 
+				\textbf{2.} Muestra la lista de incidencias pendientes  que el resto de usuarios ha enviado.\\ \hline 
 				\textbf{3.}El usuario selecciona aquellas incidencias que ha solucionado. & 
 				\textbf{4.} Las tareas elegidas se eliminan de la lista de ``Notificaciones pendientes''.\\ \hline
 			\end{tabular}
@@ -883,7 +877,7 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Selecciona la opción notas. & 
 				\textbf{2.} Muestra el tablón de notas. \\ \hline
-				\textbf{3.} Selecciona la opción ``Crear nota''.	& 
+				\textbf{3.} Elige crear una nota nueva.	& 
 				\textbf{4.} Se crea una nota vacía. \\ \hline
 				\textbf{5.} Rellena la nota.	& 
 				\textbf{6.} Muestra el tablón de notas con la nueva nota añadida. \\ \hline
