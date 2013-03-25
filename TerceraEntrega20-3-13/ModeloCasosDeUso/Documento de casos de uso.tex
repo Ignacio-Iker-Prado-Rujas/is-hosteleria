@@ -938,20 +938,20 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Selecciona el apartado ``Empleados actuales''. & 
 				\textbf{2.} Muestra dicho apartado, con las opciones correspondientes. \\ \hline
-				\textbf{3.} Selecciona la opción ``Añadir empleado''.	& 
-				\textbf{4.} Muesta la ficha a rellenar. \\ \hline
-				\textbf{5.} Rellena la ficha. & 
+				\textbf{3.} Selecciona la opción para``Añadir empleado''.	& 
+				\textbf{4.} Muesta los datos a rellenar sobre el empleado. \\ \hline
+				\textbf{5.} Rellena los datos. & 
 				\textbf{6.} Se asegura de que todos los datos obligatorios han sido escritos y
-					muestra los datos del nuevo empleado para comprobar que son correctos.\\ \hline
-				\textbf{7.} Lo comprueba y elige la opción ``Aceptar''. & 
+					muestra los datos del nuevo empleado para que se compruebe que son correctos.\\ \hline
+				\textbf{7.} Lo comprueba y acepta. & 
 				\textbf{8. }Añade al empleado a la lista \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-			\item  \textbf{Línea 6:}Falta algún dato o hay datos incorrectos. El programa regresa a la línea 7.
+			\item  \textbf{Línea 6:}Falta algún dato o hay datos incorrectos. El programa regresa a la línea 4.
 			\item  \textbf{Línea 7:}El jefe comprueba que se ha equivocado al añadir un dato. 
-				El programa le devuelve a la línea 7.
+				El programa le devuelve a la línea 4.
 			\end {itemize}
 		\end{itemize}
 
@@ -965,7 +965,7 @@
 			\item \textbf{Actor:} Jefe.
 			\item \textbf{Propósito:} Acceder a la ficha de un empleado y modificarla.
 			\item \textbf{Visión general:} El jefe accede a la base de datos de los empleados. 
-				Busca un empleado, accede a su ficha y la modifica. 
+				Busca un empleado, accede a sus datos y los modifica. 
 			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de empleado.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -973,15 +973,14 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Selecciona el apartado ``Empleados''. & 
 				\textbf{2.} Muestra las opciones correspondientes. \\ \hline
-				\textbf{3.} Selecciona la opción ``Buscar empleado'', que puede buscarse por nombre, NIF, 
-					posición en la empresa...	& 
+				\textbf{3.} Selecciona la opción para ``buscar empleado'', que permite  buscar por varios campos	& 
 				\textbf{4.} Procesa la búsqueda y muestra la ficha del empleado. \\ \hline
-				\textbf{5.} Selecciona ``Modificar ficha''. & 
-				\textbf{6.} Muestra la ficha lista para su modificación.\\ \hline
+				\textbf{5.} Selecciona la opción de ``modificar ficha''. & 
+				\textbf{6.} Muestra la lista de datos del empleado.\\ \hline
 				\textbf{7.} Cambia los campos que considere. & 
-				\textbf{8.} Muestra la ficha con los cambios realizados \\ \hline
+				\textbf{8.} Muestra los datos con los cambios realizados \\ \hline
 				\textbf{9.} Comprueba que los cambios son correctos y acepta el cambio. & 
-				\textbf{10. }Actualiza la ficha del empleado. \\ \hline
+				\textbf{10. }Actualiza los datos del empleado. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
@@ -991,7 +990,7 @@
 				\item  \textbf{Línea 8:} Algún cambio realizado no es correcto. El programa le
 					devuelve a la línea 7.
 				\item  \textbf{Línea 9:} El jefe se ha equivocado al introducir algún dato y
-					desea volver a modificar la ficha. El programa le devuelve a la línea 7.
+					desea volver a modificar los datos. El programa le devuelve a la línea 7.
 			
 			\end {itemize}
 		\end{itemize}
@@ -1003,9 +1002,9 @@
 	\subsection{Dar de baja empleado}	
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, empleado.
-			\item \textbf{Propósito:} Transferir la ficha de un empleado de “Empleados actuales” a “Antiguos empleados" .
+			\item \textbf{Propósito:} Transferir los datos de un empleado de “Empleados actuales” a “Antiguos empleados" .
 			\item \textbf{Visión general:} El jefe accede a
-				la base de datos de los empleados. Busca un empleado y da de baja su ficha.
+				la base de datos de los empleados. Busca un empleado y le da de baja.
 			\item \textbf{Incluye ($<<$include$>>$):} Ver ficha de empleado.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -1013,9 +1012,9 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Selecciona el apartado ``Empleados''. & 
 				\textbf{2.} Muestra las opciones correspondientes. \\ \hline
-				\textbf{3.} Selecciona la opción ``Buscar empleado''.	& 
+				\textbf{3.} Selecciona la opción para ``Buscar empleado''.	& 
 				\textbf{4.} Procesa la búsqueda y muestra la ficha del empleado. \\ \hline
-				\textbf{5.} Selecciona ``Dar de baja a este empleado''. & 
+				\textbf{5.} Selecciona la opción de ``Dar de baja a este empleado''. & 
 				\textbf{6.} Pide confirmación para dar de baja al empleado.\\ \hline
 				\textbf{7.} Confirma. & 
 				\textbf{8.} El empleado es eliminado de la lista. \\ \hline
@@ -1044,14 +1043,11 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El jefe ha accedido correctamente a la ficha de un empleado. & 
+				\textbf{1.} El jefe accede correctamente a un empleado. & 
 				\textbf{2.} Muestra los datos del empleado.\\ \hline
-				\textbf{3.} Selecciona la opción ``Ver curriculum''.	& 
+				\textbf{3.} Selecciona la opción para``Ver curriculum''.	& 
 				\textbf{4.} Muestra el curriculum del empleado. \\ \hline
-				\textbf{5.} Consulta el curriculum. & \textbf{} \\ \hline
 			\end{tabular}
-			\\
-			\item \textbf{Cursos alternativos:} No hay cursos alternativos para este caso de uso.
 		\end{itemize}
 
 
@@ -1073,13 +1069,13 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Selecciona el apartado ``Clientes''. & 
 				\textbf{2.} Muestra las opciones correspondientes. \\ \hline
-				\textbf{3.} Selecciona en ``Buscar cliente''.	& 
-				\textbf{4.} Muesta la ficha del cliente. \\ \hline
+				\textbf{3.} Elige  ``Buscar cliente''.	& 
+				\textbf{4.} Muesta la lista de clientes \\ \hline
 				\textbf{5.} Edita los datos del cliente que desee. & 
 				\textbf{6.} Se asegura de que el formato de los nuevos datos es correcto y
-					muestra la ficha actualizada del cliente.\\ \hline
+					los muestra actualizados.\\ \hline
 				\textbf{7.} Comprueba que los datos editados son correctos, y acepta la operación. & 
-				\textbf{8.} Actualiza la ficha del cliente. \\ \hline
+				\textbf{8.} Actualiza los datos del cliente. \\ \hline
 				\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
@@ -1104,9 +1100,9 @@
 					\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 					\textbf{1.} Selecciona el apartado ``Clientes''. & 
 					\textbf{2.} Muestra las opciones correspondientes. \\ \hline
-					\textbf{3.} Selecciona la opción ``Buscar cliente''.	& 
-					\textbf{4.} Muesta la ficha del cliente. \\ \hline
-					\textbf{5.} Selecciona la opción en ``Eliminar a este cliente''. & 
+					\textbf{3.} Selecciona la opción para``Buscar cliente''.	& 
+					\textbf{4.} Muesta los datos del cliente. \\ \hline
+					\textbf{5.} Selecciona la opción de ``Eliminar a este cliente''. & 
 					\textbf{6.} Pide confirmación al actor.\\ \hline
 					\textbf{7.} Confirma la operación. & 
 					\textbf{8.} Actualiza la lista de clientes eliminando al cliente. \\ \hline
@@ -1132,7 +1128,7 @@
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Selecciona la opción cancelar pedido, dentro de el apartado ``Restaurante''. & 
+				\textbf{1.} Selecciona la opción cancelar pedido, dentro del apartado ``Restaurante''. & 
 				\textbf{2.} Muestra todos los pedidos. \\ \hline
 				\textbf{3.} Selecciona el pedido que desea anular	& 
 				\textbf{4.} Se muestra un mensaje con los datos del pedido para verificar que realmente se desea anular. \\ \hline
@@ -1173,7 +1169,7 @@
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Selecciona la opción ``Modificar distribución''. & 
+				\textbf{1.} Selecciona la opción para ``Modificar distribución''. & 
 				\textbf{2.} Muestra un plano de cómo están distribuidas las mesas y permite mover, añadir y borrar mesas. \\ \hline
 				\textbf{3.} El usuario hace los cambios que considere oportunos.	& 
 				\textbf{4.} La aplicación muestra un mensaje indicando que se modificó correctamente. \\ \hline
@@ -1199,13 +1195,13 @@
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Selecciona la opción ``modificar menú''. & 
+				\textbf{1.} Selecciona la opción para``modificar menú''. & 
 				\textbf{2.} Muestra las siguientes opciones: 
 					\textit{Añadir plato. Modificar plato. Eliminar plato}. \\ \hline
-				\textbf{3.} Selecciona una de las opciones.	& 
-				\textbf{4.} Si se seleccionó \textit{Añadir plato}, ver sección ``Añadir plato''. 
-					Si se seleccionó \textit{modificar plato} ver sección ``Modificar plato''. 
-					Si se seleccionó \textit{Eliminar plato} ver sección ``Eliminar plato''. \\ \hline
+				\textbf{3.} Se elige una de las opciones.	& 
+				\textbf{4.} Si se eligió \textit{Añadir plato}, ver sección ``Añadir plato''. 
+					Si se eligió \textit{modificar plato} ver sección ``Modificar plato''. 
+					Si se eligió \textit{Eliminar plato} ver sección ``Eliminar plato''. \\ \hline
 			\end{tabular}
 			\\
 			
@@ -1254,7 +1250,7 @@
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} Introduce el nombre del plato que quiere borrar. & 
-				\textbf{2.} Muestra un mensaje con la descripción, ingredientes y precio, 
+				\textbf{2.} Muestra un mensaje con los datos del plato
 					y pregunta al usuario si realmente desea borrarlo.\\ \hline 
 				\textbf{3.} Selecciona borrar. & 
 				\textbf{4.} El plato desaparece del menú. \\ \hline
