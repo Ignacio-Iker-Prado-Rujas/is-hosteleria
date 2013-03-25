@@ -43,7 +43,8 @@
 \begin{document}
 
 \title{\textbf{\huge{Gestión de la \\ 
-	configuración Software}} \\ \vspace{0.3cm}
+	configuración Software}} \\ 
+	\textit{v3.0.1} \\	\vspace{0.1cm}
 	\Large{Ingeniería del Software} \\
 	\includegraphics[scale=0.3]{ucm.pdf}}
 \author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
@@ -113,137 +114,190 @@
 %%% PARTE 3: ACTIVIDADES DE LA GCS_____________________________________________________________________________________________
 \part{Actividades de la GCS}
 	\section{Identificación de la configuración}
-		A lo largo de la realización del proyecto hemos identificado los siguientes Elementos de Configuración Software:
+		La totalidad de los documentos del proyecto se encuentra en el repositorio, en \textit{Google Code}. 
+
 		\subsection{Identificación de ECSs}
-			% Lo que va en subsubsection => El NOMBRE del objeto es una cadena de caracteres que identifican al objeto sin ambigüedad
+			% Lo que va en subsubsection => El NOMBRE del objeto es una cadena de caracteres que identifican al objeto sin ambigüedad
 			% DESCRIPCION => El tipo de ECS (simple vs. compuesta), un identificador de proyecto, la información de la versión y/o cambio
 			% RECURSOS => Entidades que proporciona, procesa, referencia o son, de alguna otra forma requeridas por el objeto
 			% REALIZACION => Una referencia a la unidad de texto para objetos básicos y nulo para objetos compuestos
 			
-			% Jesús, creo que están todos los ECSs, si se te ocurren más añadelos, pero mi duda es a lo mejor quitar los de "introduccion de srs", "descripción de srs" y "introduccion de plan de proyecto" porque son partes un poco chorras, no se... 
-			% A parte, he marcado todos los compuestos creo
-
-			\subsubsection{\texttt{Documento de casos de uso}}
+			% Jesús, creo que están todos los ECSs, si se te ocurren más añadelos, pero mi duda es a lo mejor quitar los de "introduccion de srs", "descripción de srs" y "introduccion de plan de proyecto" porque son partes un poco chorras, no se... (Los he quitado ya)
+			
+			A lo largo de la realización del proyecto hemos identificado y seleccionado los siguientes Elementos de Configuración Software (ECSs):
+			
+			\subsubsection{\texttt{\underline{Documento de casos de uso}}}
 			\begin{itemize}	
 				\item{Descripción:}
-				\item{Lista de recursos:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto básico. 
+						\item{Identificador de proyecto:} CU.
+						\item{Información de la versión:} Es el primer documento en el que se trabajó, la primera versión fue la 1.0.0 a 12/12/12. La versión actual es la 3.0.1, al tratarse de la tercera entrega y ya que se acaba de realizar la primera RTF.
+					\end{itemize}	
+				\item{Lista de recursos:} El único recurso aquí es la información que hemos recibido por parte del cliente y de los usuarios, que es de donde nacen los casos de uso. Es uno de los documentos vitales para el proyecto, y se cuidarán mucho sus revisiones.
 				\item{Lista de realización:}
-			\end{itemize}	
-	
-			\subsubsection{Introducción del \texttt{Documento de especificación de requisitos Software}}
+			\end{itemize}		
+
+			\subsubsection{\underline{Requisitos específicos del \texttt{Documento de especificación de requisitos Software}}}
 			\begin{itemize}	
 				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es una parte de un documento (la SRS), y un objeto básico. 
+						\item{Identificador de proyecto:} RE-SRS.
+						\item{Información de la versión:} Al ser una parte de la SRS, la versión es la misma, la 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}		
 
-			\subsubsection{Descripción general del \texttt{Documento de especificación de requisitos Software}}
+			\subsubsection{\texttt{\underline{Documento de especificación de requisitos Software}}}
 			\begin{itemize}	
 				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto compuesto que incluye a RE-SRS. 
+						\item{Identificador de proyecto:} SRS.
+						\item{Información de la versión:} De igual modo que el documento CU, es de los más antiguos del proyecto del \PKT \ y, junto con ese documento, es la base de todo lo que le sigue. La versión es la 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
-			\end{itemize}		
+			\end{itemize}			
 
-			\subsubsection{Requisitos específicos del \texttt{Documento de especificación de requisitos Software}}
+			\subsubsection{\underline{Documento de \texttt{Estimación del proyecto Software}}}
 			\begin{itemize}	
 				\item{Descripción:}
-				\item{Lista de recursos:}
-				\item{Lista de realización:}
-			\end{itemize}		
-
-			\subsubsection{\texttt{Documento de especificación de requisitos Software}}
-			\begin{itemize}	
-				\item{Descripción:} Compuesto de...
-				\item{Lista de recursos:}
-				\item{Lista de realización:}
-			\end{itemize}	
-
-			\subsubsection{Introducción del documento \texttt{Plan de Proyecto Software}}
-			\begin{itemize}	
-				\item{Descripción:}
-				\item{Lista de recursos:}
-				\item{Lista de realización:}
-			\end{itemize}		
-
-			\subsubsection{Documento de \texttt{Estimación del proyecto Software}}
-			\begin{itemize}	
-				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento en sí mismo, pero es una parte del PPS, y un objeto básico. 
+						\item{Identificador de proyecto:} EP-PPS.
+						\item{Información de la versión:} La misma que el \texttt{Plan de proyecto}, la 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}		
 			
-			\subsubsection{Documento de \texttt{Gestión de riesgos Software}}
+			\subsubsection{\underline{Documento de \texttt{Gestión de riesgos Software}}}
 			\begin{itemize}	
 				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento en sí mismo, pero es una parte del PPS, y un objeto básico.
+						\item{Identificador de proyecto:} GR-PPS.
+						\item{Información de la versión:} La misma que el PPS, la 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}		
 
-			\subsubsection{Planificación temporal y recursos del proyecto del documento \texttt{Plan de Proyecto Software}}
+			\subsubsection{\underline{Planificación temporal y recursos del documento \texttt{Plan de Proyecto Software}}}
 			\begin{itemize}	
 				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es una parte de un documento (el PPS), y un objeto básico.
+						\item{Identificador de proyecto:} PTR-PPS.
+						\item{Información de la versión:} La misma que el \texttt{Plan de proyecto}, la 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
-			\subsubsection{\texttt{Plan de Proyecto Software}}
+			\subsubsection{\underline{\texttt{Plan de Proyecto Software}}}
 			\begin{itemize}	
-				\item{Descripción:} Compuesto de...
+				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto compuesto (por los tres anteriores). 
+						\item{Identificador de proyecto:} PPS.
+						\item{Información de la versión:} De igual forma que antes, al ser la tercera entrega y la primera RTF, 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
-			\subsubsection{Documento \texttt{Definiciones, acrónimos y abreviaturas}}
+			\subsubsection{\underline{Documento \texttt{Definiciones, acrónimos y abreviaturas}}}
 			\begin{itemize}	
 				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto básico. 
+						\item{Identificador de proyecto:} DAA.
+						\item{Información de la versión:} 3.0.1. Ha sufrido pocas modificaciones, ya que sólo recoge definiciones de palabras poco comunes.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}		
 
-			\subsubsection{Documento \texttt{Gestión de la configuración Software}}
+			\subsubsection{\underline{Documento \texttt{Gestión de la configuración Software}}}
 			\begin{itemize}	
 				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento en sí mismo, pero se puede considerar como una parte del documento de \texttt{Garantía de calidad Software}, y un objeto básico. 
+						\item{Identificador de proyecto:} GCS.
+						\item{Información de la versión:} Como siempre, 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
-			\subsubsection{Documento \texttt{Garantía de calidad Software}}
+			\subsubsection{\underline{Documento \texttt{Garantía de calidad Software}}}
 			\begin{itemize}	
-				\item{Descripción:} Compuesto de GCS... (creo que nada mas)
+				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto compuesto (incluye a la GCS). 
+						\item{Identificador de proyecto:} SQA (hemos optado por la versión en inglés, \textit{Software Quality Assurance}, para diferenciarlo del documento de \texttt{Gestión de la configuración Software} GCS).
+						\item{Información de la versión:} 3.0.1.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
-			\subsubsection{Primera entrega}
+			\subsubsection{\underline{Primera entrega}}
 			\begin{itemize}	
-				\item{Descripción:} Compuesto de...
+				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un conjunto de documentos, y un objeto compuesto. Incluye CU y SRS. 
+						\item{Identificador de proyecto:} E1.
+						\item{Información de la versión:} 1.1.0.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
-			\subsubsection{Segunda entrega}
+			\subsubsection{\underline{Segunda entrega}}
 			\begin{itemize}	
-				\item{Descripción:} Compuesto de...
+				\item{Descripción:} 
+					\begin{itemize}	
+						\item{Tipo:} Es un conjunto de documentos, y un objeto compuesto. Incluye CU, SRS y PPS. 
+						\item{Identificador de proyecto:} E2.
+						\item{Información de la versión:} 2.1.0.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
-			\subsubsection{Tercera entrega}
+			\subsubsection{\underline{Tercera entrega}}
 			\begin{itemize}	
-				\item{Descripción:}Compuesto de...
+				\item{Descripción:}
+					\begin{itemize}	
+						\item{Tipo:} Es un conjunto de documentos, y un objeto compuesto. Incluye CU, SRS, PPS y SQA. 
+						\item{Identificador de proyecto:} E3.
+						\item{Información de la versión:} 3.0.1, ya que aquí introducimos las RTFs.
+					\end{itemize}	
 				\item{Lista de recursos:}
 				\item{Lista de realización:}
 			\end{itemize}	
 
 			Por el momento no hay más ECSs, pero irán apareciendo más según se avance en el proyecto, como código, manuales de usuario, casos de prueba...
 
-		\subsection{Nombrado de ECSs} % ¿¿??
+		\subsection{Nombrado de ECSs}
+
+		Para el identificador de proyecto de cada ECS se ha tratado de tomar las iniciales, dando lugar al acrónimo más obvio posible de dos o tres caracteres. En el caso de las entregas, siguen el formato ''$Ex$'', donde x es el número de entrega. De este modo, se consiguen identificadores únicos e independientes para cada elemento de configuración.
+
+		Para identificar la versión, se usan tres dígitos separados por puntos, con el formato ''$x.y.z$'', donde ''$x$'' es el número de entrega, (a día de hoy tres), ''$y$'' es la versión dentro de cada entrega (sin haber sido revisada) y ''$z$'' es el número de versión revisada. Obviamente, una vez revisado un documento, la ''$x$'' y la ''$y$'' quedan fijos y sólo podrá avanzar la ''$z$'' mediante Revisiones Técnicas Formales (RTFs).
 		
-		
-		\subsection{Adquisición de ECSs} % ¿¿??
+		De este modo, cada documento PDF tendrá un nombre distinto capaz de diferenciar cada escrito y sus versiones. Por ejemplo, a fecha de hoy el \texttt{Documento de casos de uso} se llama \textit{''CU\_v3.0.1''}, donde la ''$v$'' es de versión. Como se ve, el nombre del PDF es distinto del título del documento que aparece en la portada del mismo.
+
+		En el caso de que se produzcan subcontrataciones, el nombre del documento PDF comenzará por \textit{''sub\_''} para distinguir estos casos. Así, por ejemplo, si se subcontratará a terceros para elaborar un manual preliminar de usuario, cuyo identificador fuera MPU con versión 2.1.0, el fichero pasaría a llamarse \textit{''sub\_MPU\_v2.1.0''}.
+
+		\subsection{Adquisición de ECSs}
 
 
-	\section{Contabilidad de estado de configuración} % ¿Alguien tiene idea de que coño es esto?
+	\section{Contabilidad de estado de configuración}
 
 
 \newpage
