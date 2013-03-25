@@ -520,7 +520,7 @@
 			\item \textbf{Actor:} Maître, jefe, chef, cocineros.
 			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
 			\item \textbf{Visión general:} Cuando finaliza la jornada, el actor realiza un
-				recuento de todas las existencias que quedan en el almacen y lo anotan en la
+				recuento de todas las existencias que quedan en el almacen y lo anota.
 				base de datos, la cual mandará una notificación cuando sea necesario reponer
 				algun alimento.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
@@ -532,18 +532,17 @@
 				\textbf{1.} Entre las opciones disponibles, selecciona la opción ``Recuento de existencias''. & 
 				\textbf{2.} Muestra una lista con todos los alimentos que había en el almacen tras el último recuento. \\ \hline
 				\textbf{3.} Introduce uno a uno la cantidad que hay de cada alimento. & 
-				\textbf{4.} Cuando se ha terminado el recuento Se vuelven a mostrar las opciones. \\ \hline
-				\textbf{5.}  Cierra la aplicación. &   \\ \hline
+				\textbf{4.} Cuando se ha terminado el recuento se vuelven a mostrar las opciones. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-				\item  \textbf{Línea 3:} Introduce intro en vez de la cantidad para no
+				\item  \textbf{Línea 3:} Salta al siguiente para no
 					modificarlo.
-				\item  \textbf{Línea 3:} Puede terminar el recuento antes de llegar al ultimo
-					elemento de la lista marcando la opción “Guardar y salir".
+				\item  \textbf{Línea 3:} Termina el recuento antes de llegar al último
+					elemento de la lista.
 				\item  \textbf{Línea 4:} Si algún alimento está por debajo del mínimo
-					recomendado da la opción al usuario de realizar un pedido. Si lo realiza debe
+					recomendado da la opción al usuario de realizar un pedido.
 					introducir la cantidad que desea pedir. (El mínimo se calcula mediante unas
 					estadísticas realizadas a partir del consumo diario)
 			\end {itemize}
@@ -557,10 +556,9 @@
 	\subsection{Ver habitación}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
-			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel
+			\item \textbf{Propósito: } Ver las características de las habitaciones del hotel.
 			\item \textbf{Visión general:} Se muestran las características (planta en la que
 					está, ascensor, bañera o jacuzzi, mobiliario) de cada habitación seleccionada.
-			\item \textbf{Precondiciones:} Ninguna.
 			\item \textbf{Postcondiciones:} Ninguna, sólo se mira las características de una habitación.
 			\item \textbf{Incluye ($<<$include$>>$):} Modificar habitaciones.
 			\item \textbf{Curso típico de eventos:} 	\\
@@ -568,8 +566,8 @@
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
 				\textbf{1.} Selecciona el apartado de ``habitaciones'' & 
-				\textbf{2.}Se muestra la sección ``habitaciones''.\\ \hline 
-				\textbf{3.} Selecciona ``ver habitaciones''. & 
+				\textbf{2.}Se muestra la sección correspondiente.\\ \hline 
+				\textbf{3.} Elige la opción de ver habitaciones. & 
 				\textbf{4.} Se muestran todas las habitaciones.  \\ \hline
 				\textbf{5.} Se selecciona la habitación que se desea ver. & 
 				\textbf{6.} Se muestran las características de la habitación seleccionada. \\ \hline
@@ -593,7 +591,7 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
 				\textbf{1.} Selecciona el apartado  ``habitaciones''. & 
 				\textbf{2.} Se muestra la sección ``habitaciones''.\\ \hline 
-				\textbf{3.} Selecciona la opción ``realizar reserva''. & 
+				\textbf{3.} Elige  la opción ``realizar reserva''. & 
 				\textbf{4.} Muestra los datos que deben rellenarse  \\ \hline
 				\textbf{5.} Rellena los datos deseados. & 
 				\textbf{6.} Se muestran las opciones elegidas y la disponibilidad de la habitación elegida \\ \hline
@@ -640,7 +638,6 @@
 			\item \textbf{Visión general:} Se ve el total de las futuras reservas de
 				habitaciones del hotel ordenadas por fecha.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
-			\item \textbf{Postcondiciones:} Ninguna.
 			\item \textbf{Incluye ($<<$include$>>$):} Anular reserva.
 			\item \textbf{Curso típico de eventos:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -648,7 +645,7 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
 				\textbf{1.} Selecciona el apartado ``Habitaciones''. & 
 				\textbf{2.}Se muestra la sección ``habitaciones'', con sus correspondientes opciones. \\ \hline 
-				\textbf{3.} Selecciona ``ver/anular reservas''. & \textbf{4.}Se muestra la lista de reservas \\ \hline
+				\textbf{3.} Elige la opción de ``ver reservas''. & \textbf{4.}Se muestra la lista de reservas \\ \hline
 			\end{tabular}
 			\\
 		\end {itemize}
