@@ -73,15 +73,16 @@
 
 %%% PARTE 1: INTRODUCCIÓN______________________________________________________________________________________________________
 \part{Introducción}
-	\section{Propósito}Este documento se va a encargar de la Gestión de Configuración Software (Software Configuration Management). Se centra en el control de cambios, analizandolos y garantizando su correcta implementación. Por tanto, La Gestión de Configuración Software tiene como objetivo facilitar la elaboración de código fuente mediante el seguimiento del estado de las versiones y sus cambios, y la integración de las partes del software en un solo producto.
-	\section{Alcance}Se establecerá un modo de actuación una vez se detecte que algo debe cambiar. Para identificar los errores nos basaremos en las Revisiones Técnicas Formales. En primer lugar, informaremos a todo el grupo del problema que hemos detectado y se asignara a uno o varios componentes la tarea de resolverlo. Para que quede constancia de ello y no haya problemas de versiones usamos el Repositorio Google Code, empleado anteriormente en el proyecto. Una vez resuelto el problema se emplearán algunos días en garantizar que todo el equipo  ha asumido el cambio.
+	\section{Propósito}Este documento se va a encargar de la Gestión de Configuración Software (Software Configuration Management). Se centra en el control de cambios, analizándolos y garantizando su correcta implementación. Por tanto, La Gestión de Configuración Software tiene como objetivo facilitar la elaboración de código fuente mediante el seguimiento del estado de las versiones y sus cambios, y la integración de las partes del software en un solo producto.
+	\section{Alcance}Se establecerá un modo de actuación una vez se detecte que algo debe cambiar. Para identificar los errores nos basaremos en las Revisiones Técnicas Formales. En primer lugar, informaremos a todo el grupo del problema que hemos detectado y se asignará a uno o varios componentes la tarea de resolverlo. Para que quede constancia de ello y no haya problemas de versiones usamos el Repositorio \textit{Google Code}, empleado anteriormente en el proyecto. Una vez resuelto el problema se emplearán algunos días en garantizar que todo el equipo  ha asumido el cambio.
 	%\section{Definición de términos clave} NO SE PONE -> GLOSARIO
 	\section{Referencias} A lo largo del presente documento se hará referencia a los siguientes documentos:
 	\begin{itemize}
-		\item Documento \texttt{Definiciones, acrónimos y abreviaturas}
-		\item IEEE Std. 828-1998
+		\item Documento \texttt{Definiciones, acrónimos y abreviaturas}.
+		\item Documento \texttt{Garantía de calidad Software}.
+		\item IEEE Std. 828-1998.
 		\item Pressman, R.S. Ingeniería del Software. Un Enfoque Práctico.
-		\item Apuntes de Clase de la asignatura “Ingeniería del Software" de la Universidad Complutense de Madrid, Curso 2012-2013
+		\item Apuntes de Clase de la asignatura “Ingeniería del Software" de la Universidad Complutense de Madrid, Curso 2012-2013.
 
 	\end{itemize}
 
@@ -292,13 +293,31 @@
 		
 		De este modo, cada documento PDF tendrá un nombre distinto capaz de diferenciar cada escrito y sus versiones. Por ejemplo, a fecha de hoy el \texttt{Documento de casos de uso} se llama \textit{''CU\_v3.0.1''}, donde la ''$v$'' es de versión. Como se ve, el nombre del PDF es distinto del título del documento que aparece en la portada del mismo.
 
-		En el caso de que se produzcan subcontrataciones, el nombre del documento PDF comenzará por \textit{''sub\_''} para distinguir estos casos. Así, por ejemplo, si se subcontratará a terceros para elaborar un manual preliminar de usuario, cuyo identificador fuera MPU con versión 2.1.0, el fichero pasaría a llamarse \textit{''sub\_MPU\_v2.1.0''}.
+		En el caso de que se produzcan subcontrataciones, el nombre del documento PDF incluirá \textit{''\_sub\_''} para distinguir estos casos. Así, por ejemplo, si se subcontratará a terceros para elaborar un manual preliminar de usuario, cuyo identificador fuera MPU con versión 2.1.0, el fichero pasaría a llamarse \textit{''MPU\_sub\_v2.1.0''}.
 
 		\subsection{Adquisición de ECSs}
 
 
 	\section{Contabilidad de estado de configuración}
 
+	Las actividades de contabilidad de estado de configuración graban e informan del estado de los elementos de configuración. Debe incluir lo siguiente:
+
+	\textbf{a) Qué elementos se van a monitorizar e informar de líneas base y cambios:}
+	
+
+	\textbf{b) Qué tipo de contabilidad de estado se va a generar y su frecuencia:}
+	
+
+	\textbf{c) Cómo se va a procesar y a almacenar la información:}
+	
+
+	\textbf{d) Cómo se controla el acceso al estado de datos}
+	
+
+	\vspace{0.3cm}
+	No se utilizarán herramientas automáticas para las actividades de contabilidad de estado de configuración.
+
+	Como la primera RTF para todos los elementos de configuración fue el mismo día (8/3/13) y no se han vuelto a producir más RTFs, tras los cambios y mejoras dados por dichas revisiones la primera y última versión aprobada es la 3.0.1. Por el momento no hay más cambios solicitados pendientes de aprobar.
 
 \newpage
 \mbox{}
