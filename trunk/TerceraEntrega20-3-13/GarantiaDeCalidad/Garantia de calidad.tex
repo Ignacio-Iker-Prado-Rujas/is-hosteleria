@@ -67,10 +67,6 @@
 
 \tableofcontents 							%INDICE hipervinvulado
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
 
 \pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
@@ -83,7 +79,7 @@
 	
 	La SQA abarca todo el proceso de desarrollo de software, incluyendo procesos tales como la definición de requerimientos, diseño de software, programación, control de código fuente, revisiones de código, gestión de cambios, gestión de configuración, pruebas o gestión de versiones.\\
 	
-	El plan de Garantía de Calidad del Software define las actividades específicas a llevar a cabo en un este proyecto. Contiene una lista de comprobación para las actividades que se deben llevar a cabo para asegurar la calidad del producto y garantizar que KIKE Hostelería® cumple los requisitos especificados en la documentación.\\
+	El plan de Garantía de Calidad del Software define las actividades específicas a llevar a cabo en  este proyecto. Contiene una lista de comprobación para las actividades que se deben llevar a cabo para asegurar la calidad del producto y garantizar que KIKE- Hostelería ® cumple los requisitos especificados en la documentación.\\
 	%No hagais caso a estos comentarios, son de panchitos del internes
 	%Para cada fase del proyecto, se debe crear un plan para su monitoreo.
 	%Este documento pretende entregar la pauta general del proceso que debe seguir una Gerencia de SQA en una fábrica de software.
@@ -123,11 +119,11 @@
 	La estructura en la gestión de la calidad en nuestro grupo es lineal, es decir, prácticamente todos los integrantes revisan cada documento. Esto siempre bajo la organización del 
 	jefe del proyecto que indica a cada integrante qué parte de cada documento revisa.\\
 
-	 En cuanto al documento de sqa, Jesús se encarga de la redacción, Íker de la organización de las tareas, Kike de la 
-	gestión, Alejandro de las herramientas y Jaime del mantenimiento.\\
+	 En cuanto al documento de SQA, Jesús Aguirre se encarga de la redacción, Iker Prado de la organización de las tareas, Kike Ballesteros de la 
+	gestión, Alejandro Villarín de las herramientas y Jaime Porras del mantenimiento.\\
 
-	En la parte de redacción se incluyen  la introducción del documento de sqa, la relación de los documentos de referencia, y la colección de registros, mantenimiento y conservación. En la organización se incluyen  la asignación de tareas, 
-	la creación de los modelos para latex y el seguimiento del trabajo. En la gestión se registra la organización del equipo y de las tareas. En las herramientas se escribe la relación de tareas, y en el mantenimiento se garantiza
+	En la parte de redacción se incluyen  la introducción del documento de SQA, la relación de los documentos de referencia, y la colección de registros, mantenimiento y conservación. En la organización se incluyen  la asignación de tareas, 
+	la creación de los modelos para \LaTeX \ y el seguimiento del trabajo. En la gestión se registra la organización del equipo y de las tareas. En las herramientas se escribe la relación de tareas, y en el mantenimiento se garantiza
 	que el plan de garantía de calidad esté actualizado según va avanzando el proyecto.\\
 
 	
@@ -183,8 +179,51 @@
 \thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
 \newpage
 
-\chapter{ Estándares, prácticas convenciones y métricas}
-	(- Esta sección es un poco miscelánea en SQA.) %Osea, ¿¿la quitamos?? (by Iker). Es lo que dice el standard. Yo pondría algo de petaqueo
+\chapter{ Estándares, prácticas, convenciones y métricas}
+
+	\section{Propósito}
+	En esta parte, se trata de identificar, como su título indica, qué estándares, prácticas, convenciones y métricas se van a utilizar en el SQAP, así como indicar cómo será monitoreado y asegurado el cumplimiento de los mimos.
+	
+	\section{Estándar de documentación}
+	La documentación del software KIKE- Hostelería ® debe ser adecuada para que otro grupo autónomo y aislado se pueda encargar de continuar desarrollando la aplicación, así como de su mantenimiento. No se debe olvidar, que la aplicación, en un futuro, es muy probable que se amplie para más clientes.
+
+	Como ya se ha comentado más veces, la documentación está realizada en \LaTeX \ siguiendo plantillas definidas por el propio equipo y los estándares de IEEE. En las plantillas siempre se sigue una estructura común:
+	\begin{itemize}
+		\item Documento de tipo report, tamaño del papel DINA4, con tamaño de la fuente a 11 puntos, y disposición en dos lados (twoside, a modo de libro). La fuente es la presentada por defecto en \LaTeX.
+		\item Portada con título del documento, versión y fecha del mismo, nombre del grupo y componentes.
+		\item Índice general, con el contenido del documento.
+		\item Documento dividido en partes, que a su vez se dividen en secciones, que a su vez se dividen en subsecciones, y algunas de estas en subsubsecciones.
+		\item Encabezado: Según el lado en el que cae (páginas pares o impares),  en un extremo nombre de la sección y en el otro el nombre del documento del que se trate. Además aparece una línea de 0.4 puntos para separar el encabezado del texto.
+		\item Pie de página: Número de la página centrado. También aparece una línea de 0.4 puntos que separa el pie de página del resto de la página. En cuanto a la numeración, las primeras páginas aparecen numeradas con números romanos en minúscula (\textit{roman}), hasta que empieza la primera parte. A partir de ese momento, se numera desde 1 con numeración arábiga (\textit{arabic}).
+	\end{itemize}
+
+	\section{Estándar de código y comentarios}
+	
+	No se utiliza ningún estándar en concreto para ésta parte, sólo se aplican los conocimientos obtenidos en el estudio de la programación y los algorítmos. Se debe recordar que estamos trabajando con Java, un lenguaje imperativo orientado a objetos. Algunas ideas a tener en cuenta para el estilo de código y comentarios son:
+
+	\begin{itemize}
+	\item Cada clase debe tener una descripción, tanto de su función como de sus atributos. Incluirá también nombre del fichero, autor, versión y fecha.
+	\item Se deben detallar todas las relaciones de hererencia que se den.
+	\item En cada clase, primero aparecerán los métodos y al final los atributos.
+	\item Cada método debe tener una breve explicación sobre sus parámetros de entrada y, cuando proceda, el valor devuelto.
+	\item Todas las partes del código que sean confusas o complejas deben estar bien documentadas.
+	\item Sólo los métodos necesarios deben ser públicos. Por supuesto, salvo en situaciones contadas, los atributos serán privados.
+	\item Los comentarios en una línea se escriben así: \quad \texttt{// Comentario...}
+	\item Si un comentario ocupa más de una línes se escribirá así: 
+
+			\hspace {-0.33cm} \texttt{/*  \\
+			* \ Línea 1 comentario... \\
+			 * \ Línea 2 comentario... \\
+			%* \ Línea 3 comentario... \\
+			........................ \\
+			* \ Línea n comentario... \\
+			*/ }
+	\end{itemize}
+
+
+	\section{Estándar de verificación y prácticas}
+	
+	Para la verificación y validación, se utiliza el plan propuesto por IEEE. Éste es el IEEE Std. 1012-2004 Standard for Software Verification and Validation Plans.
 
 \newpage
 \mbox{}
@@ -205,7 +244,7 @@
 \newpage
 \mbox{}
 \thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
+\newpage  
 
 \chapter{ Prueba}%By Jaime
 	No se ha realizado ninguna prueba.
@@ -334,7 +373,7 @@
 	4.2 Requisitos mínimos de documentación 
 	4.3 Otra documentación
 
-%A LO MEJOR SE QUITA, COMO DIGA KIKE
+%IKER
 5. Estándares, prácticas, convenciones y métricas 
 	5.1 Propósito
 	5.2 Contenido
