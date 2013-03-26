@@ -95,11 +95,9 @@
 	\item Mecanismos de medición y generación de informes
 \end{itemize}	
 
-	(-Delinea el propósito específico y el alcance del plan	SQA.
+Las Revisiones Técnicas Formales serán la base de las correcciones de los documentos, y el principal elemento de garantía del software. En cada iteración del Proceso Unificado se producirán nuevas correcciones de los documentos existentes, nombradas según se ha visto en el apartado "Nombrado" del documento \texttt{Gestión de la Configuración}. Además, al finalizar cada iteración el proyecto pasa por una fase específica de correccion donde todos los miembros de  \PKT \ revisan cada documento.
 
-	- Lista los nombres de los elementos software cubiertos por el plan SQA y el uso de dichos elementos.
-		
-	- Determina la porción del ciclo de vida cubierta por el plan para cada elemento software.) Alguien sabe que carajo es esto?
+El control de la documentación ya ha sido comentado en el documento de \texttt{Gestión de la Configuración}	
 
 \newpage
 \mbox{}
@@ -108,6 +106,11 @@
 
 \chapter{ Documentos de referencia}
 	Co, esto se hace al final cuando este acabado el documento
+\begin{itemize}
+	\item Documento \texttt{Gestión de la Configuración}.
+IEEE Std 730 ™ -2002
+	
+\end{itemize}	
 	(- Proporciona una lista completa de cualquier documento referenciado en el plan o utilizado en su elaboración.)
 
 \newpage
@@ -143,7 +146,8 @@
 		y el actual documento, \texttt{Garantía de Calidad}.
 
 		Actualmente esta es toda la documentación existente, pero en el futuro se elaborará nueva documentación, 
-		como los manuales de usuario o la descripción del diseño del producto.\\
+		como los manuales de usuario o la descripción del diseño del producto.
+
 			En la primera entrega, los documentos \texttt{Casos de uso} y \texttt{Especificación de requisitos} fueron revisados por Gonzalo. 
 		La segunda entrega estaba formada por los documentos \texttt{Casos de uso}, \texttt{Especificación de requisitos}, \texttt{Plan de proyecto}, 
 		\texttt{Gestión de Riesgos} y \texttt{Estimación del proyecto} que fueron revisados por otros grupos.
@@ -200,7 +204,7 @@
 
 	\section{Estándar de código y comentarios}
 	
-	No se utiliza ningún estándar en concreto para ésta parte, sólo se aplican los conocimientos obtenidos en el estudio de la programación y los algorítmos. Se debe recordar que estamos trabajando con Java, un lenguaje imperativo orientado a objetos. Algunas ideas a tener en cuenta para el estilo de código y comentarios son:
+	No se utiliza ningún estándar en concreto para ésta parte, sólo se aplican los conocimientos obtenidos en el estudio de la programación y los algoritmos. Se debe recordar que estamos trabajando con Java, un lenguaje imperativo orientado a objetos. Algunas ideas a tener en cuenta para el estilo de código y comentarios son:
 
 	\begin{itemize}
 	\item Cada clase debe tener una descripción, tanto de su función como de sus atributos. Incluirá también nombre del fichero, autor, versión y fecha.
@@ -308,10 +312,10 @@
 \newpage
 
 \chapter{ Control de proveedor}
-	(- Determina las técnicas para garantizar que el
-	software proporcionado por proveedores externos
-	cumple sus requisitos.
-	- También es aplicable a código heredado.)
+De momento el único software que será proporcionado por proveedores externos serán las bases de datos contra las que trabaja KIKE- Hostelería ®. Dado que el proyecto no se ha materializado, no hemos tenido la necesidad de subcontratar a una empresa para la programacion de las susodichas bases de datos.
+ 
+	%(- Determina las técnicas para garantizar que el software proporcionado por proveedores externos 				cumple sus requisitos.
+%	- También es aplicable a código heredado.)
 
 \newpage
 \mbox{}
@@ -319,11 +323,16 @@
 \newpage
 
 \chapter{ Colección de registros, mantenimiento y conservación}
-	(- Identifica la documentación SQA que no se debe
-	tirar tras acabar el proceso.
-	- Determina los métodos y medios para ensamblar,
-	archivar, salvaguardar y mantener la documentación.
-	- Fija el periodo de conservación de la información.)
+
+	Como mediante la Garantía de Calidad software se mejora la documentación del proyecto, ésta debe mantenerse dentro de la propia documentación, pues será de gran utilidad una vez acabado el proceso si se desea comprobar la fiabilidad y pruebas realizadas al software. En nuestro caso, esto cobra especial relevancia en el campo de la seguridad del programa, puesto que lo único que diferencia a los distintos tipos de empleados es el nombre de usuario y la contraseña. Por tanto, es vital aseverar que la seguridad de KIKE- Hostelería ® es total, y las pruebas que lo demuestran deben salvaguardarse una vez acabado el proceso.\\
+
+El proyecto, al trabajar on la herramienta Google Code, está almacenado en los servidores de Google Inc., aunque cada miembro de \PKT \ posee una copia en su ordenador para prevenir un posible fallo de los servidores anteriormente mencionados. Una vez acabado el proceso, se elaborará un documento que contenga toda la información relativa a este, incluyendo todos los documentos que se han producido durante la realización del proyecto. \\
+
+Los registros de cambios en la documentación se conservarán como testimonio del avance gradual del proyecto, permitiendo a su lector conocer qué pasos se siguieron para el refinamiento de los documentos englobados en la entrega final.
+
+	%(- Identifica la documentación SQA que no se debe tirar tras acabar el proceso.
+	% - Determina los métodos y medios para ensamblar, archivar, salvaguardar y mantener la documentación.
+	% - Fija el periodo de conservación de la información.)
 
 \newpage
 \mbox{}
@@ -331,10 +340,9 @@
 \newpage
 
 \chapter{ \hspace{0.25cm}Formación}
-
-	La formación que han recibido los integrantes del grupo de desarrollo para satisfacer las necesidades del plan SQA, es la de la asignatura de Ingeniería del Software de la UCM, impartida por Gonzalo Méndez. En ella se ha aprendido el manejo de varias herramientas de la ingeniería del software, como el ArgoUML, el Tortoise SVN, el Microsoft Project o el COCOMO II. 
-
-	En cuanto al proceso de la ingeniería del software, se les ha enseñado cómo hacer un desarrollo de software que se ajuste a los estándares más utilizados (los de IEEE), y cómo desarrollar un software de calidad que se ajuste a los requisitos y que satisfaga al cliente. Esta parte de la formación está enfocada al Proceso Unificado (UP o RUP), modelo que se sigue para el desarrollo de la aplicación. A partir de ahí, se aprende cómo identificar y describir requisitos y casos de uso que serán la base del software. En esta línea, se aprende cómo identificar riesgos, cómo estimar diversos aspectos relativos al proyecto. Finalmente, se instruye en cómo revisar todos los elementos que se han ido generando y se completa los conocimientos sobre el UP, el UML y algunos patrones de diseño.
+	La formación que han recibido los integrantes del grupo de desarrollo para satisfacer las necesidades del plan SQA, es la de la asignatura Ingeniería del Software de la Universidad Complutense de Madrid, impartida por Gonzalo Méndez. En ella se les ha enseñado el manejo
+	de varias herramientas de ingeniería del software, como ArgoUML, Microsoft Project o COCOMO II. También han sido instruidos acerca de la realización de un desarrollo de software que se ajuste a los estándares más utilizados, y cómo
+	 desarrollar un software de calidad que se ajuste a los requisitos y que satisfaga al cliente.\\
 	
 	Como complemento se han recibido clases de programación orientada a objetos en Java, lo que permitirá el desarrollo de la aplicación en este lenguaje. Para el desarrollo de código se utilizará el entorno de Eclipse, también introducido en la UCM, en la asignatura de Tecnología de Programación.
 
