@@ -202,11 +202,14 @@
 			\end {itemize}
 		\end{itemize}
 
-	
-	\hspace{-0.6 true cm}	
-		\scalebox{0.5}{\includegraphics{Empleados}}
-		
-		
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{empleados.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con empleados}
+	\end{figure}
+	\newpage
+
 %ACCEDER A LA FICHA DE UN EMPLEADO
 
 	\subsection{Ver ficha de empleado}		
@@ -252,6 +255,14 @@
 			\end {itemize}
 		\end{itemize}
 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Cliente.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con clientes}
+	\end{figure}
+
+
 %VER FICHA DE CLIENTE
 
 	\subsection{Ver ficha de cliente}
@@ -286,9 +297,6 @@
 
 
 %AÑADIR CLIENTE
-	\hspace{-1.2 true cm}	
-	\scalebox{0.9}{\includegraphics{Cliente}} 
-	\subsection{Añadir cliente}
 		
 			\begin{itemize}
 			\item \textbf{Actor:} Jefe, recepcionista, maître.
@@ -322,10 +330,17 @@
 
 
 	% CASOS DE USO DE RESTAURANTE 
+
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Restaurante1.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con el restaurante (parte 1)}
+	\end{figure}
+
 		
 %RESERVAR MESA
-		%\hspace{-2.4 true cm}	POR AHORA QUITAMOS LA IMAGEN PORQUE SE VE PEQUEÑA
-		%\scalebox{0.65}{\includegraphics{Restaurante}}
+
 		\subsection{Reservar mesa} 
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître, recepcionista, chef, cocineros.
@@ -426,6 +441,13 @@
 			\end {itemize}
 		\end {itemize}
 		
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Restaurante2.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con el restaurante (parte 2)}
+	\end{figure}
+
 %MODIFICAR UN PEDIDO
 		
 	\subsection{Editar comanda}
@@ -547,11 +569,16 @@
 			\end {itemize}
 		\end {itemize}
 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Habitaciones.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con el hotel}
+	\end{figure}
+
 
 %VER HABITACIONES
-	
-	\hspace{-1.7 true cm}
-	\scalebox{0.8}{\includegraphics{Habitaciones}}
+
 	\subsection{Ver habitación}
 		\begin{itemize}
 			\item \textbf{Actor:} Recepcionista, maître, jefe.
@@ -680,9 +707,15 @@
 
 %%%%LIMPIEZA (CASOS DE USO)
 
+	\begin{figure}[!h]
+		\centering
+		%\includegraphics[scale=0.5]{OrganizacionLimpieza.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con empleados}
+	\end{figure}
+
 %ORGANIZAR TAREAS DE LIMPIEZA		
-	\hspace{0.6 true cm}
-	\scalebox{0.9}{\includegraphics{OrganizacionLimpieza}}
+
 	\subsection{Organizar tareas de limpieza}
 			\begin{itemize}
 			\item \textbf{Actor: }Jefe de limpieza.
@@ -755,8 +788,13 @@
 
 %CONSULTAR TAREAS
 
-	\hspace{1 true cm}
-	\scalebox{0.9}{\includegraphics{Limpieza}} 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Limpieza.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con la limpieza, tanto para el jefe de limpieza como para el personal de limpieza}
+	\end{figure}
+
 	\subsection{Consultar tareas de limpieza}				
 			\begin{itemize}
 				\item \textbf{Actor:} Personal de limpieza.
@@ -835,9 +873,6 @@
 			\end {itemize}
 
 %CONSULTAR INCIDENCIAS (MANTENIMIENTO)
-		\hspace{0.5 true cm}
-		\scalebox{0.9}{\includegraphics{Mantenimiento}} 
-		\subsection{Consultar incidencias de manteniminento}
 			\begin{itemize}
 			\item \textbf{Actor: }Encargado de mantenimiento.
 			\item \textbf{Propósito: }Consultar incidencias de mantenimiento, y tachar de la
@@ -859,9 +894,14 @@
 		\end {itemize}
 		
 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Notas.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso que comparten todos los actores}
+	\end{figure}
+
 %AÑADIR NOTA
-	\hspace{1 true cm}	
-	\scalebox{0.9}{\includegraphics{Notas}}
 	\subsection{Añadir nota} 
 			\begin{itemize}
 			\item \textbf{Actor:} Todos.
@@ -1275,10 +1315,15 @@
 			\item \textbf{Incluye ($<<$include$>>$):} Ver habitación.
 		\end {itemize}
 
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Contabilidad.png}
+		%\vspace{ true cm}
+		\caption{Diagrama de casos de uso relacionados con la contabilidad de la empresa}
+	\end{figure}
+
 %VER CUENTA DIARIA DE LA CAJA DE RECEPCIÓN.
 	
-	\hspace{-2 true cm}
-	\scalebox{0.8}{\includegraphics{Contabilidad}} 
 	\subsection{Ver cuenta diaria de la caja de recepción}
 		\begin{itemize}
 			\item \textbf{Actor:} Jefe.
