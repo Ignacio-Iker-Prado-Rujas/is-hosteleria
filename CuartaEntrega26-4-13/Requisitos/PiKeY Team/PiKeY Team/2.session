@@ -1,11 +1,12 @@
 window_sizes 1024 706 300 900 557 75
 diagrams
-  active  classdiagram_ref 128005 // ModeloDeDominio
-    974 811 200 4 1080 0
+  active  objectdiagram_ref 128130 // diagramasComunicacion
+    570 445 100 4 0 0
 end
 show_stereotypes
-selected class_ref 128005 // Restaurante
 open
-  usecaseview_ref 128005 // ModeloDominio
+  
+  package_ref 128133 // Requisitos
+  class_ref 137090 // interfaz
 end
 end

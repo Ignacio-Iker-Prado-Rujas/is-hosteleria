@@ -1,7 +1,7 @@
 format 76
 "PiKeY Team"
-  revision 1
-  modified_by 5 "hlocal"
+  revision 2
+  modified_by 2 "hlocal"
 
 
   
@@ -39,4 +39,6 @@ format 76
   mark_for_import
   
   package_ref 128133 // Requisitos
+
+  package_ref 128130 // comunicacion
 end
