@@ -1,7 +1,7 @@
-window_sizes 1280 962 300 900 811 77
+window_sizes 1024 706 300 900 557 75
 diagrams
   active  classdiagram_ref 128005 // ModeloDeDominio
-    974 811 170 4 0 0
+    974 811 200 4 1080 0
 end
 show_stereotypes
 selected class_ref 128005 // Restaurante
