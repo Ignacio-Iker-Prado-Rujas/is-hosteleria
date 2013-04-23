@@ -1,6 +1,6 @@
 format 76
 "Requisitos" // Requisitos
-  revision 2
+  revision 4
   modified_by 2 "hlocal"
   // class settings
   //class diagram settings
@@ -355,6 +355,10 @@ format 76
 	  b role_name "" private
 	    classrelation_ref 130946 // <association>
       end
+
+      classrelation 141826 // <association>
+	relation_ref 138498 // <association>
+      end
     end
 
     class 128386 "Comanda"
@@ -535,6 +539,14 @@ format 76
       classrelation 131458 // <association>
 	relation_ref 129794 // <association>
       end
+
+      classrelation 141698 // <association>
+	relation 138498 ----
+	  a role_name "" private
+	    classrelation_ref 141698 // <association>
+	  b role_name "" private
+	    classrelation_ref 141826 // <association>
+      end
     end
 
     class 129282 "EncargosDeLimpieza"
@@ -604,6 +616,9 @@ format 76
       idl_decl ""
       explicit_switch_type ""
       
+      classrelation 148482 // <association>
+	relation_ref 145026 // <association>
+      end
     end
 
     class 129794 "LibroMayor"
@@ -760,12 +775,20 @@ format 76
       idl_decl ""
       explicit_switch_type ""
       
-      classrelation 135042 // <association>
+      classrelation 135042 // notifican (<association>)
 	relation 131970 ----
-	  a role_name "" private
-	    classrelation_ref 135042 // <association>
+	  a role_name "notifican" private
+	    classrelation_ref 135042 // notifican (<association>)
 	  b role_name "" private
 	    classrelation_ref 135170 // <association>
+      end
+
+      classrelation 148354 // <association>
+	relation 145026 ----
+	  a role_name "" private
+	    classrelation_ref 148354 // <association>
+	  b role_name "" private
+	    classrelation_ref 148482 // <association>
       end
     end
   end
