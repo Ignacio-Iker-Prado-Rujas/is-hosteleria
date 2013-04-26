@@ -1,0 +1,16 @@
+format 76
+
+classinstance 128002 class_ref 128258 // PestanaRestaurante
+ name ""  xyz 121 124 2000
+classinstance 128130 class_ref 128770 // Reservas
+ name ""  xyz 331 122 2000
+classinstance 128258 class_ref 128898 // ListaComandas
+ name ""  xyz 312 31 2000
+classinstance 128386 class_ref 129026 // Factura
+ name ""  xyz 524 116 2000
+linkcanvas 128514 decenter_end 500
+  from ref 128002 z 2001 to ref 128130
+dirscanvas 128642 z 1000 linkcanvas_ref 128514
+  show_full_operations_definition default show_hierarchical_rank default drawing_language default show_msg_context default
+no_msg
+end
