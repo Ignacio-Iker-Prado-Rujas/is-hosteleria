@@ -1,18 +1,18 @@
-window_sizes 1024 706 300 900 682 82
+window_sizes 1280 738 300 900 682 82
 diagrams
   collaborationdiagram_ref 128386 // diagramaGenerarFactura
     711 592 100 4 0 0
   collaborationdiagram_ref 128514 // diagramaEditarDistribucion
     711 592 100 4 0 0
-  collaborationdiagram_ref 135298 // diagramaTomarComanda
-    570 440 100 4 0 0
+  active  collaborationdiagram_ref 135298 // diagramaTomarComanda
+    974 582 100 4 0 0
   collaborationdiagram_ref 128258 // diagramaModificarMenu
     570 440 100 4 36 0
-  active  collaborationdiagram_ref 135426 // diagramaEliminarComanda
+  collaborationdiagram_ref 135426 // diagramaEliminarComanda
     718 550 100 4 0 0
 end
 show_stereotypes
-selected collaborationdiagram_ref 135426 // diagramaEliminarComanda
+selected collaborationdiagram_ref 135298 // diagramaTomarComanda
 open
   usecase_ref 128130 // modificarMenu
   usecase_ref 128258 // generarFactura

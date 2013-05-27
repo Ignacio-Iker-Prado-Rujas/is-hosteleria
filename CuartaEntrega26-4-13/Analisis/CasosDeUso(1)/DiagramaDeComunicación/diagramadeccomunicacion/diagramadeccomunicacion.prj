@@ -1,6 +1,6 @@
 format 76
 "diagramadeccomunicacion"
-  revision 4
+  revision 5
   modified_by 2 "hlocal"
 
 
@@ -385,14 +385,16 @@ ${members}}
       end
 
       class 135938 "pantallaCocinero"
-	visibility package 
+	visibility package stereotype "boundary"
 	cpp_decl ""
 	java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
 ${members}}
 "
 	php_decl ""
 	python_2_2 python_decl ""
-	idl_decl ""
+	idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
 	explicit_switch_type ""
 	
       end
