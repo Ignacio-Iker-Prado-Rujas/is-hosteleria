@@ -1,18 +1,24 @@
-window_sizes 1200 896 300 900 682 82
+window_sizes 1024 706 300 900 682 82
 diagrams
   collaborationdiagram_ref 128386 // diagramaGenerarFactura
     711 592 100 4 0 0
   collaborationdiagram_ref 128514 // diagramaEditarDistribucion
     711 592 100 4 0 0
-  active  collaborationdiagram_ref 128642 // diagramaVerMenu
-    711 592 100 4 34 0
+  collaborationdiagram_ref 135298 // diagramaTomarComanda
+    570 440 100 4 0 0
+  collaborationdiagram_ref 128258 // diagramaModificarMenu
+    570 440 100 4 36 0
+  active  collaborationdiagram_ref 135426 // diagramaEliminarComanda
+    718 550 100 4 0 0
 end
 show_stereotypes
-selected usecaseview_ref 128258 // diagramasComunicacion
+selected collaborationdiagram_ref 135426 // diagramaEliminarComanda
 open
   usecase_ref 128130 // modificarMenu
   usecase_ref 128258 // generarFactura
   usecase_ref 128386 // editarDistribucionRestaurante
   usecase_ref 128514 // verMenu
+  usecase_ref 135042 // tomarComanda
+  usecase_ref 135170 // eliminarComanda
 end
 end
