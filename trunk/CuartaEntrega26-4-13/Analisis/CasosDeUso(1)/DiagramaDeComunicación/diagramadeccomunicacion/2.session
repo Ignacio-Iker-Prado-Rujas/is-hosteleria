@@ -1,7 +1,14 @@
 window_sizes 1280 962 300 900 682 82
+diagrams
+  active  collaborationdiagram_ref 128386 // diagramaGenerarFactura
+    775 644 100 4 0 0
+end
 show_stereotypes
-selected usecase_ref 128018 // anularReservaDelRestaurante
+selected collaborationdiagram_ref 142210 // diagramaEditarComanda
 open
-  usecaseview_ref 128258 // diagramasComunicacion
+  usecase_ref 128258 // generarFacturaDelRestaurante
+  usecase_ref 141698 // reservarMesa
+  usecase_ref 141826 // verDistribucionYNumeroDeMesasDelComedor
+  usecase_ref 141954 // editarComanda
 end
 end
