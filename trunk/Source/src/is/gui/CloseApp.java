@@ -36,7 +36,7 @@ public class CloseApp implements ActionListener {
 	
 	public static void quitApp(){
 		int seleccion = JOptionPane.showOptionDialog(null,
-				null, "Exit WALL·E",
+				null, "Desea salir de la aplicación KIKE HOSTELERIA?",
 				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
 				null, 
 					new Object[] { "YES", "NO"},"null");
