@@ -3,13 +3,9 @@ package is.gui;
 import is.Usuario;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
-
 import javax.swing.*;
 
 
@@ -75,7 +71,7 @@ public class UserWindow extends JFrame  {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (!user.getText().isEmpty()){
-							/*if(passwordCorrecto()) */mostrarRestaurante();
+							if(registroCorrecto()) mostrarRestaurante();
 							/*
 							if (controler.buscaCliente(user.getText())){
 								if (controler.getCliente(user.getText()).passWord(password.getPassword())){
@@ -126,12 +122,24 @@ public class UserWindow extends JFrame  {
 		this.add(rest);
 		
 	}
-	private boolean passwordCorrecto(){
+	private boolean registroCorrecto(){
 		boolean b = false;
 	//	for (Usuario u : usuarios)
-			for (int i = 0; i< usuarios.length && !b; i++)
-			if (user.getText().equals(usuarios[i].getId()) && password.getPassword().equals(usuarios[i].getPassword()))  b = true;
+			for (int i = 0; i< usuarios.length && !b; i++){
+				if (user.getText().equals(usuarios[i].getId()) && passwordCorrecto(password.getPassword(), usuarios[i].getPassword()))  b = true;
+			}
 		return b;
+	}
+	private boolean passwordCorrecto(char[] p1, char[] p2){
+		boolean b = true;
+		if (p1.length != p2.length) return false;
+		else for (int i = 0; i < p1.length && b; i++){
+			if (p1[i] != p2[i]) b = false;
+	
+		}
+		return b;
+		
+		
 	}
 
 	protected ImageIcon createImageIcon(String path, String description) {
