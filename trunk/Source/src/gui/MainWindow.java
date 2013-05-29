@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,9 +15,9 @@ public class MainWindow extends JFrame  {
 	
 	
 	public MainWindow(){
-		super("RESTAURANTE");
+		super("KIKE HOSTELERIA S.A.");
 		this.setSize(1080, 720);
-		this.setLayout(new BorderLayout(10, 10));
+		this.setLayout(new GridLayout(1,2));
 		menuBar = new JMenuBar();
 		JMenu menu = new JMenu("File");
 		menuBar.add(menu);
