@@ -1,0 +1,31 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {I} Prop\IeC {\'o}sito del SQA}{2}{chapter.1}
+\contentsline {chapter}{\numberline {II} Documentos de referencia}{5}{chapter.2}
+\contentsline {chapter}{\numberline {III} Gesti\IeC {\'o}n}{7}{chapter.3}
+\contentsline {section}{\numberline {1} Descripci\IeC {\'o}n general}{7}{section.3.1}
+\contentsline {section}{\numberline {2}Organizaci\IeC {\'o}n del documento}{7}{section.3.2}
+\contentsline {section}{\numberline {3} Proceso de gesti\IeC {\'o}n}{7}{section.3.3}
+\contentsline {section}{\numberline {4} Planes de procesos t\IeC {\'e}cnicos}{8}{section.3.4}
+\contentsline {section}{\numberline {5} Planes adicionales}{8}{section.3.5}
+\contentsline {chapter}{\numberline {IV} Documentaci\IeC {\'o}n}{10}{chapter.4}
+\contentsline {section}{\numberline {1}Prop\IeC {\'o}sito}{10}{section.4.1}
+\contentsline {section}{\numberline {2}Requisitos m\IeC {\'\i }nimos de documentaci\IeC {\'o}n}{11}{section.4.2}
+\contentsline {section}{\numberline {3}Otra documentaci\IeC {\'o}n}{11}{section.4.3}
+\contentsline {chapter}{\numberline {V} Est\IeC {\'a}ndares, pr\IeC {\'a}cticas, convenciones y m\IeC {\'e}tricas}{13}{chapter.5}
+\contentsline {section}{\numberline {1}Prop\IeC {\'o}sito}{13}{section.5.1}
+\contentsline {section}{\numberline {2}Est\IeC {\'a}ndar de documentaci\IeC {\'o}n}{13}{section.5.2}
+\contentsline {section}{\numberline {3}Est\IeC {\'a}ndar de c\IeC {\'o}digo y comentarios}{14}{section.5.3}
+\contentsline {section}{\numberline {4}Est\IeC {\'a}ndar de verificaci\IeC {\'o}n y pr\IeC {\'a}cticas}{14}{section.5.4}
+\contentsline {chapter}{\numberline {VI} Revisiones del software}{16}{chapter.6}
+\contentsline {section}{\numberline {1}Prop\IeC {\'o}sito}{16}{section.6.1}
+\contentsline {section}{\numberline {2}Requisitos m\IeC {\'\i }nimos}{16}{section.6.2}
+\contentsline {section}{\numberline {3}Otras revisiones y auditorias}{16}{section.6.3}
+\contentsline {chapter}{\numberline {VII} Prueba}{18}{chapter.7}
+\contentsline {chapter}{\numberline {VIII} \hspace {0.25cm}Informe de problemas y acci\IeC {\'o}n correctiva}{20}{chapter.8}
+\contentsline {chapter}{\numberline {IX} Herramientas, t\IeC {\'e}cnicas y metodolog\IeC {\'\i }as}{23}{chapter.9}
+\contentsline {chapter}{\numberline {X} Colecci\IeC {\'o}n de registros, mantenimiento y conservaci\IeC {\'o}n}{25}{chapter.10}
+\contentsline {chapter}{\numberline {XI} \hspace {0.25cm}Formaci\IeC {\'o}n}{27}{chapter.11}
+\contentsline {chapter}{\numberline {XII} \hspace {0.25cm}Gesti\IeC {\'o}n del riesgo}{29}{chapter.12}
+\contentsline {chapter}{\numberline {XIII} Procedimiento de cambio e historia del plan SQA}{31}{chapter.13}
+\contentsline {section}{\numberline {1}Procedimientos de modificaci\IeC {\'o}n del SQAP y de mantenimiento del historial de cambios}{31}{section.13.1}
+\contentsline {section}{\numberline {2}Historial de cambios}{32}{section.13.2}
