@@ -1,6 +1,6 @@
 package is.gui;
 
-import is.restaurante.Usuario;
+import is.Usuario;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
