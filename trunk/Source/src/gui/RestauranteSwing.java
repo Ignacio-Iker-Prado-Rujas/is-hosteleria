@@ -8,7 +8,8 @@ import javax.swing.JPanel;
 public class RestauranteSwing extends JPanel{
 
 	public RestauranteSwing(){
-		this.setLayout(new GridLayout());
+		super();
+		this.setLayout(new GridLayout(3,3));
 		this.add(new JButton("Realizar reserva"));
 		this.add(new JButton("Generar/modificar pedido"));
 		this.add(new JButton("Ver/anular reserva"));
