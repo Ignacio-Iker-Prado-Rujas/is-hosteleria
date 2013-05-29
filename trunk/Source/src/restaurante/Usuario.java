@@ -1,3 +1,4 @@
+package restaurante;
 
 public class Usuario {
 
