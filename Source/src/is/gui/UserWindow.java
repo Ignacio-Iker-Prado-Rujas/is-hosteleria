@@ -1,5 +1,7 @@
 package is.gui;
 
+import is.restaurante.Usuario;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -8,7 +10,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import restaurante.Usuario;
 
 
 @SuppressWarnings("serial")
