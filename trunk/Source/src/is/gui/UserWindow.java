@@ -34,6 +34,7 @@ public class UserWindow extends JFrame  {
 			
 		});
 		this.setJMenuBar(menuBar);	
+		
 		ImageIcon kike = createImageIcon("images/kikeHost2.png", "KIKE");
 		logo = new JLabel(kike);
 		logo.setSize(20, 20);
@@ -66,7 +67,7 @@ public class UserWindow extends JFrame  {
 		contrasena.add(password);
 		front.add(usuario);
 		front.add(contrasena);
-		
+
 		front.add(new JButton("Entrar") {
 			{
 				this.addActionListener(new ActionListener() {
@@ -75,7 +76,15 @@ public class UserWindow extends JFrame  {
 					public void actionPerformed(ActionEvent e) {
 						if (user.getText().isEmpty()){
 							if(passwordCorrecto()) mostrarRestaurante();
+							/*
+							if (controler.buscaCliente(user.getText())){
+								if (controler.getCliente(user.getText()).passWord(password.getPassword())){
+									password.setText(null);
+									controller.iniciaSesion(user.getText());
+								}else showMessage("Usuario o contraseña incorrectos");
 								
+							}else showMessage("Usuario o contraseña incorrectos");
+							*/
 						}
 						
 					}
@@ -87,8 +96,10 @@ public class UserWindow extends JFrame  {
 
 		});
 		this.add(front);
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		RestauranteSwing rest = new RestauranteSwing();
 
-			// this.removeAll();
 		if (true) { //Si el login es correcto (hay que implementar eso, se borra todo y se muestra la pantalla del restaurante
 
 		}
