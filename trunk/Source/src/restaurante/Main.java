@@ -1,6 +1,6 @@
 package restaurante;
 
-import gui.MainWindow;
+import gui.UserWindow;
 
 public class Main {
 
@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		MainWindow window = new MainWindow();
+		UserWindow window = new UserWindow();
 		window.setVisible(true);
 	}
 

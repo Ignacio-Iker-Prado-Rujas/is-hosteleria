@@ -8,13 +8,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import restaurante.Usuario;
+
 
 @SuppressWarnings("serial")
-public class MainWindow extends JFrame  {
+public class UserWindow extends JFrame  {
 	
 	
 	
-	public MainWindow(){
+	public UserWindow(){
 		super("KIKE HOSTELERIA S.A.");
 		this.setSize(800, 600);
 		this.setLayout(new BorderLayout());
@@ -73,6 +75,9 @@ public class MainWindow extends JFrame  {
 		}
 
 	}
+	private void passwordCorrecto(){
+		
+	}
 
 	protected ImageIcon createImageIcon(String path, String description) {
 		java.net.URL imgURL = getClass().getResource(path);
@@ -89,5 +94,18 @@ public class MainWindow extends JFrame  {
 	JTextField user;
 	JPasswordField password;
 	Usuario[] usuarios;
+	
+	//Ideas:
+	/**
+	 * Una clase usuario general de la que hereden las subclases jefe, chef, camarero... aunque solo implementaremos chef.
+	 * Cada usuario tendra nombre y contraseña
+	 * Para ver si el inicio es valido, recorre los usuarios viendo si su nombre encaja con el introducido
+	 * En caso afirmativo se comprueba la contraseña
+	 * Si todo encaja, borra los paneles y pone el panel correspondiente al tipo de empleado
+	 * En este caso el panel de restaurante con sus botones y tal
+	 * 	
+	 * A implementar!
+	 */
+	
 	
 }
