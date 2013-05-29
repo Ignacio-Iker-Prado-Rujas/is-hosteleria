@@ -47,28 +47,33 @@ public class MainWindow extends JFrame  {
 		JLabel textoUsuario = new JLabel("USUARIO");
 		textoUsuario.setOpaque(true);
 		usuario.add(textoUsuario, BorderLayout.NORTH);
-		user = new JTextField();
+		user = new JTextField(10);
 		usuario.add(user);
 		
 		JLabel textoContrasena = new JLabel("CONTRASEÑA");
 		textoUsuario.setOpaque(true);
 		contrasena.add(textoContrasena, BorderLayout.NORTH);
-		password = new JPasswordField();
+		password = new JPasswordField(10);
 		password.getPassword();
 		
 		contrasena.add(password);
 		front.add(usuario);
 		front.add(contrasena);
+		
 		front.add(new JButton("Entrar"));
 		this.add(front);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		RestauranteSwing rest = new RestauranteSwing();
-	//	this.removeAll();
-	//	this.remove(logo);
-	//	this.add(rest);
-		
+		// this.removeAll();
+		if (true) { //Si el login es correcto (hay que implementar eso, se borra todo y se muestra la pantalla del restaurante
+			this.remove(logo);
+			this.remove(front);
+			this.setSize(400,300);
+			this.add(rest);
+		}
+
 	}
-	
+
 	protected ImageIcon createImageIcon(String path, String description) {
 		java.net.URL imgURL = getClass().getResource(path);
 		if (imgURL != null) {
@@ -83,5 +88,6 @@ public class MainWindow extends JFrame  {
 	private JMenuBar menuBar;
 	JTextField user;
 	JPasswordField password;
+	Usuario[] usuarios;
 	
 }
