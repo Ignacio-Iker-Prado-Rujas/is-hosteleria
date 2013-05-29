@@ -1,4 +1,4 @@
-package is.restaurante;
+package is;
 
 import is.gui.UserWindow;
 
