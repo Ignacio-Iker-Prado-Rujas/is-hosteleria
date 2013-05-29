@@ -74,7 +74,7 @@ public class UserWindow extends JFrame  {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						if (user.getText().isEmpty()){
+						if (!user.getText().isEmpty()){
 							if(passwordCorrecto()) mostrarRestaurante();
 							/*
 							if (controler.buscaCliente(user.getText())){
