@@ -30,7 +30,7 @@ public class UserWindow extends JFrame  {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//gameController.communicateInstruction(new QuitInstruction());			
+						
 			}
 			
 		});
@@ -42,11 +42,16 @@ public class UserWindow extends JFrame  {
 		this.add(logo, BorderLayout.NORTH);
 		JPanel front = new JPanel();
 		front.setLayout(new GridLayout(3,1));
+		//front.setLayout(new FlowLayout(3));
 		JPanel usuario = new JPanel();
 
 		usuario.setLayout(new GridLayout(2,1));
+		//usuario.setLayout(new FlowLayout(2));
+		
 		JPanel contrasena = new JPanel();
 		contrasena.setLayout(new GridLayout(2,1));
+		//contrasena.setLayout(new FlowLayout(2));
+		
 		JLabel textoUsuario = new JLabel("USUARIO");
 		textoUsuario.setOpaque(true);
 		usuario.add(textoUsuario, BorderLayout.NORTH);
