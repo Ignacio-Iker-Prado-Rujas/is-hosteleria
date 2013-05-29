@@ -6,7 +6,7 @@ public class Usuario {
 
 	public Usuario(String nombre, String contrasena){
 		this.id = nombre;
-		this.password = contrasena;
+		this.password = contrasena.toCharArray();
 	}
 	/**
 	 * @param args
@@ -22,13 +22,13 @@ public class Usuario {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPassword() {
+	public char[] getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
+	public void setPassword(char[] password) {
 		this.password = password;
 	}
 	private String id;
-	private String password;
+	private char[] password;
 
 }
