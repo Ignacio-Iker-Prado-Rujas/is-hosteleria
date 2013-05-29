@@ -16,8 +16,8 @@ public class MainWindow extends JFrame  {
 	
 	public MainWindow(){
 		super("KIKE HOSTELERIA S.A.");
-		this.setSize(1080, 720);
-		this.setLayout(new GridLayout(1,2));
+		this.setSize(400, 300);
+		this.setLayout(new BorderLayout());
 		menuBar = new JMenuBar();
 		JMenu menu = new JMenu("File");
 		menuBar.add(menu);
@@ -32,32 +32,37 @@ public class MainWindow extends JFrame  {
 			
 		});
 		this.setJMenuBar(menuBar);	
-		ImageIcon kike = createImageIcon("images/kikeHost.png", "KIKE");
+		ImageIcon kike = createImageIcon("images/kikeHost2.png", "KIKE");
 		JLabel logo = new JLabel(kike);
-		logo.setSize(20, 20);
-	//	this.add(logo, BorderLayout.NORTH);
+	//	logo.setSize(20, 20);
+
+		this.add(logo, BorderLayout.NORTH);
 		
 		JPanel usuario = new JPanel();
 		usuario.setLayout(new FlowLayout());
 		JPanel contrasena = new JPanel();
 		
-		JTextArea textoUsuario = new JTextArea("USUARIO");
-		textoUsuario.setEnabled(false);
+		JLabel textoUsuario = new JLabel("USUARIO");
 		textoUsuario.setOpaque(true);
 		usuario.add(textoUsuario, BorderLayout.NORTH);
 		user = new JTextField();
 		usuario.add(user);
 		
-		JTextArea textoContrasena = new JTextArea("CONTRASEÑA");
-		textoContrasena.setEnabled(false);
+		JLabel textoContrasena = new JLabel("CONTRASEÑA");
 		textoUsuario.setOpaque(true);
 		contrasena.add(textoContrasena, BorderLayout.NORTH);
-		password = new JTextField();
+		password = new JPasswordField();
+		password.getPassword();
+		
 		contrasena.add(password);
 		this.add(usuario, BorderLayout.CENTER);
 	//	this.add(contrasena);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+		RestauranteSwing rest = new RestauranteSwing();
+	//	this.removeAll();
+		this.remove(logo);
+	//	this.add(rest);
+		
 	}
 	
 	protected ImageIcon createImageIcon(String path, String description) {
@@ -72,8 +77,7 @@ public class MainWindow extends JFrame  {
 	
 
 	private JMenuBar menuBar;
-	private JPanel[] usuarios;
 	JTextField user;
-	JTextField password;
+	JPasswordField password;
 	
 }
