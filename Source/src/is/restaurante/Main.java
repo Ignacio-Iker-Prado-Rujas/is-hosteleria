@@ -1,6 +1,6 @@
-package restaurante;
+package is.restaurante;
 
-import gui.UserWindow;
+import is.gui.UserWindow;
 
 public class Main {
 
