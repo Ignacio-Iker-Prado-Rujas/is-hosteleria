@@ -1,5 +1,7 @@
 package is.gui;
 
+import is.restaurante.Restaurante;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +15,7 @@ import javax.swing.JPanel;
 
 public class RestauranteSwing extends JPanel{
 
+	@SuppressWarnings("serial")
 	public RestauranteSwing(){
 		super();
 		this.setLayout(new GridLayout(3,3));
@@ -35,7 +38,8 @@ public class RestauranteSwing extends JPanel{
 						JFrame marco = new JFrame();
 						marco.setVisible(true);
 						//no se por que cojones no funciona: marco.setDefaultCloseOperation(EXIT_ON_CLOSE);
-						marco.add(marco);
+						marco.add(fotoMesas);
+						marco.setSize(620, 475);
 
 					}
 
@@ -44,8 +48,8 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		this.add(new JButton("Distribución mesas"));
-		
+	//	this.add(new JButton("Distribución mesas"));
+		this.add(botones[4]);
 		this.add(new JButton("Generar factura"));
 		this.add(new JButton("Cantidad existencias"));
 		this.add(new JButton("Ver/modificar menú"));
@@ -64,4 +68,5 @@ public class RestauranteSwing extends JPanel{
 		}
 	}
 	private JButton[] botones;
+	private Restaurante restaurante;
 }
