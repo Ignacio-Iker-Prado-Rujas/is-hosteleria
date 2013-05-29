@@ -16,7 +16,7 @@ public class MainWindow extends JFrame  {
 	
 	public MainWindow(){
 		super("KIKE HOSTELERIA S.A.");
-		this.setSize(400, 300);
+		this.setSize(800, 600);
 		this.setLayout(new BorderLayout());
 		menuBar = new JMenuBar();
 		JMenu menu = new JMenu("File");
@@ -34,14 +34,16 @@ public class MainWindow extends JFrame  {
 		this.setJMenuBar(menuBar);	
 		ImageIcon kike = createImageIcon("images/kikeHost2.png", "KIKE");
 		JLabel logo = new JLabel(kike);
-	//	logo.setSize(20, 20);
+		logo.setSize(20, 20);
 
 		this.add(logo, BorderLayout.NORTH);
-		
+		JPanel front = new JPanel();
+		front.setLayout(new GridLayout(3,1));
 		JPanel usuario = new JPanel();
-		usuario.setLayout(new FlowLayout());
+
+		usuario.setLayout(new GridLayout(2,1));
 		JPanel contrasena = new JPanel();
-		
+		contrasena.setLayout(new GridLayout(2,1));
 		JLabel textoUsuario = new JLabel("USUARIO");
 		textoUsuario.setOpaque(true);
 		usuario.add(textoUsuario, BorderLayout.NORTH);
@@ -55,12 +57,14 @@ public class MainWindow extends JFrame  {
 		password.getPassword();
 		
 		contrasena.add(password);
-		this.add(usuario, BorderLayout.CENTER);
-	//	this.add(contrasena);
+		front.add(usuario);
+		front.add(contrasena);
+		front.add(new JButton("Entrar"));
+		this.add(front);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		RestauranteSwing rest = new RestauranteSwing();
 	//	this.removeAll();
-		this.remove(logo);
+	//	this.remove(logo);
 	//	this.add(rest);
 		
 	}
