@@ -30,7 +30,7 @@ public class UserWindow extends JFrame  {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-						
+				CloseApp.quitApp();		
 			}
 			
 		});
