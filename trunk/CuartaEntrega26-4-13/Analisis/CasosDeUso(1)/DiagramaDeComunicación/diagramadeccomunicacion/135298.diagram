@@ -10,6 +10,8 @@ classinstance 129922 class_ref 142466 // Restaurante
  name ""  xyz 266 263 2000
 classinstance 130690 class_ref 142594 // Mesa
  name ""  xyz 476 264 2000
+classinstance 131202 class_ref 149122 // Comanda
+ name ""  xyz 404 120 2000
 linkcanvas 130306
   from ref 128002 z 2001 to ref 129922
 dirscanvas 130434 z 1000 linkcanvas_ref 130306
