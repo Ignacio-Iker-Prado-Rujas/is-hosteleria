@@ -2,6 +2,7 @@ package is.gui;
 
 import is.restaurante.Restaurante;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,13 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 
 public class RestauranteSwing extends JPanel{
 
-	@SuppressWarnings("serial")
 	public RestauranteSwing(){
 		super();
-		this.setLayout(new GridLayout(3,3));
+		this.setLayout(new GridLayout(3,3, 3, 15));
 		botones = new JButton[9];
 		
 		this.add(new JButton("Realizar reserva"));
