@@ -1,30 +1,33 @@
 package is.restaurante.consumicion;
 
-public class Postre implements Consumicion {
+public class Bebida implements Consumicion{
 
 	@Override
 	public float getPrecio() {
-		return this.precio;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
 	public String getNombre() {
-		return this.nombre;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public String getDescripcion() {
-		return this.descripción;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public boolean isDisponible() {
-		return this.disponible;
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
+
 	private String descripción;
 	private String nombre;
 	private float precio;
 	private boolean disponible;
-
 }
