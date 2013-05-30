@@ -83,7 +83,7 @@ public class VentanaLogin extends JFrame
                     else
                     {
                         JOptionPane.showMessageDialog(null, "Debe escribir nombre de usuario y contraseña.\n" +
-                            "NO puede dejar ningun campo vacio");
+                            "No puede dejar ningun campo vacio");
                     }
  
                 } catch (Exception e)
