@@ -1,7 +1,7 @@
 format 76
 "diagramadeccomunicacion"
-  revision 9
-  modified_by 2 "hlocal"
+  revision 10
+  modified_by 2 "enrique ballesteros"
 
 
   
@@ -150,6 +150,10 @@ ${members}}
 	  
 	  
 	end
+
+	classrelation 128898 // <association>
+	  relation_ref 128386 // <association>
+	end
       end
 
       class 128642 "ListaPlatos"
@@ -199,6 +203,55 @@ ${members}}
 	idl_decl ""
 	explicit_switch_type ""
 	
+	attribute 128258 "listaMesas"
+	  private type class_ref 142594 // Mesa
+	  multiplicity "*"
+	  stereotype "list"
+	  cpp_decl ""
+	  java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	end
+
+	attribute 128386 "comensales"
+	  private explicit_type "int"
+	  cpp_decl ""
+	  java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	end
+
+	operation 134914 "addMesa"
+	  public explicit_return_type "void"
+	  nparams 0
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	classrelation 128002 // <aggregation>
+	  relation 128002 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128002 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128130 // <aggregation>
+	end
+
+	classrelation 128386 // <aggregation>
+	  relation_ref 128130 // <aggregation>
+	end
       end
 
       class 128898 "ListaComandas"
@@ -238,6 +291,57 @@ ${members}}
 	idl_decl ""
 	explicit_switch_type ""
 	
+	attribute 128002 "listaMesas"
+	  private type class_ref 142594 // Mesa
+	  multiplicity "*"
+	  stereotype "list"
+	  cpp_decl ""
+	  java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	end
+
+	attribute 128130 "listaReservas"
+	  private type class_ref 128770 // Reserva
+	  multiplicity "*"
+	  stereotype "list"
+	  cpp_decl ""
+	  java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	end
+
+	classrelation 128130 // <aggregation>
+	  relation_ref 128002 // <aggregation>
+	end
+
+	classrelation 128258 // <aggregation>
+	  relation 128130 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128258 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128386 // <aggregation>
+	end
+
+	classrelation 128514 // <aggregation>
+	  relation 128258 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128514 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128642 // <aggregation>
+	end
       end
     end
 
@@ -444,6 +548,55 @@ ${members}}
       idl_decl ""
       explicit_switch_type ""
       
+      attribute 128514 "listaComandas"
+	private type class_ref 149122 // Comanda
+	multiplicity "*"
+	stereotype "list"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128642 "capacidad"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128770 "numeroMesa"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 128642 // <aggregation>
+	relation_ref 128258 // <aggregation>
+      end
+
+      classrelation 128770 // <association>
+	relation 128386 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128770 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128898 // <association>
+      end
     end
   end
+
+  package_ref 128002 // diagramaDeClases
 end
