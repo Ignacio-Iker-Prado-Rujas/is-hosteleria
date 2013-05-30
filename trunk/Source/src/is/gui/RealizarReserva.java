@@ -90,12 +90,14 @@ public class RealizarReserva extends JPanel{
 			this.año.addItem(j);
 		}*/
 		Vector<Integer> horas = new Vector<Integer>();
-		for (int i=0; i<24; i++){
+		for (int i=13; i<16; i++){
+			horas.add(i);
+		}for (int i=21; i<24; i++){
 			horas.add(i);
 		}
 		Vector<Integer> minutos = new Vector<Integer>();
-		for (int j=0; j<4; j++){
-			minutos.add(j*15);
+		for (int j=0; j<6; j++){
+			minutos.add(j*10);
 		}
 		//int year = Calendar.getInstance().get(Calendar.YEAR);
 		//mes = new JComboBox(meses);
