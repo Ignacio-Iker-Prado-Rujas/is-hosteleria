@@ -1,6 +1,6 @@
-package is.restaurante;
+package is.restaurante.consumicion;
 
-public class Plato {
+public class Plato implements Consumicion{
 	
 	public Plato(){
 		
@@ -12,18 +12,24 @@ public class Plato {
 	 * @param nombre: nombre del plato
 	 * @param precio: precio del plato
 	 */
-	public Plato(String descripción, String nombre, double precio){
+	public Plato(String descripción, String nombre, float precio){
 		this.descripción = descripción;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
 	
+	@Override
+	public String getDescripcion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	/**
 	 * 
 	 * @return precio del plato
 	 */
-	public double getPrecio() {
+	@Override
+	public float getPrecio() {
 		return precio;
 	}
 
@@ -31,7 +37,7 @@ public class Plato {
 	 * Precio que queremos que tenga el plato
 	 * @param precio
 	 */
-	public void setPrecio(double precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 	
@@ -39,6 +45,7 @@ public class Plato {
 	 * comprueba si el plato está disponible
 	 * @return disponible si el plato está disponible
 	 */
+	@Override
 	public boolean isDisponible() {
 		return disponible;
 	}
@@ -50,7 +57,7 @@ public class Plato {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
-	
+	@Override
 	public String getNombre(){
 		return this.nombre;
 	}
@@ -59,7 +66,8 @@ public class Plato {
 
 	private String descripción;
 	private String nombre;
-	private double precio;
+	private float precio;
 	private boolean disponible;
+	
 
 }
