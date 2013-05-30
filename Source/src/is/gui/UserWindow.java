@@ -37,7 +37,7 @@ public class UserWindow extends JFrame  {
 
 		this.add(logo, BorderLayout.NORTH);
 		front = new JPanel();
-		front.setLayout(new GridLayout(3,1));
+		front.setLayout(new GridLayout(3,1, 3, 3));
 		//front.setLayout(new FlowLayout(3));
 		JPanel usuario = new JPanel();
 
