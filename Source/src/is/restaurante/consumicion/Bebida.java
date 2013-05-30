@@ -5,25 +5,25 @@ public class Bebida implements Consumicion{
 	@Override
 	public float getPrecio() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.precio;
 	}
 
 	@Override
 	public String getNombre() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.nombre;
 	}
 
 	@Override
 	public String getDescripcion() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.descripción;
 	}
 
 	@Override
 	public boolean isDisponible() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.disponible;
 	}
 
 	private String descripción;
