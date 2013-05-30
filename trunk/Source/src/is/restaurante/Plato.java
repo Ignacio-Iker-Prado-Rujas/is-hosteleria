@@ -50,6 +50,10 @@ public class Plato {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
+	
+	public String getNombre(){
+		return this.nombre;
+	}
 
 
 
