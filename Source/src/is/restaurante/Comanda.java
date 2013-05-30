@@ -1,8 +1,10 @@
 package is.restaurante;
 
+import is.restaurante.consumicion.Consumicion;
 import is.restaurante.consumicion.Plato;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Comanda {
 	
@@ -32,28 +34,34 @@ public class Comanda {
 	
 	public String toString(){
 		String pedido = null;
-		for (Plato plato: primeros){
-			pedido = pedido + plato.getNombre() + " " + plato.getPrecio() + LINE_SEPARATOR;
-		}
-		for(Plato plato: segundos){
-			pedido = pedido + plato.getNombre() + " " + plato.getPrecio() + LINE_SEPARATOR;
-		}
-		for(Plato plato: postres){
-			pedido = pedido + plato.getNombre() + " " + plato.getPrecio() + LINE_SEPARATOR;
-		}
-		for (Plato bebida: bebidas){
+		for (Consumicion bebida: bebidas){
 			pedido = pedido + bebida.getNombre() + " " + bebida.getPrecio() + LINE_SEPARATOR;
 		}
+		for (Consumicion plato: primeros){
+			pedido = pedido + plato.getNombre() + " " + plato.getPrecio() + LINE_SEPARATOR;
+		}
+		for(Consumicion plato: segundos){
+			pedido = pedido + plato.getNombre() + " " + plato.getPrecio() + LINE_SEPARATOR;
+		}
+		for(Consumicion postre: postres){
+			pedido = pedido + postre.getNombre() + " " + postre.getPrecio() + LINE_SEPARATOR;
+		}
+		
 		pedido += "TOTAL: " + this.precio;
 		
 		return pedido;
 	}
 	
+	public List<Consumicion> lista(){
+		return null;
+		
+	}
+	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
-	private ArrayList<Plato> primeros;
-	private ArrayList<Plato> segundos;
-	private ArrayList<Plato> postres;
-	private ArrayList<Plato> bebidas;
+	private ArrayList<Consumicion> primeros;
+	private ArrayList<Consumicion> segundos;
+	private ArrayList<Consumicion> postres;
+	private ArrayList<Consumicion> bebidas;
 	
 	private double precio = 0;
 
