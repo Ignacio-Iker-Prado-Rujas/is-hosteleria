@@ -29,7 +29,8 @@ public class RealizarReserva extends JPanel{
 		final JXDatePicker datePicker = new JXDatePicker(System.currentTimeMillis());
 		datePicker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				fecha.setText(datePicker.getDate().toString());
+				//fecha.setText(datePicker.getDate().toString());
+				//TODO
 			}
 
 		});
@@ -56,7 +57,9 @@ public class RealizarReserva extends JPanel{
 		this.add(hora);
 		this.add(this.hora);
 		
-		JLabel 
+		JLabel minutos = new JLabel("Minutos: ");
+		this.add(minutos);
+		this.add(this.minutos);
 		
 		JLabel nombre = new JLabel ("Nombre: ");
 		//nombre.add(this.nombre);
@@ -68,7 +71,7 @@ public class RealizarReserva extends JPanel{
 		this.add(comensales);
 		this.add(this.comensales);
 		//p.add(comensales);*/
-		SpringUtilities.makeCompactGrid(this, 6, 2, 6, 6, 10, 10);
+		SpringUtilities.makeCompactGrid(this, 5, 2, 6, 6, 10, 10);
 		
 		JFrame frame = new JFrame("Reservas");
 		frame.setVisible(true);
