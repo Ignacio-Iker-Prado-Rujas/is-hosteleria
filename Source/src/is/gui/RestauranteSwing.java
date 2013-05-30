@@ -15,12 +15,24 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 
+
 public class RestauranteSwing extends JPanel{
 
-	public RestauranteSwing(){
+	
+	public RestauranteSwing(){	
 		super();
-		this.setLayout(new GridLayout(3,3, 3, 15));
-		botones = new JButton[9];
+		this.restaurante = new Restaurante();
+		initializeGUI();
+	}
+	public RestauranteSwing(Restaurante rest){
+		super();
+		this.restaurante = rest;
+		initializeGUI();
+	}
+	
+	public void initializeGUI(){
+	this.setLayout(new GridLayout(3,3, 3, 15));	
+	botones = new JButton[9];
 		
 		this.add(new JButton("Realizar reserva"){
 			{
@@ -66,7 +78,6 @@ public class RestauranteSwing extends JPanel{
 		this.add(new JButton("Cantidad existencias"));
 		this.add(new JButton("Ver/modificar menú"));
 		this.add(new JButton("Notificar incidencias"));
-		
 		
 		
 	}
