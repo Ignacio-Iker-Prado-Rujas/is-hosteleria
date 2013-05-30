@@ -1,8 +1,10 @@
 package pruebas;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import org.jdesktop.swingx.JXDatePicker;
 public class Date {
@@ -23,7 +25,8 @@ public class Date {
 			}
 
 		});
-		 
+		 JFrame frame = new JFrame();
+		 frame.setVisible(true);
 		 
 		frame.getContentPane().add(label, BorderLayout.NORTH);
 		frame.getContentPane().add(datePicker, BorderLayout.CENTER);
