@@ -1,6 +1,9 @@
 package is.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Calendar;
+import java.util.Vector;
 
 import is.gui.spring.SpringUtilities;
 
@@ -11,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import org.jdesktop.swingx.JXDatePicker;
+
 @SuppressWarnings("serial")
 public class RealizarReserva extends JPanel{
 
@@ -19,7 +24,19 @@ public class RealizarReserva extends JPanel{
 		this.inicializaBox();
 		this.setLayout(new SpringLayout());
 		
-		JLabel dia = new JLabel("Día: ");
+		final JLabel fecha = new JLabel("Fecha: ");
+		@SuppressWarnings("deprecation")
+		final JXDatePicker datePicker = new JXDatePicker(System.currentTimeMillis());
+		datePicker.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				fecha.setText(datePicker.getDate().toString());
+			}
+
+		});
+		this.add(fecha);
+		this.add(datePicker);
+		
+		/*JLabel dia = new JLabel("Día: ");
 		//dia.add(this.dia);
 		this.add(dia);
 		this.add(this.dia);
@@ -32,12 +49,14 @@ public class RealizarReserva extends JPanel{
 		JLabel año = new JLabel("Año: ");
 		//año.add(this.año);
 		this.add(año);
-		this.add(this.año);
+		this.add(this.año);*/
 		
 		JLabel hora = new JLabel("Hora: ");
 		//hora.add(this.hora);
 		this.add(hora);
 		this.add(this.hora);
+		
+		JLabel 
 		
 		JLabel nombre = new JLabel ("Nombre: ");
 		//nombre.add(this.nombre);
@@ -67,11 +86,21 @@ public class RealizarReserva extends JPanel{
 		for (int j = year; j < year+3; j++ ){
 			this.año.addItem(j);
 		}*/
-		int year = Calendar.getInstance().get(Calendar.YEAR);
-		mes = new JComboBox(meses);
-		año.addItem(year++);
-		año.addItem(year++);
-		año.addItem(year);
+		Vector<Integer> horas = new Vector<Integer>();
+		for (int i=0; i<24; i++){
+			horas.add(i);
+		}
+		Vector<Integer> minutos = new Vector<Integer>();
+		for (int j=0; j<4; j++){
+			minutos.add(j*15);
+		}
+		//int year = Calendar.getInstance().get(Calendar.YEAR);
+		//mes = new JComboBox(meses);
+		hora = new JComboBox(horas);
+		this.minutos = new JComboBox(minutos);
+		//año.addItem(year++);
+		//año.addItem(year++);
+		//año.addItem(year);
 		
 	}
 
@@ -79,17 +108,18 @@ public class RealizarReserva extends JPanel{
 	
 	private boolean error;
 	
+	private JTextField fecha = new JTextField(10);
 	private JTextField dia = new JTextField(2);
 	private JComboBox mes = new JComboBox();
 	private JComboBox año = new JComboBox();
 	
-	private JTextField hora = new JTextField(2);
-	private JTextField minutos = new JTextField(2);
+	private JComboBox hora;
+	private JComboBox minutos;
 	
 	private JTextField nombre = new JTextField(10);
 	private JTextField comensales = new JTextField(2);
 	
-	private String[] meses = {"Enero", "Febrero", "Marzo", "Abri", "Mayo", "Junio", 
+	private String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 			"Julio", "Agosto", "Septiembre"
 			, "Octubre", "Noviembre", "Diciembre"};
 }
