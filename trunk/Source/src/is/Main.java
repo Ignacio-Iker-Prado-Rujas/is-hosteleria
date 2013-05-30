@@ -3,6 +3,9 @@ package is;
 import is.gui.UserWindow;
 
 public class Main {
+	public Main(){
+		
+	}
 
 	/**
 	 * @param args
