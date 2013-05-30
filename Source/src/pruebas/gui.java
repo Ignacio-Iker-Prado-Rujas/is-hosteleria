@@ -1,4 +1,4 @@
-package pruebas;
+/*package pruebas;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -35,9 +35,9 @@ public class gui extends JFrame {
 		//this.add(boton2);
 		//this.add(boton3);
 	}
-	/**
+	*//**
 	 * @param args
-	 */
+	 *//*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			gui Gui = new gui();
@@ -46,3 +46,4 @@ public class gui extends JFrame {
 	}
 
 }
+*/
