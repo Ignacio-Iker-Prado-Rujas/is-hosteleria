@@ -1,4 +1,4 @@
-package pruebas;
+/*package pruebas;
 
 public class Main {
 	RobotEngine robot = new RobotEngine();
@@ -8,3 +8,4 @@ public class Main {
 	robot.addObserver(vista);
 
 }
+*/
