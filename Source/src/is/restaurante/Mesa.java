@@ -11,6 +11,6 @@ public class Mesa {
 	}
 	
 	private Vector<Comanda> pedidos;
-	private int capacidadMaxima;
+	private int capacidadMaxima;	//Por qué hay un máximo=???
 
 }
