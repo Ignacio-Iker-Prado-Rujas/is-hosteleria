@@ -18,35 +18,44 @@ public class RealizarReserva extends JPanel{
 		this.setLayout(new SpringLayout());
 		
 		JLabel dia = new JLabel("Día: ");
-		dia.add(this.dia);
+		//dia.add(this.dia);
 		this.add(dia);
+		this.add(this.dia);
 		
 		JLabel mes = new JLabel("Mes: ");
-		mes.add(this.mes);
+		//mes.add(this.mes);
 		this.add(mes);
+		this.add(this.mes);
 		
 		JLabel año = new JLabel("Año: ");
-		año.add(this.año);
+		//año.add(this.año);
 		this.add(año);
+		this.add(this.año);
 		
 		JLabel hora = new JLabel("Hora: ");
-		hora.add(this.hora);
+		//hora.add(this.hora);
 		this.add(hora);
+		this.add(this.hora);
 		
 		JLabel nombre = new JLabel ("Nombre: ");
-		nombre.add(this.nombre);
+		//nombre.add(this.nombre);
 		this.add(nombre);
+		this.add(this.nombre);
 		
 		JLabel comensales = new JLabel ("Número de comensales");
-		comensales.add(this.comensales);
+		//comensales.add(this.comensales);
 		this.add(comensales);
-		SpringUtilities.makeCompactGrid(this, 6, 2, 6, 6, 6, 6);
+		this.add(this.comensales);
+		//p.add(comensales);*/
+		SpringUtilities.makeCompactGrid(this, 6, 2, 6, 6, 10, 10);
 		
 		JFrame frame = new JFrame("Reservas");
+		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		frame.add(this);
 		frame.pack();
-		frame.setVisible(true);
+		
 	}
 	
 	private void inicializaBox(){
