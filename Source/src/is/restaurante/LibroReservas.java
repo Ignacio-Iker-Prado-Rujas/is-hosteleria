@@ -2,6 +2,7 @@ package is.restaurante;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import is.Fecha;
 import is.List;
@@ -31,11 +32,11 @@ public class LibroReservas {
 		date.getDay(),
 		date.getHours(),
 		date.getMinutes());
+
 		for (int i=0; i< listaReservas.size(); i++){
 			if (listaReservas.get(i).equals(hoy))
 				reservasDeHoy.add(listaReservas.get(i));
 		}
-		
 		
 		
 		return reservasDeHoy;
