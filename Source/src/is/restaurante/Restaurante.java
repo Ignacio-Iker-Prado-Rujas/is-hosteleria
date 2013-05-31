@@ -44,13 +44,14 @@ public class Restaurante {
 		this.menu = menu;
 	}
 	
-	public void hola(){
-		
+	public Mesa buscarMesa(int i){
+		for (Mesa m: mesas) if (m.getNumeroMesa() == i) return m;
+		return null;
 	}
 
 
 
-
+	
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;
 	private Menu menu;
