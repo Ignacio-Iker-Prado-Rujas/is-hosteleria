@@ -54,5 +54,6 @@ public class Restaurante {
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;
 	private Menu menu;
+	private Tablon tablon;
 	
 }
