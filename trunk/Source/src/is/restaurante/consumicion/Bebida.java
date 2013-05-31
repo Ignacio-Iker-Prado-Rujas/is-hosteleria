@@ -39,9 +39,5 @@ public class Bebida implements Consumicion{
 	private String nombre;
 	private float precio;
 	private boolean disponible;
-	@Override
-	public CeldaPlato generarInfo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
