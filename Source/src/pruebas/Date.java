@@ -15,6 +15,7 @@ public class Date {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		final JLabel label = new JLabel();
+		
 		label.setText("Choose Date by selecting below.");
 		 
 		@SuppressWarnings("deprecation")
