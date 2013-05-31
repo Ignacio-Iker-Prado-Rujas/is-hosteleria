@@ -1,5 +1,6 @@
 package is.gui;
 
+import is.restaurante.ComandaObserver;
 import is.restaurante.Menu;
 import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
@@ -16,9 +17,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 @SuppressWarnings("serial")
-public class RealizarPedido extends JPanel {
+public class RealizarPedido extends JPanel implements ComandaObserver{
 
-	public RealizarPedido(final GUIController rest){
+	public RealizarPedido(final GUIController rest) {
 		this.restaurante = rest;
 /*
  * public VerMenu(GUIController controller){
@@ -63,9 +64,11 @@ public class RealizarPedido extends JPanel {
 	private JPanel[] elementosMenu;
 }
  */
-		//inicializaPaneles();
+		inicializaPaneles();
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
+		panelCentral = new JPanel();
+		
 		tipoPlato.setLayout(new GridLayout(4,1));
 		tipoPlato.add(new JButton("Bebidas"){
 			{
@@ -73,7 +76,8 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(0, restaurante));
+						//panelCentral.add(new PlatosPanel(0, restaurante));
+						panelCentral = (elementosMenu[0]);
 
 					}
 					
@@ -86,8 +90,8 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(1, restaurante));
-
+						//panelCentral.add(new PlatosPanel(1, restaurante));
+						panelCentral = (elementosMenu[1]);
 					}
 					
 				});
@@ -99,8 +103,8 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(2, restaurante));
-						
+						//panelCentral.add(new PlatosPanel(2, restaurante));
+						panelCentral = (elementosMenu[2]);
 					}
 					
 				});
@@ -112,17 +116,20 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(3, restaurante));
-
+						//panelCentral.add(new PlatosPanel(3, restaurante));
+						panelCentral = (elementosMenu[3]);
 					}
 					
 				});
 			}
 		});
-		panelCentral = new JPanel();
+		
 		this.add(tipoPlato, BorderLayout.WEST);
 		JFrame frame = new JFrame("Realizar Pedido");
 		this.add(panelCentral);
+		
+		scroller = new JScrollPane();
+		this.add(scroller, BorderLayout.EAST);
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -155,6 +162,12 @@ public class RealizarPedido extends JPanel {
 		}
 	}
 	
+	@Override
+	public void comandaHaCambiado() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 	private JPanel panelCentral;
 	private PlatosPanel platosPanel;
@@ -162,5 +175,7 @@ public class RealizarPedido extends JPanel {
 	private GUIController restaurante;
 	
 	private JPanel[] elementosMenu;
+
+
 	
 }
