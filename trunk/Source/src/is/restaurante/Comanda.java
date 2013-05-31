@@ -4,7 +4,13 @@ import is.restaurante.consumicion.Consumicion;
 import is.restaurante.consumicion.Plato;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import java.util.Iterator;
 
 
 //hay que registrar los observadores en realizar pedido
@@ -13,30 +19,73 @@ public class Comanda {
 	
 	
 	public void addPrimero(Plato primero){
-		primeros.add(primero);
+		if (primeros.containsKey(primero)){
+			//primeros.
+			primeros.put(primero, primeros.get(primero) + 1);
+		}
+		else
+			primeros.put(primero, 1);
+		//primeros.add(primero);
 		this.precio += primero.getPrecio();
 	}
 	
 	public void addSegundo(Plato segundo){
-		
-		segundos.add(segundo);
+		if (segundos.containsKey(segundo)){
+			//primeros.
+			segundos.put(segundo, segundos.get(segundo) + 1);
+		}
+		else
+			primeros.put(segundo, 1);
+		//primeros.add(primero);
 		this.precio += segundo.getPrecio();
+		
 	}
 	
 	public void addPostre(Plato postre){
-		
-		postres.add(postre);
+		if (postres.containsKey(postre)){
+			//primeros.
+			postres.put(postre, primeros.get(postre) + 1);
+		}
+		else
+			postres.put(postre, 1);
+		//primeros.add(primero);
 		this.precio += postre.getPrecio();
 	}
 	
 	public void addBebida(Plato bebida){
-		bebidas.add(bebida);
+		if (bebidas.containsKey(bebida)){
+			//primeros.
+			bebidas.put(bebida, bebidas.get(bebida) + 1);
+		}
+		else
+			bebidas.put(bebida, 1);
+		//primeros.add(primero);
 		this.precio += bebida.getPrecio();
 	}
 	
 	
 	public String toString(){
 		String pedido = null;
+		for (Entry<Consumicion, Integer> entry : bebidas.entrySet()){
+			pedido = pedido + entry.getKey().getNombre() + " "
+					+ entry.getKey().getPrecio() + " Cantidad: "
+					+ bebidas.get(entry.getKey());
+		}
+		for (Entry<Consumicion, Integer> entry : primeros.entrySet()){
+			pedido = pedido + entry.getKey().getNombre() + " "
+					+ entry.getKey().getPrecio() + " Cantidad: "
+					+ primeros.get(entry.getKey());
+		}
+		for (Entry<Consumicion, Integer> entry : segundos.entrySet()){
+			pedido = pedido + entry.getKey().getNombre() + " "
+					+ entry.getKey().getPrecio() + " Cantidad: "
+					+ segundos.get(entry.getKey());
+		}
+		for (Entry<Consumicion, Integer> entry : postres.entrySet()){
+			pedido = pedido + entry.getKey().getNombre() + " "
+					+ entry.getKey().getPrecio() + " Cantidad: "
+					+ postres.get(entry.getKey());
+		}/*
 		for (Consumicion bebida: bebidas){
 			pedido = pedido + bebida.getNombre() + " " + bebida.getPrecio() + LINE_SEPARATOR;
 		}
@@ -49,6 +98,7 @@ public class Comanda {
 		for(Consumicion postre: postres){
 			pedido = pedido + postre.getNombre() + " " + postre.getPrecio() + LINE_SEPARATOR;
 		}
+		*/
 		
 		pedido += "TOTAL: " + this.precio;
 		
@@ -61,10 +111,10 @@ public class Comanda {
 	}
 	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
-	private ArrayList<Consumicion> primeros;
-	private ArrayList<Consumicion> segundos;
-	private ArrayList<Consumicion> postres;
-	private ArrayList<Consumicion> bebidas;
+	private HashMap<Consumicion, Integer> primeros;
+	private HashMap<Consumicion, Integer> segundos;
+	private HashMap<Consumicion, Integer> postres;
+	private HashMap<Consumicion, Integer> bebidas;
 	
 	private double precio = 0;
 
