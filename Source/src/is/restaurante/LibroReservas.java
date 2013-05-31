@@ -24,11 +24,12 @@ public class LibroReservas {
 		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
 		ArrayList<Reserva> reservasHoy = new ArrayList<Reserva>();
 		buscarReserva(fecha);
-		date.getYear();
-		date.getMonth();
-		date.getDay();
-		date.getHours();
-		date.get
+		Fecha hoy = new Fecha(date.getYear(),
+		date.getMonth(),
+		date.getDay(),
+		date.getHours(),
+		date.getMinutes());
+		
 		
 		return null;
 		
