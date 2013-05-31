@@ -21,7 +21,9 @@ public class LibroReservas {
 	}
 	
 	public ArrayList<Reserva> reservasHoy(){
-		Date date = new Date();
+		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
+		ArrayList<Reserva> reservasHoy = new ArrayList<Reserva>();
+		buscarReserva(fecha);
 		date.getYear();
 		date.getMonth();
 		date.getDay();
