@@ -1,10 +1,18 @@
 package is.gui;
 
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JToggleButton;
 
 import is.restaurante.Menu;
+import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Consumicion;
 
 @SuppressWarnings("serial")
@@ -15,7 +23,23 @@ public class VerMenu extends JFrame{
 		
 		this.controlador = controller;
 		menu = controlador.getMenu();
-		menu.getBebidas();
+		JTabbedPane pestanyas = new JTabbedPane();
+		this.add(pestanyas);
+		TipoPlatos[] tipoPlatos = TipoPlatos.values();
+		
+		for( TipoPlatos tPlato : tipoPlatos){
+			JPanel panel = new JPanel();	
+			pestanyas.add(tPlato.toString(), panel);
+			
+			ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
+			for( Consumicion cons: consum){
+				JToggleButton boton = new JToggleButton(cons.getNombre());
+				panel.add(boton);	
+			}
+			
+		}
+		
+		/*menu.getBebidas();
 		JPanel panel = new JPanel();
 	//	panel.setLayout()
 		elementosMenu = new JPanel[4];
@@ -40,7 +64,7 @@ public class VerMenu extends JFrame{
 			elementosMenu[3].add(plato);
 		}
 		for (JPanel p : elementosMenu) panel.add(p);
-		this.add(panel);
+		this.add(panel);*/
 		this.setVisible(true);
 		//JFrame marco = new JFrame();
 		//marco.add(panel);
