@@ -1,6 +1,6 @@
 format 76
 "diagramadeccomunicacion"
-  revision 13
+  revision 14
   modified_by 5 "hlocal"
 
 
@@ -223,6 +223,7 @@ ${members}}
 	  
 	end
       end
+
       class 128642 "ListaPlatos"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -319,6 +320,55 @@ ${members}}
 	classrelation 128386 // <aggregation>
 	  relation_ref 128130 // <aggregation>
 	end
+
+	classrelation 128005 // <directional aggregation>
+	  relation 128005 o-->
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128005 // <directional aggregation>
+	    b parent class_ref 142466 // Restaurante
+	end
+
+	classrelation 128261 // <aggregation>
+	  relation_ref 128133 // <aggregation>
+	end
+
+	classrelation 128773 // <aggregation>
+	  relation_ref 128517 // <aggregation>
+	end
+
+	classrelation 128901 // <aggregation>
+	  relation 128645 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128901 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 129029 // <aggregation>
+	end
+
+	classrelation 129413 // <aggregation>
+	  relation_ref 128901 // <aggregation>
+	end
+
+	classrelation 129669 // <aggregation>
+	  relation 129157 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 129669 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 129797 // <aggregation>
+	end
+
+	classrelation 130181 // <aggregation>
+	  relation_ref 129413 // <aggregation>
+	end
       end
 
       class 128898 "ListaComandas"
@@ -409,6 +459,128 @@ ${members}}
 "
 	      classrelation_ref 128642 // <aggregation>
 	end
+
+	operation 128005 "verReservas"
+	  public explicit_return_type "void"
+	  nparams 0
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	classrelation 128133 // <aggregation>
+	  relation 128133 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128133 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128261 // <aggregation>
+	end
+
+	operation 128133 "anularReserva"
+	  public explicit_return_type "void"
+	  multiplicity "1"
+	  nparams 1
+	    param in name "reserva" type class_ref 128770 // Reserva
+	  multiplicity "1"
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	classrelation 128645 // <aggregation>
+	  relation 128517 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128645 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 128773 // <aggregation>
+	end
+
+	classrelation 129029 // <aggregation>
+	  relation_ref 128645 // <aggregation>
+	end
+
+	classrelation 129157 // <directional aggregation>
+	  relation 128773 o-->
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 129157 // <directional aggregation>
+	    b parent class_ref 128770 // Reserva
+	end
+
+	classrelation 129285 // <aggregation>
+	  relation 128901 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 129285 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 129413 // <aggregation>
+	end
+
+	classrelation 129797 // <aggregation>
+	  relation_ref 129157 // <aggregation>
+	end
+
+	classrelation 130053 // <aggregation>
+	  relation 129413 o---
+	    a role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 130053 // <aggregation>
+	    b role_name "" private
+	      java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	      classrelation_ref 130181 // <aggregation>
+	end
+
+	operation 128261 "añadeReserva"
+	  public explicit_return_type "void"
+	  nparams 1
+	    param in name "reserva" type class_ref 128770 // Reserva
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	operation 128517 "autorizaReserva"
+	  public explicit_return_type "void"
+	  nparams 1
+	    param in name "reserva" type class_ref 128770 // Reserva
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+      end
+
+      activity 128005 "verReservas()"
+	specification operation_ref 128005 // verReservas
       end
     end
 
@@ -433,6 +605,7 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
+
       class 129410 "VerMenu"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -468,6 +641,7 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
+
       class 128146 "ListaReserva"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -503,6 +677,7 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
+
       class 128274 "RealizarRecuentoDeExistencias"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -538,6 +713,7 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
+
       class 135938 "pantallaCocinero"
 	visibility package stereotype "boundary"
 	cpp_decl ""

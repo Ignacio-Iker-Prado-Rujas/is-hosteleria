@@ -31,7 +31,7 @@ end
 msg 128517 synchronous
   from durationcanvas_ref 128261
   to durationcanvas_ref 128389
-  yz 90 2015 explicitmsg "recuentoExistencias()"
+  yz 90 2015 msg operation_ref 128645 // "verExistencias() : void"
   show_full_operations_definition default drawing_language default show_context_mode default
   label_xy 373 73
 msg 131589 return
