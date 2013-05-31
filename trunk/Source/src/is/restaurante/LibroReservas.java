@@ -22,7 +22,12 @@ public class LibroReservas {
 	
 	public ArrayList<Reserva> reservasHoy(){
 		Date date = new Date();
-
+		date.getYear();
+		date.getMonth();
+		date.getDay();
+		date.getHours();
+		date.get
+		
 		return null;
 		
 	}
