@@ -32,6 +32,9 @@ public class Reserva implements Comparable<Reserva>{
 	public String getNombre(){
 		return this.nombre;
 	}
+	public Fecha getFecha(){
+		return this.fecha;
+	}
 	
 	@Override
 	public int compareTo(Reserva o) {
