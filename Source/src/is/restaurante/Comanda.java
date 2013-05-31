@@ -14,7 +14,8 @@ import java.util.Iterator;
 
 
 //hay que registrar los observadores en realizar pedido
-//TODO
+//TODO delete  consumicion
+//TODO menu y comanda tienen los mismos atributos
 public class Comanda {
 	
 	
