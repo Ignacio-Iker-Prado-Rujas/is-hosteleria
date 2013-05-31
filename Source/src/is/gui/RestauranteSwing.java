@@ -48,7 +48,7 @@ public class RestauranteSwing extends JPanel{
 			}
 		};
 		this.add(botones[0]);
-		botones[1] = new JButton("Generar/modificar pedido"){
+		botones[1] = new JButton("Generar/modificar comanda"){
 			{
 				this.addActionListener(new ActionListener(){
 
