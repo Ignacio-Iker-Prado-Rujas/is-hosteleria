@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Vector;
 
 import is.gui.spring.SpringUtilities;
@@ -34,6 +37,7 @@ public class RealizarReserva extends JPanel{
 		
 		final JLabel fecha = new JLabel("Fecha: ");
 		datePicker = new JXDatePicker(System.currentTimeMillis());
+		datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
 		datePicker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//fecha.setText(datePicker.getDate().toString());
@@ -78,8 +82,12 @@ public class RealizarReserva extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						if (compruebaReservaValida())
+						if (compruebaReservaValida()){
+							Calendar reservaDate = datePicker.getDate();
+							
 							controlador.communicateReserva();						//	return reserva;
+							
+						}
 						
 					}
 
@@ -121,7 +129,7 @@ public class RealizarReserva extends JPanel{
 	}
 	
 	public boolean compruebaReservaValida() {
-		if (datePicker.getDate().before());
+		return false;//if (datePicker.getDate().before());
 	}
 	
 
