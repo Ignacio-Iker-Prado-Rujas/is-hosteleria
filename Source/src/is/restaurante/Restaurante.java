@@ -16,8 +16,8 @@ public class Restaurante {
 		this.reservas = new LibroReservas();
 		this.menu = new Menu();
 	}
-	public Reserva crearReserva(){
-		return null;
+	public void añadirReserva(Reserva reserva){
+		reservas.addReserva(reserva);
 	}
 		
 	
