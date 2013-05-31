@@ -53,10 +53,11 @@ public class CeldaPlato extends JPanel{
 	}
 	
 	public void incrementaVeces(){
-		int numero = (int) this.flechitas.getValue();
-		numero++;
-		this.flechitas.setValue(numero);
-		this.veces = numero;
+		//int numero = (int) this.flechitas.getValue();
+		//numero++;
+		this.veces++;
+		this.flechitas.setValue(this.veces);
+		//this.veces = numero;
 	}
 	
 	public int getVeces(){
