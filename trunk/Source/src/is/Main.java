@@ -1,6 +1,8 @@
 package is;
 
+import is.gui.GUIController;
 import is.gui.UserWindow;
+import is.restaurante.Restaurante;
 
 public class Main {
 	public Main(){
@@ -12,8 +14,9 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		UserWindow window = new UserWindow();
+		Restaurante rest = new Restaurante();
+		GUIController controlador = new GUIController (rest);
+		UserWindow window = new UserWindow(controlador);
 		window.setVisible(true);
 	}
 

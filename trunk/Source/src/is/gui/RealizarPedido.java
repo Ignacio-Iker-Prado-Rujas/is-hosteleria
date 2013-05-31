@@ -16,9 +16,9 @@ import javax.swing.JScrollPane;
 @SuppressWarnings("serial")
 public class RealizarPedido extends JPanel {
 
-	public RealizarPedido(/*GUIController rest*/ Restaurante restaurante){
-		//this.restaurante = rest;
-		this.rest = restaurante;
+	public RealizarPedido(final GUIController rest){
+		this.restaurante = rest;
+
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
 		tipoPlato.setLayout(new GridLayout(4,1));
@@ -28,7 +28,7 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(0, rest));
+						panelCentral.add(new PlatosPanel(0, restaurante));
 
 					}
 					
@@ -41,7 +41,7 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(1));
+						panelCentral.add(new PlatosPanel(1, restaurante));
 
 					}
 					
@@ -54,7 +54,7 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(2));
+						panelCentral.add(new PlatosPanel(2, restaurante));
 						
 					}
 					
@@ -67,7 +67,7 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(3));
+						panelCentral.add(new PlatosPanel(3, restaurante));
 
 					}
 					
@@ -86,14 +86,10 @@ public class RealizarPedido extends JPanel {
 
 	}
 	
-	
-	
-	
-	
+
 	private JPanel panelCentral;
 	private PlatosPanel platosPanel;
 	private JScrollPane scroller;
 	private GUIController restaurante;
-	private Restaurante rest;
 	
 }
