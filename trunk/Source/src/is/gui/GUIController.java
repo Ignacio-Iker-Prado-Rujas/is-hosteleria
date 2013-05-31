@@ -27,7 +27,7 @@ public class GUIController {
 	}
 	public  Menu getMenu(){
 		return restaurante.getMenu();
-
+	}
 	public  ArrayList<Consumicion> getPrimeros(){
 		return restaurante.getMenu(1);
 		
