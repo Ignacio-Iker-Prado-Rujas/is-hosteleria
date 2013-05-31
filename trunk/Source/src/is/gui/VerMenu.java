@@ -1,6 +1,5 @@
 package is.gui;
 
-import java.awt.Shape;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
