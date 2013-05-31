@@ -33,17 +33,23 @@ public class Menu {
 	}*/
 	
 	/** Devuelve un string con los platos correspondientes **/
-	public String[] mostrarPlatos(String tipoConsumicion){
-		String[] nombres = new String[4];
-		switch (tipoConsumicion){
-		 /* Acumulas los nombres de los tipos de consumicion seleccionados */
+	public ArrayList<Consumicion> getPlatos(TipoPlatos tipoPlato) {
+		switch (tipoPlato) {
+		case BEBIDA:
+			return bebidas;
+		case PRIMERO:
+			return primeros;
+		case SEGUNDO:
+			return segundos;
+		case POSTRE:
+			return postres;
+		default:
+			return null;
 		}
-		return nombres;
-		
 	}
 	
 //
-	private String mostrarConsumiciones( ArrayList<Consumicion> consumiciones){
+	private String[] mostrarConsumiciones( ArrayList<Consumicion> consumiciones){
 		String[] nombres = null;
 		/* bucle acumulando todas las consumiciones del array pasado */
 		return nombres;
@@ -64,8 +70,6 @@ public class Menu {
 	public ArrayList<Consumicion> getPostres(){
 		return postres;
 	}
-	
-	/*private Consumicion[] tipoConsumiciones = { Bebida, Primero, Segundo, Postre};*/
 	
 	private ArrayList<Consumicion> bebidas;
 	private ArrayList<Consumicion> primeros;
