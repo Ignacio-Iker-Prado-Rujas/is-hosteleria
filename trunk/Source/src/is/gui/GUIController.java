@@ -5,6 +5,7 @@ import java.util.Date;
 
 import is.Fecha;
 import is.restaurante.Menu;
+import is.restaurante.Mesa;
 import is.restaurante.Reserva;
 import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
@@ -59,7 +60,14 @@ public class GUIController {
 	
 	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc
 	
+	public Mesa getMesa(String mesa) {
+		int i = Integer.parseInt(mesa);
+		return restaurante.buscarMesa(i);
+		
+	}
 	private Restaurante restaurante;
+
+
 
 
 }

@@ -29,6 +29,7 @@ public class GenerarFactura {
 						numMesa.getText();
 					//TODO duda del mvc, aqui hay que llamar al modelo y que te devuelva la mesa?
 						
+						controlador.getMesa(numMesa.getText());
 						
 					}
 					
