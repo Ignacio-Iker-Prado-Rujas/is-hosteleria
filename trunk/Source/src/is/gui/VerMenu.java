@@ -5,11 +5,15 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import is.restaurante.Menu;
 import is.restaurante.TipoPlatos;
@@ -20,6 +24,11 @@ public class VerMenu extends JFrame{
 	public VerMenu(GUIController controller){
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(400,500);
+		JFrame.setDefaultLookAndFeelDecorated(true);
+	    JDialog.setDefaultLookAndFeelDecorated(true);
+	    try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {}
 		
 		this.controlador = controller;
 		menu = controlador.getMenu();
@@ -28,16 +37,30 @@ public class VerMenu extends JFrame{
 		TipoPlatos[] tipoPlatos = TipoPlatos.values();
 		
 		for( TipoPlatos tPlato : tipoPlatos){
-			JPanel panel = new JPanel();	
+			
+			JPanel panel = new JPanel(new BorderLayout());		
 			pestanyas.add(tPlato.toString(), panel);
+			
+			JPanel opciones = new JPanel(new GridLayout());
+			panel.add(opciones, BorderLayout.SOUTH);
+			JButton anyadir = new JButton("add");
+			JButton editar = new JButton("edit");
+			JButton borrar = new JButton("remove");
+			opciones.add(anyadir);
+			opciones.add(editar);
+			opciones.add(borrar);
+			
+			JPanel platos = new JPanel(new GridLayout());
+			panel.add(platos);
 			
 			ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
 			for( Consumicion cons: consum){
 				JToggleButton boton = new JToggleButton(cons.getNombre());
-				panel.add(boton);	
+				platos.add(boton);	
 			}
 			
 		}
+		
 		
 		/*menu.getBebidas();
 		JPanel panel = new JPanel();
