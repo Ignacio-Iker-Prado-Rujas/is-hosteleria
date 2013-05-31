@@ -1,5 +1,7 @@
 package is.gui;
 
+import java.util.ArrayList;
+
 import javax.swing.JPanel;
 
 
@@ -16,4 +18,6 @@ public class PlatosPanel extends JPanel{
 		
 	}
 	
+	private ArrayList<CeldaPlato> platos;
+	//hashtable de celdaPlatos, parecido al citypanel de pr4 y 5 private 
 }
