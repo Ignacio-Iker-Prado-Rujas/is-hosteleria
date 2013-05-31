@@ -23,8 +23,7 @@ public class Plato implements Consumicion{
 
 	@Override
 	public String getDescripcion() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.descripción;
 	}
 	
 	/**

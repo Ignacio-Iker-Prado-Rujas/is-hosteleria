@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class PlatosPanel extends JPanel{
 
 	public PlatosPanel(){
+		//TODO el grid layout tiene que tener el tamaño del menu que corresponda, pero ponemos un ancho fijo
 		this.setLayout(new GridLayout(4, 11));
 		
 	}
