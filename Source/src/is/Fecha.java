@@ -84,14 +84,15 @@ public class Fecha {
 	
 	
 	public boolean esMayorQue(Fecha fecha2){
-		if (this.año > fecha2.año) return true;
-			else if (this.año == fecha2.año){
-				if (this.mes > fecha2.mes) return true;
-				else if (this.mes == fecha2.mes){
-					if (this.dia > fecha2.dia)return true;
-					else if (this.)
-				}
-			}
+		
+		return ((this.año > fecha2.año) ||
+				(this.año == fecha2.año && this.mes > fecha2.mes) ||
+				(this.año == fecha2.año && this.mes == fecha2.mes && this.dia > fecha2.dia) ||
+				(this.año == fecha2.año && this.mes == fecha2.mes && this.dia == fecha2.dia && 
+					this.hora > fecha2.hora) ||
+				(this.año == fecha2.año && this.mes == fecha2.mes && this.dia == fecha2.dia && 
+					this.hora == fecha2.hora && this.minutos > fecha2.minutos));
+		
 	}
 
 
