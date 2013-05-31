@@ -96,8 +96,8 @@ public class UserWindow extends JFrame  {
 		this.add(front);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	//	RestauranteSwing rest = new RestauranteSwing(new Restaurante());
-
+		//RestauranteSwing rest = new RestauranteSwing(new Restaurante());
+		//RestauranteSwing rest = new RestauranteSwing();
 		
 	}
 	
