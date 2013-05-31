@@ -53,6 +53,10 @@ public class GUIController {
 		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
 		restaurante.añadirReserva(reserva);
 	}
+	public ArrayList<Reserva> reservasDeUnCliente(String nombre){
+		return this.restaurante.buscarReservas(nombre);
+	}
+	
 	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc
 	
 	private Restaurante restaurante;
