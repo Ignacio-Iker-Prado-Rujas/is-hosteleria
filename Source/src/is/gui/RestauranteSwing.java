@@ -22,7 +22,6 @@ public class RestauranteSwing extends JPanel{
 	
 	public RestauranteSwing(){	
 		super();
-	//	this.restaurante = new Restaurante();
 		initializeGUI();
 	}
 	public RestauranteSwing(GUIController controlador){
@@ -69,7 +68,7 @@ public class RestauranteSwing extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-
+							new VerReserva(rest);
 					}
 
 				});
@@ -157,7 +156,7 @@ public class RestauranteSwing extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						
+						new VerMenu(controlador);
 
 					}
 

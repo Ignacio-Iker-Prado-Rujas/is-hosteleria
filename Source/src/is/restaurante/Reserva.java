@@ -43,5 +43,9 @@ public class Reserva implements Comparable<Reserva>{
 	//int minutos;
 	String nombre;
 	int numeroDeComensales;
+	public void crearPanel() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
