@@ -1,0 +1,46 @@
+format 76
+
+classinstance 128267 class_ref 128514 // Menu
+  name ""   xyz 336 3.6 2000 life_line_z 2000
+classinstance 128523 class_ref 128011 // RestauranteSwing
+  name ""   xyz 82.3 3.6 2000 life_line_z 2000
+note 129163 "Caso de uso: Ver menu"
+  xyzwh 689 38 2000 94 46
+fragment 131467 ""
+  xyzwh 82 312 2025 525 86
+end
+classinstance 131595 class_ref 128130 // Consumicion
+  name ""   xyz 504 3.4 2000 life_line_z 2000
+durationcanvas 128651 classinstance_ref 128523 // :RestauranteSwing
+  xyzwh 129 70.6 2010 11 393
+end
+durationcanvas 128779 classinstance_ref 128267 // :Menu
+  xyzwh 355 75.6 2010 11 44
+end
+durationcanvas 129675 classinstance_ref 128267 // :Menu
+  xyzwh 355 164 2010 11 126
+end
+msg 128907 asynchronous
+  from durationcanvas_ref 128651
+  to durationcanvas_ref 128779
+  yz 77 2015 explicitmsg "verMenu()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 297 65
+msg 129035 return
+  from durationcanvas_ref 128779
+  to durationcanvas_ref 128651
+  yz 108 2020 explicitmsg "menu"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 149 99
+msg 129803 synchronous
+  from durationcanvas_ref 128651
+  to durationcanvas_ref 129675
+  yz 163 2015 explicitmsg "mostrarPlatos(tipoPlato)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 231 152
+msg 130571 return
+  from durationcanvas_ref 129675
+  to durationcanvas_ref 128651
+  yz 250 2015 unspecifiedmsg
+  show_full_operations_definition default drawing_language default show_context_mode default
+end
