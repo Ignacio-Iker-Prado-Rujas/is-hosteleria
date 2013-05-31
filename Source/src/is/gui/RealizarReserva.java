@@ -1,5 +1,6 @@
 package is.gui;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
@@ -7,6 +8,7 @@ import java.util.Vector;
 
 import is.gui.spring.SpringUtilities;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,8 +23,11 @@ public class RealizarReserva extends JPanel{
 
 	public RealizarReserva(){
 		super();
+		this.setLayout(new BorderLayout());
 		this.inicializaBox();
-		this.setLayout(new SpringLayout());
+		JPanel reserva = new JPanel();
+	
+		reserva.setLayout(new SpringLayout());
 		
 		final JLabel fecha = new JLabel("Fecha: ");
 		@SuppressWarnings("deprecation")
@@ -34,8 +39,8 @@ public class RealizarReserva extends JPanel{
 			}
 
 		});
-		this.add(fecha);
-		this.add(datePicker);
+		reserva.add(fecha);
+		reserva.add(datePicker);
 		
 		/*JLabel dia = new JLabel("Día: ");
 		//dia.add(this.dia);
@@ -54,28 +59,43 @@ public class RealizarReserva extends JPanel{
 		
 		JLabel hora = new JLabel("Hora: ");
 		//hora.add(this.hora);
-		this.add(hora);
-		this.add(this.hora);
+		reserva.add(hora);
+		reserva.add(this.hora);
 		
 		JLabel minutos = new JLabel("Minutos: ");
-		this.add(minutos);
-		this.add(this.minutos);
+		reserva.add(minutos);
+		reserva.add(this.minutos);
 		
 		JLabel nombre = new JLabel ("Nombre: ");
 		//nombre.add(this.nombre);
-		this.add(nombre);
-		this.add(this.nombre);
+		reserva.add(nombre);
+		reserva.add(this.nombre);
 		
 		JLabel comensales = new JLabel ("Número de comensales");
 		//comensales.add(this.comensales);
-		this.add(comensales);
-		this.add(this.comensales);
+		reserva.add(comensales);
+		reserva.add(this.comensales);
 		//p.add(comensales);*/
-		SpringUtilities.makeCompactGrid(this, 5, 2, 6, 6, 10, 10);
+		SpringUtilities.makeCompactGrid(reserva, 5, 2, 6, 6, 10, 10);
 		
+		this.add(reserva, BorderLayout.CENTER);
+		
+		JPanel aceptarOCancelar = new JPanel();
+		JButton aceptar = new JButton("Aceptar");
+		aceptar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//TODO
+				//if (esReserva()){
+				//	GUIController.comunicaReserva();
+				//}
+			}
+			
+		});
 		JFrame frame = new JFrame("Reservas");
 		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.add(this);
 		frame.pack();
