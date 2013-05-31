@@ -8,7 +8,10 @@ import java.util.ArrayList;
 //TODO añadir resreva, quitar reserva, edit reserva, añadir mesa quitar mesa editar mesa
 //TODO añadir comanda, editar comanda, (Borrar comanda?)
 public class Restaurante {
-	
+	public Restaurante(){
+		
+		
+	}
 	public Restaurante(){
 		this.mesas = new ArrayList<Mesa>();
 		this.reservas = new LibroReservas();

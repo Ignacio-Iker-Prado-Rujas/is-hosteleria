@@ -97,29 +97,27 @@ public class UserWindow extends JFrame  {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		RestauranteSwing rest = new RestauranteSwing();
 
-		if (true) { //Si el login es correcto (hay que implementar eso, se borra todo y se muestra la pantalla del restaurante
-
-		}
-
 		
 	}
 	
-	public UserWindow(){
+	public UserWindow(GUIController controller) {	
 		super("KIKE HOSTELERIA S.A.");
+		this.controlador = controller;
 		this.setSize(800, 600);
 		initializeGUI();
 		usuarios = new Usuario[1];
 		usuarios[0] = new Usuario("Scrugo", "huelomal");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+	
 	}
+
 	private void mostrarRestaurante(){
 
 		this.remove(logo);
 
 		this.remove(front);
 		this.setSize(400,300);
-		RestauranteSwing rest = new RestauranteSwing();
+		RestauranteSwing rest = new RestauranteSwing(controlador);
 		this.add(rest);
 		
 	}
@@ -155,12 +153,13 @@ public class UserWindow extends JFrame  {
 	
 	
 	private JMenuBar menuBar;
-	JTextField user;
-	JPasswordField password;
-	Usuario[] usuarios;
-	JLabel logo;
-	JPanel front;
-	RestauranteSwing rest;
+	private GUIController controlador;
+	private JTextField user;
+	private JPasswordField password;
+	private Usuario[] usuarios;
+	private JLabel logo;
+	private JPanel front;
+	private RestauranteSwing rest;
 	
 	//Ideas:
 	/**
