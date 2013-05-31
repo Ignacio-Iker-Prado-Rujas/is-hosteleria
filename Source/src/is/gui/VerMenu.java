@@ -55,13 +55,8 @@ public class VerMenu extends JFrame{
 			
 			ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
 			for( Consumicion cons: consum){
-				JToggleButton boton = new JToggleButton(cons.getNombre());/*
-<<<<<<< .mine
-//			con
-				panel.add(boton);	
-=======*/
+				JToggleButton boton = new JToggleButton(cons.getNombre());
 				platos.add(boton);	
-//>>>>>>> .r395
 			}
 			
 		}
