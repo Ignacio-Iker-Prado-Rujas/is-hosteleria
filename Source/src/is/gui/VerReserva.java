@@ -13,6 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+/**
+ *TODO en esta clase se muestran tres pestañas con las reservas de hoy, dentro de una semana y siempre
+ *
+ * @author JaimeDan
+ *
+ */
 public class VerReserva {
 
 	@SuppressWarnings("serial")
