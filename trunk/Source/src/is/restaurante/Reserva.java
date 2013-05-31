@@ -20,8 +20,6 @@ public class Reserva implements Comparable<Reserva>{
 	 */
 	public Reserva(Fecha date, String name, int numComensales, ArrayList<Mesa> listaMesas){
 		this.fecha = date;
-		//this.hora = hour;
-		//this.minutos = min;
 		this.nombre = name;
 		this.numeroDeComensales = numComensales; 
 		this.mesas = listaMesas;
@@ -30,11 +28,13 @@ public class Reserva implements Comparable<Reserva>{
 	
 	@Override
 	public int compareTo(Reserva o) {
-		if (this.fecha.esMayorQue(o.fecha))
-			return 1;
-		else if (this.fecha.equals(o.fecha))
-			return 0;
-		else return -1;
+		if (o!= null){
+			if (this.fecha.esMayorQue(o.fecha))
+				return 1;
+			else if (this.fecha.equals(o.fecha))
+				return 0;
+			else return -1;
+		}return -1;
 	}
 	
 	private ArrayList<Mesa> mesas;
