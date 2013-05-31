@@ -1,6 +1,7 @@
 package is.gui;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -25,6 +26,8 @@ public class CeldaPlato extends JPanel{
 		this.flechitas.setValue(0);
 		this.flechitas.addChangeListener(new ChangeListener() {
 
+			//TODO cada vez que se añade un plato, habrá que añadirlo a la lista de pedidos
+			//asi que hay que registrar como observador la parte derecha de realizar pedido, que es la lista final con todas las cosas
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				veces = (int) flechitas.getValue();
@@ -34,6 +37,7 @@ public class CeldaPlato extends JPanel{
 		this.setLayout(new FlowLayout());
 		this.add(botonPlato);
 		this.add(flechitas);
+		
 	}
 	
 	public int getVeces(){
