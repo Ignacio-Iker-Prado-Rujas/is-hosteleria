@@ -6,6 +6,9 @@ import is.restaurante.consumicion.Plato;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//hay que registrar los observadores en realizar pedido
+//TODO
 public class Comanda {
 	
 	
