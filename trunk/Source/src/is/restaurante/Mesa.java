@@ -13,20 +13,22 @@ public class Mesa {
 		//pedidos.
 	}
 	
+//TODO editComanda, selectComanda delete Comanda
+	
+	
 	public int getNumeroMesa() {
 		return numeroMesa;
 	}
-	public void anadirComanda(Comanda c){
-		pedidos.add(c);
-		
-	}
+	
 	public void setNumeroMesa(int numeroMesa) {
 		this.numeroMesa = numeroMesa;
 	}
 	public String generarFactura(){
 		return pedidos.toString();
 	}
+	
 
 	private Vector<Comanda> pedidos;
 	private int numeroMesa;
+	private int capacidadMaxima;
 }

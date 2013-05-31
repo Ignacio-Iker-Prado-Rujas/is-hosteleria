@@ -40,24 +40,8 @@ public class RealizarReserva extends JPanel{
 			}
 
 		});
-		this.add(fecha);
-		this.add(datePicker);	
-
-		
-		/*JLabel dia = new JLabel("Día: ");
-		//dia.add(this.dia);
-		this.add(dia);
-		this.add(this.dia);
-		
-		JLabel mes = new JLabel("Mes: ");
-		//mes.add(this.mes);
-		this.add(mes);
-		this.add(this.mes);
-		
-		JLabel año = new JLabel("Año: ");
-		//año.add(this.año);
-		this.add(año);
-		this.add(this.año);*/
+		reserva.add(fecha);
+		reserva.add(datePicker);	
 		
 		JLabel hora = new JLabel("Hora: ");
 		//hora.add(this.hora);
@@ -83,6 +67,10 @@ public class RealizarReserva extends JPanel{
 		reserva.add(this.comensales);
 		//p.add(comensales);*/
 
+		
+		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
+		this.add(reserva, BorderLayout.CENTER);
+		
 		this.add(new JButton("Entrar") {
 			{
 				this.addActionListener(new ActionListener() {
@@ -100,9 +88,7 @@ public class RealizarReserva extends JPanel{
 
 		}, BorderLayout.AFTER_LAST_LINE);
 	
-		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		
-		this.add(reserva, BorderLayout.CENTER);
 
 		frame = new JFrame("Reservas");
 
