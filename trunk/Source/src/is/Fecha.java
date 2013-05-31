@@ -94,6 +94,10 @@ public class Fecha {
 					this.hora == fecha2.hora && this.minutos > fecha2.minutos));
 		
 	}
+	
+	public boolean equals(Fecha fecha2){
+		return (this.año == fecha2.año && this.mes == fecha2.mes && this.dia == fecha2.dia && this.hora == fecha2.hora && this.minutos == fecha2.minutos);
+	}
 
 
 	private int año;
