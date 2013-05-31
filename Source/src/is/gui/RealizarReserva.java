@@ -115,6 +115,10 @@ public class RealizarReserva extends JPanel{
 		
 	}
 	
+	public RealizarReserva(GUIController rest) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private void inicializaBox(){
 		/*for (int i=1; i<=12; i++){
 			mes.addItem(meses[i]);
