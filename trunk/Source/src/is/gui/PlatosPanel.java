@@ -28,6 +28,10 @@ public class PlatosPanel extends JPanel{
 		
 	}
 	
+	public PlatosPanel(GUIController rest){
+		
+	}
+	
 	public PlatosPanel(int i, GUIController rest) {
 		this.menu = rest.getMenu();
 		// TODO Denotamos 0 bebidas 1 primero 2 segundo 3 postre

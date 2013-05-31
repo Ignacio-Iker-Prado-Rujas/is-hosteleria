@@ -20,6 +20,14 @@ public class List<Tipo extends Comparable<Tipo>> {
 		list = new Object[MIN_VALUE];
 		size = 0;
 	}
+	
+	/**
+	 * 
+	 * @return tamaño del vector
+	 */
+	public int size(){
+		return this.size;
+	}
 
 	/**
 	 * Obtiene un objeto de la lista que se busca a partir de otro objeto. Se
@@ -38,6 +46,12 @@ public class List<Tipo extends Comparable<Tipo>> {
 				return (Tipo) list[pos];
 		}
 		return null;
+	}
+	
+	public Tipo get(int i){
+		if (i >= this.size())
+			return null;
+		else return (Tipo) list[i];
 	}
 
 	/**

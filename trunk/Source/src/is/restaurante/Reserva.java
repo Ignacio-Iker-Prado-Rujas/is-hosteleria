@@ -25,6 +25,13 @@ public class Reserva implements Comparable<Reserva>{
 		this.mesas = listaMesas;
 	
 	}
+	/**
+	 * 
+	 * @return nombre del cliente que reserva
+	 */
+	public String getNombre(){
+		return this.nombre;
+	}
 	
 	@Override
 	public int compareTo(Reserva o) {
@@ -41,8 +48,8 @@ public class Reserva implements Comparable<Reserva>{
 	private Fecha fecha;
 	//int hora;
 	//int minutos;
-	String nombre;
-	int numeroDeComensales;
+	private String nombre;
+	private int numeroDeComensales;
 	public void crearPanel() {
 		// TODO Auto-generated method stub
 		
