@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Vector;
 
 import is.gui.spring.SpringUtilities;
+import is.restaurante.Reserva;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -40,8 +41,9 @@ public class RealizarReserva extends JPanel{
 			}
 
 		});
-		reserva.add(fecha);
-		reserva.add(datePicker);
+		this.add(fecha);
+		this.add(datePicker);	
+
 		
 		/*JLabel dia = new JLabel("Día: ");
 		//dia.add(this.dia);
@@ -81,10 +83,30 @@ public class RealizarReserva extends JPanel{
 		reserva.add(comensales);
 		reserva.add(this.comensales);
 		//p.add(comensales);*/
+
+		this.add(new JButton("Entrar") {
+			{
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						controlador.communicateReserva();						//	return reserva;
+						
+					}
+
+				
+				});
+				
+			}
+
+		});
+	
 		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		
 		this.add(reserva, BorderLayout.CENTER);
-		
+
+		frame = new JFrame("Reservas");
+
 		JPanel aceptarOCancelar = new JPanel();
 		JButton aceptar = new JButton("Aceptar");
 		aceptar.addActionListener(new ActionListener(){
@@ -99,6 +121,7 @@ public class RealizarReserva extends JPanel{
 			
 		});
 		JFrame frame = new JFrame("Reservas");
+
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -135,14 +158,14 @@ public class RealizarReserva extends JPanel{
 	}
 
 	
-	
+	private JFrame frame;
 	private boolean error;
-	
+	private Reserva reserva;
 	private JTextField fecha = new JTextField(10);
 	private JTextField dia = new JTextField(2);
 	private JComboBox mes = new JComboBox();
 	private JComboBox año = new JComboBox();
-	
+	private GUIController controlador;
 	private JComboBox hora;
 	private JComboBox minutos;
 	

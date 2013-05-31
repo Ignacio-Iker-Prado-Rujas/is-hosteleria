@@ -12,6 +12,10 @@ import is.restaurante.Restaurante;
 public class GUIController {
 
 	
+	public void crearComanda(){
+		
+	//	this.robot.requestStart();
+	} 
 	
 	public GUIController(Restaurante restaurante){
 		this.restaurante = restaurante;
@@ -20,4 +24,10 @@ public class GUIController {
 	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc
 	
 	private Restaurante restaurante;
+
+	public void communicateReserva() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
