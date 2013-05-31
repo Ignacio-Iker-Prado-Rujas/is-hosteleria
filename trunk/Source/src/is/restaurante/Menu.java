@@ -32,17 +32,21 @@ public class Menu {
 		return tipoConsumiciones;
 	}*/
 	
-	/** Muestra todos los platos del tipo pasado **/
-	public void mostrarPlatos(String tipoConsumicion){
+	/** Devuelve un string con los platos correspondientes **/
+	public String[] mostrarPlatos(String tipoConsumicion){
+		String[] nombres;
 		switch (tipoConsumicion){
-		 /* En funcion del tipo muestra un arrayConsumicion */
+		 /* Acumulas los nombres de los tipos de consumicion seleccionados */
 		}
+		return nombres;
 		
 	}
 	
 //
-	private void mostrarConsumiciones( ArrayList<Consumicion> consumiciones){
-		/* bucle mostrando todas las consumiciones del array pasado */
+	private String mostrarConsumiciones( ArrayList<Consumicion> consumiciones){
+		String[] nombres;
+		/* bucle acumulando todas las consumiciones del array pasado */
+		return nombres;
 		
 	}
 	public ArrayList<Consumicion> getBebidas(){
