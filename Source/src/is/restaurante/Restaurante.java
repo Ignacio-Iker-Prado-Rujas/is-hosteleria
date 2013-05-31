@@ -10,7 +10,9 @@ import java.util.ArrayList;
 public class Restaurante {
 
 	public Restaurante(){
-		this.mesas = new ArrayList<Mesa>();
+		this.mesas = new ArrayList<Mesa>(5);
+		for (int i=0; i<5; i++)
+			mesas.add(new Mesa(i));
 		this.reservas = new LibroReservas();
 		this.menu = new Menu();
 	}

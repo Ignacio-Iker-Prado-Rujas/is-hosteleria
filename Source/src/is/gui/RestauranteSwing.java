@@ -29,6 +29,7 @@ public class RestauranteSwing extends JPanel{
 		super();
 		this.rest = controlador;
 		initializeGUI();
+		this.restaurante = rest;
 	}
 	
 	public void initializeGUI(){

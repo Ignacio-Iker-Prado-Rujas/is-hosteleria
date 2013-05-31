@@ -17,8 +17,11 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -48,9 +51,9 @@ public class RealizarReserva extends JPanel{
 		reserva.add(fecha);
 		reserva.add(datePicker);	
 		
-		JLabel hora = new JLabel("Hora: ");
+		JLabel horaLabel = new JLabel("Hora: ");
 		//hora.add(this.hora);
-		reserva.add(hora);
+		reserva.add(horaLabel);
 		JPanel eligeHora = new JPanel();
 		eligeHora.setLayout(new FlowLayout());
 			eligeHora.add(this.hora);
@@ -61,14 +64,25 @@ public class RealizarReserva extends JPanel{
 		//reserva.add(minutos);
 		//reserva.add(this.minutos);
 		
-		JLabel nombre = new JLabel ("Nombre: ");
+		JLabel nombreL = new JLabel ("Nombre: ");
 		//nombre.add(this.nombre);
-		reserva.add(nombre);
+		reserva.add(nombreL);
 		reserva.add(this.nombre);
 		
-		JLabel comensales = new JLabel ("Número de comensales");
+		JLabel comensalesL = new JLabel ("Número de comensales");
+		comensales.setValue(0);
+		comensales.addChangeListener(new ChangeListener(){
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				if ((int) comensales.getValue() < 0)
+					comensales.setValue(0);
+			}
+			
+		});
+		
 		//comensales.add(this.comensales);
-		reserva.add(comensales);
+		reserva.add(comensalesL);
 		reserva.add(this.comensales);
 		//p.add(comensales);*/
 
@@ -77,25 +91,25 @@ public class RealizarReserva extends JPanel{
 		 */
 		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		this.add(reserva, BorderLayout.CENTER);
-		
 		this.add(new JButton("Reservar") {
 			{
 				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						if (compruebaReservaValida()){
-							/*Date reservaDate = datePicker.getDate();
+						if (datosValidos()){
+							Date reservaDate = datePicker.getDate();
 							int year = reservaDate.getMonth();
 							int month = reservaDate.getMonth();
 							int day = reservaDate.getDay();
-							Date reservaDate =  Calendar.set(year, month, day);
-							*/
 							
-							controlador.communicateReserva(null);						
+							
+							controlador.communicateReserva(year, month, day, (int)hora.getSelectedItem(), 
+									(int)minutos.getSelectedItem(), nombre.getText(), (int)comensales.getValue());						
 							
 							
 						}
+						
 						
 					}
 
@@ -136,8 +150,8 @@ public class RealizarReserva extends JPanel{
 		
 	}
 	
-	public boolean compruebaReservaValida() {
-		return false;//if (datePicker.getDate().before());
+	public boolean datosValidos() {
+		return (int)comensales.getValue() > 0;
 	}
 	
 
@@ -183,7 +197,7 @@ public class RealizarReserva extends JPanel{
 	private final JXDatePicker datePicker;
 	
 	private JTextField nombre = new JTextField(10);
-	private JTextField comensales = new JTextField(2);
+	private JSpinner comensales = new JSpinner();
 	
 	private String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
 			"Julio", "Agosto", "Septiembre"

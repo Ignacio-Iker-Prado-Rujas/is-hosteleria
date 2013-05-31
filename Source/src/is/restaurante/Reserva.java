@@ -9,10 +9,19 @@ public class Reserva implements Comparable<Reserva>{
 	public Reserva(){
 		
 	}
+	/**
+	 * 
+	 * @param date
+	 * @param hour
+	 * @param min
+	 * @param name
+	 * @param number
+	 * @param listaMesas
+	 */
 	public Reserva(Fecha date, int hour, int min, String name, int number, ArrayList<Mesa> listaMesas){
 		this.fecha = date;
-		this.hora = hour;
-		this.minutos = min;
+		//this.hora = hour;
+		//this.minutos = min;
 		this.nombre = name;
 		this.numeroDeComensales = number; 
 		this.mesas = listaMesas;
@@ -30,8 +39,8 @@ public class Reserva implements Comparable<Reserva>{
 	
 	private ArrayList<Mesa> mesas;
 	private Fecha fecha;
-	int hora;
-	int minutos;
+	//int hora;
+	//int minutos;
 	String nombre;
 	int numeroDeComensales;
 	

@@ -1,7 +1,14 @@
 package is;
 
 public class Fecha {
-	
+	/**
+	 * 
+	 * @param año
+	 * @param mes
+	 * @param dia
+	 * @param hora
+	 * @param minutos
+	 */
 	public Fecha(int año, int mes, int dia, int hora, int minutos){
 		this.año = año;
 		this.mes = mes;
