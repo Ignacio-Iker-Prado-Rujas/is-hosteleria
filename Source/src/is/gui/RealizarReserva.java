@@ -98,7 +98,7 @@ public class RealizarReserva extends JPanel{
 				
 			}
 
-		});
+		}, BorderLayout.AFTER_LAST_LINE);
 	
 		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		
