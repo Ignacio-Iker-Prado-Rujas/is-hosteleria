@@ -34,7 +34,7 @@ public class Menu {
 	
 	/** Devuelve un string con los platos correspondientes **/
 	public String[] mostrarPlatos(String tipoConsumicion){
-		String[] nombres;
+		String[] nombres = new String[4];
 		switch (tipoConsumicion){
 		 /* Acumulas los nombres de los tipos de consumicion seleccionados */
 		}
@@ -44,7 +44,7 @@ public class Menu {
 	
 //
 	private String mostrarConsumiciones( ArrayList<Consumicion> consumiciones){
-		String[] nombres;
+		String[] nombres = null;
 		/* bucle acumulando todas las consumiciones del array pasado */
 		return nombres;
 		

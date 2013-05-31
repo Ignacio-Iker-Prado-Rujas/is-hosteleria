@@ -10,7 +10,7 @@ public class VerMenu{
 	public VerMenu(GUIController controller){
 		
 		this.controlador = controller;
-		controlador.getMenu();
+		menu = controlador.getMenu();
 		menu.getBebidas();
 		JPanel panel = new JPanel();
 	//	panel.setLayout()
