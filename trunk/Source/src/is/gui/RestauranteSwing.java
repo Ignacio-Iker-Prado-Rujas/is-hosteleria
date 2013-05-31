@@ -47,7 +47,7 @@ public class RestauranteSwing extends JPanel{
 				});
 			}
 		};
-		this.add(botones[0]);
+
 		botones[1] = new JButton("Generar/modificar comanda"){
 			{
 				this.addActionListener(new ActionListener(){
@@ -60,9 +60,38 @@ public class RestauranteSwing extends JPanel{
 				});
 			}
 		};
-		this.add(botones[1]);
-		this.add(new JButton("Ver/anular reserva"));
-		this.add(new JButton("Anular pedido"));
+		
+		botones[2] = new JButton	("Ver/anular reserva") {
+			{
+
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+
+					}
+
+				});
+
+			}
+
+		};
+		
+		botones[3] = new JButton	("Anular pedido") {
+			{
+
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+
+					}
+
+				});
+
+			}
+
+		};
 		
 		botones[4] = new JButton	("Distribución mesas") {
 			{
@@ -85,11 +114,77 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		this.add(botones[4]);
-		this.add(new JButton("Generar factura"));
-		this.add(new JButton("Cantidad existencias"));
-		this.add(new JButton("Ver/modificar menú"));
-		this.add(new JButton("Notificar incidencias"));
+		
+		botones[5] = new JButton	("Generar factura") {
+			{
+
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+							new GenerarFactura(rest);
+
+					}
+
+				});
+
+			}
+
+		};
+		
+		botones[6] = new JButton	("Cantidad existencias") {
+			{
+
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+
+					}
+
+				});
+
+			}
+
+		};
+		
+		botones[7] = new JButton	("Ver/modificar menú") {
+			{
+
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+
+					}
+
+				});
+
+			}
+
+		};
+		
+		botones[8] = new JButton	("Notificar incidencias") {
+			{
+
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+
+					}
+
+				});
+
+			}
+
+		};
+		for(JButton b : botones) this.add(b);
+	//	this.add(new JButton("Ver/modificar menú"));
+	//	this.add(new JButton("Notificar incidencias"));
 		
 		
 	}
