@@ -18,12 +18,12 @@ public class Reserva implements Comparable<Reserva>{
 	 * @param number
 	 * @param listaMesas
 	 */
-	public Reserva(Fecha date, int hour, int min, String name, int number, ArrayList<Mesa> listaMesas){
+	public Reserva(Fecha date, String name, int numComensales, ArrayList<Mesa> listaMesas){
 		this.fecha = date;
 		//this.hora = hour;
 		//this.minutos = min;
 		this.nombre = name;
-		this.numeroDeComensales = number; 
+		this.numeroDeComensales = numComensales; 
 		this.mesas = listaMesas;
 	
 	}
