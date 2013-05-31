@@ -35,8 +35,6 @@ public class LibroReservas {
 			if (listaReservas.get(i).equals(hoy))
 				reservasDeHoy.add(listaReservas.get(i));
 		}
-		Calendar now = Calendar.getInstance();
-		now.get(Calendar.g)
 		
 		
 		
@@ -50,6 +48,7 @@ public class LibroReservas {
 	}/*
 	
 	Ya me parecia a mi que esta puta  mierda no iba a funcionar xD
+	jajajaj xD
 	public ArrayList<Reserva> buscarReserva(String nombre){
 		ArrayList<Reserva> reservas = new ArrayList<Reserva>();
 		for (int i = 0; i <numeroReservas; i++){
