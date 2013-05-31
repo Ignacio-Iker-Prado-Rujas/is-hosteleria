@@ -1,5 +1,7 @@
 package is.gui;
 
+import is.restaurante.Restaurante;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -14,8 +16,9 @@ import javax.swing.JScrollPane;
 @SuppressWarnings("serial")
 public class RealizarPedido extends JPanel {
 
-	public RealizarPedido(GUIController rest){
-		this.restaurante = rest;
+	public RealizarPedido(/*GUIController rest*/ Restaurante restaurante){
+		//this.restaurante = rest;
+		this.rest = restaurante;
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
 		tipoPlato.setLayout(new GridLayout(4,1));
@@ -25,7 +28,7 @@ public class RealizarPedido extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						panelCentral.add(new PlatosPanel(0));
+						panelCentral.add(new PlatosPanel(0, rest));
 
 					}
 					
@@ -74,7 +77,7 @@ public class RealizarPedido extends JPanel {
 		panelCentral = new JPanel();
 		this.add(tipoPlato, BorderLayout.WEST);
 		JFrame frame = new JFrame("Realizar Pedido");
-
+		this.add(panelCentral);
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -91,6 +94,6 @@ public class RealizarPedido extends JPanel {
 	private PlatosPanel platosPanel;
 	private JScrollPane scroller;
 	private GUIController restaurante;
-	
+	private Restaurante rest;
 	
 }

@@ -3,6 +3,7 @@ package is.gui;
 import java.util.ArrayList;
 import java.util.Date;
 
+import is.restaurante.Menu;
 import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
 
@@ -24,6 +25,9 @@ public class GUIController {
 	public GUIController(Restaurante restaurante){
 		this.restaurante = restaurante;
 	}
+	public  Menu getMenu(){
+		return restaurante.getMenu();
+
 	public  ArrayList<Consumicion> getPrimeros(){
 		return restaurante.getMenu(1);
 		
@@ -42,6 +46,7 @@ public class GUIController {
 	}
 
 	public void communicateReserva(Date fecha) {
+
 		
 	}
 	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc

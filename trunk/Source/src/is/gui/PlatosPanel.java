@@ -1,6 +1,7 @@
 package is.gui;
 
 import is.restaurante.Menu;
+import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
 
 import java.awt.GridLayout;
@@ -16,7 +17,8 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PlatosPanel extends JPanel{
 
-	public PlatosPanel(){
+	public PlatosPanel(Restaurante rest){
+		this.menu = rest.getMenu();
 
 	//	this.setLayout(new GridLayout(2, 1));
 
@@ -26,7 +28,8 @@ public class PlatosPanel extends JPanel{
 		
 	}
 	
-	public PlatosPanel(int i) {
+	public PlatosPanel(int i, Restaurante rest) {
+		this.menu = rest.getMenu();
 		// TODO Denotamos 0 bebidas 1 primero 2 segundo 3 postre
 		if (i == 0) platos = menu.getBebidas();
 		else if(i == 1) platos = menu.getPrimeros();
