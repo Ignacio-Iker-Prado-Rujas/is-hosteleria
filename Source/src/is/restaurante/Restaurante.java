@@ -1,5 +1,7 @@
 package is.restaurante;
 
+import is.restaurante.consumicion.Consumicion;
+
 import java.util.ArrayList;
 
 
@@ -10,10 +12,29 @@ public class Restaurante {
 		return null;
 	}
 		
+	
+	
+	
+	public Menu getMenu() {
+		return menu;
+	}
+	public ArrayList<Consumicion> getMenu(int n){
+		if (n == 0) return menu.getBebidas();
+		else if (n == 1) return menu.getPrimeros();
+		else if (n == 2) return menu.getSegundos();
+		else if (n == 3) return menu.getPostres();
+		else return null;
 		
-	
-	
-	
+		
+	}
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
+
+
+
 	private ArrayList<Mesa> mesas;
 	private ArrayList<Reserva> reservas;
+	private Menu menu;
 }

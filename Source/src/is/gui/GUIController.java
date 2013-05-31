@@ -1,6 +1,9 @@
 package is.gui;
 
+import java.util.ArrayList;
+
 import is.restaurante.Restaurante;
+import is.restaurante.consumicion.Consumicion;
 
 
 
@@ -20,7 +23,10 @@ public class GUIController {
 	public GUIController(Restaurante restaurante){
 		this.restaurante = restaurante;
 	}
-	
+	public  ArrayList<Consumicion> getMenu(){
+		return restaurante.getMenu();
+		
+	}
 	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc
 	
 	private Restaurante restaurante;
