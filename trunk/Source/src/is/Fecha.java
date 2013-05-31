@@ -88,8 +88,11 @@ public class Fecha {
 		this.minutos = minutos;
 	}
 
-	public void sumaDias(int dias){
-		int 
+	public Fecha siguienteSemana(){
+		int numDia = this.dia;
+		numDia += 7;
+		
+		return null;	
 	}
 	
 	public boolean esBisiesto() {
@@ -118,4 +121,5 @@ public class Fecha {
 	
 	private int hora;
 	private int minutos;
+	private int[] diasMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 }

@@ -63,7 +63,7 @@ public class RealizarPedido extends JPanel {
 	private JPanel[] elementosMenu;
 }
  */
-		inicializaPaneles();
+		//inicializaPaneles();
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
 		tipoPlato.setLayout(new GridLayout(4,1));
