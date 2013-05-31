@@ -1,6 +1,7 @@
 package is.gui;
 
 import is.Usuario;
+import is.restaurante.Restaurante;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -95,7 +96,7 @@ public class UserWindow extends JFrame  {
 		this.add(front);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		RestauranteSwing rest = new RestauranteSwing();
+		RestauranteSwing rest = new RestauranteSwing(new Restaurante());
 
 		
 	}
