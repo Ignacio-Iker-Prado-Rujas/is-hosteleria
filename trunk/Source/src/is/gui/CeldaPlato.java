@@ -1,6 +1,7 @@
 package is.gui;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -21,7 +22,18 @@ public class CeldaPlato extends JPanel{
 	public CeldaPlato(Consumicion plato){
 		this.veces = 0;
 		this.plato = plato;
-		this.botonPlato = new JButton(plato.getNombre());
+		this.botonPlato = new JButton(plato.getNombre()){
+			{
+				this.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						incrementaVeces();
+					}
+					
+				});
+			}
+		};
 		this.flechitas = new JSpinner();
 		this.flechitas.setValue(0);
 		this.flechitas.addChangeListener(new ChangeListener() {
@@ -38,6 +50,13 @@ public class CeldaPlato extends JPanel{
 		this.add(botonPlato);
 		this.add(flechitas);
 		
+	}
+	
+	public void incrementaVeces(){
+		int numero = (int) this.flechitas.getValue();
+		numero++;
+		this.flechitas.setValue(numero);
+		this.veces = numero;
 	}
 	
 	public int getVeces(){
