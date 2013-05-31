@@ -2,6 +2,13 @@ package is.restaurante.consumicion;
 
 public class Bebida implements Consumicion{
 
+	
+	public Bebida(String name, int price, boolean disp, String desc){
+		this.descripción = desc;
+		this.precio = price;
+		this.nombre = name;
+		this.disponible = disp;
+	}
 	@Override
 	public float getPrecio() {
 		// TODO Auto-generated method stub
