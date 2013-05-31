@@ -9,6 +9,11 @@ import java.util.ArrayList;
 //TODO añadir comanda, editar comanda, (Borrar comanda?)
 public class Restaurante {
 	
+	public Restaurante(){
+		this.mesas = new ArrayList<Mesa>();
+		this.reservas = new LibroReservas();
+		this.menu = new Menu();
+	}
 	public Reserva crearReserva(){
 		return null;
 	}
@@ -30,15 +35,18 @@ public class Restaurante {
 		
 		
 	}
+	
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
+	
+	public void hola(){}
 
 
 
 
 	private ArrayList<Mesa> mesas;
-	private ArrayList<Reserva> reservas;
+	private LibroReservas reservas;
 	private Menu menu;
 	
 }
