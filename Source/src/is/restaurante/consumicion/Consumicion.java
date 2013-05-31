@@ -12,5 +12,5 @@ public interface Consumicion {
 	
 	public boolean isDisponible();
 
-	public CeldaPlato generarInfo();
+	//public CeldaPlato generarInfo();
 }
