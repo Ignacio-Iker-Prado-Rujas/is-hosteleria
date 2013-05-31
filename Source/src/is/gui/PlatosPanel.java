@@ -15,4 +15,5 @@ public class PlatosPanel extends JPanel{
 	public PlatosPanel(){
 		
 	}
+	
 }
