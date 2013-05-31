@@ -22,8 +22,7 @@ public class Menu {
 		postres = new ArrayList<Consumicion>(2);
 		postres.add(new Plato("Helado de gordaco", 5, true, null));		
 		postres.add(new Plato("Manzana de Newton", 5, true, null));		
-		postres.get(index)
-	
+		
 	}
 	
 	

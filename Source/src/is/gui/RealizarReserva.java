@@ -22,8 +22,10 @@ import org.jdesktop.swingx.JXDatePicker;
 @SuppressWarnings("serial")
 public class RealizarReserva extends JPanel{
 
-	public RealizarReserva(){
+	@SuppressWarnings("deprecation")
+	public RealizarReserva(GUIController controller){
 		super();
+		this.controlador = controller;
 		this.setLayout(new BorderLayout());
 		this.inicializaBox();
 		JPanel reserva = new JPanel();
@@ -31,8 +33,7 @@ public class RealizarReserva extends JPanel{
 		reserva.setLayout(new SpringLayout());
 		
 		final JLabel fecha = new JLabel("Fecha: ");
-		@SuppressWarnings("deprecation")
-		final JXDatePicker datePicker = new JXDatePicker(System.currentTimeMillis());
+		datePicker = new JXDatePicker(System.currentTimeMillis());
 		datePicker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//fecha.setText(datePicker.getDate().toString());
@@ -71,15 +72,18 @@ public class RealizarReserva extends JPanel{
 		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		this.add(reserva, BorderLayout.CENTER);
 		
-		this.add(new JButton("Entrar") {
+		this.add(new JButton("Reservar") {
 			{
 				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						controlador.communicateReserva();						//	return reserva;
+						if (compruebaReservaValida())
+							controlador.communicateReserva();						//	return reserva;
 						
 					}
+
+					
 
 				
 				});
@@ -88,6 +92,7 @@ public class RealizarReserva extends JPanel{
 
 		}, BorderLayout.AFTER_LAST_LINE);
 	
+		
 		
 
 		frame = new JFrame("Reservas");
@@ -115,9 +120,10 @@ public class RealizarReserva extends JPanel{
 		
 	}
 	
-	public RealizarReserva(GUIController rest) {
-		// TODO Auto-generated constructor stub
+	public boolean compruebaReservaValida() {
+		if (datePicker.getDate().before());
 	}
+	
 
 	private void inicializaBox(){
 		/*for (int i=1; i<=12; i++){
@@ -157,6 +163,8 @@ public class RealizarReserva extends JPanel{
 	private GUIController controlador;
 	private JComboBox hora;
 	private JComboBox minutos;
+	
+	private final JXDatePicker datePicker;
 	
 	private JTextField nombre = new JTextField(10);
 	private JTextField comensales = new JTextField(2);
