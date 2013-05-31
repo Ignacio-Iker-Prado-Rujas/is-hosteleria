@@ -1,7 +1,9 @@
 package is.restaurante;
 
+import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
 import is.restaurante.consumicion.Plato;
+import is.restaurante.consumicion.Postre;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +32,22 @@ public class Comanda {
 		this.precio += primero.getPrecio();
 	}
 	
+	public void setVecesPrimero(Plato primero){
+		
+	}
+	
+	public void setVecesSegundo(Plato segundo){
+		
+	}
+	
+	public void setVecesBebidas(Bebida drinking){
+		
+	}
+
+	public void setVecesPostre(Postre postre){
+	
+	}
+	
 	public void addSegundo(Plato segundo){
 		if (segundos.containsKey(segundo)){
 			//primeros.
@@ -42,7 +60,7 @@ public class Comanda {
 		
 	}
 	
-	public void addPostre(Plato postre){
+	public void addPostre(Postre postre){
 		if (postres.containsKey(postre)){
 			//primeros.
 			postres.put(postre, primeros.get(postre) + 1);
@@ -53,7 +71,7 @@ public class Comanda {
 		this.precio += postre.getPrecio();
 	}
 	
-	public void addBebida(Plato bebida){
+	public void addBebida(Bebida bebida){
 		if (bebidas.containsKey(bebida)){
 			//primeros.
 			bebidas.put(bebida, bebidas.get(bebida) + 1);
