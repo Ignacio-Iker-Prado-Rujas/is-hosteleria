@@ -1,6 +1,7 @@
 package is.gui;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
@@ -60,11 +61,15 @@ public class RealizarReserva extends JPanel{
 		JLabel hora = new JLabel("Hora: ");
 		//hora.add(this.hora);
 		reserva.add(hora);
-		reserva.add(this.hora);
+		JPanel eligeHora = new JPanel();
+		eligeHora.setLayout(new FlowLayout());
+			eligeHora.add(this.hora);
+			eligeHora.add(this.minutos);
+		reserva.add(eligeHora);
 		
-		JLabel minutos = new JLabel("Minutos: ");
-		reserva.add(minutos);
-		reserva.add(this.minutos);
+		//JLabel minutos = new JLabel("Minutos: ");
+		//reserva.add(minutos);
+		//reserva.add(this.minutos);
 		
 		JLabel nombre = new JLabel ("Nombre: ");
 		//nombre.add(this.nombre);
@@ -76,7 +81,7 @@ public class RealizarReserva extends JPanel{
 		reserva.add(comensales);
 		reserva.add(this.comensales);
 		//p.add(comensales);*/
-		SpringUtilities.makeCompactGrid(reserva, 5, 2, 6, 6, 10, 10);
+		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		
 		this.add(reserva, BorderLayout.CENTER);
 		
