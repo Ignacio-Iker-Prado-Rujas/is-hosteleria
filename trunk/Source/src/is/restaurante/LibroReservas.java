@@ -1,5 +1,6 @@
 package is.restaurante;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import is.Fecha;
@@ -21,17 +22,25 @@ public class LibroReservas {
 	}
 	
 	public ArrayList<Reserva> reservasHoy(){
+		Date date = new Date();
 		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
-		ArrayList<Reserva> reservasHoy = new ArrayList<Reserva>();
+		ArrayList<Reserva> reservasDeHoy = new ArrayList<Reserva>();
 		buscarReserva(fecha);
 		Fecha hoy = new Fecha(date.getYear(),
 		date.getMonth(),
 		date.getDay(),
 		date.getHours(),
 		date.getMinutes());
+		for (int i=0; i< listaReservas.size(); i++){
+			if (listaReservas.get(i).equals(hoy))
+				reservasDeHoy.add(listaReservas.get(i));
+		}
+		Calendar now = Calendar.getInstance();
+		now.get(Calendar.g)
 		
 		
-		return null;
+		
+		return reservasDeHoy;
 		
 	}
 
@@ -69,5 +78,5 @@ public class LibroReservas {
 	
 	
 	private List<Reserva> listaReservas;
-	private int numeroReservas;
+	private int numeroReservas;//TODO creo que numero reservas se puede ver con listaReservas.size();
 }

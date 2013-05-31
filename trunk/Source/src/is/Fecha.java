@@ -88,8 +88,13 @@ public class Fecha {
 		this.minutos = minutos;
 	}
 
+	public void sumaDias(int dias){
+		int 
+	}
 	
-	
+	public boolean esBisiesto() {
+	    return ((this.año % 4 == 0 && this.año % 100 != 0) || this.año % 400 == 0);
+	}
 	public boolean esMayorQue(Fecha fecha2){
 		
 		return ((this.año > fecha2.año) ||
