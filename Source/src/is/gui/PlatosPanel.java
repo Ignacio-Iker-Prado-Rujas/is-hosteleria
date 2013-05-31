@@ -1,5 +1,6 @@
 package is.gui;
 
+import java.awt.GridLayout;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -15,6 +16,7 @@ import javax.swing.JPanel;
 public class PlatosPanel extends JPanel{
 
 	public PlatosPanel(){
+		this.setLayout(new GridLayout(4, 11));
 		
 	}
 	
