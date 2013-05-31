@@ -28,9 +28,9 @@ public class Menu {
 	}
 	
 	/** Devuelve una lista de los tipos de consumiciones que existen **/
-	public Consumiciones[] verMenu(){
+	/*public Consumiciones[] verMenu(){
 		return tipoConsumiciones;
-	}
+	}*/
 	
 	/** Muestra todos los platos del tipo pasado **/
 	public void mostrarPlatos(String tipoConsumicion){
@@ -40,7 +40,7 @@ public class Menu {
 		
 	}
 	
-	/
+//
 	private void mostrarConsumiciones( ArrayList<Consumicion> consumiciones){
 		/* bucle mostrando todas las consumiciones del array pasado */
 		
@@ -61,7 +61,7 @@ public class Menu {
 		return postres;
 	}
 	
-	private Consumicion[] tipoConsumiciones = { Bebida, Primero, Segundo, Postre};
+	/*private Consumicion[] tipoConsumiciones = { Bebida, Primero, Segundo, Postre};*/
 	
 	private ArrayList<Consumicion> bebidas;
 	private ArrayList<Consumicion> primeros;
