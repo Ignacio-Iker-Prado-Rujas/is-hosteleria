@@ -1,7 +1,7 @@
 format 76
 "diagramadeccomunicacion"
-  revision 11
-  modified_by 11 "hlocal"
+  revision 13
+  modified_by 5 "hlocal"
 
 
   
@@ -75,6 +75,23 @@ format 76
       collaborationdiagram 142210 "diagramaEditarComanda"
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
+      end
+
+      class 133 "Consumicion"
+	visibility package stereotype "interface"
+	cpp_decl ""
+	java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+	php_decl "${comment}interface ${name} {
+${members}}
+"
+	python_2_2 python_decl ""
+	idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+	explicit_switch_type ""
+	
       end
     end
 
@@ -206,7 +223,6 @@ ${members}}
 	  
 	end
       end
-
       class 128642 "ListaPlatos"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -417,7 +433,6 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
-
       class 129410 "VerMenu"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -453,7 +468,6 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
-
       class 128146 "ListaReserva"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -489,7 +503,6 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
-
       class 128274 "RealizarRecuentoDeExistencias"
 	visibility package stereotype "entity"
 	cpp_decl ""
@@ -525,7 +538,6 @@ ${members}}
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
-
       class 135938 "pantallaCocinero"
 	visibility package stereotype "boundary"
 	cpp_decl ""
