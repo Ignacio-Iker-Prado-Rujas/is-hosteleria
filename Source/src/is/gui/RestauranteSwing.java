@@ -54,7 +54,7 @@ public class RestauranteSwing extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						new RealizarPedido(rest);
+						new RealizarPedido(restaurante);
 						
 					}
 				});
@@ -103,6 +103,6 @@ public class RestauranteSwing extends JPanel{
 		}
 	}
 	private JButton[] botones;
-	//private Restaurante restaurante;
+	private Restaurante restaurante;
 	private GUIController rest;	
 }
