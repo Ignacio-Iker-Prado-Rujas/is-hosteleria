@@ -12,12 +12,15 @@ public class Plato implements Consumicion{
 	 * @param nombre: nombre del plato
 	 * @param precio: precio del plato
 	 */
-	public Plato(String descripción, String nombre, float precio){
+	public Plato(String nombre, float precio, boolean disp, String descripción){
 		this.descripción = descripción;
 		this.nombre = nombre;
 		this.precio = precio;
+		this.disponible = disp;
 	}
 	
+
+
 	@Override
 	public String getDescripcion() {
 		// TODO Auto-generated method stub
