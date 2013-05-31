@@ -1,5 +1,7 @@
 package is.restaurante.consumicion;
 
+import is.gui.CeldaPlato;
+
 public interface Consumicion {
 
 	public float getPrecio();
@@ -9,4 +11,6 @@ public interface Consumicion {
 	public String getDescripcion();
 	
 	public boolean isDisponible();
+
+	public CeldaPlato generarInfo();
 }

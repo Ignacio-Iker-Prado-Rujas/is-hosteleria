@@ -27,19 +27,19 @@ public class Menu {
 	}
 	
 	
-	ArrayList<Consumicion> getBebidas(){
+	public ArrayList<Consumicion> getBebidas(){
 		return bebidas;
 	}
 	
-	ArrayList<Consumicion> getPrimeros(){
+	public ArrayList<Consumicion> getPrimeros(){
 		return primeros;
 	}
 	
-	ArrayList<Consumicion> getSegundos(){
+	public ArrayList<Consumicion> getSegundos(){
 		return segundos;
 	}
 	
-	ArrayList<Consumicion> getPostres(){
+	public ArrayList<Consumicion> getPostres(){
 		return postres;
 	}
 	

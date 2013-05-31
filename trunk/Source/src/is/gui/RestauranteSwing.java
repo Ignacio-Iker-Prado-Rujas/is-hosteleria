@@ -13,6 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import tp.pr5.gui.GUIController;
+
 @SuppressWarnings("serial")
 
 
@@ -21,12 +23,12 @@ public class RestauranteSwing extends JPanel{
 	
 	public RestauranteSwing(){	
 		super();
-		this.restaurante = new Restaurante();
+	//	this.restaurante = new Restaurante();
 		initializeGUI();
 	}
 	public RestauranteSwing(Restaurante rest){
 		super();
-		this.restaurante = rest;
+	//	this.restaurante = rest;
 		initializeGUI();
 	}
 	
@@ -40,7 +42,7 @@ public class RestauranteSwing extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						new RealizarReserva();
+						new RealizarReserva(rest);
 					}
 					
 				});
@@ -53,7 +55,7 @@ public class RestauranteSwing extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						new RealizarPedido();
+						new RealizarPedido(rest);
 						
 					}
 				});
@@ -74,7 +76,6 @@ public class RestauranteSwing extends JPanel{
 						JLabel fotoMesas = new JLabel(mesas);
 						JFrame marco = new JFrame();
 						marco.setVisible(true);
-						//no se por que cojones no funciona: marco.setDefaultCloseOperation(EXIT_ON_CLOSE);
 						marco.add(fotoMesas);
 						marco.setSize(620, 475);
 
@@ -85,7 +86,6 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-	//	this.add(new JButton("Distribución mesas"));
 		this.add(botones[4]);
 		this.add(new JButton("Generar factura"));
 		this.add(new JButton("Cantidad existencias"));
@@ -104,5 +104,6 @@ public class RestauranteSwing extends JPanel{
 		}
 	}
 	private JButton[] botones;
-	private Restaurante restaurante;
+	//private Restaurante restaurante;
+	private GUIController rest;	
 }
