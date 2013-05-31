@@ -1,6 +1,6 @@
 format 76
 "diagramasSecuencia" // diagramasSecuencia
-  revision 2
+  revision 3
   modified_by 5 "hlocal"
   // class settings
   //class diagram settings
@@ -60,6 +60,41 @@ ${members}}
       idl_decl ""
       explicit_switch_type ""
       
+      classrelation 128389 // <unidirectional association>
+	relation 128261 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128389 // <unidirectional association>
+	  b parent class_ref 142466 // Restaurante
+      end
+
+      classrelation 128517 // <unidirectional association>
+	relation 128389 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128517 // <unidirectional association>
+	  b parent class_ref 128770 // Reserva
+      end
+
+      classrelation 129925 // <unidirectional association>
+	relation 129285 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129925 // <unidirectional association>
+	  b parent class_ref 142466 // Restaurante
+      end
+
+      classrelation 130565 // <unidirectional association>
+	relation 129669 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130565 // <unidirectional association>
+	  b parent class_ref 128005 // Inventario
+      end
     end
   end
 
@@ -96,6 +131,67 @@ ${members}}
       idl_decl ""
       explicit_switch_type ""
       
+      attribute 128005 "listaExistencias"
+	private type class_ref 128133 // Existencia
+	stereotype "list"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 128645 "verExistencias"
+	public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+
+"
+	
+	
+	
+      end
+
+      operation 128773 "sePuedeEditar"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "existencia" type class_ref 128133 // Existencia
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 128901 "editar"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "existencia" type class_ref 128133 // Existencia
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 130309 // <aggregation>
+	relation 129541 o---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130309 // <aggregation>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130437 // <aggregation>
+      end
     end
 
     class 128133 "Existencia"
@@ -109,6 +205,34 @@ ${members}}
       idl_decl ""
       explicit_switch_type ""
       
+      operation 129029 "esEditable"
+	public explicit_return_type "bool"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129157 "modificar"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "cantidad" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 130437 // <aggregation>
+	relation_ref 129541 // <aggregation>
+      end
     end
   end
 
