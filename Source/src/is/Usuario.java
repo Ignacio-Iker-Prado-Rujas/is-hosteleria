@@ -11,9 +11,11 @@ public class Usuario {
 	/**
 	 * @param args
 	 */
+	
+	//por que carajos tiene esto un main??
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		UserWindow p = new UserWindow();
+		UserWindow p = new UserWindow(null);
 		p.setVisible(true);
 	}
 	public String getId() {
