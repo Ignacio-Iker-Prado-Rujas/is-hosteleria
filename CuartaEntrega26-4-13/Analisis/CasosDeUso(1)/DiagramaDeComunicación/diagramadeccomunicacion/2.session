@@ -1,4 +1,4 @@
-window_sizes 1366 706 300 900 682 82
+window_sizes 1280 962 300 900 682 82
 diagrams
   collaborationdiagram_ref 128258 // diagramaModificarMenu
     775 644 100 4 0 0
@@ -12,23 +12,23 @@ diagrams
     974 806 100 4 0 0
   collaborationdiagram_ref 142210 // diagramaEditarComanda
     775 644 100 4 0 0
-  active  classdiagram_ref 148738 // comandas
-    1060 550 100 4 0 0
+  classdiagram_ref 148738 // comandas
+    974 806 100 4 0 0
+  active  collaborationdiagram_ref 128146 // diagramaRealizarRecuentoDeExistencias
+    970 806 100 4 0 0
 end
 show_stereotypes
-selected attribute_ref 128770 // numeroMesa
 open
   usecase_ref 141954 // editarComanda
   usecase_ref 128130 // modificarMenu
-  class_ref 128770 // Reserva
-  class_ref 142466 // Restaurante
+  usecase_ref 128258 // generarFacturaDelRestaurante
   usecase_ref 128514 // verMenu
   usecase_ref 128018 // anularReservaDelRestaurante
   usecase_ref 128146 // realizarRecuentoDeExistencias
   usecase_ref 135042 // tomarComanda
   usecase_ref 135170 // eliminarComanda
   usecase_ref 141698 // reservarMesa
-  class_ref 142594 // Mesa
   classview_ref 128130 // comandas
+  classview_ref 128011 // VerModificarMenu
 end
 end
