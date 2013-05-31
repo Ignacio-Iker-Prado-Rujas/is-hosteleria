@@ -72,7 +72,9 @@ public class RealizarReserva extends JPanel{
 		reserva.add(this.comensales);
 		//p.add(comensales);*/
 
-		
+		/*
+		 * Atención!!, después de reserva va el número de botoncitos que queremos
+		 */
 		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		this.add(reserva, BorderLayout.CENTER);
 		
@@ -83,9 +85,15 @@ public class RealizarReserva extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (compruebaReservaValida()){
-							Calendar reservaDate = datePicker.getDate();
+							/*Date reservaDate = datePicker.getDate();
+							int year = reservaDate.getMonth();
+							int month = reservaDate.getMonth();
+							int day = reservaDate.getDay();
+							Date reservaDate =  Calendar.set(year, month, day);
+							*/
 							
-							controlador.communicateReserva();						//	return reserva;
+							controlador.communicateReserva(null);						
+							
 							
 						}
 						

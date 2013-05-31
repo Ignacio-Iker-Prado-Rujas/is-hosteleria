@@ -8,6 +8,7 @@ import java.util.ArrayList;
 //TODO añadir resreva, quitar reserva, edit reserva, añadir mesa quitar mesa editar mesa
 //TODO añadir comanda, editar comanda, (Borrar comanda?)
 public class Restaurante {
+	
 	public Reserva crearReserva(){
 		return null;
 	}
@@ -18,6 +19,8 @@ public class Restaurante {
 	public Menu getMenu() {
 		return menu;
 	}
+	
+	
 	public ArrayList<Consumicion> getMenu(int n){
 		if (n == 0) return menu.getBebidas();
 		else if (n == 1) return menu.getPrimeros();
@@ -37,4 +40,5 @@ public class Restaurante {
 	private ArrayList<Mesa> mesas;
 	private ArrayList<Reserva> reservas;
 	private Menu menu;
+	
 }
