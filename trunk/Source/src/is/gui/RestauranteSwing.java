@@ -13,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import tp.pr5.gui.GUIController;
 
 @SuppressWarnings("serial")
 
