@@ -226,22 +226,22 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		elementosMenu[0] = new JPanel();
 		int i = 0;
 		for (Consumicion c : beb){
-			bebidas[i] = new CeldaPlato(c);
+			bebidas[i] = new CeldaPlato(restaurante, c);
 			elementosMenu[0].add(bebidas[i]);
 		}
 		elementosMenu[1] = new JPanel();
 		for (Consumicion c : prim){
-			CeldaPlato plato = new CeldaPlato(c);
+			CeldaPlato plato = new CeldaPlato(restaurante, c);
 			elementosMenu[1].add(plato);
 		}
 		elementosMenu[2] = new JPanel();
 		for (Consumicion c : seg){
-			CeldaPlato plato = new CeldaPlato(c);
+			CeldaPlato plato = new CeldaPlato(restaurante, c);
 			elementosMenu[2].add(plato);
 		}
 		elementosMenu[3] = new JPanel();
 		for (Consumicion c : pos){
-			CeldaPlato plato = new CeldaPlato(c);
+			CeldaPlato plato = new CeldaPlato(restaurante, c);
 			elementosMenu[3].add(plato);
 		}
 	}

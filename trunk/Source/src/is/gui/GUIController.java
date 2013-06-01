@@ -88,8 +88,15 @@ public class GUIController {
 		
 	}
 	
+
+	public void avisaComanda(int numMesa, int comandaSelected) {
+		
+	}
+	
 	
 	private Restaurante restaurante;
+
+
 
 	
 	
