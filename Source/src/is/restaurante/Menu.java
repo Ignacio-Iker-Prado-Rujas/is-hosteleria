@@ -6,7 +6,7 @@ import is.restaurante.consumicion.Plato;
 
 import java.util.ArrayList;
 
-public class Menu {
+public class Menu implements MenuInfo{
 	
 	public Menu(){
 		bebidas = new ArrayList<Consumicion>(2);
