@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 
 /**
  * Panel con todos los platos disponibles al realizar un pedido, son platos de un determinado tipo
+ * esta clase puede que se tenga que quitar
+ * 
  * @author JaimeDan
  * @author Jesús
  */
@@ -46,7 +48,7 @@ public class PlatosPanel extends JPanel{
 		// TODO Auto-generated method stub
 		celdaPlatos = new ArrayList<CeldaPlato>();
 				for (Consumicion c: platos){
-					CeldaPlato cp = new CeldaPlato(null, c, 0, 0);
+					CeldaPlato cp = new CeldaPlato(null, c, 0, 0, null);
 					celdaPlatos.add(cp);
 					this.add(cp);
 				}

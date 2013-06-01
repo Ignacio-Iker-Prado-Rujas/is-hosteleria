@@ -36,8 +36,11 @@ public class Mesa implements MesaInfo{
 	}
 	
 	@Override
+	//TODO igual habria que crear un metodo que pasara del vector a un array[]
 	public ComandaInfo[] getListaComandas() {
+		if (this.comandas != null) 
 		return (ComandaInfo[]) this.comandas.toArray();
+		else return null;
 	}
 	
 	/**
