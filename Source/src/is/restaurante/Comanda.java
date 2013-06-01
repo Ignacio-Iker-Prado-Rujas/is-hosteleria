@@ -17,10 +17,11 @@ import java.util.Iterator;
 
 //hay que registrar los observadores en realizar pedido
 //TODO delete  consumicion
-//TODO menu y comanda tienen los mismos atributos
 
-//TODO TODO TODO TODO, hay mucha repeticion con los add y tal, podriamos hacer que los atributos que son hashmap heredaran de una clase que tuviera
-//implementados todos esos add
+//TODO @Alejandro, hay mucha repeticion con los add y tal, en los hashmap que hay como atributo
+//		, podriamos hacer que los atributos que son hashmap heredaran de una clase que tuviera
+//		implementados todos esos add, y también los remove
+//		El remove debbería ser igual que el add pero a la inversa, es decir si lo encuentra reduce su int, y si su int esta a 0 eliminarlo
 public class Comanda implements ComandaInfo{
 	
 	public void addObserver(ComandaObserver obs){
