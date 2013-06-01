@@ -1,5 +1,7 @@
 package is.gui;
 
+import is.restaurante.Mesa;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class GenerarFactura {
@@ -29,8 +32,26 @@ public class GenerarFactura {
 						numMesa.getText();
 					//TODO duda del mvc, aqui hay que llamar al modelo y que te devuelva la mesa?
 						
-						controlador.getMesa(numMesa.getText());
-						
+						mesa = controlador.getMesa(numMesa.getText());
+						marco = new JFrame();
+						//JPanel panel = new JPanel();
+						JTextArea factura = new JTextArea(mesa.generarFactura());
+						marco.add(factura);
+						marco.setVisible(true);
+						marco.pack();
+						marco.add(new JButton("Aceptar"){
+							{
+								this.addActionListener(new ActionListener(){
+
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										marco.setVisible(false);
+										
+									}
+									
+								});
+							}
+						});
 					}
 					
 				});
@@ -42,6 +63,8 @@ public class GenerarFactura {
 		marco.setVisible(true);
 	
 	}
+	private JFrame marco;
+	private Mesa mesa;
 	private GUIController controlador;
 	private JTextField numMesa;
 }

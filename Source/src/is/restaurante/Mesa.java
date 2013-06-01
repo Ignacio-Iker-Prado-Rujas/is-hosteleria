@@ -24,8 +24,14 @@ public class Mesa {
 		this.numeroMesa = numeroMesa;
 	}
 	public String generarFactura(){
-		return pedidos.toString();
+		String factura = "";
+		for (Comanda c : pedidos){
+			factura += c.toString() + LINE_SEPARATOR;
+		}
+		//return pedidos.toString();
+		return factura;
 	}
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	
 
 	private Vector<Comanda> pedidos;
