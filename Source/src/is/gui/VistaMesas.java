@@ -12,6 +12,8 @@ public class VistaMesas extends JPanel{
 	public VistaMesas(GUIController controller){
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
+		
+		JPanel
 	}
 	
 	
