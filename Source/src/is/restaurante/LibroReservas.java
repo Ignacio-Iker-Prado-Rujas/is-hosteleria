@@ -74,7 +74,7 @@ public class LibroReservas {
 	public ArrayList<ReservaInfo> buscarReservaHoy(Fecha date){
 		ArrayList <ReservaInfo> reservasHoy = new ArrayList<ReservaInfo>();
 		for ( int i = 0; i < listaReservas.size(); i++){
-			if (listaReservas.get(i).getFecha().equals(date)) reservasHoy.add(listaReservas.get(i));
+			if (listaReservas.get(i).getFecha().mismoDia(date)) reservasHoy.add(listaReservas.get(i));
 		}
 		return reservasHoy;
 	}
