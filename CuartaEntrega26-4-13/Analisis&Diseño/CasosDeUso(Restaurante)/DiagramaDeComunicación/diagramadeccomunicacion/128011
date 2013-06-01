@@ -1,6 +1,6 @@
 format 76
 "diagramasSecuencia" // diagramasSecuencia
-  revision 4
+  revision 5
   modified_by 5 "usuario"
   // class settings
   //class diagram settings
@@ -95,6 +95,26 @@ ${members}}
 	    classrelation_ref 130565 // <unidirectional association>
 	  b parent class_ref 128005 // Inventario
       end
+    end
+
+    sequencediagram 141957 "ModificarMenu"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
+
+    sequencediagram 142085 "AñadirConsumicion"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
+
+    sequencediagram 142213 "EliminarConsumicion"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
+    end
+
+    sequencediagram 142341 "ModificarConsumicion"
+      show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+      overlapping_bars size A4
     end
   end
 
@@ -252,7 +272,7 @@ ${members}}
     //activity diagram settings
     package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
     show_infonote default drawing_language default show_stereotype_properties default
-    sequencediagram 128261 "Ver Rservas"
+    sequencediagram 128261 "Ver Reservas"
       show_full_operations_definition default write_horizontally default class_drawing_mode class drawing_language java draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
       duration_color lightmediumgreen class_instance_color mediumyellow 
       overlapping_bars size A4
