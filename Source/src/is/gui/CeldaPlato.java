@@ -19,7 +19,7 @@ import is.restaurante.consumicion.Consumicion;
 @SuppressWarnings("serial")
 public class CeldaPlato extends JPanel{
 
-	public CeldaPlato(GUIController controller, Consumicion plato){
+	public CeldaPlato(GUIController controller, Consumicion plato, int numMesa, int numComanda){
 		this.restControl = controller;
 		this.veces = 0;
 		this.plato = plato;
@@ -30,6 +30,7 @@ public class CeldaPlato extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						incrementaVeces();
+						restControl.requestNewConsumption(numComanda, numMesa);
 					}
 					
 				});
@@ -69,4 +70,7 @@ public class CeldaPlato extends JPanel{
 	private JButton botonPlato;
 	private Consumicion plato;
 	private JSpinner flechitas;
+	
+	private int numComanda;
+	private int numMesa;
 }

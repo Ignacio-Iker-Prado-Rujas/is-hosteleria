@@ -72,7 +72,9 @@ public class VistaMesas extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new RealizarPedido(restController);
+				if (comandaSelected != -1 && numMesa != -1){
+					new RealizarPedido(restController, numMesa, comandaSelected);
+				}
 			}
 			
 		});
