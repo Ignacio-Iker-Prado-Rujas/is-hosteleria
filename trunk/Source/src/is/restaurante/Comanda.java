@@ -23,7 +23,7 @@ import java.util.Iterator;
 //		implementados todos esos add, y también los remove
 //		El remove debbería ser igual que el add pero a la inversa, es decir si lo encuentra reduce su int, y si su int esta a 0 eliminarlo
 public class Comanda implements ComandaInfo{
-	
+
 	public void addObserver(ComandaObserver obs){
 		this.observers.add(obs);
 	}
@@ -151,7 +151,6 @@ public class Comanda implements ComandaInfo{
 	private HashMap<Consumicion, Integer> bebidas;
 	
 	private double precio = 0;
-	
 	private ArrayList<ComandaObserver> observers = new ArrayList<ComandaObserver>();
 
 }
