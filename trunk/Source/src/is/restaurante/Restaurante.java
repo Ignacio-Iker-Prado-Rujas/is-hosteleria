@@ -19,7 +19,7 @@ public class Restaurante {
 	public void añadirReserva(Reserva reserva){
 		reservas.addReserva(reserva);
 	}
-	public ArrayList<Reserva> buscarReservas(String nombre){
+	public /*ArrayList<Reserva>*/ int buscarReservas(String nombre){
 		return this.reservas.buscarReserva(nombre);
 	}
 	
