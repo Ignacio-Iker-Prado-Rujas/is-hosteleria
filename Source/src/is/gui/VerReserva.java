@@ -1,6 +1,8 @@
 package is.gui;
 
+import is.Fecha;
 import is.restaurante.Reserva;
+import is.restaurante.ReservaInfo;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -14,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 
@@ -57,20 +60,36 @@ public class VerReserva {
 		JPanel panel1 = new JPanel();
 		tabbedPane.addTab("Todas", null, panel1,
 		                  "Does nothing");
-		controlador.getReservas(null);
+		
+		for ( ReservaInfo r : controlador.getReservas(-1)){
+			JTextArea jt = new JTextArea(r.toString());			
+			panel1.add(jt);
+		}
 		JPanel panel2 = new JPanel();
 		tabbedPane.addTab("Hoy", null, panel2,
 		                  "Does twice as much nothing");
-
+		for ( ReservaInfo r : controlador.getReservas(0)){
+			JTextArea jt = new JTextArea(r.toString());			
+			panel1.add(jt);
+		}
 		JPanel panel3 = new JPanel();
 		tabbedPane.addTab("Esta semana", null, panel3,
 		                  "Still does nothing");
-
+		for ( ReservaInfo r : controlador.getReservas(1)){
+			JTextArea jt = new JTextArea(r.toString());			
+			panel1.add(jt);
+		}
+		
 		JPanel panel4 = new JPanel();
 		panel4.setPreferredSize(new Dimension(410, 50));
 		tabbedPane.addTab("Este mes", null, panel4,
 		                      "Does nothing at all");
+		for ( ReservaInfo r : controlador.getReservas(2)){
+			JTextArea jt = new JTextArea(r.toString());			
+			panel1.add(jt);
+		}
 		JFrame marco = new JFrame();
+		
 		marco.add(tabbedPane);
 		marco.setVisible(true);
 		marco.setSize(150, 150);

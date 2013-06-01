@@ -24,8 +24,8 @@ public class Restaurante {
 	public ArrayList<ReservaInfo> /*int List<Integer> */ buscarReservas(String nombre){
 		return this.reservas.buscarReserva(nombre);
 	}
-	public ArrayList<ReservaInfo> buscarReservas(Fecha fecha){
-		return this.reservas.buscarReserva(fecha);
+	public ArrayList<ReservaInfo> buscarReservas(int i){
+		return this.reservas.buscarReserva(i);
 	}
 	
 	
