@@ -102,16 +102,4 @@ public class GUIController {
 	
 	private Restaurante restaurante;
 
-
-	
-
-
-
-	
-	
-	
-
-
-
-
 }
