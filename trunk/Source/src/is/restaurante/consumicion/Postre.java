@@ -2,6 +2,13 @@ package is.restaurante.consumicion;
 
 public class Postre implements Consumicion {
 
+	public Postre(String name, int price, boolean disp, String desc) {
+		this.descripción = desc;
+		this.precio = price;
+		this.nombre = name;
+		this.disponible = disp;
+	}
+
 	@Override
 	public float getPrecio() {
 		return this.precio;
@@ -21,7 +28,7 @@ public class Postre implements Consumicion {
 	public boolean isDisponible() {
 		return this.disponible;
 	}
-	
+
 	private String descripción;
 	private String nombre;
 	private float precio;
