@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 
 import is.Fecha;
 import is.List;
-public class LibroReservas {
+public class LibroReservas{
 	/**
 	 * Constructor
 	 */
