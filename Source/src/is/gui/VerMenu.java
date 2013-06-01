@@ -94,9 +94,9 @@ public class VerMenu extends JFrame{
 		cardLayout = new CardLayout();
 		panelGeneral.setLayout(cardLayout);
 		
-		JTabbedPane pestanyas = new JTabbedPane();
+		pestanyas = new JTabbedPane();
 
-		panelGeneral.add(pestanyas);
+		panelGeneral.add(pestanyas, "pestanyas");
 		this.add(panelGeneral);
 	}
 	// 	Inicializa la ventana
@@ -127,7 +127,8 @@ public class VerMenu extends JFrame{
 	
 	/*	 Añade un nuevo plato al menu	*/
 	private void anyadirNuevoPlato(){
-		ventanas.get(0).add(new ConsumicionSwing(controlador,"", false, TipoPlatos.BEBIDA));
+		panelGeneral.add( new ConsumicionSwing(controlador,"prueba", true, TipoPlatos.BEBIDA), "createConsumicion");
+		cardLayout.show(panelGeneral, "createConsumicion");
 	}
 	
 	/*	Libera todos los botones excepto el último pulsado, 
@@ -155,7 +156,6 @@ public class VerMenu extends JFrame{
 		
 	}
 	private void createConsumicion(){
-		this.add( new ConsumicionSwing(controlador,"prueba", true, TipoPlatos.BEBIDA), BorderLayout.CENTER);
 	}
 	public void anyadePlato(String name, TipoPlatos tPlato){
 		/*Para esto hay que guardar atributos del constructor	*/
