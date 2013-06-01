@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,8 +40,8 @@ public class VerReserva {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						/*ArrayList<Reserva> listaReservas = controlador.reservasDeUnCliente(nombreReserva.getText());
-						for (Reserva r : listaReservas) r.crearPanel(); 
+						List<Integer> listaReservas = controlador.reservasDeUnCliente(nombreReserva.getText());
+						for (Integer r : listaReservas) r.crearPanel(); 
 						// TODO AYUDA!! haciendo eso te cargas el mvc pero si no lo hacer tienes que crear mil getters y setters	*/					
 					}
 					

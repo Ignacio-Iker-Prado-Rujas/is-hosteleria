@@ -58,6 +58,7 @@ public class LibroReservas {
 		return reservas;
 	}*/
 	
+	/**Por que coño ahora esto es con integers? De donde sacas entonces la reserva para poder mostrarla en verReserva??*/
 	public /*int*/ ArrayList<Integer> buscarReserva(String nombre){
 		ArrayList<Integer> listaRes = new ArrayList<Integer>();
 		int i=0;
