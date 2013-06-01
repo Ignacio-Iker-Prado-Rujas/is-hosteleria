@@ -48,8 +48,12 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo{
 	}
 	public String toString(){
 		String name = "";
-		name += "Nombre: " + this.nombre + LINE_SEPARATOR + "Fecha: " + this.fecha + LINE_SEPARATOR + "Mesas: ";
-		for (Mesa m : this.mesas) name += m.getNumeroMesa() + " ";
+		name += "Nombre: " + this.nombre + LINE_SEPARATOR + "Fecha: " + this.fecha.toString() + LINE_SEPARATOR;
+		if (mesas != null){
+			name += "Mesas: ";
+			for (Mesa m : this.mesas) 
+				name += m.getNumeroMesa() + " ";
+		}
 		name += "Numero de comensales" + this.numeroDeComensales;
 		return name;
 	}
