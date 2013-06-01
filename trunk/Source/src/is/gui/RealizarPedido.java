@@ -73,6 +73,10 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private JPanel[] elementosMenu;
 }
  */
+		/*
+		 * Inicialización de los paneles que tendrán información de las consumiciones que se pueden pedir
+		 * 	y cuantas consumiciones se han pedido de cada tipo 
+		 */
 		inicializaPaneles();
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
@@ -169,22 +173,22 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	public void inicializaPaneles(){
 		elementosMenu = new JPanel[4];
 		elementosMenu[0] = new JPanel();
-		for (Consumicion c : this.restaurante.getBebidas()){
+		for (Consumicion c : this.restaurante.requestBebidas()){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[0].add(plato);
 		}
 		elementosMenu[1] = new JPanel();
-		for (Consumicion c : this.restaurante.getPrimeros()){
+		for (Consumicion c : this.restaurante.requestPrimeros()){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[1].add(plato);
 		}
 		elementosMenu[2] = new JPanel();
-		for (Consumicion c : this.restaurante.getSegundos()){
+		for (Consumicion c : this.restaurante.requestSegundos()){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[2].add(plato);
 		}
 		elementosMenu[3] = new JPanel();
-		for (Consumicion c : this.restaurante.getPostres()){
+		for (Consumicion c : this.restaurante.requestPostres()){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[3].add(plato);
 		}
