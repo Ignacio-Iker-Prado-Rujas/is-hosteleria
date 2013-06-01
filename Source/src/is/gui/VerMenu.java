@@ -122,16 +122,19 @@ public class VerMenu extends JFrame{
 	
 	/*	Edita el Plato que esté seleccionado	*/
 	private void editarPlato(){
-		if(this.consumicionSeleccionada!=null)
-			System.out.println(consumicionSeleccionada.getText() + " debe ser editado");
-		else System.out.println(" se debe seleccionar algo");
+		if(this.consumicionSeleccionada!=null){
+			//System.out.println(consumicionSeleccionada.getText() + " debe ser editado");
+			ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador, consumicionSeleccionada.getText(), true);
+			panelGeneral.add(nuevaCons , "editConsumicion");
+			cardLayout.show(panelGeneral, "editConsumicion");
+		}
 	}
 	
 	/*	 Añade un nuevo plato al menu	*/
 	private void anyadirNuevoPlato(){
-		ConsumicionSwing nuevaCons = new ConsumicionSwing(controlador,"", false);
+		ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador,"", false);
 		panelGeneral.add(nuevaCons , "createConsumicion");
-		cardLayout.show(nuevaCons, "createConsumicion");
+		cardLayout.show(panelGeneral, "createConsumicion");
 	}
 	
 	/*	Libera todos los botones excepto el último pulsado, 
@@ -164,7 +167,9 @@ public class VerMenu extends JFrame{
 		/*Para esto hay que guardar atributos del constructor	*/
 		createConsumicion();
 	}
-	
+	public void devolverControlPrincipal(){
+		cardLayout.show(panelGeneral, "pestanyas");
+	}
 	/* Actualiza un plato	*/
 	public void actualizarPlato(){
 		
