@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 //TODO TODO TODO TODO, hay mucha repeticion con los add y tal, podriamos hacer que los atributos que son hashmap heredaran de una clase que tuviera
 //implementados todos esos add
-public class Comanda {
+public class Comanda implements ComandaInfo{
 	
 	public void addObserver(ComandaObserver obs){
 		this.observers.add(obs);

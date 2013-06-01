@@ -3,6 +3,7 @@ package is.restaurante;
 import is.restaurante.consumicion.Consumicion;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 //TODO añadir resreva, quitar reserva, edit reserva, añadir mesa quitar mesa editar mesa
@@ -19,7 +20,7 @@ public class Restaurante {
 	public void añadirReserva(Reserva reserva){
 		reservas.addReserva(reserva);
 	}
-	public /*ArrayList<Reserva>*/ int buscarReservas(String nombre){
+	public /*ArrayList<Reserva>*/ /*int*/ List<Integer> buscarReservas(String nombre){
 		return this.reservas.buscarReserva(nombre);
 	}
 	

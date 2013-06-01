@@ -3,7 +3,8 @@ package is.restaurante;
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class Mesa {
+public class Mesa implements MesaInfo{
+	
 	public Mesa(int num){
 		this.setNumeroMesa(num);
 	}
