@@ -22,8 +22,10 @@ public class VistaMesas extends JPanel{
 		panelMesas.setLayout(new FlowLayout());
 		//this.restController.requestMesas();
 		//this.restController.pedirMesas();
+
 		for (int i=0; i<mesas.length; i++){
 			final int j= i;//para que pueda ser utilizado por el listener
+
 			JButton mesa = new JButton("Mesa " + mesas[i].getNumeroMesa());
 			mesa.addActionListener(new ActionListener(){
 

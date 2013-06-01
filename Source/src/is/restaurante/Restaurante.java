@@ -20,7 +20,7 @@ public class Restaurante {
 	public void añadirReserva(Reserva reserva){
 		reservas.addReserva(reserva);
 	}
-	public /*ArrayList<Reserva>*/ /*int*/ List<Integer> buscarReservas(String nombre){
+	public ArrayList<ReservaInfo> /*int List<Integer> */ buscarReservas(String nombre){
 		return this.reservas.buscarReserva(nombre);
 	}
 	

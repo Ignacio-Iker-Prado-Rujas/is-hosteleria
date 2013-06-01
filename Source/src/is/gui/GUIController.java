@@ -10,6 +10,7 @@ import is.restaurante.Menu;
 import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
 import is.restaurante.Reserva;
+import is.restaurante.ReservaInfo;
 import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
 
@@ -71,7 +72,7 @@ public class GUIController {
 		return this.restaurante.getMesas();
 	}
 	
-	public List<Integer> reservasDeUnCliente(String nombre){
+	public ArrayList<ReservaInfo> reservasDeUnCliente(String nombre){
 		return this.restaurante.buscarReservas(nombre);
 	}
 	

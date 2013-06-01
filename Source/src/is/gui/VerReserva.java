@@ -42,6 +42,7 @@ public class VerReserva {
 					public void actionPerformed(ActionEvent e) {
 						List<Integer> listaReservas = controlador.reservasDeUnCliente(nombreReserva.getText());
 						for (Integer r : listaReservas) r.crearPanel(); 
+						
 						// TODO AYUDA!! haciendo eso te cargas el mvc pero si no lo hacer tienes que crear mil getters y setters	*/					
 					}
 					
