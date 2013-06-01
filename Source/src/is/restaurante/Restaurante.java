@@ -49,7 +49,11 @@ public class Restaurante {
 		for (Mesa m: mesas) if (m.getNumeroMesa() == i) return m;
 		return null;
 	}
-
+	
+	public MesaInfo[] getMesas() {
+		// TODO Auto-generated method stub
+		return (MesaInfo[]) this.mesas.toArray();
+	}
 
 
 	
@@ -57,5 +61,6 @@ public class Restaurante {
 	private LibroReservas reservas;
 	private Menu menu;
 	private Tablon tablon;
+	
 	
 }

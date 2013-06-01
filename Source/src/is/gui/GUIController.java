@@ -7,6 +7,7 @@ import java.util.List;
 import is.Fecha;
 import is.restaurante.Menu;
 import is.restaurante.Mesa;
+import is.restaurante.MesaInfo;
 import is.restaurante.Reserva;
 import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
@@ -64,6 +65,11 @@ public class GUIController {
 		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
 		restaurante.añadirReserva(reserva);
 	}
+	
+	public MesaInfo[] requestMesas() {
+		return this.restaurante.getMesas();
+	}
+	
 	public List<Integer> reservasDeUnCliente(String nombre){
 		return this.restaurante.buscarReservas(nombre);
 	}
@@ -76,6 +82,7 @@ public class GUIController {
 		
 	}
 	private Restaurante restaurante;
+	
 
 
 
