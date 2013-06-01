@@ -4,6 +4,7 @@ import is.restaurante.Comanda;
 import is.restaurante.ComandaInfo;
 import is.restaurante.MesaInfo;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
@@ -26,6 +28,10 @@ public class VistaMesas extends JPanel{
 		comandasContainer = new JPanel();
 		final CardLayout comandasLayout = new CardLayout();
 		comandasContainer.setLayout(comandasLayout);
+		JPanel cardPanel = new JPanel();
+		cardPanel.setLayout(comandasLayout);
+		
+	     
 		
 		final TitledBorder title = new TitledBorder("");
 		
@@ -35,6 +41,9 @@ public class VistaMesas extends JPanel{
 			comandasPanel[i].setBorder(title);
 			
 		}
+		for (int i = 0; i < mesas.length; i++)
+			cardPanel.add(comandasPanel[i], "Mesa " + i);
+		
 		JPanel panelMesas = new JPanel();
 		panelMesas.setLayout(new FlowLayout());
 		//this.restController.requestMesas();
@@ -60,6 +69,7 @@ public class VistaMesas extends JPanel{
 					
 				 	comandas = restController.getMesa(j).getListaComandas();				 
 					setComandasPanel(j);
+					comandasPanel[j].add(new JLabel("Bubidibu"), BorderLayout.SOUTH);
 					comandasLayout.show(comandasPanel[j], "Mesa " + j);
 					
 					
