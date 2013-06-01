@@ -6,18 +6,26 @@ import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.border.TitledBorder;
+
+
 
 @SuppressWarnings("serial")
-public class RealizarPedido extends JPanel implements ComandaObserver{
+public class RealizarPedido extends JPanel implements ComandaObserver, ItemListener{
 
 	public RealizarPedido(final GUIController rest) {
 		this.restaurante = rest;
@@ -68,7 +76,10 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
 		panelCentral = new JPanel();
-		
+		final CardLayout menu = new CardLayout();
+		panelCentral.setLayout(menu);
+		for (int i=0; i<4; i++)
+			panelCentral.add(this.elementosMenu[i], i);
 		tipoPlato.setLayout(new GridLayout(4,1));
 		tipoPlato.add(new JButton("Bebidas"){
 			{
@@ -77,8 +88,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						//panelCentral.add(new PlatosPanel(0, restaurante));
-						panelCentral = (elementosMenu[0]);
-
+						//panelCentral.add(elementosMenu[0]);
+						menu.show(panelCentral, "0");
+						
 					}
 					
 				});
@@ -91,7 +103,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						//panelCentral.add(new PlatosPanel(1, restaurante));
-						panelCentral = (elementosMenu[1]);
+						//panelCentral = (elementosMenu[1]);
+						menu.show(panelCentral, "1");
+						
 					}
 					
 				});
@@ -104,7 +118,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						//panelCentral.add(new PlatosPanel(2, restaurante));
-						panelCentral = (elementosMenu[2]);
+						//panelCentral = (elementosMenu[2]);
+						menu.show(panelCentral, "2");
+						
 					}
 					
 				});
@@ -117,7 +133,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						//panelCentral.add(new PlatosPanel(3, restaurante));
-						panelCentral = (elementosMenu[3]);
+						//panelCentral = (elementosMenu[3]);
+						menu.show(panelCentral, "3");
+						
 					}
 					
 				});
@@ -127,9 +145,18 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		this.add(tipoPlato, BorderLayout.WEST);
 		JFrame frame = new JFrame("Realizar Pedido");
 		this.add(panelCentral);
-		
-		scroller = new JScrollPane();
-		this.add(scroller, BorderLayout.EAST);
+		/*
+		 * TitledBorder titled = new TitledBorder("Log");
+		text = new JTextArea("");
+		text.setEditable(false);
+		//ejemplo de como meter imagenes
+		cityPanel = new CityPanel(text);
+		this.add(cityPanel);
+				
+		scroller = new JScrollPane(text);
+        scroller.setPreferredSize(new Dimension(100,100));
+        scroller.setBorder(titled);
+		 */
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -137,6 +164,13 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		frame.pack();
 
 	}
+	
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		CardLayout cl = (CardLayout)(panelCentral.getLayout());
+		cl.show(panelCentral, (String)e.getItem());
+	}
+
 	
 	public void inicializaPaneles(){
 		elementosMenu = new JPanel[4];
@@ -176,6 +210,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	
 	private JPanel[] elementosMenu;
 
+	
 
 	
 }
