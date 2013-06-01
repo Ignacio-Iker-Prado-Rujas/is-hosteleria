@@ -173,7 +173,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					
 				});
 			}
-		}, BorderLayout.LINE_END);
+		}, BorderLayout.AFTER_LAST_LINE);
 		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);
