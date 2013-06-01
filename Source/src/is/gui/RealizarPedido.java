@@ -192,7 +192,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);
-			/** Jaime, necesito ayuda aqui para meter las cosas que se van pidiendo en el textarea
+			/** TODO Jaime, necesito ayuda aqui para meter las cosas que se van pidiendo en el textarea
 			 *  Porque básicamente no se donde leches estan los spinners esos ni como van
 			 *  Con lo que he cambiado de inicializaPaneles() ya tenemos los celdaPlato para sacar la informacion de ellos
 			 */
