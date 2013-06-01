@@ -1,6 +1,7 @@
 package is.gui;
 
 import is.Fecha;
+import is.restaurante.LibroReservaObserver;
 import is.restaurante.Reserva;
 import is.restaurante.ReservaInfo;
 
@@ -26,7 +27,7 @@ import javax.swing.JTextField;
  * @author JaimeDan
  *
  */
-public class VerReserva {
+public class VerReserva implements LibroReservaObserver{
 
 	@SuppressWarnings("serial")
 	public VerReserva(GUIController rest) {
@@ -98,4 +99,9 @@ public class VerReserva {
 	
 	private GUIController controlador;
 	private JTextField nombreReserva;
+	@Override
+	public void cambioOcurrido() {
+		// TODO Auto-generated method stub
+		
+	}
 }
