@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -111,10 +112,15 @@ public class RealizarReserva extends JPanel{
 							
 						}//TODO else mostrar mensaje de error, donde sea, diciendo 
 						//que hay que poner un numero de comensales
-						
-						
+						else{
+							
+						JOptionPane.showMessageDialog(frame,
+							    "Debe seleccionar el número de comensales.",
+							    "Error",
+							    JOptionPane.WARNING_MESSAGE);
 					}
-
+					
+					}
 					
 
 				
