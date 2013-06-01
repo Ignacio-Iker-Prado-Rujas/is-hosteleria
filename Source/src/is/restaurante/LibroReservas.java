@@ -26,7 +26,7 @@ public class LibroReservas {
 		Date date = new Date();
 		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
 		ArrayList<Reserva> reservasDeHoy = new ArrayList<Reserva>();
-		buscarReserva(fecha);
+		buscarReservaHoy(fecha);
 		Fecha hoy = new Fecha(date.getYear(),
 		date.getMonth(),
 		date.getDay(),
@@ -58,23 +58,27 @@ public class LibroReservas {
 		return reservas;
 	}*/
 	
-	public int buscarReserva(String nombre){
+	public /*int*/ ArrayList<Integer> buscarReserva(String nombre){
+		ArrayList<Integer> listaRes = new ArrayList<Integer>();
 		int i=0;
 		while (i<listaReservas.size()){
-			if (listaReservas.get(i).getNombre().equals(nombre)) break;
-			i++;
+			if (listaReservas.get(i).getNombre().equals(nombre)) ;
+			//i++;
+			listaRes.add(i);
 		}
-		if (i < listaReservas.size()) return i;
-		else return -1;
+		//if (i < listaReservas.size()) return i;
+		/*else*/ return listaRes;
 	}
 	
-	public ArrayList<Reserva> buscarReserva(Fecha date){
-		ArrayList <Reserva> reservasHoy = new ArrayList<Reserva>();
+	public ArrayList<ReservaInfo> buscarReservaHoy(Fecha date){
+		ArrayList <ReservaInfo> reservasHoy = new ArrayList<ReservaInfo>();
 		for ( int i = 0; i < listaReservas.size(); i++){
 			if (listaReservas.get(i).getFecha().equals(date)) reservasHoy.add(listaReservas.get(i));
 		}
 		return reservasHoy;
 	}
+	
+	
 	
 	
 	private List<Reserva> listaReservas;

@@ -5,7 +5,7 @@ import is.Fecha;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Reserva implements Comparable<Reserva>{
+public class Reserva implements Comparable<Reserva>, ReservaInfo{
 	public Reserva(){
 		
 	}
