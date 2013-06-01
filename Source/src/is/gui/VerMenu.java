@@ -168,7 +168,7 @@ public class VerMenu extends JFrame{
 	}
 	
 	private JTabbedPane pestanyas;
-	private final CardLayout cardLayout;
+	private CardLayout cardLayout;
 	private JPanel panelGeneral;
 	private ArrayList<JPanel> ventanas;
 	private JToggleButton consumicionSeleccionada;
