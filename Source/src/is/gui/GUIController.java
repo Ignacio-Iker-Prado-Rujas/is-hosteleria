@@ -52,7 +52,7 @@ public class GUIController {
 		return restaurante.getMenu(0);
 		
 	}
-	public ArrayList<Reserva> getReservas(Fecha fecha){
+	public ArrayList<ReservaInfo> getReservas(Fecha fecha){
 		return restaurante.buscarReservas(fecha);
 		
 	}
