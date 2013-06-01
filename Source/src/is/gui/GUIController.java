@@ -32,19 +32,19 @@ public class GUIController {
 	public  Menu getMenu(){
 		return restaurante.getMenu();
 	}
-	public  ArrayList<Consumicion> getPrimeros(){
+	public  ArrayList<Consumicion> requestPrimeros(){
 		return restaurante.getMenu(1);
 		
 	}
-	public  ArrayList<Consumicion> getSegundos(){
+	public  ArrayList<Consumicion> requestSegundos(){
 		return restaurante.getMenu(2);
 		
 	}
-	public  ArrayList<Consumicion> getPostres(){
+	public  ArrayList<Consumicion> requestPostres(){
 		return restaurante.getMenu(3);
 		
 	}
-	public  ArrayList<Consumicion> getBebidas(){
+	public  ArrayList<Consumicion> requestBebidas(){
 		return restaurante.getMenu(0);
 		
 	}
