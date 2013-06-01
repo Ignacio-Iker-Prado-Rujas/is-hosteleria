@@ -1,21 +1,10 @@
-window_sizes 1280 780 300 900 682 82
+window_sizes 1280 780 300 900 533 82
 show_stereotypes
-selected sequencediagram_ref 128005 // RealizarRecuentoExistencias
+selected 
+package_ref 128011 // diagramasSecuencia
 open
-  usecase_ref 141954 // editarComanda
-  usecase_ref 128130 // modificarMenu
-  class_ref 142466 // Restaurante
-  usecase_ref 128514 // verMenu
-  usecase_ref 128018 // anularReservaDelRestaurante
-  usecase_ref 128146 // realizarRecuentoDeExistencias
-  usecase_ref 135042 // tomarComanda
-  usecase_ref 135170 // eliminarComanda
-  usecase_ref 141698 // reservarMesa
-  classview_ref 128130 // comandas
-  classview_ref 134661 // ReservasRestaurante
-  classview_ref 134789 // RecuentoExistencias
-  class_ref 128005 // Inventario
-  class_ref 128133 // Existencia
+  classview_ref 128011 // VerModificarMenu
+  classview_ref 128005 // RealizarRecuentoDeExistencias
   classview_ref 128133 // ReservasRestaurante
 end
 end
