@@ -121,7 +121,17 @@ public class Menu implements MenuInfo {
 			return false;
 		}
 	}
-
+	public Consumicion getConsumicion(String name){
+		for(Consumicion c: bebidas)
+			if(c.getNombre().equals(name)) return c;
+		for(Consumicion c: primeros)
+			if(c.getNombre().equals(name)) return c;
+		for(Consumicion c: segundos)
+			if(c.getNombre().equals(name)) return c;
+		for(Consumicion c: postres)
+			if(c.getNombre().equals(name)) return c;
+		return null;
+	}
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private ArrayList<Consumicion> bebidas;
 	private ArrayList<Consumicion> primeros;
