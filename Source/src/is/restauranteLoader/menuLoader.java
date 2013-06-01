@@ -11,19 +11,12 @@ import java.io.StreamTokenizer;
 import java.util.ArrayList;
 
 public class menuLoader {
-	/**
-	 * Comprueba que el siguiente token que se lee es un String.
-	 * 
-	 * @return El string que se acaba de leer. En caso de no ser un String lanza
-	 *         una excepcion
-	 * @throws IOException
-	 */
-	private String forceString() throws IOException {
-		if (tokenizer.nextToken() != StreamTokenizer.TT_WORD) {
-			System.err.println("Fichero dañado");
-			System.exit(1);
-		}
-		return tokenizer.sval;
+
+	public static void main(String[] args) throws IOException {
+		menuLoader m = new menuLoader();
+		Menu menu = m.loadMenu("Menu2.txt");
+		System.out.println(menu);
+		menu.saveMenu("Menu2");
 	}
 
 	/**
@@ -81,17 +74,18 @@ public class menuLoader {
 	}
 
 	private String peek() throws IOException {
-		if (tokenizer.nextToken() == StreamTokenizer.TT_WORD) {
-			tokenizer.pushBack();
+		if (tokenizer.nextToken() == StreamTokenizer.TT_WORD)
 			return tokenizer.sval;
-		}
 		return "";
 	}
 
-	private ArrayList<Consumicion> forceConsumicion(String tipo) throws IOException {
+	private ArrayList<Consumicion> forceConsumicion(String tipo)
+			throws IOException {
 		ArrayList<Consumicion> platos = new ArrayList<Consumicion>();
 		while (!peek().equals(tipo)) {
-			String name = forceString();
+			tokenizer.pushBack();
+			tokenizer.nextToken();
+			String name = tokenizer.sval;
 			tokenizer.nextToken();
 			String descripcion = tokenizer.sval;
 			float precio = forceFloat();

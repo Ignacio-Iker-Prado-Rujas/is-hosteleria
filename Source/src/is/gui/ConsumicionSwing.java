@@ -138,6 +138,8 @@ public class ConsumicionSwing extends JPanel{
 		//TODO
 		System.out.println(message);
 	}
+	
+	
 	private boolean isNumber(String palabra){
 		try{
 			Float.parseFloat(palabra);
