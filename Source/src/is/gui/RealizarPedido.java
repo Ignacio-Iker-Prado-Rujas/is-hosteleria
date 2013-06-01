@@ -165,7 +165,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						frame.setVisible(false);
-					//	restaurante.communicatePedido(año, mes, dia, hora, minutos, cliente, numeroComensales);
+						restaurante.communicatePedido(año, mes, dia, hora, minutos, cliente, numeroComensales);
 
 					//	elementosMenu[1].
 
