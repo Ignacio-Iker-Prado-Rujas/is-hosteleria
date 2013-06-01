@@ -1,40 +1,40 @@
 format 76
 
 classinstance 128267 class_ref 128514 // Menu
-  name ""   xyz 336 4.2 2000 life_line_z 2000
+  name ""   xyz 336 3.8 2000 life_line_z 2000
 classinstance 128523 class_ref 128011 // RestauranteSwing
-  name ""   xyz 83.8 4.2 2000 life_line_z 2000
+  name ""   xyz 83.3 3.8 2000 life_line_z 2000
 note 129163 "Caso de uso: Ver menu"
-  xyzwh 657.4 431 2000 94 46
+  color mediumblue  xyzwh 645.3 430.9 2000 94 46
 classinstance 131595 class_ref 128130 // Consumicion
-  name ""   xyz 503.7 3.1 2000 life_line_z 2000
+  name ""   xyz 501 3.6 2000 life_line_z 2000
 fragment 133259 "loop"
-  xyzwh 309.6 186.3 0 274 95
+  xyzwh 310.4 187.4 0 274 95
 end
 textcanvas 134027 "[!listaVacia]"
-  xyzwh 366.8 187.8 2000 56 14
+  xyzwh 365.9 186.9 2000 56 14
 fragment 134155 "opt"
-  xyzwh 87.7 340.6 0 497 125
+  xyzwh 88.2 340.2 0 496 125
 end
 note 136075 "En este bucle recogemos una lista con los nombres de las consumiciones del tipoConsumicion"
-  xyzwh 634.5 44 2000 115 101
+  xyzwh 634.8 44.2 2000 115 101
 durationcanvas 128651 classinstance_ref 128523 // :RestauranteSwing
-  xyzwh 130 72.8 2010 11 405
+  xyzwh 130 72.2 2010 11 405
 end
 durationcanvas 128779 classinstance_ref 128267 // :Menu
-  xyzwh 355 75.4 2010 11 45
+  xyzwh 355 75.1 2010 11 45
 end
 durationcanvas 129675 classinstance_ref 128267 // :Menu
-  xyzwh 355 163.8 2010 11 145
+  xyzwh 355 163.5 2010 11 145
 end
 durationcanvas 131723 classinstance_ref 131595 // :Consumicion
-  xyzwh 538 192.4 2010 11 71
+  xyzwh 536 192.1 2010 11 71
 end
 durationcanvas 135307 classinstance_ref 128267 // :Menu
   xyzwh 355 360 2010 11 82
 end
 durationcanvas 135563 classinstance_ref 131595 // :Consumicion
-  xyzwh 538 376.6 2010 11 45
+  xyzwh 536 376.4 2010 11 45
 end
 msg 128907 asynchronous
   from durationcanvas_ref 128651

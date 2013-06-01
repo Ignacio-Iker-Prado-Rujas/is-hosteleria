@@ -1,33 +1,33 @@
 format 76
 
 classinstance 128005 class_ref 128011 // RestauranteSwing
-  name ""   xyz 114.4 4.4 2000 life_line_z 2000
+  name ""   xyz 114.7 3.5 2000 life_line_z 2000
 classinstance 128133 class_ref 128770 // Reserva
-  name ""   xyz 305.4 4.8 2000 life_line_z 2000
+  name ""   xyz 305.8 4.1 2000 life_line_z 2000
 classinstance 128261 class_ref 142466 // Restaurante
-  name ""   xyz 455 3.6 2000 life_line_z 2000
+  name ""   xyz 454.2 3.1 2000 life_line_z 2000
 note 128389 "Caso de uso:
 Reservar mesa
 "
-  xyzwh 597.8 314.2 2000 103 53
+  color mediumblue  xyzwh 597.4 314.2 2000 103 53
 fragment 130437 "opt"
-  xyzwh 122.7 140.1 0 395 211
+  xyzwh 122.5 140.1 0 395 211
 end
 textcanvas 130565 "[reservaPosible]"
-  xyzwh 175.6 147.6 2000 86 18
+  xyzwh 175.4 147 2000 86 18
 note 130693 "La información relativa a una reserva es: ListaMesas, Nombre (no obligatorio), fecha, hora y número de comensales"
-  xyzwh 558.7 54 2000 181 77
+  xyzwh 558.3 54.4 2000 181 77
 durationcanvas 128901 classinstance_ref 128005 // :RestauranteSwing
-  xyzwh 161 71.6 2010 11 303
+  xyzwh 161 71.4 2010 11 303
 end
 durationcanvas 129029 classinstance_ref 128133 // :Reserva
   xyzwh 327 71.2 2010 11 61
 end
 durationcanvas 129413 classinstance_ref 128261 // :Restaurante
-  xyzwh 486 177.3 2010 11 59
+  xyzwh 486 177.2 2010 11 59
 end
 durationcanvas 130053 classinstance_ref 128261 // :Restaurante
-  xyzwh 486 274.3 2010 11 64
+  xyzwh 486 274 2010 11 64
 end
 msg 129157 synchronous
   from durationcanvas_ref 128901

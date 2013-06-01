@@ -1,6 +1,6 @@
 format 76
 "diagramadeccomunicacion"
-  revision 15
+  revision 16
   modified_by 5 "usuario"
 
 
@@ -38,7 +38,7 @@ format 76
 
   mark_for_import
   
-  usecaseview 128258 "diagramasComunicacion"
+  usecaseview 128258 "DiagramasComunicacion"
     //use case diagram settings
     package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
     //sequence diagram settings
@@ -76,7 +76,6 @@ format 76
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
-
     end
 
     usecase 128130 "modificarMenu"
@@ -268,9 +267,9 @@ format 76
     end
   end
 
-  package_ref 128002 // diagramasClases
+  package_ref 128002 // DiagramasClases
 
-  package_ref 128011 // diagramasSecuencia
+  package_ref 128011 // DiagramasSecuencia
 
   classview 141445 "Clases"
     //class diagram settings
@@ -360,34 +359,6 @@ ${members}}
 	
 	
       end
-    end
-
-    class 128642 "ListaPlatos"
-      visibility package stereotype "entity"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-    end
-
-    class 128258 "PestanaRestaurante"
-      visibility package stereotype "boundary"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      
     end
 
     class 128130 "Consumicion"
@@ -818,19 +789,6 @@ ${members}}
       end
     end
 
-    class 129410 "VerMenu"
-      visibility package stereotype "entity"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-    end
-
     class 128146 "ListaReserva"
       visibility package stereotype "entity"
       cpp_decl ""
@@ -840,34 +798,6 @@ ${members}}
       php_decl ""
       python_2_2 python_decl ""
       idl_decl ""
-      explicit_switch_type ""
-      
-    end
-
-    class 128274 "RealizarRecuentoDeExistencias"
-      visibility package stereotype "entity"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      
-    end
-
-    class 135938 "pantallaCocinero"
-      visibility package stereotype "boundary"
-      cpp_decl ""
-      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
-${members}};
-"
       explicit_switch_type ""
       
     end
@@ -1153,5 +1083,7 @@ ${members}}
 	  b parent class_ref 128005 // Inventario
       end
     end
+
   end
+
 end
