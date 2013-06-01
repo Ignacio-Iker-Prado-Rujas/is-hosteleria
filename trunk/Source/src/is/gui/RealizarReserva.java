@@ -107,7 +107,7 @@ public class RealizarReserva extends JPanel{
 							controlador.communicateReserva(year, month, day, (int)hora.getSelectedItem(), 
 									(int)minutos.getSelectedItem(), nombre.getText(), 
 									(int)comensales.getValue());						
-							
+							frame.setVisible(false);
 							
 						}//TODO else mostrar mensaje de error, donde sea, diciendo 
 						//que hay que poner un numero de comensales
