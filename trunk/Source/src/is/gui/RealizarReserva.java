@@ -113,7 +113,7 @@ public class RealizarReserva extends JPanel{
 						}//TODO else mostrar mensaje de error, donde sea, diciendo 
 						//que hay que poner un numero de comensales
 						else {
-							String error = null;
+							String error = "";
 							if (!comensalesValidos()) error += COMENSALES_NO_VALIDOS;
 							if (!nombreValido()) error += NOMBRE_RESERVA;
 							
@@ -170,7 +170,7 @@ public class RealizarReserva extends JPanel{
 	}
 	
 	public boolean nombreValido(){
-		return nombre.getText() != null;
+		return nombre.getText().length() != 0;
 	}
 
 	private void inicializaBox(){
