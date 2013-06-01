@@ -21,6 +21,7 @@ import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Consumicion;
 
 @SuppressWarnings("serial")
+// MenuObserver
 public class VerMenu extends JFrame{
 	public VerMenu(GUIController controller){
 		this.setSize(400,500);
@@ -126,14 +127,14 @@ public class VerMenu extends JFrame{
 	/*	Elimina el plato seleccionado	*/
 	private void borrarPlato(){
 		if(this.consumicionSeleccionada!=null)
-			System.out.println(consumicionSeleccionada + " deberia ser borrada");
+			System.out.println(consumicionSeleccionada.getText() + " deberia ser borrada");
 		else System.out.println(" se debe seleccionar algo");
 	}
 	
 	/*	Edita el Plato que esté seleccionado	*/
 	private void editarPlato(){
 		if(this.consumicionSeleccionada!=null)
-			System.out.println(consumicionSeleccionada + " debe ser editado");
+			System.out.println(consumicionSeleccionada.getText() + " debe ser editado");
 		else System.out.println(" se debe seleccionar algo");
 	}
 	
@@ -149,13 +150,20 @@ public class VerMenu extends JFrame{
 		for( JToggleButton boton: botones)
 			if(!boton.isFocusOwner())	//
 				boton.setSelected(false);
-			else 
-				consumicionSeleccionada = boton.getText();
+			else
+				consumicionSeleccionada = boton;
 	}
 	
-	private String consumicionSeleccionada;
+	/*	Borra de la vista el plato indicado	*/
+	public void borrarPlato(String nombre){
+		
+	}
+	public void anyadePlato(String name, TipoPlatos tPlato){
+		/*Para esto hay que guardar atributos del constructor	*/
+	}
+	
+	private JToggleButton consumicionSeleccionada;
 	private ArrayList<JToggleButton> botones;
 	private GUIController controlador;
 	private Menu menu;
-	private JPanel[] elementosMenu;
 }
