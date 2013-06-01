@@ -134,8 +134,8 @@ public class RealizarReserva extends JPanel{
 		}, BorderLayout.AFTER_LAST_LINE);
 	
 		
-		
-
+		/** Este era otro frame que habia por aqui, si eso unirlo con el otro.
+/*
 		frame = new JFrame("Reservas");
 
 		JPanel aceptarOCancelar = new JPanel();
@@ -151,7 +151,9 @@ public class RealizarReserva extends JPanel{
 			}
 			
 		});
-		JFrame frame = new JFrame("Reservas");
+		
+		*/
+		frame = new JFrame("Reservas");
 
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
