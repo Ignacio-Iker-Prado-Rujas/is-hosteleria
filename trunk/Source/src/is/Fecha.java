@@ -130,6 +130,9 @@ public class Fecha {
 		return (this.año == f.año && this.mes == f.mes && this.dia == f.dia);
 	}
 
+	public String toString(){
+		return this.dia + "/" + this.mes + "/" + this.dia + " " + (this.hora < 10 ? "0" + this.hora:this.hora) + ":" + this.minutos;
+	}
 
 	private int año;
 	private int mes;

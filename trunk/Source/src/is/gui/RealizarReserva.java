@@ -13,6 +13,7 @@ import is.gui.spring.SpringUtilities;
 import is.restaurante.Reserva;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,6 +36,10 @@ public class RealizarReserva extends JPanel{
 		this.controlador = controller;
 		this.setLayout(new BorderLayout());
 		this.inicializaBox();
+		
+		this.mesasSel = new boolean[controlador.requestMesas().length];
+		for (int i=0; i< mesasSel.length; i++)
+			mesasSel[i] = false;
 		JPanel reserva = new JPanel();
 	
 		reserva.setLayout(new SpringLayout());
@@ -86,12 +91,16 @@ public class RealizarReserva extends JPanel{
 		reserva.add(comensalesL);
 		reserva.add(this.comensales);
 		//p.add(comensales);*/
+		
+		JLabel mesasL = new JLabel("Mesas");
+		JButton mesasB = new JButton("Elegir mesas");
 
 		/*
 		 * Atención!!, después de reserva va el número de botoncitos que queremos
 		 */
 		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
 		this.add(reserva, BorderLayout.CENTER);
+		
 		this.add(new JButton("Reservar") {
 			{
 				this.addActionListener(new ActionListener() {
@@ -100,7 +109,7 @@ public class RealizarReserva extends JPanel{
 					public void actionPerformed(ActionEvent e) {
 						if (datosValidos()){
 							Date reservaDate = datePicker.getDate();
-							int year = reservaDate.getMonth();
+							int year = reservaDate.getYear();
 							int month = reservaDate.getMonth();
 							int day = reservaDate.getDay();
 							
@@ -201,6 +210,39 @@ public class RealizarReserva extends JPanel{
 		//año.addItem(year);
 		
 	}
+	
+	public final class SeleccionMesas extends JFrame implements ChangeListener{
+	    private JCheckBox[] checkMesas;
+	    public SeleccionMesas() {
+	        setLayout(null);
+	        check1=new JCheckBox("Inglés");
+	        check1.setBounds(10,10,150,30);
+	        check1.addChangeListener(this);
+	        add(check1);
+	        check2=new JCheckBox("Francés");
+	        check2.setBounds(10,50,150,30);
+	        check2.addChangeListener(this);        
+	        add(check2);
+	        check3=new JCheckBox("Alemán");
+	        check3.setBounds(10,90,150,30);
+	        check3.addChangeListener(this);        
+	        add(check3);        
+	    }
+	    
+	    public void stateChanged(ChangeEvent e){
+	        String cad="";
+	        if (check1.isSelected()==true) {
+	            cad=cad+"Inglés-";
+	        }
+	        if (check2.isSelected()==true) {
+	            cad=cad+"Francés-";
+	        }
+	        if (check3.isSelected()==true) {
+	            cad=cad+"Alemán-";
+	        }
+	        setTitle(cad);
+	    }
+	}
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private static String COMENSALES_NO_VALIDOS = "Debe seleccionar el número de comensales" + LINE_SEPARATOR;
 	private static String NOMBRE_RESERVA = "Debe introcudir el nombre del cliente" + LINE_SEPARATOR;
@@ -208,6 +250,8 @@ public class RealizarReserva extends JPanel{
 	
 	private JFrame frame;
 	private boolean error;
+	private boolean[] mesasSel;
+	
 	private Reserva reserva;
 	private JTextField fecha = new JTextField(10);
 	private JTextField dia = new JTextField(2);
