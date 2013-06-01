@@ -99,8 +99,16 @@ public class ConsumicionSwing extends JPanel{
 		done.addActionListener(new ActionListener(){				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(nombrePlato==null)
-				guardarPlato();					
+				if(nombrePlato.getText().isEmpty())
+					notificar("Debe indicar un nombre de plato");
+				else if(descripcion.getText().isEmpty())
+					notificar("Debe decribir el plato");
+				else if(precioField.getText().isEmpty())
+					notificar("Debe indicar un precio");
+				else if(!isNumber(precioField.getText()))
+					notificar("El precio debe ser un numero");
+				else
+					guardarPlato();					
 			}
 		});
 		JButton cancel = new JButton("cancel");
@@ -121,12 +129,24 @@ public class ConsumicionSwing extends JPanel{
 		/*Esta funcion actualiza en el menu el plato cambiado
 		 * le pasa el antiguo y el nuevo
 		 */
-		
 		if(edit)
 			restControl.modificarConsumicion();
 		else
-			restControl.crearConsumicion()
+			restControl.crearConsumicion();
 	}
+	private void notificar(String message){
+		//TODO
+		System.out.println(message);
+	}
+	private boolean isNumber(String palabra){
+		try{
+			Float.parseFloat(palabra);
+		}catch( NumberFormatException n){
+			return false;
+		}
+		return true;
+	}
+	
 	
 	private JPanel campos;
 	private String platoName;
