@@ -33,10 +33,15 @@ public class Mesa implements MesaInfo{
 		return factura;
 	}
 	
+	@Override
 	public ComandaInfo[] getListaComandas() {
 		return (ComandaInfo[]) this.pedidos.toArray();
 	}
 	
+	/**
+	 * Escoge una comanda como actual, para realizar acciones sobre ella
+	 * @param comandaSelected
+	 */
 	public void avisaComanda(int comandaSelected) {
 		if (comandaActual != -1)
 			//TODO, al dar al boton de generar comanda o elegir comanda en la vista correspondiente, se añadira el observador (supongo)
@@ -47,6 +52,7 @@ public class Mesa implements MesaInfo{
 
 	public void eliminaComanda(int comandaSelected) {
 		pedidos.remove(comandaSelected);
+		emitirCambios();
 	}
 
 	

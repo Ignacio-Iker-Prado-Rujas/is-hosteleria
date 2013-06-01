@@ -50,8 +50,8 @@ public class RestauranteSwing extends JPanel{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						new RealizarPedido(rest);
-						
+						//new RealizarPedido(rest);
+						new VistaMesas(rest);
 					}
 				});
 			}

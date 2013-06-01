@@ -64,7 +64,10 @@ public class Restaurante {
 	
 	public MesaInfo[] getMesas() {
 		// TODO Auto-generated method stub
-		return (MesaInfo[]) this.mesas.toArray();
+		MesaInfo[] infoMesas = new MesaInfo[this.mesas.size()];
+		for (int i=0; i<this.mesas.size(); i++)
+			infoMesas[i] = this.mesas.get(i);
+		return infoMesas;//(MesaInfo[]) this.mesas.toArray();
 	}
 	
 
