@@ -53,17 +53,27 @@ public class Restaurante {
 		return null;
 	}
 	
+	public void avisaComanda(int numMesa, int comandaSelected) {
+		mesas.get(numMesa).avisaComanda(comandaSelected);
+	}
+	
+	public void eliminaComanda(int numMesa, int comandaSelected) {
+		mesas.get(numMesa).eliminaComanda(comandaSelected);
+	}
+
+	
 	public MesaInfo[] getMesas() {
 		// TODO Auto-generated method stub
 		return (MesaInfo[]) this.mesas.toArray();
 	}
 	
 
-	
+	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;
 	private Menu menu;
 	private Tablon tablon;
 	
+		
 	
 }

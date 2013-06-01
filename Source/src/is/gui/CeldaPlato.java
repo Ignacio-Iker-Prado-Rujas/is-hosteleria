@@ -14,7 +14,7 @@ import is.restaurante.consumicion.Consumicion;
 /**
  * Celda que tiene un plato, y un JSpinner con el número de veces que ha sido elegido
  * @author JaimeDan
- *
+ *TODO PONER COMENTARIOS MAS DETALLADOS
  */
 @SuppressWarnings("serial")
 public class CeldaPlato extends JPanel{

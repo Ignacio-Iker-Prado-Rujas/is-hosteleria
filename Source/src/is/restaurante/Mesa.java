@@ -36,11 +36,27 @@ public class Mesa implements MesaInfo{
 	public ComandaInfo[] getListaComandas() {
 		return (ComandaInfo[]) this.pedidos.toArray();
 	}
+	
+	public void avisaComanda(int comandaSelected) {
+		if (comandaActual != -1)
+			comandaActual.removeObserver(obs);
+			pedidos.get(comandaSelected).addObserver(obs);
+		comandaActual = comandaSelected;
+	}
+
+	public void eliminaComanda(int comandaSelected) {
+		
+	}
+
+	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	
 
 	private Vector<Comanda> pedidos;
 	private int numeroMesa;
 	private int capacidadMaxima;
+	private int comandaActual = -1;
+	
+	
 	
 }

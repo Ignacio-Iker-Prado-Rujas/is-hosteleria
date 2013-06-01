@@ -52,11 +52,42 @@ public class VistaMesas extends JPanel{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					comandaSelected = j;
-					restController.avisaComanda(numMesa, comandaSelected);
+					//restController.avisaComanda(numMesa, comandaSelected);
 				}
 				
 			});
 		}
+		JButton editarComanda = new JButton("Editar");
+		editarComanda.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+			
+		});
+		
+		JButton añadirComanda = new JButton("Añadir");
+		añadirComanda.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+			
+		});
+		
+		JButton eliminarComanda = new JButton("Eliminar");
+		eliminarComanda.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (comandaSelected != -1 && numMesa != -1){
+					restController.eliminarComanda(numMesa, comandaSelected);
+				}
+			}
+			
+		});
 	}
 	
 	
