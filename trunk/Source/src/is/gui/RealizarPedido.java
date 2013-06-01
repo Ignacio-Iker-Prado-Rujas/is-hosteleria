@@ -37,8 +37,10 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	 * 
 	 * @param rest
 	 */
-	public RealizarPedido(final GUIController rest) {
+	public RealizarPedido(final GUIController rest, int numeroMesa, int comandaSeleccionada) {
 		this.restaurante = rest;
+		this.numeroComanda = comandaSeleccionada;
+		this.numeroMesa = numeroMesa;
 		
 /*
  * public VerMenu(GUIController controller){
@@ -235,22 +237,22 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		elementosMenu[0] = new JPanel();
 		int i = 0;
 		for (Consumicion c : beb){
-			bebidas[i] = new CeldaPlato(restaurante, c);
+			bebidas[i] = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
 			elementosMenu[0].add(bebidas[i]);
 		}
 		elementosMenu[1] = new JPanel();
 		for (Consumicion c : prim){
-			CeldaPlato plato = new CeldaPlato(restaurante, c);
+			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
 			elementosMenu[1].add(plato);
 		}
 		elementosMenu[2] = new JPanel();
 		for (Consumicion c : seg){
-			CeldaPlato plato = new CeldaPlato(restaurante, c);
+			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
 			elementosMenu[2].add(plato);
 		}
 		elementosMenu[3] = new JPanel();
 		for (Consumicion c : pos){
-			CeldaPlato plato = new CeldaPlato(restaurante, c);
+			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
 			elementosMenu[3].add(plato);
 		}
 	}
@@ -274,6 +276,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private JPanel[] elementosMenu;
 	private ComandaInfo comanda;
 
+	private int numeroComanda;
+	private int numeroMesa;
+	
 	
 
 	
