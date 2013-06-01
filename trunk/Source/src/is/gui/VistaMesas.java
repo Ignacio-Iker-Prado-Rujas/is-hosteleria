@@ -59,7 +59,7 @@ public class VistaMesas extends JPanel{
 					
 					
 				 	comandas = restController.getMesa(j).getListaComandas();				 
-					if (comandas != null) setComandasPanel(j);
+					setComandasPanel(j);
 					comandasLayout.show(comandasPanel[j], "Mesa " + j);
 					
 					
@@ -102,7 +102,7 @@ public class VistaMesas extends JPanel{
 				comandasPanel[numMesa].add(comandaMesa);
 			}
 		}
-		comandasContainer.add(comandasPanel[numeroMesa], "Mesa"+numeroMesa);
+		comandasContainer.add(comandasPanel[numeroMesa], "Mesa "+numeroMesa);
 		JButton editarComanda = new JButton("Editar");
 		editarComanda.addActionListener(new ActionListener(){
 
