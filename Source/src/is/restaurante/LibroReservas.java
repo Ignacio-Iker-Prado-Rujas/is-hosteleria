@@ -22,27 +22,29 @@ public class LibroReservas {
 
 	}
 	
-	public ArrayList<Reserva> reservasHoy(){
-		Date date = new Date();
+	public ArrayList<ReservaInfo> reservasHoy(){
 		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
-		ArrayList<Reserva> reservasDeHoy = new ArrayList<Reserva>();
-		buscarReservaHoy(fecha);
-		Fecha hoy = new Fecha(date.getYear(),
-		date.getMonth(),
-		date.getDay(),
-		date.getHours(),
-		date.getMinutes());
-
-		for (int i=0; i< listaReservas.size(); i++){
-			if (listaReservas.get(i).equals(hoy))
-				reservasDeHoy.add(listaReservas.get(i));
-		}
-		
-		
+		ArrayList<ReservaInfo> reservasDeHoy = new ArrayList<ReservaInfo>();
+		reservasDeHoy = buscarReservaHoy(fecha);
 		return reservasDeHoy;
 		
 	}
+	public ArrayList<ReservaInfo> reservasSemana(){
+		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
+		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		reservasSemana = buscarReservaSemana(fecha);
+		return reservasSemana;
+		
+	}
 
+	public ArrayList<ReservaInfo> reservasMes(){
+		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
+		ArrayList<ReservaInfo> reservasMes = new ArrayList<ReservaInfo>();
+		reservasMes = buscarReservaMes(fecha);
+		return reservasMes;
+		
+	}
+	
 	public boolean eliminarReserva(Reserva res){
 		numeroReservas--;
 		return listaReservas.erase(res);
@@ -79,9 +81,38 @@ public class LibroReservas {
 		return reservasHoy;
 	}
 	
+	public ArrayList<ReservaInfo> buscarReservaSemana(Fecha dateInicial){
+		ArrayList <ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		Fecha dateTope = dateInicial.siguienteSemana();
+		for ( int i = 0; i < listaReservas.size(); i++){
+			if (!listaReservas.get(i).getFecha().esMayorQue(dateTope) && (listaReservas.get(i).getFecha().esMayorQue(dateInicial) || listaReservas.get(i).getFecha().equals(dateInicial)))
+					reservasSemana.add(listaReservas.get(i));
+		}
+		return reservasSemana;
+	}
 	
-	
-	
+	public ArrayList<ReservaInfo> buscarReservaMes(Fecha dateInicial) {
+		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		Fecha dateTope = dateInicial.siguienteSemana();
+		for (int j = 0; j < 4; j++) {
+			for (int i = 0; i < listaReservas.size(); i++) {
+				if (!listaReservas.get(i).getFecha().esMayorQue(dateTope)
+						&& (listaReservas.get(i).getFecha()
+								.esMayorQue(dateInicial) || listaReservas
+								.get(i).getFecha().equals(dateInicial)))
+					reservasSemana.add(listaReservas.get(i));
+				dateInicial = dateInicial.siguienteSemana();
+				dateTope = dateTope.siguienteSemana();
+
+			}
+		}
+		return reservasSemana;
+	}
+
 	private List<Reserva> listaReservas;
 	private int numeroReservas;//TODO creo que numero reservas se puede ver con listaReservas.size();
+	public ArrayList<ReservaInfo> buscarReserva(Fecha fecha) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

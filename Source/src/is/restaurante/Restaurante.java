@@ -1,5 +1,6 @@
 package is.restaurante;
 
+import is.Fecha;
 import is.restaurante.consumicion.Consumicion;
 
 import java.util.ArrayList;
@@ -23,7 +24,9 @@ public class Restaurante {
 	public ArrayList<ReservaInfo> /*int List<Integer> */ buscarReservas(String nombre){
 		return this.reservas.buscarReserva(nombre);
 	}
-	
+	public ArrayList<ReservaInfo> buscarReservas(Fecha fecha){
+		return this.reservas.buscarReserva(fecha);
+	}
 	
 	
 	public Menu getMenu() {
