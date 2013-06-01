@@ -1,7 +1,9 @@
 package is.gui;
 
+import is.restaurante.Comanda;
 import is.restaurante.ComandaObserver;
 import is.restaurante.Menu;
+import is.restaurante.Mesa;
 import is.restaurante.Restaurante;
 import is.restaurante.consumicion.Consumicion;
 
@@ -14,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -169,7 +172,15 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						frame.setVisible(false);
+						
+						//restaurante.comunicarComanda(mesa, mes, dia, hora, minutos, cliente, numeroComensales);
+						Mesa mesa = restaurante.getMesa(mesas.getSelectedIndex());
+						comanda = new Comanda();
+						
+						mesa.addPedido(comanda);
+
 						//restaurante.communicatePedido(año, mes, dia, hora, minutos, cliente, numeroComensales);
+
 
 					//	elementosMenu[1].
 
@@ -201,23 +212,33 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	
 	public void inicializaPaneles(){
 		elementosMenu = new JPanel[4];
+		ArrayList<Consumicion> beb = this.restaurante.requestBebidas(),
+		prim = this.restaurante.requestPrimeros(),
+		seg = this.restaurante.requestSegundos(), 
+		pos = this.restaurante.requestPostres();
+		bebidas = new CeldaPlato[beb.size()];
+		primeros = new CeldaPlato[prim.size()];
+		segundos = new CeldaPlato[seg.size()];
+		postres = new CeldaPlato[pos.size()];
+		
 		elementosMenu[0] = new JPanel();
-		for (Consumicion c : this.restaurante.requestBebidas()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[0].add(plato);
+		int i = 0;
+		for (Consumicion c : beb){
+			bebidas[i] = new CeldaPlato(c);
+			elementosMenu[0].add(bebidas[i]);
 		}
 		elementosMenu[1] = new JPanel();
-		for (Consumicion c : this.restaurante.requestPrimeros()){
+		for (Consumicion c : prim){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[1].add(plato);
 		}
 		elementosMenu[2] = new JPanel();
-		for (Consumicion c : this.restaurante.requestSegundos()){
+		for (Consumicion c : seg){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[2].add(plato);
 		}
 		elementosMenu[3] = new JPanel();
-		for (Consumicion c : this.restaurante.requestPostres()){
+		for (Consumicion c : pos){
 			CeldaPlato plato = new CeldaPlato(c);
 			elementosMenu[3].add(plato);
 		}
@@ -227,6 +248,10 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	public void comandaHaCambiado(String comanda) {
 		this.text.setText(comanda);
 	}
+	private CeldaPlato[] primeros;
+	private CeldaPlato[] segundos;
+	private CeldaPlato[] postres;
+	private CeldaPlato[] bebidas;
 	
 	private JFrame frame;
 	private JPanel panelCentral;
@@ -236,6 +261,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private GUIController restaurante;
 	private JComboBox mesas;
 	private JPanel[] elementosMenu;
+	private Comanda comanda;
 
 	
 

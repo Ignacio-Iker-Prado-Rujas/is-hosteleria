@@ -76,8 +76,12 @@ public class GUIController {
 	
 	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc
 	
-	public Mesa getMesa(String mesa) {
-		int i = Integer.parseInt(mesa);
+	public Mesa getMesa(int j) {
+		return restaurante.buscarMesa(j);
+		
+	}
+	public Mesa getMesa(String j) {
+		int i = Integer.parseInt(j);
 		return restaurante.buscarMesa(i);
 		
 	}
