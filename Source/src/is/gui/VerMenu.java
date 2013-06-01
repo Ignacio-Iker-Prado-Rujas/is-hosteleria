@@ -37,8 +37,11 @@ public class VerMenu extends JFrame{
 		} catch (Exception e) {}
 		
 		this.controlador = controller;
+		
 		this.botones = new ArrayList<JToggleButton>();
+		
 		menu = controlador.getMenu();
+		
 		JTabbedPane pestanyas = new JTabbedPane();
 		this.add(pestanyas);
 		TipoPlatos[] tipoPlatos = TipoPlatos.values();
