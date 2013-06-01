@@ -18,8 +18,14 @@ import java.util.Iterator;
 //hay que registrar los observadores en realizar pedido
 //TODO delete  consumicion
 //TODO menu y comanda tienen los mismos atributos
+
+//TODO TODO TODO TODO, hay mucha repeticion con los add y tal, podriamos hacer que los atributos que son hashmap heredaran de una clase que tuviera
+//implementados todos esos add
 public class Comanda {
 	
+	public void addObserver(ComandaObserver obs){
+		this.observers.add(obs);
+	}
 	
 	public void addPrimero(Plato primero){
 		if (primeros.containsKey(primero)){
@@ -30,6 +36,7 @@ public class Comanda {
 			primeros.put(primero, 1);
 		//primeros.add(primero);
 		this.precio += primero.getPrecio();
+		emitirCambio();
 	}
 	
 	public void setVecesPrimero(Plato primero){
@@ -57,7 +64,7 @@ public class Comanda {
 			primeros.put(segundo, 1);
 		//primeros.add(primero);
 		this.precio += segundo.getPrecio();
-		
+		emitirCambio();
 	}
 	
 	public void addPostre(Postre postre){
@@ -69,6 +76,7 @@ public class Comanda {
 			postres.put(postre, 1);
 		//primeros.add(primero);
 		this.precio += postre.getPrecio();
+		emitirCambio();
 	}
 	
 	public void addBebida(Bebida bebida){
@@ -80,6 +88,7 @@ public class Comanda {
 			bebidas.put(bebida, 1);
 		//primeros.add(primero);
 		this.precio += bebida.getPrecio();
+		emitirCambio();
 	}
 	
 	
@@ -129,6 +138,11 @@ public class Comanda {
 		
 	}
 	
+	private void emitirCambio(){
+		for (ComandaObserver obs: observers)
+			obs.comandaHaCambiado(this.toString());
+	}
+	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private HashMap<Consumicion, Integer> primeros;
 	private HashMap<Consumicion, Integer> segundos;
@@ -136,5 +150,7 @@ public class Comanda {
 	private HashMap<Consumicion, Integer> bebidas;
 	
 	private double precio = 0;
+	
+	private ArrayList<ComandaObserver> observers = new ArrayList<ComandaObserver>();
 
 }
