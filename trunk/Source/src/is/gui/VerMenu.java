@@ -8,9 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
@@ -45,10 +47,9 @@ public class VerMenu extends JFrame{
 			
 			JPanel panel = new JPanel(new BorderLayout());		
 			pestanyas.add(tPlato.toString(), panel);
-			
 			JPanel opciones = new JPanel(new GridLayout());
 			panel.add(opciones, BorderLayout.SOUTH);
-			JButton anyadir = new JButton("add");
+			JButton anyadir = new JButton("add",new ImageIcon(this.getClass().getResource("images/flecha.png")));
 			anyadir.addActionListener(new ActionListener(){				
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -167,8 +168,13 @@ public class VerMenu extends JFrame{
 	public void borrarPlato(String nombre){
 		
 	}
+	private void createConsumicion(){
+		
+		
+	}
 	public void anyadePlato(String name, TipoPlatos tPlato){
 		/*Para esto hay que guardar atributos del constructor	*/
+		createConsumicion();
 	}
 	
 	/* Actualiza un plato	*/
