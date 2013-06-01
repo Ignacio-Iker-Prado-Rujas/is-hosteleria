@@ -1,10 +1,36 @@
 window_sizes 1280 780 300 900 533 82
+diagrams
+  sequencediagram_ref 141957 // ModificarMenu
+    853 419 110 4 0 0
+  sequencediagram_ref 128011 // VerMenu
+    853 419 110 4 0 0
+  sequencediagram_ref 142085 // AñadirConsumicion
+    853 419 110 4 0 0
+  sequencediagram_ref 142213 // EliminarConsumicion
+    853 419 110 4 0 0
+  sequencediagram_ref 142341 // ModificarConsumicion
+    853 423 110 4 0 0
+  sequencediagram_ref 142469 // GenerarFacturaRestaurante
+    853 419 110 4 0 0
+  sequencediagram_ref 128261 // VerReservas
+    853 419 110 4 0 0
+  sequencediagram_ref 128389 // AnularReserva
+    853 419 110 4 0 0
+  sequencediagram_ref 128517 // ReservarMesa
+    853 419 110 4 0 0
+  sequencediagram_ref 128005 // RealizarRecuentoExistencias
+    853 419 110 4 0 0
+  classdiagram_ref 148997 // prueba
+    775 499 100 4 216 0
+  sequencediagram_ref 149125 // TomarComanda
+    775 499 110 4 0 0
+  sequencediagram_ref 149253 // EliminarComanda
+    775 499 110 4 0 0
+  active  sequencediagram_ref 149381 // ModificarPedido
+    974 624 110 4 0 0
+end
 show_stereotypes
-selected 
-package_ref 128011 // diagramasSecuencia
+selected usecaseview_ref 128258 // DiagramasComunicacion
 open
-  classview_ref 128011 // VerModificarMenu
-  classview_ref 128005 // RealizarRecuentoDeExistencias
-  classview_ref 128133 // ReservasRestaurante
 end
 end

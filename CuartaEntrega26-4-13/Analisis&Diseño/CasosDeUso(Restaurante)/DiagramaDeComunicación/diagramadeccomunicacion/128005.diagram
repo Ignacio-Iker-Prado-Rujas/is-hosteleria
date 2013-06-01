@@ -1,40 +1,40 @@
 format 76
 
 classinstance 128005 class_ref 128011 // RestauranteSwing
-  name ""   xyz 19.4 3 2000 life_line_z 2000
+  name ""   xyz 19.7 3.1 2000 life_line_z 2000
 classinstance 128133 class_ref 128005 // Inventario
-  name ""   xyz 470.8 4.1 2000 life_line_z 2000
+  name ""   xyz 471 3.2 2000 life_line_z 2000
 classinstance 130693 class_ref 128133 // Existencia
-  name ""   xyz 612.2 3 2000 life_line_z 2000
+  name ""   xyz 612.9 3.1 2000 life_line_z 2000
 fragment 134149 "opt"
-  xyzwh 30.2 193.1 0 637 153
+  xyzwh 30.8 193.9 0 636 153
 end
 note 134405 "El proceso de editar una existencia se repetirá mientras el usuario no seleccione salir."
   xyzwh 698.2 72 2000 126 88
 classinstance 134789 class_ref 134661 // GUIController
-  name ""   xyz 242.2 3.9 2000 life_line_z 2000
+  name ""   xyz 240.2 3.1 2000 life_line_z 2000
 note 137221 "Caso de uso:
 Realizar recuento de existencias"
-  xyzwh 706 370 2000 110 61
+  color mediumblue  xyzwh 706 370 2000 110 61
 textcanvas 137349 "[edita]"
-  xyzwh 81.6 198.5 2000 30 14
+  xyzwh 81 197.8 2000 30 14
 durationcanvas 134917 classinstance_ref 128005 // :RestauranteSwing
-  xyzwh 66 68.1 2010 11 288
+  xyzwh 66 68.2 2010 11 288
 end
 durationcanvas 135045 classinstance_ref 134789 // :GUIController
-  xyzwh 277 65.1 2010 11 113
+  xyzwh 275 65.2 2010 11 113
 end
 durationcanvas 135301 classinstance_ref 128133 // :Inventario
-  xyzwh 495 69.6 2010 11 55
+  xyzwh 496 69.2 2010 11 55
 end
 durationcanvas 136069 classinstance_ref 134789 // :GUIController
-  xyzwh 277 244 2010 11 93
+  xyzwh 275 244 2010 11 93
 end
 durationcanvas 136325 classinstance_ref 128133 // :Inventario
-  xyzwh 495 263.5 2010 11 64
+  xyzwh 496 262.8 2010 11 64
 end
 durationcanvas 136581 classinstance_ref 130693 // :Existencia
-  xyzwh 639 274.5 2010 11 42
+  xyzwh 639 273.8 2010 11 42
 end
 msg 135173 synchronous
   from durationcanvas_ref 134917
