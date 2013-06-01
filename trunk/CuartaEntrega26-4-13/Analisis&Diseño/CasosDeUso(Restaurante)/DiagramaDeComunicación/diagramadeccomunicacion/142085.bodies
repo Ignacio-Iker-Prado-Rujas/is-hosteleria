@@ -1,0 +1,41 @@
+class GUIController
+!!!148997.java!!!	crearComanda() : void
+		
+	//	this.robot.requestStart();
+!!!149125.java!!!	GUIController(inout restaurante : Restaurante)
+		this.restaurante = restaurante;
+!!!149253.java!!!	getMenu() : Menu
+		return restaurante.getMenu();
+!!!149381.java!!!	requestPrimeros() : Consumicion
+		return restaurante.getMenu(1);
+		
+!!!149509.java!!!	requestSegundos() : Consumicion
+		return restaurante.getMenu(2);
+		
+!!!149637.java!!!	requestPostres() : Consumicion
+		return restaurante.getMenu(3);
+		
+!!!149765.java!!!	requestBebidas() : Consumicion
+		return restaurante.getMenu(0);
+		
+!!!149893.java!!!	communicateReserva(in año : int, in mes : int, in dia : int, in hora : int, in minutos : int, in cliente : String, in numeroComensales : int) : void
+		Fecha fechaRes = new Fecha(año, mes, dia, hora, minutos);
+		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
+		restaurante.añadirReserva(reserva);
+!!!150021.java!!!	comunicarComanda(in año : int, in mes : int, in dia : int, in hora : int, in minutos : int, in cliente : String, in numeroComensales : int) : void
+		Fecha fechaRes = new Fecha(año, mes, dia, hora, minutos);
+		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
+		restaurante.añadirReserva(reserva);
+!!!150149.java!!!	requestMesas() : MesaInfo
+		return this.restaurante.getMesas();
+!!!150277.java!!!	reservasDeUnCliente(in nombre : String) : ReservaInfo
+		return this.restaurante.buscarReservas(nombre);
+!!!150405.java!!!	getMesa(in j : int) : Mesa
+		return restaurante.buscarMesa(j);
+		
+!!!150533.java!!!	getMesa(in j : String) : Mesa
+		int i = Integer.parseInt(j);
+		return restaurante.buscarMesa(i);
+		
+!!!150661.java!!!	avisaComanda(in numMesa : int, in comandaSelected : int) : void
+		
