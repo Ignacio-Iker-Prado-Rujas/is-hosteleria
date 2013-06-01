@@ -77,7 +77,6 @@ public class VerMenu extends JFrame{
 			
 			ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
 			for( Consumicion cons: consum){
-<<<<<<< .mine
 				JToggleButton boton = new JToggleButton(cons.getNombre());
 				botones.add(boton);
 				platos.add(boton);
@@ -88,10 +87,6 @@ public class VerMenu extends JFrame{
 					}
 					
 				});
-=======
-				JToggleButton boton = new JToggleButton(cons.getNombre());
-				platos.add(boton);	
->>>>>>> .r398
 			}
 			
 		}
