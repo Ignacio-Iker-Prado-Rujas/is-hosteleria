@@ -1,0 +1,75 @@
+format 76
+
+note 128005 "Caso de uso:
+Generar factura del restaurante"
+  xyzwh 639.8 344.2 2000 112 59
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 18 3.4 2000 life_line_z 2000
+classinstance 128389 class_ref 129026 // Factura
+  name ""   xyz 462.4 3.4 2000 life_line_z 2000
+classinstance 128645 class_ref 142466 // Restaurante
+  name ""   xyz 258.8 3.4 2000 life_line_z 2000
+classinstance 128773 class_ref 142594 // Mesa
+  name ""   xyz 357.8 3.4 2000 life_line_z 2000
+classinstance 128901 class_ref 134661 // GUIController
+  name ""   xyz 145 3.4 2000 life_line_z 2000
+classinstance 130565 class_ref 128130 // Consumicion
+  name ""   xyz 564.4 3.9 2000 life_line_z 2000
+fragment 131589 "loop"
+  xyzwh 687 158 0 50 43
+end
+durationcanvas 129029 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 65 72.2 2010 11 40
+end
+durationcanvas 129157 classinstance_ref 128901 // :GUIController
+  xyzwh 180 73.8 2010 11 25
+end
+durationcanvas 129413 classinstance_ref 128645 // :Restaurante
+  xyzwh 290 83 2010 11 25
+end
+durationcanvas 130693 classinstance_ref 128389 // :Factura
+  xyzwh 482 136.8 2010 11 105
+end
+durationcanvas 130821 classinstance_ref 130565 // :Consumicion
+  xyzwh 599 140.9 2010 11 38
+end
+durationcanvas 131205 classinstance_ref 130565 // :Consumicion
+  xyzwh 599 191.9 2010 11 37
+end
+msg 129285 synchronous
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 129157
+  yz 71 2015 explicitmsg "generarFactura(Mesa)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 72 59
+msg 129541 synchronous
+  from durationcanvas_ref 129157
+  to durationcanvas_ref 129413
+  yz 83 2015 explicitmsg "generarFactura(Mesa)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 191 69
+msg 130949 synchronous
+  from durationcanvas_ref 130693
+  to durationcanvas_ref 130821
+  yz 142 2015 msg operation_ref 128139 // "getNombre()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 531 129
+msg 131077 return
+  from durationcanvas_ref 130821
+  to durationcanvas_ref 130693
+  yz 164 2020 explicitmsg "nombre"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 501 153
+msg 131333 synchronous
+  from durationcanvas_ref 130693
+  to durationcanvas_ref 131205
+  yz 194 2015 msg operation_ref 136709 // "getPrecio()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 540 184
+msg 131461 return
+  from durationcanvas_ref 131205
+  to durationcanvas_ref 130693
+  yz 217 2015 explicitmsg "precio"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 501 208
+end
