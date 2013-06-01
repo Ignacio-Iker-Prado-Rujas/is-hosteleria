@@ -90,10 +90,21 @@ public class Fecha {
 	}
 
 	public Fecha siguienteSemana(){
+		if (this.esBisiesto()) this.diasMes[1]++;
 		int numDia = this.dia;
 		numDia += 7;
+		int mes = this.mes, año = this.año;
+		int div = numDia / this.diasMes[this.mes-1];
 		
-		return null;	
+		numDia = numDia % this.diasMes[this.mes-1];
+		if (div == 1){
+			if (this.mes == 12){
+				año = this.año+1;
+			}else this.mes++;
+		}
+		
+		if (this.esBisiesto()) this.diasMes[1]--;
+		return new Fecha(año, mes, dia, this.hora, this.minutos);	
 	}
 	
 	public boolean esBisiesto() {
