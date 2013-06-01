@@ -25,7 +25,7 @@ import javax.swing.border.TitledBorder;
 
 
 @SuppressWarnings("serial")
-public class RealizarPedido extends JPanel implements ComandaObserver, ItemListener{
+public class RealizarPedido extends JPanel implements ComandaObserver{
 
 	public RealizarPedido(final GUIController rest) {
 		this.restaurante = rest;
@@ -78,8 +78,8 @@ public class RealizarPedido extends JPanel implements ComandaObserver, ItemListe
 		panelCentral = new JPanel();
 		final CardLayout menu = new CardLayout();
 		panelCentral.setLayout(menu);
-		for (int i=0; i<4; i++)
-			panelCentral.add(this.elementosMenu[i], i);
+		for (Integer i=0; i<4; i++)
+			panelCentral.add(this.elementosMenu[i], i.toString());
 		tipoPlato.setLayout(new GridLayout(4,1));
 		tipoPlato.add(new JButton("Bebidas"){
 			{
@@ -165,11 +165,6 @@ public class RealizarPedido extends JPanel implements ComandaObserver, ItemListe
 
 	}
 	
-	@Override
-	public void itemStateChanged(ItemEvent e) {
-		CardLayout cl = (CardLayout)(panelCentral.getLayout());
-		cl.show(panelCentral, (String)e.getItem());
-	}
 
 	
 	public void inicializaPaneles(){
