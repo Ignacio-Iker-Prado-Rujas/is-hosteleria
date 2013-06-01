@@ -51,7 +51,7 @@ public class VistaMesas extends JPanel{
 					numMesa = j;
 					title.setTitle("Mesa " + j);
 					comandas = restController.getMesa(j).getListaComandas();
-					if (comandas != null)setComandasPanel(j);
+					if (comandas != null) setComandasPanel(j);
 					comandasLayout.show(comandasPanel[j], "Mesa " + j);
 				}
 				
