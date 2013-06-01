@@ -11,11 +11,13 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -28,6 +30,7 @@ public class ConsumicionSwing extends JPanel{
 
 	public ConsumicionSwing(VerMenu ventana, GUIController controller, String name, boolean edit){
 		
+		this.edit = edit;
 		this.campos = new JPanel();
 		this.setLayout(new BorderLayout());
 		
@@ -72,7 +75,22 @@ public class ConsumicionSwing extends JPanel{
 		precioField.setMaximumSize(new Dimension(1, 1));	
 		this.campos.add(precioField);
 		
-		SpringUtilities.makeCompactGrid(campos, 3, 2, 6, 6, 10, 10);
+		JLabel tipoL = new JLabel(" Tipo ");
+		tipoL.setBorder(BorderFactory.createLineBorder(Color.black));
+		
+		this.campos.add(tipoL);
+		//for(TipoPlatos t: arrayTipos)
+		TipoPlatos[] arrayTipos = TipoPlatos.values();
+		Vector<TipoPlatos> vectorTipos = new Vector<TipoPlatos>();
+		for(TipoPlatos t: arrayTipos){
+			vectorTipos.add(t);
+		}
+		tipoPlato = new JComboBox(vectorTipos);
+		
+		tipoPlato.setMaximumSize(new Dimension(1, 1));	
+		this.campos.add(tipoPlato);
+		
+		SpringUtilities.makeCompactGrid(campos, 4, 2, 6, 6, 10, 10);
 		this.add(campos, BorderLayout.CENTER);
 	}
 	
@@ -81,6 +99,7 @@ public class ConsumicionSwing extends JPanel{
 		done.addActionListener(new ActionListener(){				
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if(nombrePlato==null)
 				guardarPlato();					
 			}
 		});
@@ -102,7 +121,11 @@ public class ConsumicionSwing extends JPanel{
 		/*Esta funcion actualiza en el menu el plato cambiado
 		 * le pasa el antiguo y el nuevo
 		 */
-		//restControl.actualizarConsumicion()
+		
+		if(edit)
+			restControl.modificarConsumicion();
+		else
+			restControl.crearConsumicion()
 	}
 	
 	private JPanel campos;
@@ -112,6 +135,8 @@ public class ConsumicionSwing extends JPanel{
 	private GUIController restControl;
 	private JTextField nombrePlato;
 	private JTextArea descripcion;
+	private JComboBox tipoPlato;
 	private VerMenu ventanaGeneral;
+	private boolean edit;
 	
 }
