@@ -2,6 +2,7 @@ package is.gui;
 
 import is.restaurante.MesaInfo;
 
+import java.awt.FlowLayout;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -13,7 +14,11 @@ public class VistaMesas extends JPanel{
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
 		
-		JPanel panelMesas
+		JPanel panelMesas = new JPanel();
+		panelMesas.setLayout(new FlowLayout());
+		this.restController.requestMesas();
+		this.restController.pedirMesas();
+		
 	}
 	
 	

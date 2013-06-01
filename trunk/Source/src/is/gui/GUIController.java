@@ -81,7 +81,12 @@ public class GUIController {
 		return restaurante.buscarMesa(i);
 		
 	}
+	public void pedirMesas() {
+		this.restaurante.pedirMesas();
+	}
+	
 	private Restaurante restaurante;
+	
 	
 
 
