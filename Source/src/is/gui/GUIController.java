@@ -104,6 +104,7 @@ public class GUIController {
 		this.restaurante.addNewConsumption(numComanda, numMesa);
 	}
 	
+	
 	private Restaurante restaurante;
 
 
