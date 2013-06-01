@@ -20,6 +20,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 
@@ -145,18 +146,16 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		this.add(tipoPlato, BorderLayout.WEST);
 		JFrame frame = new JFrame("Realizar Pedido");
 		this.add(panelCentral);
-		/*
-		 * TitledBorder titled = new TitledBorder("Log");
+		
+		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);
 		//ejemplo de como meter imagenes
-		cityPanel = new CityPanel(text);
-		this.add(cityPanel);
 				
 		scroller = new JScrollPane(text);
         scroller.setPreferredSize(new Dimension(100,100));
         scroller.setBorder(titled);
-		 */
+		
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -192,15 +191,15 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	}
 	
 	@Override
-	public void comandaHaCambiado() {
-		// TODO Auto-generated method stub
-		
+	public void comandaHaCambiado(String comanda) {
+		this.text.setText(comanda);
 	}
 	
 
 	private JPanel panelCentral;
 	private PlatosPanel platosPanel;
 	private JScrollPane scroller;
+	private JTextArea text;
 	private GUIController restaurante;
 	
 	private JPanel[] elementosMenu;

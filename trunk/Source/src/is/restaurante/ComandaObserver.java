@@ -2,7 +2,7 @@ package is.restaurante;
 
 public interface ComandaObserver {
 
-	public void comandaHaCambiado();
+	public void comandaHaCambiado(String comanda);
 	
 	
 	
