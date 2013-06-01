@@ -1,82 +1,101 @@
 format 76
 
 classinstance 128005 class_ref 128011 // RestauranteSwing
-  name ""   xyz 132 5 2000 life_line_z 2000
+  name ""   xyz 19.4 3 2000 life_line_z 2000
 classinstance 128133 class_ref 128005 // Inventario
-  name ""   xyz 477 7 2000 life_line_z 2000
+  name ""   xyz 470.8 4.1 2000 life_line_z 2000
 classinstance 130693 class_ref 128133 // Existencia
-  name ""   xyz 728 14 2000 life_line_z 2000
+  name ""   xyz 612.2 3 2000 life_line_z 2000
 fragment 134149 "opt"
-  xyzwh 21 174 0 808 378
+  xyzwh 30.2 193.1 0 637 153
 end
-textcanvas 134277 "[esEditable]"
-  xyzwh 55 194 2000 55 14
-note 134405 "El proceso de editar se repetira mientra el usuario no seleccione salir"
-  xyzwh 25 62 2000 107 63
-durationcanvas 128261 classinstance_ref 128005 // :RestauranteSwing
-  xyzwh 179 90 2010 11 432
+note 134405 "El proceso de editar una existencia se repetirá mientras el usuario no seleccione salir."
+  xyzwh 698.2 72 2000 126 88
+classinstance 134789 class_ref 134661 // GUIController
+  name ""   xyz 242.2 3.9 2000 life_line_z 2000
+note 137221 "Caso de uso:
+Realizar recuento de existencias"
+  xyzwh 706 370 2000 110 61
+textcanvas 137349 "[edita]"
+  xyzwh 81.6 198.5 2000 30 14
+durationcanvas 134917 classinstance_ref 128005 // :RestauranteSwing
+  xyzwh 66 68.1 2010 11 288
 end
-durationcanvas 128389 classinstance_ref 128133 // :Inventario
-  xyzwh 502 87 2010 11 89
+durationcanvas 135045 classinstance_ref 134789 // :GUIController
+  xyzwh 277 65.1 2010 11 113
 end
-durationcanvas 132101 classinstance_ref 128133 // :Inventario
-  xyzwh 502 366 2010 11 156
+durationcanvas 135301 classinstance_ref 128133 // :Inventario
+  xyzwh 495 69.6 2010 11 55
 end
-durationcanvas 132357 classinstance_ref 130693 // :Existencia
-  xyzwh 754 405 2010 11 73
+durationcanvas 136069 classinstance_ref 134789 // :GUIController
+  xyzwh 277 244 2010 11 93
 end
-durationcanvas 133765 classinstance_ref 128133 // :Inventario
-  xyzwh 502 215 2010 11 76
+durationcanvas 136325 classinstance_ref 128133 // :Inventario
+  xyzwh 495 263.5 2010 11 64
 end
-msg 128517 synchronous
-  from durationcanvas_ref 128261
-  to durationcanvas_ref 128389
-  yz 90 2015 msg operation_ref 128645 // "verExistencias() : void"
+durationcanvas 136581 classinstance_ref 130693 // :Existencia
+  xyzwh 639 274.5 2010 11 42
+end
+msg 135173 synchronous
+  from durationcanvas_ref 134917
+  to durationcanvas_ref 135045
+  yz 68 2015 explicitmsg "recuentoExistencias()"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 373 73
-msg 131589 return
-  from durationcanvas_ref 128389
-  to durationcanvas_ref 128261
-  yz 154 2015 explicitmsg "Lista<Existencia>"
+  label_xy 168 58
+msg 135429 synchronous
+  from durationcanvas_ref 135045
+  to durationcanvas_ref 135301
+  yz 80 2015 explicitmsg "recuentoExistencias()"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 395 139
-msg 132229 synchronous
-  from durationcanvas_ref 128261
-  to durationcanvas_ref 132101
-  yz 366 2015 explicitmsg "editar(Existencia, Cantidad)"
+  label_xy 385 69
+msg 135557 return
+  from durationcanvas_ref 135301
+  to durationcanvas_ref 135045
+  yz 114 2015 explicitmsg "listaExistencias"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 353 346
-msg 132485 synchronous
-  from durationcanvas_ref 132101
-  to durationcanvas_ref 132357
-  yz 405 2015 explicitmsg "modifica(Cantidad)"
+  label_xy 295 103
+msg 135941 return
+  from durationcanvas_ref 135045
+  to durationcanvas_ref 134917
+  yz 137 2015 explicitmsg "listaExistencias"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 651 387
-msg 132613 return
-  from durationcanvas_ref 132357
-  to durationcanvas_ref 132101
-  yz 467 2015 explicitmsg "OK"
+  label_xy 85 127
+msg 136197 synchronous
+  from durationcanvas_ref 134917
+  to durationcanvas_ref 136069
+  yz 244 2015 explicitmsg "editarExistencia(Existencia, Cantidad)"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 529 451
-msg 132997 return
-  from durationcanvas_ref 132101
-  to durationcanvas_ref 128261
-  yz 511 2015 explicitmsg "OK"
+  label_xy 93 231
+msg 136453 synchronous
+  from durationcanvas_ref 136069
+  to durationcanvas_ref 136325
+  yz 265 2015 explicitmsg "editarExistencia(Existencia, Cantidad)"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 203 493
-msg 133893 synchronous
-  from durationcanvas_ref 128261
-  to durationcanvas_ref 133765
-  yz 216 2015 explicitmsg "sePuedeEditar(Existencia)"
+  label_xy 308 254
+msg 136709 synchronous
+  from durationcanvas_ref 136325
+  to durationcanvas_ref 136581
+  yz 276 2015 explicitmsg "setCantidad(Cantidad)"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 366 201
-msg 134021 return
-  from durationcanvas_ref 133765
-  to durationcanvas_ref 128261
-  yz 280 2015 explicitmsg "OK"
+  label_xy 528 263
+msg 136837 return
+  from durationcanvas_ref 136581
+  to durationcanvas_ref 136325
+  yz 302 2020 explicitmsg "ok"
   show_full_operations_definition default drawing_language default show_context_mode default
-  label_xy 205 262
+  label_xy 513 294
+msg 136965 return
+  from durationcanvas_ref 136325
+  to durationcanvas_ref 136069
+  yz 310 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 292 299
+msg 137093 return
+  from durationcanvas_ref 136069
+  to durationcanvas_ref 134917
+  yz 320 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 84 311
 line 134533 -_-_
-  from ref 134405 z 2001 to point 85 171
-  line 134661 z 2001 to ref 134149
+  from ref 134405 z 2001 to ref 134149
 end

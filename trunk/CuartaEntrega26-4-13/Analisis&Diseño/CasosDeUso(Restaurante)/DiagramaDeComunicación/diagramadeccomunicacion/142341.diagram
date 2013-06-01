@@ -3,54 +3,54 @@ format 76
 note 128005 "Caso de uso:
 Modificar menu
 (modificar consumición)"
-  xyzwh 633.7 410.3 2000 141 63
+  xyzwh 633 410.4 2000 141 63
 classinstance 128133 class_ref 128011 // RestauranteSwing
-  name ""   xyz 41.3 3.9 2000 life_line_z 2000
+  name ""   xyz 40.6 3.4 2000 life_line_z 2000
 classinstance 128261 class_ref 128130 // Consumicion
-  name ""   xyz 452.6 3.9 2000 life_line_z 2000
+  name ""   xyz 452.8 3.4 2000 life_line_z 2000
 classinstance 128389 class_ref 128514 // Menu
-  name ""   xyz 270.5 3.9 2000 life_line_z 2000
+  name ""   xyz 271 3.4 2000 life_line_z 2000
 fragment 132357 "alt"
-  xyzwh 45.1 148.4 0 498 368
+  xyzwh 45.4 147.5 0 498 368
   separator 621
   separator 3545
   separator 6824
 end
 textcanvas 132485 "[nombre]"
-  xyzwh 89.1 -141.1 2000 45 14
+  xyzwh 89.2 -140.5 2000 45 14
 textcanvas 132613 "[descripcion]"
-  xyzwh 103.7 285.3 2000 64 14
+  xyzwh 104.2 285.4 2000 64 14
 textcanvas 132741 "[precio]
 "
-  xyzwh 103 402.2 2000 36 27
+  xyzwh 103 402.7 2000 36 27
 textcanvas 132869 "[nombre]"
-  xyzwh 105.1 175.3 2000 45 14
+  xyzwh 105.8 175.4 2000 45 14
 durationcanvas 128517 classinstance_ref 128133 // :RestauranteSwing
-  xyzwh 88 69 2010 11 459
+  xyzwh 87 69.8 2010 11 459
 end
 durationcanvas 128645 classinstance_ref 128389 // :Menu
-  xyzwh 289 65.3 2010 11 70
+  xyzwh 290 65.2 2010 11 70
   overlappingdurationcanvas 128901
-    xyzwh 295 87.3 2020 11 25
+    xyzwh 296 87.2 2020 11 25
   end
 end
 durationcanvas 129285 classinstance_ref 128389 // :Menu
-  xyzwh 289 206.4 2010 11 70
+  xyzwh 290 206.4 2010 11 70
 end
 durationcanvas 129541 classinstance_ref 128261 // :Consumicion
-  xyzwh 487 221.7 2010 11 45
+  xyzwh 487 221 2010 11 45
 end
 durationcanvas 130821 classinstance_ref 128389 // :Menu
-  xyzwh 289 330.8 2010 11 65
+  xyzwh 290 330 2010 11 65
 end
 durationcanvas 131077 classinstance_ref 128261 // :Consumicion
-  xyzwh 487 349.1 2010 11 38
+  xyzwh 487 348.8 2010 11 38
 end
 durationcanvas 131589 classinstance_ref 128389 // :Menu
-  xyzwh 289 438 2010 11 65
+  xyzwh 290 438 2010 11 65
 end
 durationcanvas 131845 classinstance_ref 128261 // :Consumicion
-  xyzwh 487 454 2010 11 38
+  xyzwh 487 454.2 2010 11 38
 end
 msg 128773 synchronous
   from durationcanvas_ref 128517
