@@ -1,25 +1,25 @@
 format 76
 
 classinstance 128005 class_ref 128011 // RestauranteSwing
-  name ""   xyz 86.1 4 2000 life_line_z 2000
+  name ""   xyz 85.9 3.6 2000 life_line_z 2000
 classinstance 128133 class_ref 142466 // Restaurante
-  name ""   xyz 435.6 5.1 2000 life_line_z 2000
+  name ""   xyz 435.8 3.8 2000 life_line_z 2000
 note 129157 "Caso de uso:
 Ver reservas restaurante
 (anular reserva)"
-  xyzwh 524.7 236.6 2000 145 63
+  xyzwh 524.3 236.3 2000 145 63
 classinstance 129285 class_ref 134661 // GUIController
-  name ""   xyz 264.5 3.9 2000 life_line_z 2000
+  name ""   xyz 265 3.4 2000 life_line_z 2000
 durationcanvas 129413 classinstance_ref 128005 // :RestauranteSwing
-  xyzwh 133 77.4 2010 11 135
+  xyzwh 132 77.8 2010 11 135
 end
 durationcanvas 129541 classinstance_ref 129285 // :GUIController
-  xyzwh 299 74.6 2010 11 125
+  xyzwh 300 74.2 2010 11 125
 end
 durationcanvas 129797 classinstance_ref 128133 // :Restaurante
-  xyzwh 466 84.4 2010 11 101
+  xyzwh 467 84.8 2010 11 101
   overlappingdurationcanvas 130053
-    xyzwh 472 119.1 2020 11 25
+    xyzwh 473 119.2 2020 11 25
   end
 end
 msg 129669 synchronous
