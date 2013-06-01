@@ -1,5 +1,6 @@
 package is.gui;
 
+import is.restaurante.Comanda;
 import is.restaurante.ComandaInfo;
 import is.restaurante.MesaInfo;
 
@@ -18,7 +19,7 @@ import javax.swing.border.TitledBorder;
 public class VistaMesas extends JPanel{
 
 	
-	public VistaMesas(GUIController controller){
+	public VistaMesas(final GUIController controller){
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
 		comandasPanel = new JPanel[mesas.length];
@@ -50,9 +51,18 @@ public class VistaMesas extends JPanel{
 				public void actionPerformed(ActionEvent e) {
 					numMesa = j;
 					title.setTitle("Mesa " + j);
-					comandas = restController.getMesa(j).getListaComandas();
+					/*
+					  Comanda[] comandas = new Comanda[controller.getMesa(j).getListaComandas().length];
+					 
+					for (int i = 0; i< comandas.length; i++)
+					*/
+					
+					
+				 	comandas = restController.getMesa(j).getListaComandas();				 
 					if (comandas != null) setComandasPanel(j);
 					comandasLayout.show(comandasPanel[j], "Mesa " + j);
+					
+					
 				}
 				
 			});
@@ -75,19 +85,22 @@ public class VistaMesas extends JPanel{
 	public void setComandasPanel(int numeroMesa){
 		TitledBorder title = new TitledBorder("Mesa " + numMesa);
 		comandasPanel[numeroMesa].setBorder(title);
-		for (int i=0; i<comandas.length; i++){
-			final int j = i;
-			JButton comandaMesa = new JButton("Comanda " + i+1);
-			comandaMesa.addActionListener(new ActionListener(){
+		if (comandas != null) {
+			for (int i = 0; i < comandas.length; i++) {
+				final int j = i;
+				JButton comandaMesa = new JButton("Comanda " + i + 1);
+				comandaMesa.addActionListener(new ActionListener() {
 
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					comandaSelected = j;
-					//restController.avisaComanda(numMesa, comandaSelected);
-				}
-				
-			});
-			comandasPanel[numMesa].add(comandaMesa);
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						comandaSelected = j;
+						// restController.avisaComanda(numMesa,
+						// comandaSelected);
+					}
+
+				});
+				comandasPanel[numMesa].add(comandaMesa);
+			}
 		}
 		comandasContainer.add(comandasPanel[numeroMesa], "Mesa"+numeroMesa);
 		JButton editarComanda = new JButton("Editar");
