@@ -4,19 +4,11 @@ import java.util.List;
 
 public class Factura {
 	
-	public Factura() {
-		comanda = new Comanda();
-	}
-	
-	public Factura(List<Comanda> listaComandas) {
-		comanda = new Comanda();
-		uneComandas(listaComandas);
-	}
-	
-	public void uneComandas(List<Comanda> listaComandas) {
-		for (Comanda c: listaComandas)
+	public static Comanda generarFactura(List<Comanda> listaComandas) {
+		Comanda comanda = new Comanda();
+		for (Comanda c : listaComandas)
 			comanda.append(c);
+		return comanda;
 	}
 	
-	private Comanda comanda;
 }
