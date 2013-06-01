@@ -1,5 +1,7 @@
 package is.restaurante;
 
+import is.restaurante.consumicion.Consumicion;
+
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -10,8 +12,8 @@ public class Mesa implements MesaInfo{
 	}
 	
 	public void addPedido(Comanda comanda){
-		pedidos.add(comanda);
-		//pedidos.
+		comandas.add(comanda);
+		//comandas.
 	}
 	
 //TODO editComanda, selectComanda delete Comanda
@@ -26,16 +28,16 @@ public class Mesa implements MesaInfo{
 	}
 	public String generarFactura(){
 		String factura = "";
-		for (Comanda c : pedidos){
+		for (Comanda c : comandas){
 			factura += c.toString() + LINE_SEPARATOR;
 		}
-		//return pedidos.toString();
+		//return comandas.toString();
 		return factura;
 	}
 	
 	@Override
 	public ComandaInfo[] getListaComandas() {
-		return (ComandaInfo[]) this.pedidos.toArray();
+		return (ComandaInfo[]) this.comandas.toArray();
 	}
 	
 	/**
@@ -46,29 +48,32 @@ public class Mesa implements MesaInfo{
 		if (comandaActual != -1)
 			//TODO, al dar al boton de generar comanda o elegir comanda en la vista correspondiente, se añadira el observador (supongo)
 			//comandaActual.removeObserver(obs);
-			//pedidos.get(comandaSelected).addObserver(obs);
+			//comandas.get(comandaSelected).addObserver(obs);
 		comandaActual = comandaSelected;
 	}
 
 	public void eliminaComanda(int comandaSelected) {
-		pedidos.remove(comandaSelected);
+		comandas.remove(comandaSelected);
 		emitirCambios();
 	}
 
-	public void addConsumption(int numComanda) {
-		
+	public void addConsumption(int numComanda, Consumicion plato, TipoPlatos tPlato) {
+		//comandas.get(numComanda).addConsumicion(plato);
+		switch (tPlato){
+		case tPlato.PRIMERO:
+		}
 	}
 	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	
 	private void emitirCambios(){
 		for (MesaObserver o: obs)
-			o.cambioOcurrido((ComandaInfo[]) pedidos.toArray());
+			o.cambioOcurrido((ComandaInfo[]) comandas.toArray());
 	}
 	
 	
 	private ArrayList<MesaObserver> obs;
-	private Vector<Comanda> pedidos;
+	private Vector<Comanda> comandas;
 	private int numeroMesa;
 	private int capacidadMaxima;
 	private int comandaActual = -1;
