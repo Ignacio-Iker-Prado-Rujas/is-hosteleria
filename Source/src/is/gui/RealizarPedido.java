@@ -16,6 +16,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -151,6 +152,13 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		JFrame frame = new JFrame("Realizar Pedido");
 		this.add(panelCentral);
 		
+        String[] nombresMesa = { "Mesa 1: 2 personas", "Mesa 2: 4 personas", "Mesa 3: 4 personas", "Mesa 4: 6 personas", "Mesa 5: 8 personas" };
+        
+        //Create the combo box, select the item at index 4.
+        //Indices start at 0, so 4 specifies the pig.
+        mesas = new JComboBox(nombresMesa);
+		this.add(mesas, BorderLayout.SOUTH);
+		this.add(new JButton());
 		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);
@@ -207,7 +215,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private JScrollPane scroller;
 	private JTextArea text;
 	private GUIController restaurante;
-	
+	private JComboBox mesas;
 	private JPanel[] elementosMenu;
 
 	
