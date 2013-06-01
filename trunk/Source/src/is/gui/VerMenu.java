@@ -78,13 +78,13 @@ public class VerMenu extends JFrame{
 			
 			ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
 			for( Consumicion cons: consum){
+				/*	Habría que guardar las descripciones tb para mostrarlas	*/
 				JToggleButton boton = new JToggleButton(cons.getNombre());
 				botones.add(boton);
 				platos.add(boton);
 				boton.addActionListener(new ActionListener(){
 					public void actionPerformed(ActionEvent e) {
-						consumicionPulsada();
-						
+						consumicionPulsada();				
 					}
 					
 				});
@@ -150,8 +150,17 @@ public class VerMenu extends JFrame{
 		for( JToggleButton boton: botones)
 			if(!boton.isFocusOwner())	//
 				boton.setSelected(false);
-			else
+			else{
 				consumicionSeleccionada = boton;
+				mostrarDescripcion(boton.getText());
+			}
+	}
+	/*	Muestra la descripción de la consumición dada */
+	private void mostrarDescripcion(String description){
+		/*	Hay que añadir un textArea en el medio
+		 * para mostrar la descripcion.
+		 */
+		
 	}
 	
 	/*	Borra de la vista el plato indicado	*/
@@ -161,6 +170,12 @@ public class VerMenu extends JFrame{
 	public void anyadePlato(String name, TipoPlatos tPlato){
 		/*Para esto hay que guardar atributos del constructor	*/
 	}
+	
+	/* Actualiza un plato	*/
+	public void actualizarPlato(){
+		
+	}
+	
 	
 	private JToggleButton consumicionSeleccionada;
 	private ArrayList<JToggleButton> botones;
