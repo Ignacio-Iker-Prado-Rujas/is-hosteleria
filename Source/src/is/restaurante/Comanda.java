@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 
 //hay que registrar los observadores en realizar pedido
 //TODO delete  consumicion
@@ -99,6 +100,24 @@ public class Comanda implements ComandaInfo {
 
 	public void setVecesBebidas(Bebida drinking) {
 
+	}
+
+	public void append(Comanda other) {
+		for (int tipoPlato = 0; tipoPlato < 4; tipoPlato++) {
+			Set<Consumicion> claveOther = other.comanda[tipoPlato].keySet();
+			// Obtenemos un vector con los elementos de la otra Comanda del tipo
+			// de plato i
+			Consumicion[] consumicionesOther = claveOther
+					.toArray(new Consumicion[claveOther.size()]);
+			// Para cada elemento del vector, los añadimos tanta veces como
+			// existira en la otra comanda
+			for (int pos = 0; pos < consumicionesOther.length; pos++) {
+				int veces = other.comanda[tipoPlato]
+						.get(consumicionesOther[pos]);
+				for (int num = 0; num < veces; num++)
+					addConsumicion(consumicionesOther[pos], tipoPlato);
+			}
+		}
 	}
 
 	public String toString() {
