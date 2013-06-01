@@ -1,0 +1,51 @@
+format 76
+
+note 128005 "Caso de uso:
+Modificar menu
+(añadir consumición)"
+  xyzwh 560 231.1 2000 126 63
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 67.4 3.4 2000 life_line_z 2000
+classinstance 128261 class_ref 128514 // Menu
+  name ""   xyz 255.5 3.9 2000 life_line_z 2000
+classinstance 128389 class_ref 128130 // Consumicion
+  name ""   xyz 385.4 3.9 2000 life_line_z 2000
+note 128901 "La información relativa a una consumición es: TipodeConsumicion, Nombre, Descripcion (no obligatoria) y Precio"
+  xyzwh 519.3 19.8 2000 208 77
+durationcanvas 128517 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 114 80.5 2010 11 90
+end
+durationcanvas 128645 classinstance_ref 128261 // :Menu
+  xyzwh 274 83.3 2010 11 76
+end
+durationcanvas 129029 classinstance_ref 128389 // :Consumicion
+  xyzwh 420 101.2 2010 11 48
+end
+msg 128773 synchronous
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 128645
+  yz 89 2015 explicitmsg "añadirConsumicion(Info)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 152 76
+msg 129157 synchronous
+  from durationcanvas_ref 128645
+  to durationcanvas_ref 129029
+  yz 101 2020 explicitmsg "Consumicion(Info)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 328 90
+msg 129285 return
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 128645
+  yz 135 2015 explicitmsg "this"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 293 127
+msg 129413 return
+  from durationcanvas_ref 128645
+  to durationcanvas_ref 128517
+  yz 145 2020 explicitmsg "consumicion"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 133 135
+line 129541 -_-_ decenter_end 107
+  from ref 128901 z 2011 to point 350.6 54.2
+  line 129669 z 2011 to ref 128645
+end

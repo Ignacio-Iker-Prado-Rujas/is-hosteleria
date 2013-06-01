@@ -1,0 +1,52 @@
+format 76
+
+note 128005 "Caso de uso:
+Modificar menu
+(eliminar consumición)"
+  xyzwh 563.6 274.7 2000 141 63
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 42.7 3.9 2000 life_line_z 2000
+classinstance 128261 class_ref 128514 // Menu
+  name ""   xyz 293.7 7.3 2000 life_line_z 2000
+note 129413 "Estos métodos son auxiliares, dentro de la misma clase.Solo los nombramos con fin ilustrativo."
+  xyzwh 538.5 67.7 2000 190 65
+durationcanvas 128389 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 89 77.4 2010 11 135
+end
+durationcanvas 128517 classinstance_ref 128261 // :Menu
+  xyzwh 312 79 2010 11 124
+  overlappingdurationcanvas 128773
+    xyzwh 318 106.2 2020 11 34
+  end
+  overlappingdurationcanvas 129029
+    xyzwh 318 157.2 2020 11 32
+  end
+end
+msg 128645 synchronous
+  from durationcanvas_ref 128389
+  to durationcanvas_ref 128517
+  yz 79 2015 explicitmsg "eliminarConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 164 66
+reflexivemsg 128901 synchronous
+  to durationcanvas_ref 128773
+  yz 106 2025 explicitmsg "buscaConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 334 93
+reflexivemsg 129157 synchronous
+  to durationcanvas_ref 129029
+  yz 157 2025 explicitmsg "eliminaConsumicion(Posicion)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 336 143
+msg 129285 return
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 128389
+  yz 192 2025 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 108 181
+line 129925 -_-_ decenter_begin 670
+  from ref 129413 z 2026 to ref 128901
+line 130053 -_-_ decenter_begin 861
+  from ref 129925 z 2027 to point 509.1 159.1
+  line 130181 z 2027 to ref 129157
+end
