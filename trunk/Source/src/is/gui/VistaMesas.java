@@ -22,19 +22,28 @@ public class VistaMesas extends JPanel{
 		panelMesas.setLayout(new FlowLayout());
 		//this.restController.requestMesas();
 		//this.restController.pedirMesas();
-		for (final int i=0; i<mesas.length; i++){
+		for (int i=0; i<mesas.length; i++){
+			final int j= i;//para que pueda ser utilizado por el listener
 			JButton mesa = new JButton("Mesa " + mesas[i].getNumeroMesa());
 			mesa.addActionListener(new ActionListener(){
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					numMesa = i;
-					comandas = restController.getMesa(i).getListaComandas();
+					numMesa = j;
+					comandas = restController.getMesa(j).getListaComandas();
+					setComandasPanel();
 				}
 				
 			});
 		}
 		
+		
+	}
+	
+	public void setComandasPanel(){
+		for (int i=0; i<comandas.length; i++){
+			
+		}
 	}
 	
 	
@@ -42,5 +51,6 @@ public class VistaMesas extends JPanel{
 	private GUIController restController;
 	private MesaInfo[] mesas;
 	private ComandaInfo[] comandas;
+	private JPanel comandasPanel;
 	private int numMesa=-1;
 }
