@@ -99,7 +99,12 @@ public class GUIController {
 	public void eliminarComanda(int numMesa, int comandaSelected) {
 		this.restaurante.eliminaComanda(numMesa, comandaSelected);
 	}
+
+	public void requestNewConsumption(int numComanda, int numMesa) {
+		this.restaurante.addNewConsumption(numComanda, numMesa);
+	}
 	
 	private Restaurante restaurante;
+
 
 }

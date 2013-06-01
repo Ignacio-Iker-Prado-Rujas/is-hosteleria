@@ -55,6 +55,9 @@ public class Mesa implements MesaInfo{
 		emitirCambios();
 	}
 
+	public void addConsumption(int numComanda) {
+		
+	}
 	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	
@@ -63,11 +66,14 @@ public class Mesa implements MesaInfo{
 			o.cambioOcurrido((ComandaInfo[]) pedidos.toArray());
 	}
 	
+	
 	private ArrayList<MesaObserver> obs;
 	private Vector<Comanda> pedidos;
 	private int numeroMesa;
 	private int capacidadMaxima;
 	private int comandaActual = -1;
+
+
 	
 	
 	

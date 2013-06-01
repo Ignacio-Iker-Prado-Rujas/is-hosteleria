@@ -61,6 +61,9 @@ public class Restaurante {
 		mesas.get(numMesa).eliminaComanda(comandaSelected);
 	}
 
+	public void addNewConsumption(int numComanda, int numMesa) {
+		mesas.get(numMesa).addConsumption(numComanda);
+	}
 	
 	public MesaInfo[] getMesas() {
 		// TODO Auto-generated method stub
@@ -76,6 +79,7 @@ public class Restaurante {
 	private LibroReservas reservas;
 	private Menu menu;
 	private Tablon tablon;
+	
 	
 		
 	

@@ -19,7 +19,7 @@ import is.restaurante.consumicion.Consumicion;
 @SuppressWarnings("serial")
 public class CeldaPlato extends JPanel{
 
-	public CeldaPlato(GUIController controller, Consumicion plato, int numMesa, int numComanda){
+	public CeldaPlato(GUIController controller, Consumicion plato, final int numMesa, final int numComanda){
 		this.restControl = controller;
 		this.veces = 0;
 		this.plato = plato;
