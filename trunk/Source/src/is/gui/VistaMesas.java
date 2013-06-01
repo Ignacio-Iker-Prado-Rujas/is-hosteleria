@@ -13,7 +13,7 @@ public class VistaMesas extends JPanel{
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
 		
-		JPanel
+		JPanel panelMesas
 	}
 	
 	
