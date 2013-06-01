@@ -16,6 +16,7 @@ import is.restaurante.consumicion.Consumicion;
  * Clase que se encarga de llevar los avisos recibidos en la vista al modelo
  * @author JaimeDan
  *
+ *TODO: hay que hacer los register observer
  */
 public class GUIController {
 
@@ -54,7 +55,7 @@ public class GUIController {
 		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
 		restaurante.añadirReserva(reserva);
 	}
-	public ArrayList<Reserva> reservasDeUnCliente(String nombre){
+	public /*ArrayList<Reserva>*/ int reservasDeUnCliente(String nombre){
 		return this.restaurante.buscarReservas(nombre);
 	}
 	
