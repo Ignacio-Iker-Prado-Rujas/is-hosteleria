@@ -55,6 +55,12 @@ public class GUIController {
 		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
 		restaurante.añadirReserva(reserva);
 	}
+	public void communicatePedido(int año, int mes, int dia, int hora, 
+			int minutos, String cliente, int numeroComensales) {
+		Fecha fechaRes = new Fecha(año, mes, dia, hora, minutos);
+		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
+		restaurante.añadirReserva(reserva);
+	}
 	public /*ArrayList<Reserva>*/ int reservasDeUnCliente(String nombre){
 		return this.restaurante.buscarReservas(nombre);
 	}

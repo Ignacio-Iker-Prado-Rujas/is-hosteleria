@@ -149,7 +149,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		});
 		
 		this.add(tipoPlato, BorderLayout.WEST);
-		JFrame frame = new JFrame("Realizar Pedido");
+		frame = new JFrame("Realizar Pedido");
 		this.add(panelCentral);
 		
         String[] nombresMesa = { "Mesa 1: 2 personas", "Mesa 2: 4 personas", "Mesa 3: 4 personas", "Mesa 4: 6 personas", "Mesa 5: 8 personas" };
@@ -158,7 +158,20 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
         //Indices start at 0, so 4 specifies the pig.
         mesas = new JComboBox(nombresMesa);
 		this.add(mesas, BorderLayout.SOUTH);
-		this.add(new JButton());
+		this.add(new JButton("Realizar Pedido"){
+			{
+				this.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						frame.setVisible(false);
+					//	restaurante.communicatePedido(año, mes, dia, hora, minutos, cliente, numeroComensales);
+						
+					}
+					
+				});
+			}
+		}, BorderLayout.LINE_END);
 		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);
@@ -209,7 +222,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		this.text.setText(comanda);
 	}
 	
-
+	private JFrame frame;
 	private JPanel panelCentral;
 	private PlatosPanel platosPanel;
 	private JScrollPane scroller;
