@@ -45,13 +45,18 @@ public class Mesa implements MesaInfo{
 	}
 
 	public void eliminaComanda(int comandaSelected) {
-		
+		pedidos.remove(comandaSelected);
 	}
 
 	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	
-
+	private void emitirCambios(){
+		for (MesaObserver o: obs)
+			o.cambioOcurrido((ComandaInfo[]) pedidos.toArray());
+	}
+	
+	private ArrayList<MesaObserver> obs;
 	private Vector<Comanda> pedidos;
 	private int numeroMesa;
 	private int capacidadMaxima;
