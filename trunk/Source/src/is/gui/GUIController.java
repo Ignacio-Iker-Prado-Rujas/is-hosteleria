@@ -2,6 +2,7 @@ package is.gui;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import is.Fecha;
 import is.restaurante.Menu;
@@ -63,7 +64,7 @@ public class GUIController {
 		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
 		restaurante.añadirReserva(reserva);
 	}
-	public /*ArrayList<Reserva>*/ int reservasDeUnCliente(String nombre){
+	public List<Integer> reservasDeUnCliente(String nombre){
 		return this.restaurante.buscarReservas(nombre);
 	}
 	
