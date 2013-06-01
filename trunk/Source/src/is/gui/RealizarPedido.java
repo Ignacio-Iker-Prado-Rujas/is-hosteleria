@@ -1,6 +1,7 @@
 package is.gui;
 
 import is.restaurante.Comanda;
+import is.restaurante.ComandaInfo;
 import is.restaurante.ComandaObserver;
 import is.restaurante.Menu;
 import is.restaurante.Mesa;
@@ -32,8 +33,13 @@ import javax.swing.border.TitledBorder;
 @SuppressWarnings("serial")
 public class RealizarPedido extends JPanel implements ComandaObserver{
 
+	/**
+	 * 
+	 * @param rest
+	 */
 	public RealizarPedido(final GUIController rest) {
 		this.restaurante = rest;
+		
 /*
  * public VerMenu(GUIController controller){
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -172,12 +178,12 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						frame.setVisible(false);
-						
+						//TODO, hay que hacer un restaurante
 						//restaurante.comunicarComanda(mesa, mes, dia, hora, minutos, cliente, numeroComensales);
-						Mesa mesa = restaurante.getMesa(mesas.getSelectedIndex());
-						comanda = new Comanda();
+						//Mesa mesa = restaurante.getMesa(mesas.getSelectedIndex());
+						//comanda = new Comanda();
 						
-						mesa.addPedido(comanda);
+						//mesa.addPedido(comanda);
 
 						//restaurante.communicatePedido(año, mes, dia, hora, minutos, cliente, numeroComensales);
 
@@ -210,6 +216,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 	}
 	
+	public RealizarPedido(GUIController controller, ComandaInfo comandaEdit){
+		
+	}
 
 	
 	public void inicializaPaneles(){
@@ -263,7 +272,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private GUIController restaurante;
 	private JComboBox mesas;
 	private JPanel[] elementosMenu;
-	private Comanda comanda;
+	private ComandaInfo comanda;
 
 	
 

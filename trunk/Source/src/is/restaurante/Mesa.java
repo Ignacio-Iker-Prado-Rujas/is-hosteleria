@@ -39,8 +39,9 @@ public class Mesa implements MesaInfo{
 	
 	public void avisaComanda(int comandaSelected) {
 		if (comandaActual != -1)
-			comandaActual.removeObserver(obs);
-			pedidos.get(comandaSelected).addObserver(obs);
+			//TODO, al dar al boton de generar comanda o elegir comanda en la vista correspondiente, se añadira el observador (supongo)
+			//comandaActual.removeObserver(obs);
+			//pedidos.get(comandaSelected).addObserver(obs);
 		comandaActual = comandaSelected;
 	}
 
