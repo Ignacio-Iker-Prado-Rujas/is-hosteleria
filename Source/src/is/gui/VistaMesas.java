@@ -45,7 +45,17 @@ public class VistaMesas extends JPanel{
 	
 	public void setComandasPanel(){
 		for (int i=0; i<comandas.length; i++){
-			
+			final int j = i;
+			JButton comandaMesa = new JButton("Comanda " + i+1);
+			comandaMesa.addActionListener(new ActionListener(){
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					comandaSelected = j;
+					restController.avisaComanda(numMesa, comandaSelected);
+				}
+				
+			});
 		}
 	}
 	
@@ -55,5 +65,6 @@ public class VistaMesas extends JPanel{
 	private MesaInfo[] mesas;
 	private ComandaInfo[] comandas;
 	private JPanel comandasPanel;
+	int comandaSelected = -1;
 	private int numMesa=-1;
 }

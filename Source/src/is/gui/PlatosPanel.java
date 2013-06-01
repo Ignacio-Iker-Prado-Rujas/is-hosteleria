@@ -46,7 +46,7 @@ public class PlatosPanel extends JPanel{
 		// TODO Auto-generated method stub
 		celdaPlatos = new ArrayList<CeldaPlato>();
 				for (Consumicion c: platos){
-					CeldaPlato cp = new CeldaPlato(c);
+					CeldaPlato cp = new CeldaPlato(null, c);
 					celdaPlatos.add(cp);
 					this.add(cp);
 				}
