@@ -53,8 +53,8 @@ public class GUIController {
 		return restaurante.getMenu(0);
 		
 	}
-	public ArrayList<ReservaInfo> getReservas(Fecha fecha){
-		return restaurante.buscarReservas(fecha);
+	public ArrayList<ReservaInfo> getReservas(int i){
+		return restaurante.buscarReservas(i);
 		
 	}
 	public void communicateReserva(int año, int mes, int dia, int hora, 

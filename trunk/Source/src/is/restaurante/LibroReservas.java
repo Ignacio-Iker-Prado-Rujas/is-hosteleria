@@ -73,6 +73,27 @@ public class LibroReservas {
 		/*else*/ return listaRes;
 	}
 	
+	public ArrayList<ReservaInfo> todasReservas(){
+		ArrayList<ReservaInfo> listaRes = new ArrayList<ReservaInfo>();
+		for (int i = 0; i < this.numeroReservas; i++)
+			listaRes.add(this.listaReservas.get(i));
+			return listaRes;
+	}
+	public /*int*/ ArrayList<ReservaInfo> buscarReserva(int j){
+		if (j == -1) return todasReservas();	
+		if (j == 0) return reservasHoy();
+		else if (j == 1) return reservasSemana();
+		else if (j == 2) return reservasMes();		
+		return null;
+		/*int i=0;
+		while (i<listaReservas.size()){
+			if (listaReservas.get(i).getNombre().equals(nombre)) ;
+			//i++;
+			listaRes.add(listaReservas.get(i));
+		}
+		//if (i < listaReservas.size()) return i;
+		//else return listaRes;*/
+	}
 	public ArrayList<ReservaInfo> buscarReservaHoy(Fecha date){
 		ArrayList <ReservaInfo> reservasHoy = new ArrayList<ReservaInfo>();
 		for ( int i = 0; i < listaReservas.size(); i++){

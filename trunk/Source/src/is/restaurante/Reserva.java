@@ -46,7 +46,15 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo{
 			else return -1;
 		}return -1;
 	}
+	public String toString(){
+		String name = "";
+		name += "Nombre: " + this.nombre + LINE_SEPARATOR + "Fecha: " + this.fecha + LINE_SEPARATOR + "Mesas: ";
+		for (Mesa m : this.mesas) name += m.getNumeroMesa() + " ";
+		name += "Numero de comensales" + this.numeroDeComensales;
+		return name;
+	}
 	
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private ArrayList<Mesa> mesas;
 	private Fecha fecha;
 	//int hora;
