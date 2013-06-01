@@ -5,19 +5,13 @@ import is.restaurante.consumicion.Consumicion;
 import is.restaurante.consumicion.Plato;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StreamTokenizer;
 import java.util.ArrayList;
 
 public class menuLoader {
-
-	public static void main(String[] args) throws IOException {
-		menuLoader m = new menuLoader();
-		Menu menu = m.loadMenu("Menu2.txt");
-		System.out.println(menu);
-		menu.saveMenu("Menu2");
-	}
 
 	/**
 	 * Comprueba que el siguiente token que se lee es un String que coincide con
@@ -97,22 +91,28 @@ public class menuLoader {
 	}
 
 	public Menu loadMenu(String fileName) throws IOException {
-		FileInputStream file = new FileInputStream(fileName);
-		tokenizer = new StreamTokenizer(new InputStreamReader(file));
-		tokenizer.wordChars('\u0021', '\u007E');
-		tokenizer.quoteChar('"');
-		forceString("BeginMenu");
-		forceString("BeginPrimeros");
-		ArrayList<Consumicion> listaPrimeros = forceConsumicion("EndPrimeros");
-		forceString("BeginSegundos");
-		ArrayList<Consumicion> listaSegundos = forceConsumicion("EndSegundos");
-		forceString("BeginBebidas");
-		ArrayList<Consumicion> listaBebidas = forceConsumicion("EndBebidas");
-		forceString("BeginPostres");
-		ArrayList<Consumicion> listaPostres = forceConsumicion("EndPostres");
-		forceString("EndMenu");
-		return new Menu(listaPrimeros, listaSegundos, listaBebidas,
-				listaPostres);
+		FileInputStream file;
+		try {
+			file = new FileInputStream(fileName);
+			tokenizer = new StreamTokenizer(new InputStreamReader(file));
+			tokenizer.wordChars('\u0021', '\u007E');
+			tokenizer.quoteChar('"');
+			forceString("BeginMenu");
+			forceString("BeginPrimeros");
+			ArrayList<Consumicion> listaPrimeros = forceConsumicion("EndPrimeros");
+			forceString("BeginSegundos");
+			ArrayList<Consumicion> listaSegundos = forceConsumicion("EndSegundos");
+			forceString("BeginBebidas");
+			ArrayList<Consumicion> listaBebidas = forceConsumicion("EndBebidas");
+			forceString("BeginPostres");
+			ArrayList<Consumicion> listaPostres = forceConsumicion("EndPostres");
+			forceString("EndMenu");
+			return new Menu(listaPrimeros, listaSegundos, listaBebidas,
+					listaPostres);
+		} catch (FileNotFoundException e) {
+			System.err.println("El fichero no existe");
+			return null;
+		}
 	}
 
 	private StreamTokenizer tokenizer;

@@ -4,7 +4,6 @@ import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
 import is.restaurante.consumicion.Plato;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.PrintWriter;
