@@ -54,47 +54,47 @@ public class Comanda implements ComandaInfo {
 			;
 	}
 
-	public void addPrimero(Plato primero) {
+	public void addPrimero(Consumicion primero) {
 		addConsumicion(primero, 0);
 	}
 
-	public void deletePrimero(Plato primero) {
+	public void deletePrimero(Consumicion primero) {
 		deleteConsumicion(primero, 0);
 	}
 
-	public void setVecesPrimero(Plato primero) {
+	public void setVecesPrimero(Consumicion primero) {
 
 	}
 
-	public void addSegundo(Plato segundo) {
+	public void addSegundo(Consumicion segundo) {
 		addConsumicion(segundo, 1);
 	}
 
-	public void deleteSegundo(Plato segundo) {
+	public void deleteSegundo(Consumicion segundo) {
 		deleteConsumicion(segundo, 1);
 	}
 
-	public void setVecesSegundo(Plato segundo) {
+	public void setVecesSegundo(Consumicion segundo) {
 
 	}
 
-	public void addPostre(Postre postre) {
+	public void addPostre(Consumicion postre) {
 		addConsumicion(postre, 2);
 	}
 
-	public void deletePostre(Postre postre) {
+	public void deletePostre(Consumicion postre) {
 		deleteConsumicion(postre, 2);
 	}
 
-	public void setVecesPostre(Postre postre) {
+	public void setVecesPostre(Consumicion postre) {
 
 	}
 
-	public void addBebida(Bebida bebida) {
+	public void addBebida(Consumicion bebida) {
 		addConsumicion(bebida, 3);
 	}
 
-	public void deleteBebida(Bebida bebida) {
+	public void deleteBebida(Consumicion bebida) {
 		deleteConsumicion(bebida, 3);
 	}
 

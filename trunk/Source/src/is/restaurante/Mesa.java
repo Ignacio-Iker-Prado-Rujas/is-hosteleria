@@ -60,7 +60,10 @@ public class Mesa implements MesaInfo{
 	public void addConsumption(int numComanda, Consumicion plato, TipoPlatos tPlato) {
 		//comandas.get(numComanda).addConsumicion(plato);
 		switch (tPlato){
-		case TipoPlatos.PRIMERO:
+		case PRIMERO: comandas.get(numComanda).addPrimero(plato);
+		case SEGUNDO: comandas.get(numComanda).addSegundo(plato);
+		case POSTRE: comandas.get(numComanda).addPostre(plato);
+		case BEBIDA: comandas.get(numComanda).addBebida(plato);
 		}
 	}
 	
