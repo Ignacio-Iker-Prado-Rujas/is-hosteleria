@@ -1,5 +1,7 @@
 package is.gui;
 
+
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +13,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import is.restaurante.consumicion.Consumicion;
+import is.restaurante.TipoPlatos;
 /**
  * Celda que tiene un plato, y un JSpinner con el número de veces que ha sido elegido
  * @author JaimeDan
@@ -19,7 +22,7 @@ import is.restaurante.consumicion.Consumicion;
 @SuppressWarnings("serial")
 public class CeldaPlato extends JPanel{
 
-	public CeldaPlato(GUIController controller, Consumicion plato, final int numMesa, final int numComanda){
+	public CeldaPlato(GUIController controller, final Consumicion plato, final int numMesa, final int numComanda, final TipoPlatos tPlato){
 		this.restControl = controller;
 		this.veces = 0;
 		this.plato = plato;
@@ -30,7 +33,7 @@ public class CeldaPlato extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						incrementaVeces();
-						restControl.requestNewConsumption(numComanda, numMesa);
+						restControl.requestNewConsumption(numComanda, numMesa, plato, tPlato);
 					}
 					
 				});

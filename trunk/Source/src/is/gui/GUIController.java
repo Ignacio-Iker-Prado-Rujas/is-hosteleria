@@ -12,6 +12,7 @@ import is.restaurante.MesaInfo;
 import is.restaurante.Reserva;
 import is.restaurante.ReservaInfo;
 import is.restaurante.Restaurante;
+import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Consumicion;
 
 
@@ -100,8 +101,8 @@ public class GUIController {
 		this.restaurante.eliminaComanda(numMesa, comandaSelected);
 	}
 
-	public void requestNewConsumption(int numComanda, int numMesa) {
-		this.restaurante.addNewConsumption(numComanda, numMesa);
+	public void requestNewConsumption(int numComanda, int numMesa, Consumicion plato, TipoPlatos tPlato) {
+		this.restaurante.addNewConsumption(numComanda, numMesa, plato, tPlato);
 	}
 	
 	

@@ -6,6 +6,7 @@ import is.restaurante.ComandaObserver;
 import is.restaurante.Menu;
 import is.restaurante.Mesa;
 import is.restaurante.Restaurante;
+import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Consumicion;
 
 import java.awt.BorderLayout;
@@ -111,7 +112,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 						//panelCentral.add(new PlatosPanel(0, restaurante));
 						//panelCentral.add(elementosMenu[0]);
 						menu.show(panelCentral, "0");
-						
+						tPlato = TipoPlatos.BEBIDA;
 					}
 					
 				});
@@ -126,6 +127,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 						//panelCentral.add(new PlatosPanel(1, restaurante));
 						//panelCentral = (elementosMenu[1]);
 						menu.show(panelCentral, "1");
+						tPlato = TipoPlatos.PRIMERO;
 						
 					}
 					
@@ -141,6 +143,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 						//panelCentral.add(new PlatosPanel(2, restaurante));
 						//panelCentral = (elementosMenu[2]);
 						menu.show(panelCentral, "2");
+						tPlato = TipoPlatos.SEGUNDO;
 						
 					}
 					
@@ -156,6 +159,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 						//panelCentral.add(new PlatosPanel(3, restaurante));
 						//panelCentral = (elementosMenu[3]);
 						menu.show(panelCentral, "3");
+						tPlato = TipoPlatos.POSTRE;
 						
 					}
 					
@@ -237,22 +241,22 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		elementosMenu[0] = new JPanel();
 		int i = 0;
 		for (Consumicion c : beb){
-			bebidas[i] = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
+			bebidas[i] = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda, TipoPlatos.BEBIDA);
 			elementosMenu[0].add(bebidas[i]);
 		}
 		elementosMenu[1] = new JPanel();
 		for (Consumicion c : prim){
-			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
+			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda, TipoPlatos.PRIMERO);
 			elementosMenu[1].add(plato);
 		}
 		elementosMenu[2] = new JPanel();
 		for (Consumicion c : seg){
-			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
+			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda, TipoPlatos.SEGUNDO);
 			elementosMenu[2].add(plato);
 		}
 		elementosMenu[3] = new JPanel();
 		for (Consumicion c : pos){
-			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda);
+			CeldaPlato plato = new CeldaPlato(restaurante, c, numeroMesa, numeroComanda, TipoPlatos.POSTRE);
 			elementosMenu[3].add(plato);
 		}
 	}
@@ -278,6 +282,8 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 	private int numeroComanda;
 	private int numeroMesa;
+	
+	private TipoPlatos tPlato;
 	
 	
 

@@ -61,8 +61,8 @@ public class Restaurante {
 		mesas.get(numMesa).eliminaComanda(comandaSelected);
 	}
 
-	public void addNewConsumption(int numComanda, int numMesa) {
-		mesas.get(numMesa).addConsumption(numComanda);
+	public void addNewConsumption(int numComanda, int numMesa, Consumicion plato, TipoPlatos tPlato) {
+		mesas.get(numMesa).addConsumption(numComanda, plato, tPlato);
 	}
 	
 	public MesaInfo[] getMesas() {
