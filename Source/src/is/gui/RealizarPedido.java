@@ -159,6 +159,8 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		scroller = new JScrollPane(text);
         scroller.setPreferredSize(new Dimension(100,100));
         scroller.setBorder(titled);
+        
+        this.add(scroller, BorderLayout.EAST);
 		
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
