@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import is.Fecha;
+import is.restaurante.ComandaInfo;
 import is.restaurante.Menu;
 import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
@@ -85,11 +86,11 @@ public class GUIController {
 		return restaurante.buscarMesa(i);
 		
 	}
-	public void pedirMesas() {
-		this.restaurante.pedirMesas();
-	}
+	
 	
 	private Restaurante restaurante;
+
+	
 	
 	
 

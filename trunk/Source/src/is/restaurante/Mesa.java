@@ -16,7 +16,7 @@ public class Mesa implements MesaInfo{
 	
 //TODO editComanda, selectComanda delete Comanda
 	
-	
+	@Override
 	public int getNumeroMesa() {
 		return numeroMesa;
 	}
@@ -32,10 +32,15 @@ public class Mesa implements MesaInfo{
 		//return pedidos.toString();
 		return factura;
 	}
+	
+	public ComandaInfo[] getListaComandas() {
+		return (ComandaInfo[]) this.pedidos.toArray();
+	}
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	
 
 	private Vector<Comanda> pedidos;
 	private int numeroMesa;
 	private int capacidadMaxima;
+	
 }
