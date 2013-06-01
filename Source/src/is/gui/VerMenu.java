@@ -42,6 +42,7 @@ public class VerMenu extends JFrame{
 	private void nuevoTipoPlato(TipoPlatos tPlato){
 		JPanel panel = new JPanel(new BorderLayout());		
 		pestanyas.add(tPlato.toString(), panel);
+		cadaPestanya.add(panel);
 		
 		JPanel opciones = new JPanel(new GridLayout());
 		panel.add(opciones, BorderLayout.SOUTH);
@@ -110,6 +111,7 @@ public class VerMenu extends JFrame{
 		} catch (Exception e) {}
 		this.botones = new ArrayList<JToggleButton>();
 		ventanas = new ArrayList<JPanel>();
+		cadaPestanya = new ArrayList<JPanel>();
 	}
 	/*	Elimina el plato seleccionado	*/
 	private void borrarPlato(){
@@ -127,8 +129,9 @@ public class VerMenu extends JFrame{
 	
 	/*	 Añade un nuevo plato al menu	*/
 	private void anyadirNuevoPlato(){
-		panelGeneral.add( new ConsumicionSwing(controlador,"prueba", true, TipoPlatos.BEBIDA), "createConsumicion");
-		cardLayout.show(panelGeneral, "createConsumicion");
+		ConsumicionSwing nuevaCons = new ConsumicionSwing(controlador,"", false);
+		panelGeneral.add(nuevaCons , "createConsumicion");
+		cardLayout.show(nuevaCons, "createConsumicion");
 	}
 	
 	/*	Libera todos los botones excepto el último pulsado, 
@@ -167,6 +170,7 @@ public class VerMenu extends JFrame{
 		
 	}
 	
+	private ArrayList<JPanel> cadaPestanya;
 	private JTabbedPane pestanyas;
 	private CardLayout cardLayout;
 	private JPanel panelGeneral;

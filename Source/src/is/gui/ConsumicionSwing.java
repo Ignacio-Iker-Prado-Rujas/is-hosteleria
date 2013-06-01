@@ -16,8 +16,12 @@ import javax.swing.border.Border;
 @SuppressWarnings("serial")
 public class ConsumicionSwing extends JPanel{
 
-	public ConsumicionSwing(GUIController controller, String name, boolean edit, TipoPlatos tPlato){
-		this.restControl = controller;
+	public ConsumicionSwing(GUIController controller, String name, boolean edit){
+		this.setLayout(new FlowLayout());
+		JLabel nombreL = new JLabel("Nombre");
+		this.add(nombreL);
+		
+		/*this.restControl = controller;
 		this.platoName = name;
 		
 		this.setLayout(new BorderLayout());
@@ -50,8 +54,7 @@ public class ConsumicionSwing extends JPanel{
 			this.precioField = new JTextField();
 			
 			precioP.add(precioL);
-			precioP.add(precioField);
-			this.setVisible(true);
+			precioP.add(precioField);*/
 		
 	}
 	
