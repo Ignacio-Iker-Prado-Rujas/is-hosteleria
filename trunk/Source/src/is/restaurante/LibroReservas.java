@@ -59,13 +59,13 @@ public class LibroReservas {
 	}*/
 	
 	/**Por que coño ahora esto es con integers? De donde sacas entonces la reserva para poder mostrarla en verReserva??*/
-	public /*int*/ ArrayList<Integer> buscarReserva(String nombre){
-		ArrayList<Integer> listaRes = new ArrayList<Integer>();
+	public /*int*/ ArrayList<ReservaInfo> buscarReserva(String nombre){
+		ArrayList<ReservaInfo> listaRes = new ArrayList<ReservaInfo>();
 		int i=0;
 		while (i<listaReservas.size()){
 			if (listaReservas.get(i).getNombre().equals(nombre)) ;
 			//i++;
-			listaRes.add(i);
+			listaRes.add(listaReservas.get(i));
 		}
 		//if (i < listaReservas.size()) return i;
 		/*else*/ return listaRes;
