@@ -2,6 +2,7 @@ package is.gui;
 
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -26,108 +27,90 @@ import is.restaurante.consumicion.Consumicion;
 // MenuObserver
 public class VerMenu extends JFrame{
 	public VerMenu(GUIController controller){
+		inicializarVerMenu();
+		this.controlador = controller;
+		menu = controlador.getMenu();
+		inicializarVentana();
+		
+		TipoPlatos[] tipoPlatos = TipoPlatos.values();
+		for( TipoPlatos tPlato : tipoPlatos){
+			nuevoTipoPlato(tPlato);	
+		}
+		this.setVisible(true);
+	}
+	//Crea la pestaña para un tipo de plato
+	private void nuevoTipoPlato(TipoPlatos tPlato){
+		JPanel panel = new JPanel(new BorderLayout());		
+		pestanyas.add(tPlato.toString(), panel);
+		
+		JPanel opciones = new JPanel(new GridLayout());
+		panel.add(opciones, BorderLayout.SOUTH);
+		JButton anyadir = new JButton("add");
+		anyadir.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				anyadirNuevoPlato();					
+			}
+		});
+		JButton editar = new JButton("edit");
+		editar.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				editarPlato();					
+			}
+		});
+		JButton borrar = new JButton("remove");
+		borrar.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				borrarPlato();					
+			}
+		});
+		opciones.add(anyadir);
+		opciones.add(editar);
+		opciones.add(borrar);
+		
+		JPanel platos = new JPanel(new FlowLayout());
+		panel.add(platos);
+		ventanas.add(platos);
+		
+		ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
+		for( Consumicion cons: consum){
+			/*	Habría que guardar las descripciones tb para mostrarlas	*/
+			JToggleButton boton = new JToggleButton(cons.getNombre());
+			botones.add(boton);
+			platos.add(boton);
+			boton.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					consumicionPulsada();				
+				}
+				
+			});
+		}
+	}
+	private void inicializarVentana(){
+		
+		panelGeneral = new JPanel();//Creamos el panel principal
+		cardLayout = new CardLayout();
+		panelGeneral.setLayout(cardLayout);
+		
+		JTabbedPane pestanyas = new JTabbedPane();
+
+		panelGeneral.add(pestanyas);
+		this.add(panelGeneral);
+	}
+	// 	Inicializa la ventana
+	private void inicializarVerMenu(){
 		this.setSize(400,500);
 		JFrame.setDefaultLookAndFeelDecorated(true);
 	    JDialog.setDefaultLookAndFeelDecorated(true);
 	    try {
 	    	UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-
-
 			//.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {}
-		
-		this.controlador = controller;
-		
 		this.botones = new ArrayList<JToggleButton>();
-		
-		menu = controlador.getMenu();
-		
-		JTabbedPane pestanyas = new JTabbedPane();
-		this.add(pestanyas);
-		TipoPlatos[] tipoPlatos = TipoPlatos.values();
-		
-		for( TipoPlatos tPlato : tipoPlatos){
-			
-			JPanel panel = new JPanel(new BorderLayout());		
-			pestanyas.add(tPlato.toString(), panel);
-			JPanel opciones = new JPanel(new GridLayout());
-			panel.add(opciones, BorderLayout.SOUTH);
-			JButton anyadir = new JButton("add",new ImageIcon(this.getClass().getResource("images/flecha.png")));
-			anyadir.addActionListener(new ActionListener(){				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					anyadirNuevoPlato();					
-				}
-			});
-			JButton editar = new JButton("edit");
-			editar.addActionListener(new ActionListener(){				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					editarPlato();					
-				}
-			});
-			JButton borrar = new JButton("remove");
-			borrar.addActionListener(new ActionListener(){				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					borrarPlato();					
-				}
-			});
-			opciones.add(anyadir);
-			opciones.add(editar);
-			opciones.add(borrar);
-			
-			JPanel platos = new JPanel(new FlowLayout());
-			panel.add(platos);
-			
-			ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
-			for( Consumicion cons: consum){
-				/*	Habría que guardar las descripciones tb para mostrarlas	*/
-				JToggleButton boton = new JToggleButton(cons.getNombre());
-				botones.add(boton);
-				platos.add(boton);
-				boton.addActionListener(new ActionListener(){
-					public void actionPerformed(ActionEvent e) {
-						consumicionPulsada();				
-					}
-					
-				});
-			}
-			
-		}
-		
-		
-		/*menu.getBebidas();
-		JPanel panel = new JPanel();
-	//	panel.setLayout()
-		elementosMenu = new JPanel[4];
-		elementosMenu[0] = new JPanel();
-		for (Consumicion c : menu.getBebidas()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[0].add(plato);
-		}
-		elementosMenu[1] = new JPanel();
-		for (Consumicion c : menu.getPrimeros()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[1].add(plato);
-		}
-		elementosMenu[2] = new JPanel();
-		for (Consumicion c : menu.getSegundos()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[2].add(plato);
-		}
-		elementosMenu[3] = new JPanel();
-		for (Consumicion c : menu.getPostres()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[3].add(plato);
-		}
-		for (JPanel p : elementosMenu) panel.add(p);
-		this.add(panel);*/
-		this.setVisible(true);
-		//JFrame marco = new JFrame();
-		//marco.add(panel);
+		ventanas = new ArrayList<JPanel>();
 	}
-	
 	/*	Elimina el plato seleccionado	*/
 	private void borrarPlato(){
 		if(this.consumicionSeleccionada!=null)
@@ -144,7 +127,7 @@ public class VerMenu extends JFrame{
 	
 	/*	 Añade un nuevo plato al menu	*/
 	private void anyadirNuevoPlato(){
-		
+		ventanas.get(0).add(new ConsumicionSwing(controlador,"", false, TipoPlatos.BEBIDA));
 	}
 	
 	/*	Libera todos los botones excepto el último pulsado, 
@@ -172,8 +155,7 @@ public class VerMenu extends JFrame{
 		
 	}
 	private void createConsumicion(){
-		
-		
+		this.add( new ConsumicionSwing(controlador,"prueba", true, TipoPlatos.BEBIDA), BorderLayout.CENTER);
 	}
 	public void anyadePlato(String name, TipoPlatos tPlato){
 		/*Para esto hay que guardar atributos del constructor	*/
@@ -185,7 +167,10 @@ public class VerMenu extends JFrame{
 		
 	}
 	
-	
+	private JTabbedPane pestanyas;
+	private final CardLayout cardLayout;
+	private JPanel panelGeneral;
+	private ArrayList<JPanel> ventanas;
 	private JToggleButton consumicionSeleccionada;
 	private ArrayList<JToggleButton> botones;
 	private GUIController controlador;

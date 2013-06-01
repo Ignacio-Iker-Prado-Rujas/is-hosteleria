@@ -79,11 +79,15 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		 * 	y cuantas consumiciones se han pedido de cada tipo 
 		 */
 		inicializaPaneles();
+		
+		
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
 		panelCentral = new JPanel();
 		final CardLayout menu = new CardLayout();
 		panelCentral.setLayout(menu);
+		
+		
 		for (Integer i=0; i<4; i++)
 			panelCentral.add(this.elementosMenu[i], i.toString());
 		tipoPlato.setLayout(new GridLayout(4,1));

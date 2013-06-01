@@ -1,5 +1,7 @@
 package is.gui;
 
+import is.restaurante.TipoPlatos;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -14,7 +16,7 @@ import javax.swing.border.Border;
 @SuppressWarnings("serial")
 public class ConsumicionSwing extends JPanel{
 
-	public ConsumicionSwing(GUIController controller, String name, boolean edit){
+	public ConsumicionSwing(GUIController controller, String name, boolean edit, TipoPlatos tPlato){
 		this.restControl = controller;
 		this.platoName = name;
 		
@@ -49,6 +51,7 @@ public class ConsumicionSwing extends JPanel{
 			
 			precioP.add(precioL);
 			precioP.add(precioField);
+			this.setVisible(true);
 		
 	}
 	
