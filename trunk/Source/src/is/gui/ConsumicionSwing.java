@@ -149,7 +149,7 @@ public class ConsumicionSwing extends JPanel{
 		return true;
 	}
 	
-	
+	//TODO Elegir disponibilidad
 	private JPanel campos;
 	private String platoName;
 	private int precio;

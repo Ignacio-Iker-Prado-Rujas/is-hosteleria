@@ -71,6 +71,9 @@ public class VerMenu extends JFrame{
 		opciones.add(editar);
 		opciones.add(borrar);
 		
+		
+		/**** Añade los platos correspondientes a un tipo de Plato	****/
+		
 		JPanel platos = new JPanel(new FlowLayout());
 		panel.add(platos);
 		ventanas.add(platos);
@@ -151,6 +154,7 @@ public class VerMenu extends JFrame{
 	}
 	/*	Muestra la descripción de la consumición dada */
 	private void mostrarDescripcion(String description){
+		pestanyas.getTitleAt(pestanyas.getSelectedIndex());
 		/*	Hay que añadir un textArea en el medio
 		 * para mostrar la descripcion.
 		 */
