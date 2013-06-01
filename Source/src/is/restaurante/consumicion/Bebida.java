@@ -1,16 +1,14 @@
 package is.restaurante.consumicion;
 
-import is.gui.CeldaPlato;
+public class Bebida implements Consumicion {
 
-public class Bebida implements Consumicion{
-
-	
-	public Bebida(String name, int price, boolean disp, String desc){
-		this.descripción = desc;
+	public Bebida(String name, int price, boolean disp, String desc) {
+		this.descripcion = desc;
 		this.precio = price;
 		this.nombre = name;
 		this.disponible = disp;
 	}
+
 	@Override
 	public float getPrecio() {
 		// TODO Auto-generated method stub
@@ -26,7 +24,7 @@ public class Bebida implements Consumicion{
 	@Override
 	public String getDescripcion() {
 		// TODO Auto-generated method stub
-		return this.descripción;
+		return this.descripcion;
 	}
 
 	@Override
@@ -35,9 +33,21 @@ public class Bebida implements Consumicion{
 		return this.disponible;
 	}
 
-	private String descripción;
+	public String toString() {
+		String str = "";
+		str += "\"" + nombre + "\" \"" + descripcion + "\" " + precio + " ";
+		if (disponible)
+			str += "Disponible";
+		else
+			str += "NoDisponible";
+		str += LINE_SEPARATOR;
+		return str;
+	}
+
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
+	private String descripcion;
 	private String nombre;
 	private float precio;
 	private boolean disponible;
-	
+
 }

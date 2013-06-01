@@ -29,6 +29,21 @@ public class Postre implements Consumicion {
 		return this.disponible;
 	}
 
+	public String toString() {
+		String str = "";
+		str += "\"" + nombre + "\" \"" + descripcion + "\" " + precio + " ";
+		if (disponible)
+			str += "Disponible";
+		else
+			str += "NoDisponible";
+		str += LINE_SEPARATOR;
+		return str;
+	}
+
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
+
+	private String descripcion;
+
 	private String descripción;
 	private String nombre;
 	private float precio;
