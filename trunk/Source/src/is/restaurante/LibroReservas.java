@@ -23,14 +23,18 @@ public class LibroReservas {
 	}
 	
 	public ArrayList<ReservaInfo> reservasHoy(){
-		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
+		Date date = new Date();
+		
+		Fecha fecha = new Fecha(date.getYear(), date.getMonth(), date.getDay(), date.getHours(), date.getMinutes()); //new Date (hoy) o algo asi
 		ArrayList<ReservaInfo> reservasDeHoy = new ArrayList<ReservaInfo>();
 		reservasDeHoy = buscarReservaHoy(fecha);
 		return reservasDeHoy;
 		
 	}
 	public ArrayList<ReservaInfo> reservasSemana(){
-		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
+		Date date = new Date();
+		
+		Fecha fecha = new Fecha(date.getYear(), date.getMonth(), date.getDay(), date.getHours(), date.getMinutes()); //new Date (hoy) o algo asi
 		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
 		reservasSemana = buscarReservaSemana(fecha);
 		return reservasSemana;
@@ -38,7 +42,9 @@ public class LibroReservas {
 	}
 
 	public ArrayList<ReservaInfo> reservasMes(){
-		Fecha fecha = new Fecha(0, 0, 0, 0, 0); //new Date (hoy) o algo asi
+		Date date = new Date();
+		
+		Fecha fecha = new Fecha(date.getYear(), date.getMonth(), date.getDay(), date.getHours(), date.getMinutes()); //new Date (hoy) o algo asi
 		ArrayList<ReservaInfo> reservasMes = new ArrayList<ReservaInfo>();
 		reservasMes = buscarReservaMes(fecha);
 		return reservasMes;
