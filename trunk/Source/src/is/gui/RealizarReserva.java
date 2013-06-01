@@ -112,10 +112,13 @@ public class RealizarReserva extends JPanel{
 							
 						}//TODO else mostrar mensaje de error, donde sea, diciendo 
 						//que hay que poner un numero de comensales
-						else{
+						else {
+							String error = null;
+							if (!comensalesValidos()) error += COMENSALES_NO_VALIDOS;
+							if (!nombreValido()) error += NOMBRE_RESERVA;
 							
 						JOptionPane.showMessageDialog(frame,
-							    "Debe seleccionar el número de comensales.",
+							    error,
 							    "Error",
 							    JOptionPane.WARNING_MESSAGE);
 					}
@@ -159,9 +162,16 @@ public class RealizarReserva extends JPanel{
 	}
 	
 	public boolean datosValidos() {
+		return comensalesValidos() && nombreValido();
+	}
+	
+	public boolean comensalesValidos(){
 		return (int)comensales.getValue() > 0;
 	}
 	
+	public boolean nombreValido(){
+		return nombre.getText() != null;
+	}
 
 	private void inicializaBox(){
 		/*for (int i=1; i<=12; i++){
@@ -189,7 +199,10 @@ public class RealizarReserva extends JPanel{
 		//año.addItem(year);
 		
 	}
-
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
+	private static String COMENSALES_NO_VALIDOS = "Debe seleccionar el número de comensales" + LINE_SEPARATOR;
+	private static String NOMBRE_RESERVA = "Debe introcudir el nombre del cliente" + LINE_SEPARATOR;
+	
 	
 	private JFrame frame;
 	private boolean error;
