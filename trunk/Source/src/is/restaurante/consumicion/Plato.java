@@ -8,12 +8,12 @@ public class Plato implements Consumicion{
 
 	/**
 	 * Constructor de un plato
-	 * @param descripción: descripción del plato
+	 * @param descripcion: descripcion del plato
 	 * @param nombre: nombre del plato
 	 * @param precio: precio del plato
 	 */
-	public Plato(String nombre, float precio, boolean disp, String descripción){
-		this.descripción = descripción;
+	public Plato(String nombre, float precio, boolean disp, String descripcion){
+		this.descripcion = descripcion;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.disponible = disp;
@@ -23,7 +23,7 @@ public class Plato implements Consumicion{
 
 	@Override
 	public String getDescripcion() {
-		return this.descripción;
+		return this.descripcion;
 	}
 	
 	/**
@@ -64,9 +64,20 @@ public class Plato implements Consumicion{
 		return this.nombre;
 	}
 
+	public String toString() {
+		String str = "";
+		str += "\"" + nombre + "\" \"" + descripcion + "\" " + precio + " ";
+		if (disponible)
+			str += "Disponible";
+		else
+			str += "NoDisponible";
+		str += LINE_SEPARATOR;
+		return str;
+	}
 
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
-	private String descripción;
+	private String descripcion;
 	private String nombre;
 	private float precio;
 	private boolean disponible;
