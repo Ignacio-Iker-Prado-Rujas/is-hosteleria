@@ -177,8 +177,8 @@ public class RealizarReserva extends JPanel{
 			horas.add(i);
 		}
 		Vector<Integer> minutos = new Vector<Integer>();
-		for (int j=0; j<6; j++){
-			minutos.add(j*10);
+		for (int j=0; j<12; j++){
+			minutos.add(j*5);
 		}
 		//int year = Calendar.getInstance().get(Calendar.YEAR);
 		//mes = new JComboBox(meses);
