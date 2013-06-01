@@ -77,22 +77,6 @@ format 76
 	size A4
       end
 
-      class 133 "Consumicion"
-	visibility package stereotype "interface"
-	cpp_decl ""
-	java_decl "${comment}${@}${visibility}interface ${name}${extends} {
-${members}}
-"
-	php_decl "${comment}interface ${name} {
-${members}}
-"
-	python_2_2 python_decl ""
-	idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
-${members}};
-"
-	explicit_switch_type ""
-	
-      end
     end
 
     usecase 128130 "modificarMenu"
@@ -180,6 +164,18 @@ ${members}};
 	  nparams 0
 	  
 	  
+	  
+	  
+	  
+	end
+
+	operation 136709 "getPrecio"
+	  public explicit_return_type ""
+	  nparams 0
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
 	  
 	  
 	  
@@ -627,6 +623,18 @@ ${members}}
 	    param in name "reserva" type class_ref 128770 // Reserva
 	  
 	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	operation 136581 "generarFactura"
+	  public explicit_return_type ""
+	  nparams 0
+	  
+	  java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
   ${body}}
 "
 	  
