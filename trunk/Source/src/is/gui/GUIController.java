@@ -93,11 +93,17 @@ public class GUIController {
 	
 
 	public void avisaComanda(int numMesa, int comandaSelected) {
-		
+		this.restaurante.avisaComanda(numMesa, comandaSelected);
 	}
 	
+	public void eliminarComanda(int numMesa, int comandaSelected) {
+		this.restaurante.eliminaComanda(numMesa, comandaSelected);
+	}
 	
 	private Restaurante restaurante;
+
+
+	
 
 
 
