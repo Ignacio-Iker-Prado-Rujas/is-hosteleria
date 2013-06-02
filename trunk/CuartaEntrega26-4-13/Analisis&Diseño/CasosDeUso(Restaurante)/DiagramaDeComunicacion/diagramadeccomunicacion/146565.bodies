@@ -1,0 +1,11 @@
+class ListaComandas
+!!!159877.java!!!	ListaComandas()
+		
+!!!160005.java!!!	añadirComanda(inout c : Comanda) : void
+		
+		
+!!!160133.java!!!	actualizarComanda(inout c : Comanda) : void
+		
+!!!160261.java!!!	eliminarComanda(inout c : Comanda) : void
+		
+		
