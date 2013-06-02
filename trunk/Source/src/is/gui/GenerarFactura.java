@@ -45,11 +45,8 @@ public class GenerarFactura implements MesaObserver{
 			{
 				this.addActionListener(new ActionListener(){
 
-					@Override
 					public void actionPerformed(ActionEvent e) {
 
-						//controlador.addMesaObserver(this.class);
-						// TODO Auto-generated method stub
 						int j = mesas.getSelectedIndex();
 						addMesaObserver(j);
 						controlador.getMesa(j).generarFactura();
