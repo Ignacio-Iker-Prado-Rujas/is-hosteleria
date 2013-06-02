@@ -120,8 +120,7 @@ public class Menu implements MenuInfo {
 			postres.add(consumicion);
 		default:
 			;
-		}
-		
+		}	
 	}
 
 	//
