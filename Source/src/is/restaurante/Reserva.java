@@ -101,6 +101,15 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo {
 		return this.numeroDeComensales.toString();
 	}
 
+	public boolean esMismaReserva(String nombre2, String fecha2,
+			String comensales, String mesa) {
+		return (this.nombreToString().equals(nombre2) && 
+				this.fechaToString().equals(fecha2.toString()) && 
+				this.comensalesToString().equals(comensales) && 
+				this.mesasToString().equals(mesa));
+				
+	}
+
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private ArrayList<Mesa> mesas;
 	private Fecha fecha;

@@ -38,11 +38,11 @@ public class VerReserva implements LibroReservaObserver{
 		this.controlador.addLibroReservaObserver(this);
 		inicializaTabla();
 		
-		JTable tTodas = new JTable(tablaTodas);
+		tTodas = new JTable(tablaTodas);
 		JScrollPane scrollTodas = new JScrollPane(tTodas);
-		JTable tHoy = new JTable(tablaHoy);
+		tHoy = new JTable(tablaHoy);
 		JScrollPane scrollHoy = new JScrollPane(tHoy);
-		JTable tSemana = new JTable(tablaSemana);
+		tSemana = new JTable(tablaSemana);
 		JScrollPane scrollSemana = new JScrollPane(tSemana);
 		//JTable tMes = new JTable(tablaMes);
 		//JScrollPane scrollMes = new JScrollPane(tMes);
@@ -160,6 +160,11 @@ public class VerReserva implements LibroReservaObserver{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (cuando.equals("todas"))
+					if (tTodas.getSelectedRow() > 0)
+						controlador.requestRemoveReserva(tablaTodas.getValueAt(tTodas.getSelectedRow(), 0), 
+								tablaTodas.getValueAt(tTodas.getSelectedRow(), 1),
+								tablaTodas.getValueAt(tTodas.getSelectedRow(), 2),
+								tablaTodas.getValueAt(tTodas.getSelectedRow(), 3));
 					//tablaTodas.getSelectedRow();
 				borrarReserva();					
 			}
@@ -185,6 +190,9 @@ public class VerReserva implements LibroReservaObserver{
 		
 	}
 	private JFrame ventanaVerReservas;
+	private JTable tTodas;
+	private JTable tHoy;
+	private JTable tSemana;
 	TableReservas tablaTodas;
 	TableReservas tablaHoy;
 	TableReservas tablaSemana;
