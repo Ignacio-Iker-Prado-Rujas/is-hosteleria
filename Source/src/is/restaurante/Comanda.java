@@ -44,7 +44,7 @@ public class Comanda implements ComandaInfo {
 		} else
 			comanda[index].put(consumicion, 1);
 		consumicion.getPrecio();
-		emitirCambio();
+//		emitirCambio();
 	}
 
 	private void deleteConsumicion(Consumicion consumicion, int index) {
@@ -127,7 +127,8 @@ public class Comanda implements ComandaInfo {
 
 	public void addBebida(Consumicion bebida) {
 		addConsumicion(bebida, 3);
-		//emitirCambio();
+//		emitirCambio();
+
 	}
 
 	public void deleteBebida(Consumicion bebida) {
