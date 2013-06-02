@@ -1,7 +1,6 @@
 package is.gui;
 
 import is.restaurante.ComandaInfo;
-import is.restaurante.Factura;
 import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
 import is.restaurante.MesaObserver;
@@ -15,7 +14,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
