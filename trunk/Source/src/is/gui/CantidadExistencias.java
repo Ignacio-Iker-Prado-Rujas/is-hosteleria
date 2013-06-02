@@ -1,18 +1,16 @@
 package is.gui;
 
-import javax.swing.JPanel;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-import is.restaurante.Menu;
-
-public class CantidadExistencias {
-	
+@SuppressWarnings("serial")
+public class CantidadExistencias extends JFrame{
 	public CantidadExistencias(GUIController controller){
-		this.controlador = controller;
-		JPanel panel = new JPanel();
-		menu = controlador.getMenu();
-		//menu.
+		notificar("Disponible en la versión de pago");
 	}
 	
-	private GUIController controlador;
-	private Menu menu;
+	private void notificar(String message){
+		JOptionPane.showMessageDialog(this, message);
+		this.dispose();
+	}
 }
