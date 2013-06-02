@@ -47,6 +47,8 @@ public class GenerarFactura implements MesaObserver{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
+
+						controlador.addMesaObserver(this.class.);
 						// TODO Auto-generated method stub
 						int j = mesas.getSelectedIndex();
 						addMesaObserver(j);
@@ -90,6 +92,7 @@ public class GenerarFactura implements MesaObserver{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
+						
 						marco2.setVisible(false);
 					}
 					

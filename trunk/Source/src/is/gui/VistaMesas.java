@@ -193,7 +193,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			public void actionPerformed(ActionEvent e) {
 
 			}
-
+				
 		});
 		botoncitosPanel.add(editarComanda);
 
