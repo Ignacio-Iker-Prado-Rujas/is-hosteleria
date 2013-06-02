@@ -65,6 +65,8 @@ public class Menu implements MenuInfo {
 	
 	public void deleteConsumicion(Consumicion consumicion){
 		dondeEsta(consumicion).remove(consumicion);//TODO notificar observer de borrado
+		for (MenuObserver obs: observers)
+			obs.deleteConsumption(consumicion.getNombre());
 	}
 	/* Devuelve el array list donde está el elemento buscado */
 	private ArrayList<Consumicion> dondeEsta(Consumicion consumicion){
@@ -84,7 +86,10 @@ public class Menu implements MenuInfo {
 			Consumicion consNueva, TipoPlatos tPlato) {
 		dondeEsta(consAntigua).remove(consAntigua);// TODO notificar observer de
 													// borrado
+		//TODO kike, mira los emitcambios que hay que hacer aqui, que no se
 		addConsumicion(consNueva, tPlato);
+		for (MenuObserver obs: observers)
+			obs.addConsumption(consNueva.getNombre());
 	}
 
 	//Añade un plato al array del tipo
@@ -107,6 +112,9 @@ public class Menu implements MenuInfo {
 			default:
 				;
 			}
+			//TODO kike, esto no se si esta bien
+			for (MenuObserver obs: observers)
+				obs.addConsumption(consumicion.getNombre());
 		}
 	}
 
