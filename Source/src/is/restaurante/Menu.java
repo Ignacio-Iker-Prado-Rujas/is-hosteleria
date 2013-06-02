@@ -181,10 +181,19 @@ public class Menu implements MenuInfo {
 			if(c.getNombre().equals(name)) return c;
 		return null;
 	}
+	
+	public void addObserver(MenuObserver verMenu) {
+		observers.add(verMenu);
+	}
+	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
+	
+	private ArrayList<MenuObserver> observers;
+	
 	private ArrayList<Consumicion> bebidas;
 	private ArrayList<Consumicion> primeros;
 	private ArrayList<Consumicion> segundos;
 	private ArrayList<Consumicion> postres;
+	
 
 }

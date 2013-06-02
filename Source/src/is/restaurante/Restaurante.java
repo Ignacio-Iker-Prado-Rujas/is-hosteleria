@@ -82,11 +82,17 @@ public class Restaurante {
 	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
 		menu.addConsumicion( consumicion, tPlato);
 	}
+	
+	public void registerMenuObserver(MenuObserver verMenu) {
+		menu.addObserver(verMenu);
+	}
+	
 	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;
 	private Menu menu;
 	private Tablon tablon;
+	
 	
 	
 		
