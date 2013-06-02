@@ -14,10 +14,10 @@ import java.util.Vector;
  */
 public class Mesa implements MesaInfo {
 
-	public Mesa(int num) {
-		this.setNumeroMesa(num);
-	}
-
+	 public Mesa(int num){
+         this.comandas = new Vector<Comanda>();
+         this.setNumeroMesa(num);
+ }
 	public Mesa(int num, int cap) {
 		numeroMesa = num;
 		capacidad = cap;
@@ -57,11 +57,20 @@ public class Mesa implements MesaInfo {
 	// TODO igual habria que crear un metodo que pasara del vector a un array[]
 	public ComandaInfo[] getListaComandas() {
 		if (this.comandas != null)
-			return (ComandaInfo[]) this.comandas.toArray();
+			return this.listaComandasToArray();
 		else
 			return null;
 	}
 
+
+    private ComandaInfo[] listaComandasToArray(){
+            ComandaInfo[] comandaArray = new ComandaInfo[comandas.size()];
+            for (int i=0; i<comandas.size(); i++){
+                    comandaArray[i] = new Comanda();
+                    comandaArray[i] = comandas.get(i);
+            }
+            return comandaArray;
+    }
 	/**
 	 * Escoge una comanda como actual, para realizar acciones sobre ella
 	 * 
@@ -102,6 +111,12 @@ public class Mesa implements MesaInfo {
 		for (MesaObserver o : obs)
 			o.cambioOcurrido((ComandaInfo[]) comandas.toArray());
 	}
+	
+	 public void addComandaObserver(ComandaObserver observer) {
+         Comanda nuevaComanda = new Comanda();
+         comandas.add(nuevaComanda);
+         comandas.lastElement().addObserver(observer);
+ }
 
 	private ArrayList<MesaObserver> obs;
 	private Vector<Comanda> comandas;
