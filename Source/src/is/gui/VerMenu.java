@@ -231,9 +231,9 @@ public class VerMenu extends JFrame implements MenuObserver{
 		borrarBoton(consId, tipo);
 	}
 	@Override
-	public void editConsumption(String consId, String tipoAnt, String tipoNuevo) {
-			deleteConsumption(consId, tipoAnt);
-			anyadirBoton(consId, tipoNuevo);
+	public void editConsumption(String nameAnt, String nameNuevo, String tipoAnt, String tipoNuevo) {
+			deleteConsumption(nameAnt, tipoAnt);
+			anyadirBoton(nameNuevo, tipoNuevo);
 	}
 
 	private ArrayList<JTextField> descriptions;
