@@ -77,16 +77,17 @@ public class Menu implements MenuInfo {
 		for (MenuObserver obs: observers)
 			obs.deleteConsumption(consumicion.getNombre());
 	}
+	
 	/* Devuelve el array list donde está el elemento buscado */
-	private ArrayList<Consumicion> dondeEsta(Consumicion consumicion){
+	public TipoPlatos tipoPlato(String name){
 		for(Consumicion c: bebidas)
-			if(c.getNombre().equals(consumicion.getNombre())) return bebidas;
+			if(c.getNombre().equals(name)) return TipoPlatos.BEBIDA;
 		for(Consumicion c: primeros)
-			if(c.getNombre().equals(consumicion.getNombre())) return primeros;
+			if(c.getNombre().equals(name)) return  TipoPlatos.PRIMERO;
 		for(Consumicion c: segundos)
-			if(c.getNombre().equals(consumicion.getNombre())) return segundos;
+			if(c.getNombre().equals(name)) return  TipoPlatos.SEGUNDO;
 		for(Consumicion c: postres)
-			if(c.getNombre().equals(consumicion.getNombre())) return postres;
+			if(c.getNombre().equals(name)) return  TipoPlatos.POSTRE;
 		return null;
 	}
 	//Actualiza un plato al array del tipo
