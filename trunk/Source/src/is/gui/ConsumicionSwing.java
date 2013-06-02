@@ -24,6 +24,7 @@ import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
@@ -180,10 +181,10 @@ public class ConsumicionSwing extends JPanel{
 			restControl.actualizaConsumicion(consumicionInicial, nuevaConsumicion(), (TipoPlatos) tipoPlato.getSelectedItem());
 		else
 			restControl.addConsumicion(nuevaConsumicion(), (TipoPlatos) tipoPlato.getSelectedItem());
+		ventanaGeneral.devolverControlPrincipal();
 	}
 	private void notificar(String message){
-		//TODO
-		System.out.println(message);
+		JOptionPane.showMessageDialog(this, message);
 	}
 	
 	
