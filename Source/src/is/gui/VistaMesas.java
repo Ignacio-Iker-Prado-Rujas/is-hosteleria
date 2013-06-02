@@ -1,6 +1,5 @@
 package is.gui;
 
-import is.restaurante.Comanda;
 import is.restaurante.ComandaInfo;
 import is.restaurante.MesaInfo;
 
@@ -9,12 +8,9 @@ import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
