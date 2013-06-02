@@ -79,6 +79,18 @@ public class Menu implements MenuInfo {
 	}
 	
 	/* Devuelve el array list donde está el elemento buscado */
+	private ArrayList<Consumicion> dondeEsta(Consumicion consumicion){
+		for(Consumicion c: bebidas)
+			if(c.getNombre().equals(consumicion.getNombre())) return bebidas;
+		for(Consumicion c: primeros)
+			if(c.getNombre().equals(consumicion.getNombre())) return primeros;
+		for(Consumicion c: segundos)
+			if(c.getNombre().equals(consumicion.getNombre())) return segundos;
+		for(Consumicion c: postres)
+			if(c.getNombre().equals(consumicion.getNombre())) return postres;
+		return null;
+	}
+	/* Devuelve el array list donde está el elemento buscado */
 	public TipoPlatos tipoPlato(String name){
 		for(Consumicion c: bebidas)
 			if(c.getNombre().equals(name)) return TipoPlatos.BEBIDA;

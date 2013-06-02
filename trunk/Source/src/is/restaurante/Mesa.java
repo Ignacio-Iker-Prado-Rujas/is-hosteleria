@@ -34,11 +34,13 @@ public class Mesa implements MesaInfo{
 	}
 	public String generarFactura(){
 		String factura = "";
-		for (Comanda c : comandas){
+		//TODO tenemos que usar la clase Factura, con su metodo estatico;
+		/*for (Comanda c : comandas){
 			factura += c.toString() + LINE_SEPARATOR;
 		}
 		//return comandas.toString();
-		return factura;
+		return factura;*/
+		return "";
 	}
 	
 	@Override
