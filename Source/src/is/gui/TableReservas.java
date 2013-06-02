@@ -8,7 +8,8 @@ import javax.swing.table.AbstractTableModel;
 
 public class TableReservas extends AbstractTableModel{
 	//Constructor que crea las columnas con sus nombres, que se pasan en un array
-		public TableReservas(String[] colNames) {
+		public TableReservas() {
+			String[] colNames ={ "Nombre", "Fecha", "Nº comensales", "Mesas"};
 			this.columnNames = new String[colNames.length];
 			for(int i = 0; i < colNames.length; i++) 
 				this.columnNames[i] = colNames[i];

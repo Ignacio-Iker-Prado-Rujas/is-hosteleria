@@ -16,7 +16,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -30,6 +32,18 @@ public class VerReserva implements LibroReservaObserver{
 
 	@SuppressWarnings("serial")
 	public VerReserva(GUIController rest) {
+		inicializaTabla();
+		JTable tTodas = new JTable(tablaTodas);
+		JTable tHoy = new JTable(tablaHoy);
+		JTable tSemana = new JTable(tablaSemana);
+		JTable tMes = new JTable(tablaMes);
+		tTodas.setPreferredScrollableViewportSize(null);
+		//Permitimos que se pueda hacer Scroll por si se cogen muchos Items
+		JScrollPane scrollTodas  = new JScrollPane(tTodas, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollHoy  = new JScrollPane(tHoy, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollSemana  = new JScrollPane(tSemana, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollMes = new JScrollPane(tMes, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
 		this.controlador = rest;
 		this.controlador.addLibroReservaObserver(this);
 		
@@ -37,43 +51,51 @@ public class VerReserva implements LibroReservaObserver{
 		
 		JPanel panelTodas = new JPanel();
 		tabbedPane.addTab("Todas", null, panelTodas, "Muestra todas las reservas");
-		
-		for ( ReservaInfo r : controlador.getReservas(-1)){
+		panelTodas.add(scrollTodas);
+		/*for ( ReservaInfo r : controlador.getReservas(-1)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelTodas.add(jt);
-		}
+		}*/
 		
 		JPanel panelHoy = new JPanel();
 		tabbedPane.addTab("Hoy", null, panelHoy, "Muestra las reservas de hoy");
-		for ( ReservaInfo r : controlador.getReservas(0)){
+		panelHoy.add(scrollHoy);
+		/*for ( ReservaInfo r : controlador.getReservas(0)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelHoy.add(jt);
-		}
+		}*/
 		
 		JPanel panelSemana = new JPanel();
 		tabbedPane.addTab("Esta semana",null, panelSemana,
 		                  "Muestra las reservas de esta semana");
-		for ( ReservaInfo r : controlador.getReservas(1)){
+		panelSemana.add(scrollSemana);
+		/*for ( ReservaInfo r : controlador.getReservas(1)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelSemana.add(jt);
-		}
+		}*/
 		
 		JPanel panelMes = new JPanel();
 		panelMes.setPreferredSize(new Dimension(410, 50));
 		tabbedPane.addTab("Este mes", null, panelMes,
 		                      "Muestra las reservas de este mes");
-		for ( ReservaInfo r : controlador.getReservas(2)){
+		panelMes.add(scrollMes);
+		/*for ( ReservaInfo r : controlador.getReservas(2)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelMes.add(jt);
-		}
+		}*/
 		JFrame marco = new JFrame();
 		
 		marco.add(tabbedPane);
 		marco.setVisible(true);
 		marco.setSize(150, 150);
 	}
-
 	
+	private void inicializaTabla(){
+		tablaTodas = new TableReservas();
+		tablaHoy = new TableReservas();
+		tablaSemana = new TableReservas();
+		tablaMes = new TableReservas();
+	}
 	private GUIController controlador;
 	private JTextField nombreReserva;
 	
