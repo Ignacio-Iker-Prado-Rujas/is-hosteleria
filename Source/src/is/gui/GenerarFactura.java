@@ -63,11 +63,7 @@ public class GenerarFactura implements MesaObserver{
 		marco.setVisible(true);
 	
 	}
-	@Override
-	public void cambioOcurrido(ComandaInfo[] comandas) {
-		// TODO Auto-generated method stub
-		
-	}
+
 	private JComboBox mesas;
 	private JFrame marco;
 	private JFrame marco2;
@@ -95,6 +91,11 @@ public class GenerarFactura implements MesaObserver{
 		});
 		marco2.pack();
 		marco2.setVisible(true);
+	}
+	@Override
+	public void cambioOcurrido(ComandaInfo[] comandas, int numeroMesa) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
