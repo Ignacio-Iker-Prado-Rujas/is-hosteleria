@@ -60,7 +60,7 @@ public class VerReserva implements LibroReservaObserver{
 		
 		JPanel panel1 = new JPanel();
 		tabbedPane.addTab("Todas", null, panel1,
-		                  "Does nothing");
+		                  "Muestra todas las reservas");
 		
 		for ( ReservaInfo r : controlador.getReservas(-1)){
 			JTextArea jt = new JTextArea(r.toString());			
@@ -68,14 +68,14 @@ public class VerReserva implements LibroReservaObserver{
 		}
 		JPanel panel2 = new JPanel();
 		tabbedPane.addTab("Hoy", null, panel2,
-		                  "Does twice as much nothing");
+		                  "Muestra las reservas de hoy");
 		for ( ReservaInfo r : controlador.getReservas(0)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panel1.add(jt);
 		}
 		JPanel panel3 = new JPanel();
 		tabbedPane.addTab("Esta semana", null, panel3,
-		                  "Still does nothing");
+		                  "Muestra las reservas de esta semana");
 		for ( ReservaInfo r : controlador.getReservas(1)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panel1.add(jt);
@@ -84,7 +84,7 @@ public class VerReserva implements LibroReservaObserver{
 		JPanel panel4 = new JPanel();
 		panel4.setPreferredSize(new Dimension(410, 50));
 		tabbedPane.addTab("Este mes", null, panel4,
-		                      "Does nothing at all");
+		                      "Muestra las reservas de este mes");
 		for ( ReservaInfo r : controlador.getReservas(2)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panel1.add(jt);
