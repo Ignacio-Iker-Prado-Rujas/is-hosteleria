@@ -201,7 +201,9 @@ public class VerReserva implements LibroReservaObserver{
 	
 	@Override
 	public void cambioOcurrido(ArrayList<ReservaInfo> reservaHoy, ArrayList<ReservaInfo> reservaSemana, ArrayList<ReservaInfo> reservasSiempre) {
-		
+		tablaHoy.actualizarTabla(reservaHoy);
+		tablaSemana.actualizarTabla(reservaSemana);
+		tablaTodas.actualizarTabla(reservasSiempre);
 	}
 	private JFrame ventanaVerReservas;
 	private JTable tTodas;
