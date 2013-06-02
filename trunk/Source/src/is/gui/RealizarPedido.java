@@ -42,7 +42,9 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	 * @param rest
 	 */
 	public RealizarPedido(final GUIController rest, int numeroMesa, int comandaSeleccionada) {
+		
 		this.restaurante = rest;
+		this.restaurante.addComandaObserver(this, numeroMesa);
 		this.numeroComanda = comandaSeleccionada;
 		this.numeroMesa = numeroMesa;
 		

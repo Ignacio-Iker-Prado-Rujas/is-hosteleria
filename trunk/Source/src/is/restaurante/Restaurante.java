@@ -92,6 +92,10 @@ public class Restaurante {
 	public void registerMenuObserver(MenuObserver verMenu) {
 		menu.addObserver(verMenu);
 	}
+
+	public void addComandaObserver(ComandaObserver observer, int numeroMesa) {
+		mesas.get(numeroMesa).addComandaObserver(observer);
+	}
 	
 	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
