@@ -258,9 +258,9 @@ public class RealizarReserva extends JPanel{
 	        	//checkMesas[i].setBounds(0,0,i*10, 50);
 	        	checkPanel.add(checkMesas[i]);
 	        }
-	        JPanel panelMesas = new JPanel();
-	        panelMesas.add(checkPanel, BorderLayout.CENTER);
-	        panelMesas.add(new JButton ("Seleccionar"){
+	        
+	        
+	        checkPanel.add(new JButton ("Seleccionar"){
 	        	{
 	        		this.addActionListener(new ActionListener(){
 
@@ -275,8 +275,9 @@ public class RealizarReserva extends JPanel{
 	        			
 	        		});
 	        	}
-	        }, BorderLayout.AFTER_LAST_LINE);
-	        
+
+	        });
+
 	        
 	        /*
 	        check1=new JCheckBox("Inglés");
@@ -291,7 +292,7 @@ public class RealizarReserva extends JPanel{
 	        check3.setBounds(10,90,150,30);
 	        check3.addChangeListener(this);        
 	        add(check3); */  
-	        this.add(panelMesas);
+	        this.add(checkPanel);
 	    }
 	    
 	    public void stateChanged(ChangeEvent e){
