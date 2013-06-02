@@ -38,6 +38,10 @@ public class VerReserva implements LibroReservaObserver{
 		JTable tSemana = new JTable(tablaSemana);
 		JTable tMes = new JTable(tablaMes);
 		tTodas.setPreferredScrollableViewportSize(null);
+		tHoy.setPreferredScrollableViewportSize(null);
+		tSemana.setPreferredScrollableViewportSize(null);
+		tMes.setPreferredScrollableViewportSize(null);
+		tTodas.setPreferredScrollableViewportSize(null);
 		//Permitimos que se pueda hacer Scroll por si se cogen muchos Items
 		JScrollPane scrollTodas  = new JScrollPane(tTodas, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollHoy  = new JScrollPane(tHoy, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
