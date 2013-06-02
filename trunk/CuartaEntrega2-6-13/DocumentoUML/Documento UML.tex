@@ -63,11 +63,6 @@
 
 \tableofcontents 							%INDICE hipervinvulado
 
-\newpage
-\mbox{}
-\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
-\newpage
-
 \pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
 
 %\vspace{0.35cm}
@@ -115,7 +110,12 @@
 
 \setcounter{section}{0}
 \part{Requisitos}
-	\section{Modelo de Dominio}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{modelodedominio.png}
+	\vspace{-1.25 true cm}
+	\caption{Modelo de dominio}
+	\end{figure}	\section{Modelo de Dominio}
 	En esta sección se recoge el modelo de dominio de toda la aplicación. De izquierda a derecha, podemos ver la relación entre el cliente y las reservas que puede hacer, tanto del restaurante como del hotel. A partir de ellas se puede genarar una factura. 
 
 	Las reservas del hotel son atendidas por el recepcionista, y las del restaurante por el camarero (o en su defecto, el maître). El camarero, además tiene varias posibilidades, puede acceder y modificar la distribución de las mesas del restaurante, tomar o modificar comandas, ver o modificar el menú y ver o modificar las existencias de la cocina y el bar.
@@ -125,25 +125,31 @@
 	Además, el encargado de mantenimiento puede ver las tareas que tiene pendientes por resolver en el hotel o el restaurante. Estas son notificadas por el resto de empleados (o el mismo, al ser un empleado más) cuando las descubren. Otro medio de comunicación entre los empleados son las notas. Cualquiera puede escribir una y cualquiera puede verlas. Su fin es distinto al de las obligaciones de mantenimiento, ya que pueden tratarse temas más triviales o que no tocan dichas tareas.
 		
 	Por último, el jefe del negocio tiene acceso a las cuentas de las cajas de la recepción y del restaurante, que se recogen en el libro diario de la aplicación. Éste, a su vez, se resume en el libro mayor.
-	
+
+
+
 
 	\section{Diagramas de actividad}
-
-
-
+	No consideramos necesarios estos diagramas, ya que creemos que la información que aportan ya la dan los diagramas de secuencia junto con la documentación.
 
 
 
 \setcounter{section}{0}
 \part{Análisis}
 	\section{Diagamas de paquetes}
-
+	En la aplicación hay una clara brecha entre la lógica y la interfaz de la misma, más nítida por el uso del patrón Modelo-Vista-Controlador (ver Parte V para más información). Esto se refleja en el diagrama de paquetes. Además, en la lógica se distinguen a su vez dos partes, lo relativo a los empleados y lo relativo a las cuentas del negocio. Cada una de estas partes incluye lo que indica el diagrama.
 
 	\section{Diagramas de comunicación}
 
 
 	\section{Diagramas de clases de análisis}
+		\subsection{Menú del restaurante}
 
+		\subsection{Reservas del restaurante}
+
+		\subsection{Comandas del restaurante}
+
+		\subsection{Factura del restaurante}
 
 
 
@@ -152,16 +158,34 @@
 \setcounter{section}{0}
 \part{Diseño}
 	\section{Diagramas de secuencia}
+		\subsection{Menú del restaurante}
+
+		\subsection{Reservas del restaurante}
+
+		\subsection{Comandas del restaurante}
+
+		\subsection{Factura del restaurante}
+
+		\subsection{Recuento de existencias}
+
 
 
 	\section{Diagramas de clases de diseño}
+		\subsection{Menú del restaurante}
 
+		\subsection{Reservas del restaurante}
+
+		\subsection{Comandas del restaurante}
+
+		\subsection{Factura del restaurante}
+
+		\subsection{Cargadores de ficheros}
 
 	\section{Diagramas de componentes}
-
+	No se consideran necesarios.
 
 	\section{Diagramas de despliegue}
-
+	No se consideran necesarios puesto que la aplicación no tiene la complejidad necesaria.
 
 
 
