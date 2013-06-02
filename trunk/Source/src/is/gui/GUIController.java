@@ -12,6 +12,7 @@ import is.restaurante.Menu;
 import is.restaurante.MenuObserver;
 import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
+import is.restaurante.MesaObserver;
 import is.restaurante.Reserva;
 import is.restaurante.ReservaInfo;
 import is.restaurante.Restaurante;
@@ -141,8 +142,18 @@ public class GUIController {
 	public void addLibroReservaObserver(LibroReservaObserver verReserva) {
 		restaurante.registerLibroReservaObserver(verReserva);
 	}
-	
+
+	public void addMesaObserver(MesaObserver generarFactura, int j) {
+		this.restaurante.registerMesaObserver(generarFactura, j);
+	}
+
+	public void removeMesaObserver(MesaObserver generarFactura, int numMesa) {
+		this.restaurante.deleteMesaObserver(generarFactura, numMesa);
+	}
+
 	private Restaurante restaurante;
+
+
 
 
 

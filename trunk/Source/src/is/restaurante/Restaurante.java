@@ -139,6 +139,14 @@ public class Restaurante {
 		reservas.addObserver(libroReservaObserver);
 	}
 
+	public void registerMesaObserver(MesaObserver obs, int j) {
+		mesas.get(j).addMesaObserver(obs);
+	}
+
+	public void deleteMesaObserver(MesaObserver generarFactura, int numMesa) {
+		mesas.get(numMesa).removeMesaObserver(generarFactura);
+	}
+
 	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;

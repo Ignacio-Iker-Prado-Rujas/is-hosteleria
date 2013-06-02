@@ -145,6 +145,14 @@ public class Mesa implements MesaInfo {
 		comandas.get(comandaSeleccionada).addObserver(observer);
 	}
 
+	public void addMesaObserver(MesaObserver obs2) {
+		obs.add(obs2);
+	}
+
+	public void removeMesaObserver(MesaObserver generarFactura) {
+		obs.remove(generarFactura);
+	}
+
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
 	

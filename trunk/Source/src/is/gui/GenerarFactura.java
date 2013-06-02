@@ -49,8 +49,9 @@ public class GenerarFactura implements MesaObserver{
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						int j = mesas.getSelectedIndex();
+						addMesaObserver(j);
 						controlador.getMesa(j).generarFactura();
-						
+						removeMesaObserver(j);
 						
 					}
 					
@@ -62,6 +63,12 @@ public class GenerarFactura implements MesaObserver{
 		marco.setSize(200,200);
 		marco.setVisible(true);
 	
+	}
+	private void addMesaObserver(int j){
+		controlador.addMesaObserver(this, j);
+	}
+	private void removeMesaObserver(int j){
+		controlador.removeMesaObserver(this, j);
 	}
 
 	private JComboBox mesas;
