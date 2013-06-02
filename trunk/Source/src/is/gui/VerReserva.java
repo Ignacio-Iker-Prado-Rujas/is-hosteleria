@@ -7,6 +7,7 @@ import is.restaurante.ReservaInfo;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,12 +54,40 @@ public class VerReserva implements LibroReservaObserver{
 		this.tablaSemana.actualizarTabla(this.controlador.getReservas(1));
 		this.tablaMes.actualizarTabla(this.controlador.getReservas(2));
 		
+//		Anyade los botones para todas
+		JPanel panelTodas = new JPanel(new BorderLayout());
+		JPanel opcionesTodas = new JPanel(new GridLayout());
+		anyadirBotones(opcionesTodas);
+		panelTodas.add(scrollTodas, BorderLayout.CENTER);
+		panelTodas.add(opcionesTodas, BorderLayout.SOUTH);
+		
+//		Anyade los botones para hoy
+		JPanel panelHoy = new JPanel(new BorderLayout());
+		JPanel opcionesHoy = new JPanel(new GridLayout());
+		anyadirBotones(opcionesHoy);
+		panelHoy.add(scrollHoy, BorderLayout.CENTER);
+		panelHoy.add(opcionesHoy, BorderLayout.SOUTH);
+		
+//		Anyade los botones para semana
+		JPanel panelSemana = new JPanel(new BorderLayout());
+		JPanel opcionesSemana = new JPanel(new GridLayout());
+		anyadirBotones(opcionesSemana);
+		panelSemana.add(scrollSemana, BorderLayout.CENTER);
+		panelSemana.add(opcionesSemana, BorderLayout.SOUTH);
+		
+//		Anyade los botones para mes
+		JPanel panelMes = new JPanel(new BorderLayout());
+		JPanel opcionesMes = new JPanel(new GridLayout());
+		anyadirBotones(opcionesMes);
+		panelMes.add(scrollMes, BorderLayout.CENTER);
+		panelMes.add(opcionesMes, BorderLayout.SOUTH);
+		
 //		añade las tablas a las pestañas
-		tabbedPane.addTab("Todas", null, scrollTodas, "Muestra todas las reservas");
-		tabbedPane.addTab("Hoy", null, scrollHoy, "Muestra las reservas de hoy");
-		tabbedPane.addTab("Esta semana",null, scrollSemana,
+		tabbedPane.addTab("Todas", null, panelTodas, "Muestra todas las reservas");
+		tabbedPane.addTab("Hoy", null, panelHoy, "Muestra las reservas de hoy");
+		tabbedPane.addTab("Esta semana",null, panelSemana,
 		                  "Muestra las reservas de esta semana");
-		tabbedPane.addTab("Este mes", null, scrollMes,
+		tabbedPane.addTab("Este mes", null, panelMes,
 		                      "Muestra las reservas de este mes");
 		//panelTodas.add(tTodas);
 		/*for ( ReservaInfo r : controlador.getReservas(-1)){
@@ -90,8 +119,27 @@ public class VerReserva implements LibroReservaObserver{
 			JTextArea jt = new JTextArea(r.toString());			
 			panelMes.add(jt);
 		}*/
-		JPanel opciones = new JPanel(new GridLayout());
 		
+		JFrame ventana = new JFrame();
+		ventana.add(tabbedPane);
+		//ventana.add(opciones, BorderLayout.SOUTH);
+		ventana.setSize(500, 300);
+		ventana.setVisible(true);
+	}
+	
+//	borra la reserva seleccionada
+	private void borrarReserva(){
+		
+	}
+	
+	private void inicializaTabla(){
+		tablaTodas = new TableReservas();
+		tablaHoy = new TableReservas();
+		tablaSemana = new TableReservas();
+		tablaMes = new TableReservas();
+	}
+	
+	private void anyadirBotones(JPanel opciones){	
 		JButton anyadir = new JButton("add");
 		anyadir.addActionListener(new ActionListener(){				
 			@Override
@@ -118,25 +166,6 @@ public class VerReserva implements LibroReservaObserver{
 		opciones.add(anyadir);
 		opciones.add(editar);
 		opciones.add(borrar);
-
-		
-		JFrame ventana = new JFrame();
-		ventana.add(tabbedPane);
-		ventana.add(opciones, BorderLayout.SOUTH);
-		ventana.setSize(500, 300);
-		ventana.setVisible(true);
-	}
-	
-//	borra la reserva seleccionada
-	private void borrarReserva(){
-		
-	}
-	
-	private void inicializaTabla(){
-		tablaTodas = new TableReservas();
-		tablaHoy = new TableReservas();
-		tablaSemana = new TableReservas();
-		tablaMes = new TableReservas();
 	}
 	private GUIController controlador;
 	private JTextField nombreReserva;
