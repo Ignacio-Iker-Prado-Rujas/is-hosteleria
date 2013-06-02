@@ -74,9 +74,19 @@ public class LibroReservas {
 	 */
 
 	private void emitirCambios() {
-		for ()
+		for (LibroReservaObserver obs: observers){
+			obs.cambioOcurrido(listaReservasToArray());
+		}
 	}
 
+	private ReservaInfo[] listaReservasToArray(){
+		ReservaInfo[] reservaArray = new ReservaInfo[listaReservas.size()];
+        for (int i=0; i<listaReservas.size(); i++){
+                reservaArray[i] = new Reserva();
+                reservaArray[i] = listaReservas.get(i);
+        }
+        return reservaArray;
+	}
 	/**
 	 * Por que coño ahora esto es con integers? De donde sacas entonces la
 	 * reserva para poder mostrarla en verReserva??
