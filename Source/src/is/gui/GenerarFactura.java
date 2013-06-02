@@ -61,7 +61,7 @@ public class GenerarFactura implements MesaObserver {
 		});
 		JFrame marco = new JFrame();
 		marco.add(panel);
-		marco.setPreferredSize(new Dimension(200, 300));
+		marco.setSize(new Dimension(400, 150));
 		marco.setVisible(true);
 
 	}
