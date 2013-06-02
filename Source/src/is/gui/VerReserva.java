@@ -48,11 +48,13 @@ public class VerReserva implements LibroReservaObserver{
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 
+//		carga los datos en las tablas
 		this.tablaTodas.actualizarTabla(this.controlador.getReservas(-1));
 		this.tablaHoy.actualizarTabla(this.controlador.getReservas(0));
 		this.tablaSemana.actualizarTabla(this.controlador.getReservas(1));
 		this.tablaMes.actualizarTabla(this.controlador.getReservas(2));
 		
+//		añade las tablas a las pestañas
 		tabbedPane.addTab("Todas", null, scrollTodas, "Muestra todas las reservas");
 		tabbedPane.addTab("Hoy", null, scrollHoy, "Muestra las reservas de hoy");
 		tabbedPane.addTab("Esta semana",null, scrollSemana,
@@ -89,13 +91,44 @@ public class VerReserva implements LibroReservaObserver{
 			JTextArea jt = new JTextArea(r.toString());			
 			panelMes.add(jt);
 		}*/
+		JPanel opciones = new JPanel(new GridLayout());
 		
+		JButton anyadir = new JButton("add");
+		anyadir.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//anyadirNuevoPlato();					
+			}
+		});
+		JButton editar = new JButton("edit");
+		editar.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//editarPlato();					
+			}
+		});
+		JButton borrar = new JButton("remove");
+		borrar.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				borrarReserva();					
+			}
+		});
+		opciones.add(anyadir);
+		opciones.add(editar);
+		opciones.add(borrar);
 
 		
 		JFrame ventana = new JFrame();
 		ventana.add(tabbedPane);
+		ventana.add(opciones, BorderLayout.SOUTH);
 		ventana.setSize(500, 300);
 		ventana.setVisible(true);
+	}
+	
+//	borra la reserva seleccionada
+	private void borrarReserva(){
+		
 	}
 	
 	private void inicializaTabla(){
