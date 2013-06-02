@@ -105,6 +105,7 @@ public class VistaMesas extends JPanel{
 	
 	public void setComandasPanel(Integer numeroMesa){
 		TitledBorder title = new TitledBorder("Mesa " + numMesa);
+		comandas = restController.getMesa(numeroMesa).getListaComandas();
 		comandasPanel[numeroMesa].setBorder(title);
 		comandasPanel[numeroMesa].setLayout(new FlowLayout());
 		if (comandas != null) {
