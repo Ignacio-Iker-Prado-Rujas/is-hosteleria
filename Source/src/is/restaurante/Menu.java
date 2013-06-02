@@ -1,42 +1,25 @@
 package is.restaurante;
 
-import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
-import is.restaurante.consumicion.Plato;
-
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-
 /**
- * Clase que guarda el menu, clasificando las consumiciones segun sean bebidas, primeros, segundos
+ * Clase que guarda el menu, clasificando las consumiciones segun sean bebidas,
+ * primeros, segundos
+ * 
  * @author JaimeDan
- *
+ * 
  */
 public class Menu implements MenuInfo {
 
 	public Menu() {
-		
 		observers = new ArrayList<MenuObserver>();
-		
-		bebidas = new ArrayList<Consumicion>(2);
-		bebidas.add(new Bebida("Vodka-Limón", 1, true, null));
-		bebidas.add(new Bebida("Anticongelante", 5, true, null));
-		primeros = new ArrayList<Consumicion>(2);
-		primeros.add(new Plato("Lentejas", 5, true, null));
-		primeros.add(new Plato("Canelones", 5, true, null));
-		segundos = new ArrayList<Consumicion>(2);
-		segundos.add(new Plato("Filete de caballo", 5, true, null));
-		segundos.add(new Plato("Almondigas", 5, true, null));
-
-		postres = new ArrayList<Consumicion>(2);
-		postres.add(new Plato("Helado de gordaco", 5, true, null));
-		postres.add(new Plato("Manzana de Newton", 5, true, null));
-
-		// postres.get(index)
-
+		bebidas = new ArrayList<Consumicion>();
+		primeros = new ArrayList<Consumicion>();
+		segundos = new ArrayList<Consumicion>();
+		postres = new ArrayList<Consumicion>();
 	}
 
 	public Menu(ArrayList<Consumicion> listaPrimeros,
@@ -69,57 +52,69 @@ public class Menu implements MenuInfo {
 			return null;
 		}
 	}
-	
-	//Añade un plato al array del tipo
-	
-	public void deleteConsumicion(Consumicion consumicion){
-		for (MenuObserver obs: observers)
-			obs.deleteConsumption(consumicion.getNombre(), tipoPlato(consumicion.getNombre()).toString());
+
+	// Añade un plato al array del tipo
+
+	public void deleteConsumicion(Consumicion consumicion) {
+		for (MenuObserver obs : observers)
+			obs.deleteConsumption(consumicion.getNombre(),
+					tipoPlato(consumicion.getNombre()).toString());
 		dondeEsta(consumicion).remove(consumicion);
-		
-	}
-	
-	/* Devuelve el array list donde está el elemento buscado */
-	private ArrayList<Consumicion> dondeEsta(Consumicion consumicion){
-		for(Consumicion c: bebidas)
-			if(c.getNombre().equals(consumicion.getNombre())) return bebidas;
-		for(Consumicion c: primeros)
-			if(c.getNombre().equals(consumicion.getNombre())) return primeros;
-		for(Consumicion c: segundos)
-			if(c.getNombre().equals(consumicion.getNombre())) return segundos;
-		for(Consumicion c: postres)
-			if(c.getNombre().equals(consumicion.getNombre())) return postres;
-		return null;
-	}
-	
-	/* Devuelve el array list donde está el elemento buscado */
-	public TipoPlatos tipoPlato(String name){
-		for(Consumicion c: bebidas)
-			if(c.getNombre().equals(name)) return TipoPlatos.BEBIDA;
-		for(Consumicion c: primeros)
-			if(c.getNombre().equals(name)) return  TipoPlatos.PRIMERO;
-		for(Consumicion c: segundos)
-			if(c.getNombre().equals(name)) return  TipoPlatos.SEGUNDO;
-		for(Consumicion c: postres)
-			if(c.getNombre().equals(name)) return  TipoPlatos.POSTRE;
-		return null;
-	}
-	//Actualiza un plato al array del tipo
-	
-	public void actualizaConsumicion(Consumicion consAntigua,
-			Consumicion consNueva, TipoPlatos tPlato) {
-		/*for (MenuObserver obs: observers)
-			obs.editConsumption(consAntigua.getNombre(), consNueva.getNombre(),
-					tipoPlato(consAntigua.getNombre()).toString(), tPlato.toString());
-		
-		dondeEsta(consAntigua).remove(consAntigua);*/
-		deleteConsumicion(consAntigua);
-		addConsumicion(consNueva, tPlato);
-	
+
 	}
 
-	//Añade un plato al array del tipo
-	
+	/* Devuelve el array list donde está el elemento buscado */
+	private ArrayList<Consumicion> dondeEsta(Consumicion consumicion) {
+		for (Consumicion c : bebidas)
+			if (c.getNombre().equals(consumicion.getNombre()))
+				return bebidas;
+		for (Consumicion c : primeros)
+			if (c.getNombre().equals(consumicion.getNombre()))
+				return primeros;
+		for (Consumicion c : segundos)
+			if (c.getNombre().equals(consumicion.getNombre()))
+				return segundos;
+		for (Consumicion c : postres)
+			if (c.getNombre().equals(consumicion.getNombre()))
+				return postres;
+		return null;
+	}
+
+	/* Devuelve el array list donde está el elemento buscado */
+	public TipoPlatos tipoPlato(String name) {
+		for (Consumicion c : bebidas)
+			if (c.getNombre().equals(name))
+				return TipoPlatos.BEBIDA;
+		for (Consumicion c : primeros)
+			if (c.getNombre().equals(name))
+				return TipoPlatos.PRIMERO;
+		for (Consumicion c : segundos)
+			if (c.getNombre().equals(name))
+				return TipoPlatos.SEGUNDO;
+		for (Consumicion c : postres)
+			if (c.getNombre().equals(name))
+				return TipoPlatos.POSTRE;
+		return null;
+	}
+
+	// Actualiza un plato al array del tipo
+
+	public void actualizaConsumicion(Consumicion consAntigua,
+			Consumicion consNueva, TipoPlatos tPlato) {
+		/*
+		 * for (MenuObserver obs: observers)
+		 * obs.editConsumption(consAntigua.getNombre(), consNueva.getNombre(),
+		 * tipoPlato(consAntigua.getNombre()).toString(), tPlato.toString());
+		 * 
+		 * dondeEsta(consAntigua).remove(consAntigua);
+		 */
+		deleteConsumicion(consAntigua);
+		addConsumicion(consNueva, tPlato);
+
+	}
+
+	// Añade un plato al array del tipo
+
 	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato) {
 		if (dondeEsta(consumicion) == null) {
 			switch (tPlato) {
@@ -138,8 +133,8 @@ public class Menu implements MenuInfo {
 			default:
 				;
 			}
-			//TODO kike, esto no se si esta bien
-			for (MenuObserver obs: observers)
+			// TODO kike, esto no se si esta bien
+			for (MenuObserver obs : observers)
 				obs.addConsumption(consumicion.getNombre(), tPlato.toString());
 		}
 	}
@@ -204,30 +199,34 @@ public class Menu implements MenuInfo {
 			return false;
 		}
 	}
-	public Consumicion getConsumicion(String name){
-		for(Consumicion c: bebidas)
-			if(c.getNombre().equals(name)) return c;
-		for(Consumicion c: primeros)
-			if(c.getNombre().equals(name)) return c;
-		for(Consumicion c: segundos)
-			if(c.getNombre().equals(name)) return c;
-		for(Consumicion c: postres)
-			if(c.getNombre().equals(name)) return c;
+
+	public Consumicion getConsumicion(String name) {
+		for (Consumicion c : bebidas)
+			if (c.getNombre().equals(name))
+				return c;
+		for (Consumicion c : primeros)
+			if (c.getNombre().equals(name))
+				return c;
+		for (Consumicion c : segundos)
+			if (c.getNombre().equals(name))
+				return c;
+		for (Consumicion c : postres)
+			if (c.getNombre().equals(name))
+				return c;
 		return null;
 	}
-	
+
 	public void addObserver(MenuObserver verMenu) {
 		observers.add(verMenu);
 	}
-	
+
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
-	
+
 	private ArrayList<MenuObserver> observers;
-	
+
 	private ArrayList<Consumicion> bebidas;
 	private ArrayList<Consumicion> primeros;
 	private ArrayList<Consumicion> segundos;
 	private ArrayList<Consumicion> postres;
-	
 
 }
