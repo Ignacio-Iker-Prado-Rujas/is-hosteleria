@@ -2,6 +2,7 @@ package is.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -193,7 +194,7 @@ public class RealizarReserva extends JPanel{
 		
 		*/
 		frame = new JFrame("Reservas");
-
+		frame.setPreferredSize(new Dimension(400, 280));
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
