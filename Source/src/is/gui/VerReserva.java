@@ -31,6 +31,7 @@ public class VerReserva implements LibroReservaObserver{
 	@SuppressWarnings("serial")
 	public VerReserva(GUIController rest) {
 		this.controlador = rest;
+		this.controlador.addLibroReservaObserver(this);
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		

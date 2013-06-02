@@ -101,12 +101,15 @@ public class Restaurante {
 	public void addComandaObserver(ComandaObserver observer, int numeroMesa) {
 		mesas.get(numeroMesa).addComandaObserver(observer);
 	}
-	
+	public void registerLibroReservaObserver(LibroReservaObserver libroReservaObserver) {
+		reservas.addObserver(libroReservaObserver);
+	}
 	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;
 	private Menu menu;
 	private Tablon tablon;
+	
 	
 	
 	
