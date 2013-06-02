@@ -96,7 +96,9 @@ public class VerReserva implements LibroReservaObserver{
 		anyadir.addActionListener(new ActionListener(){				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//anyadirNuevoPlato();					
+				//anyadirNuevoPlato();	
+				//controlad
+				//table.getSelectedRow();
 			}
 		});
 		JButton editar = new JButton("edit");
