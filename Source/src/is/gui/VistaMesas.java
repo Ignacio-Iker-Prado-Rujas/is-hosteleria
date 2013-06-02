@@ -28,7 +28,10 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 	public VistaMesas(final GUIController controller) {
 		this.restController = controller;
+		
 		this.mesas = this.restController.requestMesas();
+		//for (int i=0; i<mesas.length; i++)
+		//	restController.addMesaObserver(this, i);
 		this.setLayout(new BorderLayout());
 		comandasPanel = new JPanel[mesas.length];
 		comandasContainer = new JPanel();
