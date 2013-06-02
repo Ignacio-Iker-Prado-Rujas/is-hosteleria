@@ -26,7 +26,10 @@ public class Main {
 		List<Reserva> reservas = loadReserva.loadReservas("Reservas.txt");
 		MenuLoader loadMenu = new MenuLoader();
 		Menu menu = loadMenu.loadMenu("Menu.txt");
-		Restaurante rest = new Restaurante(reservas, menu, mesas);
+		/*Restaurante rest = new Restaurante(reservas, menu, mesas);
+		GUIController controlador = new GUIController(rest);
+		*/
+		Restaurante rest = new Restaurante();
 		GUIController controlador = new GUIController(rest);
 		UserWindow window = new UserWindow(controlador);
 		window.setVisible(true);
