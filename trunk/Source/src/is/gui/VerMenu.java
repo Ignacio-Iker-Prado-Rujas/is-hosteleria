@@ -177,11 +177,6 @@ public class VerMenu extends JFrame implements MenuObserver{
 		for(JTextField jText: descriptions)
 			jText.setText(description);	
 	}
-	
-	/*	Borra de la vista el plato indicado	MenuObserver*/
-	public void borrarPlato(String nombre){
-		
-	}
 
 	public void devolverControlPrincipal(){
 		cardLayout.show(panelGeneral, "pestanyas");
@@ -191,17 +186,50 @@ public class VerMenu extends JFrame implements MenuObserver{
 	}
 	
 	/*	Metodos del observer*/
+	private JToggleButton buscarBoton(String name){
+		for(JToggleButton bot: botones){
+			if(bot.getText().equals(name)) return bot;
+		}
+		return null;
+	}
+	private void borrarBoton(String nameBoton, String nameTipo){
+		JToggleButton botonParaBorrar = buscarBoton(nameBoton);
+		if(botonParaBorrar!=null){
+			JPanel pan = buscarPanel(nameTipo);
+			botonParaBorrar.remove(pan);
+		}
+	}
+	private JPanel buscarPanel(String namePanel){
+		for(JPanel panel:  cadaPestanya){
+			if(panel.equals(namePanel))return panel;
+		}
+		return null;
+	}
+	private void anyadirBoton(String consId, String tipo){
+		JToggleButton boton = new JToggleButton(consId);
+		botones.add(boton);
+		JPanel platos = buscarPanel(tipo);
+		platos.add(boton);
+		boton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				consumicionPulsada();				
+			}
+			
+		});
+	}
+	
 	@Override
-	public void addConsumption(String consId) {
-		
+	public void addConsumption(String consId, String tipo) {
+		anyadirBoton(consId, tipo);
 	}
 	@Override
-	public void deleteConsumption(String consId) {
-		
+	public void deleteConsumption(String consId, String tipo) {
+		borrarBoton(consId, tipo);
 	}
 	@Override
-	public void editConsumption(String consId) {
-		
+	public void editConsumption(String consId, String tipoAnt, String tipoNuevo) {
+			deleteConsumption(consId, tipoAnt);
+			anyadirBoton(consId, tipoNuevo);
 	}
 
 	private ArrayList<JTextField> descriptions;
