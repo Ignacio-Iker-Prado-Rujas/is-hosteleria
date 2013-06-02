@@ -1,6 +1,6 @@
 format 76
 "restaurante" // ClasesJava::restaurante
-  revision 1
+  revision 2
   modified_by 5 "usuario"
   // class settings
   //class diagram settings
@@ -56,7 +56,7 @@ ${members}}
       explicit_switch_type ""
       
       comment "Clase que guarda el menu, clasificando las consumiciones segun sean bebidas, primeros, segundos o postres
-@author JaimeDan
+@author Kike
 "
       classrelation 144133 // <realization>
 	relation 143237 -_-|>

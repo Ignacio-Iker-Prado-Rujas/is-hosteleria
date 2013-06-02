@@ -30,7 +30,7 @@ end
 relationcanvas 128517 relation_ref 142085 // <aggregation>
   decenter_end 620
   from ref 128389 z 3011 to ref 128005
-  role_a_pos 158 311 3000 no_role_b
+  role_a_pos 166 310 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128773 relation_ref 146949 // <association>
