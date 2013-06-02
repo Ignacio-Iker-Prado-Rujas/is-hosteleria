@@ -1,0 +1,9 @@
+class Postre
+!!!166405.java!!!	getPrecio() : float
+		return this.precio;
+!!!166533.java!!!	getNombre() : String
+		return this.nombre;
+!!!166661.java!!!	getDescripcion() : String
+		return this.descripción;
+!!!166789.java!!!	isDisponible() : boolean
+		return this.disponible;

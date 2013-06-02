@@ -1,0 +1,29 @@
+class Restaurante
+!!!162949.java!!!	Restaurante()
+		this.mesas = new ArrayList<Mesa>(5);
+		for (int i=0; i<5; i++)
+			mesas.add(new Mesa(i));
+		this.reservas = new LibroReservas();
+		this.menu = new Menu();
+!!!163077.java!!!	añadirReserva(inout reserva : Reserva) : void
+		reservas.addReserva(reserva);
+!!!163205.java!!!	buscarReservas(in nombre : String) : ReservaInfo
+		return this.reservas.buscarReserva(nombre);
+!!!163333.java!!!	getMenu() : Menu
+		return menu;
+!!!163461.java!!!	getMenu(in n : int) : Consumicion
+		if (n == 0) return menu.getBebidas();
+		else if (n == 1) return menu.getPrimeros();
+		else if (n == 2) return menu.getSegundos();
+		else if (n == 3) return menu.getPostres();
+		else return null;
+		
+		
+!!!163589.java!!!	setMenu(inout menu : Menu) : void
+		this.menu = menu;
+!!!163717.java!!!	buscarMesa(in i : int) : Mesa
+		for (Mesa m: mesas) if (m.getNumeroMesa() == i) return m;
+		return null;
+!!!163845.java!!!	getMesas() : MesaInfo
+		// TODO Auto-generated method stub
+		return (MesaInfo[]) this.mesas.toArray();
