@@ -2,6 +2,7 @@ package is.gui;
 
 import is.restaurante.ComandaInfo;
 import is.restaurante.MesaInfo;
+import is.restaurante.MesaObserver;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -22,7 +23,7 @@ import javax.swing.border.TitledBorder;
  * @author JaimeDan
  * @author Villarin
  */
-public class VistaMesas extends JPanel{
+public class VistaMesas extends JPanel implements MesaObserver{
 
 	
 	public VistaMesas(final GUIController controller){
@@ -209,6 +210,11 @@ public class VistaMesas extends JPanel{
 		//comandasContainer.add(eliminarComanda);
 	}//
 	
+	@Override
+	public void cambioOcurrido(ComandaInfo[] comandas) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	private JPanel comandasContainer;
 	
@@ -218,4 +224,5 @@ public class VistaMesas extends JPanel{
 	private JPanel[] comandasPanel;
 	int comandaSelected = -1;
 	private int numMesa=-1;
+	
 }

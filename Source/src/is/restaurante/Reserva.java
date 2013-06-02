@@ -76,11 +76,35 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo {
 		name += "Numero de comensales: " + this.numeroDeComensales;
 		return name;
 	}
+	
+	@Override
+	public String fechaToString() {
+		return this.fecha.toString();
+	}
+
+	@Override
+	public String nombreToString() {
+		return "Nombre " + this.nombre;
+	}
+
+	@Override
+	public String mesasToString() {
+		String mesas = "Mesas: ";
+		for (Mesa m : this.mesas)
+			mesas += m.getNumeroMesa() + " ";
+		return mesas;
+	}
+
+	@Override
+	public String comensalesToString() {
+		return "Comensales: " + this.numeroDeComensales;
+	}
 
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private ArrayList<Mesa> mesas;
 	private Fecha fecha;
 	private String nombre;
 	private int numeroDeComensales;
+	
 
 }

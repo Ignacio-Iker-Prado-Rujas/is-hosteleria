@@ -1,5 +1,7 @@
 package is.restaurante;
 
 public interface LibroReservaObserver {
-	void cambioOcurrido();
+	
+	void cambioOcurrido(ReservaInfo[] reservas);
+	
 }
