@@ -1,6 +1,6 @@
 format 76
 "diagramadeccomunicacion"
-  revision 16
+  revision 18
   modified_by 5 "usuario"
 
 
@@ -8,7 +8,7 @@ format 76
   // class settings
   default_attribute_visibility private default_relation_visibility private default_operation_visibility public
   //class diagram settings
-  draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode natural drawing_language uml show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes show_stereotype_properties no
+  draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode natural drawing_language java show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes show_stereotype_properties no
   //use case diagram settings
   package_name_in_tab no show_context no auto_label_position yes draw_all_relations yes class_drawing_mode actor shadow yes show_stereotype_properties no
   //sequence diagram settings
@@ -30,7 +30,7 @@ format 76
   package_name_in_tab no show_context no show_opaque_action_definition no auto_label_position yes write_flow_label_horizontally no draw_all_relations yes shadow yes
   show_infonote yes drawing_language uml show_stereotype_properties no
   
-  class_color yellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white 
+  class_color mediumyellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white 
   font_size 8
   diagram_format A4
 
@@ -76,6 +76,7 @@ format 76
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
+
     end
 
     usecase 128130 "modificarMenu"
@@ -265,13 +266,109 @@ format 76
 	size A4
       end
     end
+
+    class 148229 "Camarero"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 152197 // <unidirectional association>
+	relation 147589 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 152197 // <unidirectional association>
+	  b parent class_ref 143109 // VerMenu
+      end
+
+      classrelation 152325 // <unidirectional association>
+	relation 147717 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 152325 // <unidirectional association>
+	  b parent class_ref 144133 // ModificarMenu
+      end
+
+      classrelation 153221 // <unidirectional association>
+	relation 148613 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 153221 // <unidirectional association>
+	  b parent class_ref 144517 // RealizarPedido
+      end
+
+      classrelation 153349 // <unidirectional association>
+	relation 148741 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 153349 // <unidirectional association>
+	  b parent class_ref 148997 // ModificarPedido
+      end
+    end
+
+    class 148613 "Maître"
+      visibility package stereotype "actor"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 152581 // <unidirectional association>
+	relation 147973 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 152581 // <unidirectional association>
+	  b parent class_ref 144773 // RealizarReserva
+      end
+
+      classrelation 152709 // <unidirectional association>
+	relation 148101 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 152709 // <unidirectional association>
+	  b parent class_ref 148741 // ModificarReserva
+      end
+
+      classrelation 152837 // <unidirectional association>
+	relation 148229 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 152837 // <unidirectional association>
+	  b parent class_ref 148869 // EliminarReserva
+      end
+
+      classrelation 154245 // <unidirectional association>
+	relation 149637 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 154245 // <unidirectional association>
+	  b parent class_ref 143237 // GenerarFactura
+      end
+    end
   end
 
-  package_ref 128002 // DiagramasClases
+  package_ref 128002 // DiagramasClasesAnalisis
 
   package_ref 128011 // DiagramasSecuencia
 
-  classview 141445 "Clases"
+  classview 141445 "ClasesDiagramasSecuencia"
     //class diagram settings
     draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
     //collaboration diagram settings
@@ -1083,7 +1180,11 @@ ${members}}
 	  b parent class_ref 128005 // Inventario
       end
     end
-
   end
 
+  package_ref 128133 // DiagramasClasesDiseño
+
+  package_ref 134661 // ClasesJava
+
+  package_ref 135045 // unknown
 end
