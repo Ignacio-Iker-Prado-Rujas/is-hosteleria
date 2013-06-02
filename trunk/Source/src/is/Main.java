@@ -23,7 +23,7 @@ public class Main {
 		MesaLoader loadMesas = new MesaLoader();
 		ArrayList<Mesa> mesas = loadMesas.loadMesas("Mesas.txt");
 		ReservaLoader loadReserva = new ReservaLoader();
-		is.List<Reserva> reservas = loadReserva.loadReservas("Reservas.txt");
+		List<Reserva> reservas = loadReserva.loadReservas("Reservas.txt");
 		MenuLoader loadMenu = new MenuLoader();
 		Menu menu = loadMenu.loadMenu("Menu.txt");
 		Restaurante rest = new Restaurante(reservas, menu, mesas);
