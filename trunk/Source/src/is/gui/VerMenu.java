@@ -3,6 +3,7 @@ package is.gui;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
@@ -185,6 +186,8 @@ public class VerMenu extends JFrame implements MenuObserver{
 
 	public void devolverControlPrincipal(){
 		cardLayout.show(panelGeneral, "pestanyas");
+		for(JPanel pan: ventanas)
+			pan.repaint();
 	}
 	private void notificar(String message){
 		JOptionPane.showMessageDialog(this, message);
