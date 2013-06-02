@@ -1,0 +1,20 @@
+class Plato
+!!!165381.java!!!	Plato()
+		
+!!!165509.java!!!	Plato(in nombre : String, in precio : float, inout disp : boolean, in descripción : String)
+		this.descripción = descripción;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.disponible = disp;
+!!!165637.java!!!	getDescripcion() : String
+		return this.descripción;
+!!!165765.java!!!	getPrecio() : float
+		return precio;
+!!!165893.java!!!	setPrecio(in precio : float) : void
+		this.precio = precio;
+!!!166021.java!!!	isDisponible() : boolean
+		return disponible;
+!!!166149.java!!!	setDisponible(inout disponible : boolean) : void
+		this.disponible = disponible;
+!!!166277.java!!!	getNombre() : String
+		return this.nombre;
