@@ -142,6 +142,7 @@ public class VerReserva implements LibroReservaObserver{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				new RealizarReserva(controlador);
 				//anyadirNuevoPlato();	
 				//controlad
 				//table.getSelectedRow();
