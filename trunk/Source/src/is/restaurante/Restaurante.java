@@ -73,7 +73,15 @@ public class Restaurante {
 		return infoMesas;//(MesaInfo[]) this.mesas.toArray();
 	}
 	
-
+	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva,TipoPlatos tPlato){
+		menu.actualizaConsumicion(consAntigua, consNueva, tPlato);
+	}
+	public void deleteConsumicion(Consumicion consumicion, TipoPlatos tPlato){
+		menu.deleteConsumicion(consumicion, tPlato);
+	}
+	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
+		menu.addConsumicion( consumicion, tPlato);
+	}
 	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;

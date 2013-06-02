@@ -63,10 +63,55 @@ public class Menu implements MenuInfo {
 	
 	//Añade un plato al array del tipo
 	
+	public void deleteConsumicion(Consumicion consumicion, TipoPlatos tPlato){
+		switch (tPlato) {
+		case BEBIDA:
+			 bebidas.remove(consumicion);//TODO notificar observers
+		case PRIMERO:
+			primeros.remove(consumicion);
+		case SEGUNDO:
+			segundos.remove(consumicion);
+		case POSTRE:
+			postres.remove(consumicion);
+		default:
+			;
+		}
+		
+	}
+	
+	//Actualiza un plato al array del tipo
+	
+	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva, TipoPlatos tPlato){
+		for(Consumicion c: bebidas)
+			if(c.getNombre().equals(consAntigua.getNombre())) bebidas.remove(consAntigua);//TODO notificar observer de borrado
+		for(Consumicion c: primeros)
+			if(c.getNombre().equals(consAntigua.getNombre())) primeros.remove(consAntigua);
+		for(Consumicion c: segundos)
+			if(c.getNombre().equals(consAntigua.getNombre())) segundos.remove(consAntigua);
+		for(Consumicion c: postres)
+			if(c.getNombre().equals(consAntigua.getNombre())) postres.remove(consAntigua);
+		
+		switch (tPlato) {
+		case BEBIDA:
+			bebidas.add(consNueva);	//TODO notificar observers de añadido
+		case PRIMERO:
+			primeros.add(consNueva);
+		case SEGUNDO:
+			segundos.add(consNueva);
+		case POSTRE:
+			postres.add(consNueva);
+		default:
+			;
+		}
+		
+	}
+	
+	//Añade un plato al array del tipo
+	
 	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
 		switch (tPlato) {
 		case BEBIDA:
-			bebidas.add(consumicion);
+			bebidas.add(consumicion);//TODO notificar observers
 		case PRIMERO:
 			primeros.add(consumicion);
 		case SEGUNDO:
