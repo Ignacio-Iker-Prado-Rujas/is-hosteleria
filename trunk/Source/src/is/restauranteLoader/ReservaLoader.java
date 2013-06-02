@@ -1,6 +1,7 @@
 package is.restauranteLoader;
 
 import is.Fecha;
+import is.List;
 import is.restaurante.Mesa;
 import is.restaurante.Reserva;
 
@@ -12,8 +13,8 @@ import java.io.StreamTokenizer;
 import java.util.ArrayList;
 
 public class ReservaLoader extends Loader {
-	public ArrayList<Reserva> loadReservas(String fileName) throws IOException {
-		ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+	public List<Reserva> loadReservas(String fileName) throws IOException {
+		List<Reserva> reservas = new List<Reserva>();
 		FileInputStream file;
 		try {
 			file = new FileInputStream(fileName);
