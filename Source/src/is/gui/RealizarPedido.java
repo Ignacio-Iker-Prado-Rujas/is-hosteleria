@@ -227,6 +227,11 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 	}
 	
+	@Override
+	public void setComandaNumber(int n) {
+		this.numeroComanda = n;
+	}
+	
 	public RealizarPedido(GUIController controller, ComandaInfo comandaEdit){
 		
 	}
@@ -289,6 +294,14 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private int numeroMesa;
 	
 	private TipoPlatos tPlato;
+
+	@Override
+	public void comandaError(String error) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 	
 	
 

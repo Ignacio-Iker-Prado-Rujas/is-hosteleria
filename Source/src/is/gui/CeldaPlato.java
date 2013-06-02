@@ -13,6 +13,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import is.restaurante.consumicion.Consumicion;
+import is.restaurante.ComandaObserver;
 import is.restaurante.TipoPlatos;
 /**
  * Celda que tiene un plato, y un JSpinner con el número de veces que ha sido elegido.
@@ -20,7 +21,7 @@ import is.restaurante.TipoPlatos;
  * @author JaimeDan
  */
 @SuppressWarnings("serial")
-public class CeldaPlato extends JPanel{
+public class CeldaPlato extends JPanel implements ComandaObserver{
 
 	public CeldaPlato(GUIController controller, final Consumicion plato, final int numMesa, final int numComanda, final TipoPlatos tPlato){
 		this.restControl = controller;
@@ -63,6 +64,16 @@ public class CeldaPlato extends JPanel{
 		
 	}
 	
+	@Override
+	public void comandaHaCambiado(String comanda) {
+		
+	}
+
+	@Override
+	public void setComandaNumber(int n) {
+		this.numComanda = n;
+	}
+	
 	public void incrementaVeces(){
 		//int numero = (int) this.flechitas.getValue();
 		//numero++;
@@ -82,4 +93,10 @@ public class CeldaPlato extends JPanel{
 	
 	private int numComanda;
 	private int numMesa;
+	@Override
+	public void comandaError(String error) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
