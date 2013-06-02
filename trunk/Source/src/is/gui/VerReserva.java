@@ -49,6 +49,9 @@ public class VerReserva implements LibroReservaObserver{
 		JTabbedPane tabbedPane = new JTabbedPane();
 
 		this.tablaTodas.actualizarTabla(this.controlador.getReservas(-1));
+		this.tablaHoy.actualizarTabla(this.controlador.getReservas(0));
+		this.tablaSemana.actualizarTabla(this.controlador.getReservas(1));
+		this.tablaMes.actualizarTabla(this.controlador.getReservas(2));
 		
 		tabbedPane.addTab("Todas", null, scrollTodas, "Muestra todas las reservas");
 		tabbedPane.addTab("Hoy", null, scrollHoy, "Muestra las reservas de hoy");
@@ -91,7 +94,7 @@ public class VerReserva implements LibroReservaObserver{
 		
 		JFrame ventana = new JFrame();
 		ventana.add(tabbedPane);
-		ventana.setSize(150, 150);
+		ventana.setSize(500, 300);
 		ventana.setVisible(true);
 	}
 	
