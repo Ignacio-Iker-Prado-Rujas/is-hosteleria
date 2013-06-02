@@ -163,6 +163,11 @@ public class GUIController {
 		
 	}
 
+	public void eliminaUltimaComanda(int numeroMesa) {
+		restaurante.deleteComanda(numeroMesa);
+		
+	}
+
 
 
 

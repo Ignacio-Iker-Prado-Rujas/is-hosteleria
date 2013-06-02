@@ -69,7 +69,7 @@ public class UserWindow extends JFrame  {
 		front.add(usuario);
 		front.add(contrasena);
 
-		front.add(new JButton(/*"Entrar"*/ "Jaime conectate al puto gchat") {
+		front.add(new JButton("Entrar") {
 			{
 				this.addActionListener(new ActionListener() {
 

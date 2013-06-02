@@ -93,7 +93,7 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 		return this.veces;
 	}
 	
-	  public JFormattedTextField getTextField(JSpinner spinner) {
+	public JFormattedTextField getTextField(JSpinner spinner) {
 	        JComponent editor = spinner.getEditor();
 	        if (editor instanceof JSpinner.DefaultEditor) {
 	            return ((JSpinner.DefaultEditor)editor).getTextField();
@@ -105,6 +105,10 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 	        }
 	    }
 	 
+	public void setValuesAtZero(){
+		this.veces = 0;
+	}
+	
 	private GUIController restControl;
 	private int veces;
 	private JButton botonPlato;

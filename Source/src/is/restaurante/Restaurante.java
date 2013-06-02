@@ -146,7 +146,10 @@ public class Restaurante {
 	public void deleteMesaObserver(MesaObserver generarFactura, int numMesa) {
 		mesas.get(numMesa).removeMesaObserver(generarFactura);
 	}
-
+	public void deleteComanda(int numeroMesa) {
+		mesas.get(numeroMesa).eliminaUltimaComanda();
+		
+	}
 	public void deleteReserva(String nombre, String fecha, String comensales,
 			String mesa) {
 		reservas.deleteReserva( nombre,  fecha,  comensales, mesa);
@@ -157,5 +160,6 @@ public class Restaurante {
 	private LibroReservas reservas;
 	private Menu menu;
 	private Tablon tablon;
+
 
 }
