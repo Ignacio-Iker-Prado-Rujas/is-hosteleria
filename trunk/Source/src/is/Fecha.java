@@ -182,9 +182,9 @@ public class Fecha {
 		String[] fecha = comando[0].split("/");
 		String[] time = comando[1].split(":");
 		
-		this.año = Integer.parseInt(fecha[0]);
+		this.año = Integer.parseInt(fecha[2]);
 		this.mes = Integer.parseInt(fecha[1]) - 1;
-		this.dia = Integer.parseInt(fecha[2]);
+		this.dia = Integer.parseInt(fecha[0]);
 		this.hora = Integer.parseInt(time[0]);
 		this.minutos = Integer.parseInt(time[1]);
 		return this;
