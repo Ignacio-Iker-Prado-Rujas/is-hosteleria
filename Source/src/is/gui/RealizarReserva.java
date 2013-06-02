@@ -1,6 +1,7 @@
 package is.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -254,7 +255,28 @@ public class RealizarReserva extends JPanel{
 	        	//checkMesas[i].setLocation(0, i*10);
 	        	//checkMesas[i].setBounds(0,0,i*10, 50);
 	        	checkPanel.add(checkMesas[i]);
-	        }/*
+	        }
+	        
+	        
+	        checkPanel.add(new JButton ("Seleccionar"){
+	        	{
+	        		this.addActionListener(new ActionListener(){
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							
+							SeleccionMesas.this.setVisible(false);
+						
+						
+						}
+	        			
+	        		});
+	        	}
+	        });
+	        
+	        
+	        /*
 	        check1=new JCheckBox("Inglés");
 	        check1.setBounds(10,10,150,30);
 	        check1.addChangeListener(this);
