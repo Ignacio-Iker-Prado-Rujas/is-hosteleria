@@ -21,7 +21,7 @@ public class TableReservas extends AbstractTableModel{
 			return columnNames[col];
 		}
 		
-		@Override
+		@Override	
 		public int getRowCount() {
 			return this.data.length;
 		}
