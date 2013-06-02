@@ -7,6 +7,10 @@ package is;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+
 import is.gui.GUIController;
 import is.gui.UserWindow;
 import is.restaurante.Menu;
@@ -28,6 +32,14 @@ public class Main {
 		Menu menu = loadMenu.loadMenu("Menu.txt");
 		Restaurante rest = new Restaurante(reservas, menu, mesas);
 		//Restaurante rest = new Restaurante();
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		JDialog.setDefaultLookAndFeelDecorated(true);
+		try {
+			UIManager
+					.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+			// .setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+		}
 		GUIController controlador = new GUIController(rest);
 		UserWindow window = new UserWindow(controlador);
 		window.setVisible(true);
