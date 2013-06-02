@@ -114,7 +114,7 @@ public class Mesa implements MesaInfo {
 	public void addConsumption(int numComanda, Consumicion plato,
 			TipoPlatos tPlato, int veces) {
 
-		comandas.get(numComanda).setConsumicionTimes(plato, veces);
+		comandas.get(numComanda).setConsumicionTimes(plato, veces, tPlato);
 	}
 
 
