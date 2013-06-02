@@ -178,13 +178,15 @@ public class Fecha {
 	}
 
 	public Fecha parse(String cad) {
-
 		String[] comando = cad.split(" ");
-		this.año = Integer.parseInt(comando[0]);
-		this.mes = Integer.parseInt(comando[1]);
-		this.dia = Integer.parseInt(comando[2]);
-		this.hora = Integer.parseInt(comando[3]);
-		this.minutos = Integer.parseInt(comando[4]);
+		String[] fecha = comando[0].split("/");
+		String[] time = comando[1].split(":");
+		
+		this.año = Integer.parseInt(fecha[0]);
+		this.mes = Integer.parseInt(fecha[1]);
+		this.dia = Integer.parseInt(fecha[2]);
+		this.hora = Integer.parseInt(time[0]);
+		this.minutos = Integer.parseInt(time[1]);
 		return this;
 
 	}
