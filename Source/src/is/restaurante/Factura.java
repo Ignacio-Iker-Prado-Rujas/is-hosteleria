@@ -1,6 +1,5 @@
 package is.restaurante;
 
-import java.util.List;
 import java.util.Vector;
 
 /**
