@@ -1,0 +1,114 @@
+class VerMenu
+!!!153989.java!!!	VerMenu(inout controller : GUIController)
+		inicializarVerMenu();
+		this.controlador = controller;
+		menu = controlador.getMenu();
+		inicializarVentana();
+		
+		TipoPlatos[] tipoPlatos = TipoPlatos.values();
+		for( TipoPlatos tPlato : tipoPlatos){
+			nuevoTipoPlato(tPlato);	
+		}
+		this.setVisible(true);
+!!!154117.java!!!	nuevoTipoPlato(inout tPlato : TipoPlatos) : void
+		JPanel panel = new JPanel(new BorderLayout());		
+		pestanyas.add(tPlato.toString(), panel);
+		cadaPestanya.add(panel);
+		
+		JPanel opciones = new JPanel(new GridLayout());
+		panel.add(opciones, BorderLayout.SOUTH);
+		JButton anyadir = new JButton("add");
+		anyadir.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				anyadirNuevoPlato();					
+			}
+		});
+		JButton editar = new JButton("edit");
+		editar.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				editarPlato();					
+			}
+		});
+		JButton borrar = new JButton("remove");
+		borrar.addActionListener(new ActionListener(){				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				borrarPlato();					
+			}
+		});
+		opciones.add(anyadir);
+		opciones.add(editar);
+		opciones.add(borrar);
+		
+		JPanel platos = new JPanel(new FlowLayout());
+		panel.add(platos);
+		ventanas.add(platos);
+		
+		ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
+		for( Consumicion cons: consum){
+			/*	Habría que guardar las descripciones tb para mostrarlas	*/
+			JToggleButton boton = new JToggleButton(cons.getNombre());
+			botones.add(boton);
+			platos.add(boton);
+			boton.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					consumicionPulsada();				
+				}
+				
+			});
+		}
+!!!154245.java!!!	inicializarVentana() : void
+		
+		panelGeneral = new JPanel();//Creamos el panel principal
+		cardLayout = new CardLayout();
+		panelGeneral.setLayout(cardLayout);
+		
+		pestanyas = new JTabbedPane();
+
+		panelGeneral.add(pestanyas, "pestanyas");
+		this.add(panelGeneral);
+!!!154373.java!!!	inicializarVerMenu() : void
+		this.setSize(400,500);
+		JFrame.setDefaultLookAndFeelDecorated(true);
+	    JDialog.setDefaultLookAndFeelDecorated(true);
+	    try {
+	    	UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+			//.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {}
+		this.botones = new ArrayList<JToggleButton>();
+		ventanas = new ArrayList<JPanel>();
+		cadaPestanya = new ArrayList<JPanel>();
+!!!154501.java!!!	borrarPlato() : void
+		if(this.consumicionSeleccionada!=null)
+			System.out.println(consumicionSeleccionada.getText() + " deberia ser borrada");
+		else System.out.println(" se debe seleccionar algo");
+!!!154629.java!!!	editarPlato() : void
+		if(this.consumicionSeleccionada!=null)
+			System.out.println(consumicionSeleccionada.getText() + " debe ser editado");
+		else System.out.println(" se debe seleccionar algo");
+!!!154757.java!!!	anyadirNuevoPlato() : void
+		ConsumicionSwing nuevaCons = new ConsumicionSwing(controlador,"", false);
+		panelGeneral.add(nuevaCons , "createConsumicion");
+		cardLayout.show(nuevaCons, "createConsumicion");
+!!!154885.java!!!	consumicionPulsada() : void
+		for( JToggleButton boton: botones)
+			if(!boton.isFocusOwner())	//
+				boton.setSelected(false);
+			else{
+				consumicionSeleccionada = boton;
+				mostrarDescripcion(boton.getText());
+			}
+!!!155013.java!!!	mostrarDescripcion(in description : String) : void
+		/*	Hay que añadir un textArea en el medio
+		 * para mostrar la descripcion.
+		 */
+		
+!!!155141.java!!!	borrarPlato(in nombre : String) : void
+		
+!!!155397.java!!!	anyadePlato(in name : String, inout tPlato : TipoPlatos) : void
+		/*Para esto hay que guardar atributos del constructor	*/
+		createConsumicion();
+!!!155525.java!!!	actualizarPlato() : void
+		
