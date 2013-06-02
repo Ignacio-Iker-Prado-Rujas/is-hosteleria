@@ -3,7 +3,9 @@ package is.gui;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,8 +17,11 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 
@@ -47,6 +52,7 @@ public class VerMenu extends JFrame{
 		
 		JPanel opciones = new JPanel(new GridLayout());
 		panel.add(opciones, BorderLayout.SOUTH);
+		
 		JButton anyadir = new JButton("add");
 		anyadir.addActionListener(new ActionListener(){				
 			@Override
@@ -91,7 +97,14 @@ public class VerMenu extends JFrame{
 				}
 				
 			});
-		}
+		}	
+		//añades los JtextFiel para las descripciones
+		JTextField descrip = new JTextField();
+		descrip.setMaximumSize(new Dimension(1,1));
+		JScrollPane js = new JScrollPane(descrip);
+		descrip.setEditable(false);
+		panel.add(js, BorderLayout.NORTH);
+		descriptions.add(descrip);
 	}
 	private void inicializarVentana(){
 		
@@ -116,12 +129,13 @@ public class VerMenu extends JFrame{
 		this.botones = new ArrayList<JToggleButton>();
 		ventanas = new ArrayList<JPanel>();
 		cadaPestanya = new ArrayList<JPanel>();
+		this.descriptions = new ArrayList<JTextField>();
 	}
 	/*	Elimina el plato seleccionado	*/
 	private void borrarPlato(){
 		if(this.consumicionSeleccionada!=null)
-			System.out.println(consumicionSeleccionada.getText() + " deberia ser borrada");
-		else System.out.println(" se debe seleccionar algo");
+			this.controlador.deleteConsumicion(menu.getConsumicion(consumicionSeleccionada.getText()));
+		else notificar("Se debe seleccionar el plato a borrar");
 	}
 	
 	/*	Edita el Plato que esté seleccionado	*/
@@ -131,7 +145,7 @@ public class VerMenu extends JFrame{
 			ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador, menu.getConsumicion(consumicionSeleccionada.getText()), true);
 			panelGeneral.add(nuevaCons , "editConsumicion");
 			cardLayout.show(panelGeneral, "editConsumicion");
-		}
+		}else notificar("Se debe seleccionar el plato a editar");
 	}
 	
 	/*	 Añade un nuevo plato al menu	*/
@@ -150,19 +164,17 @@ public class VerMenu extends JFrame{
 				boton.setSelected(false);
 			else{
 				consumicionSeleccionada = boton;
-				mostrarDescripcion(boton.getText());
+				mostrarDescripcion(menu.getConsumicion(boton.getText()).getDescripcion());
 			}
 	}
+	
 	/*	Muestra la descripción de la consumición dada */
 	private void mostrarDescripcion(String description){
-		pestanyas.getTitleAt(pestanyas.getSelectedIndex());
-		/*	Hay que añadir un textArea en el medio
-		 * para mostrar la descripcion.
-		 */
-		
+		for(JTextField jText: descriptions)
+			jText.setText(description);	
 	}
 	
-	/*	Borra de la vista el plato indicado	*/
+	/*	Borra de la vista el plato indicado	MenuObserver*/
 	public void borrarPlato(String nombre){
 		
 	}
@@ -170,8 +182,11 @@ public class VerMenu extends JFrame{
 	public void devolverControlPrincipal(){
 		cardLayout.show(panelGeneral, "pestanyas");
 	}
+	private void notificar(String message){
+		JOptionPane.showMessageDialog(this, message);
+	}
 
-	
+	private ArrayList<JTextField> descriptions;
 	private ArrayList<JPanel> cadaPestanya;
 	private JTabbedPane pestanyas;
 	private CardLayout cardLayout;

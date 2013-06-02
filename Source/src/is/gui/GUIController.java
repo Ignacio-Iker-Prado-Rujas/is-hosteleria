@@ -108,8 +108,8 @@ public class GUIController {
 	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva,TipoPlatos tPlato){
 		restaurante.actualizaConsumicion(consAntigua, consNueva, tPlato);
 	}
-	public void deleteConsumicion(Consumicion consumicion, TipoPlatos tPlato){
-		restaurante.deleteConsumicion(consumicion, tPlato);
+	public void deleteConsumicion(Consumicion consumicion){
+		restaurante.deleteConsumicion(consumicion);
 	}
 	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
 		restaurante.addConsumicion( consumicion, tPlato);
