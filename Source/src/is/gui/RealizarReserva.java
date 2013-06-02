@@ -141,7 +141,7 @@ public class RealizarReserva extends JPanel{
 							
 							controlador.communicateReserva(fecha, (int)hora.getSelectedItem(), 
 									(int)minutos.getSelectedItem(), nombre.getText(), 
-									(int)comensales.getValue());						
+									(int)comensales.getValue(), mesasSel);						
 							frame.setVisible(false);
 							
 						}//TODO else mostrar mensaje de error, donde sea, diciendo 
