@@ -129,8 +129,6 @@ public class GUIController {
 		restaurante.addComandaObserver(observer, numeroMesa);
 	}
 
-	
-	private Restaurante restaurante;
 
 	public void registerMenuObserver(MenuObserver verMenu) {
 		restaurante.registerMenuObserver(verMenu);
@@ -139,6 +137,9 @@ public class GUIController {
 	public void addLibroReservaObserver(LibroReservaObserver verReserva) {
 		restaurante.registerLibroReservaObserver(verReserva);
 	}
+	
+	private Restaurante restaurante;
+
 
 
 
