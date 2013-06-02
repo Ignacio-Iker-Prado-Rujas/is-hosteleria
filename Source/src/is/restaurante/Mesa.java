@@ -22,6 +22,8 @@ public class Mesa implements MesaInfo {
 	public Mesa(int num, int cap) {
 		numeroMesa = num;
 		capacidad = cap;
+		 this.obs = new ArrayList<MesaObserver>();
+         this.comandas = new Vector<Comanda>();
 	}
 
 	public void addPedido(Comanda comanda) {
