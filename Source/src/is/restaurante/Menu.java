@@ -12,6 +12,9 @@ import java.util.ArrayList;
 public class Menu implements MenuInfo {
 
 	public Menu() {
+		
+		observers = new ArrayList<MenuObserver>();
+		
 		bebidas = new ArrayList<Consumicion>(2);
 		bebidas.add(new Bebida("Vodka-Limón", 1, true, null));
 		bebidas.add(new Bebida("Anticongelante", 5, true, null));
