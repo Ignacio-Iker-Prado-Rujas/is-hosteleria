@@ -136,7 +136,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	}
 
 	public void setComandasPanel(Integer numeroMesa) {
-		TitledBorder title = new TitledBorder("Mesa " + (numeroMesa + 1));
+		//se deja con numeroMesa
+		TitledBorder title = new TitledBorder("Mesa " + (numeroMesa));
 		comandas = restController.getMesa(numeroMesa).getListaComandas();
 		comandasPanel[numeroMesa].setBorder(title);
 		comandasPanel[numeroMesa].setLayout(new BorderLayout());
@@ -239,8 +240,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	public void cambioOcurrido(final ComandaInfo[] comandas, int numeroMesas) {
 		this.comandas = comandas;
 		comandasPanel[numeroMesas].removeAll();
-
-		TitledBorder title = new TitledBorder("Mesa " + (numeroMesas + 1));
+		//se deja con numerMesas porque las mesas van desde 0 hasta n-1 en otros sitios
+		TitledBorder title = new TitledBorder("Mesa " + (numeroMesas ));
 
 		comandasPanel[numeroMesas].setBorder(title);
 		comandasPanel[numeroMesas].setLayout(new BorderLayout());
