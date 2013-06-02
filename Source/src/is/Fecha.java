@@ -175,7 +175,7 @@ public class Fecha {
 	
 
 	public String toString(){
-		return this.dia + "/" + this.mes + "/" + this.año + " "
+		return this.dia + "/" + (this.mes+1) + "/" + this.año + " "
 				+ (this.hora < 10 ? "0" + this.hora : this.hora) + ":"
 				+ (this.minutos < 10 ? "0" + this.minutos : this.minutos);
 	}
