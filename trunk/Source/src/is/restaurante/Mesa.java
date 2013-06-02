@@ -46,14 +46,12 @@ public class Mesa implements MesaInfo {
 		capacidad = c;
 	}
 
-	public String generarFactura() {
-		String factura = "";
-		// TODO tenemos que usar la clase Factura, con su metodo estatico;
-		/*
-		 * for (Comanda c : comandas){ factura += c.toString() + LINE_SEPARATOR;
-		 * } //return comandas.toString(); return factura;
-		 */
-		return "";
+	public void generarFactura() {
+
+		String factura = Factura.generarFactura(comandas);
+		for (MesaObserver m :obs) 
+			m.facturaGenerada(factura);
+		comandas.removeAllElements();
 	}
 
 	@Override
