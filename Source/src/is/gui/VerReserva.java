@@ -58,36 +58,36 @@ public class VerReserva implements LibroReservaObserver{
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		
-		JPanel panel1 = new JPanel();
-		tabbedPane.addTab("Todas", null, panel1,
-		                  "Muestra todas las reservas");
+		JPanel panelTodas = new JPanel();
+		tabbedPane.addTab("Todas", null, panelTodas, "Muestra todas las reservas");
 		
 		for ( ReservaInfo r : controlador.getReservas(-1)){
 			JTextArea jt = new JTextArea(r.toString());			
-			panel1.add(jt);
+			panelTodas.add(jt);
 		}
-		JPanel panel2 = new JPanel();
-		tabbedPane.addTab("Hoy", null, panel2,
-		                  "Muestra las reservas de hoy");
+		
+		JPanel panelHoy = new JPanel();
+		tabbedPane.addTab("Hoy", null, panelHoy, "Muestra las reservas de hoy");
 		for ( ReservaInfo r : controlador.getReservas(0)){
 			JTextArea jt = new JTextArea(r.toString());			
-			panel1.add(jt);
+			panelHoy.add(jt);
 		}
-		JPanel panel3 = new JPanel();
-		tabbedPane.addTab("Esta semana", null, panel3,
+		
+		JPanel panelSemana = new JPanel();
+		tabbedPane.addTab("Esta semana",null, panelSemana,
 		                  "Muestra las reservas de esta semana");
 		for ( ReservaInfo r : controlador.getReservas(1)){
 			JTextArea jt = new JTextArea(r.toString());			
-			panel1.add(jt);
+			panelSemana.add(jt);
 		}
 		
-		JPanel panel4 = new JPanel();
-		panel4.setPreferredSize(new Dimension(410, 50));
-		tabbedPane.addTab("Este mes", null, panel4,
+		JPanel panelMes = new JPanel();
+		panelMes.setPreferredSize(new Dimension(410, 50));
+		tabbedPane.addTab("Este mes", null, panelMes,
 		                      "Muestra las reservas de este mes");
 		for ( ReservaInfo r : controlador.getReservas(2)){
 			JTextArea jt = new JTextArea(r.toString());			
-			panel1.add(jt);
+			panelMes.add(jt);
 		}
 		JFrame marco = new JFrame();
 		
