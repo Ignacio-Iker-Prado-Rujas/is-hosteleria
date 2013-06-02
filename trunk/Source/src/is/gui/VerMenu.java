@@ -26,15 +26,19 @@ import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 
 import is.restaurante.Menu;
+import is.restaurante.MenuObserver;
 import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Consumicion;
 
 @SuppressWarnings("serial")
 // MenuObserver
-public class VerMenu extends JFrame{
+public class VerMenu extends JFrame implements MenuObserver{
 	public VerMenu(GUIController controller){
 		inicializarVerMenu();
 		this.controlador = controller;
+		
+		this.controlador.registerMenuObserver(this);
+		
 		menu = controlador.getMenu();
 		inicializarVentana();
 		
@@ -185,6 +189,20 @@ public class VerMenu extends JFrame{
 	private void notificar(String message){
 		JOptionPane.showMessageDialog(this, message);
 	}
+	
+	/*	Metodos del observer*/
+	@Override
+	public void addConsumption(String consId) {
+		
+	}
+	@Override
+	public void deleteConsumption(String consId) {
+		
+	}
+	@Override
+	public void editConsumption(String consId) {
+		
+	}
 
 	private ArrayList<JTextField> descriptions;
 	private ArrayList<JPanel> cadaPestanya;
@@ -196,4 +214,5 @@ public class VerMenu extends JFrame{
 	private ArrayList<JToggleButton> botones;
 	private GUIController controlador;
 	private Menu menu;
+	
 }

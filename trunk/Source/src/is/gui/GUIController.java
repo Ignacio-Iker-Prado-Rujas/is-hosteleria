@@ -7,6 +7,7 @@ import java.util.List;
 import is.Fecha;
 import is.restaurante.ComandaInfo;
 import is.restaurante.Menu;
+import is.restaurante.MenuObserver;
 import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
 import is.restaurante.Reserva;
@@ -119,6 +120,10 @@ public class GUIController {
 	}
 	
 	private Restaurante restaurante;
+
+	public void registerMenuObserver(MenuObserver verMenu) {
+		restaurante.registerMenuObserver(verMenu);
+	}
 
 
 }
