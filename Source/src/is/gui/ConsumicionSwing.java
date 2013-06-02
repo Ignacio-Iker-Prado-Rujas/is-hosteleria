@@ -5,6 +5,8 @@ import is.restaurante.Comanda;
 import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
+import is.restaurante.consumicion.Plato;
+import is.restaurante.consumicion.Postre;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -91,7 +93,7 @@ public class ConsumicionSwing extends JPanel{
 		for(TipoPlatos t: arrayTipos){
 			vectorTipos.add(t);
 		}
-		tipoPlato = new JComboBox(vectorTipos);
+		tipoPlato = new JComboBox<TipoPlatos>(vectorTipos);
 		
 		tipoPlato.setMaximumSize(new Dimension(1, 1));	
 		this.campos.add(tipoPlato);
@@ -159,13 +161,13 @@ public class ConsumicionSwing extends JPanel{
 		TipoPlatos tipo = (TipoPlatos) tipoPlato.getSelectedItem();
 		switch (tipo) {
 		case BEBIDA:
-			return new Bebida(nombrePlato.getText(), Float.parseFloat(precioField.getText()),  descripcion.getText() );
+			return new Bebida(nombrePlato.getText(), Float.parseFloat(precioField.getText()),disponible.isSelected(),  descripcion.getText());
 		case PRIMERO:
-			return primeros;
+			return new Plato(nombrePlato.getText(), Float.parseFloat(precioField.getText()),disponible.isSelected(),  descripcion.getText());
 		case SEGUNDO:
-			return segundos;
+			return new Plato(nombrePlato.getText(), Float.parseFloat(precioField.getText()),disponible.isSelected(),  descripcion.getText());
 		case POSTRE:
-			return postres;
+			return new Postre(nombrePlato.getText(), Float.parseFloat(precioField.getText()),disponible.isSelected(),  descripcion.getText());
 		default:
 			return consumicionInicial;
 		}
@@ -175,9 +177,9 @@ public class ConsumicionSwing extends JPanel{
 		 * le pasa el antiguo y el nuevo
 		 */
 		if(edit)
-			restControl.modificarConsumicion(consumicionInicial, nuevaConsumicion());
+			restControl.actualizaConsumicion(consumicionInicial, nuevaConsumicion(), (TipoPlatos) tipoPlato.getSelectedItem());
 		else
-			restControl.crearConsumicion();
+			restControl.addConsumicion(nuevaConsumicion(), (TipoPlatos) tipoPlato.getSelectedItem());
 	}
 	private void notificar(String message){
 		//TODO
@@ -201,7 +203,7 @@ public class ConsumicionSwing extends JPanel{
 	private GUIController restControl;
 	private JTextField nombrePlato;
 	private JTextArea descripcion;
-	private JComboBox tipoPlato;
+	private JComboBox<TipoPlatos> tipoPlato;
 	private VerMenu ventanaGeneral;
 	private boolean edit;
 	private Consumicion consumicionInicial;
