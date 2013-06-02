@@ -22,39 +22,15 @@ import javax.swing.JTextField;
 
 
 /**
- *TODO en esta clase se muestran tres pestañas con las reservas de hoy, dentro de una semana y siempre
- * TODO koh, creo que esta clase debería mostrar las reservas de hoy, de la semana y de siempre, mira las pestañas que hizo kike en  ver menu
+ *Muestra cuatro pestañas con las reservas de hoy, dentro de una semana, dentro de un mes y todas las reservas.
  * @author JaimeDan
- *
  */
+
 public class VerReserva implements LibroReservaObserver{
 
 	@SuppressWarnings("serial")
 	public VerReserva(GUIController rest) {
 		this.controlador = rest;
-		/*JPanel panel = new JPanel();
-		JLabel nombre = new JLabel("Introduzca su nombre");
-		nombreReserva = new JTextField();
-		panel.setLayout(new GridLayout (3,1));
-		panel.add(nombre);
-		panel.add(nombreReserva);
-
-		
-		panel.add(new JButton("Buscar"){
-			{
-				this.addActionListener(new ActionListener(){
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						List<Integer> listaReservas = controlador.reservasDeUnCliente(nombreReserva.getText());
-						for (Integer r : listaReservas) r.crearPanel(); 
-						
-						// TODO AYUDA!! haciendo eso te cargas el mvc pero si no lo hacer tienes que crear mil getters y setters						
-					}
-					
-				});
-			}
-		}); */
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		

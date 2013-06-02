@@ -1,5 +1,11 @@
 package is.restaurante.consumicion;
 
+/**
+ * Gestiona un plato, un tipo de consumición
+ * @author JaimeDan
+ * @author Kike
+ */
+
 public class Plato implements Consumicion{
 	
 	public Plato(){

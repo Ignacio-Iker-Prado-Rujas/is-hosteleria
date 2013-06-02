@@ -1,4 +1,6 @@
-package is.restaurante;
+package pruebas;
+
+import is.restaurante.Comanda;
 
 public class ListaComandas {
 	

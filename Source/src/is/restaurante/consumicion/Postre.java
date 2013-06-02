@@ -1,5 +1,10 @@
 package is.restaurante.consumicion;
 
+
+/**
+ * Gestiona una postre, un tipo de consumición
+ * @author Jesús
+ */
 public class Postre implements Consumicion {
 
 	public Postre(String name, float price, boolean disp, String desc) {

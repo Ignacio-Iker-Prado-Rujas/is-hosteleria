@@ -6,7 +6,13 @@ import is.restaurante.consumicion.Consumicion;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Clase principal del proyecto, contiene la lista de mesas, el menú y el libro de reservas.
+ * Permite añadir y buscar reservas en el libro de reservas, así como gestionar consumiciones.
+ * @author Jesús
+ * @author JaimeDan
+ * @author Kike
+ */
 //TODO añadir resreva, quitar reserva, edit reserva, añadir mesa quitar mesa editar mesa
 //TODO añadir comanda, editar comanda, (Borrar comanda?)
 public class Restaurante {

@@ -4,6 +4,11 @@ import is.Cliente;
 import is.Fecha;
 import java.util.ArrayList;
 import java.util.Date;
+/**
+ * Contiene la información relativa a la reserva, que se rellena en la clase RealizarReserva, esto es: Fecha, nombre, número de comensales y la lista de las mesas reservadas.
+ * Permite devolver un string con toda esta información mediante el método toString().
+ * @author Jesús
+ */
 
 public class Reserva implements Comparable<Reserva>, ReservaInfo{
 	public Reserva(){

@@ -1,5 +1,9 @@
 package is.restaurante;
 
+/**
+ * Enumerado con los diferentes tipos de plato
+ * @author Kike
+ */
 public enum TipoPlatos {
 		PRIMERO, SEGUNDO, POSTRE, BEBIDA; 
 		
