@@ -1,9 +1,6 @@
 package is.restauranteLoader;
 
-import is.restaurante.Menu;
 import is.restaurante.Mesa;
-import is.restaurante.consumicion.Consumicion;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,8 +18,12 @@ public class MesaLoader extends Loader {
 			tokenizer.wordChars('\u0021', '\u007E');
 			tokenizer.quoteChar('"');
 			forceString("BeginMesas");
+			int numMesa = 1;
 			while (!peek().equals("EndMesas")) {
-				forceInt
+				forceInt(numMesa);
+				int capacidad = forceInt();
+				Mesa mesa = new Mesa(numMesa, capacidad);
+				mesas.add(mesa);
 			}
 			return mesas;
 		} catch (FileNotFoundException e) {
