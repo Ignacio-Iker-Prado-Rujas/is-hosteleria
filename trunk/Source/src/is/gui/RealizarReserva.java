@@ -116,14 +116,13 @@ public class RealizarReserva extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (datosValidos()){
-							datePicker.setFormats(new SimpleDateFormat("yyyy MM dd hh mm"));
+							datePicker.setFormats(new SimpleDateFormat("yyyy MM dd hh mm EEE"));
 							Date reservaDate = datePicker.getDate();
 							/*int year = reservaDate.getYear();
 							int month = reservaDate.getMonth();
 							int day = reservaDate.getDay();
 							*/
-							String fecha = datePicker.toString();
-							datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
+							String fecha = datePicker.getDate().toString();
 							
 							
 							controlador.communicateReserva(fecha, (int)hora.getSelectedItem(), 
@@ -143,7 +142,8 @@ public class RealizarReserva extends JPanel{
 							    "Error",
 							    JOptionPane.WARNING_MESSAGE);
 					}
-					
+						datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
+						
 					}
 					
 

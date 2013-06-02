@@ -142,32 +142,42 @@ public class Fecha {
 		
 	}
 
+	public int parseMonth(String cad){
+		if (cad.equalsIgnoreCase("Jan")) return 0;
+		else if (cad.equalsIgnoreCase("Feb")) return 1;
+		else if (cad.equalsIgnoreCase("Mar")) return 2;
+		else if (cad.equalsIgnoreCase("Apr")) return 3;
+		else if (cad.equalsIgnoreCase("May")) return 4;
+		else if (cad.equalsIgnoreCase("Jun")) return 5;
+		else if (cad.equalsIgnoreCase("Jul")) return 6;
+		else if (cad.equalsIgnoreCase("Aug")) return 7;
+		else if (cad.equalsIgnoreCase("Sep")) return 8;
+		else if (cad.equalsIgnoreCase("Oct")) return 9;
+		else if (cad.equalsIgnoreCase("Nov")) return 10;
+		else if (cad.equalsIgnoreCase("Dec")) return 11;
+		else return 0;
+	}
 	public Fecha parse(String cad, int horas, int minutos) {
 		String[] comando = cad.split(" ");
 		for (int i=0; i< comando.length; i++){
 			System.out.println(comando[i] + " ");
 		}
-		this.año = Integer.parseInt(comando[0], 10);
-		if (comando[1].charAt(0) == '0'){
-			Character c = comando[1].charAt(1);
-			this.mes = Integer.parseInt(c.toString(), 10);
-		}
-		else 
-			this.mes = Integer.parseInt(comando[1]);
-		if (comando[2].charAt(0) == '0'){
-			Character c = comando[1].charAt(1);
-			this.mes = Integer.parseInt(c.toString(), 10);
-		}
-		else 
-			this.mes = Integer.parseInt(comando[2], 10);
+		this.año = Integer.parseInt(comando[5], 10);
+		
+		this.mes = parseMonth(comando[1]);
+		 
+		this.dia = Integer.parseInt(comando[2], 10);
 		this.hora = horas;
 		this.minutos = minutos;
 		return this;
 	}
 	
+	
 
 	public String toString(){
-		return this.dia + "/" + this.mes + "/" + this.dia + " " + (this.hora < 10 ? "0" + this.hora:this.hora) + ":" + this.minutos;
+		return this.dia + "/" + this.mes + "/" + this.año + " "
+				+ (this.hora < 10 ? "0" + this.hora : this.hora) + ":"
+				+ (this.minutos < 10 ? "0" + this.minutos : this.minutos);
 	}
 
 	private int año;
