@@ -18,7 +18,7 @@ public class MesaLoader extends Loader {
 			tokenizer.wordChars('\u0021', '\u007E');
 			tokenizer.quoteChar('"');
 			forceString("BeginMesas");
-			int numMesa = 1;
+			int numMesa = 0;
 			while (!peek().equals("EndMesas")) {
 				forceInt(numMesa);
 				int capacidad = forceInt();
