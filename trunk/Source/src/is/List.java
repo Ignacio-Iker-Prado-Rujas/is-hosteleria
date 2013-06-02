@@ -99,6 +99,19 @@ public class List<Tipo extends Comparable<Tipo>> {
 		}
 		return false;
 	}
+	
+	/**
+	 * Borra un objeto de la lista de indice n
+	 */
+	public boolean erase (int n){
+		if (n >= 0 && n< size){
+			list[n] = null;
+			for (int i=n; i< size; i++)
+				list[i] = list[i+1];
+			size--;
+			return true;
+		}else return false;
+	}
 
 	/**
 	 * Dobla el tamaño de la lista para que quepan mas objetos.
