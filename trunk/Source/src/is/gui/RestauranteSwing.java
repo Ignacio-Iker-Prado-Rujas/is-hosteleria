@@ -10,31 +10,29 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 @SuppressWarnings("serial")
 /**
  * Gestiona las diferentes opciones de la aplicación, lanzando sus ventanas correspondientes
  * @author Jesús
  */
+public class RestauranteSwing extends JPanel {
 
-public class RestauranteSwing extends JPanel{
-
-	
-	public RestauranteSwing(){	
+	public RestauranteSwing() {
 		super();
 		initializeGUI();
 	}
-	public RestauranteSwing(GUIController controlador){
+
+	public RestauranteSwing(GUIController controlador) {
 		super();
 		this.rest = controlador;
 		initializeGUI();
 	}
-	
-	public void initializeGUI(){
-	this.setLayout(new GridLayout(3,3, 3, 15));	
-	botones = new JButton[9];
-		
-		botones[0] = new JButton("Realizar reserva"){
+
+	public void initializeGUI() {
+		this.setLayout(new GridLayout(3, 3, 3, 15));
+		botones = new JButton[9];
+
+		botones[0] = new JButton("Realizar reserva") {
 			{
 				this.addActionListener(new ActionListener() {
 
@@ -42,25 +40,24 @@ public class RestauranteSwing extends JPanel{
 					public void actionPerformed(ActionEvent e) {
 						new RealizarReserva(rest);
 					}
-					
 				});
 			}
 		};
 
-		botones[1] = new JButton("Generar/modificar comanda"){
+		botones[1] = new JButton("Generar/modificar comanda") {
 			{
-				this.addActionListener(new ActionListener(){
+				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//new RealizarPedido(rest);
+						// new RealizarPedido(rest);
 						new VistaMesas(rest);
 					}
 				});
 			}
 		};
-		
-		botones[2] = new JButton	("Ver/anular reserva") {
+
+		botones[2] = new JButton("Ver/anular reserva") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -75,8 +72,8 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		
-		botones[3] = new JButton	("Anular pedido") {
+
+		botones[3] = new JButton("Anular pedido") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -91,15 +88,16 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		
-		botones[4] = new JButton	("Distribución mesas") {
+
+		botones[4] = new JButton("Distribución mesas") {
 			{
 
 				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						ImageIcon mesas = createImageIcon("images/mesas.png", "mesas");
+						ImageIcon mesas = createImageIcon("images/mesas.png",
+								"mesas");
 						JLabel fotoMesas = new JLabel(mesas);
 						JFrame marco = new JFrame();
 						marco.setVisible(true);
@@ -113,15 +111,15 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		
-		botones[5] = new JButton	("Generar factura") {
+
+		botones[5] = new JButton("Generar factura") {
 			{
 
 				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-							new GenerarFactura(rest);
+						new GenerarFactura(rest);
 
 					}
 
@@ -130,8 +128,8 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		
-		botones[6] = new JButton	("Cantidad existencias") {
+
+		botones[6] = new JButton("Cantidad existencias") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -147,8 +145,8 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		
-		botones[7] = new JButton	("Ver/modificar menú") {
+
+		botones[7] = new JButton("Ver/modificar menú") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -164,8 +162,8 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		
-		botones[8] = new JButton	("Notificar incidencias") {
+
+		botones[8] = new JButton("Notificar incidencias") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -181,12 +179,13 @@ public class RestauranteSwing extends JPanel{
 			}
 
 		};
-		for(JButton b : botones) this.add(b);
-	//	this.add(new JButton("Ver/modificar menú"));
-	//	this.add(new JButton("Notificar incidencias"));
-		
-		
+		for (JButton b : botones)
+			this.add(b);
+		// this.add(new JButton("Ver/modificar menú"));
+		// this.add(new JButton("Notificar incidencias"));
+
 	}
+
 	protected ImageIcon createImageIcon(String path, String description) {
 		java.net.URL imgURL = getClass().getResource(path);
 		if (imgURL != null) {
@@ -196,6 +195,7 @@ public class RestauranteSwing extends JPanel{
 			return null;
 		}
 	}
+
 	private JButton[] botones;
-	private GUIController rest;	
+	private GUIController rest;
 }

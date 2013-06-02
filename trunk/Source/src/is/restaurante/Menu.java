@@ -44,6 +44,7 @@ public class Menu implements MenuInfo {
 			ArrayList<Consumicion> listaSegundos,
 			ArrayList<Consumicion> listaBebidas,
 			ArrayList<Consumicion> listaPostres) {
+		observers = new ArrayList<MenuObserver>();
 		primeros = listaPrimeros;
 		segundos = listaSegundos;
 		bebidas = listaBebidas;
