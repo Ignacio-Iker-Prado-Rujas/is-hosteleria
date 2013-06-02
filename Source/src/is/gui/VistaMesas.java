@@ -117,6 +117,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					 * programa Mirar los .java realizar pedido y
 					 * cardLayoutExample para ver como funciona el card layout
 					 */
+					
 					comandasLayout.show(
 					/* comandasPanel[j] */comandasContainer, j.toString());
 
@@ -168,7 +169,6 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			/* Creamos los botones con las comandas */
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
-				// no me acuerdo porque puse i+1
 				JButton comandaMesa = new JButton("Comanda " + i);
 				comandaMesa.addActionListener(new ActionListener() {
 					/*
@@ -178,8 +178,6 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						comandaSelected = j;
-						// restController.avisaComanda(numMesa,
-						// comandaSelected);
 					}
 
 				});
@@ -256,89 +254,6 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		this.comandas = comandas;
 		comandasPanel[numeroMesas].removeAll();
 		setComandasPanel(numeroMesas, false);
-		// se deja con numerMesas porque las mesas van desde 0 hasta n-1 en
-		// otros sitios
-		/**
-		 * TitledBorder title = new TitledBorder("Mesa " + (numeroMesas ));
-		 * 
-		 * comandasPanel[numeroMesas].setBorder(title);
-		 * comandasPanel[numeroMesas].setLayout(new BorderLayout()); JPanel
-		 * comanditasPanel = new JPanel(); /* Se crea un JPanel con Flow layout
-		 * para añadir como botones las comandas de las mesas igual en vez de
-		 * botones se podrian usar JRadioButtons
-		 */
-		/**
-		 * comanditasPanel.setLayout(new FlowLayout()); /* Si la mesa tiene
-		 * comandas, es decir, comandas!= null
-		 */
-		/**
-		 * if (comandas != null) { /* Creamos los botones con las comandas
-		 */
-		/**
-		 * for (int i = 0; i < comandas.length; i++) { final int j = i; // no me
-		 * acuerdo porque puse i+1 JButton comandaMesa = new JButton("Comanda "
-		 * + i); comandaMesa.addActionListener(new ActionListener() { /* Al
-		 * seleccionar una comanda guardaremos en un atributo qué comanda hemos
-		 * elegido
-		 */
-		/**
-		 * @Override public void actionPerformed(ActionEvent e) {
-		 *           comandaSelected = j; //
-		 *           restController.avisaComanda(numMesa, // comandaSelected); }
-		 * 
-		 *           }); /* Añadimos el boton al panel con las comandas
-		 */
-		/**
-		 * comanditasPanel.add(comandaMesa); } /* Despues de haber creado el
-		 * panel con las comandas lo añadimos al centro de
-		 * comandasPanel[numPanel]
-		 */
-		/**
-		 * comandasPanel[numeroMesas] .add(comanditasPanel,
-		 * BorderLayout.CENTER); }
-		 * 
-		 * /* Creamos un JPanel que tendrá los botones de Editar, añadir y
-		 * eliminar
-		 */
-		/**
-		 * JPanel botoncitosPanel = new JPanel(); botoncitosPanel.setLayout(new
-		 * FlowLayout());
-		 * 
-		 * JButton editarComanda = new JButton("Editar");
-		 * editarComanda.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent e) {
-		 * 
-		 *           }
-		 * 
-		 *           }); botoncitosPanel.add(editarComanda);
-		 * 
-		 *           JButton añadirComanda = new JButton("Añadir");
-		 *           añadirComanda.addActionListener(new ActionListener() {
-		 * @Override public void actionPerformed(ActionEvent e) { if (/*
-		 *           comandaSelected != -1 &&
-		 */
-		/**
-		 * numMesa != -1) { restController.requestNewCommand(numMesa); new
-		 * RealizarPedido(restController, numMesa, comandas.length); } }
-		 * 
-		 * }); botoncitosPanel.add(añadirComanda);
-		 * 
-		 * JButton eliminarComanda = new JButton("Eliminar");
-		 * eliminarComanda.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent e) { if
-		 *           (comandaSelected != -1 && numMesa != -1) {
-		 *           restController.eliminarComanda(numMesa, comandaSelected); }
-		 *           }
-		 * 
-		 *           }); botoncitosPanel.add(eliminarComanda); /* Se añade el
-		 *           Panel con los botones de control al
-		 *           comandasPanel[numeroMesa]
-		 */
-		/**
-		 * comandasPanel[numeroMesas].add(botoncitosPanel, BorderLayout.SOUTH);
-		 */
 	}
 
 	private JPanel comandasContainer;

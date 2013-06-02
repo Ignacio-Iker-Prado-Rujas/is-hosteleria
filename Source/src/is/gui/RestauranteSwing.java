@@ -170,8 +170,19 @@ public class RestauranteSwing extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						new NotificarIncidencias(rest);
+					//	new NotificarIncidencias(rest);
+						JButton boton = new JButton("Send");
+						boton.addActionListener(new ActionListener(){			
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								notificar("Debe comprar la versión de pago para acceder a esta funcion");
+							}
 
+							private void notificar(String string) {
+								// TODO Auto-generated method stub
+								
+							}
+						});
 					}
 
 				});
