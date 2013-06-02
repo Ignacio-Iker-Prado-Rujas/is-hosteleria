@@ -275,7 +275,7 @@ public class RealizarReserva extends JPanel{
 	        			
 	        		});
 	        	}
-	        }, BorderLayout.SOUTH);
+	        }, BorderLayout.AFTER_LAST_LINE);
 	        
 	        
 	        /*
