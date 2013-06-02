@@ -29,7 +29,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-
+/**
+ * Gestiona el pedido desde una mesa, puediendole añadir bebidas, primeros, segundos o postres y mandando la comanda a cocina.
+ * @author Jesús
+ */
 
 @SuppressWarnings("serial")
 public class RealizarPedido extends JPanel implements ComandaObserver{

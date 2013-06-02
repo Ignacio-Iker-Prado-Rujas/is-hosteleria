@@ -31,7 +31,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.border.Border;
-
+/**
+ * Muestra en swing una consumición
+ * Aparecen por tanto el precion, nombre, descripción y si está disponible o no.
+ * Asimismo, permite editar estos campos al correr la aplicación, y crear nuevos platos añadiéndolos al menú.
+ * @author Kike
+ */
 @SuppressWarnings("serial")
 public class ConsumicionSwing extends JPanel{
 

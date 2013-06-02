@@ -27,13 +27,16 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.jdesktop.swingx.JXDatePicker;
-
 /**
- * TODO en esta clase solo falta al comunicar la reserva que pasamos el array de booleanos mesasSel 
- * como parametro, para que la reserva añada las mesas
- * necesarias, mesasSel[i] es true, quiere 
- * decir que la mesa con indice i esta en la reserva
+ * Realiza una reserva para el restaurante a nombre del cliente, permitiendo seleccionar fecha y hora, numero de comensales y mesas.
+ * La aplicación exigirá que el nombre no esté vacío y que el número de comensales no sea nulo.
+ * Pueden seleccionarse m´´as de una mesa en cada reserva.
+ * Tras comprobar que estos campos son correctos, crea la reserva y la añade a la lista de reservas.
+ * @author Jaime
+ * @author Jesús
+ * @author Kike
  */
+
 @SuppressWarnings("serial")
 public class RealizarReserva extends JPanel{
 
