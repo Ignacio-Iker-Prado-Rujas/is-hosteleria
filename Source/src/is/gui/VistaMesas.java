@@ -218,7 +218,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					restController.requestNewCommand(numMesa);
 					new RealizarPedido(restController, numMesa, comandas.length - 1);
 				}
-//				else notificar("Debe seleccionar una mesa");
+				else notificar("Debe seleccionar una mesa");
 			}
 
 		});
@@ -232,6 +232,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 				if (comandaSelected != -1 && numMesa != -1) {
 					restController.eliminarComanda(numMesa, comandaSelected);
 				}
+				else notificar("Debe seleccionar una comanda");
 			}
 
 		});
