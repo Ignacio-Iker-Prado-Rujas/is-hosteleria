@@ -2,10 +2,10 @@ package is.restaurante;
 
 import java.util.List;
 
-
 /**
  * Clase que genera una factura a partir de una lista de comandas
  * @author JaimeDan
+ * @author Alejandro
  *
  */
 public class Factura {
