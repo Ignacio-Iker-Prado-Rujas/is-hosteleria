@@ -1,7 +1,10 @@
 package is.gui;
 
+import is.restaurante.ComandaInfo;
+import is.restaurante.Factura;
 import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
+import is.restaurante.MesaObserver;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -18,7 +21,7 @@ import javax.swing.JTextField;
  * Genera la factura de una mesa, sumando el coste de todas las comandas asociadas a esa mesa, y la muestra por pantalla.
  * @author Villarín
  */
-public class GenerarFactura {
+public class GenerarFactura implements MesaObserver{
 
 	@SuppressWarnings({ "serial", "unchecked" })
 	public GenerarFactura(GUIController rest) {
@@ -75,10 +78,16 @@ public class GenerarFactura {
 		marco.setVisible(true);
 	
 	}
+	@Override
+	public void cambioOcurrido(ComandaInfo[] comandas) {
+		// TODO Auto-generated method stub
+		
+	}
 	private JComboBox mesas;
 	private JFrame marco;
 	private JFrame marco2;
 	private Mesa mesa;
 	private GUIController controlador;
 	private JTextField numMesa;
+
 }
