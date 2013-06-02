@@ -41,7 +41,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	 * 
 	 * @param rest
 	 */
-	public RealizarPedido(final GUIController rest, int numeroMesa, int comandaSeleccionada) {
+	public RealizarPedido(final GUIController rest, final int numeroMesa, int comandaSeleccionada) {
 		
 		this.restaurante = rest;
 		this.restaurante.addComandaObserver(this, numeroMesa, comandaSeleccionada);
@@ -182,7 +182,8 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
         //Indices start at 0, so 4 specifies the pig.
         mesas = new JComboBox(nombresMesa);
 		this.add(mesas, BorderLayout.SOUTH);
-		this.add(new JButton("Realizar Pedido"){
+		
+		JButton botonPedido = new JButton("Realizar Pedido"){
 			{
 				this.addActionListener(new ActionListener(){
 
@@ -205,7 +206,33 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					
 				});
 			}
-		}, BorderLayout.AFTER_LAST_LINE);
+		};
+		
+	
+//		, BorderLayout.SOUTH);
+		
+//		this.add(new JButton(), BorderLayout.SOUTH);
+		
+		JPanel panelBotones = new JPanel();
+		
+		
+		panelBotones.setLayout(new GridLayout(1,2));
+		panelBotones.add(botonPedido);
+		panelBotones.add(new JButton("Cancelar"){
+			{
+				this.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						restaurante.eliminaUltimaComanda(numeroMesa);
+						
+						frame.dispose();
+					}
+					
+				});
+			}
+		});
+		this.add(panelBotones, BorderLayout.SOUTH);
 		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);

@@ -161,6 +161,11 @@ public class Mesa implements MesaInfo {
 	private int numeroMesa;
 	private int capacidad;
 	private int comandaActual = -1;
+	public void eliminaUltimaComanda() {
+
+			comandas.remove(comandas.lastElement());
+		
+	}
 
 
 }
