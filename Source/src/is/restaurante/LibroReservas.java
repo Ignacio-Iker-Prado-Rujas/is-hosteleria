@@ -202,7 +202,12 @@ public class LibroReservas{
 	public void deleteReserva(String nombre, String fecha, String comensales,
 			String mesa) {
 		for (int i=0; i<listaReservas.size(); i++){
-			if (listaReservas.get(i).esMismaReserva(nombre, fecha, comensales, mesa));
+			if (listaReservas.get(i).esMismaReserva(nombre, fecha, comensales, mesa)){
+				listaReservas.erase(i);
+				emitirCambios();
+				break;
+			}
+				
 		}
 
 	}
