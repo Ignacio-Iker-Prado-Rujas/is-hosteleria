@@ -76,8 +76,8 @@ public class Restaurante {
 	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva,TipoPlatos tPlato){
 		menu.actualizaConsumicion(consAntigua, consNueva, tPlato);
 	}
-	public void deleteConsumicion(Consumicion consumicion, TipoPlatos tPlato){
-		menu.deleteConsumicion(consumicion, tPlato);
+	public void deleteConsumicion(Consumicion consumicion){
+		menu.deleteConsumicion(consumicion);
 	}
 	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
 		menu.addConsumicion( consumicion, tPlato);

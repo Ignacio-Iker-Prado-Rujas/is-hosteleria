@@ -63,64 +63,51 @@ public class Menu implements MenuInfo {
 	
 	//Añade un plato al array del tipo
 	
-	public void deleteConsumicion(Consumicion consumicion, TipoPlatos tPlato){
-		switch (tPlato) {
-		case BEBIDA:
-			 bebidas.remove(consumicion);//TODO notificar observers
-		case PRIMERO:
-			primeros.remove(consumicion);
-		case SEGUNDO:
-			segundos.remove(consumicion);
-		case POSTRE:
-			postres.remove(consumicion);
-		default:
-			;
-		}
-		
+	public void deleteConsumicion(Consumicion consumicion){
+		dondeEsta(consumicion).remove(consumicion);//TODO notificar observer de borrado
 	}
-	
+	/* Devuelve el array list donde está el elemento buscado */
+	private ArrayList<Consumicion> dondeEsta(Consumicion consumicion){
+		for(Consumicion c: bebidas)
+			if(c.getNombre().equals(consumicion.getNombre())) return bebidas;
+		for(Consumicion c: primeros)
+			if(c.getNombre().equals(consumicion.getNombre())) return primeros;
+		for(Consumicion c: segundos)
+			if(c.getNombre().equals(consumicion.getNombre())) return segundos;
+		for(Consumicion c: postres)
+			if(c.getNombre().equals(consumicion.getNombre())) return postres;
+		return null;
+	}
 	//Actualiza un plato al array del tipo
 	
-	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva, TipoPlatos tPlato){
-		for(Consumicion c: bebidas)
-			if(c.getNombre().equals(consAntigua.getNombre())) bebidas.remove(consAntigua);//TODO notificar observer de borrado
-		for(Consumicion c: primeros)
-			if(c.getNombre().equals(consAntigua.getNombre())) primeros.remove(consAntigua);
-		for(Consumicion c: segundos)
-			if(c.getNombre().equals(consAntigua.getNombre())) segundos.remove(consAntigua);
-		for(Consumicion c: postres)
-			if(c.getNombre().equals(consAntigua.getNombre())) postres.remove(consAntigua);
-		
-		switch (tPlato) {
-		case BEBIDA:
-			bebidas.add(consNueva);	//TODO notificar observers de añadido
-		case PRIMERO:
-			primeros.add(consNueva);
-		case SEGUNDO:
-			segundos.add(consNueva);
-		case POSTRE:
-			postres.add(consNueva);
-		default:
-			;
-		}
-		
+	public void actualizaConsumicion(Consumicion consAntigua,
+			Consumicion consNueva, TipoPlatos tPlato) {
+		dondeEsta(consAntigua).remove(consAntigua);// TODO notificar observer de
+													// borrado
+		addConsumicion(consNueva, tPlato);
 	}
-	
+
 	//Añade un plato al array del tipo
 	
-	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
-		switch (tPlato) {
-		case BEBIDA:
-			bebidas.add(consumicion);//TODO notificar observers
-		case PRIMERO:
-			primeros.add(consumicion);
-		case SEGUNDO:
-			segundos.add(consumicion);
-		case POSTRE:
-			postres.add(consumicion);
-		default:
-			;
-		}	
+	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato) {
+		if (dondeEsta(consumicion) == null) {
+			switch (tPlato) {
+			case BEBIDA:
+				bebidas.add(consumicion);
+				break;// TODO notificar observers
+			case PRIMERO:
+				primeros.add(consumicion);
+				break;
+			case SEGUNDO:
+				segundos.add(consumicion);
+				break;
+			case POSTRE:
+				postres.add(consumicion);
+				break;
+			default:
+				;
+			}
+		}
 	}
 
 	//
