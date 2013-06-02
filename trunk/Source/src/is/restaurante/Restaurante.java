@@ -1,10 +1,8 @@
 package is.restaurante;
 
-import is.Fecha;
 import is.restaurante.consumicion.Consumicion;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Clase principal del proyecto, contiene la lista de mesas, el menú y el libro
