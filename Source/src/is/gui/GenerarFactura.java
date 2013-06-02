@@ -17,33 +17,36 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
 /**
- * Genera la factura de una mesa, sumando el coste de todas las comandas asociadas a esa mesa, y la muestra por pantalla.
+ * Genera la factura de una mesa, sumando el coste de todas las comandas
+ * asociadas a esa mesa, y la muestra por pantalla.
+ * 
  * @author Villarín
  */
-public class GenerarFactura implements MesaObserver{
+public class GenerarFactura implements MesaObserver {
 
 	@SuppressWarnings({ "serial", "unchecked" })
 	public GenerarFactura(GUIController rest) {
 		this.controlador = rest;
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(3,1));
-		panel.add( new JLabel("Introduzca el numero de mesa"));
-		
-		MesaInfo[] mesasRestaurante = controlador.requestMesas();
-		
-		String[] stringMesas = new String[mesasRestaurante.length];
-		//	{ "Mesa", "Cat", "Dog", "Rabbit", "Pig" };
-		for (int i = 0; i < stringMesas.length; i++)
-			stringMesas[i] = "Mesa " + i;
+		panel.setLayout(new GridLayout(3, 1));
+		panel.add(new JLabel("Introduzca el numero de mesa"));
 
-		//Create the combo box, select item at index 4.
-		//Indices start at 0, so 4 specifies the pig.
+		MesaInfo[] mesasRestaurante = controlador.requestMesas();
+
+		String[] stringMesas = new String[mesasRestaurante.length];
+		// { "Mesa", "Cat", "Dog", "Rabbit", "Pig" };
+		for (int i = 0; i < stringMesas.length; i++)
+			stringMesas[i] = "Mesa " + (i + 1);
+
+		// Create the combo box, select item at index 4.
+		// Indices start at 0, so 4 specifies the pig.
 		mesas = new JComboBox(stringMesas);
 		panel.add(mesas);
-		panel.add(new JButton("Generar Factura"){
+		panel.add(new JButton("Generar Factura") {
 			{
-				this.addActionListener(new ActionListener(){
+				this.addActionListener(new ActionListener() {
 
 					public void actionPerformed(ActionEvent e) {
 
@@ -51,22 +54,24 @@ public class GenerarFactura implements MesaObserver{
 						addMesaObserver(j);
 						controlador.getMesa(j).generarFactura();
 						removeMesaObserver(j);
-						
+
 					}
-					
+
 				});
 			}
 		});
 		JFrame marco = new JFrame();
 		marco.add(panel);
-		marco.setSize(200,200);
+		marco.setSize(200, 200);
 		marco.setVisible(true);
-	
+
 	}
-	private void addMesaObserver(int j){
+
+	private void addMesaObserver(int j) {
 		controlador.addMesaObserver(this, j);
 	}
-	private void removeMesaObserver(int j){
+
+	private void removeMesaObserver(int j) {
 		controlador.removeMesaObserver(this, j);
 	}
 
@@ -76,33 +81,35 @@ public class GenerarFactura implements MesaObserver{
 	private Mesa mesa;
 	private GUIController controlador;
 	private JTextField numMesa;
+
 	@SuppressWarnings("serial")
 	@Override
 	public void facturaGenerada(String factura) {
 		marco2 = new JFrame();
-		marco2.setLayout(new GridLayout(2,1));
-		
-		marco2.add(new JLabel (factura));
-		marco2.add(new JButton("Aceptar"){
+		marco2.setLayout(new GridLayout(2, 1));
+
+		marco2.add(new JLabel(factura));
+		marco2.add(new JButton("Aceptar") {
 			{
-				this.addActionListener(new ActionListener(){
+				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						
+
 						marco2.setVisible(false);
 					}
-					
+
 				});
 			}
 		});
 		marco2.pack();
 		marco2.setVisible(true);
 	}
+
 	@Override
 	public void cambioOcurrido(ComandaInfo[] comandas, int numeroMesa) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
