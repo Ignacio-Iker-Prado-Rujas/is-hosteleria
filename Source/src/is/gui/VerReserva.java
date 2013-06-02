@@ -80,4 +80,9 @@ public class VerReserva implements LibroReservaObserver{
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public void cambioOcurrido(ReservaInfo[] reservas) {
+		// TODO Auto-generated method stub
+		
+	}
 }
