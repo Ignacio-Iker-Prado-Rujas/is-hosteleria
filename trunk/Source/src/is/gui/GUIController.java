@@ -153,7 +153,7 @@ public class GUIController {
 
 	private Restaurante restaurante;
 
-	public void addMesaObserver(MesaObserver ) {
+	public void addMesaObserver(MesaObserver mesa) {
 		// TODO Auto-generated method stub
 		
 	}
