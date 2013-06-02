@@ -18,9 +18,10 @@ import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 /**
- * TODO por alguna extraña razón al cambiar de mesa no se ponen los botones de editar y esas cosas
+ * Muestra todas las mesas
+ * Al elegir una mesa permite añadir o eliminar una comanda para esa mesa.
  * @author JaimeDan
- *
+ * @author Villarin
  */
 public class VistaMesas extends JFrame {
 
