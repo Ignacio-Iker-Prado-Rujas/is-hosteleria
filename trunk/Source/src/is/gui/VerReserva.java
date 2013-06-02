@@ -43,19 +43,20 @@ public class VerReserva implements LibroReservaObserver{
 		tMes.setPreferredScrollableViewportSize(null);
 		tTodas.setPreferredScrollableViewportSize(null);
 		//Permitimos que se pueda hacer Scroll por si se cogen muchos Items
-		JScrollPane scrollTodas  = new JScrollPane(tTodas, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		/*JScrollPane scrollTodas  = new JScrollPane(tTodas, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollHoy  = new JScrollPane(tHoy, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollSemana  = new JScrollPane(tSemana, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollMes = new JScrollPane(tMes, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
+		 */
 		this.controlador = rest;
 		this.controlador.addLibroReservaObserver(this);
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		
 		JPanel panelTodas = new JPanel();
+		panelTodas.add(tTodas);
 		tabbedPane.addTab("Todas", null, panelTodas, "Muestra todas las reservas");
-		panelTodas.add(scrollTodas);
+		panelTodas.add(new JLabel("prueba"));
 		/*for ( ReservaInfo r : controlador.getReservas(-1)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelTodas.add(jt);
@@ -63,7 +64,7 @@ public class VerReserva implements LibroReservaObserver{
 		
 		JPanel panelHoy = new JPanel();
 		tabbedPane.addTab("Hoy", null, panelHoy, "Muestra las reservas de hoy");
-		panelHoy.add(scrollHoy);
+		panelHoy.add(tHoy);
 		/*for ( ReservaInfo r : controlador.getReservas(0)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelHoy.add(jt);
@@ -72,7 +73,7 @@ public class VerReserva implements LibroReservaObserver{
 		JPanel panelSemana = new JPanel();
 		tabbedPane.addTab("Esta semana",null, panelSemana,
 		                  "Muestra las reservas de esta semana");
-		panelSemana.add(scrollSemana);
+		panelSemana.add(tSemana);
 		/*for ( ReservaInfo r : controlador.getReservas(1)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelSemana.add(jt);
@@ -82,7 +83,7 @@ public class VerReserva implements LibroReservaObserver{
 		panelMes.setPreferredSize(new Dimension(410, 50));
 		tabbedPane.addTab("Este mes", null, panelMes,
 		                      "Muestra las reservas de este mes");
-		panelMes.add(scrollMes);
+		panelMes.add(tMes);
 		/*for ( ReservaInfo r : controlador.getReservas(2)){
 			JTextArea jt = new JTextArea(r.toString());			
 			panelMes.add(jt);
