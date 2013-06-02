@@ -214,7 +214,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 			 *  Con lo que he cambiado de inicializaPaneles() ya tenemos los celdaPlato para sacar la informacion de ellos
 			 */
 		scroller = new JScrollPane(text);
-        scroller.setPreferredSize(new Dimension(100,100));
+        scroller.setPreferredSize(new Dimension(200,200));
         scroller.setBorder(titled);
         
         this.add(scroller, BorderLayout.EAST);
