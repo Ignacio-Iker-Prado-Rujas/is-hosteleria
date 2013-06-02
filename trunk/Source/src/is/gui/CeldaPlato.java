@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.event.ChangeEvent;
@@ -42,6 +44,10 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 			}
 		};
 		this.flechitas = new JSpinner();
+		JFormattedTextField ftf = getTextField(flechitas);
+	        if (ftf != null ) 
+	            ftf.setColumns(2); //cambia el tamaño del spinner
+	        
 		this.flechitas.setValue(0);
 		this.flechitas.addChangeListener(new ChangeListener() {
 
@@ -86,6 +92,19 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 	public int getVeces(){
 		return this.veces;
 	}
+	
+	  public JFormattedTextField getTextField(JSpinner spinner) {
+	        JComponent editor = spinner.getEditor();
+	        if (editor instanceof JSpinner.DefaultEditor) {
+	            return ((JSpinner.DefaultEditor)editor).getTextField();
+	        } else {
+	            System.err.println("Unexpected editor type: "
+	                               + spinner.getEditor().getClass()
+	                               + " isn't a descendant of DefaultEditor");
+	            return null;
+	        }
+	    }
+	 
 	private GUIController restControl;
 	private int veces;
 	private JButton botonPlato;
