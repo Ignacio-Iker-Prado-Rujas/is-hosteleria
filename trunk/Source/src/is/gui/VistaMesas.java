@@ -237,6 +237,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 	@Override
 	public void cambioOcurrido(final ComandaInfo[] comandas, int numeroMesas) {
+		this.comandas = comandas;
 		comandasPanel[numeroMesas].removeAll();
 		
 			
