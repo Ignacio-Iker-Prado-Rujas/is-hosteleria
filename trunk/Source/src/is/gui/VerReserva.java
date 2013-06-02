@@ -144,6 +144,7 @@ public class VerReserva implements LibroReservaObserver{
 				//anyadirNuevoPlato();	
 				//controlad
 				//table.getSelectedRow();
+				//tabbedPane.
 			}
 		});
 		JButton editar = new JButton("edit");
