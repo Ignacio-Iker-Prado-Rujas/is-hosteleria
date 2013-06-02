@@ -9,6 +9,6 @@ public interface MenuObserver {
 	
 	public void deleteConsumption(String consId, String tipo);
 	
-	public void editConsumption(String consId, String tipo, String tipoNuevo);
+	public void editConsumption(String nameAnt, String nameNuevo, String tipoAnt, String tipoNuevo);
 
 }
