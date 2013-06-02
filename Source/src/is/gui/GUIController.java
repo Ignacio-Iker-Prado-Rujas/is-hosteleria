@@ -125,8 +125,12 @@ public class GUIController {
 		restaurante.addConsumicion( consumicion, tPlato);
 	}
 
-	public void addComandaObserver(ComandaObserver observer, int numeroMesa) {
-		restaurante.addComandaObserver(observer, numeroMesa);
+	public void requestNewCommand(int numMesa) {
+		this.restaurante.addNewCommand(numMesa);
+	}
+
+	public void addComandaObserver(ComandaObserver observer, int numeroMesa, int comandaSeleccionada) {
+		restaurante.addComandaObserver(observer, numeroMesa, comandaSeleccionada);
 	}
 
 
@@ -139,6 +143,7 @@ public class GUIController {
 	}
 	
 	private Restaurante restaurante;
+
 
 
 
