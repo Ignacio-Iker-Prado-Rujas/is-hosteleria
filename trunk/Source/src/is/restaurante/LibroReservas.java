@@ -6,6 +6,13 @@ import java.util.GregorianCalendar;
 
 import is.Fecha;
 import is.List;
+
+
+/**
+ * Clase que guarda todas las reservas
+ * @author JaimeDan
+ *
+ */
 public class LibroReservas{
 	/**
 	 * Constructor
