@@ -214,7 +214,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			public void actionPerformed(ActionEvent e) {
 				if (/* comandaSelected != -1 && */numMesa != -1) {
 					restController.requestNewCommand(numMesa);
-					new RealizarPedido(restController, numMesa, comandas.length);
+					new RealizarPedido(restController, numMesa, comandas.length - 1);
 				}
 			}
 
