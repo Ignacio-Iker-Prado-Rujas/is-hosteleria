@@ -1,7 +1,9 @@
 package is.gui;
 
 import is.gui.spring.SpringUtilities;
+import is.restaurante.Comanda;
 import is.restaurante.TipoPlatos;
+import is.restaurante.consumicion.Consumicion;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -28,7 +30,7 @@ import javax.swing.border.Border;
 @SuppressWarnings("serial")
 public class ConsumicionSwing extends JPanel{
 
-	public ConsumicionSwing(VerMenu ventana, GUIController controller, String name, boolean edit){
+	public ConsumicionSwing(VerMenu ventana, GUIController controller, Consumicion consumicion, boolean edit){
 		
 		this.edit = edit;
 		this.campos = new JPanel();
@@ -36,50 +38,53 @@ public class ConsumicionSwing extends JPanel{
 		
 		anyadirControles();
 		this.campos.setLayout(new SpringLayout());
+		consumicionInicial = consumicion;
 		this.ventanaGeneral = ventana;
 		this.restControl = controller;
-		this.platoName = name;
+		this.platoName = consumicion.getNombre();
 		
+		/*********Campo nombre***********************/
 		JLabel nombreL = new JLabel(" Nombre ");
 		nombreL.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		this.campos.add(nombreL);
 		if(edit)
-			nombrePlato = new JTextField(name);
+			nombrePlato = new JTextField(consumicion.getNombre());
 		else
 			nombrePlato = new JTextField();
 
 		nombrePlato.setMaximumSize(new Dimension(1, 1));
 		this.campos.add(nombrePlato);
 		
+		/**********Campo descripcion******************/
 		JLabel descripcionL = new JLabel(" Descripción ");
 		descripcionL.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.campos.add(descripcionL);
 		if(edit)
-			this.descripcion = new JTextArea("Aqui va la descipcion del plato");
+			this.descripcion = new JTextArea(consumicion.getDescripcion());
 		else
 			this.descripcion = new JTextArea();
 				
 		this.campos.add(this.descripcion);
 			
-		
+		/**********Campo precio***********************/
 		JLabel precioL = new JLabel(" Precio ");
 		precioL.setBorder(BorderFactory.createLineBorder(Color.black));
 	
 		this.campos.add(precioL);
 		if(edit)
-			this.precioField = new JTextField(" 2334 iuros");
+			this.precioField = new JTextField(Float.toString(consumicion.getPrecio()));
 		else
 			this.precioField = new JTextField();
 		
 		precioField.setMaximumSize(new Dimension(1, 1));	
 		this.campos.add(precioField);
 		
+		/*************Campo tipo**********************/
 		JLabel tipoL = new JLabel(" Tipo ");
 		tipoL.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		this.campos.add(tipoL);
-		//for(TipoPlatos t: arrayTipos)
 		TipoPlatos[] arrayTipos = TipoPlatos.values();
 		Vector<TipoPlatos> vectorTipos = new Vector<TipoPlatos>();
 		for(TipoPlatos t: arrayTipos){
@@ -90,6 +95,8 @@ public class ConsumicionSwing extends JPanel{
 		tipoPlato.setMaximumSize(new Dimension(1, 1));	
 		this.campos.add(tipoPlato);
 		
+		/**************Campo disponible*****************/
+		/*************Configuracion final***************/
 		SpringUtilities.makeCompactGrid(campos, 4, 2, 6, 6, 10, 10);
 		this.add(campos, BorderLayout.CENTER);
 	}
@@ -125,12 +132,27 @@ public class ConsumicionSwing extends JPanel{
 		this.add(controles, BorderLayout.SOUTH);
 		
 	}
+	private Consumicion nuevaConsumicion(){
+		TipoPlatos tipo = (TipoPlatos) tipoPlato.getSelectedItem();
+		switch (tipo) {
+		case BEBIDA:
+			return bebidas;
+		case PRIMERO:
+			return primeros;
+		case SEGUNDO:
+			return segundos;
+		case POSTRE:
+			return postres;
+		default:
+			return consumicionInicial;
+		}
+	}
 	private void guardarPlato(){
 		/*Esta funcion actualiza en el menu el plato cambiado
 		 * le pasa el antiguo y el nuevo
 		 */
 		if(edit)
-			restControl.modificarConsumicion();
+			restControl.modificarConsumicion(consumicionInicial, nuevaConsumicion());
 		else
 			restControl.crearConsumicion();
 	}
@@ -160,5 +182,6 @@ public class ConsumicionSwing extends JPanel{
 	private JComboBox tipoPlato;
 	private VerMenu ventanaGeneral;
 	private boolean edit;
+	private Consumicion consumicionInicial;
 	
 }

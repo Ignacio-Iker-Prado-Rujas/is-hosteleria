@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -127,7 +128,7 @@ public class VerMenu extends JFrame{
 	private void editarPlato(){
 		if(this.consumicionSeleccionada!=null){
 			//System.out.println(consumicionSeleccionada.getText() + " debe ser editado");
-			ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador, consumicionSeleccionada.getText(), true);
+			ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador, menu.getConsumicion(consumicionSeleccionada.getText()), true);
 			panelGeneral.add(nuevaCons , "editConsumicion");
 			cardLayout.show(panelGeneral, "editConsumicion");
 		}
@@ -135,7 +136,7 @@ public class VerMenu extends JFrame{
 	
 	/*	 Añade un nuevo plato al menu	*/
 	private void anyadirNuevoPlato(){
-		ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador,"", false);
+		ConsumicionSwing nuevaCons = new ConsumicionSwing(this, controlador, null, false);
 		panelGeneral.add(nuevaCons , "createConsumicion");
 		cardLayout.show(panelGeneral, "createConsumicion");
 	}
@@ -165,19 +166,11 @@ public class VerMenu extends JFrame{
 	public void borrarPlato(String nombre){
 		
 	}
-	private void createConsumicion(){
-	}
-	public void anyadePlato(String name, TipoPlatos tPlato){
-		/*Para esto hay que guardar atributos del constructor	*/
-		createConsumicion();
-	}
+
 	public void devolverControlPrincipal(){
 		cardLayout.show(panelGeneral, "pestanyas");
 	}
-	/* Actualiza un plato	*/
-	public void actualizarPlato(){
-		
-	}
+
 	
 	private ArrayList<JPanel> cadaPestanya;
 	private JTabbedPane pestanyas;
