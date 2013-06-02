@@ -338,7 +338,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	private ComandaInfo[] comandas;
 	private JPanel[] comandasPanel;
 	int comandaSelected = -1;
-	private int numMesa = -1;
+	private int numMesa = 0;
 
 	@Override
 	public void facturaGenerada(String factura) {
