@@ -28,7 +28,9 @@ public class LibroReservas{
 
 	public boolean addReserva(Reserva res) {
 		// numeroReservas++;
-		return listaReservas.add(res);
+		boolean exito = listaReservas.add(res); 
+		if (exito) emitirCambios();
+		return exito;
 
 	}
 
