@@ -52,7 +52,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "
 					+ (j + 1));
 			comandasPanel[j].setBorder(titulo);
-			setComandasPanel(j);
+			//boolean true, es para ver si es la primera vez que escogemos la mesa
+			setComandasPanel(j, true);
 
 		}
 		// comandas = restController.getMesa(j).getListaComandas();
@@ -139,10 +140,12 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 	}
 
-	public void setComandasPanel(Integer numeroMesa) {
+	public void setComandasPanel(Integer numeroMesa, boolean desdeElPrincipio) {
 		//se deja con numeroMesa
 		TitledBorder title = new TitledBorder("Mesa " + (numeroMesa));
-		comandas = restController.getMesa(numeroMesa).getListaComandas();
+		if (desdeElPrincipio){
+			comandas = restController.getMesa(numeroMesa).getListaComandas();
+		}
 		comandasPanel[numeroMesa].setBorder(title);
 		comandasPanel[numeroMesa].setLayout(new BorderLayout());
 		JPanel comanditasPanel = new JPanel();
@@ -244,8 +247,9 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	public void cambioOcurrido(final ComandaInfo[] comandas, int numeroMesas) {
 		this.comandas = comandas;
 		comandasPanel[numeroMesas].removeAll();
+		setComandasPanel(numeroMesas, false);
 		//se deja con numerMesas porque las mesas van desde 0 hasta n-1 en otros sitios
-		TitledBorder title = new TitledBorder("Mesa " + (numeroMesas ));
+		/**TitledBorder title = new TitledBorder("Mesa " + (numeroMesas ));
 
 		comandasPanel[numeroMesas].setBorder(title);
 		comandasPanel[numeroMesas].setLayout(new BorderLayout());
@@ -254,11 +258,11 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		 * Se crea un JPanel con Flow layout para añadir como botones las
 		 * comandas de las mesas igual en vez de botones se podrian usar
 		 * JRadioButtons
-		 */
+		 *//**
 		comanditasPanel.setLayout(new FlowLayout());
 		/* Si la mesa tiene comandas, es decir, comandas!= null */
-		if (comandas != null) {
-			/* Creamos los botones con las comandas */
+		/**if (comandas != null) {
+			/* Creamos los botones con las comandas *//**
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
 				// no me acuerdo porque puse i+1
@@ -267,7 +271,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					/*
 					 * Al seleccionar una comanda guardaremos en un atributo qué
 					 * comanda hemos elegido
-					 */
+					 *//**
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						comandaSelected = j;
@@ -276,18 +280,18 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					}
 
 				});
-				/* Añadimos el boton al panel con las comandas */
+				/* Añadimos el boton al panel con las comandas *//**
 				comanditasPanel.add(comandaMesa);
 			}
 			/*
 			 * Despues de haber creado el panel con las comandas lo añadimos al
 			 * centro de comandasPanel[numPanel]
-			 */
+			 *//**
 			comandasPanel[numeroMesas]
 					.add(comanditasPanel, BorderLayout.CENTER);
 		}
 
-		/* Creamos un JPanel que tendrá los botones de Editar, añadir y eliminar */
+		/* Creamos un JPanel que tendrá los botones de Editar, añadir y eliminar *//**
 		JPanel botoncitosPanel = new JPanel();
 		botoncitosPanel.setLayout(new FlowLayout());
 
@@ -307,7 +311,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (/* comandaSelected != -1 && */numMesa != -1) {
+				if (/* comandaSelected != -1 && *//**numMesa != -1) {
 					restController.requestNewCommand(numMesa);
 					new RealizarPedido(restController, numMesa, comandas.length);
 				}
@@ -331,9 +335,9 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		/*
 		 * Se añade el Panel con los botones de control al
 		 * comandasPanel[numeroMesa]
-		 */
+		 *//**
 		comandasPanel[numeroMesas].add(botoncitosPanel, BorderLayout.SOUTH);
-
+*/
 	}
 
 	private JPanel comandasContainer;
