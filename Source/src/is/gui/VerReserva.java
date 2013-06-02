@@ -75,11 +75,7 @@ public class VerReserva implements LibroReservaObserver{
 	
 	private GUIController controlador;
 	private JTextField nombreReserva;
-	@Override
-	public void cambioOcurrido() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	@Override
 	public void cambioOcurrido(ReservaInfo[] reservas) {
 		// TODO Auto-generated method stub
