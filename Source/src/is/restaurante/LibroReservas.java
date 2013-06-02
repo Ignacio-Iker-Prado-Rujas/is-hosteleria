@@ -118,9 +118,12 @@ public class LibroReservas{
 	
 	public ArrayList<ReservaInfo> buscarReservaSemana(Fecha dateInicial){
 		ArrayList <ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		//Fecha dateTope = new Fecha(dateInicial.getAño(), dateInicial.getMes(), dateInicial.getDia(), dateInicial.getHora(), dateInicial.getMinutos());
+		//dateTope = dateTope.siguienteSemana();//
 		Fecha dateTope = dateInicial.siguienteSemana();
 		for ( int i = 0; i < listaReservas.size(); i++){
-			if (!listaReservas.get(i).getFecha().esMayorQue(dateTope) && (listaReservas.get(i).getFecha().esMayorQue(dateInicial) || listaReservas.get(i).getFecha().equals(dateInicial)))
+			if (!listaReservas.get(i).getFecha().esMayorQue(dateTope) && (listaReservas.get(i).getFecha().esMayorQue(dateInicial) ||
+					listaReservas.get(i).getFecha().mismoDia(dateInicial)))
 					reservasSemana.add(listaReservas.get(i));
 		}
 		return reservasSemana;
@@ -128,7 +131,7 @@ public class LibroReservas{
 	
 	public ArrayList<ReservaInfo> buscarReservaMes(Fecha dateInicial) {
 		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
-		Fecha dateTope = dateInicial.siguienteSemana();
+		Fecha dateTope = dateInicial.siguienteMes();
 		for (int j = 0; j < 4; j++) {
 			for (int i = 0; i < listaReservas.size(); i++) {
 				if (!listaReservas.get(i).getFecha().esMayorQue(dateTope)

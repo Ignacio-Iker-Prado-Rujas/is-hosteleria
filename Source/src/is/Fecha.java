@@ -109,7 +109,25 @@ public class Fecha {
 		}
 		
 		if (this.esBisiesto()) this.diasMes[1]--;
-		return new Fecha(año, mes, dia, this.hora, this.minutos);	
+		return new Fecha(año, mes, numDia, this.hora, this.minutos);	
+	}
+	
+	public Fecha siguienteMes() {
+		//Atención!! puede que calcule una fecha no valida, como 31 de febrero por ejemplo
+		int numMes = (this.mes+1)%12, numAño = this.año, numDia = this.dia;
+		//si el mes es enero, es que hemos cambiado de año
+		if (numMes == 0)
+			numAño++;
+		//si el año es bisiesto sumamos 1 dia a febrero
+		if (this.esBisiesto()) this.diasMes[1]++;
+		//si hemos excedido el dia maximo del mes, asignamos el dia maximo del mes
+		if (numDia > this.diasMes[numMes])
+			numDia = this.diasMes[numMes];
+		//volvemos a poner febrero con 28 dias
+		if (this.esBisiesto())this.diasMes[1]--;
+		
+		
+		return new Fecha(numAño, numMes, numDia, this.hora, this.minutos);
 	}
 	
 	public boolean esBisiesto() {
@@ -192,4 +210,5 @@ public class Fecha {
 	private int hora;
 	private int minutos;
 	private int[] diasMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
 }
