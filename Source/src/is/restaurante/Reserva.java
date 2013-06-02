@@ -85,12 +85,12 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo {
 
 	@Override
 	public String nombreToString() {
-		return "Nombre " + this.nombre;
+		return this.nombre;
 	}
 
 	@Override
 	public String mesasToString() {
-		String mesas = "Mesas: ";
+		String mesas = "";
 		for (Mesa m : this.mesas)
 			mesas += m.getNumeroMesa() + " ";
 		return mesas;
@@ -98,14 +98,14 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo {
 
 	@Override
 	public String comensalesToString() {
-		return "Comensales: " + this.numeroDeComensales;
+		return this.numeroDeComensales.toString();
 	}
 
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private ArrayList<Mesa> mesas;
 	private Fecha fecha;
 	private String nombre;
-	private int numeroDeComensales;
+	private Integer numeroDeComensales;
 	
 
 }
