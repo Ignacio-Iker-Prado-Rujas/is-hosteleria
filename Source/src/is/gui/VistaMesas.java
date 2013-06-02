@@ -93,7 +93,7 @@ public class VistaMesas extends JPanel{
 		this.add(panelMesas, BorderLayout.NORTH);
 		this.add(comandasContainer, BorderLayout.CENTER);
 		
-		JFrame frame = new JFrame("Reservas");
+		JFrame frame = new JFrame("Comandas por mesa");
 
 		frame.setVisible(true);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,7 +107,9 @@ public class VistaMesas extends JPanel{
 		TitledBorder title = new TitledBorder("Mesa " + numMesa);
 		comandas = restController.getMesa(numeroMesa).getListaComandas();
 		comandasPanel[numeroMesa].setBorder(title);
-		comandasPanel[numeroMesa].setLayout(new FlowLayout());
+		comandasPanel[numeroMesa].setLayout(new BorderLayout());
+		JPanel comanditasPanel = new JPanel();
+		comanditasPanel.setLayout(new FlowLayout());
 		if (comandas != null) {
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
@@ -122,10 +124,15 @@ public class VistaMesas extends JPanel{
 					}
 
 				});
-				comandasPanel[numMesa].add(comandaMesa);
+				comanditasPanel.add(comandaMesa);
 			}
+			comandasPanel[numeroMesa].add(comanditasPanel, BorderLayout.CENTER);
 		}
-		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
+		
+		
+		JPanel botoncitosPanel = new JPanel();
+		botoncitosPanel.setLayout(new FlowLayout());
+		
 		JButton editarComanda = new JButton("Editar");
 		editarComanda.addActionListener(new ActionListener(){
 
@@ -135,6 +142,7 @@ public class VistaMesas extends JPanel{
 			}
 			
 		});
+		botoncitosPanel.add(editarComanda);
 		
 		JButton añadirComanda = new JButton("Añadir");
 		añadirComanda.addActionListener(new ActionListener(){
@@ -147,6 +155,7 @@ public class VistaMesas extends JPanel{
 			}
 			
 		});
+		botoncitosPanel.add(añadirComanda);
 		
 		JButton eliminarComanda = new JButton("Eliminar");
 		eliminarComanda.addActionListener(new ActionListener(){
@@ -159,10 +168,16 @@ public class VistaMesas extends JPanel{
 			}
 			
 		});
-		comandasContainer.add(editarComanda);
-		comandasContainer.add(añadirComanda);
-		comandasContainer.add(eliminarComanda);
-	}
+		botoncitosPanel.add(eliminarComanda);
+		comandasPanel[numeroMesa].add(botoncitosPanel, BorderLayout.SOUTH);
+		
+		
+		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
+		
+		//comandasContainer.add(editarComanda);
+		//comandasContainer.add(añadirComanda);
+		//comandasContainer.add(eliminarComanda);
+	}//
 	
 	
 	private JPanel comandasContainer;
