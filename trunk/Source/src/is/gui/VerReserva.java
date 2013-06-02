@@ -159,14 +159,29 @@ public class VerReserva implements LibroReservaObserver{
 		borrar.addActionListener(new ActionListener(){				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (cuando.equals("todas"))
-					if (tTodas.getSelectedRow() > 0)
+				if (cuando.equalsIgnoreCase("todas")){
+					if (tTodas.getSelectedRow() >= 0)
 						controlador.requestRemoveReserva(tablaTodas.getValueAt(tTodas.getSelectedRow(), 0), 
 								tablaTodas.getValueAt(tTodas.getSelectedRow(), 1),
 								tablaTodas.getValueAt(tTodas.getSelectedRow(), 2),
 								tablaTodas.getValueAt(tTodas.getSelectedRow(), 3));
+				}
+				else if (cuando.equalsIgnoreCase("hoy")){
+					if (tHoy.getSelectedRow() >= 0)
+						controlador.requestRemoveReserva(tablaHoy.getValueAt(tHoy.getSelectedRow(), 0),  
+								tablaHoy.getValueAt(tHoy.getSelectedRow(), 1),
+								tablaHoy.getValueAt(tHoy.getSelectedRow(), 2),
+								tablaHoy.getValueAt(tHoy.getSelectedRow(), 3));
+				}
+				else if (cuando.equalsIgnoreCase("semana")){
+					if(tSemana.getSelectedRow() >= 0)
+						controlador.requestRemoveReserva(tablaSemana.getValueAt(tSemana.getSelectedRow(), 0), 
+								tablaSemana.getValueAt(tSemana.getSelectedRow(), 1),
+								tablaSemana.getValueAt(tSemana.getSelectedRow(), 2),
+								tablaSemana.getValueAt(tSemana.getSelectedRow(), 3));
+				}
 					//tablaTodas.getSelectedRow();
-				borrarReserva();					
+				//borrarReserva();					
 			}
 		});
 		opciones.add(anyadir);
@@ -186,7 +201,6 @@ public class VerReserva implements LibroReservaObserver{
 	
 	@Override
 	public void cambioOcurrido(ReservaInfo[] reservas) {
-		// TODO Auto-generated method stub
 		
 	}
 	private JFrame ventanaVerReservas;
