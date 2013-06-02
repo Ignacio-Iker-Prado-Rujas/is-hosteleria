@@ -1,12 +1,14 @@
 package is.gui;
 
 import is.restaurante.Mesa;
+import is.restaurante.MesaInfo;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,43 +20,50 @@ import javax.swing.JTextField;
  */
 public class GenerarFactura {
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "unchecked" })
 	public GenerarFactura(GUIController rest) {
 		this.controlador = rest;
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(3,1));
 		panel.add( new JLabel("Introduzca el numero de mesa"));
-		numMesa = new JTextField();
-		panel.add(numMesa);
+		
+		MesaInfo[] mesasRestaurante = controlador.requestMesas();
+		
+		String[] stringMesas = new String[mesasRestaurante.length];
+		//	{ "Mesa", "Cat", "Dog", "Rabbit", "Pig" };
+		for (int i = 0; i < stringMesas.length; i++)
+			stringMesas[i] = "Mesa " + i;
+
+		//Create the combo box, select item at index 4.
+		//Indices start at 0, so 4 specifies the pig.
+		mesas = new JComboBox(stringMesas);
+		panel.add(mesas);
 		panel.add(new JButton("Generar Factura"){
 			{
 				this.addActionListener(new ActionListener(){
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						numMesa.getText();
-					//TODO duda del mvc, aqui hay que llamar al modelo y que te devuelva la mesa?
-						
-						mesa = controlador.getMesa(numMesa.getText());
-						marco = new JFrame();
-						//JPanel panel = new JPanel();
-						JTextArea factura = new JTextArea(mesa.generarFactura());
-						marco.add(factura);
-						marco.setVisible(true);
-						marco.pack();
-						marco.add(new JButton("Aceptar"){
+						// TODO Auto-generated method stub
+						int j = mesas.getSelectedIndex();
+						controlador.getMesa(j).generarFactura();
+						marco2 = new JFrame();
+						marco2.setLayout(new GridLayout(2,1));
+						marco2.add(new JLabel (controlador.getMesa(j).generarFactura()));
+						marco2.add(new JButton("Aceptar"){
 							{
 								this.addActionListener(new ActionListener(){
 
 									@Override
 									public void actionPerformed(ActionEvent e) {
-										marco.setVisible(false);
-										
+										marco2.setVisible(false);
 									}
 									
 								});
 							}
 						});
+						marco2.pack();
+						marco2.setVisible(true);
 					}
 					
 				});
@@ -66,7 +75,9 @@ public class GenerarFactura {
 		marco.setVisible(true);
 	
 	}
+	private JComboBox mesas;
 	private JFrame marco;
+	private JFrame marco2;
 	private Mesa mesa;
 	private GUIController controlador;
 	private JTextField numMesa;
