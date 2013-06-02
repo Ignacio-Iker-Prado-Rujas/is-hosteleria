@@ -46,8 +46,10 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		/*
 		 * Inicializamos los JPanel que contendrán las comandas de cada mesa y
 		 * los botones de control añadir, eliminar y editar comanda
+		 * y mostramos por defecto un jpanel vacio
 		 */
-
+		comandasContainer.add(new JPanel(), "Hello, world");
+		comandasLayout.show(comandasContainer, "Hello world");
 		for (int j = 0; j < mesas.length; j++) {
 			comandasPanel[j] = new JPanel();
 			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "
