@@ -50,23 +50,8 @@ public class GenerarFactura implements MesaObserver{
 						// TODO Auto-generated method stub
 						int j = mesas.getSelectedIndex();
 						controlador.getMesa(j).generarFactura();
-						marco2 = new JFrame();
-						marco2.setLayout(new GridLayout(2,1));
-						marco2.add(new JLabel (controlador.getMesa(j).generarFactura()));
-						marco2.add(new JButton("Aceptar"){
-							{
-								this.addActionListener(new ActionListener(){
-
-									@Override
-									public void actionPerformed(ActionEvent e) {
-										marco2.setVisible(false);
-									}
-									
-								});
-							}
-						});
-						marco2.pack();
-						marco2.setVisible(true);
+						
+						
 					}
 					
 				});
@@ -89,5 +74,27 @@ public class GenerarFactura implements MesaObserver{
 	private Mesa mesa;
 	private GUIController controlador;
 	private JTextField numMesa;
+	@SuppressWarnings("serial")
+	@Override
+	public void facturaGenerada(String factura) {
+		marco2 = new JFrame();
+		marco2.setLayout(new GridLayout(2,1));
+		
+		marco2.add(new JLabel (factura));
+		marco2.add(new JButton("Aceptar"){
+			{
+				this.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						marco2.setVisible(false);
+					}
+					
+				});
+			}
+		});
+		marco2.pack();
+		marco2.setVisible(true);
+	}
 
 }
