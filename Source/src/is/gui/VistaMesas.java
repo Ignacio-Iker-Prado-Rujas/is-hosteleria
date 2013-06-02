@@ -235,8 +235,87 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	}//
 
 	@Override
-	public void cambioOcurrido(ComandaInfo[] comandas) {
-		// TODO Auto-generated method stub
+	public void cambioOcurrido(final ComandaInfo[] comandas, int numeroMesas) {
+		comandasPanel[numeroMesas].removeAll();
+		
+			
+		TitledBorder title = new TitledBorder("Mesa " + numeroMesas);
+		comandas = restController.getMesa(numeroMesas).getListaComandas();
+			
+		comandasPanel[numeroMesas].setBorder(title);
+		comandasPanel[numeroMesas].setLayout(new BorderLayout());
+		JPanel comanditasPanel = new JPanel();
+		/* Se crea un JPanel con Flow layout para añadir como botones las comandas de las mesas
+		 * igual en vez de botones se podrian usar JRadioButtons
+		 */
+		comanditasPanel.setLayout(new FlowLayout());
+		/* Si la mesa tiene comandas, es decir, comandas!= null*/
+		if (comandas != null) {
+			/* Creamos los botones con las comandas*/
+			for (int i = 0; i < comandas.length; i++) {
+				final int j = i;
+				//no me acuerdo porque puse i+1
+				JButton comandaMesa = new JButton("Comanda " + i);
+				comandaMesa.addActionListener(new ActionListener() {
+					/*Al seleccionar una comanda guardaremos en un atributo qué comanda hemos elegido*/
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						comandaSelected = j;
+						// restController.avisaComanda(numMesa,
+						// comandaSelected);
+					}
+
+				});
+				/*	Añadimos el boton al panel con las comandas*/
+				comanditasPanel.add(comandaMesa);
+			}
+			/*Despues de haber creado el panel con las comandas lo añadimos al centro de comandasPanel[numPanel]*/
+			comandasPanel[numeroMesas].add(comanditasPanel, BorderLayout.CENTER);
+		}
+		
+		/*Creamos un JPanel que tendrá los botones de Editar, añadir y eliminar*/
+		JPanel botoncitosPanel = new JPanel();
+		botoncitosPanel.setLayout(new FlowLayout());
+		
+		JButton editarComanda = new JButton("Editar");
+		editarComanda.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+			
+		});
+		botoncitosPanel.add(editarComanda);
+
+		JButton añadirComanda = new JButton("Añadir");
+		añadirComanda.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (/*comandaSelected != -1 &&*/ numMesa != -1){
+					restController.requestNewCommand(numMesa);
+					new RealizarPedido(restController, numMesa, comandas.length);
+				}
+			}
+			
+		});
+		botoncitosPanel.add(añadirComanda);
+		
+		JButton eliminarComanda = new JButton("Eliminar");
+		eliminarComanda.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (comandaSelected != -1 && numMesa != -1){
+					restController.eliminarComanda(numMesa, comandaSelected);
+				}
+			}
+			
+		});
+		botoncitosPanel.add(eliminarComanda);
+		/*Se añade el Panel con los botones de control al comandasPanel[numeroMesa]*/
+		comandasPanel[numeroMesas].add(botoncitosPanel, BorderLayout.SOUTH);
 
 	}
 
