@@ -43,18 +43,25 @@ public class VerReserva implements LibroReservaObserver{
 		tMes.setPreferredScrollableViewportSize(null);
 		tTodas.setPreferredScrollableViewportSize(null);
 		//Permitimos que se pueda hacer Scroll por si se cogen muchos Items
-		/*JScrollPane scrollTodas  = new JScrollPane(tTodas, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollTodas  = new JScrollPane(tTodas, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollHoy  = new JScrollPane(tHoy, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollSemana  = new JScrollPane(tSemana, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane scrollMes = new JScrollPane(tMes, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		 */
+
 		this.controlador = rest;
 		this.controlador.addLibroReservaObserver(this);
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		
 		JPanel panelTodas = new JPanel();
-		panelTodas.add(tTodas);
+		panelTodas.add(scrollTodas);
+		JFrame v = new JFrame();
+		JPanel p = new JPanel();
+		v.add(p);
+		p.add(scrollTodas);
+		v.setSize(300,200);
+		v.add(tTodas);
+		v.setVisible(true);
 		tabbedPane.addTab("Todas", null, panelTodas, "Muestra todas las reservas");
 		panelTodas.add(new JLabel("prueba"));
 		/*for ( ReservaInfo r : controlador.getReservas(-1)){
