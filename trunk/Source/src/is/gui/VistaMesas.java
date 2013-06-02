@@ -71,6 +71,7 @@ public class VistaMesas extends JPanel{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					numMesa = j;
+					int k = j;
 					title.setTitle("Mesa " + j);
 					/*
 					  Comanda[] comandas = new Comanda[controller.getMesa(j).getListaComandas().length];
