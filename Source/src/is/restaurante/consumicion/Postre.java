@@ -1,8 +1,8 @@
 package is.restaurante.consumicion;
 
-
 /**
  * Gestiona una postre, un tipo de consumición
+ * 
  * @author Jesús
  */
 public class Postre implements Consumicion {
@@ -14,22 +14,18 @@ public class Postre implements Consumicion {
 		this.disponible = disp;
 	}
 
-	@Override
 	public float getPrecio() {
 		return this.precio;
 	}
 
-	@Override
 	public String getNombre() {
 		return this.nombre;
 	}
 
-	@Override
 	public String getDescripcion() {
 		return this.descripción;
 	}
 
-	@Override
 	public boolean isDisponible() {
 		return this.disponible;
 	}
