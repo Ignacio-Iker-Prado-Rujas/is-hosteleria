@@ -2,7 +2,7 @@ package is.restaurante.consumicion;
 
 public class Bebida implements Consumicion {
 
-	public Bebida(String name, int price, boolean disp, String desc) {
+	public Bebida(String name, float price, boolean disp, String desc) {
 		this.descripcion = desc;
 		this.precio = price;
 		this.nombre = name;

@@ -3,6 +3,7 @@ package is.gui;
 import is.gui.spring.SpringUtilities;
 import is.restaurante.Comanda;
 import is.restaurante.TipoPlatos;
+import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
 
 import java.awt.BorderLayout;
@@ -22,6 +23,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
@@ -41,7 +43,6 @@ public class ConsumicionSwing extends JPanel{
 		consumicionInicial = consumicion;
 		this.ventanaGeneral = ventana;
 		this.restControl = controller;
-		this.platoName = consumicion.getNombre();
 		
 		/*********Campo nombre***********************/
 		JLabel nombreL = new JLabel(" Nombre ");
@@ -96,8 +97,30 @@ public class ConsumicionSwing extends JPanel{
 		this.campos.add(tipoPlato);
 		
 		/**************Campo disponible*****************/
+		
+		JLabel disponibleL = new JLabel(" Disponible ");
+		disponibleL.setBorder(BorderFactory.createLineBorder(Color.black));
+		
+		this.campos.add(disponibleL);
+		disponible = new JRadioButton();
+		disponible.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(disponible.isSelected())
+					textoDisponibilidad.setText("Plato disponible");
+				else
+					textoDisponibilidad.setText("Plato no disponible");		
+			}
+		});
+		
+
+		contenerDisponibilidad = new JPanel();
+		contenerDisponibilidad.setMaximumSize(new Dimension(1, 1));	
+		contenerDisponibilidad.add(disponible);
+		textoDisponibilidad = new JLabel("Disponibilidad del plato");
+		contenerDisponibilidad.add(textoDisponibilidad);
+		this.campos.add(contenerDisponibilidad);
 		/*************Configuracion final***************/
-		SpringUtilities.makeCompactGrid(campos, 4, 2, 6, 6, 10, 10);
+		SpringUtilities.makeCompactGrid(campos, 5, 2, 6, 6, 10, 10);
 		this.add(campos, BorderLayout.CENTER);
 	}
 	
@@ -136,7 +159,7 @@ public class ConsumicionSwing extends JPanel{
 		TipoPlatos tipo = (TipoPlatos) tipoPlato.getSelectedItem();
 		switch (tipo) {
 		case BEBIDA:
-			return bebidas;
+			return new Bebida(nombrePlato.getText(), Float.parseFloat(precioField.getText()),  descripcion.getText() );
 		case PRIMERO:
 			return primeros;
 		case SEGUNDO:
@@ -173,8 +196,7 @@ public class ConsumicionSwing extends JPanel{
 	
 	//TODO Elegir disponibilidad
 	private JPanel campos;
-	private String platoName;
-	private int precio;
+	private JRadioButton disponible;
 	private JTextField precioField;
 	private GUIController restControl;
 	private JTextField nombrePlato;
@@ -183,5 +205,7 @@ public class ConsumicionSwing extends JPanel{
 	private VerMenu ventanaGeneral;
 	private boolean edit;
 	private Consumicion consumicionInicial;
+	JPanel contenerDisponibilidad;
+	JLabel textoDisponibilidad;
 	
 }
