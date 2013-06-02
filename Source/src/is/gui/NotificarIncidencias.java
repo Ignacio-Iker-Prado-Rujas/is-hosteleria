@@ -12,32 +12,39 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
-public class NotificarIncidencias extends JFrame{
-	public NotificarIncidencias(GUIController controller){
+public class NotificarIncidencias extends JFrame {
+	public NotificarIncidencias(GUIController controller) {
 		this.controlador = controller;
 
 		JPanel panel = new JPanel(new BorderLayout());
 		JButton boton = new JButton("Send");
-		boton.addActionListener(new ActionListener(){			
+		boton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				notificar("Se ha enviado la notificacion");
 			}
 		});
 		this.add(panel);
-		panel.add(new JTextField("Escriba su problema y mandelo"), BorderLayout.NORTH);
+		panel.add(new JTextField("Escriba su problema y mandelo") {
+			public boolean isEditable() {
+				return false;
+			}
+		},
+				BorderLayout.NORTH);
 		panel.add(boton, BorderLayout.SOUTH);
 		text = new JTextArea();
 		panel.add(text);
-		
-		this.setSize(200,200);
+
+		this.setSize(350, 220);
 		this.setVisible(true);
-	
+
 	}
-	private void notificar(String message){
+
+	private void notificar(String message) {
 		JOptionPane.showMessageDialog(this, message);
 		this.dispose();
 	}
+
 	private JTextArea text;
 	private GUIController controlador;
 }
