@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -42,10 +43,18 @@ public class VistaMesas extends JPanel{
 	     
 		
 		final TitledBorder title = new TitledBorder("hola");
+		cardPanel.setBorder(title);
 		/*Inicializamos los JPanel que contendrán las comandas de cada mesa y los botones de control
 		 * añadir, eliminar y editar comanda*/
+		
+		//TitledBorder title;
+		//title = BorderFactory.createTitledBorder("title");
+		//jComp8.setBorder(title);
+		
 		for (int j=0; j<mesas.length; j++){
 			comandasPanel[j] = new JPanel();
+			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "  + j);
+			comandasPanel[j].setBorder(titulo);
 			setComandasPanel(j);
 			
 		}
@@ -79,7 +88,6 @@ public class VistaMesas extends JPanel{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					numMesa = j;
-					int k = j;
 					title.setTitle("Mesa " + j);
 					/*
 					  Comanda[] comandas = new Comanda[controller.getMesa(j).getListaComandas().length];
@@ -121,7 +129,7 @@ public class VistaMesas extends JPanel{
 	}
 	
 	public void setComandasPanel(Integer numeroMesa){
-		TitledBorder title = new TitledBorder("Mesa " + numMesa);
+		TitledBorder title = new TitledBorder("Mesa " + numeroMesa);
 		comandas = restController.getMesa(numeroMesa).getListaComandas();
 		comandasPanel[numeroMesa].setBorder(title);
 		comandasPanel[numeroMesa].setLayout(new BorderLayout());
