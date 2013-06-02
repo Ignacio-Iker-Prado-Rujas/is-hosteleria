@@ -47,7 +47,6 @@ public class VerReserva implements LibroReservaObserver{
 		JScrollPane scrollMes = new JScrollPane(tMes);
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
-
 //		carga los datos en las tablas
 		this.tablaTodas.actualizarTabla(this.controlador.getReservas(-1));
 		this.tablaHoy.actualizarTabla(this.controlador.getReservas(0));
