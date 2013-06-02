@@ -20,6 +20,7 @@ import javax.swing.border.TitledBorder;
 @SuppressWarnings("serial")
 /**
  * TODO por alguna extraña razón al cambiar de mesa no se ponen los botones de editar y esas cosas
+ * TODO lo está arreglando villarín, con los cambios que hizo el y los que hizo Jaime
  * @author JaimeDan
  *
  */
