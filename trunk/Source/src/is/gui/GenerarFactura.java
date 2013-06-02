@@ -5,6 +5,7 @@ import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
 import is.restaurante.MesaObserver;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -60,7 +61,7 @@ public class GenerarFactura implements MesaObserver {
 		});
 		JFrame marco = new JFrame();
 		marco.add(panel);
-		marco.setSize(200, 200);
+		marco.setPreferredSize(new Dimension(200, 300));
 		marco.setVisible(true);
 
 	}

@@ -7,6 +7,7 @@ import is.restaurante.MesaObserver;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -133,7 +134,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		this.add(comandasContainer, BorderLayout.CENTER);
 
 		JFrame frame = new JFrame("Comandas por mesa");
-
+		frame.setPreferredSize(new Dimension(500, 300));
 		frame.setVisible(true);
 		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
