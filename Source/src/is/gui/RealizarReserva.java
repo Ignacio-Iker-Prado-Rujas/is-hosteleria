@@ -2,6 +2,7 @@ package is.gui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -27,6 +28,10 @@ import javax.swing.event.ChangeListener;
 
 import org.jdesktop.swingx.JXDatePicker;
 
+/**
+ * TODO en esta clase solo falta al comunicar la reserva que pasamos el array de booleanos mesasSel como parametro, mesasSel[i] es true, quiere 
+ * decir que la mesa con indice i esta en la reserva
+ */
 @SuppressWarnings("serial")
 public class RealizarReserva extends JPanel{
 
@@ -37,9 +42,12 @@ public class RealizarReserva extends JPanel{
 		this.setLayout(new BorderLayout());
 		this.inicializaBox();
 		
+		
 		this.mesasSel = new boolean[controlador.requestMesas().length];
 		for (int i=0; i< mesasSel.length; i++)
 			mesasSel[i] = false;
+		final SeleccionMesas selecciona = new SeleccionMesas();
+		
 		JPanel reserva = new JPanel();
 	
 		reserva.setLayout(new SpringLayout());
@@ -98,15 +106,19 @@ public class RealizarReserva extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new SeleccionMesas();
+				//SeleccionMesas selecciona = new SeleccionMesas();
+				selecciona.setBounds(0,0,300,200);
+		        selecciona.setVisible(true);
 			}
 			
 		});
+		reserva.add(mesasL);
+		reserva.add(mesasB);
 
 		/*
 		 * Atención!!, después de reserva va el número de botoncitos que queremos
 		 */
-		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
+		SpringUtilities.makeCompactGrid(reserva, 5, 2, 6, 6, 10, 10);
 		this.add(reserva, BorderLayout.CENTER);
 		
 		this.add(new JButton("Reservar") {
@@ -224,9 +236,20 @@ public class RealizarReserva extends JPanel{
 	}
 	
 	public final class SeleccionMesas extends JFrame implements ChangeListener{
-	    private JCheckBox[] checkMesas;
+	    private JCheckBox[] checkMesas = new JCheckBox[mesasSel.length];
 	    public SeleccionMesas() {
-	        setLayout(null);
+	    	 //Put the check boxes in a column in a panel
+	    	//TODO jesus, villarin o quien sea, mirad esto del grid layout que no se muy bien como va
+	        JPanel checkPanel = new JPanel(new GridLayout(5,5));
+	        
+	        for (int i=0; i<mesasSel.length; i++){
+	        	checkMesas[i] = new JCheckBox("Mesa " + i);
+	        	checkMesas[i].addChangeListener(this);
+	        	checkMesas[i].setSelected(mesasSel[i]);
+	        	//checkMesas[i].setLocation(0, i*10);
+	        	//checkMesas[i].setBounds(0,0,i*10, 50);
+	        	checkPanel.add(checkMesas[i]);
+	        }/*
 	        check1=new JCheckBox("Inglés");
 	        check1.setBounds(10,10,150,30);
 	        check1.addChangeListener(this);
@@ -238,12 +261,16 @@ public class RealizarReserva extends JPanel{
 	        check3=new JCheckBox("Alemán");
 	        check3.setBounds(10,90,150,30);
 	        check3.addChangeListener(this);        
-	        add(check3);        
+	        add(check3); */  
+	        this.add(checkPanel);
 	    }
 	    
 	    public void stateChanged(ChangeEvent e){
 	        String cad="";
-	        if (check1.isSelected()==true) {
+	        for (int i=0; i< checkMesas.length; i++){
+	        	mesasSel[i] = checkMesas[i].isSelected();
+	        }
+	        /*if (check1.isSelected()==true) {
 	            cad=cad+"Inglés-";
 	        }
 	        if (check2.isSelected()==true) {
@@ -251,7 +278,7 @@ public class RealizarReserva extends JPanel{
 	        }
 	        if (check3.isSelected()==true) {
 	            cad=cad+"Alemán-";
-	        }
+	        }*/
 	        setTitle(cad);
 	    }
 	}
