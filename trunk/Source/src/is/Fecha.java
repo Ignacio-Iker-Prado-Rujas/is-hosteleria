@@ -9,6 +9,14 @@ package is;
  * @author JaimeDan
  */
 public class Fecha {
+	public Fecha() {
+		año = -1;
+		mes = -1;
+		dia = -1;
+		hora = -1;
+		minutos = -1;
+	}
+	
 	/**
 	 * 
 	 * @param año

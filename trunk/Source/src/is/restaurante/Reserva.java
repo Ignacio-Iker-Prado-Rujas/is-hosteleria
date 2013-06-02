@@ -14,7 +14,10 @@ import java.util.ArrayList;
 
 public class Reserva implements Comparable<Reserva>, ReservaInfo {
 	public Reserva() {
-
+		nombre = "";
+		numeroDeComensales = -1;
+		fecha = new Fecha();
+		mesas = new ArrayList<Mesa>();
 	}
 
 	/**
