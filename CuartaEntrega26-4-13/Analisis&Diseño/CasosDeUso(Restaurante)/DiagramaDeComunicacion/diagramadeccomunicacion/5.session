@@ -24,17 +24,18 @@ diagrams
     775 499 110 4 0 0
   sequencediagram_ref 149253 // EliminarComanda
     775 499 110 4 0 0
-  sequencediagram_ref 149381 // ModificarPedido
+  active  sequencediagram_ref 149381 // ModificarPedido
     974 624 110 4 0 0
   collaborationdiagram_ref 142210 // diagramaEditarComanda
     775 499 100 4 0 0
   collaborationdiagram_ref 128258 // diagramaModificarMenu
     775 499 100 4 0 0
-  active  collaborationdiagram_ref 128386 // diagramaGenerarFactura
+  collaborationdiagram_ref 128386 // diagramaGenerarFactura
     970 624 100 4 0 0
 end
 show_stereotypes
-selected classview_ref 141445 // Clases
+selected 
+package_ref 128011 // DiagramasSecuencia
 open
   usecase_ref 141954 // editarComanda
   usecase_ref 128130 // modificarMenu
