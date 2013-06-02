@@ -71,6 +71,7 @@ public class Reserva implements Comparable<Reserva>, ReservaInfo {
 			name += "Mesas: ";
 			for (Mesa m : this.mesas)
 				name += m.getNumeroMesa() + " ";
+			name += LINE_SEPARATOR;
 		}
 		name += "Numero de comensales: " + this.numeroDeComensales;
 		return name;
