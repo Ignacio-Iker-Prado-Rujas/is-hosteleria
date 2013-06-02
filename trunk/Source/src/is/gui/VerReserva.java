@@ -180,6 +180,7 @@ public class VerReserva implements LibroReservaObserver{
 								tablaSemana.getValueAt(tSemana.getSelectedRow(), 2),
 								tablaSemana.getValueAt(tSemana.getSelectedRow(), 3));
 				}
+				
 					//tablaTodas.getSelectedRow();
 				//borrarReserva();					
 			}
