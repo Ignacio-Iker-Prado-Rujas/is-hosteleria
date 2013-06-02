@@ -27,10 +27,8 @@ public class Restaurante {
 		this.menu = new Menu();
 	}
 
-	public Restaurante(List<Reserva> list, Menu m) {
-		this.mesas = new ArrayList<Mesa>(5);
-		for (int i = 0; i < 5; i++)
-			mesas.add(new Mesa(i));
+	public Restaurante(List<Reserva> list, Menu m, ArrayList<Mesa> mesasRes) {
+		mesas = mesasRes;
 		reservas = new LibroReservas(list);
 		menu = m;
 	}
