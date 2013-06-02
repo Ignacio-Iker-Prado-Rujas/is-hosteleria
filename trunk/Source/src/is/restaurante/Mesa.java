@@ -118,19 +118,37 @@ public class Mesa implements MesaInfo {
 	}
 
 
-	static final String LINE_SEPARATOR = System.getProperty("line.separator");
-
+	
 	private void emitirCambios() {
 		for (MesaObserver o : obs)
 			o.cambioOcurrido((ComandaInfo[]) comandas.toArray());
 	}
-	
-	 public void addComandaObserver(ComandaObserver observer) {
-         Comanda nuevaComanda = new Comanda();
-         comandas.add(nuevaComanda);
-         comandas.lastElement().addObserver(observer);
- }
+/*
+	public void addComandaObserver(ComandaObserver observer/*, int comandaSeleccionada*//*) {
+		Comanda nuevaComanda = new Comanda();
+		comandas.add(nuevaComanda);
+		comandas.lastElement().addObserver(observer);
+		System.out.println(comandas.size());
+		comandas.lastElement().setNumComanda(comandas.size() - 1);
+	}
+	*/
 
+	public void addNewComanda() {
+		comandas.add(new Comanda());
+	}
+
+	public void addComandaObserver(ComandaObserver observer, int comandaSeleccionada) {
+		/*Comanda nuevaComanda = new Comanda();
+		comandas.add(nuevaComanda);
+		comandas.lastElement().addObserver(observer);
+		System.out.println(comandas.size());
+		comandas.lastElement().setNumComanda(comandas.size() - 1);*/
+		comandas.get(comandaSeleccionada).addObserver(observer);
+	}
+
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
+
+	
 	private ArrayList<MesaObserver> obs;
 	private Vector<Comanda> comandas;
 	private int numeroMesa;

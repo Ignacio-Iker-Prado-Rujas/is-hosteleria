@@ -105,13 +105,17 @@ public class Restaurante {
         public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
                 menu.addConsumicion( consumicion, tPlato);
         }
+    
+        public void addNewCommand(int numMesa) {
+        	this.mesas.get(numMesa).addNewComanda();
+		}
         
         public void registerMenuObserver(MenuObserver verMenu) {
                 menu.addObserver(verMenu);
         }
 
-        public void addComandaObserver(ComandaObserver observer, int numeroMesa) {
-                mesas.get(numeroMesa).addComandaObserver(observer);
+        public void addComandaObserver(ComandaObserver observer, int numeroMesa, int comandaSeleccionada) {
+                mesas.get(numeroMesa).addComandaObserver(observer, comandaSeleccionada);
         }
         public void registerLibroReservaObserver(LibroReservaObserver libroReservaObserver) {
                 reservas.addObserver(libroReservaObserver);
@@ -121,7 +125,7 @@ public class Restaurante {
         private LibroReservas reservas;
         private Menu menu;
         private Tablon tablon;
-        
+	    
         
         
         

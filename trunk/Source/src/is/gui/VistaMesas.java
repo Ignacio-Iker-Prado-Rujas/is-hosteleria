@@ -137,7 +137,7 @@ public class VistaMesas extends JPanel implements MesaObserver{
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
 				//no me acuerdo porque puse i+1
-				JButton comandaMesa = new JButton("Comanda " + i + 1);
+				JButton comandaMesa = new JButton("Comanda " + i);
 				comandaMesa.addActionListener(new ActionListener() {
 					/*Al seleccionar una comanda guardaremos en un atributo qué comanda hemos elegido*/
 					@Override
@@ -176,7 +176,8 @@ public class VistaMesas extends JPanel implements MesaObserver{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (/*comandaSelected != -1 &&*/ numMesa != -1){
-					new RealizarPedido(restController, numMesa, comandaSelected);
+					restController.requestNewCommand(numMesa);
+					new RealizarPedido(restController, numMesa, comandas.length);
 				}
 			}
 			
