@@ -80,7 +80,7 @@ public class Menu implements MenuInfo {
 		return null;
 	}
 
-	/* Devuelve el array list donde está el elemento buscado */
+	/** Devuelve el enumerado al que pertenece el elemento buscado */
 	public TipoPlatos tipoPlato(String name) {
 		for (Consumicion c : bebidas)
 			if (c.getNombre().equals(name))
