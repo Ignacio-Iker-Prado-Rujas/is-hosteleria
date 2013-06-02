@@ -24,6 +24,7 @@ public class VistaMesas extends JPanel{
 	public VistaMesas(final GUIController controller){
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
+		this.setLayout(new BorderLayout());
 		comandasPanel = new JPanel[mesas.length];
 		comandasContainer = new JPanel();
 		final CardLayout comandasLayout = new CardLayout();
@@ -33,14 +34,20 @@ public class VistaMesas extends JPanel{
 		
 	     
 		
-		final TitledBorder title = new TitledBorder("");
+		final TitledBorder title = new TitledBorder("hola");
+		for (int j=0; j<mesas.length; j++){
+			comandasPanel[j] = new JPanel();
+			setComandasPanel(j);
+			
+		}
+			//comandas = restController.getMesa(j).getListaComandas();				 
 		
-		for (int i=0; i< mesas.length; i++){
+		/*for (int i=0; i< mesas.length; i++){
 			comandasPanel[i] = new JPanel();
 			comandasPanel[i].setLayout(new FlowLayout());
 			comandasPanel[i].setBorder(title);
 			
-		}
+		}*/
 		for (Integer i = 0; i < mesas.length; i++)
 			comandasContainer.add(comandasPanel[i], i.toString());
 		
@@ -65,12 +72,11 @@ public class VistaMesas extends JPanel{
 					 
 					for (int i = 0; i< comandas.length; i++)
 					*/
+					//comandas = restController.getMesa(j).getListaComandas();
 					
-					
-				 	comandas = restController.getMesa(j).getListaComandas();				 
-					setComandasPanel(j);
+				 	//setComandasPanel(j);
 					//comandasPanel[j].add(new JLabel("Bubidibu"), BorderLayout.SOUTH);
-					comandasLayout.show(comandasPanel[j], j.toString());
+					comandasLayout.show(/*comandasPanel[j]*/comandasContainer, j.toString());
 					
 					
 				}
@@ -79,8 +85,8 @@ public class VistaMesas extends JPanel{
 			panelMesas.add(mesa);
 		}
 		
-		this.add(panelMesas);
-		this.add(comandasContainer);
+		this.add(panelMesas, BorderLayout.NORTH);
+		this.add(comandasContainer, BorderLayout.CENTER);
 		
 		JFrame frame = new JFrame("Reservas");
 
@@ -95,6 +101,7 @@ public class VistaMesas extends JPanel{
 	public void setComandasPanel(Integer numeroMesa){
 		TitledBorder title = new TitledBorder("Mesa " + numMesa);
 		comandasPanel[numeroMesa].setBorder(title);
+		comandasPanel[numeroMesa].setLayout(new FlowLayout());
 		if (comandas != null) {
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
@@ -146,6 +153,9 @@ public class VistaMesas extends JPanel{
 			}
 			
 		});
+		comandasContainer.add(editarComanda);
+		comandasContainer.add(añadirComanda);
+		comandasContainer.add(eliminarComanda);
 	}
 	
 	
