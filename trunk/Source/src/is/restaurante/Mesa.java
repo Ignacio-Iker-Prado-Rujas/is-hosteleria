@@ -119,7 +119,7 @@ public class Mesa implements MesaInfo {
 	
 	private void emitirCambios() {
 		for (MesaObserver o : obs)
-			o.cambioOcurrido((ComandaInfo[]) comandas.toArray());
+			o.cambioOcurrido(this.listaComandasToArray(), this.numeroMesa);
 	}
 /*
 	public void addComandaObserver(ComandaObserver observer/*, int comandaSeleccionada*//*) {
@@ -133,6 +133,7 @@ public class Mesa implements MesaInfo {
 
 	public void addNewComanda() {
 		comandas.add(new Comanda());
+		emitirCambios();
 	}
 
 	public void addComandaObserver(ComandaObserver observer, int comandaSeleccionada) {
