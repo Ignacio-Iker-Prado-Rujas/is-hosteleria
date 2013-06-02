@@ -83,7 +83,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 														// utilizado por el
 														// listener
 
-			JButton mesa = new JButton("Mesa " + (mesas[i].getNumeroMesa() + 1));
+			//se pone con getnumeromesa, da igual que empiece por 0, porque en otros sitios esta asi
+			JButton mesa = new JButton("Mesa " + (mesas[i].getNumeroMesa()));
 			mesa.addActionListener(new ActionListener() {
 
 				@Override
