@@ -200,7 +200,7 @@ public class VerReserva implements LibroReservaObserver{
 	private GUIController controlador;
 	
 	@Override
-	public void cambioOcurrido(ReservaInfo[] reservas) {
+	public void cambioOcurrido(ArrayList<ReservaInfo> reservaHoy, ArrayList<ReservaInfo> reservaSemana, ArrayList<ReservaInfo> reservasSiempre) {
 		
 	}
 	private JFrame ventanaVerReservas;
