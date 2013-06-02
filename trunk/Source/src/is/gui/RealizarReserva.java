@@ -243,10 +243,12 @@ public class RealizarReserva extends JPanel{
 	
 	public final class SeleccionMesas extends JFrame implements ChangeListener{
 	    private JCheckBox[] checkMesas = new JCheckBox[mesasSel.length];
+	    
 	    public SeleccionMesas() {
 	    	 //Put the check boxes in a column in a panel
 	    	//TODO jesus, villarin o quien sea, mirad esto del grid layout que no se muy bien como va
-	        JPanel checkPanel = new JPanel(new GridLayout(5,5));
+	    	
+	        JPanel checkPanel = new JPanel(new GridLayout((mesasSel.length +1)/2,2));
 	        
 	        for (int i=0; i<mesasSel.length; i++){
 	        	checkMesas[i] = new JCheckBox("Mesa " + i);
@@ -256,9 +258,9 @@ public class RealizarReserva extends JPanel{
 	        	//checkMesas[i].setBounds(0,0,i*10, 50);
 	        	checkPanel.add(checkMesas[i]);
 	        }
-	        
-	        
-	        checkPanel.add(new JButton ("Seleccionar"){
+	        JPanel panelMesas = new JPanel();
+	        panelMesas.add(checkPanel, BorderLayout.CENTER);
+	        panelMesas.add(new JButton ("Seleccionar"){
 	        	{
 	        		this.addActionListener(new ActionListener(){
 
@@ -273,7 +275,7 @@ public class RealizarReserva extends JPanel{
 	        			
 	        		});
 	        	}
-	        });
+	        }, BorderLayout.SOUTH);
 	        
 	        
 	        /*
@@ -289,7 +291,7 @@ public class RealizarReserva extends JPanel{
 	        check3.setBounds(10,90,150,30);
 	        check3.addChangeListener(this);        
 	        add(check3); */  
-	        this.add(checkPanel);
+	        this.add(panelMesas);
 	    }
 	    
 	    public void stateChanged(ChangeEvent e){
