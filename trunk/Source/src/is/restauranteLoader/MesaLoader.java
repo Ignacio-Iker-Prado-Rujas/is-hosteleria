@@ -24,6 +24,7 @@ public class MesaLoader extends Loader {
 				int capacidad = forceInt();
 				Mesa mesa = new Mesa(numMesa, capacidad);
 				mesas.add(mesa);
+				numMesa++;
 			}
 			return mesas;
 		} catch (FileNotFoundException e) {
