@@ -57,10 +57,13 @@ public class GUIController {
 		return restaurante.buscarReservas(i);
 		
 	}
-	public void communicateReserva(String cad, int hora, int minutos, String cliente, int numeroComensales) {
+	public void communicateReserva(String cad, int hora, int minutos, String cliente, int numeroComensales, boolean[] mesasSel) {
 		Fecha fRes = new Fecha(0,0,0,0,0);
 		fRes.parse(cad, hora, minutos);
-		Reserva reserva = new Reserva(fRes, cliente, numeroComensales, null);
+		ArrayList<Mesa> mesas = new ArrayList<Mesa>();
+		for (int i = 0; i < mesasSel.length; i++)
+			if (mesasSel[i]) mesas.add(this.getMesa(i));			
+		Reserva reserva = new Reserva(fRes, cliente, numeroComensales, mesas);
 		restaurante.añadirReserva(reserva);
 	}
 
