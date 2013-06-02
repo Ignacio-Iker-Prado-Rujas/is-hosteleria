@@ -73,7 +73,21 @@ public class RestauranteSwing extends JPanel {
 
 		};
 
+		botones[3] = new JButton("Anular pedido") {
+			{
 
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+					}
+
+				});
+
+			}
+
+		};
 
 		botones[4] = new JButton("Distribución mesas") {
 			{
@@ -163,23 +177,6 @@ public class RestauranteSwing extends JPanel {
 			}
 
 		};
-		
-		botones[3] = new JButton("Anular pedido") {
-			{
-
-				this.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-					}
-
-				});
-
-			}
-
-		};
-		
 		for (JButton b : botones)
 			this.add(b);
 		// this.add(new JButton("Ver/modificar menú"));
