@@ -226,7 +226,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 					public void actionPerformed(ActionEvent e) {
 						restaurante.eliminaUltimaComanda(numeroMesa);
 						
-//						frame.dispose();
+						frame.dispose();
 					}
 					
 				});
