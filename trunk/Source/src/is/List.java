@@ -106,7 +106,7 @@ public class List<Tipo extends Comparable<Tipo>> {
 	public boolean erase (int n){
 		if (n >= 0 && n< size){
 			list[n] = null;
-			for (int i=n; i< size; i++)
+			for (int i=n; i< size-1; i++)
 				list[i] = list[i+1];
 			size--;
 			return true;
