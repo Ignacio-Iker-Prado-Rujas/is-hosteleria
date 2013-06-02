@@ -59,7 +59,7 @@ public class Comanda implements ComandaInfo {
 			emitirError("No existe la consumicion de nombre " + consumicion.getNombre());
 	}
 	
-	public void setConsumicionTimes(Consumicion consumicion, int veces){
+	public void setConsumicionTimes(Consumicion consumicion, int veces, TipoPlatos tPlato){
 		boolean hasChanged = false;
 		if (veces <0){/*emitError();*/ return;}
 		for (int i=0; i<4; i++){
@@ -75,7 +75,12 @@ public class Comanda implements ComandaInfo {
 				break;
 			}
 		}
-		if (!hasChanged);// emitError
+		//si no se ha encontrado es que no estaba, asi que lo añadimos con las veces veces
+		//TODO no se si es necesario el if
+		if (!hasChanged){
+			comanda[tPlato.toInt()].put(consumicion, veces);// emitError
+			emitirCambio();
+		}
 	}
 
 	public void addPrimero(Consumicion primero) {
