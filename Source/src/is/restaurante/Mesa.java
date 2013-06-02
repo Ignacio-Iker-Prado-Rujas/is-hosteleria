@@ -15,6 +15,7 @@ import java.util.Vector;
 public class Mesa implements MesaInfo {
 
 	 public Mesa(int num){
+		 this.obs = new ArrayList<MesaObserver>();
          this.comandas = new Vector<Comanda>();
          this.setNumeroMesa(num);
  }
