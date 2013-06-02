@@ -25,8 +25,7 @@ public class Restaurante {
                 this.menu = new Menu();
         }
 
-<<<<<<< .mine
-        public Restaurante(List<Reserva> list, Menu m, ArrayList<Mesa> mesasRes) {
+        public Restaurante(is.List<Reserva> list, Menu m, ArrayList<Mesa> mesasRes) {
                 mesas = mesasRes;
                 reservas = new LibroReservas(list);
                 menu = m;
@@ -77,13 +76,12 @@ public class Restaurante {
         public void addNewConsumption(int numComanda, int numMesa, Consumicion plato, TipoPlatos tPlato) {
                 mesas.get(numMesa).addConsumption(numComanda, plato, tPlato);
         }
-=======
-	public Restaurante(List<Reserva> list, Menu m, ArrayList<Mesa> mesasRes) {
-		mesas = mesasRes;
-		reservas = new LibroReservas(list);
-		menu = m;
-	}
->>>>>>> .r597
+        
+		/*public Restaurante(List<Reserva> list, Menu m, ArrayList<Mesa> mesasRes) {
+			mesas = mesasRes;
+			reservas = new LibroReservas(list);
+			menu = m;
+		}*/
 
         public void addNewConsumption(int numComanda, int numMesa,
                         Consumicion plato, TipoPlatos tPlato, int veces) {
