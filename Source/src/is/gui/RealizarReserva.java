@@ -94,6 +94,14 @@ public class RealizarReserva extends JPanel{
 		
 		JLabel mesasL = new JLabel("Mesas");
 		JButton mesasB = new JButton("Elegir mesas");
+		mesasB.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SeleccionMesas();
+			}
+			
+		});
 
 		/*
 		 * Atención!!, después de reserva va el número de botoncitos que queremos
@@ -108,13 +116,17 @@ public class RealizarReserva extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (datosValidos()){
+							datePicker.setFormats(new SimpleDateFormat("yyyy MM dd hh mm"));
 							Date reservaDate = datePicker.getDate();
-							int year = reservaDate.getYear();
+							/*int year = reservaDate.getYear();
 							int month = reservaDate.getMonth();
 							int day = reservaDate.getDay();
+							*/
+							String fecha = datePicker.toString();
+							datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
 							
 							
-							controlador.communicateReserva(year, month, day, (int)hora.getSelectedItem(), 
+							controlador.communicateReserva(fecha, (int)hora.getSelectedItem(), 
 									(int)minutos.getSelectedItem(), nombre.getText(), 
 									(int)comensales.getValue());						
 							frame.setVisible(false);

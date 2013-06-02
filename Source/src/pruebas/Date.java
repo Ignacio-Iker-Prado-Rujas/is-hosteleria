@@ -23,7 +23,7 @@ public class Date {
 		datePicker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				label.setText(datePicker.getDate().toString());
-				label.setText(datePicker.getDate().getYear() + "/" + datePicker.getDate().getMonth() +"/" +  datePicker.getDate().getDay());
+				//label.setText(datePicker.getDate().getYear() + "/" + datePicker.getDate().getMonth() +"/" +  datePicker.getDate().getDay());
 			}
 
 		});

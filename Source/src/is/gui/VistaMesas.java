@@ -41,8 +41,8 @@ public class VistaMesas extends JPanel{
 			comandasPanel[i].setBorder(title);
 			
 		}
-		for (int i = 0; i < mesas.length; i++)
-			cardPanel.add(comandasPanel[i], "Mesa " + i);
+		for (Integer i = 0; i < mesas.length; i++)
+			comandasContainer.add(comandasPanel[i], i.toString());
 		
 		JPanel panelMesas = new JPanel();
 		panelMesas.setLayout(new FlowLayout());
@@ -51,7 +51,7 @@ public class VistaMesas extends JPanel{
 
 		for (int i=0; i<mesas.length; i++){
 			//el numero de mesa siempre es el mismo que el indice
-			final int j= mesas[i].getNumeroMesa();//para que pueda ser utilizado por el listener
+			final Integer j= mesas[i].getNumeroMesa();//para que pueda ser utilizado por el listener
 
 			JButton mesa = new JButton("Mesa " + mesas[i].getNumeroMesa());
 			mesa.addActionListener(new ActionListener(){
@@ -69,8 +69,8 @@ public class VistaMesas extends JPanel{
 					
 				 	comandas = restController.getMesa(j).getListaComandas();				 
 					setComandasPanel(j);
-					comandasPanel[j].add(new JLabel("Bubidibu"), BorderLayout.SOUTH);
-					comandasLayout.show(comandasPanel[j], "Mesa " + j);
+					//comandasPanel[j].add(new JLabel("Bubidibu"), BorderLayout.SOUTH);
+					comandasLayout.show(comandasPanel[j], j.toString());
 					
 					
 				}
@@ -92,7 +92,7 @@ public class VistaMesas extends JPanel{
 		
 	}
 	
-	public void setComandasPanel(int numeroMesa){
+	public void setComandasPanel(Integer numeroMesa){
 		TitledBorder title = new TitledBorder("Mesa " + numMesa);
 		comandasPanel[numeroMesa].setBorder(title);
 		if (comandas != null) {
@@ -112,7 +112,7 @@ public class VistaMesas extends JPanel{
 				comandasPanel[numMesa].add(comandaMesa);
 			}
 		}
-		comandasContainer.add(comandasPanel[numeroMesa], "Mesa "+numeroMesa);
+		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
 		JButton editarComanda = new JButton("Editar");
 		editarComanda.addActionListener(new ActionListener(){
 

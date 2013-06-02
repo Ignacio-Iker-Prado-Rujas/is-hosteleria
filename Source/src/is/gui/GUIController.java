@@ -57,10 +57,10 @@ public class GUIController {
 		return restaurante.buscarReservas(i);
 		
 	}
-	public void communicateReserva(int año, int mes, int dia, int hora, 
-			int minutos, String cliente, int numeroComensales) {
-		Fecha fechaRes = new Fecha(año, mes, dia, hora, minutos);
-		Reserva reserva = new Reserva(fechaRes, cliente, numeroComensales, null);
+	public void communicateReserva(String cad, int hora, int minutos, String cliente, int numeroComensales) {
+		Fecha fRes = new Fecha(0,0,0,0,0);
+		fRes.parse(cad, hora, minutos);
+		Reserva reserva = new Reserva(fRes, cliente, numeroComensales, null);
 		restaurante.añadirReserva(reserva);
 	}
 

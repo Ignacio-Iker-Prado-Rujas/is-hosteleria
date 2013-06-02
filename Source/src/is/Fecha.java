@@ -129,6 +129,42 @@ public class Fecha {
 	public boolean mismoDia(Fecha f){
 		return (this.año == f.año && this.mes == f.mes && this.dia == f.dia);
 	}
+	
+	public Fecha parse(String cad){
+		
+		String[] comando = cad.split(" ");
+		this.año = Integer.parseInt(comando[0]);
+		this.mes = Integer.parseInt(comando[1]);
+		this.dia = Integer.parseInt(comando[2]);
+		this.hora = Integer.parseInt(comando[3]);
+		this.minutos = Integer.parseInt(comando[4]);
+		return this;
+		
+	}
+
+	public Fecha parse(String cad, int horas, int minutos) {
+		String[] comando = cad.split(" ");
+		for (int i=0; i< comando.length; i++){
+			System.out.println(comando[i] + " ");
+		}
+		this.año = Integer.parseInt(comando[0], 10);
+		if (comando[1].charAt(0) == '0'){
+			Character c = comando[1].charAt(1);
+			this.mes = Integer.parseInt(c.toString(), 10);
+		}
+		else 
+			this.mes = Integer.parseInt(comando[1]);
+		if (comando[2].charAt(0) == '0'){
+			Character c = comando[1].charAt(1);
+			this.mes = Integer.parseInt(c.toString(), 10);
+		}
+		else 
+			this.mes = Integer.parseInt(comando[2], 10);
+		this.hora = horas;
+		this.minutos = minutos;
+		return this;
+	}
+	
 
 	public String toString(){
 		return this.dia + "/" + this.mes + "/" + this.dia + " " + (this.hora < 10 ? "0" + this.hora:this.hora) + ":" + this.minutos;
