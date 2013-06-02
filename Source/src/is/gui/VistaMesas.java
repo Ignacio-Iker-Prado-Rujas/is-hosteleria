@@ -50,7 +50,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		for (int j = 0; j < mesas.length; j++) {
 			comandasPanel[j] = new JPanel();
 			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "
-					+ (j + 1));
+					+ (j));
 			comandasPanel[j].setBorder(titulo);
 			// boolean true, es para ver si es la primera vez que escogemos la
 			// mesa
@@ -96,7 +96,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					numMesa = j;
-					title.setTitle("Mesa " + (j + 1));
+					title.setTitle("Mesa " + (j));
 					addMesaObserver(j);
 					/*
 					 * Comanda[] comandas = new
@@ -169,7 +169,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			/* Creamos los botones con las comandas */
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
-				JButton comandaMesa = new JButton("Comanda " + i);
+				JButton comandaMesa = new JButton("Comanda " + (i+1));
 				comandaMesa.addActionListener(new ActionListener() {
 					/*
 					 * Al seleccionar una comanda guardaremos en un atributo qué
