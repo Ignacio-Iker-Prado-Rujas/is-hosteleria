@@ -40,6 +40,8 @@ public class VistaMesas extends JPanel{
 	     
 		
 		final TitledBorder title = new TitledBorder("hola");
+		/*Inicializamos los JPanel que contendrán las comandas de cada mesa y los botones de control
+		 * añadir, eliminar y editar comanda*/
 		for (int j=0; j<mesas.length; j++){
 			comandasPanel[j] = new JPanel();
 			setComandasPanel(j);
@@ -53,14 +55,18 @@ public class VistaMesas extends JPanel{
 			comandasPanel[i].setBorder(title);
 			
 		}*/
-		for (Integer i = 0; i < mesas.length; i++)
-			comandasContainer.add(comandasPanel[i], i.toString());
+		/*Se los añadimos al contenedor padre, mierda esto lo quito porque ya estaba en el setcomandasPanel*/
+		//for (Integer i = 0; i < mesas.length; i++)
+		//	comandasContainer.add(comandasPanel[i], i.toString());
 		
+		
+		/*Creamos un panel con las mesas, usando un flowlayout*/
 		JPanel panelMesas = new JPanel();
 		panelMesas.setLayout(new FlowLayout());
 		//this.restController.requestMesas();
 		//this.restController.pedirMesas();
-
+		/*Para cada mesa añadimos un listener que hara que el cardlayout muestre
+		 * el panel de comandas correspondiente a la mesa j*/
 		for (int i=0; i<mesas.length; i++){
 			//el numero de mesa siempre es el mismo que el indice
 			final Integer j= mesas[i].getNumeroMesa();//para que pueda ser utilizado por el listener
@@ -82,6 +88,13 @@ public class VistaMesas extends JPanel{
 					
 				 	//setComandasPanel(j);
 					//comandasPanel[j].add(new JLabel("Bubidibu"), BorderLayout.SOUTH);
+					
+					/*El card layout debe mostrar en comandasContainer las comandas de la mesa j,
+					 *  (Recordemos que j.toString era la clave para las comandas de la mesa j
+					 * Aquí falla el programa
+					 * Mirar los .java realizar pedido y cardLayoutExample para ver como funciona el 
+					 * card layout
+					 * */
 					comandasLayout.show(/*comandasPanel[j]*/comandasContainer, j.toString());
 					
 					
@@ -90,8 +103,9 @@ public class VistaMesas extends JPanel{
 			});
 			panelMesas.add(mesa);
 		}
-		
+		/*Añadimos el panel con las mesas al norte*/
 		this.add(panelMesas, BorderLayout.NORTH);
+		/*Añadimos el contenedor padre con las comandas por cada mesa en el centro*/
 		this.add(comandasContainer, BorderLayout.CENTER);
 		
 		JFrame frame = new JFrame("Comandas por mesa");
@@ -110,13 +124,19 @@ public class VistaMesas extends JPanel{
 		comandasPanel[numeroMesa].setBorder(title);
 		comandasPanel[numeroMesa].setLayout(new BorderLayout());
 		JPanel comanditasPanel = new JPanel();
+		/* Se crea un JPanel con Flow layout para añadir como botones las comandas de las mesas
+		 * igual en vez de botones se podrian usar JRadioButtons
+		 */
 		comanditasPanel.setLayout(new FlowLayout());
+		/* Si la mesa tiene comandas, es decir, comandas!= null*/
 		if (comandas != null) {
+			/* Creamos los botones con las comandas*/
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
+				//no me acuerdo porque puse i+1
 				JButton comandaMesa = new JButton("Comanda " + i + 1);
 				comandaMesa.addActionListener(new ActionListener() {
-
+					/*Al seleccionar una comanda guardaremos en un atributo qué comanda hemos elegido*/
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						comandaSelected = j;
@@ -125,12 +145,14 @@ public class VistaMesas extends JPanel{
 					}
 
 				});
+				/*	Añadimos el boton al panel con las comandas*/
 				comanditasPanel.add(comandaMesa);
 			}
+			/*Despues de haber creado el panel con las comandas lo añadimos al centro de comandasPanel[numPanel]*/
 			comandasPanel[numeroMesa].add(comanditasPanel, BorderLayout.CENTER);
 		}
 		
-		
+		/*Creamos un JPanel que tendrá los botones de Editar, añadir y eliminar*/
 		JPanel botoncitosPanel = new JPanel();
 		botoncitosPanel.setLayout(new FlowLayout());
 		
@@ -170,9 +192,10 @@ public class VistaMesas extends JPanel{
 			
 		});
 		botoncitosPanel.add(eliminarComanda);
+		/*Se añade el Panel con los botones de control al comandasPanel[numeroMesa]*/
 		comandasPanel[numeroMesa].add(botoncitosPanel, BorderLayout.SOUTH);
 		
-		
+		/*Se añade al JPanel padre el comandasPanel[numeroMesa], pasandole como clave el numero de mesa en string*/
 		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
 		
 		//comandasContainer.add(editarComanda);

@@ -29,7 +29,9 @@ import javax.swing.event.ChangeListener;
 import org.jdesktop.swingx.JXDatePicker;
 
 /**
- * TODO en esta clase solo falta al comunicar la reserva que pasamos el array de booleanos mesasSel como parametro, mesasSel[i] es true, quiere 
+ * TODO en esta clase solo falta al comunicar la reserva que pasamos el array de booleanos mesasSel 
+ * como parametro, para que la reserva añada las mesas
+ * necesarias, mesasSel[i] es true, quiere 
  * decir que la mesa con indice i esta en la reserva
  */
 @SuppressWarnings("serial")
