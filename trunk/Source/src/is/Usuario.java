@@ -1,6 +1,4 @@
 package is;
-
-import is.gui.UserWindow;
 /**
  * Gestiona los usuarios, que constan de id y contraseña, para hacer login en la aplicación
  * @author Jesús
