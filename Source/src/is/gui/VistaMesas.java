@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
@@ -215,6 +216,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					restController.requestNewCommand(numMesa);
 					new RealizarPedido(restController, numMesa, comandas.length - 1);
 				}
+//				else notificar("Debe seleccionar una mesa");
 			}
 
 		});
@@ -256,7 +258,9 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		setComandasPanel(numeroMesas, false);
 		comandasPanel[numeroMesas].requestFocusInWindow();
 	}
-
+	private void notificar(String message) {
+		JOptionPane.showMessageDialog(this, message);
+	}
 	private JPanel comandasContainer;
 
 	private GUIController restController;
