@@ -11,7 +11,7 @@ import is.List;
  * @author JaimeDan
  * 
  */
-public class LibroReservas {
+public class LibroReservas{
 	/**
 	 * Constructor
 	 */
@@ -62,6 +62,21 @@ public class LibroReservas {
 		return reservasMes;
 
 	}
+	
+	public ArrayList <ReservaInfo> reservasSiempre(){
+		Date date = new Date();
+
+		Fecha fecha = new Fecha(0, 0, 0, 0, 0); // new Date (hoy) o algo asi
+		fecha.parse(date.toString(), 0, 0);
+		ArrayList<ReservaInfo> reservasSiempre = new ArrayList<ReservaInfo>();
+		for (int i=0; i<listaReservas.size(); i++){
+			//en realidad solo habria que hacer un if
+			if (listaReservas.get(i).getFecha().esMayorQue(fecha) || listaReservas.get(i).getFecha().mismoDia(fecha)){
+				reservasSiempre.add(listaReservas.get(i));
+			}
+		}
+		return reservasSiempre;
+	}
 
 	public boolean eliminarReserva(Reserva res) {
 		boolean exito = listaReservas.erase(res);
@@ -78,12 +93,12 @@ public class LibroReservas {
 	 * 0, 59, nombre, 0, null))); } return reservas; }
 	 */
 
-	private void emitirCambios() {
+/*	private void emitirCambios() {
 		for (LibroReservaObserver obs : observers) {
 			obs.cambioOcurrido(listaReservasToArray());
 		}
 	}
-
+*/
 	private ReservaInfo[] listaReservasToArray() {
 		ReservaInfo[] reservaArray = new ReservaInfo[listaReservas.size()];
 		for (int i = 0; i < listaReservas.size(); i++) {
@@ -134,6 +149,8 @@ public class LibroReservas {
 		 * return i; //else return listaRes;
 		 */
 	}
+	
+
 
 	public ArrayList<ReservaInfo> buscarReservaHoy(Fecha date) {
 		ArrayList<ReservaInfo> reservasHoy = new ArrayList<ReservaInfo>();
@@ -189,6 +206,13 @@ public class LibroReservas {
 		}
 
 	}
+	
+
+	
+	private void emitirCambios(){
+		for (LibroReservaObserver obs: observers)
+			obs.cambioOcurrido(this.reservasHoy(), this.reservasSemana(), this.reservasSiempre());
+	}
 
 	private List<Reserva> listaReservas;
 	// private int numeroReservas;// TODO creo que numero reservas se puede ver
@@ -200,5 +224,6 @@ public class LibroReservas {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
