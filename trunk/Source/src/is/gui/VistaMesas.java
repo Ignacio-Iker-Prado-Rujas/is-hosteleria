@@ -1,6 +1,7 @@
 package is.gui;
 
 import is.restaurante.ComandaInfo;
+import is.restaurante.Mesa;
 import is.restaurante.MesaInfo;
 import is.restaurante.MesaObserver;
 
@@ -45,7 +46,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 		for (int j = 0; j < mesas.length; j++) {
 			comandasPanel[j] = new JPanel();
-			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa " + j + 1);
+			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa " + j);
 			comandasPanel[j].setBorder(titulo);
 			setComandasPanel(j);
 
