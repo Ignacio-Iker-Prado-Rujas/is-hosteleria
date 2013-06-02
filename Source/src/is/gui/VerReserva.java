@@ -54,21 +54,21 @@ public class VerReserva implements LibroReservaObserver{
 //		Anyade los botones para todas
 		JPanel panelTodas = new JPanel(new BorderLayout());
 		JPanel opcionesTodas = new JPanel(new GridLayout());
-		anyadirBotones(opcionesTodas);
+		anyadirBotones(opcionesTodas, "todas");
 		panelTodas.add(scrollTodas, BorderLayout.CENTER);
 		panelTodas.add(opcionesTodas, BorderLayout.SOUTH);
 		
 //		Anyade los botones para hoy
 		JPanel panelHoy = new JPanel(new BorderLayout());
 		JPanel opcionesHoy = new JPanel(new GridLayout());
-		anyadirBotones(opcionesHoy);
+		anyadirBotones(opcionesHoy, "hoy");
 		panelHoy.add(scrollHoy, BorderLayout.CENTER);
 		panelHoy.add(opcionesHoy, BorderLayout.SOUTH);
 		
 //		Anyade los botones para semana
 		JPanel panelSemana = new JPanel(new BorderLayout());
 		JPanel opcionesSemana = new JPanel(new GridLayout());
-		anyadirBotones(opcionesSemana);
+		anyadirBotones(opcionesSemana, "semana");
 		panelSemana.add(scrollSemana, BorderLayout.CENTER);
 		panelSemana.add(opcionesSemana, BorderLayout.SOUTH);
 		
@@ -136,11 +136,12 @@ public class VerReserva implements LibroReservaObserver{
 		//tablaMes = new TableReservas();
 	}
 	
-	private void anyadirBotones(JPanel opciones){	
+	private void anyadirBotones(JPanel opciones, final String cuando){	
 		JButton anyadir = new JButton("add");
 		anyadir.addActionListener(new ActionListener(){				
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				//anyadirNuevoPlato();	
 				//controlad
 				//table.getSelectedRow();
@@ -158,6 +159,8 @@ public class VerReserva implements LibroReservaObserver{
 		borrar.addActionListener(new ActionListener(){				
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if (cuando.equals("todas"))
+					//tablaTodas.getSelectedRow();
 				borrarReserva();					
 			}
 		});
