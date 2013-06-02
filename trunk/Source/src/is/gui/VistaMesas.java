@@ -96,6 +96,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 				public void actionPerformed(ActionEvent e) {
 					numMesa = j;
 					title.setTitle("Mesa " + (j + 1));
+					addMesaObserver(j);
 					/*
 					 * Comanda[] comandas = new
 					 * Comanda[controller.getMesa(j).getListaComandas().length];
@@ -139,6 +140,11 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		frame.add(this);
 		frame.pack();
 
+	}
+
+	protected void addMesaObserver(int j) {
+		restController.addMesaObserver(this, j);
+		
 	}
 
 	public void setComandasPanel(Integer numeroMesa, boolean desdeElPrincipio) {
