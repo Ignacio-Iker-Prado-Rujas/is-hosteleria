@@ -127,7 +127,7 @@ public class Comanda implements ComandaInfo {
 
 	public void addBebida(Consumicion bebida) {
 		addConsumicion(bebida, 3);
-		emitirCambio();
+		//emitirCambio();
 	}
 
 	public void deleteBebida(Consumicion bebida) {
