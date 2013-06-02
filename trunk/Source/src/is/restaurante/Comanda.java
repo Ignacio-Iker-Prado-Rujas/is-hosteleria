@@ -56,7 +56,7 @@ public class Comanda implements ComandaInfo {
 			this.precio -= consumicion.getPrecio();
 			emitirCambio();
 		} else
-			emitirError("No existe la consumicion seleccionada");
+			emitirError("No existe la consumicion de nombre " + consumicion.getNombre());
 	}
 	
 	public void setConsumicionTimes(Consumicion consumicion, int veces){
@@ -72,6 +72,7 @@ public class Comanda implements ComandaInfo {
 					comanda[i].put(consumicion, veces);
 				hasChanged = true;
 				emitirCambio();
+				break;
 			}
 		}
 		if (!hasChanged);// emitError
