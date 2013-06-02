@@ -24,8 +24,8 @@ public class LibroReservas{
 	
 	public ArrayList<ReservaInfo> reservasHoy(){
 		Date date = new Date();
-		
-		Fecha fecha = new Fecha(date.getYear(), date.getMonth(), date.getDay(), date.getHours(), date.getMinutes()); //new Date (hoy) o algo asi
+		Fecha fecha = new Fecha(0,0,0,0,0);
+		fecha.parse(date.toString(), 0, 0);
 		ArrayList<ReservaInfo> reservasDeHoy = new ArrayList<ReservaInfo>();
 		reservasDeHoy = buscarReservaHoy(fecha);
 		return reservasDeHoy;
