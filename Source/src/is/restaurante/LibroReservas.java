@@ -21,8 +21,8 @@ public class LibroReservas {
                 //numeroReservas = 0;
         }
         
-        public LibroReservas(List<Reserva> res) {
-            listaReservas = res;
+        public LibroReservas(List<Reserva> list) {
+            listaReservas = list;
             observers = new ArrayList<LibroReservaObserver>();
         }
 
