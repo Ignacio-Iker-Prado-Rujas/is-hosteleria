@@ -17,7 +17,6 @@ public class MenuLoader extends Loader {
 			throws IOException {
 		ArrayList<Consumicion> platos = new ArrayList<Consumicion>();
 		while (!peek().equals(tipo)) {
-			tokenizer.pushBack();
 			tokenizer.nextToken();
 			String name = tokenizer.sval;
 			tokenizer.nextToken();
@@ -27,6 +26,7 @@ public class MenuLoader extends Loader {
 			Plato plato = new Plato(name, precio, disponible, descripcion);
 			platos.add(plato);
 		}
+		tokenizer.nextToken();
 		return platos;
 	}
 
