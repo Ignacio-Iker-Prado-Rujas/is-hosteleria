@@ -166,7 +166,7 @@ public class Comanda implements ComandaInfo {
 				pedido = pedido + entry.getKey().getNombre() + " "
 						+ entry.getKey().getPrecio() + " Cantidad: "
 						+ comanda[i].get(entry.getKey()) + LINE_SEPARATOR;
-				entry.getKey().getPrecio();
+				price += entry.getKey().getPrecio()*comanda[i].get(entry.getKey());
 			}
 		pedido += "TOTAL: " + price;
 		
