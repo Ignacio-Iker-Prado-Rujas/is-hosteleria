@@ -5,7 +5,14 @@ package is;
  * @author Jesús
  */
 public class Cliente {
+	public Cliente(String nombre, int code) {
+		name = nombre;
+		codigo = code;
+	}
 
+	public int getCodigo() {
+		return codigo;
+	}
 
 	public String getName() {
 		return name;
