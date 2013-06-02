@@ -9,6 +9,12 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+
+/**
+ * Clase que guarda el menu, clasificando las consumiciones segun sean bebidas, primeros, segundos
+ * @author JaimeDan
+ *
+ */
 public class Menu implements MenuInfo {
 
 	public Menu() {

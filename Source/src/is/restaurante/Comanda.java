@@ -18,6 +18,13 @@ import java.util.Set;
 //		, podriamos hacer que los atributos que son hashmap heredaran de una clase que tuviera
 //		implementados todos esos add, y también los remove
 //		El remove debbería ser igual que el add pero a la inversa, es decir si lo encuentra reduce su int, y si su int esta a 0 eliminarlo
+
+/**
+ * Clase que guarda una comanda, guardando todas las bebidas, primeros, segundos y postres que se han elegido
+ * y la cantidad de cada uno de ellos
+ * @author JaimeDan
+ *
+ */
 public class Comanda implements ComandaInfo {
 
 	@SuppressWarnings("unchecked")
