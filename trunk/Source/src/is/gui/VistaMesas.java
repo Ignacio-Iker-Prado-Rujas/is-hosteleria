@@ -221,5 +221,10 @@ public class VistaMesas extends JPanel implements MesaObserver{
 	private JPanel[] comandasPanel;
 	int comandaSelected = -1;
 	private int numMesa=-1;
+	@Override
+	public void facturaGenerada(String factura) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
