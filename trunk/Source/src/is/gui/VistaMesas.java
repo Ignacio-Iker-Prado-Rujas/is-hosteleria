@@ -39,15 +39,11 @@ public class VistaMesas extends JPanel implements MesaObserver{
 		
 	     
 		
-		final TitledBorder title = new TitledBorder("hola");
+		final TitledBorder title = new TitledBorder("Mesa");
 		cardPanel.setBorder(title);
 		/*Inicializamos los JPanel que contendrán las comandas de cada mesa y los botones de control
 		 * añadir, eliminar y editar comanda*/
-		
-		//TitledBorder title;
-		//title = BorderFactory.createTitledBorder("title");
-		//jComp8.setBorder(title);
-		
+
 		for (int j=0; j<mesas.length; j++){
 			comandasPanel[j] = new JPanel();
 			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "  + j);
