@@ -18,6 +18,11 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
+/**
+ * TODO por alguna extraña razón al cambiar de mesa no se ponen los botones de editar y esas cosas
+ * @author JaimeDan
+ *
+ */
 public class VistaMesas extends JPanel{
 
 	
