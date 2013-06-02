@@ -240,8 +240,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		
 			
 		TitledBorder title = new TitledBorder("Mesa " + numeroMesas);
-		comandas = restController.getMesa(numeroMesas).getListaComandas();
-			
+		
 		comandasPanel[numeroMesas].setBorder(title);
 		comandasPanel[numeroMesas].setLayout(new BorderLayout());
 		JPanel comanditasPanel = new JPanel();
