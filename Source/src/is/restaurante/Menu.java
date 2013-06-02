@@ -108,11 +108,12 @@ public class Menu implements MenuInfo {
 	
 	public void actualizaConsumicion(Consumicion consAntigua,
 			Consumicion consNueva, TipoPlatos tPlato) {
-		for (MenuObserver obs: observers)
+		/*for (MenuObserver obs: observers)
 			obs.editConsumption(consAntigua.getNombre(), consNueva.getNombre(),
 					tipoPlato(consAntigua.getNombre()).toString(), tPlato.toString());
 		
-		dondeEsta(consAntigua).remove(consAntigua);
+		dondeEsta(consAntigua).remove(consAntigua);*/
+		deleteConsumicion(consAntigua);
 		addConsumicion(consNueva, tPlato);
 	
 	}
