@@ -86,8 +86,11 @@ public abstract class Loader {
 	}
 
 	protected String peek() throws IOException {
-		if (tokenizer.nextToken() == StreamTokenizer.TT_WORD)
+		if (tokenizer.nextToken() == StreamTokenizer.TT_WORD) {
+			tokenizer.pushBack();
 			return tokenizer.sval;
+		}
+		tokenizer.pushBack();
 		return "";
 	}
 
