@@ -172,25 +172,35 @@ public class Menu implements MenuInfo {
 
 	public String toString() {
 		String menu = "";
-		menu += "BeginMenu" + LINE_SEPARATOR + "BeginPrimeros" + LINE_SEPARATOR;
+		menu += "Menu:" + LINE_SEPARATOR + "Primeros:" + LINE_SEPARATOR;
 		menu += stringConsumiciones(primeros);
-		menu += "EndPrimeros" + LINE_SEPARATOR + "BeginSegundos"
-				+ LINE_SEPARATOR;
+		menu += LINE_SEPARATOR + "Segundos:" + LINE_SEPARATOR;
 		menu += stringConsumiciones(segundos);
-		menu += "EndSegundos" + LINE_SEPARATOR + "BeginBebidas"
-				+ LINE_SEPARATOR;
+		menu += LINE_SEPARATOR + "Bebidas:" + LINE_SEPARATOR;
 		menu += stringConsumiciones(bebidas);
-		menu += "EndBebidas" + LINE_SEPARATOR + "BeginPostres" + LINE_SEPARATOR;
+		menu += LINE_SEPARATOR + "Postres" + LINE_SEPARATOR;
 		menu += stringConsumiciones(postres);
-		menu += "EndPostres" + LINE_SEPARATOR + "EndMenu" + LINE_SEPARATOR;
 		return menu;
 	}
 
 	public boolean saveMenu(String fileName) {
-		String menu = toString();
 		try {
 			FileWriter fichero = new FileWriter(fileName + ".txt");
 			PrintWriter printer = new PrintWriter(fichero);
+			String menu = "";
+			menu += "BeginMenu" + LINE_SEPARATOR + "BeginPrimeros"
+					+ LINE_SEPARATOR;
+			menu += stringConsumiciones(primeros);
+			menu += "EndPrimeros" + LINE_SEPARATOR + "BeginSegundos"
+					+ LINE_SEPARATOR;
+			menu += stringConsumiciones(segundos);
+			menu += "EndSegundos" + LINE_SEPARATOR + "BeginBebidas"
+					+ LINE_SEPARATOR;
+			menu += stringConsumiciones(bebidas);
+			menu += "EndBebidas" + LINE_SEPARATOR + "BeginPostres"
+					+ LINE_SEPARATOR;
+			menu += stringConsumiciones(postres);
+			menu += "EndPostres" + LINE_SEPARATOR + "EndMenu" + LINE_SEPARATOR;
 			printer.println(menu);
 			fichero.close();
 			return true;
