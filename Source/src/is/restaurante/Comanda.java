@@ -43,7 +43,7 @@ public class Comanda implements ComandaInfo {
 					.put(consumicion, comanda[index].get(consumicion) + 1);
 		} else
 			comanda[index].put(consumicion, 1);
-		this.precio += consumicion.getPrecio();
+		consumicion.getPrecio();
 		emitirCambio();
 	}
 
@@ -53,7 +53,7 @@ public class Comanda implements ComandaInfo {
 					.put(consumicion, comanda[index].get(consumicion) - 1);
 			if (comanda[index].get(consumicion) == 0)
 				comanda[index].remove(consumicion);
-			this.precio -= consumicion.getPrecio();
+			consumicion.getPrecio();
 			emitirCambio();
 		} else
 			emitirError("No existe la consumicion de nombre " + consumicion.getNombre());
@@ -158,14 +158,17 @@ public class Comanda implements ComandaInfo {
 	}
 
 	public String toString() {
+		double price = 0;
 		String pedido = "";
 		for (int i = 0; i < 4; i++)
 			for (Entry<Consumicion, Integer> entry : comanda[i].entrySet()) {
 				pedido = pedido + entry.getKey().getNombre() + " "
 						+ entry.getKey().getPrecio() + " Cantidad: "
 						+ comanda[i].get(entry.getKey()) + LINE_SEPARATOR;
+				entry.getKey().getPrecio();
 			}
-		pedido += "TOTAL: " + this.precio;
+		pedido += "TOTAL: " + price;
+		
 		return pedido;
 	}
 
@@ -204,11 +207,10 @@ public class Comanda implements ComandaInfo {
 		for (ComandaObserver obs : observers)
 			obs.comandaError(error);
 	}
-
+	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
 	private HashMap<Consumicion, Integer> comanda[];
-	private double precio = 0;
 	private ArrayList<ComandaObserver> observers;
 
 }
