@@ -15,7 +15,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JToggleButton;
 import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
@@ -195,7 +194,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		/* Creamos un JPanel que tendrá los botones de Editar, añadir y eliminar */
 		JPanel botoncitosPanel = new JPanel();
 		botoncitosPanel.setLayout(new FlowLayout());
-		
+
 		JButton editarComanda = new JButton("Editar");
 		editarComanda.addActionListener(new ActionListener() {
 
@@ -255,6 +254,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		this.comandas = comandas;
 		comandasPanel[numeroMesas].removeAll();
 		setComandasPanel(numeroMesas, false);
+		comandasPanel[numeroMesas].requestFocusInWindow();
 	}
 
 	private JPanel comandasContainer;
