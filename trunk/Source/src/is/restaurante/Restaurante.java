@@ -147,6 +147,11 @@ public class Restaurante {
 		mesas.get(numMesa).removeMesaObserver(generarFactura);
 	}
 
+	public void deleteReserva(String nombre, String fecha, String comensales,
+			String mesa) {
+		reservas.deleteReserva( nombre,  fecha,  comensales, mesa);
+	}
+
 	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;

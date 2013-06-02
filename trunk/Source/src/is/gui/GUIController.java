@@ -151,12 +151,18 @@ public class GUIController {
 		this.restaurante.deleteMesaObserver(generarFactura, numMesa);
 	}
 
+	public void requestRemoveReserva(String nombre, String fecha,
+			String comensales, String mesa) {
+		this.restaurante.deleteReserva(nombre, fecha, comensales, mesa);
+	}
+
 	private Restaurante restaurante;
 
 	public void addMesaObserver(MesaObserver mesa) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 
