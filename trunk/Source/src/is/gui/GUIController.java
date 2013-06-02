@@ -105,12 +105,16 @@ public class GUIController {
 		this.restaurante.addNewConsumption(numComanda, numMesa, plato, tPlato);
 	}
 	
-	public void modificarConsumicion(){
+	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva,TipoPlatos tPlato){
+		restaurante.actualizaConsumicion(consAntigua, consNueva, tPlato);
+	}
+	public void deleteConsumicion(Consumicion consumicion, TipoPlatos tPlato){
+		restaurante.deleteConsumicion(consumicion, tPlato);
+	}
+	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
+		restaurante.addConsumicion( consumicion, tPlato);
+	}
 	
-	}
-	public void	crearConsumicion(){
-		
-	}
 	private Restaurante restaurante;
 
 
