@@ -16,12 +16,13 @@ public class LibroReservas {
 	 * Constructor
 	 */
 	public LibroReservas() {
+		observers = new ArrayList<LibroReservaObserver>(); 
 		listaReservas = new List<Reserva>();
-		numeroReservas = 0;
+		//numeroReservas = 0;
 	}
 
 	public boolean addReserva(Reserva res) {
-		numeroReservas++;
+		//numeroReservas++;
 		return listaReservas.add(res);
 
 	}
@@ -58,8 +59,11 @@ public class LibroReservas {
 	}
 
 	public boolean eliminarReserva(Reserva res) {
-		numeroReservas--;
-		return listaReservas.erase(res);
+		boolean exito = listaReservas.erase(res);
+		emitirCambios();
+		return exito;
+		//numeroReservas--;
+		//esxito listaReservas.erase(res);
 	}/*
 	 * 
 	 * Ya me parecia a mi que esta puta mierda no iba a funcionar xD jajajaj xD
@@ -68,6 +72,10 @@ public class LibroReservas {
 	 * <numeroReservas; i++){ reservas.add(listaReservas.get(new Reserva(null,
 	 * 0, 59, nombre, 0, null))); } return reservas; }
 	 */
+
+	private void emitirCambios() {
+		for ()
+	}
 
 	/**
 	 * Por que coño ahora esto es con integers? De donde sacas entonces la
@@ -88,7 +96,7 @@ public class LibroReservas {
 
 	public ArrayList<ReservaInfo> todasReservas() {
 		ArrayList<ReservaInfo> listaRes = new ArrayList<ReservaInfo>();
-		for (int i = 0; i < this.numeroReservas; i++)
+		for (int i = 0; i < this.listaReservas.size(); i++)
 			listaRes.add(this.listaReservas.get(i));
 		return listaRes;
 	}
@@ -154,9 +162,13 @@ public class LibroReservas {
 		return reservasSemana;
 	}
 
+	public void addObserver(LibroReservaObserver obs){
+		this.observers.add(obs);
+	}
 	private List<Reserva> listaReservas;
-	private int numeroReservas;// TODO creo que numero reservas se puede ver con
+	//private int numeroReservas;// TODO creo que numero reservas se puede ver con
 								// listaReservas.size();
+	private ArrayList<LibroReservaObserver> observers;
 
 	public ArrayList<ReservaInfo> buscarReserva(Fecha fecha) {
 		// TODO Auto-generated method stub
