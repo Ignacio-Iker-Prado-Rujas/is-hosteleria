@@ -50,6 +50,33 @@ public abstract class Loader {
 		return null;
 	}
 
+	/**
+	 * Comprueba que el siguiente token leido es un entero y coincide con el
+	 * parametro que se a pasado.
+	 * 
+	 * @param i
+	 *            - Entero que se espera que sea el siguiente token.
+	 * @throws IOException
+	 */
+	protected void forceInt(int i) throws IOException {
+		if (tokenizer.nextToken() != StreamTokenizer.TT_NUMBER
+				|| i != tokenizer.nval) {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+	}
+
+	protected int forceInt() throws IOException {
+		if (tokenizer.nextToken() == StreamTokenizer.TT_NUMBER
+				&& (int) tokenizer.nval == tokenizer.nval)
+			return (int) tokenizer.nval;
+		else {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+		return 0;
+	}
+
 	protected float forceFloat() throws IOException {
 		if (tokenizer.nextToken() != StreamTokenizer.TT_NUMBER) {
 			System.err.println("Fichero dañado");
