@@ -1,5 +1,7 @@
 package is.gui;
 
+import java.util.ArrayList;
+
 import is.restaurante.ReservaInfo;
 
 import javax.swing.table.AbstractTableModel;
@@ -92,13 +94,15 @@ public class TableReservas extends AbstractTableModel{
 			this.fireTableDataChanged();
 		}
 		
-		public void actualizarTabla(ReservaInfo[] reservas){
-			String[][] datos = new String[reservas.length][];
-			for( int i = 0; i < reservas.length; i++){
-				datos[i][0] = reservas[i].nombreToString();
-				datos[i][1] = reservas[i].fechaToString();
-				datos[i][2] = reservas[i].comensalesToString();
-				datos[i][3] = reservas[i].mesasToString();
+		public void actualizarTabla(ArrayList<ReservaInfo> reservas){
+			String[][] datos = new String[reservas.size()][];
+			int i = 0;
+			for( ReservaInfo resInfo: reservas ){
+				datos[i][0] = resInfo.nombreToString();
+				datos[i][1] = resInfo.fechaToString();
+				datos[i][2] = resInfo.comensalesToString();
+				datos[i][3] = resInfo.mesasToString();
+				i++;
 			}
 			actualizarTabla(datos, datos.length);
 		}

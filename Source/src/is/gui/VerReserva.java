@@ -82,4 +82,8 @@ public class VerReserva implements LibroReservaObserver{
 		// TODO Auto-generated method stub
 		
 	}
+	TableReservas tablaTodas;
+	TableReservas tablaHoy;
+	TableReservas tablaSemana;
+	TableReservas tablaMes;
 }
