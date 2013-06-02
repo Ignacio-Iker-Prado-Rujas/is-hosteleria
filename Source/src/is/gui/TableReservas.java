@@ -96,7 +96,7 @@ public class TableReservas extends AbstractTableModel{
 		}
 		
 		public void actualizarTabla(ArrayList<ReservaInfo> reservas){
-			String[][] datos = new String[reservas.size()][];
+			String[][] datos = new String[reservas.size()][4];
 			int i = 0;
 			for( ReservaInfo resInfo: reservas ){
 				datos[i][0] = resInfo.nombreToString();
