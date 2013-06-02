@@ -1,135 +1,217 @@
 package is.gui;
 
+import is.restaurante.Comanda;
 import is.restaurante.ComandaInfo;
 import is.restaurante.MesaInfo;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 /**
  * Muestra todas las mesas
  * Al elegir una mesa permite añadir o eliminar una comanda para esa mesa.
+ * TODO lo está arreglando villarín, con los cambios que hizo el y los que hizo Jaime
  * @author JaimeDan
  * @author Villarin
  */
-public class VistaMesas extends JFrame {
+public class VistaMesas extends JPanel{
 
-	public VistaMesas(final GUIController controller) {
+	
+	public VistaMesas(final GUIController controller){
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
 		this.setLayout(new BorderLayout());
-		this.add(botonesMesa(mesas), BorderLayout.NORTH);
-		this.add(comandasPanel());
-		this.add(botonesComanda(), BorderLayout.SOUTH);
-		this.setSize(300, 300);
-		this.setVisible(true);
-	}
-
-	private JPanel botonesMesa(MesaInfo[] mesasRestaurante) {
-		int superior, inferior;
-		if (mesasRestaurante.length % 2 == 0) {
-			superior = mesasRestaurante.length / 2;
-			inferior = mesasRestaurante.length / 2;
-		} else {
-			superior = mesasRestaurante.length / 2 + 1;
-			inferior = mesasRestaurante.length / 2;
+		comandasPanel = new JPanel[mesas.length];
+		comandasContainer = new JPanel();
+		final CardLayout comandasLayout = new CardLayout();
+		comandasContainer.setLayout(comandasLayout);
+		JPanel cardPanel = new JPanel();
+		cardPanel.setLayout(comandasLayout);
+		
+	     
+		
+		final TitledBorder title = new TitledBorder("hola");
+		/*Inicializamos los JPanel que contendrán las comandas de cada mesa y los botones de control
+		 * añadir, eliminar y editar comanda*/
+		for (int j=0; j<mesas.length; j++){
+			comandasPanel[j] = new JPanel();
+			setComandasPanel(j);
+			
 		}
-		JPanel botones = new JPanel(new GridLayout(2, 1));
-		JPanel panelSuperior = new JPanel(new FlowLayout());
-		JPanel panelInferior = new JPanel(new FlowLayout());
-		for (int i = 0; i < superior; i++) {
-			final int numMesa = i + 1;
-			panelSuperior.add(mesaButton(numMesa,
-					mesasRestaurante[i].getListaComandas()));
-		}
-		for (int i = 0; i < inferior; i++) {
-			final int numMesa = i + superior + 1;
-			panelInferior.add(mesaButton(numMesa,
-					mesasRestaurante[i].getListaComandas()));
-		}
-		botones.add(panelSuperior);
-		botones.add(panelInferior);
-		return botones;
-	}
+			//comandas = restController.getMesa(j).getListaComandas();				 
+		
+		/*for (int i=0; i< mesas.length; i++){
+			comandasPanel[i] = new JPanel();
+			comandasPanel[i].setLayout(new FlowLayout());
+			comandasPanel[i].setBorder(title);
+			
+		}*/
+		/*Se los añadimos al contenedor padre, mierda esto lo quito porque ya estaba en el setcomandasPanel*/
+		//for (Integer i = 0; i < mesas.length; i++)
+		//	comandasContainer.add(comandasPanel[i], i.toString());
+		
+		
+		/*Creamos un panel con las mesas, usando un flowlayout*/
+		JPanel panelMesas = new JPanel();
+		panelMesas.setLayout(new FlowLayout());
+		//this.restController.requestMesas();
+		//this.restController.pedirMesas();
+		/*Para cada mesa añadimos un listener que hara que el cardlayout muestre
+		 * el panel de comandas correspondiente a la mesa j*/
+		for (int i=0; i<mesas.length; i++){
+			//el numero de mesa siempre es el mismo que el indice
+			final Integer j= mesas[i].getNumeroMesa();//para que pueda ser utilizado por el listener
 
-	private JButton mesaButton(final int numMesa, final ComandaInfo[] comanda) {
-		JButton boton = new JButton("Mesa " + numMesa);
-		boton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				setComanda(comanda, numMesa);
-				selectedTable = numMesa;
-			}
-		});
-		return boton;
-	}
+			JButton mesa = new JButton("Mesa " + mesas[i].getNumeroMesa());
+			mesa.addActionListener(new ActionListener(){
 
-	public JScrollPane comandasPanel() {
-		textoComanda = new JTextArea();
-		textoComanda.setEditable(false);
-		JScrollPane scrollPane = new JScrollPane(textoComanda);
-		return scrollPane;
-	}
-
-	private void setComanda(ComandaInfo[] comanda, int mesa) {
-		if (comanda != null)
-			for (int i = 0; i < comanda.length; i++)
-				textoComanda.setText(comanda[i].toString());
-		textoComanda.setBorder(new TitledBorder("Mesa " + mesa));
-	}
-
-	private JPanel botonesComanda() {
-		JPanel panel = new JPanel(new FlowLayout());
-		panel.add(addButton());
-		panel.add(editButton());
-		panel.add(removeButton());
-		return panel;
-	}
-
-	private JButton addButton() {
-		JButton add = new JButton("Añadir");
-		add.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (selectedTable != -1) {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					numMesa = j;
+					int k = j;
+					title.setTitle("Mesa " + j);
+					/*
+					  Comanda[] comandas = new Comanda[controller.getMesa(j).getListaComandas().length];
+					 
+					for (int i = 0; i< comandas.length; i++)
+					*/
+					//comandas = restController.getMesa(j).getListaComandas();
+					
+				 	//setComandasPanel(j);
+					//comandasPanel[j].add(new JLabel("Bubidibu"), BorderLayout.SOUTH);
+					
+					/*El card layout debe mostrar en comandasContainer las comandas de la mesa j,
+					 *  (Recordemos que j.toString era la clave para las comandas de la mesa j
+					 * Aquí falla el programa
+					 * Mirar los .java realizar pedido y cardLayoutExample para ver como funciona el 
+					 * card layout
+					 * */
+					comandasLayout.show(/*comandasPanel[j]*/comandasContainer, j.toString());
+					
 					
 				}
-			}
-		});
-		return add;
-	}
+				
+			});
+			panelMesas.add(mesa);
+		}
+		/*Añadimos el panel con las mesas al norte*/
+		this.add(panelMesas, BorderLayout.NORTH);
+		/*Añadimos el contenedor padre con las comandas por cada mesa en el centro*/
+		this.add(comandasContainer, BorderLayout.CENTER);
+		
+		JFrame frame = new JFrame("Comandas por mesa");
 
-	private JButton editButton() {
-		JButton edit = new JButton("Editar");
-		edit.addActionListener(new ActionListener() {
+		frame.setVisible(true);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.add(this);
+		frame.pack();
+		
+	}
+	
+	public void setComandasPanel(Integer numeroMesa){
+		TitledBorder title = new TitledBorder("Mesa " + numMesa);
+		comandas = restController.getMesa(numeroMesa).getListaComandas();
+		comandasPanel[numeroMesa].setBorder(title);
+		comandasPanel[numeroMesa].setLayout(new BorderLayout());
+		JPanel comanditasPanel = new JPanel();
+		/* Se crea un JPanel con Flow layout para añadir como botones las comandas de las mesas
+		 * igual en vez de botones se podrian usar JRadioButtons
+		 */
+		comanditasPanel.setLayout(new FlowLayout());
+		/* Si la mesa tiene comandas, es decir, comandas!= null*/
+		if (comandas != null) {
+			/* Creamos los botones con las comandas*/
+			for (int i = 0; i < comandas.length; i++) {
+				final int j = i;
+				//no me acuerdo porque puse i+1
+				JButton comandaMesa = new JButton("Comanda " + i + 1);
+				comandaMesa.addActionListener(new ActionListener() {
+					/*Al seleccionar una comanda guardaremos en un atributo qué comanda hemos elegido*/
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						comandaSelected = j;
+						// restController.avisaComanda(numMesa,
+						// comandaSelected);
+					}
+
+				});
+				/*	Añadimos el boton al panel con las comandas*/
+				comanditasPanel.add(comandaMesa);
+			}
+			/*Despues de haber creado el panel con las comandas lo añadimos al centro de comandasPanel[numPanel]*/
+			comandasPanel[numeroMesa].add(comanditasPanel, BorderLayout.CENTER);
+		}
+		
+		/*Creamos un JPanel que tendrá los botones de Editar, añadir y eliminar*/
+		JPanel botoncitosPanel = new JPanel();
+		botoncitosPanel.setLayout(new FlowLayout());
+		
+		JButton editarComanda = new JButton("Editar");
+		editarComanda.addActionListener(new ActionListener(){
+
+			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				
 			}
+			
 		});
-		return edit;
-	}
+		botoncitosPanel.add(editarComanda);
+		
+		JButton añadirComanda = new JButton("Añadir");
+		añadirComanda.addActionListener(new ActionListener(){
 
-	private JButton removeButton() {
-		JButton remove = new JButton("Borrar");
-		remove.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				if (/*comandaSelected != -1 &&*/ numMesa != -1){
+					new RealizarPedido(restController, numMesa, comandaSelected);
+				}
 			}
+			
 		});
-		return remove;
-	}
+		botoncitosPanel.add(añadirComanda);
+		
+		JButton eliminarComanda = new JButton("Eliminar");
+		eliminarComanda.addActionListener(new ActionListener(){
 
-	private int selectedTable = -1;
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (comandaSelected != -1 && numMesa != -1){
+					restController.eliminarComanda(numMesa, comandaSelected);
+				}
+			}
+			
+		});
+		botoncitosPanel.add(eliminarComanda);
+		/*Se añade el Panel con los botones de control al comandasPanel[numeroMesa]*/
+		comandasPanel[numeroMesa].add(botoncitosPanel, BorderLayout.SOUTH);
+		
+		/*Se añade al JPanel padre el comandasPanel[numeroMesa], pasandole como clave el numero de mesa en string*/
+		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
+		
+		//comandasContainer.add(editarComanda);
+		//comandasContainer.add(añadirComanda);
+		//comandasContainer.add(eliminarComanda);
+	}//
+	
+	
+	private JPanel comandasContainer;
+	
 	private GUIController restController;
 	private MesaInfo[] mesas;
-	private JTextArea textoComanda;
+	private ComandaInfo[] comandas;
+	private JPanel[] comandasPanel;
+	int comandaSelected = -1;
+	private int numMesa=-1;
 }
