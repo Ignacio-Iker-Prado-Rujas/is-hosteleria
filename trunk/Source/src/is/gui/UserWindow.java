@@ -121,7 +121,7 @@ public class UserWindow extends JFrame  {
 		this.remove(logo);
 
 		this.remove(front);
-		this.setSize(600,300);
+		this.setSize(650,400);
 		RestauranteSwing rest = new RestauranteSwing(controlador);
 		this.add(rest);
 		
