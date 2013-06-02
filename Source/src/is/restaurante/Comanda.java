@@ -2,9 +2,6 @@ package is.restaurante;
 
 import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
-import is.restaurante.consumicion.Plato;
-import is.restaurante.consumicion.Postre;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,10 +17,11 @@ import java.util.Set;
 //		El remove debbería ser igual que el add pero a la inversa, es decir si lo encuentra reduce su int, y si su int esta a 0 eliminarlo
 
 /**
- * Clase que guarda una comanda, guardando todas las bebidas, primeros, segundos y postres que se han elegido
- * y la cantidad de cada uno de ellos
+ * Clase que guarda una comanda, guardando todas las bebidas, primeros, segundos
+ * y postres que se han elegido y la cantidad de cada uno de ellos
+ * 
  * @author JaimeDan
- *
+ * 
  */
 public class Comanda implements ComandaInfo {
 
@@ -58,8 +56,7 @@ public class Comanda implements ComandaInfo {
 			this.precio -= consumicion.getPrecio();
 			emitirCambio();
 		} else
-			// Emitir un error
-			;
+			emitirError("No existe la consumicion seleccionada");
 	}
 	
 	public void setConsumicionTimes(Consumicion consumicion, int veces){
@@ -171,14 +168,35 @@ public class Comanda implements ComandaInfo {
 
 	}
 
+	public HashMap<Consumicion, Integer> getPrimeros() {
+		return comanda[0];
+	}
+
+	public HashMap<Consumicion, Integer> getSegundos() {
+		return comanda[1];
+	}
+
+	public HashMap<Consumicion, Integer> getPostres() {
+		return comanda[2];
+	}
+
+	public HashMap<Consumicion, Integer> getBebidas() {
+		return comanda[3];
+	}
+
 	private void emitirCambio() {
 		for (ComandaObserver obs : observers)
 			obs.comandaHaCambiado(this.toString());
 	}
 
-	static final String LINE_SEPARATOR = System.getProperty("line.separator");
-	private HashMap<Consumicion, Integer> comanda[];
+	private void emitirError(String error) {
+		for (ComandaObserver obs : observers)
+			obs.comandaError(error);
+	}
 
+	static final String LINE_SEPARATOR = System.getProperty("line.separator");
+
+	private HashMap<Consumicion, Integer> comanda[];
 	private double precio = 0;
 	private ArrayList<ComandaObserver> observers;
 
