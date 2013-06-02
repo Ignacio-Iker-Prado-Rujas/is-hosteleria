@@ -8,7 +8,7 @@ BeginSegundos
 "Almondigas" "Con tomate" 5 NoDisponible
 EndSegundos
 BeginBebidas
-"Vodka-Limón" "Vaya pedo te vas a coger" 1 Disponible
+"Vodka-LimÃ³n" "Vaya pedo te vas a coger" 1 Disponible
 "Anticongelante" "Ya hemos matao a todo el mundo" 5 NoDisponible
 "Ron-Cola" "No podia faltar" 0.1 Disponible
 EndBebidas
