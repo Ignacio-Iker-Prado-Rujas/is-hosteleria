@@ -90,6 +90,7 @@ public class VerMenu extends JFrame implements MenuObserver{
 		/**** Añade los platos correspondientes a un tipo de Plato	****/
 		
 		JPanel platos = new JPanel(new FlowLayout());
+		platos.setName(tPlato.toString());
 		panel.add(platos);
 		ventanas.add(platos);
 		
@@ -200,12 +201,14 @@ public class VerMenu extends JFrame implements MenuObserver{
 		JToggleButton botonParaBorrar = buscarBoton(nameBoton);
 		if(botonParaBorrar!=null){
 			JPanel pan = buscarPanel(nameTipo);
+			pan.getComponents();
 			botonParaBorrar.remove(pan);
+			pan.repaint();
 		}
 	}
 	private JPanel buscarPanel(String namePanel){
-		for(JPanel panel:  cadaPestanya){
-			if(panel.equals(namePanel))return panel;
+		for(JPanel panel:  ventanas){
+			if(panel.getName().equals(namePanel))return panel;
 		}
 		return null;
 	}

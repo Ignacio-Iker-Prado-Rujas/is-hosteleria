@@ -73,9 +73,10 @@ public class Menu implements MenuInfo {
 	//Añade un plato al array del tipo
 	
 	public void deleteConsumicion(Consumicion consumicion){
-		dondeEsta(consumicion).remove(consumicion);//TODO notificar observer de borrado
 		for (MenuObserver obs: observers)
-			obs.deleteConsumption(consumicion.getNombre());
+			obs.deleteConsumption(consumicion.getNombre(), tipoPlato(consumicion.getNombre()).toString());
+		dondeEsta(consumicion).remove(consumicion);//TODO notificar observer de borrado
+		
 	}
 	
 	/* Devuelve el array list donde está el elemento buscado */
@@ -90,6 +91,7 @@ public class Menu implements MenuInfo {
 			if(c.getNombre().equals(consumicion.getNombre())) return postres;
 		return null;
 	}
+	
 	/* Devuelve el array list donde está el elemento buscado */
 	public TipoPlatos tipoPlato(String name){
 		for(Consumicion c: bebidas)
