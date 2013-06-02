@@ -52,6 +52,7 @@ public class CeldaPlato extends JPanel{
 					flechitas.setValue(0);
 					veces = 0;
 				}
+				restControl.requestNewConsumption(numComanda, numMesa, plato, tPlato, veces);
 				
 			}
 			

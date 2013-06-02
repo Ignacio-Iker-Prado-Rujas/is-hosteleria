@@ -61,6 +61,24 @@ public class Comanda implements ComandaInfo {
 			// Emitir un error
 			;
 	}
+	
+	public void setConsumicionTimes(Consumicion consumicion, int veces){
+		boolean hasChanged = false;
+		if (veces <0){/*emitError();*/ return;}
+		for (int i=0; i<4; i++){
+			if (comanda[i].containsKey(consumicion)){
+				//si las veces son 0, entonces quitamos la consumicion del pedido
+				if (veces == 0)
+					comanda[i].remove(consumicion);
+				//si no, ponemos el numero correspondiente de veces
+				else
+					comanda[i].put(consumicion, veces);
+				hasChanged = true;
+				emitirCambio();
+			}
+		}
+		if (!hasChanged);// emitError
+	}
 
 	public void addPrimero(Consumicion primero) {
 		addConsumicion(primero, 0);

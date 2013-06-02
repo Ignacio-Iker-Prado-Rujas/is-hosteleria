@@ -108,6 +108,12 @@ public class GUIController {
 		this.restaurante.addNewConsumption(numComanda, numMesa, plato, tPlato);
 	}
 	
+	public void requestNewConsumption(int numComanda, int numMesa,
+			Consumicion plato, TipoPlatos tPlato, int veces) {
+		this.restaurante.addNewConsumption(numComanda, numMesa, plato, tPlato, veces);
+	}
+
+	
 	public void actualizaConsumicion(Consumicion consAntigua, Consumicion consNueva,TipoPlatos tPlato){
 		restaurante.actualizaConsumicion(consAntigua, consNueva, tPlato);
 	}
@@ -128,6 +134,7 @@ public class GUIController {
 	public void registerMenuObserver(MenuObserver verMenu) {
 		restaurante.registerMenuObserver(verMenu);
 	}
+
 
 
 
