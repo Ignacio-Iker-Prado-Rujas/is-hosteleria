@@ -142,6 +142,7 @@ public class Mesa implements MesaInfo {
 		comandas.lastElement().addObserver(observer);
 		System.out.println(comandas.size());
 		comandas.lastElement().setNumComanda(comandas.size() - 1);*/
+		comandas.get(comandaSeleccionada);
 		comandas.get(comandaSeleccionada).addObserver(observer);
 	}
 
