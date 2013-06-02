@@ -1,6 +1,9 @@
 package is.restaurante;
 
+import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
+import is.restaurante.consumicion.Plato;
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -20,6 +23,21 @@ public class Menu implements MenuInfo {
 		primeros = new ArrayList<Consumicion>();
 		segundos = new ArrayList<Consumicion>();
 		postres = new ArrayList<Consumicion>();
+		bebidas = new ArrayList<Consumicion>(2);
+		bebidas.add(new Bebida("Vodka-Limón", 1, true, null));
+		bebidas.add(new Bebida("Anticongelante", 5, true, null));
+		primeros = new ArrayList<Consumicion>(2);
+		primeros.add(new Plato("Lentejas", 5, true, null));
+		primeros.add(new Plato("Canelones", 5, true, null));		
+		segundos = new ArrayList<Consumicion>(2);
+		segundos.add(new Plato("Filete de caballo", 5, true, null));		
+		segundos.add(new Plato("Almondigas", 5, true, null));		
+		
+		postres = new ArrayList<Consumicion>(2);
+		postres.add(new Plato("Helado de gordaco", 5, true, null));		
+		postres.add(new Plato("Manzana de Newton", 5, true, null));		
+		
+		
 	}
 
 	public Menu(ArrayList<Consumicion> listaPrimeros,
