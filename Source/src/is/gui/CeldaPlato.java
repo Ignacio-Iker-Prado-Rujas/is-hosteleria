@@ -37,7 +37,7 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						incrementaVeces();
-						restControl.requestNewConsumption(numComanda, numMesa, plato, tPlato);
+//						restControl.requestNewConsumption(numComanda, numMesa, plato, tPlato);
 					}
 					
 				});
