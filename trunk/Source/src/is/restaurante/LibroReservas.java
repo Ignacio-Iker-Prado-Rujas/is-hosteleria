@@ -65,7 +65,7 @@ public class LibroReservas{
 
 	}
 	
-	public ArrayList <ReservaInfo> reservasSiempre(){
+	public ArrayList <ReservaInfo> reservasDesdeHoy(){
 		Date date = new Date();
 
 		Fecha fecha = new Fecha(0, 0, 0, 0, 0); // new Date (hoy) o algo asi
@@ -136,7 +136,7 @@ public class LibroReservas{
 
 	public/* int */ArrayList<ReservaInfo> buscarReserva(int j) {
 		if (j == -1)
-			return todasReservas();
+			return this.reservasDesdeHoy();//todasReservas();
 		if (j == 0)
 			return reservasHoy();
 		else if (j == 1)
@@ -218,7 +218,7 @@ public class LibroReservas{
 	
 	private void emitirCambios(){
 		for (LibroReservaObserver obs: observers)
-			obs.cambioOcurrido(this.reservasHoy(), this.reservasSemana(), this.reservasSiempre());
+			obs.cambioOcurrido(this.reservasHoy(), this.reservasSemana(), this.reservasDesdeHoy());
 	}
 
 	private List<Reserva> listaReservas;
