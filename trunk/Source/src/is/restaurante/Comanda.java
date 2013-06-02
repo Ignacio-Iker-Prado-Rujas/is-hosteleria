@@ -167,6 +167,11 @@ public class Comanda implements ComandaInfo {
 		return null;
 
 	}
+	
+	public void setNumComanda(int n){
+		for (ComandaObserver obs: observers)
+			obs.setComandaNumber(n);
+	}
 
 	public HashMap<Consumicion, Integer> getPrimeros() {
 		return comanda[0];
