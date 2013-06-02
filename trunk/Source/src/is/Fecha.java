@@ -1,5 +1,10 @@
 package is;
-
+/**
+ * Permite el manejo de fechas, consta de las unidades basicas de estas: año, mes, dia, hora y minutos
+ * Se utiliza en las reservas
+ * Con los métodos equals, mismoDia, esMayorQue y siguienteSemana podemos comparar varias fechas y mostrar por pantalla las reservas en determinados periodos de tiempo 
+ *  @author JaimeDan
+ */
 public class Fecha {
 	/**
 	 * 

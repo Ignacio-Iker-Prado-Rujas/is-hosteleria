@@ -1,23 +1,17 @@
 package is;
 
 import is.gui.UserWindow;
-
+/**
+ * Gestiona los usuarios, que constan de id y contraseña, para hacer login en la aplicación
+ * @author Jesús
+ */
 public class Usuario {
 
 	public Usuario(String nombre, String contrasena){
 		this.id = nombre;
 		this.password = contrasena.toCharArray();
 	}
-	/**
-	 * @param args
-	 */
 	
-	//por que carajos tiene esto un main??
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		UserWindow p = new UserWindow(null);
-		p.setVisible(true);
-	}
 	public String getId() {
 		return id;
 	}

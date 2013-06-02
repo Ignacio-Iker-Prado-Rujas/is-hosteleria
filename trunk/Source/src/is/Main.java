@@ -1,5 +1,8 @@
 package is;
-
+/**
+ * Lanza la aplicación, mediante el Método Modelo-Vista-Controlador
+ * @author Jesús
+ */
 import is.gui.GUIController;
 import is.gui.UserWindow;
 import is.restaurante.Restaurante;

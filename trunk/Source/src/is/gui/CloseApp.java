@@ -4,7 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
-
+/**
+ * Cierra la aplicación, preguntándole al usuario si desea salir
+ * @author Jesús
+ */
 public class CloseApp implements ActionListener {
 
 	@Override

@@ -1,5 +1,9 @@
 package is;
 
+/**
+ * Clase que gestiona los clientes, con su nombre y código.
+ * @author Jesús
+ */
 public class Cliente {
 
 

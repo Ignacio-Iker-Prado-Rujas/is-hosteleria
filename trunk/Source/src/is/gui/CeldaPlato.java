@@ -15,9 +15,9 @@ import javax.swing.event.ChangeListener;
 import is.restaurante.consumicion.Consumicion;
 import is.restaurante.TipoPlatos;
 /**
- * Celda que tiene un plato, y un JSpinner con el número de veces que ha sido elegido
+ * Celda que tiene un plato, y un JSpinner con el número de veces que ha sido elegido.
+ * Posteriormente se mostrará por pantalla al elegir el menú
  * @author JaimeDan
- *TODO PONER COMENTARIOS MAS DETALLADOS
  */
 @SuppressWarnings("serial")
 public class CeldaPlato extends JPanel{

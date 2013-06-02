@@ -21,8 +21,6 @@ import is.restaurante.consumicion.Consumicion;
 /**
  * Clase que se encarga de llevar los avisos recibidos en la vista al modelo
  * @author JaimeDan
- *
- *TODO: hay que hacer los register observer
  */
 public class GUIController {
 

@@ -12,7 +12,10 @@ import javax.swing.JPanel;
 
 
 @SuppressWarnings("serial")
-
+/**
+ * Gestiona las diferentes opciones de la aplicación, lanzando sus ventanas correspondientes
+ * @author Jesús
+ */
 
 public class RestauranteSwing extends JPanel{
 

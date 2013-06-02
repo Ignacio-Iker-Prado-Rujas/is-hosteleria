@@ -12,7 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
+/**
+ * Genera la factura de una mesa, sumando el coste de todas las comandas asociadas a esa mesa, y la muestra por pantalla.
+ * @author Villarín
+ */
 public class GenerarFactura {
 
 	@SuppressWarnings("serial")

@@ -9,7 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-
+/**
+ * Presenta la ventana de Login, donde el empleado introduce su nombre y contraseña.
+ * Si es correcta le permite acceder a la instancia RestauranteSwing que desde aquí se crea.
+ * @author Jesús
+ */
 
 
 @SuppressWarnings("serial")
@@ -161,18 +165,5 @@ public class UserWindow extends JFrame  {
 	private JLabel logo;
 	private JPanel front;
 	private RestauranteSwing rest;
-	
-	//Ideas:
-	/**
-	 * Una clase usuario general de la que hereden las subclases jefe, chef, camarero... aunque solo implementaremos chef.
-	 * Cada usuario tendra nombre y contraseña
-	 * Para ver si el inicio es valido, recorre los usuarios viendo si su nombre encaja con el introducido
-	 * En caso afirmativo se comprueba la contraseña
-	 * Si todo encaja, borra los paneles y pone el panel correspondiente al tipo de empleado
-	 * En este caso el panel de restaurante con sus botones y tal
-	 * 	
-	 * A implementar!
-	 */
-	
-	
+		
 }
