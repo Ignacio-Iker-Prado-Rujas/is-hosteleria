@@ -66,11 +66,16 @@ public class Restaurante {
 	public void eliminaComanda(int numMesa, int comandaSelected) {
 		mesas.get(numMesa).eliminaComanda(comandaSelected);
 	}
-
+	/*Este y el siguiente son para las comandas*/
 	public void addNewConsumption(int numComanda, int numMesa, Consumicion plato, TipoPlatos tPlato) {
 		mesas.get(numMesa).addConsumption(numComanda, plato, tPlato);
 	}
-	
+
+	public void addNewConsumption(int numComanda, int numMesa,
+			Consumicion plato, TipoPlatos tPlato, int veces) {
+		mesas.get(numMesa).addConsumption(numComanda, plato, tPlato, veces);
+	}
+
 	public MesaInfo[] getMesas() {
 		// TODO Auto-generated method stub
 		MesaInfo[] infoMesas = new MesaInfo[this.mesas.size()];

@@ -105,6 +105,13 @@ public class Mesa implements MesaInfo {
 			comandas.get(numComanda).addBebida(plato);
 		}
 	}
+	
+	public void addConsumption(int numComanda, Consumicion plato,
+			TipoPlatos tPlato, int veces) {
+
+		comandas.get(numComanda).setConsumicionTimes(plato, veces);
+	}
+
 
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
@@ -124,5 +131,6 @@ public class Mesa implements MesaInfo {
 	private int numeroMesa;
 	private int capacidad;
 	private int comandaActual = -1;
+
 
 }
