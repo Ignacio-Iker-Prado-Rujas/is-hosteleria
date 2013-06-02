@@ -60,6 +60,24 @@ public class Menu implements MenuInfo {
 			return null;
 		}
 	}
+	
+	//Añade un plato al array del tipo
+	
+	public void addConsumicion(Consumicion consumicion, TipoPlatos tPlato){
+		switch (tPlato) {
+		case BEBIDA:
+			bebidas.add(consumicion);
+		case PRIMERO:
+			primeros.add(consumicion);
+		case SEGUNDO:
+			segundos.add(consumicion);
+		case POSTRE:
+			postres.add(consumicion);
+		default:
+			;
+		}
+		
+	}
 
 	//
 	private String[] mostrarConsumiciones(ArrayList<Consumicion> consumiciones) {
