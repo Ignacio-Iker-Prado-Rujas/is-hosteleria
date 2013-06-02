@@ -87,7 +87,7 @@ public class Mesa implements MesaInfo {
 	}
 
 	public void eliminaComanda(int comandaSelected) {
-		comandas.remove(comandaSelected);
+		if (!comandas.isEmpty()) comandas.remove(comandaSelected);
 		for (int i=0; i<comandas.size(); i++){
 			comandas.get(i).setNumComanda(i);
 		}
