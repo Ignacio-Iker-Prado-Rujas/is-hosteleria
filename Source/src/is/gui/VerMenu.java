@@ -201,8 +201,7 @@ public class VerMenu extends JFrame implements MenuObserver{
 		JToggleButton botonParaBorrar = buscarBoton(nameBoton);
 		if(botonParaBorrar!=null){
 			JPanel pan = buscarPanel(nameTipo);
-			pan.getComponents();
-			botonParaBorrar.remove(pan);
+			pan.remove(botonParaBorrar);
 			pan.repaint();
 		}
 	}
@@ -223,6 +222,7 @@ public class VerMenu extends JFrame implements MenuObserver{
 			}
 			
 		});
+		platos.repaint();
 	}
 	
 	@Override
