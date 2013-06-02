@@ -29,6 +29,7 @@ public class Comanda implements ComandaInfo {
 
 	@SuppressWarnings("unchecked")
 	public Comanda() {
+		observers = new ArrayList<ComandaObserver>();
 		comanda = new HashMap[4];
 		for (int i = 0; i < 4; i++)
 			comanda[i] = new HashMap<Consumicion, Integer>();
@@ -63,10 +64,12 @@ public class Comanda implements ComandaInfo {
 
 	public void addPrimero(Consumicion primero) {
 		addConsumicion(primero, 0);
+		emitirCambio();
 	}
 
 	public void deletePrimero(Consumicion primero) {
 		deleteConsumicion(primero, 0);
+		emitirCambio();
 	}
 
 	public void setVecesPrimero(Consumicion primero) {
@@ -75,10 +78,12 @@ public class Comanda implements ComandaInfo {
 
 	public void addSegundo(Consumicion segundo) {
 		addConsumicion(segundo, 1);
+		emitirCambio();
 	}
 
 	public void deleteSegundo(Consumicion segundo) {
 		deleteConsumicion(segundo, 1);
+		emitirCambio();
 	}
 
 	public void setVecesSegundo(Consumicion segundo) {
@@ -87,10 +92,12 @@ public class Comanda implements ComandaInfo {
 
 	public void addPostre(Consumicion postre) {
 		addConsumicion(postre, 2);
+		emitirCambio();
 	}
 
 	public void deletePostre(Consumicion postre) {
 		deleteConsumicion(postre, 2);
+		emitirCambio();
 	}
 
 	public void setVecesPostre(Consumicion postre) {
@@ -99,10 +106,12 @@ public class Comanda implements ComandaInfo {
 
 	public void addBebida(Consumicion bebida) {
 		addConsumicion(bebida, 3);
+		emitirCambio();
 	}
 
 	public void deleteBebida(Consumicion bebida) {
 		deleteConsumicion(bebida, 3);
+		emitirCambio();
 	}
 
 	public void setVecesBebidas(Bebida drinking) {
@@ -153,6 +162,6 @@ public class Comanda implements ComandaInfo {
 	private HashMap<Consumicion, Integer> comanda[];
 
 	private double precio = 0;
-	private ArrayList<ComandaObserver> observers = new ArrayList<ComandaObserver>();
+	private ArrayList<ComandaObserver> observers;
 
 }

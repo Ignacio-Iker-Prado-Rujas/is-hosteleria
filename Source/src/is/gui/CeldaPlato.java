@@ -48,6 +48,11 @@ public class CeldaPlato extends JPanel{
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				veces = (int) flechitas.getValue();
+				if (veces < 0){
+					flechitas.setValue(0);
+					veces = 0;
+				}
+				
 			}
 			
 		});
