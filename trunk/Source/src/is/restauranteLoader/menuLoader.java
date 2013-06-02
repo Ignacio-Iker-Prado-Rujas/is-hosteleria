@@ -11,6 +11,12 @@ import java.io.InputStreamReader;
 import java.io.StreamTokenizer;
 import java.util.ArrayList;
 
+
+/**
+ * Gestiona la carga del menú desde archivo.
+ * @author Villarin
+ */
+
 public class menuLoader {
 
 	/**

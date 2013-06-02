@@ -2,9 +2,15 @@ package is.restaurante;
 
 import is.restaurante.consumicion.Consumicion;
 
+
 import java.util.ArrayList;
 import java.util.Vector;
 
+/**
+ * Contiene la información relativa a la mesa, con la lista de comandas y el número de identificación de la mesa.
+ * Permite añadir comandas y generar la factura correspondiente a la mesa.
+ * @author Villarin
+ */
 public class Mesa implements MesaInfo{
 	
 	public Mesa(int num){
@@ -81,7 +87,6 @@ public class Mesa implements MesaInfo{
 	private ArrayList<MesaObserver> obs;
 	private Vector<Comanda> comandas;
 	private int numeroMesa;
-	private int capacidadMaxima;
 	private int comandaActual = -1;
 
 

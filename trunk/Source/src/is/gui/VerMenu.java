@@ -29,7 +29,11 @@ import is.restaurante.Menu;
 import is.restaurante.MenuObserver;
 import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Consumicion;
-
+/**
+ * Muestra el menú, pudiendo crear platos y añadirlos al propio menú.
+ * @author Kike
+ * @author JaimeDan
+ */
 @SuppressWarnings("serial")
 // MenuObserver
 public class VerMenu extends JFrame implements MenuObserver{

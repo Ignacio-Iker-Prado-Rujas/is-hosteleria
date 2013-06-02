@@ -1,6 +1,11 @@
 package is.restaurante.consumicion;
 
 public class Bebida implements Consumicion {
+	
+	/**
+	 * Gestiona una bebida, un tipo de consumición
+	 * @author JaimeDan
+	 */
 
 	public Bebida(String name, float price, boolean disp, String desc) {
 		this.descripcion = desc;
