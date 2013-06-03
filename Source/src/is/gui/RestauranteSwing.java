@@ -75,7 +75,7 @@ public class RestauranteSwing extends JPanel {
 
 
 
-		botones[4] = new JButton("Distribución mesas") {
+		botones[3] = new JButton("Distribución mesas") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -98,7 +98,7 @@ public class RestauranteSwing extends JPanel {
 
 		};
 
-		botones[5] = new JButton("Generar factura") {
+		botones[4] = new JButton("Generar factura") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -115,7 +115,7 @@ public class RestauranteSwing extends JPanel {
 
 		};
 
-		botones[6] = new JButton("Cantidad existencias") {
+		botones[5] = new JButton("Cantidad existencias") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -132,7 +132,7 @@ public class RestauranteSwing extends JPanel {
 
 		};
 
-		botones[7] = new JButton("Ver/modificar menú") {
+		botones[6] = new JButton("Ver/modificar menú") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -149,7 +149,7 @@ public class RestauranteSwing extends JPanel {
 
 		};
 
-		botones[8] = new JButton("Notificar incidencias") {
+		botones[7] = new JButton("Notificar incidencias") {
 			{
 
 				this.addActionListener(new ActionListener() {
@@ -164,7 +164,7 @@ public class RestauranteSwing extends JPanel {
 
 		};
 		
-		botones[3] = new JButton("Anular pedido") {
+		botones[8] = new JButton("Sobre la aplicación") {
 			{
 
 				this.addActionListener(new ActionListener() {
