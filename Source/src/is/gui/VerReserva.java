@@ -126,7 +126,7 @@ public class VerReserva implements LibroReservaObserver{
 				else if (cuando.equalsIgnoreCase("hoy")){
 					int i= tTodas.getSelectedRow();
 					
-					if (tHoy.getSelectedRow() >= 0){
+					if (i >= 0){
 						new RealizarReserva(controlador, tablaHoy.getValueAt(i, 0),  
 								tablaHoy.getValueAt(i, 1),
 								tablaHoy.getValueAt(i, 2),
