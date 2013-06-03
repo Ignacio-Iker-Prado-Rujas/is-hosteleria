@@ -83,7 +83,6 @@ public class GenerarFactura implements MesaObserver {
 	public void facturaGenerada(String factura) {
 		marco2 = new JFrame();
 		marco2.setLayout(new GridLayout(2, 1));
-
 		marco2.add(new JLabel(factura));
 		marco2.add(new JButton("Aceptar") {
 			{
