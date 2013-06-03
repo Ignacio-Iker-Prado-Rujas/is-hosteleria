@@ -29,7 +29,7 @@ note 131205 "Clase Mesa y relacionadas. VistaMesas es un observador de las mesas
 relationcanvas 128773 relation_ref 142341 // <aggregation>
   decenter_end 200
   from ref 128645 z 2007 to ref 128005
-  role_a_pos 257 148 3000 no_role_b
+  role_a_pos 257 154 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129413 relation_ref 142469 // <aggregation>
@@ -43,9 +43,9 @@ relationcanvas 129541 relation_ref 144005 // <realization>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129925 relation_ref 144901 // <aggregation>
-  decenter_end 338
+  decenter_end 337
   from ref 129797 z 3012 to ref 129157
-  role_a_pos 507 380 3000 no_role_b
+  role_a_pos 507 387 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130053 relation_ref 137861 // <aggregation>
@@ -54,12 +54,12 @@ relationcanvas 130053 relation_ref 137861 // <aggregation>
   from ref 128005 z 3012 to point 235 597
   line 130821 z 3012 to point 631 597
   line 130693 z 3012 to ref 129797
-  role_a_pos 643 449 3000 no_role_b
+  role_a_pos 643 481 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130309 relation_ref 144133 // <aggregation>
   from ref 129157 z 3012 to ref 130181
-  role_a_pos 370 252 3000 no_role_b
+  role_a_pos 369 252 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130437 relation_ref 147333 // <realization>

@@ -31,11 +31,11 @@ relationcanvas 129157 relation_ref 137733 // <aggregation>
   decenter_begin 280
   decenter_end 54
   from ref 128005 z 3012 to ref 129029
-  role_a_pos 245 39 3000 no_role_b
+  role_a_pos 245 44 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129669 relation_ref 146309 // <association>
-  decenter_begin 825
+  decenter_begin 824
   decenter_end 305
   from ref 128005 z 2001 to ref 128389
   no_role_a no_role_b

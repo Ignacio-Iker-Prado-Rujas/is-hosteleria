@@ -27,24 +27,24 @@ end
 note 132869 "Parte visual (de GUI) del Menú"
   color mediumblue  xyzwh 616 491 2000 101 51
 relationcanvas 128645 relation_ref 136581 // <aggregation>
-  decenter_begin 566
+  decenter_begin 565
   decenter_end 54
   from ref 128517 z 2007 to ref 128005
-  role_a_pos 525 82 3000 no_role_b
+  role_a_pos 525 84 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129157 relation_ref 137093 // <aggregation>
   decenter_begin 286
   decenter_end 527
   from ref 129029 z 3006 to ref 128005
-  role_a_pos 525 264 3000 no_role_b
+  role_a_pos 525 282 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129413 relation_ref 141701 // <aggregation>
   decenter_begin 282
   decenter_end 277
   from ref 129285 z 3012 to ref 128005
-  role_a_pos 523 168 3000 no_role_b
+  role_a_pos 523 177 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129541 relation_ref 137349 // <aggregation>
@@ -55,8 +55,8 @@ relationcanvas 129541 relation_ref 137349 // <aggregation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132229 relation_ref 146693 // <unidirectional association>
-  decenter_begin 182
-  decenter_end 839
+  decenter_begin 181
+  decenter_end 838
   from ref 132101 z 3012 to point 320 496
   line 132485 z 3012 to ref 129285
   no_role_a no_role_b

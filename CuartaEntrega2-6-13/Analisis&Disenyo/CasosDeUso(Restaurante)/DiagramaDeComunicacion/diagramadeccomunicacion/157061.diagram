@@ -24,13 +24,13 @@ note 129413 "Parte visual (de GUI) de las reservas"
   color mediumblue  xyzwh 661 328 2000 121 45
 relationcanvas 128261 relation_ref 140549 // <aggregation>
   from ref 128133 z 3006 to ref 128005
-  role_a_pos 388 265 3000 no_role_b
+  role_a_pos 388 274 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128517 relation_ref 142085 // <aggregation>
   decenter_end 620
   from ref 128389 z 3011 to ref 128005
-  role_a_pos 158 311 3000 no_role_b
+  role_a_pos 158 333 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128773 relation_ref 146949 // <association>

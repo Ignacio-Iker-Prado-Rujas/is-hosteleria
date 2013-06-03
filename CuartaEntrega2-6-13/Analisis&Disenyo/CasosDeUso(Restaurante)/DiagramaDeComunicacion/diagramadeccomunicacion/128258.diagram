@@ -18,17 +18,17 @@ linkcanvas 129410
   from ref 129282 z 2001 to ref 129154
 dirscanvas 129538 z 1000 linkcanvas_ref 129410
   show_full_operations_definition default show_hierarchical_rank default drawing_language default show_msg_context default
-  forward_label "3 getPlatos()" xyz 415 149.5 3000
+  forward_label "3 getPlatos()" xyz 415 149 3000
 linkcanvas 129666
   from ref 129026 z 2001 to ref 129282
 dirscanvas 129794 z 1000 linkcanvas_ref 129666
   show_full_operations_definition default show_hierarchical_rank default drawing_language default show_msg_context default
-  forward_label "1 VerMenu()" xyz 229 149.5 3000
+  forward_label "1 VerMenu()" xyz 229 149 3000
 linkcanvas 129922
   from ref 129282 z 2001 to ref 128898
 dirscanvas 130050 z 1000 linkcanvas_ref 129922
   show_full_operations_definition default show_hierarchical_rank default drawing_language default show_msg_context default
-  forward_label "2 values()" xyz 293 109.5 3000
+  forward_label "2 values()" xyz 293 109 3000
 linkcanvas 130306
   from ref 129282 z 2001 to ref 130178
 dirscanvas 130434 z 1000 linkcanvas_ref 130306

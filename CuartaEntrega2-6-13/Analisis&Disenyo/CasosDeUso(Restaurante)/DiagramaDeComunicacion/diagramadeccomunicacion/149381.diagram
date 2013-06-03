@@ -1,11 +1,11 @@
 format 76
 
 classinstance 128261 class_ref 142466 // Restaurante
-  name ""   xyz 261.8 3.8 2000 life_line_z 2000
+  name ""   xyz 261.8 4 2000 life_line_z 2000
 classinstance 128389 class_ref 142594 // Mesa
-  name ""   xyz 532.4 3.8 2000 life_line_z 2000
+  name ""   xyz 532.4 4 2000 life_line_z 2000
 classinstance 128517 class_ref 149122 // Comanda
-  name ""   xyz 716.1 3.6 2000 life_line_z 2000
+  name ""   xyz 716.1 4 2000 life_line_z 2000
 note 128645 "Caso de uso:
 Editar comanda"
   color mediumblue  xyzwh 596.3 511.4 2005 103 50
@@ -20,37 +20,37 @@ fragment 131589 "loop"
   xyzwh 510.7 139.3 2000 259 106
 end
 textcanvas 131717 "[Cantidad != 0]"
-  xyzwh 567.1 143.2 2000 74 54
+  xyzwh 567 143 2000 74 54
 fragment 133765 "loop"
   xyzwh 507.8 364.3 0 258 105
 end
 textcanvas 133893 "[Cantidad != 0]"
-  xyzwh 569.1 367.4 2000 74 54
+  xyzwh 569 367 2000 74 54
 textcanvas 134021 "[añade]"
-  xyzwh 36.2 78.2 2000 37 14
+  xyzwh 36 78 2000 37 14
 textcanvas 134149 "[elimina]"
-  xyzwh 37.4 291.1 2000 43 14
+  xyzwh 37 291 2000 43 14
 note 134917 "Es indiferente si trata de un plato nuevo o si ya se había elegido y se incrementa su cantidad."
   xyzwh 335.3 150.8 2000 148 77
 durationcanvas 130693 classinstance_ref 128261 // :Restaurante
-  xyzwh 292 118.9 2010 11 154
+  xyzwh 292 118 2010 11 154
 end
 durationcanvas 131077 classinstance_ref 128389 // :Mesa
-  xyzwh 551 123.3 2010 11 137
+  xyzwh 551 123 2010 11 137
 end
 durationcanvas 131333 classinstance_ref 128517 // :Comanda
-  xyzwh 740 174.6 2010 11 48
+  xyzwh 740 174 2010 11 48
 end
 durationcanvas 132485 classinstance_ref 128261 // :Restaurante
-  xyzwh 292 326.4 2010 11 165
+  xyzwh 292 326 2010 11 165
 end
 durationcanvas 132869 classinstance_ref 128389 // :Mesa
-  xyzwh 551 344.3 2010 11 143
+  xyzwh 551 344 2010 11 143
 end
 durationcanvas 133253 classinstance_ref 128517 // :Comanda
-  xyzwh 740 397.1 2010 11 54
+  xyzwh 740 397 2010 11 54
 end
-lostfoundmsgsupport 130821 xyz 11.2 121 2015
+lostfoundmsgsupport 130821 xyz 11 121 2015
 lostfoundmsgsupport 132613 xyz 26 334 2015
 msg 130949 found_synchronous
   from lostfoundmsgsupport_ref 130821
@@ -113,10 +113,10 @@ msg 133637 return
   show_full_operations_definition default drawing_language default show_context_mode default
   label_xy 422 458
 line 134277 -_-_ decenter_begin 41
-  from ref 128773 z 2016 to point 26.7 400.5
+  from ref 128773 z 2016 to point 26 400
   line 134405 z 2016 to ref 132613
 line 134533 -_-_ decenter_begin 41
-  from ref 128773 z 2016 to point 12.5 400.5
+  from ref 128773 z 2016 to point 12 400
   line 134661 z 2016 to ref 130821
 line 135173 -_-_ decenter_begin 103 decenter_end 180
   from ref 134917 z 2001 to ref 131589

@@ -5,26 +5,26 @@ Modificar menu
 (añadir consumición)"
   color mediumblue  xyzwh 614.2 231.1 2000 126 63
 classinstance 128133 class_ref 134661 // GUIController
-  name ""   xyz 154.6 3.1 2000 life_line_z 2000
+  name ""   xyz 154.6 4 2000 life_line_z 2000
 classinstance 128261 class_ref 128514 // Menu
-  name ""   xyz 320.8 3.1 2000 life_line_z 2000
+  name ""   xyz 320.8 4 2000 life_line_z 2000
 classinstance 128389 class_ref 128130 // Consumicion
-  name ""   xyz 440.6 3.1 2000 life_line_z 2000
+  name ""   xyz 440.6 4 2000 life_line_z 2000
 note 128901 "La información relativa a una consumición es: TipodeConsumicion, Nombre, Descripcion (no obligatoria) y Precio"
   xyzwh 572.5 19.3 2000 208 77
 classinstance 129797 class_ref 128011 // RestauranteSwing
-  name ""   xyz 8.7 3.1 2000 life_line_z 2000
+  name ""   xyz 8.7 4 2000 life_line_z 2000
 durationcanvas 130693 classinstance_ref 129797 // :RestauranteSwing
-  xyzwh 55 82.6 2010 11 123
+  xyzwh 55 82 2010 11 123
 end
 durationcanvas 130821 classinstance_ref 128133 // :GUIController
-  xyzwh 189 86 2010 11 109
+  xyzwh 187 86 2010 11 109
 end
 durationcanvas 131077 classinstance_ref 128261 // :Menu
   xyzwh 339 111 2010 11 69
 end
 durationcanvas 131333 classinstance_ref 128389 // :Consumicion
-  xyzwh 475 120 2010 11 41
+  xyzwh 472 120 2010 11 41
 end
 msg 130949 synchronous
   from durationcanvas_ref 130693
@@ -63,6 +63,6 @@ msg 131845 return
   show_full_operations_definition default drawing_language default show_context_mode default
   label_xy 75 172
 line 132357 -_-_ decenter_begin 810 decenter_end 200
-  from ref 128901 z 2011 to point 516.6 79.2
+  from ref 128901 z 2011 to point 516 79
   line 132485 z 2011 to ref 131333
 end
