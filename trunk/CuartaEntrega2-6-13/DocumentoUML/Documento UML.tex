@@ -145,6 +145,79 @@
 	\end{figure}
 
 	\section{Diagramas de comunicación}
+		\subsection{Menú del restaurante}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCvermenu.png}
+		\caption{Diagrama de comunicación del menú}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCeditarmenu.png}
+		\caption{Diagrama de comunicación de modificar el menú}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCanyadirconsumicion.png}
+		\caption{Diagrama de comunicación de añadir plato al menú}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCeliminarconsumicion.png}
+		\caption{Diagrama de comunicación de eliminar consumición}
+		\end{figure}
+
+		\subsection{Reservas del restaurante}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCreserva.png}
+		\caption{Diagrama de comunicación de reservar una mesa}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCeliminarreserva.png}
+ 		\caption{Diagrama de comunicación de anular reserva del restaurante}
+		\end{figure}
+
+		\subsection{Comandas del restaurante}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCcomanda.png}
+		\caption{Diagrama de comunicación de tomar comanda}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCeliminarcomanda.png}
+		\caption{Diagrama de comunicación de eliminarcomanda}
+		\end{figure}
+
+		\subsection{Factura del restaurante}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCfactura.png}
+		\caption{Diagrama de comunicación de generar factura del restaurante }
+		\end{figure}
+
+
+		\subsection{Incidencias de mantenimiento}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCanotarincidencias.png}
+		\caption{Diagrama de comunicación de mantenimiento}
+		\end{figure}
+
+
+
 
 
 	\section{Diagramas de clases de análisis}
@@ -252,12 +325,14 @@
 		\caption{Diagrama de secuencia de tomar comanda }
 		\end{figure}
 
+		El proceso es el mismo, pero en vez de llamar al constructor de la comanda, se elimina de la mesa correspondiente.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DSeliminarcomanda.png}
 		\caption{Diagrama de secuencia de eliminar comanda}
 		\end{figure}
 
+		Esta parte está en fase de pruebas, pero ya tiene su diagrama de secuencia definido. Permite añadir o eliminar consumiciones de la comanda correspondiente a una mesa. Nótese que es indiferente si la consumición existía ya o se trata de algo que ya se había pedido (como por ejemplo una botella de agua) y se incrementa su cantidad.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DSmodificarcomanda.png}
@@ -265,8 +340,9 @@
 		\end{figure}
 
 
-
+		
 		\subsection{Factura del restaurante}
+		La clase RestauranteGUI llama al controlador, pasándole la mesa de la que se quiere extraer la factura. Éste transmite el mensaje al restaurante, donde se encuentra la mesa en cuestión. Sobre ella, se llama a la clase factura, que ordena la lista de comandas que recibe. Simplemente recorre tipos de platos (primero bebidas, luego primeros...) y para cada uno, recorre las comandas, recogiendo la consumición que toque. Devuelve la cadena con la factura total.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DSfactura.png}
@@ -275,6 +351,7 @@
 
 
 		\subsection{Recuento de existencias}
+		Esta parte no se implementa en esta versión, pero está en fase de desarrollo para presentársela al cliente como complemento. Simplemente habría una lista con las existencias, que tienen una cantidad asociada. En caso de necesitar modificar una de estas cantidades, la interfaz llama al controlador, que llama al inventario (donde esta las exitencias) y se cambia la cantidad de la que corresponda.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DSexistencias.png}
