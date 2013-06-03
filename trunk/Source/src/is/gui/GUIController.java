@@ -1,11 +1,7 @@
 package is.gui;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import is.Fecha;
-import is.restaurante.ComandaInfo;
 import is.restaurante.ComandaObserver;
 import is.restaurante.LibroReservaObserver;
 import is.restaurante.Menu;

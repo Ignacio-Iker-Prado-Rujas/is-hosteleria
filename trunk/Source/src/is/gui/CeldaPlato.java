@@ -28,7 +28,6 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 	public CeldaPlato(GUIController controller, final Consumicion plato, final int numMesa, final int numComanda, final TipoPlatos tPlato){
 		this.restControl = controller;
 		this.veces = 0;
-		this.plato = plato;
 		this.botonPlato = new JButton(plato.getNombre()){
 			{
 				this.addActionListener(new ActionListener(){
@@ -105,11 +104,8 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 	private GUIController restControl;
 	private int veces;
 	private JButton botonPlato;
-	private Consumicion plato;
 	private JSpinner flechitas;
 	
-	private int numComanda;
-	private int numMesa;
 	@Override
 	public void comandaError(String error) {
 		// TODO Auto-generated method stub
