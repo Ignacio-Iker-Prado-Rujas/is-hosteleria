@@ -44,7 +44,7 @@ relationcanvas 134789 relation_ref 147077 // <unidirectional association>
 end
 relationcanvas 135045 relation_ref 144773 // <aggregation>
   decenter_begin 319
-  decenter_end 746
+  decenter_end 745
   from ref 133893 z 3012 to ref 134917
   role_a_pos 539 339 3000 no_role_b
   no_multiplicity_a no_multiplicity_b

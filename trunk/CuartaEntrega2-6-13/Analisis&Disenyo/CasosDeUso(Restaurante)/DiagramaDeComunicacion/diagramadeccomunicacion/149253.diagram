@@ -12,16 +12,16 @@ note 128645 "Caso de uso:
 Eliminar comanda"
   color mediumblue  xyzwh 640.9 190.2 2000 119 46
 durationcanvas 128773 classinstance_ref 128005 // :RestauranteSwing
-  xyzwh 56 75.6 2010 11 122
+  xyzwh 56 75 2010 11 122
 end
 durationcanvas 128901 classinstance_ref 128133 // :GUIController
-  xyzwh 249 76.2 2010 11 113
+  xyzwh 249 76 2010 11 113
 end
 durationcanvas 129157 classinstance_ref 128517 // :Restaurante
-  xyzwh 458 91.9 2010 11 77
+  xyzwh 458 91 2010 11 77
 end
 durationcanvas 129413 classinstance_ref 128389 // :Mesa
-  xyzwh 604 113.3 2010 11 42
+  xyzwh 604 113 2010 11 42
 end
 msg 129029 synchronous
   from durationcanvas_ref 128773
