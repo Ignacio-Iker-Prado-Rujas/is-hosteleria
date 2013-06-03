@@ -5,6 +5,7 @@ import is.restaurante.Restaurante;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -37,6 +38,7 @@ public class UserWindow extends JFrame  {
 		this.setJMenuBar(menuBar);	
 		
 		ImageIcon kike = createImageIcon("images/kikeHost2.png", "KIKE");
+		setIconImage(new ImageIcon(getClass().getResource("images/icono.png")).getImage());
 		logo = new JLabel(kike);
 		logo.setSize(20, 20);
 		this.add(logo, BorderLayout.NORTH);
