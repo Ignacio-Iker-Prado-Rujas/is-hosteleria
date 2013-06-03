@@ -290,32 +290,32 @@
 		La acción se inicia en la interfaz RestauranteSwing, que le pide al menú que desea verlo. Este le devolverá una lista con la información de qué tipos de consumiciones hay, para mostrarlos. Posteriormente, se notificará qué tipo de consumición se desea ver. En el bucle se le pide uno a uno los nombres de cada consumición de ese tipo, y opcionalmente se pedirá que muestre la descripción de alguno. 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSvermenu.png}
+		\includegraphics[scale=0.6]{DSvermenu.png}
 		\caption{Diagrama de secuencia del menú}
 		\end{figure}
 
 		También se permite, como se ha dicho numerosas veces, modificar el menú. Hay tres opciones distintas para ello, a saber, añadir una nueva consumición, eliminar una existente o modificarla. Por claridad, cada una de estos opciones está en un diagrama distinto. El camino siempre es el mismo: de la interfaz al controlador, y de éste al menú. Cabe destacar que al modificar una consumición puedes cambiar el nombre, la descripción o el precio.
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSmodificarmenu.png}
+		\includegraphics[scale=0.6]{DSmodificarmenu.png}
 		\caption{Diagrama de secuencia de modificar menú}
 		\end{figure}		
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSanyadirconsumicion.png}
+		\includegraphics[scale=0.6]{DSanyadirconsumicion.png}
 		\caption{Diagrama de secuencia de modificar menú (añadir consumición)}
 		\end{figure}
-
+\clearpage
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSeliminarconsumicion.png}
+		\includegraphics[scale=0.55]{DSeliminarconsumicion.png}
 		\caption{Diagrama de secuencia de modificar menú (eliminar consumición)}
 		\end{figure}
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSmodificarconsumicion.png}
+		\includegraphics[scale=0.55]{DSmodificarconsumicion.png}
 		\caption{Diagrama de secuencia de modificar menú (modificar consumición)}
 		\end{figure}
 
@@ -324,20 +324,20 @@
 		Para ver las reservas,  como siempre hacemos debido al M-V-C, la interfaz RestauranteSwing se lo pide al controlador, y este se lo pide al Restaurante, que lleva una lista con las reservas.
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSverreservas.png}
+		\includegraphics[scale=0.6]{DSverreservas.png}
 		\caption{Diagrama de secuencia de ver las reservas del restaurante}
 		\end{figure}
 
 		Para hacer una reserva, el proceso es el mismo, sólo que se llama además al constructor de la reserva. Una vez creada se añade si es posible (puede que para la fecha solicitada se haya llenado ya el cupo de reservas). La anulación de una reserva es análoga.
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSreservarmesa.png}
+		\includegraphics[scale=0.6]{DSreservarmesa.png}
 		\caption{Diagrama de secuencia de reservar mesa del restaurante}
 		\end{figure}
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSanularreserva.png}
+		\includegraphics[scale=0.6]{DSanularreserva.png}
 		\caption{Diagrama de secuencia de anular reservas del restaurante}
 		\end{figure}
 
@@ -355,7 +355,7 @@
 		El proceso es el mismo, pero en vez de llamar al constructor de la comanda, se elimina de la mesa correspondiente.
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DSeliminarcomanda.png}
+		\includegraphics[scale=0.6]{DSeliminarcomanda.png}
 		\caption{Diagrama de secuencia de eliminar comanda}
 		\end{figure}
 
@@ -377,6 +377,7 @@
 		\end{figure}
 
 
+
 		\subsection{Recuento de existencias}
 		Esta parte no se implementa en esta versión, pero está en fase de desarrollo para presentársela al cliente como complemento. Simplemente habría una lista con las existencias, que tienen una cantidad asociada. En caso de necesitar modificar una de estas cantidades, la interfaz llama al controlador, que llama al inventario (donde esta las exitencias) y se cambia la cantidad de la que corresponda.
 		\begin{figure}[!h]
@@ -389,6 +390,7 @@
 
 	\section{Diagramas de clases de diseño}
 		\subsection{Menú del restaurante}
+		Para mayor claridad hemos separado estos diagramas del menú en tres partes. En la figura 30, vemos la lógica del menú: implementa MenuInfo y lleva un array de observers y arrays con las consumiciones. En la siguiente figura, vemos las consumiciones concretas que implementan la interfaz consumición. En la figura 32 aparece la vista del menú.  
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCDmenu.png}
@@ -407,8 +409,10 @@
 		\caption{Diagrama de clases de diseño de la interfaz del menú }
 		\end{figure}
 
+\clearpage
 
 		\subsection{Reservas del restaurante}
+		De la misma forma, hemos separado lógica de la vista en las reservas. Realizar reserva lleva una reserva que a su vez lleva una fecha e implementa ReservaInfo. La distribución de la vista es similar al caso anterior.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCDreservas.png}
@@ -422,6 +426,7 @@
 		\end{figure}
 
 		\subsection{Comandas del restaurante}
+		En cuanto a las comandas, llevan observadores del tipo comanda, que son implementados por RealizarPedido. A su vez, este lleva una ComandaInfo, implementada por comanda. El diagrama de las mesas es totalmente análogo, cambiando Comanda por Mesa.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCDcomandas.png}
@@ -435,6 +440,7 @@
 		\end{figure}
 \clearpage
 		\subsection{Factura del restaurante}
+		GenerarFactura lleva al controlador y a la mesa de que la que se requiera la factura. Llama a factura pasándole las comandas y se recogen las consumiciones en una única comanda.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCDfactura.png}
@@ -442,6 +448,7 @@
 		\end{figure}
 
 		\subsection{Cargadores de ficheros}
+		Para la gestión de datos, se han escogido ficheros, como ya se dijo. Se tiene una clase padre general de la que heredan los tres cargadores distintos: el de mesas, el del menú y el de reservas.
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCDloader.png}
@@ -461,6 +468,14 @@
 \setcounter{section}{0}
 \part{Patrones de diseño}
 
+Para implementar la aplicación Kike Hostelería ® hemos utilizado el patrón MVC.
+Con él hemos conseguido separar la lógica de la vista, utilizando para la interacción de ambos el Controller.
+
+El Controller se encarga de transmitir las notificaciones recibidas por la Vista, para que el Modelo pueda trabajar con ellas. A su vez, los cambios en el Modelo se notifican a la Vista a través del patrón Observer, es decir, la Vista se registra en el Modelo como observador a través del Controlador, y cuando el Modelo sufre un cambio avisa a los observadores. Para que el modelo no tenga que estar distinguiendo entre qué tipos de observadores tiene, se hace que la Vista implemente una interfaz con los métodos de notificación recibida, mejorando la cohesión.
+
+Para mejorar el bajo acoplamiento se ha utilizado el patrón Indirección. Por ejemplo, cuando una clase de la Vista necesitaba cierta información del Modelo, se delegaba en el Controlador la responsabilidad de transmitir los correspondientes datos. Una buena manera de ver la delegación de actividades es mediante los diagramas de secuencia antes comentados. Por ejemplo, en la figura 29, se ve como se va delegando la generación de la factura desde RestauranteSwing hasta Factura. Así se reduce el acoplamiento. 
+
+Por último se han utilizado las variaciones protegidas. Cuando una clase del Modelo requiere ser utilizada por una clase de la Vista, se hace que la clase del Modelo implemente una interfaz y la Vista trabaje con la interfaz. De esta manera conseguimos proteger la vista del modelo.
 
 
 \newpage
