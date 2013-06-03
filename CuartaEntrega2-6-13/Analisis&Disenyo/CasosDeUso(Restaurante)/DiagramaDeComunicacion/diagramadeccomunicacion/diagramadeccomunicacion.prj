@@ -170,6 +170,16 @@ format 76
 	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
 	size A4
       end
+
+      collaborationdiagram 148866 "diagramaAnyadirPlato"
+	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+	size A4
+      end
+
+      collaborationdiagram 148994 "diagramaEliminarPlato"
+	show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+	size A4
+      end
     end
 
     usecase 128514 "verMenu"

@@ -11,7 +11,9 @@ classinstance 129282 class_ref 143109 // VerMenu
 classinstance 130178 class_ref 142981 // ConsumicionSwing
  name ""  xyz 309 268 2000
 classinstance 131586 class_ref 142085 // Menu
- name ""  xyz 618 269 2000
+ name ""  xyz 97 269 2000
+note 134018 "Diagrama de comunicación editar menu"
+  xyzwh 482 316 2000 243 37
 linkcanvas 129410
   from ref 129282 z 2001 to ref 129154
 dirscanvas 129538 z 1000 linkcanvas_ref 129410
@@ -36,7 +38,7 @@ linkcanvas 131714
   from ref 130178 z 2001 to ref 131586
 dirscanvas 131842 z 1000 linkcanvas_ref 131714
   show_full_operations_definition default show_hierarchical_rank default drawing_language default show_msg_context default
-  forward_label "5 actualizaConsumicion()" xyz 456 249 3000
+  forward_label "5 actualizaConsumicion()" xyz 166 299 3000
 msgs
   msg operation_ref 157061 // "VerMenu(inout controller : GUIController)"
     forward ranks 1 "1" dirscanvas_ref 129794
