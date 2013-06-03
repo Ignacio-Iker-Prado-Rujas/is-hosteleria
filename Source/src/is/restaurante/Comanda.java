@@ -8,14 +8,6 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
-//hay que registrar los observadores en realizar pedido
-//TODO delete  consumicion
-
-//TODO @Alejandro, hay mucha repeticion con los add y tal, en los hashmap que hay como atributo
-//		, podriamos hacer que los atributos que son hashmap heredaran de una clase que tuviera
-//		implementados todos esos add, y también los remove
-//		El remove debbería ser igual que el add pero a la inversa, es decir si lo encuentra reduce su int, y si su int esta a 0 eliminarlo
-
 /**
  * Clase que guarda una comanda, guardando todas las bebidas, primeros, segundos
  * y postres que se han elegido y la cantidad de cada uno de ellos
@@ -44,7 +36,6 @@ public class Comanda implements ComandaInfo {
 		} else
 			comanda[index].put(consumicion, 1);
 		consumicion.getPrecio();
-//		emitirCambio();
 	}
 
 	private void deleteConsumicion(Consumicion consumicion, int index) {
@@ -61,7 +52,7 @@ public class Comanda implements ComandaInfo {
 	
 	public void setConsumicionTimes(Consumicion consumicion, int veces, TipoPlatos tPlato){
 		boolean hasChanged = false;
-		if (veces <0){/*emitError();*/ return;}
+		if (veces <0){ return;}
 		for (int i=0; i<4; i++){
 			if (comanda[i].containsKey(consumicion)){
 				//si las veces son 0, entonces quitamos la consumicion del pedido
@@ -76,7 +67,6 @@ public class Comanda implements ComandaInfo {
 			}
 		}
 		//si no se ha encontrado es que no estaba, asi que lo añadimos con las veces veces
-		//TODO no se si es necesario el if
 		if (!hasChanged){
 			comanda[tPlato.toInt()].put(consumicion, veces);// emitError
 			emitirCambio();
@@ -127,8 +117,6 @@ public class Comanda implements ComandaInfo {
 
 	public void addBebida(Consumicion bebida) {
 		addConsumicion(bebida, 3);
-//		emitirCambio();
-
 	}
 
 	public void deleteBebida(Consumicion bebida) {
@@ -210,7 +198,6 @@ public class Comanda implements ComandaInfo {
 	}
 	
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
-
 	private HashMap<Consumicion, Integer> comanda[];
 	private ArrayList<ComandaObserver> observers;
 
