@@ -110,15 +110,16 @@ public class VerReserva implements LibroReservaObserver{
 				if (cuando.equalsIgnoreCase("todas")){
 					int i= tTodas.getSelectedRow();
 					if (i >= 0){
-						controlador.requestRemoveReserva(tablaTodas.getValueAt(i, 0), 
-								tablaTodas.getValueAt(i, 1),
-								tablaTodas.getValueAt(i, 2),
-								tablaTodas.getValueAt(i, 3));
 						new RealizarReserva(controlador, tablaTodas.getValueAt(i, 0), 
 								tablaTodas.getValueAt(i, 1),
 								tablaTodas.getValueAt(i, 2),
 								tablaTodas.getValueAt(i, 3),
 								true);
+						controlador.requestRemoveReserva(tablaTodas.getValueAt(i, 0), 
+								tablaTodas.getValueAt(i, 1),
+								tablaTodas.getValueAt(i, 2),
+								tablaTodas.getValueAt(i, 3));
+						
 					}
 						
 				}
@@ -126,32 +127,33 @@ public class VerReserva implements LibroReservaObserver{
 					int i= tTodas.getSelectedRow();
 					
 					if (tHoy.getSelectedRow() >= 0){
-						controlador.requestRemoveReserva(tablaHoy.getValueAt(i, 0),  
-								tablaHoy.getValueAt(i, 1),
-								tablaHoy.getValueAt(i, 2),
-								tablaHoy.getValueAt(i, 3));
 						new RealizarReserva(controlador, tablaHoy.getValueAt(i, 0),  
 								tablaHoy.getValueAt(i, 1),
 								tablaHoy.getValueAt(i, 2),
 								tablaHoy.getValueAt(i, 3), true
 								);
+						controlador.requestRemoveReserva(tablaHoy.getValueAt(i, 0),  
+								tablaHoy.getValueAt(i, 1),
+								tablaHoy.getValueAt(i, 2),
+								tablaHoy.getValueAt(i, 3));
+						
 					}
 						
 				}
 				else if (cuando.equalsIgnoreCase("semana")){
 					if(tSemana.getSelectedRow() >= 0){
 						int i= tTodas.getSelectedRow();
-						
-						controlador.requestRemoveReserva(tablaSemana.getValueAt(i, 0), 
-								tablaSemana.getValueAt(i, 1),
-								tablaSemana.getValueAt(i, 2),
-								tablaSemana.getValueAt(i, 3));
 						new RealizarReserva(controlador,
 							tablaSemana.getValueAt(i, 0), 
 							tablaSemana.getValueAt(i, 1),
 							tablaSemana.getValueAt(i, 2),
 							tablaSemana.getValueAt(i, 3),
 							true);
+						controlador.requestRemoveReserva(tablaSemana.getValueAt(i, 0), 
+								tablaSemana.getValueAt(i, 1),
+								tablaSemana.getValueAt(i, 2),
+								tablaSemana.getValueAt(i, 3));
+						
 					}
 						
 				}
