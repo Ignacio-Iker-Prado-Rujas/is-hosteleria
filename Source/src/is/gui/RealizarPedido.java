@@ -61,10 +61,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//panelCentral.add(new PlatosPanel(0, restaurante));
-						//panelCentral.add(elementosMenu[0]);
 						menu.show(panelCentral, "0");
-						tPlato = TipoPlatos.BEBIDA;
 					}
 					
 				});
@@ -76,10 +73,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//panelCentral.add(new PlatosPanel(1, restaurante));
-						//panelCentral = (elementosMenu[1]);
 						menu.show(panelCentral, "1");
-						tPlato = TipoPlatos.PRIMERO;
 						
 					}
 					
@@ -92,10 +86,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//panelCentral.add(new PlatosPanel(2, restaurante));
-						//panelCentral = (elementosMenu[2]);
 						menu.show(panelCentral, "2");
-						tPlato = TipoPlatos.SEGUNDO;
 						
 					}
 					
@@ -108,10 +99,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//panelCentral.add(new PlatosPanel(3, restaurante));
-						//panelCentral = (elementosMenu[3]);
 						menu.show(panelCentral, "3");
-						tPlato = TipoPlatos.POSTRE;
 						
 					}
 					
@@ -221,17 +209,13 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private CeldaPlato[] bebidas;	
 	private JFrame frame;
 	private JPanel panelCentral;
-	private PlatosPanel platosPanel;
 	private JScrollPane scroller;
 	private JTextArea text;
 	private GUIController restaurante;
 	private JComboBox mesas;
 	private JPanel[] elementosMenu;
-	private ComandaInfo comanda;
 	private int numeroComanda;
 	private int numeroMesa;	
-	private TipoPlatos tPlato;
-
 	@Override
 	public void comandaError(String error) {
 		// TODO Auto-generated method stub

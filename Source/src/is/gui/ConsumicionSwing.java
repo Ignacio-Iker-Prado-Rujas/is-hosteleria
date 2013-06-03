@@ -1,7 +1,6 @@
 package is.gui;
 
 import is.gui.spring.SpringUtilities;
-import is.restaurante.Comanda;
 import is.restaurante.TipoPlatos;
 import is.restaurante.consumicion.Bebida;
 import is.restaurante.consumicion.Consumicion;
@@ -11,16 +10,12 @@ import is.restaurante.consumicion.Postre;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -30,7 +25,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
-import javax.swing.border.Border;
 /**
  * Muestra en swing una consumición
  * Aparecen por tanto el precion, nombre, descripción y si está disponible o no.
