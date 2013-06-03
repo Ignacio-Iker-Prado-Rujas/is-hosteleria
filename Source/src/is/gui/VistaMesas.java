@@ -34,14 +34,12 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		this.setLayout(new BorderLayout());
 		comandasPanel = new JPanel[mesas.length];
 		comandasContainer = new JPanel();
-		final CardLayout comandasLayout = new CardLayout();
+		comandasLayout = new CardLayout();
 		comandasContainer.setLayout(comandasLayout);
 		JPanel cardPanel = new JPanel();
 		cardPanel.setLayout(comandasLayout);
 		final TitledBorder title = new TitledBorder("Mesa");
 		cardPanel.setBorder(title);
-		comandasContainer.add(new JPanel(), "Hello, world");
-		comandasLayout.show(comandasContainer, "Hello world");
 		for (int j = 0; j < mesas.length; j++) {
 			comandasPanel[j] = new JPanel();
 			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "
@@ -67,7 +65,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 			// se pone con getnumeromesa, da igual que empiece por 0, porque en
 			// otros sitios esta asi
-			JButton mesa = new JButton("Mesa " + (mesas[i].getNumeroMesa() + 1));
+			JButton mesa = new JButton("Mesa " + (mesas[i].getNumeroMesa()  ));
 			mesa.addActionListener(new ActionListener() {
 
 				@Override
@@ -106,7 +104,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 	public void setComandasPanel(Integer numeroMesa, boolean desdeElPrincipio) {
 		// se deja con numeroMesa
-		TitledBorder title = new TitledBorder("Mesa " + (numeroMesa + 1));
+		TitledBorder title = new TitledBorder("Mesa " + (numeroMesa ));
 		if (desdeElPrincipio) {
 			comandas = restController.getMesa(numeroMesa).getListaComandas();
 		}
@@ -124,7 +122,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			/* Creamos los botones con las comandas */
 			for (int i = 0; i < comandas.length; i++) {
 				final int j = i;
-				JButton comandaMesa = new JButton("Comanda " + (i+1));
+				JButton comandaMesa = new JButton("Comanda " + (i ));
 				comandaMesa.addActionListener(new ActionListener() {
 					/*
 					 * Al seleccionar una comanda guardaremos en un atributo qué
@@ -150,7 +148,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		JPanel botoncitosPanel = new JPanel();
 		botoncitosPanel.setLayout(new FlowLayout());
 
-		JButton editarComanda = new JButton("Editar");
+		/*JButton editarComanda = new JButton("Editar");
 		editarComanda.addActionListener(new ActionListener() {
 
 			@Override
@@ -159,7 +157,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			}
 
 		});
-		botoncitosPanel.add(editarComanda);
+		botoncitosPanel.add(editarComanda);*/
 
 		JButton añadirComanda = new JButton("Añadir");
 		añadirComanda.addActionListener(new ActionListener() {
@@ -171,7 +169,11 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					new RealizarPedido(restController, numMesa, comandas.length - 1);
 				}
 				else notificar("Debe seleccionar una mesa");
+				
+				cardSet(numMesa);
 			}
+
+			
 
 		});
 		botoncitosPanel.add(añadirComanda);
@@ -185,6 +187,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					restController.eliminarComanda(numMesa, comandaSelected);
 				}
 				else notificar("Debe seleccionar una comanda");
+				cardSet(numMesa);
 			}
 
 		});
@@ -200,6 +203,11 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		 * clave el numero de mesa en string
 		 */
 		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
+	}
+	
+	private void cardSet(Integer numMesa) {
+		comandasLayout.show(
+				comandasContainer, numMesa.toString());
 	}
 
 	@Override
@@ -219,6 +227,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	private JPanel[] comandasPanel;
 	int comandaSelected = -1;
 	private int numMesa = -1;
+	
+	private final CardLayout comandasLayout;
 
 	@Override
 	public void facturaGenerada(String factura) {
