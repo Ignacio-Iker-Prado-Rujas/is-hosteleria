@@ -38,7 +38,7 @@ public class RestauranteSwing extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						new RealizarReserva(rest);
+						new RealizarReserva(rest, null, null, null, null, false);
 					}
 				});
 			}

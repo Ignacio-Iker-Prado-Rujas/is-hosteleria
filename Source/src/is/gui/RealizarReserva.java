@@ -43,41 +43,61 @@ import org.jdesktop.swingx.JXDatePicker;
 public class RealizarReserva extends JPanel{
 
 	@SuppressWarnings("deprecation")
-	public RealizarReserva(GUIController controller){
+	public RealizarReserva(GUIController controller, String givenName, String givenDate, String givenGuests, String givenTables, boolean edit){
 		super();
 		this.controlador = controller;
 		this.setLayout(new BorderLayout());
 		this.inicializaBox();
+		
+		
+		
 		this.mesasSel = new boolean[controlador.requestMesas().length];
 		for (int i=0; i< mesasSel.length; i++)
 			mesasSel[i] = false;
-		final SeleccionMesas selecciona = new SeleccionMesas();		
+		//Si se ha elegido editar, se rellenan los campos correspondientes
+		if (edit){
+			setValues(givenName, givenDate, givenGuests, givenTables);
+		}
+		
+		for (int i=0; i< mesasSel.length; i++)
+			mesasSel[i] = false;
+		final SeleccionMesas selecciona = new SeleccionMesas();
+		
 		JPanel reserva = new JPanel();
+	
 		reserva.setLayout(new SpringLayout());
+		
 		final JLabel fecha = new JLabel("Fecha: ");
 		datePicker = new JXDatePicker(System.currentTimeMillis());
 		datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
 		datePicker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//fecha.setText(datePicker.getDate().toString());
-				//TODO
+				//Se ha editado la fecha
+				dateHasBeenEdited = true;
 			}
 
 		});
 		reserva.add(fecha);
-		reserva.add(datePicker);		
+		reserva.add(datePicker);	
+		
 		JLabel horaLabel = new JLabel("Hora: ");
 		reserva.add(horaLabel);
 		JPanel eligeHora = new JPanel();
 		eligeHora.setLayout(new FlowLayout());
-		eligeHora.add(this.hora);
-		eligeHora.add(this.minutos);
+			eligeHora.add(this.hora);
+			eligeHora.add(this.minutos);
 		reserva.add(eligeHora);
+		
+		
+		
 		JLabel nombreL = new JLabel ("Nombre: ");
+		//nombre.add(this.nombre);
 		reserva.add(nombreL);
 		reserva.add(this.nombre);
+		
 		JLabel comensalesL = new JLabel ("Número de comensales");
-		comensales.setValue(0);
+		if (!edit) 
+			comensales.setValue(0);
 		comensales.addChangeListener(new ChangeListener(){
 
 			@Override
@@ -88,8 +108,11 @@ public class RealizarReserva extends JPanel{
 			
 		});
 		
+		//comensales.add(this.comensales);
 		reserva.add(comensalesL);
 		reserva.add(this.comensales);
+		//p.add(comensales);*/
+		
 		JLabel mesasL = new JLabel("Mesas");
 		JButton mesasB = new JButton("Elegir mesas");
 		mesasB.addActionListener(new ActionListener(){
@@ -105,9 +128,12 @@ public class RealizarReserva extends JPanel{
 		reserva.add(mesasL);
 		reserva.add(mesasB);
 
-		//Después de reserva va el número de botones que queremos
+		/*
+		 * Atención!!, después de reserva va el número de botoncitos que queremos
+		 */
 		SpringUtilities.makeCompactGrid(reserva, 5, 2, 6, 6, 10, 10);
-		this.add(reserva, BorderLayout.CENTER);	
+		this.add(reserva, BorderLayout.CENTER);
+		
 		this.add(new JButton("Reservar") {
 			{
 				this.addActionListener(new ActionListener() {
@@ -115,15 +141,24 @@ public class RealizarReserva extends JPanel{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (datosValidos()){
-							datePicker.setFormats(new SimpleDateFormat("yyyy MM dd hh mm EEE"));
-							Date reservaDate = datePicker.getDate();
-							String fecha = datePicker.getDate().toString();
-							controlador.communicateReserva(fecha, (int)hora.getSelectedItem(), 
-									(int)minutos.getSelectedItem(), nombre.getText(), 
-									(int)comensales.getValue(), mesasSel);						
+							if (dateHasBeenEdited){
+								datePicker.setFormats(new SimpleDateFormat("yyyy MM dd hh mm EEE"));
+								datePicker.getDate();
+								
+								String fecha = datePicker.getDate().toString();
+								controlador.communicateReserva(fecha, (int)hora.getSelectedItem(), 
+										(int)minutos.getSelectedItem(), nombre.getText(), 
+										(int)comensales.getValue(), mesasSel);	
+							}
+							else 
+								controlador.communicateReserva(toEditDate, nombre.getText(), (int)comensales.getValue(), mesasSel);
+							
+							
+												
 							frame.setVisible(false);
 							
-						}
+						}//TODO else mostrar mensaje de error, donde sea, diciendo 
+						//que hay que poner un numero de comensales
 						else {
 							String error = "";
 							if (!comensalesValidos()) error += COMENSALES_NO_VALIDOS;
@@ -136,19 +171,48 @@ public class RealizarReserva extends JPanel{
 					}
 						datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
 						
-					}			
-				});				
+					}
+					
+
+				
+				});
+				
 			}
+
 		}, BorderLayout.AFTER_LAST_LINE);
+	
+		
 	
 		frame = new JFrame("Reservas");
 		frame.setPreferredSize(new Dimension(400, 280));
-		frame.setVisible(true);	
+		frame.setVisible(true);
+		
 		frame.add(this);
 		frame.pack();
+		if (edit)
+			frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		
+	}
+
+
+	private void setValues(String givenName, String givenDate,
+			String givenGuests, String givenTables) {
+		this.nombre.setText(givenName);
+		this.comensales.setValue((int)Integer.parseInt(givenGuests));
+		givenDate.replace('/', ' ');
+		givenDate.replace(':', ' ');
+		this.toEditDate = givenDate;
+		parseTables(givenTables);
 		
 	}
 	
+	private void parseTables (String givenTables){
+		String[] comando = givenTables.split(" ");
+		for (int i=0; i< comando.length; i++){
+			mesasSel[Integer.parseInt(comando[i])] = true;
+		}
+	}
+
 	public boolean datosValidos() {
 		return comensalesValidos() && nombreValido();
 	}
@@ -162,6 +226,7 @@ public class RealizarReserva extends JPanel{
 	}
 
 	private void inicializaBox(){
+		
 		Vector<Integer> horas = new Vector<Integer>();
 		for (int i=13; i<16; i++){
 			horas.add(i);
@@ -173,7 +238,24 @@ public class RealizarReserva extends JPanel{
 			minutos.add(j*5);
 		}
 		hora = new JComboBox(horas);
+		hora.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dateHasBeenEdited = true;
+			}
+			
+		});
 		this.minutos = new JComboBox(minutos);
+		this.minutos.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dateHasBeenEdited = true;
+			}
+			
+		});
+		
 		
 	}
 	
@@ -181,20 +263,24 @@ public class RealizarReserva extends JPanel{
 	    private JCheckBox[] checkMesas = new JCheckBox[mesasSel.length];
 	    
 	    public SeleccionMesas() {
-	        JPanel checkPanel = new JPanel(new GridLayout((mesasSel.length +1)/2,2));	        
+	    	 //Put the check boxes in a column in a panel
+	    	
+	        JPanel checkPanel = new JPanel(new GridLayout((mesasSel.length +1)/2,2));
+	        
 	        for (int i=0; i<mesasSel.length; i++){
 	        	checkMesas[i] = new JCheckBox("Mesa " + i);
 	        	checkMesas[i].addChangeListener(this);
 	        	checkMesas[i].setSelected(mesasSel[i]);
 	        	checkPanel.add(checkMesas[i]);
-	        }        
+	        }
+	        
+	        
 	        checkPanel.add(new JButton ("Seleccionar"){
 	        	{
 	        		this.addActionListener(new ActionListener(){
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							// TODO Auto-generated method stub
 							
 							SeleccionMesas.this.setVisible(false);
 						
@@ -204,7 +290,9 @@ public class RealizarReserva extends JPanel{
 	        		});
 	        	}
 
-	        }); 
+	        });
+
+	       
 	        this.add(checkPanel);
 	    }
 	    
@@ -213,16 +301,18 @@ public class RealizarReserva extends JPanel{
 	        for (int i=0; i< checkMesas.length; i++){
 	        	mesasSel[i] = checkMesas[i].isSelected();
 	        }
+	     
 	        setTitle(cad);
 	    }
 	}
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	private static String COMENSALES_NO_VALIDOS = "Debe seleccionar el número de comensales" + LINE_SEPARATOR;
 	private static String NOMBRE_RESERVA = "Debe introcudir el nombre del cliente" + LINE_SEPARATOR;
+	
+	
 	private JFrame frame;
-	private boolean error;
 	private boolean[] mesasSel;
-	private Reserva reserva;
+	
 	private JTextField fecha = new JTextField(10);
 	private JTextField dia = new JTextField(2);
 	private JComboBox mes = new JComboBox();
@@ -230,10 +320,12 @@ public class RealizarReserva extends JPanel{
 	private GUIController controlador;
 	private JComboBox hora;
 	private JComboBox minutos;
+	
 	private final JXDatePicker datePicker;
+	
 	private JTextField nombre = new JTextField(10);
 	private JSpinner comensales = new JSpinner();
-	private String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
-			"Julio", "Agosto", "Septiembre"
-			, "Octubre", "Noviembre", "Diciembre"};
+	
+	private String toEditDate;
+	private boolean dateHasBeenEdited = true;
 }

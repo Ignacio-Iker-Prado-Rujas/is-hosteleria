@@ -66,6 +66,17 @@ public class GUIController {
 		Reserva reserva = new Reserva(fRes, cliente, numeroComensales, mesas);
 		restaurante.añadirReserva(reserva);
 	}
+	
+	public void communicateReserva(String uneditedDate, String cliente, int numeroComensales,
+			boolean[] mesasSel) {
+		Fecha fRes = new Fecha(0,0,0,0,0);
+		fRes.parseDayFirst(uneditedDate);
+		ArrayList<Mesa> mesas = new ArrayList<Mesa>();
+		for (int i=0; i<mesasSel.length; i++)
+			if (mesasSel[i]) mesas.add(this.getMesa(i));
+		Reserva reserva = new Reserva(fRes, cliente, numeroComensales, mesas);
+		restaurante.añadirReserva(reserva);
+	}
 
 	public void comunicarComanda(int año, int mes, int dia, int hora, 
 
@@ -161,6 +172,8 @@ public class GUIController {
 		restaurante.deleteComanda(numeroMesa);
 		
 	}
+
+
 
 
 
