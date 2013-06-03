@@ -217,23 +217,23 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			El usuario tendrá varias maneras de interactuar con el programa. El programa le permite hacerlo mediante botones y campos. Los botones pueden servir para elegir pestañas concretas o acceder a un determinado sitio, es decir, para obtener datos del sistema. Los campos sirven para enviar información al sistema y a otros usuarios, y se pueden rellenar mediante cuadros de texto (por ejemplo, para enviar la descripción de una incidencia) o marcando las opciones disponibles (por ejemplo, al hacer un pedido en el restaurante). Aquí también intervienen los botones, ya que se puede aceptar para enviar la información, o cancelar si hemos cometido un error, para volver a rellenar los campos. En el programa hay varias ventanas con varias opciones, pensadas para los distintos tipos de usuario.
 			\begin{itemize}
 				% \item \textbf{}
-				\item \textbf{Pantalla de inicio} En la pantalla de inicio se mostrarán los distintos tipos de usuario que hay (Jefe, Maître, recepcionista, etc).También aparecerán dos campos a rellenar: usuario y contraseña. Debajo del campo “Contraseña'' aparecerá escrito “¿Has olvidado tu contraseña?", para poder recuperarla en caso de que sea necesario.
+				\item \textbf{Pantalla de inicio} En la pantalla de inicio aparecerán dos campos a rellenar: usuario y contraseña. También aparecerá el logo del producto.
 				\item \textbf{Usuario “Jefe"} Para el Jefe se muestran los siguientes apartados: contabilidad, empleados, cliente, restaurante, habitaciones y notas. Además, tendremos un botón para cerrar sesión. En la pantalla se mostrará el tipo de usuario que está logueado, en este caso, el Jefe. 
 				\begin{itemize}
 					\item \textbf{Contabilidad: }Se mostrarán 4 opciones: Cuenta de caja: Recepción, Cuenta de caja: Restaurante, Acceso al libro diario y Acceso al libro mayor.En las dos primeras se mostrará una tabla con tres columnas: Ingreso, gasto y concepto.
 					 \item \textbf{Empleados: }Se mostrará una tabla con 4 columnas: foto, nombre, apellidos y “trabaja actualmente". Tendremos la opción de "Búsqueda", en la que se podrá elegir el campo (Nombre, apellidos, ...), y la de ''Añadir empleado". 
 					 \item \textbf{Clientes: }La parte superior será igual que en la pantalla de empleados. Se mostrará una tabla con 4 columnas: Nombre, apellidos, número de teléfono y VIP. 
-					 \item \textbf{Restaurante: }Se muestran 9 opciones: Realizar reserva, Ver/Anular reserva, Distribución de mesas, Cantidad de existencias, Generar/modificar pedido, Anular pedido, Generar factura, Ver/modificar menú y Notificar Incidencias.
+					 \item \textbf{Restaurante: }Se muestran 9 opciones: Realizar reserva, Ver/Anular reserva, Distribución de mesas, Cantidad de existencias, Generar/modificar comanda, Sobre aplicacion, Generar factura, Ver/modificar menú y Notificar incidencias.
 					\begin{itemize}
-						\item En “realizar reserva" se mostrarán los campos día, hora, nombre y número de comensales. En la parte inferior se mostrarán un tick y una cruz, para confirmar o cancelar reserva. 
-						\item En “Ver/Anular reserva" se mostrará una tabla con los campos día, hora, nombre, número de comensales, mesa y un botón para anular. 
+						\item En “Realizar reserva" se mostrarán los campos fecha, hora, nombre, número de comensales y las mesas por si quieren seleccionarse de antemano. 
+						\item En “Ver/Anular reserva" se mostrarán  los campos  nombre, fecha, número de comensales, y mesas. Se podrá  añadir, editar o borrar una reserva.
 						\item En “Distribución de mesas" se mostrará un mapa esquemático con las mesas del restaurante. 
-						\item En “Cantidad de existencias" se mostrarán los campos bebidas, vinos e ingredientes, y en cada uno de ellos se podrá elegir algo específico. 
-						\item En “Generar pedido" se mostrarán los campos número de mesa, bebidas, entrantes, vinos, primeros, segundos, postres, cafés e infusiones. Además, habrá una lista con todo lo que se haya pedido, las opciones de generar o cancelar pedido. 
-						\item En “Anular pedido" aparecerá en un campo el número de mesa. Debajo aparecerá una lista con los pedidos de esa mesa y a la opción de eliminar pedido. 
-						\item En “Generar factura" aparecerá el número de mesa junto con una lista con todos los pedidos de esa mesa. Ademas, dos opciones: generar factura y añadir factura a habitación.
-						\item En “Ver/modificar menú'' aparecerán los mismos campos que en Generar pedido. Al seleccionar uno de ellos aparecerá una tabla con los elementos disponibles, que se pueden editar. 
-						\item En “Notificar incidencias'' aparecerán los campos Lugar y Descripción.
+						\item En “Cantidad de existencias" se mostrarán los campos bebidas, vinos e ingredientes, y en cada uno de ellos se podrá elegir algo específico. Solo está disponible en la versión de pago.
+						\item En “Generar/modificar comanda" se mostrarán los campos número de mesa, un botón de añadir y otro de eliminar. Además, estarán guardadas las comandas pedidas por cada mesa hasta el momento. 
+						\item En “Sobre aplicacion" aparecerá una lista con los integrantes del grupo desarrollador. En la versión de pago no estará.
+						\item En “Generar factura" aparecerá una lista de mesas para seleccionar de la que se quiere obtener la factura. 
+						\item En “Ver/modificar menú'' aparecerá una lista de todas las consumiciones contenidas en el menú ordenadas por tipo. Se podrán crear nuevas, editar y eliminar. 
+						\item En “Notificar incidencias'' se ofrecerá un campo de texto para detallas cualquier problema que se tenga.
 					\end{itemize}
 					
 					 \item \textbf{Habitaciones:} En la ventana habitaciones aparecerán las opciones: Realizar reserva, Ver/anular reserva, Generar factura, Ver habitaciones y Notificar incidencias. 
@@ -580,9 +580,9 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 			\item \textbf{Prioridad: }Alta.
 			\item \textbf{Estabilidad: }Alta.
-			\item \textbf{Descripción: }Los usuarios pueden informar (a través de las pestañas "Habitaciones", "Restaurante" y "Limpieza" de alguna incidencia que haya ocurrido en el hotel a través de esta función.
+			\item \textbf{Descripción: }Los usuarios pueden informar (a través de las pestañas "Habitaciones", "Restaurante" y "Limpieza" de alguna incidencia que ha ocurrido en el hotel a través de esta función.
 			\item \textbf{Entrada: }Ninguna.
-			\item \textbf{Salida: }Notificación de incidencia, con los siguientes datos: Lugar y Descripción.
+			\item \textbf{Salida: }Texto con la notificación de incidencia.
 			\item \textbf{Origen: }Dispositivo de cualquier usuario.
 			\item \textbf{Destino: }Tablet del encargado de mantenimiento.
 			\item \textbf{Necesita: }del vacío.
@@ -618,13 +618,13 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Prioridad: } Media.
 			\item \textbf{Estabilidad: } Media.
 			\item \textbf{Descripción: } Reserva una mesa en el restaurante para comer.
-			\item \textbf{Entrada: } Fecha de reserva, hora de la reserva, nombre y número de comensales.
+			\item \textbf{Entrada: } Fecha de reserva, hora de la reserva, nombre, número de comensales y opcionalmente las mesas a ocupar.
 			\item \textbf{Salida: } Mensaje indicando que se ha realizado correctamente.
 			\item \textbf{Origen: } Tablet del camarero, maître o jefe que realiza la reserva.
 			\item \textbf{Destino: } Archivos que contienen la información de las reservas.
 			\item \textbf{Necesita: } Datos de las mesas reservadas.
 			\item \textbf{Acción: } Reservar mesa.
-			\item \textbf{Precondición: } La mesa que quiere reservar está libre a la hora de la reserva y el número de comensales es acorde con los asientos disponibles en esa mesa.
+			\item \textbf{Precondición: } La fecha debe ser válida.
 			\item \textbf{Poscondición: } Mesa reservada a un cliente.
 
 		\end{itemize}%Fin de la función
@@ -642,8 +642,8 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Destino: } Datos de las mesas reservadas.
 			\item \textbf{Necesita: } Datos de las mesas reservadas.
 			\item \textbf{Acción: } Anular reserva.
-			\item \textbf{Precondición: } La mesa está reservada por el cliente que desea anular la reserva.
-			\item \textbf{Poscondición: } La reserva se anula y la mesa queda libre.
+			\item \textbf{Precondición: } Debe existir la reserva.
+			\item \textbf{Poscondición: } La reserva se anua.
 
 		\end{itemize}%Fin de la función
 		%Siguiente función
@@ -654,7 +654,7 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Prioridad: } Alta.
 			\item \textbf{Estabilidad: } Media.
 			\item \textbf{Descripción: } El camarero apunta lo que los clientes desean tomar.
-			\item \textbf{Entrada: } Número de mesa, bebidas que desean tomar, entrantes, vinos, primeros, segundos, postres y café o infusiones (algunas entradas pueden no darse).
+			\item \textbf{Entrada: } Número de mesa y comanda.
 			\item \textbf{Salida: } El pedido se envia a la cocina y al camarero le aparece un mensaje de pedido enviado junto a las características del pedido.
 			\item \textbf{Origen: } Tablet del camarero, maître o cocinero que ha realizado el pedido.
 			\item \textbf{Destino: } Datos de los pedidos realizados, Pantalla situada en la cocina donde los cocineros ven los pedidos.
@@ -662,24 +662,6 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Acción: } Generar pedido.
 			\item \textbf{Precondición: } La cocina aún está abierta.
 			\item \textbf{Poscondición: } El pedido se genera y se envía a la cocina donde comienzan a prepararlo.
-
-		\end{itemize}%Fin de la función
-		%Siguiente función
-
-	\item \textbf{Modificar un pedido} %Modicar un pedido
-
-		\begin{itemize}
-			\item \textbf{Prioridad: } Alta.
-			\item \textbf{Estabilidad: } Media.
-			\item \textbf{Descripción: } El camarero modifica un pedido efectuado con anterioridad por un error al realizarlo o porque el cliente cambia de opinión.
-			\item \textbf{Entrada: }Número de la mesa, Pedido anterior y Cambios que se producen (se pueden modificar los mismo datos que se podían rellenar en generar pedido).
-			\item \textbf{Salida: }  El pedido se envia a la cocina y aparece un mensaje indicando que el pedido se ha modificado correctamente junto a las nuevas caracterísitcas del pedido.
-			\item \textbf{Origen: } Tablet del camarero, maître o cocinero que realiza la modificación.
-			\item \textbf{Destino: } Datos de los pedidos realizados, Pantalla situada en la cocina donde los cocineros ven los pedidos.
-			\item \textbf{Necesita: } Datos de los pedidos realizados, Menú del restaurante.
-			\item \textbf{Acción: } Modificar pedido.
-			\item \textbf{Precondición: } El cliente ya ha realizado un pedido, éste aún no ha comenzado a efectuarse y decide cambiarlo, o el pedido se hizo mal y deben cambiarlo.
-			\item \textbf{Poscondición: } Se cambia el pedido.
 
 		\end{itemize}%Fin de la función
 		%Siguiente función
@@ -693,10 +675,10 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Entrada: } Número de la mesa y Pedido que se ha realizado.
 			\item \textbf{Salida: } Mensaje indicando que el pedido se ha cancelado.
 			\item \textbf{Origen: } Tablet del camarero, maître o cocinero que cancela el pedido.
-			\item \textbf{Destino: } Datos de los pedidos realizados, Pantalla situada en la cocina.
-			\item \textbf{Necesita: } Datos de los pedidos realizados.
+			\item \textbf{Destino: } Libro de las comandas realizadas, Pantalla situada en la cocina.
+			\item \textbf{Necesita: } Numeros de mesa y pedido.
 			\item \textbf{Acción: } Cancelar pedido.
-			\item \textbf{Precondición: } El cliente ha realizado un pedido y aún no ha comenzado a prepararse.
+			\item \textbf{Precondición: } El cliente ha realizado un pedido.
 			\item \textbf{Poscondición: } El pedido se cancela.
 
 		\end{itemize}%Fin de la función
@@ -727,15 +709,14 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 			\item \textbf{Prioridad: } Alta.
 			\item \textbf{Estabilidad: } Media.
 			\item \textbf{Descripción: } Se muestra el menú por pantalla.
-			\item \textbf{Entrada: } Selección del botón "Menú".
-			\item \textbf{Salida: } Se muestra el menú.
+			\item \textbf{Entrada: }Selección de la opción para ver el menú.
+			\item \textbf{Salida: } Las consumiciónes del menú organizadas por tipo de consumición.
 			\item \textbf{Origen: } Tablet del camarero, maître o jefe.
 			\item \textbf{Destino: } Tablet del camarero, maître o jefe.
-			\item \textbf{Necesita: } Datos del menú.
+			\item \textbf{Necesita: } Datos de las consumiciones del menú.
 			\item \textbf{Acción: } Ver Menú.
 			\item \textbf{Precondición: } El menú no se está modificando y el usuario tiene acceso a dicha opción.
 			\item \textbf{Poscondición: } El usuario ve el menú.
-			%\item \textbf{Efectos laterales: } La tablet explota porque es absurdo hacer esta función.
 
 
 		\end{itemize}%Fin de la función
@@ -761,49 +742,13 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 		\end{itemize}%Fin de la función
 		%Siguiente función
 
-		\item \textbf{Modificar distribución del restaurante} %Modificar distribución del restaurante
-
-		\begin{itemize}
-			\item \textbf{Prioridad: } Baja.
-			\item \textbf{Estabilidad: } Media.
-			\item \textbf{Descripción: } Permite modificar la distribución actual de las sillas y las mesas para probar nuevas combinaciones.
-			\item \textbf{Entrada: } Cambios que se desean realizar en la distribución del restaurante.
-			\item \textbf{Salida: } Se muestran los cambios que se han realizado junto con un mensaje de "Distribución modificada".
-			\item \textbf{Origen: } Tablet del jefe, maître, camarero o jefe de cocina.
-			\item \textbf{Destino: } Datos que contienen la distribución de las mesas y sillas.
-			\item \textbf{Necesita: } Datos con la distribución del restaurante.
-			\item \textbf{Acción: } Modificar Distribución.
-			\item \textbf{Precondición: } Se dispone de una distribución definida.
-			\item \textbf{Poscondición: } Se modifica la distribución y se guardan en un archivo.
-
-		\end{itemize}%Fin de la función
-		%Siguiente función
-
-		\item \textbf{Realizar recuento de alimentos} %Realizar recuento de alimentos
-
-		\begin{itemize}
-			\item \textbf{Prioridad: } Baja.
-			\item \textbf{Estabilidad: } Media.
-			\item \textbf{Descripción: } Muestra las existencias que había tras el ultimo recuento y se pueden modificar para actualizarlas.
-			\item \textbf{Entrada: } Número representativo de las existencias que hay de cada alimento.
-			\item \textbf{Salida: } Mensaje de alerta por poca cantidad si las existencias bajas de un cierto número, representativo para cada producto.
-			\item \textbf{Origen: } Tablet del jefe, maître o jefe de cocina.
-			\item \textbf{Destino: } Tablet del jefe, maître o jefe de cocina. 
-			\item \textbf{Necesita: } Datos del último recuento de existencias.
-			\item \textbf{Acción: } Gestionar existencias.
-			\item \textbf{Precondición: } Se dispone de datos del último recuento realizado y el encargado de gestionar las existencias ha comprobado la cantidad de alimentos que quedan en el almacen.
-			\item \textbf{Poscondición: } Se actualizan los detos de las existencias disponibles en el almacen.
-
-		\end{itemize}%Fin de la función
-		%Siguiente función
-
 		\item \textbf{Modificar Menú} %Modificar Menú
 
 		\begin{itemize}
 			\item \textbf{Prioridad: } Baja.
 			\item \textbf{Estabilidad: } Alta.
 			\item \textbf{Descripción: } Permite ver el menú actual y modificar lo que se desee.
-			\item \textbf{Entrada: } Platos y bebidas del menú que se desean añadir, modificar o eliminar.
+			\item \textbf{Entrada: } Consumiciones del menú que se desean añadir, modificar o eliminar.
 			\item \textbf{Salida: } Mensaje indicando que el menú se modificó satisfactoriamente.
 			\item \textbf{Origen: } Tablet del jefe, camarero, maître o jefe de cocina.
 			\item \textbf{Destino: } Datos del menú y Mensaje indicando que la operación se realizó con éxito.
@@ -967,185 +912,4 @@ Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesad
 
 		\end{itemize}%Fin de la función <Función>
 \item \textbf{Añadir cliente}  %Nombre de la función
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Alta.
-			\item \textbf{Estabilidad: }Media.
-			\item \textbf{Descripción: }Cada vez que un cliente visita el hotel o el restaurante, su ficha es añadida a la base de datos si este así lo desea.
-			\item \textbf{Entrada: } Ficha del cliente
-			\item \textbf{Salida: }Base de datos de clientes actualizada
-			\item \textbf{Origen: }Equipo del recepcionista o del jefe.
-			\item \textbf{Destino: }Base de datos de clientes. 
-			\item \textbf{Necesita: }Datos del los clientes. 
-			\item \textbf{Acción: }Añadir cliente a la base de datos.
-			\item \textbf{Precondición: }Base de datos implementada, y el cliente no pone impedimentos en formar parte de ella.
-			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
-			%\item \textvf{Efectos laterales: } No hay.
-
-
-		\end{itemize}%Fin de la función
-
-\item \textbf{Ver ficha de cliente}%Nombre de la función
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media.
-			\item \textbf{Estabilidad: }Media.
-			\item \textbf{Descripción: }El jefe o el recepcionista desean ver la ficha de un cliente de la base de datos
-			\item \textbf{Entrada: } Nombre del cliente
-			\item \textbf{Salida: }Ficha del cliente
-			\item \textbf{Origen: }Equipo del recepcionista o del jefe.
-			\item \textbf{Destino: }Base de datos de clientes. 
-			\item \textbf{Necesita: }Datos del cliente. 
-			\item \textbf{Acción: }Visualiza la ficha de un cliente.
-			\item \textbf{Precondición: }Base de datos implementada, y el cliente del que se desea ver la ficha se encuentra en ella.
-		\end{itemize}%Fin de la función
-
-\item \textbf{Añadir nota}  %Nombre de la función
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Alta.
-			\item \textbf{Estabilidad: }Media/baja.
-			\item \textbf{Descripción: }Un empleado añade una nota al tablón de notas.
-			\item \textbf{Entrada: } Nota del empleado.
-			\item \textbf{Salida: }Tablón de notas actualizado.
-			\item \textbf{Origen: }Equipo del empleado.
-			\item \textbf{Destino: }Equipos de los demas empleados. 
-			\item \textbf{Necesita: }Nota del empleado. 
-			\item \textbf{Acción: }Añade la nota al tablon general de notas.
-			\item \textbf{Precondición: }Base de datos implementada, y nota de menos de 140 caracteres
-			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
-			%\item \textvf{Efectos laterales: } No hay.
-
-
-		\end{itemize}%Fin de la función
-
-
-\item \textbf{Borrar nota}  %Nombre de la función
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Alta.
-			\item \textbf{Estabilidad: }Alta.
-			\item \textbf{Descripción: }Un empleado borra una nota al tablón de notas.
-			\item \textbf{Entrada: } Nota a borrar .
-			\item \textbf{Salida: }Tablón de notas actualizado.
-			\item \textbf{Origen: }Equipo del empleado.
-			\item \textbf{Destino: }Equipos de los demas empleados. 
-			\item \textbf{Necesita: }Nota a borrar. 
-			\item \textbf{Acción: }Borra la nota del tablon general de notas.
-			\item \textbf{Precondición: }Base de datos implementada, y nota de menos de 140 caracteres
-			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
-			%\item \textvf{Efectos laterales: } No hay.
-
-
-		\end{itemize}%Fin de la función
-
-
-\item \textbf{Añadir un nuevo empleado}  %Nombre de la función
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media/baja.
-			\item \textbf{Estabilidad: }Media.
-			\item \textbf{Descripción: }El jefe añade un empleado a la base de datos.
-			\item \textbf{Entrada: } Ficha del empleado.
-			\item \textbf{Salida: }Base de datos de empleados actualizada.
-			\item \textbf{Origen: }Equipo del jefe.
-			\item \textbf{Destino: }Base de datos de empleados. 
-			\item \textbf{Necesita: }Ficha del nuevo empleado. 
-			\item \textbf{Acción: }Añade la ficha a la base de datos de empleados.
-			\item \textbf{Precondición: }Base de datos implementada.
-			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo empleado. 
-			\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
-
-		\end{itemize}%Fin de la función
-
-
-\item \textbf{Dar de baja un empleado}  %Nombre de la función
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media/baja.
-			\item \textbf{Estabilidad: }Media/alta.
-			\item \textbf{Descripción: }El jefe borra a un empleado de la base de datos.
-			\item \textbf{Entrada: } Ficha del empleado.
-			\item \textbf{Salida: }Base de datos de empleados actualizada.
-			\item \textbf{Origen: }Equipo del jefe.
-			\item \textbf{Destino: }Base de datos de empleados. 
-			\item \textbf{Necesita: }Nombre/DNI y ficha del empleado a borrar. 
-			\item \textbf{Acción: }Transfiere a un empleado a la sección de "Antiguos empleados".
-			\item \textbf{Precondición: }Base de datos implementada, y el empleado pertenece a ella.
-			\item \textbf{Poscondición: }Base de datos actualizada.
-			%\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
-
-		\end{itemize}%Fin de la función
-
-\item \textbf{Modificar la ficha de un empleado}  %Done
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media.
-			\item \textbf{Estabilidad: }Media.
-			\item \textbf{Descripción: }El jefe edita la ficha de un empleado de la base de datos.
-			\item \textbf{Entrada: } Ficha del empleado.
-			\item \textbf{Salida: }Base de datos de empleados actualizada.
-			\item \textbf{Origen: }Equipo del jefe.
-			\item \textbf{Destino: }Base de datos de empleados. 
-			\item \textbf{Necesita: }Nombre/DNI y ficha del empleado que se desea editar. 
-			\item \textbf{Acción: }Modifica la ficha del empleado.
-			\item \textbf{Precondición: }Base de datos de empleados implementada, el empleado perteneciente a ella
-			\item \textbf{Poscondición: }Base de datos de empleados actualizada con la ficha del nuevo cliente. 
-			\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
-
-		\end{itemize}%Fin de la función
-
-\item \textbf{Ver currículum de un empleado}  %Done
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media/baja.
-			\item \textbf{Estabilidad: }Media/alta.
-			\item \textbf{Descripción: }El jefe accede al currículum vitar de un empleado de la base de datos.
-			\item \textbf{Entrada: } Nombre del empleado.
-			\item \textbf{Salida: }Ficha y currículum del empleado.
-			\item \textbf{Origen: }Equipo del jefe.
-			\item \textbf{Destino: }Equipo del jefe. 
-			\item \textbf{Necesita: }Nombre/DNI del empleado. 
-			\item \textbf{Acción: }Accede al currículum proporcionado por el empleado cuando entró a la empresa.
-			\item \textbf{Precondición: }Base de datos de empleados implementada, y empleado perteneciente a ella.
-			%\item \textbf{Poscondición: }Base de datos actualizada con el empleado en la seccion de antiguos empleados. 
-			%\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
-
-		\end{itemize}%Fin de la función
-
-\item \textbf{Dar de baja un cliente}  %Done
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media.
-			\item \textbf{Estabilidad: }Alta.
-			\item \textbf{Descripción: }El jefe o el recepcionista borran a un cliente de la base de datos.
-			\item \textbf{Entrada: } Ficha del cliente.
-			\item \textbf{Salida: }Base de datos de clientes actualizada.
-			\item \textbf{Origen: }Equipo del jefe o del recepcionista.
-			\item \textbf{Destino: }Base de datos de empleados. 
-			\item \textbf{Necesita: }Nombre/DNI y ficha del cliente a borrar. 
-			\item \textbf{Acción: }Borra al cliente de la base de datos.
-			\item \textbf{Precondición: }Base de datos de clientes implementada, y cliente perteneciente a ella
-			\item \textbf{Poscondición: }Base de datos de clientes actualizada con el cliente borrado de ella. 
-			%\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
-
-		\end{itemize}%Fin de la función
-
-\item \textbf{Editar un cliente}  %Done
-
-		\begin{itemize}
-			\item \textbf{Prioridad: }Media.
-			\item \textbf{Estabilidad: }Media.
-			\item \textbf{Descripción: }El jefe/recepcionista edita la ficha de un cliente de la base de datos.
-			\item \textbf{Entrada: } Ficha del cliente.
-			\item \textbf{Salida: }Base de datos de clientes actualizada.
-			\item \textbf{Origen: }Equipo del jefe o del recepcionista.
-			\item \textbf{Destino: }Base de datos de clientes. 
-			\item \textbf{Necesita: }Nombre/DNI y ficha del cliente que se desea editar. 
-			\item \textbf{Acción: }Modifica la ficha del cliente.
-			\item \textbf{Precondición: }Base de datos de clientes implementada, cliente perteneciente a ella
-			\item \textbf{Poscondición: }Base de datos de clientes actualizada con la ficha del nuevo cliente. 
-			\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
-
-		\end{itemize}%Fin de la función
 
