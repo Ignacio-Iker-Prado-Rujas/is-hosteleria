@@ -476,7 +476,7 @@
 \setcounter{section}{0}
 \part{Patrones de diseño}
 
-Para implementar la aplicación Kike Hostelería ® hemos utilizado el patrón MVC.
+Para implementar la aplicación KIKE  HOSTELERIA ® hemos utilizado el patrón MVC.
 Con él hemos conseguido separar la lógica de la vista, utilizando para la interacción de ambos el Controller.
 
 El Controller se encarga de transmitir las notificaciones recibidas por la Vista, para que el Modelo pueda trabajar con ellas. A su vez, los cambios en el Modelo se notifican a la Vista a través del patrón Observer, es decir, la Vista se registra en el Modelo como observador a través del Controlador, y cuando el Modelo sufre un cambio avisa a los observadores. Para que el modelo no tenga que estar distinguiendo entre qué tipos de observadores tiene, se hace que la Vista implemente una interfaz con los métodos de notificación recibida, mejorando la cohesión.
