@@ -20,12 +20,12 @@ public class About extends JFrame {
 				
 		JLabel[] labels = new JLabel[6];
 		this.setLayout(new GridLayout(6,1));
-		labels[0] = new JLabel("Equipo de desarrollo: ");	
-		labels[1]  = new JLabel("Enrique Ballesteros Horcajo");	
-		labels[2]  = new JLabel("Jesús Aguirre Pemán");	
-		labels[3]  = new JLabel("Jaime Dan Porras Rhee");	
-		labels[4]  = new JLabel("Iker Prado Rujas");	
-		labels[5]  = new JLabel("Alejandro Villarín Prieto");			
+		labels[0] = new JLabel("	Equipo de desarrollo: ");	
+		labels[1]  = new JLabel("	Enrique Ballesteros Horcajo");	
+		labels[2]  = new JLabel("	Jesús Aguirre Pemán");	
+		labels[3]  = new JLabel("	Jaime Dan Porras Rhee");	
+		labels[4]  = new JLabel("	Iker Prado Rujas");	
+		labels[5]  = new JLabel("	Alejandro Villarín Prieto");			
 		for (JLabel l : labels) this.add(l);
 		this.setSize(350, 220);
 		this.setVisible(true);
