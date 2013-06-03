@@ -57,6 +57,8 @@ public class RealizarReserva extends JPanel{
 		//Si se ha elegido editar, se rellenan los campos correspondientes
 		if (edit){
 			setValues(givenName, givenDate, givenGuests, givenTables);
+			for (int i=0; i<mesasSel.length; i++)
+				System.out.println(mesasSel[i]);
 		}
 		
 		for (int i=0; i< mesasSel.length; i++)
@@ -207,9 +209,11 @@ public class RealizarReserva extends JPanel{
 	}
 	
 	private void parseTables (String givenTables){
-		String[] comando = givenTables.split(" ");
-		for (int i=0; i< comando.length; i++){
-			mesasSel[Integer.parseInt(comando[i])] = true;
+		if (givenTables != ""){
+			String[] comando = givenTables.split(" ");
+			for (int i=0; i< comando.length; i++){
+				mesasSel[Integer.parseInt(comando[i])] = true;
+			}
 		}
 	}
 
