@@ -21,17 +21,13 @@ public class Mesa implements MesaInfo {
  }
 	public Mesa(int num, int cap) {
 		numeroMesa = num;
-		capacidad = cap;
-		 this.obs = new ArrayList<MesaObserver>();
+		this.obs = new ArrayList<MesaObserver>();
          this.comandas = new Vector<Comanda>();
 	}
 
 	public void addPedido(Comanda comanda) {
 		comandas.add(comanda);
-		// comandas.
 	}
-
-	// TODO editComanda, selectComanda delete Comanda
 
 	@Override
 	public int getNumeroMesa() {
@@ -43,7 +39,6 @@ public class Mesa implements MesaInfo {
 	}
 
 	public void setCapacidad(int c) {
-		capacidad = c;
 	}
 
 	public void generarFactura() {
@@ -55,7 +50,6 @@ public class Mesa implements MesaInfo {
 	}
 
 	@Override
-	// TODO igual habria que crear un metodo que pasara del vector a un array[]
 	public ComandaInfo[] getListaComandas() {
 		if (this.comandas != null)
 			return this.listaComandasToArray();
@@ -79,10 +73,6 @@ public class Mesa implements MesaInfo {
 	 */
 	public void avisaComanda(int comandaSelected) {
 		if (comandaActual != -1)
-			// TODO, al dar al boton de generar comanda o elegir comanda en la
-			// vista correspondiente, se añadira el observador (supongo)
-			// comandaActual.removeObserver(obs);
-			// comandas.get(comandaSelected).addObserver(obs);
 			comandaActual = comandaSelected;
 	}
 
@@ -96,7 +86,6 @@ public class Mesa implements MesaInfo {
 
 	public void addConsumption(int numComanda, Consumicion plato,
 			TipoPlatos tPlato) {
-		// comandas.get(numComanda).addConsumicion(plato);
 		switch (tPlato) {
 		case PRIMERO:
 			comandas.get(numComanda).addPrimero(plato);
@@ -121,15 +110,6 @@ public class Mesa implements MesaInfo {
 		for (MesaObserver o : obs)
 			o.cambioOcurrido(this.listaComandasToArray(), this.numeroMesa);
 	}
-/*
-	public void addComandaObserver(ComandaObserver observer/*, int comandaSeleccionada*//*) {
-		Comanda nuevaComanda = new Comanda();
-		comandas.add(nuevaComanda);
-		comandas.lastElement().addObserver(observer);
-		System.out.println(comandas.size());
-		comandas.lastElement().setNumComanda(comandas.size() - 1);
-	}
-	*/
 
 	public void addNewComanda() {
 		comandas.add(new Comanda());
@@ -137,11 +117,6 @@ public class Mesa implements MesaInfo {
 	}
 
 	public void addComandaObserver(ComandaObserver observer, int comandaSeleccionada) {
-		/*Comanda nuevaComanda = new Comanda();
-		comandas.add(nuevaComanda);
-		comandas.lastElement().addObserver(observer);
-		System.out.println(comandas.size());
-		comandas.lastElement().setNumComanda(comandas.size() - 1);*/
 		comandas.get(comandaSeleccionada);
 		comandas.get(comandaSeleccionada).addObserver(observer);
 	}
@@ -153,20 +128,18 @@ public class Mesa implements MesaInfo {
 	public void removeMesaObserver(MesaObserver generarFactura) {
 		obs.remove(generarFactura);
 	}
-
+	public void eliminaUltimaComanda() {
+		comandas.remove(comandas.lastElement());	
+	}
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
 	
 	private ArrayList<MesaObserver> obs;
 	private Vector<Comanda> comandas;
 	private int numeroMesa;
-	private int capacidad;
 	private int comandaActual = -1;
-	public void eliminaUltimaComanda() {
+	
 
-			comandas.remove(comandas.lastElement());
-		
-	}
 
 
 }

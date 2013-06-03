@@ -31,8 +31,6 @@ public class VistaMesas extends JPanel implements MesaObserver {
 	public VistaMesas(final GUIController controller) {
 		this.restController = controller;
 		this.mesas = this.restController.requestMesas();
-		// for (int i=0; i<mesas.length; i++)
-		// restController.addMesaObserver(this, i);
 		this.setLayout(new BorderLayout());
 		comandasPanel = new JPanel[mesas.length];
 		comandasContainer = new JPanel();
@@ -40,14 +38,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		comandasContainer.setLayout(comandasLayout);
 		JPanel cardPanel = new JPanel();
 		cardPanel.setLayout(comandasLayout);
-
 		final TitledBorder title = new TitledBorder("Mesa");
 		cardPanel.setBorder(title);
-		/*
-		 * Inicializamos los JPanel que contendrán las comandas de cada mesa y
-		 * los botones de control añadir, eliminar y editar comanda
-		 * y mostramos por defecto un jpanel vacio
-		 */
 		comandasContainer.add(new JPanel(), "Hello, world");
 		comandasLayout.show(comandasContainer, "Hello world");
 		for (int j = 0; j < mesas.length; j++) {
@@ -55,32 +47,14 @@ public class VistaMesas extends JPanel implements MesaObserver {
 			TitledBorder titulo = BorderFactory.createTitledBorder("Mesa "
 					+ (j));
 			comandasPanel[j].setBorder(titulo);
-			// boolean true, es para ver si es la primera vez que escogemos la
-			// mesa
+			// boolean true, para ver si es la primera vez que escogemos la mesa
 			setComandasPanel(j, true);
-
 		}
-		// comandas = restController.getMesa(j).getListaComandas();
-
-		/*
-		 * for (int i=0; i< mesas.length; i++){ comandasPanel[i] = new JPanel();
-		 * comandasPanel[i].setLayout(new FlowLayout());
-		 * comandasPanel[i].setBorder(title);
-		 * 
-		 * }
-		 */
-		/*
-		 * Se los añadimos al contenedor padre, mierda esto lo quito porque ya
-		 * estaba en el setcomandasPanel
-		 */
-		// for (Integer i = 0; i < mesas.length; i++)
-		// comandasContainer.add(comandasPanel[i], i.toString());
 
 		/* Creamos un panel con las mesas, usando un flowlayout */
 		JPanel panelMesas = new JPanel();
 		panelMesas.setLayout(new FlowLayout());
-		// this.restController.requestMesas();
-		// this.restController.pedirMesas();
+	
 		/*
 		 * Para cada mesa añadimos un listener que hara que el cardlayout
 		 * muestre el panel de comandas correspondiente a la mesa j
@@ -101,28 +75,8 @@ public class VistaMesas extends JPanel implements MesaObserver {
 					numMesa = j;
 					title.setTitle("Mesa " + (j));
 					addMesaObserver(j);
-					/*
-					 * Comanda[] comandas = new
-					 * Comanda[controller.getMesa(j).getListaComandas().length];
-					 * 
-					 * for (int i = 0; i< comandas.length; i++)
-					 */
-					// comandas = restController.getMesa(j).getListaComandas();
-
-					// setComandasPanel(j);
-					// comandasPanel[j].add(new JLabel("Bubidibu"),
-					// BorderLayout.SOUTH);
-
-					/*
-					 * El card layout debe mostrar en comandasContainer las
-					 * comandas de la mesa j, (Recordemos que j.toString era la
-					 * clave para las comandas de la mesa j Aquí falla el
-					 * programa Mirar los .java realizar pedido y
-					 * cardLayoutExample para ver como funciona el card layout
-					 */
-					
 					comandasLayout.show(
-					/* comandasPanel[j] */comandasContainer, j.toString());
+					comandasContainer, j.toString());
 
 				}
 
@@ -140,8 +94,6 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		JFrame frame = new JFrame("Comandas por mesa");
 		frame.setPreferredSize(new Dimension(500, 300));
 		frame.setVisible(true);
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 		frame.add(this);
 		frame.pack();
 
@@ -214,7 +166,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (/* comandaSelected != -1 && */numMesa != -1) {
+				if (numMesa != -1) {
 					restController.requestNewCommand(numMesa);
 					new RealizarPedido(restController, numMesa, comandas.length - 1);
 				}
@@ -248,11 +200,7 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		 * clave el numero de mesa en string
 		 */
 		comandasContainer.add(comandasPanel[numeroMesa], numeroMesa.toString());
-
-		// comandasContainer.add(editarComanda);
-		// comandasContainer.add(añadirComanda);
-		// comandasContainer.add(eliminarComanda);
-	}//
+	}
 
 	@Override
 	public void cambioOcurrido(final ComandaInfo[] comandas, int numeroMesas) {
@@ -265,7 +213,6 @@ public class VistaMesas extends JPanel implements MesaObserver {
 		JOptionPane.showMessageDialog(this, message);
 	}
 	private JPanel comandasContainer;
-
 	private GUIController restController;
 	private MesaInfo[] mesas;
 	private ComandaInfo[] comandas;

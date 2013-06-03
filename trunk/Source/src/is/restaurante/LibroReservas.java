@@ -18,7 +18,6 @@ public class LibroReservas{
 	public LibroReservas() {
 		observers = new ArrayList<LibroReservaObserver>();
 		listaReservas = new List<Reserva>();
-		// numeroReservas = 0;
 	}
 
 	public LibroReservas(List<Reserva> list) {
@@ -27,7 +26,6 @@ public class LibroReservas{
 	}
 
 	public boolean addReserva(Reserva res) {
-		// numeroReservas++;
 		boolean exito = listaReservas.add(res); 
 		if (exito) emitirCambios();
 		return exito;
@@ -72,7 +70,6 @@ public class LibroReservas{
 		fecha.parse(date.toString(), 0, 0);
 		ArrayList<ReservaInfo> reservasSiempre = new ArrayList<ReservaInfo>();
 		for (int i=0; i<listaReservas.size(); i++){
-			//en realidad solo habria que hacer un if
 			if (listaReservas.get(i).getFecha().esMayorQue(fecha) || listaReservas.get(i).getFecha().mismoDia(fecha)){
 				reservasSiempre.add(listaReservas.get(i));
 			}
@@ -84,23 +81,8 @@ public class LibroReservas{
 		boolean exito = listaReservas.erase(res);
 		emitirCambios();
 		return exito;
-		// numeroReservas--;
-		// esxito listaReservas.erase(res);
-	}/*
-	 * 
-	 * Ya me parecia a mi que esta puta mierda no iba a funcionar xD jajajaj xD
-	 * public ArrayList<Reserva> buscarReserva(String nombre){
-	 * ArrayList<Reserva> reservas = new ArrayList<Reserva>(); for (int i = 0; i
-	 * <numeroReservas; i++){ reservas.add(listaReservas.get(new Reserva(null,
-	 * 0, 59, nombre, 0, null))); } return reservas; }
-	 */
-
-/*	private void emitirCambios() {
-		for (LibroReservaObserver obs : observers) {
-			obs.cambioOcurrido(listaReservasToArray());
-		}
 	}
-*/
+	
 	private ReservaInfo[] listaReservasToArray() {
 		ReservaInfo[] reservaArray = new ReservaInfo[listaReservas.size()];
 		for (int i = 0; i < listaReservas.size(); i++) {
@@ -114,17 +96,15 @@ public class LibroReservas{
 	 * Por que coño ahora esto es con integers? De donde sacas entonces la
 	 * reserva para poder mostrarla en verReserva??
 	 */
-	public/* int */ArrayList<ReservaInfo> buscarReserva(String nombre) {
+	public ArrayList<ReservaInfo> buscarReserva(String nombre) {
 		ArrayList<ReservaInfo> listaRes = new ArrayList<ReservaInfo>();
 		int i = 0;
 		while (i < listaReservas.size()) {
 			if (listaReservas.get(i).getNombre().equals(nombre))
 				;
-			// i++;
 			listaRes.add(listaReservas.get(i));
 		}
-		// if (i < listaReservas.size()) return i;
-		/* else */return listaRes;
+		return listaRes;
 	}
 
 	public ArrayList<ReservaInfo> todasReservas() {
@@ -134,7 +114,7 @@ public class LibroReservas{
 		return listaRes;
 	}
 
-	public/* int */ArrayList<ReservaInfo> buscarReserva(int j) {
+	public ArrayList<ReservaInfo> buscarReserva(int j) {
 		if (j == -1)
 			return this.reservasDesdeHoy();//todasReservas();
 		if (j == 0)
@@ -144,12 +124,6 @@ public class LibroReservas{
 		else if (j == 2)
 			return reservasMes();
 		return null;
-		/*
-		 * int i=0; while (i<listaReservas.size()){ if
-		 * (listaReservas.get(i).getNombre().equals(nombre)) ; //i++;
-		 * listaRes.add(listaReservas.get(i)); } //if (i < listaReservas.size())
-		 * return i; //else return listaRes;
-		 */
 	}
 	
 
@@ -165,10 +139,6 @@ public class LibroReservas{
 
 	public ArrayList<ReservaInfo> buscarReservaSemana(Fecha dateInicial) {
 		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
-		// Fecha dateTope = new Fecha(dateInicial.getAño(),
-		// dateInicial.getMes(), dateInicial.getDia(), dateInicial.getHora(),
-		// dateInicial.getMinutos());
-		// dateTope = dateTope.siguienteSemana();//
 		Fecha dateTope = dateInicial.siguienteSemana();
 		for (int i = 0; i < listaReservas.size(); i++) {
 			if (!listaReservas.get(i).getFecha().esMayorQue(dateTope)
@@ -214,19 +184,13 @@ public class LibroReservas{
 
 	}
 	
-
-	
 	private void emitirCambios(){
 		for (LibroReservaObserver obs: observers)
 			obs.cambioOcurrido(this.reservasHoy(), this.reservasSemana(), this.reservasDesdeHoy());
 	}
 
 	private List<Reserva> listaReservas;
-	// private int numeroReservas;// TODO creo que numero reservas se puede ver
-	// con
-	// listaReservas.size();
 	private ArrayList<LibroReservaObserver> observers;
-
 	public ArrayList<ReservaInfo> buscarReserva(Fecha fecha) {
 		// TODO Auto-generated method stub
 		return null;

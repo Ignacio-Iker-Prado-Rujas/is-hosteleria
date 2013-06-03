@@ -51,11 +51,6 @@ public class Menu implements MenuInfo {
 		postres = listaPostres;
 	}
 
-	/** Devuelve una lista de los tipos de consumiciones que existen **/
-	/*
-	 * public Consumiciones[] verMenu(){ return tipoConsumiciones; }
-	 */
-
 	/** Devuelve un string con los platos correspondientes **/
 	public ArrayList<Consumicion> getPlatos(TipoPlatos tipoPlato) {
 		switch (tipoPlato) {
@@ -119,17 +114,9 @@ public class Menu implements MenuInfo {
 	// Actualiza un plato al array del tipo
 
 	public void actualizaConsumicion(Consumicion consAntigua,
-			Consumicion consNueva, TipoPlatos tPlato) {
-		/*
-		 * for (MenuObserver obs: observers)
-		 * obs.editConsumption(consAntigua.getNombre(), consNueva.getNombre(),
-		 * tipoPlato(consAntigua.getNombre()).toString(), tPlato.toString());
-		 * 
-		 * dondeEsta(consAntigua).remove(consAntigua);
-		 */
+		Consumicion consNueva, TipoPlatos tPlato) {
 		deleteConsumicion(consAntigua);
 		addConsumicion(consNueva, tPlato);
-
 	}
 
 	// Añade un plato al array del tipo
@@ -139,7 +126,7 @@ public class Menu implements MenuInfo {
 			switch (tPlato) {
 			case BEBIDA:
 				bebidas.add(consumicion);
-				break;// TODO notificar observers
+				break;
 			case PRIMERO:
 				primeros.add(consumicion);
 				break;
@@ -152,18 +139,9 @@ public class Menu implements MenuInfo {
 			default:
 				;
 			}
-			// TODO kike, esto no se si esta bien
 			for (MenuObserver obs : observers)
 				obs.addConsumption(consumicion.getNombre(), tPlato.toString());
 		}
-	}
-
-	//
-	private String[] mostrarConsumiciones(ArrayList<Consumicion> consumiciones) {
-		String[] nombres = null;
-		/* bucle acumulando todas las consumiciones del array pasado */
-		return nombres;
-
 	}
 
 	public ArrayList<Consumicion> getBebidas() {
@@ -252,7 +230,6 @@ public class Menu implements MenuInfo {
 	static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
 	private ArrayList<MenuObserver> observers;
-
 	private ArrayList<Consumicion> bebidas;
 	private ArrayList<Consumicion> primeros;
 	private ArrayList<Consumicion> segundos;

@@ -13,9 +13,6 @@ import java.util.ArrayList;
  * @author JaimeDan
  * @author Kike
  */
-// TODO añadir resreva, quitar reserva, edit reserva, añadir mesa quitar mesa
-// editar mesa
-// TODO añadir comanda, editar comanda, (Borrar comanda?)
 public class Restaurante {
 
 	public Restaurante() {
@@ -36,7 +33,7 @@ public class Restaurante {
 		reservas.addReserva(reserva);
 	}
 
-	public ArrayList<ReservaInfo> /* int List<Integer> */buscarReservas(
+	public ArrayList<ReservaInfo> buscarReservas(
 			String nombre) {
 		return this.reservas.buscarReserva(nombre);
 	}
@@ -60,7 +57,6 @@ public class Restaurante {
 			return menu.getPostres();
 		else
 			return null;
-
 	}
 
 	public void setMenu(Menu menu) {
@@ -82,16 +78,10 @@ public class Restaurante {
 		mesas.get(numMesa).eliminaComanda(comandaSelected);
 	}
 
-	/* Este y el siguiente son para las comandas */
 	public void addNewConsumption(int numComanda, int numMesa,
 			Consumicion plato, TipoPlatos tPlato) {
 		mesas.get(numMesa).addConsumption(numComanda, plato, tPlato);
 	}
-
-	/*
-	 * public Restaurante(List<Reserva> list, Menu m, ArrayList<Mesa> mesasRes)
-	 * { mesas = mesasRes; reservas = new LibroReservas(list); menu = m; }
-	 */
 
 	public void addNewConsumption(int numComanda, int numMesa,
 			Consumicion plato, TipoPlatos tPlato, int veces) {
@@ -99,11 +89,10 @@ public class Restaurante {
 	}
 
 	public MesaInfo[] getMesas() {
-		// TODO Auto-generated method stub
 		MesaInfo[] infoMesas = new MesaInfo[this.mesas.size()];
 		for (int i = 0; i < this.mesas.size(); i++)
 			infoMesas[i] = this.mesas.get(i);
-		return infoMesas;// (MesaInfo[]) this.mesas.toArray();
+		return infoMesas;
 	}
 
 	public void actualizaConsumicion(Consumicion consAntigua,
@@ -153,11 +142,9 @@ public class Restaurante {
 		reservas.deleteReserva( nombre,  fecha,  comensales, mesa);
 	}
 
-	private int mesaActual = -1;
 	private ArrayList<Mesa> mesas;
 	private LibroReservas reservas;
 	private Menu menu;
-	private Tablon tablon;
 
 
 }
