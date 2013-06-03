@@ -43,7 +43,7 @@
 \begin{document}
 
 \title{\textbf{\huge{ Documento UML}} \\ 
-	\textit{v3.0.1} \\	\vspace{0.1cm}
+	\textit{v4.0.1} \\	\vspace{0.1cm}
 	\Large{Ingeniería del Software} \\
 	\includegraphics[scale=0.3]{ucm.pdf}}
 \author{ {\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
@@ -127,10 +127,15 @@
 	Por último, el jefe del negocio tiene acceso a las cuentas de las cajas de la recepción y del restaurante, que se recogen en el libro diario de la aplicación. Éste, a su vez, se resume en el libro mayor.
 
 
-
-
 	\section{Diagramas de actividad}
 	No consideramos necesarios estos diagramas, ya que creemos que la información que aportan ya la dan los diagramas de secuencia junto con la documentación.
+
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
 
 
 
@@ -149,7 +154,7 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCvermenu.png}
+		\includegraphics[scale=0.7]{DCvermenu.png}
 		\caption{Diagrama de comunicación del menú}
 		\end{figure}
 		Desde el menú principal se accede a la vista del menú que le solicita los datos a la clase Menú.
@@ -157,7 +162,7 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCeditarmenu.png}
+		\includegraphics[scale=0.65]{DCeditarmenu.png}
 		\caption{Diagrama de comunicación de modificar el menú}
 		\end{figure}
 		Se accede  a la pestaña de ver menú que reúne los datos del Menú y te
@@ -166,7 +171,7 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCanyadirconsumicion.png}
+		\includegraphics[scale=0.65]{DCanyadirconsumicion.png}
 		\caption{Diagrama de comunicación de añadir plato al menú}
 		\end{figure}
 		Accediendo a la pestaña ver menú, que reúne los datos de la clase Menú, te
@@ -174,26 +179,28 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCeliminarconsumicion.png}
+		\includegraphics[scale=0.65]{DCeliminarconsumicion.png}
 		\caption{Diagrama de comunicación de eliminar consumición}
 		\end{figure}
 		A través de la interfaz de ver menú que reúne las consumiciones del menú, te permite
 		eliminar cualquier plato de este.
 
-		\subsection{Reservas del restaurante}
 
+		\subsection{Reservas del restaurante}
+		\hspace{0.5cm}
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCreserva.png}
+		\includegraphics[scale=0.6]{DCreserva.png}
 		\caption{Diagrama de comunicación de reservar una mesa}
 		\end{figure}
+
 		A través de la interfaz realizar reserva, que te permite rellenar los campos de 
 		una, se añade al libro de reservas que acumula todas.
 
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCeditarreserva.png}
+		\includegraphics[scale=0.6]{DCeditarreserva.png}
  		\caption{Diagrama de comunicación de editar reserva del restaurante}
 		\end{figure}
 		Accediendo a ver reserva se crea una nueva reserva inicialmente
@@ -202,16 +209,17 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCeliminarreserva.png}
+		\includegraphics[scale=0.65]{DCeliminarreserva.png}
  		\caption{Diagrama de comunicación de anular reserva del restaurante}
 		\end{figure}
 		Accediendo desde la ventana principal, ver reserva te ofrece la posibilidad de eliminar la reserva deseada del libro de reservas.
+
 
 		\subsection{Comandas del restaurante}
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCcomanda.png}
+		\includegraphics[scale=0.65]{DCcomanda.png}
 		\caption{Diagrama de comunicación de tomar comanda}
 		\end{figure}
 		Desde la ventana principal se accede a la vista de las mesas, que tras haber seleccionado una contacta con realizar
@@ -219,7 +227,7 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCeliminarcomanda.png}
+		\includegraphics[scale=0.65]{DCeliminarcomanda.png}
 		\caption{Diagrama de comunicación de eliminar comanda}
 		\end{figure}
 		Desde la vista de las mesas se selecciona una comanda y se notifica a la mesa su borrado.
@@ -228,7 +236,7 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCfactura.png}
+		\includegraphics[scale=0.65]{DCfactura.png}
 		\caption{Diagrama de comunicación de generar factura del restaurante }
 		\end{figure}
 		Desde la ventana principal se accede a generar factura, donde se selecciona la mesa de la cual se quiere cobrar 
@@ -238,7 +246,7 @@
 
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{DCanotarincidencias.png}
+		\includegraphics[scale=0.65]{DCanotarincidencias.png}
 		\caption{Diagrama de comunicación de mantenimiento}
 		\end{figure}
 		Se  crea una nota de texto al acceder a notificar incidencias que te permite indicar tu problema.
