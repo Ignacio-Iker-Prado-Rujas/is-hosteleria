@@ -1191,7 +1191,7 @@
 			\item \textbf{Propósito:} Modificar la distribución de las mesas en el restaurante.
 			\item \textbf{Visión general:} Se puede modificar la distribución del mobiliario
 				en el restaurante para cambiar el estilo o simplemente para un evento puntual
-				como podría ser una boda.
+				como podría ser una boda. Solo disponible en versión de pago.
 			\item \textbf{Extiende ($<<$extends$>>$):} Ver distribución y número de mesas del restaurante.
 			\item \textbf{Curso típico de eventos:} 	\\
 			\begin{tabular}{|p{6cm}||p{6cm}|}
@@ -1243,33 +1243,29 @@
 					\textbf{3.} Introduce la descripción.	& 
 					\textbf{4.} Pide el precio que llevará el plato. \\ \hline
 					\textbf{5.} Introduce el precio. & 
-					\textbf{6.} Se procesa el plato y se añade al menú. \\ \hline
+					\textbf{6.} Pide la disponibilidad del plato. \\ \hline
+					\textbf{7.} Indica la disponibilidad. & 
+					\textbf{8.} Se procesa el plato y se añade al menú. \\ \hline
 				\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-				\item  \textbf{Línea 1:} El plato introducido ya existe. Se pide al usuario otro
-				nombre y se le da la opción de cancelar.
+				\item  \textbf{Línea 5:}El precio introducido no es un número.Pide al usuario que lo sea.
 			\end {itemize}
 			
 			\item \textbf{Seccion Modificar plato:} 	\\
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El usuario indica el nombre del plato a modificar. & 
-				\textbf{2.} Pregunta al usuario si desea modificar la descripción (o el nombre). \\ \hline
-				\textbf{3.} Introduce la descripción.	& 
-				\textbf{4.} Pregunta al usuario si quiere cambiar el precio. \\ \hline
-				\textbf{5.} Introduce el precio. & 
-				\textbf{6.} Se procesa el palto y se modifica. \\ \hline
+				\textbf{1.} El usuario indica el plato a modificar. & 
+				\textbf{2.}Permite modificar los campos del plato. \\ \hline
+				\textbf{3.} Rellena los datos	& 
+				\textbf{4.} Se procesa el plato y se modifica. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-				\item  \textbf{Línea 1:} El plato introducido no existe. Se pide al usuario otro
-				nombre y se le da la opción de cancelar.
-				\item  \textbf{Línea 2:} El cliente no desea modificar la descripción. Se salta
-				al paso 4.
+				\item  \textbf{Línea 3:}Algún campo no es correcto o está en blanco. Se pide al usuario que rellene todo correctamente.
 
 			\end {itemize}
 			
@@ -1277,18 +1273,15 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Introduce el nombre del plato que quiere borrar. & 
-				\textbf{2.} Muestra un mensaje con los datos del plato
-					y pregunta al usuario si realmente desea borrarlo.\\ \hline 
+				\textbf{1.} Indica el plato que quiere borrar. & 
+				\textbf{2.} Muestra la descripción del plato.\\ \hline 
 				\textbf{3.} Selecciona borrar. & 
 				\textbf{4.} El plato desaparece del menú. \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
-				\item  \textbf{Línea 1:} El plato introducido no existe. Se pide al usuario otro nombre y 
-					se le da la opción de cancelar.
-				\item  \textbf{Línea 3:} Selecciona cancelar. El plato permanece en el menú.
+				\item  \textbf{Línea 3:} No elige borrar. El plato permanece en el menú.
 			\end {itemize}
 		\end {itemize}
 
