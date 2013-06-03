@@ -36,7 +36,7 @@ public class GenerarFactura implements MesaObserver {
 
 		String[] stringMesas = new String[mesasRestaurante.length];
 		for (int i = 0; i < stringMesas.length; i++)
-			stringMesas[i] = "Mesa " + (i + 1);
+			stringMesas[i] = "Mesa " + (i);
 
 		mesas = new JComboBox(stringMesas);
 		panel.add(mesas);
