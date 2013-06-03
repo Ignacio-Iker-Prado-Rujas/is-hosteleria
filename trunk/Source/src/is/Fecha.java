@@ -220,6 +220,15 @@ public class Fecha {
 			return 0;
 	}
 
+	public void parseDayFirst(String uneditedDate) {
+		String[] comando = uneditedDate.split(" ");
+		this.dia = Integer.parseInt(comando[0]);
+		this.mes = Integer.parseInt(comando[1]);
+		this.año = Integer.parseInt(comando[2]);
+		this.hora = Integer.parseInt(comando[3]);
+		this.minutos = Integer.parseInt(comando[4]);
+	}
+
 	public Fecha parse(String cad, int horas, int minutos) {
 		String[] comando = cad.split(" ");
 		for (int i = 0; i < comando.length; i++) {
