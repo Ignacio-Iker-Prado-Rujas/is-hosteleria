@@ -138,19 +138,47 @@
 \part{Análisis}
 	\section{Diagamas de paquetes}
 	En la aplicación hay una clara brecha entre la lógica y la interfaz de la misma, más nítida por el uso del patrón Modelo-Vista-Controlador (ver Parte V para más información). Esto se refleja en el diagrama de paquetes. Además, en la lógica se distinguen a su vez dos partes, lo relativo a los empleados y lo relativo a las cuentas del negocio. Cada una de estas partes incluye lo que indica el diagrama.
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.15]{diagramadepaquetes.png}	
+	\caption{Diagrama de paquetes}
+	\end{figure}
 
 	\section{Diagramas de comunicación}
 
 
 	\section{Diagramas de clases de análisis}
 		\subsection{Menú del restaurante}
+		El camarero puede ver los elementos del menú, así como modificarlos (que implica verlos). Para ello se accede al menú, que lleva los distintos tipos de consumiciones, que son bebidas, primeros, segundos y postres.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCAmenu.png}
+		\caption{Diagrama de clases de análisis del menú}
+		\end{figure}
 
 		\subsection{Reservas del restaurante}
+		El maître, o el camarero, puede añadir, modificar o eliminar reservas al libro de reservas, que es el sitio donde están todas las reservas. Cada reserva lleva asociada una fecha.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCAresevas.png}
+		\caption{Diagrama de clases de análisis de las reservas del restaurante}
+		\end{figure}
 
 		\subsection{Comandas del restaurante}
+		El camarero puede realizar o modificar una comanda. Ese pedido se le asocia a una mesa determinada. La comanda en cuestion lleva un conjunto de consumiciones que se extraen del menú.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCAcomandas.png}
+		\caption{Diagrama de clases de análisis de las comandas}
+		\end{figure}
 
 		\subsection{Factura del restaurante}
-
+		Esta operación es sencilla. Llegado el momento de pagar, se pide que se genere una factura de una determinada mesa. Entonces se recopilan las consumiciones de esa mesa y se extrae el total a pagar.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCAfactura.png}
+		\caption{Diagrama de clases de análisis de las facturas}
+		\end{figure}
 
 
 
@@ -159,27 +187,162 @@
 \part{Diseño}
 	\section{Diagramas de secuencia}
 		\subsection{Menú del restaurante}
+		La acción se inicia en la interfaz RestauranteSwing, que le pide al menú que desea verlo. Este le devolverá una lista con la información de qué tipos de consumiciones hay, para mostrarlos. Posteriormente, se notificará qué tipo de consumición se desea ver. En el bucle se le pide uno a uno los nombres de cada consumición de ese tipo, y opcionalmente se pedirá que muestre la descripción de alguno. 
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSvermenu.png}
+		\caption{Diagrama de secuencia del menú}
+		\end{figure}
+
+		También se permite, como se ha dicho numerosas veces, modificar el menú. Hay tres opciones distintas para ello, a saber, añadir una nueva consumición, eliminar una existente o modificarla. Por claridad, cada una de estos opciones está en un diagrama distinto. El camino siempre es el mismo: de la interfaz al controlador, y de éste al menú. Cabe destacar que al modificar una consumición puedes cambiar el nombre, la descripción o el precio.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSmodificarmenu.png}
+		\caption{Diagrama de secuencia de modificar menú}
+		\end{figure}		
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSanyadirconsumicion.png}
+		\caption{Diagrama de secuencia de modificar menú (añadir consumición)}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSeliminarconsumicion.png}
+		\caption{Diagrama de secuencia de modificar menú (eliminar consumición)}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSmodificarconsumicion.png}
+		\caption{Diagrama de secuencia de modificar menú (modificar consumición)}
+		\end{figure}
+
 
 		\subsection{Reservas del restaurante}
+		Para ver las reservas,  como siempre hacemos debido al M-V-C, la interfaz RestauranteSwing se lo pide al controlador, y este se lo pide al Restaurante, que lleva una lista con las reservas.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSverreservas.png}
+		\caption{Diagrama de secuencia de ver las reservas del restaurante}
+		\end{figure}
+
+		Para hacer una reserva, el proceso es el mismo, sólo que se llama además al constructor de la reserva. Una vez creada se añade si es posible (puede que para la fecha solicitada se haya llenado ya el cupo de reservas). La anulación de una reserva es análoga.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSreservarmesa.png}
+		\caption{Diagrama de secuencia de reservar mesa del restaurante}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSanularreserva.png}
+		\caption{Diagrama de secuencia de anular reservas del restaurante}
+		\end{figure}
+
+		
+
 
 		\subsection{Comandas del restaurante}
+		Para tomar una comanda, RestauranteSwing se lo solicita al GUIController, pasándole las consumiciones y la mesa a la que le corresponden. Este se lo pasa al restaurante, que llama al constructor de comanda con la lista de consumiciones. Finalmente se añade la comanda a la mesa antes mencionada.
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DStomarcomanda.png}
+		\caption{Diagrama de secuencia de tomar comanda }
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSeliminarcomanda.png}
+		\caption{Diagrama de secuencia de eliminar comanda}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSmodificarcomanda.png}
+		\caption{Diagrama de secuencia de modificar comanda}
+		\end{figure}
+
+
 
 		\subsection{Factura del restaurante}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSfactura.png}
+		\caption{Diagrama de secuencia de generar factura del restaurante}
+		\end{figure}
+
 
 		\subsection{Recuento de existencias}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DSexistencias.png}
+		\caption{Diagrama de secuencia de realizar recuento de existencias del restaurante}
+		\end{figure}
 
 
 
 	\section{Diagramas de clases de diseño}
 		\subsection{Menú del restaurante}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDmenu.png}
+		\caption{Diagrama de clases de diseño de la lógica del menú}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDconsumicion.png}
+		\caption{Diagrama de clases de diseño de las consumiciones}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDvistamenu.png}
+		\caption{Diagrama de clases de diseño de la interfaz del menú }
+		\end{figure}
+
 
 		\subsection{Reservas del restaurante}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDreservas.png}
+		\caption{Diagrama de clases de diseño de la lógica de las reservas}
+		\end{figure}
+
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDvistareservas.png}
+		\caption{Diagrama de clases de diseño de la interfaz de las reservas}
+		\end{figure}
 
 		\subsection{Comandas del restaurante}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDcomandas.png}
+		\caption{Diagrama de clases de diseño de las comandas}
+		\end{figure}
 
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDmesas.png}
+		\caption{Diagrama de clases de diseño de las mesas}
+		\end{figure}
+\clearpage
 		\subsection{Factura del restaurante}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDfactura.png}
+		\caption{Diagrama de clases de diseño de generar facturas del restaurante}
+		\end{figure}
 
 		\subsection{Cargadores de ficheros}
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{DCDloader.png}
+		\caption{Diagrama de clases de diseño de los cargadores de ficheros}
+		\end{figure}
 
 	\section{Diagramas de componentes}
 	No se consideran necesarios.
