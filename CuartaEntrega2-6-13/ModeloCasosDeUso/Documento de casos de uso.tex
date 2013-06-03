@@ -358,7 +358,7 @@
 				  \textbf{1.} El actor elige el apartado ``Reservar mesa''. &
 				  \textbf{2.} El programa pide los datos de la reserva.		\\ \hline
 				  \textbf{3.} Rellena los datos, indicando número de comensales y hora de reserva. &
-				  \textbf{4.} Muestra la distribución de las mesas, y marca aquellas que están disponibles.	\\ \hline
+				  \textbf{4.} Muestra las mesas posibles.	\\ \hline
 				  \textbf{5.} Selecciona una mesa. &
 				  \textbf{6.} Muestra los datos de la reserva, y da la opción de cambiar los datos o confirmar reserva.	
 				  	\\ \hline
@@ -422,10 +422,9 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} El empleado elige la parte de restaurante. & 
 				\textbf{2.} Muestra las opciones.\\ \hline 
-				\textbf{3.} Introduce la opción generar un pedido. & 
+				\textbf{3.} Introduce la opción generar un pedido y la mesa correspondiente. & 
 				\textbf{4.} Pide que introduzca los platos deseados. \\ \hline
-				\textbf{5.} Elige los platos de la carta y puede personalizarlos introduciendo
-						o eliminando ingredientes. & 
+				\textbf{5.} Elige los platos de la carta. & 
 				\textbf{6.} Da la opción al usuario de introducir más platos o terminar. \\ \hline 
 				\textbf{7.} Confirma el pedido.	& 
 				\textbf{8.} El programa manda el pedido a la cocina, donde puede ser visto por el chef. \\ \hline 
@@ -463,7 +462,7 @@
 				\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} El usuario abre la lista de comandas. & 
+				\textbf{1.} El usuario abre la lista de mesas. & 
 				\textbf{2.} Muestra las comandas en curso.\\ \hline 
 				\textbf{3.} Elige la que quiere modificar. & 
 				\textbf{4.} Muestra la lista de cosas pedidas. \\ \hline
@@ -479,7 +478,7 @@
 			\begin{itemize}
 			\item \textbf{Actor:} Camareros, maître.
 			\item \textbf{Propósito: } Proporcionar la factura para cobrar al cliente.
-			\item \textbf{Visión general:} Se selecciona el cliente del cual se desea obtener la factura y se imprime. Se da la opción al cliente de pagar en el momento o que se lo carguen en la cuenta de la habitación, si es que está alojado en el hotel.
+			\item \textbf{Visión general:} Se selecciona la mesa de la cual se desea obtener la factura y se imprime. Se da la opción al cliente de pagar en el momento o que se lo carguen en la cuenta de la habitación, si es que está alojado en el hotel.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento y que haya al menos una comanda en curso.
 			\item \textbf{Postcondiciones:} Se genera una factura en formato PDF.
 			\item \textbf{Curso típico de eventos:} 	\\
@@ -495,15 +494,12 @@
 				\textbf{4.} Se muestra el número de mesa, todos los pedidos realizados y el precio. \\ \hline
 				\textbf{5.} Selecciona imprimir.	& 
 				\textbf{6.} La aplicación muestra un mensaje indicando que la factura se imprimió. \\ \hline
-				\textbf{7.} El empleado cobra al cliente.	& 
-				\textbf{8.} Muestra un mensaje de ``Cobrado con éxito''. \\ \hline
 				%\textbf{11.} Cierra la aplicación. &  \\ \hline
 			\end{tabular}
 			\\
 			\item \textbf{Cursos alternativos:} 
 			\begin{itemize}
 			\item  \textbf{Línea 5:} El usuario selecciona Cancelar. No se genera la factura.
-			\item  \textbf{Línea 8:} El cobro no se ha realizado con éxito. La mesa sigue con deudas.
 			\end {itemize}
 		\end {itemize}
 		
@@ -516,8 +512,8 @@
 				plato. Se puede seleccionar cada plato para obtener una descripción del plato más
 				precisa. Los platos se ordenarán del siguiente modo:
 			\begin{itemize}
-				\item 	 Entrantes
-				\item 	 Principales
+				\item 	 Bebidas
+				\item 	 Primeros
 				\item 	 Segundos
 				\item 	 Postres
 				\end {itemize}
@@ -532,6 +528,9 @@
 				\textbf{3.} Elige la parte del menú. & 
 				\textbf{4.} Muestra el menú. \\ \hline
 			\end{tabular}
+			\begin{itemize}
+				\item  \textbf{Línea 4:} Se elige un plato para mostrarlo en detalle. 
+			\end {itemize}
 		\end {itemize}
 
 
@@ -542,8 +541,8 @@
 			\begin{itemize}
 			\item \textbf{Actor:} Maître, jefe, chef, cocineros.
 			\item \textbf{Propósito: } Anotar alimentos que se están agotando para comprarlos.
-			\item \textbf{Visión general:} Cuando finaliza la jornada, el actor realiza un
-				recuento de todas las existencias que quedan en el almacen y lo anota.
+			\item \textbf{Visión general:} El actor realiza un
+				recuento de todas las existencias que quedan en el almacen y anota lo que necesite.
 			\item \textbf{Precondiciones:} No pertenecer al personal de limpieza o mantenimiento.
 			\item \textbf{Postcondiciones:} Se añaden o quitan elementos a comprar.
 			\item \textbf{Curso típico de eventos:} 	\\
@@ -552,7 +551,7 @@
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline
 				\textbf{1.} Entre las opciones disponibles, selecciona la opción ``Recuento de existencias''. & 
 				\textbf{2.} Muestra una lista con todos los alimentos que había en el almacen tras el último recuento. \\ \hline
-				\textbf{3.} Introduce uno a uno la cantidad que hay de cada alimento. & 
+				\textbf{3.} Introduce la cantidad que hay de cada alimento. & 
 				\textbf{4.} Cuando se ha terminado el recuento se vuelven a mostrar las opciones. \\ \hline
 			\end{tabular}
 			\\
@@ -560,12 +559,6 @@
 			\begin{itemize}
 				\item  \textbf{Línea 3:} Salta al siguiente para no
 					modificarlo.
-				\item  \textbf{Línea 3:} Termina el recuento antes de llegar al último
-					elemento de la lista.
-				\item  \textbf{Línea 4:} Si algún alimento está por debajo del mínimo
-					recomendado da la opción al usuario de realizar un pedido.
-					introducir la cantidad que desea pedir. (El mínimo se calcula mediante unas
-					estadísticas realizadas a partir del consumo diario)
 			\end {itemize}
 		\end {itemize}
 
@@ -1169,7 +1162,7 @@
 			\begin{tabular}{|p{6cm}||p{6cm}|}
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
-				\textbf{1.} Selecciona la opción cancelar pedido, dentro del apartado ``Restaurante''. & 
+				\textbf{1.} Selecciona la opción, dentro del apartado ``Restaurante''. & 
 				\textbf{2.} Muestra todos los pedidos. \\ \hline
 				\textbf{3.} Selecciona el pedido que desea anular	& 
 				\textbf{4.} Se muestra un mensaje con los datos del pedido para verificar que realmente se desea anular. \\ \hline
@@ -1270,7 +1263,7 @@
 				\hline
 				\textbf{Acción del actor} & \textbf{Respuesta del sistema} \\ \hline \hline
 				\textbf{1.} El usuario indica el nombre del plato a modificar. & 
-				\textbf{2.} Pregunta al usuario si desea modificar la descripción. \\ \hline
+				\textbf{2.} Pregunta al usuario si desea modificar la descripción (o el nombre). \\ \hline
 				\textbf{3.} Introduce la descripción.	& 
 				\textbf{4.} Pregunta al usuario si quiere cambiar el precio. \\ \hline
 				\textbf{5.} Introduce el precio. & 
