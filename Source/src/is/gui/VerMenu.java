@@ -95,7 +95,6 @@ public class VerMenu extends JFrame implements MenuObserver {
 		platos.setName(tPlato.toString());
 		panel.add(platos);
 		ventanas.add(platos);
-
 		ArrayList<Consumicion> consum = menu.getPlatos(tPlato);
 		for (Consumicion cons : consum) {
 			/* Habría que guardar las descripciones tb para mostrarlas */
@@ -135,12 +134,6 @@ public class VerMenu extends JFrame implements MenuObserver {
 		this.setSize(600, 400);
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		JDialog.setDefaultLookAndFeelDecorated(true);
-		try {
-			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-			// .setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-		}
 		this.botones = new ArrayList<JToggleButton>();
 		ventanas = new ArrayList<JPanel>();
 		cadaPestanya = new ArrayList<JPanel>();
@@ -159,8 +152,6 @@ public class VerMenu extends JFrame implements MenuObserver {
 	/* Edita el Plato que esté seleccionado */
 	private void editarPlato() {
 		if (this.consumicionSeleccionada != null) {
-			// System.out.println(consumicionSeleccionada.getText() +
-			// " debe ser editado");
 			ConsumicionSwing nuevaCons = new ConsumicionSwing(this,
 					controlador, menu.getConsumicion(consumicionSeleccionada
 							.getText()), true);

@@ -41,70 +41,17 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	 * 
 	 * @param rest
 	 */
-	public RealizarPedido(final GUIController rest, final int numeroMesa, int comandaSeleccionada) {
-		
+	public RealizarPedido(final GUIController rest, final int numeroMesa, int comandaSeleccionada) {	
 		this.restaurante = rest;
 		this.restaurante.addComandaObserver(this, numeroMesa, comandaSeleccionada);
 		this.numeroComanda = comandaSeleccionada;
 		this.numeroMesa = numeroMesa;
-		
-/*
- * public VerMenu(GUIController controller){
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(400,500);
-		
-		this.controlador = controller;
-		menu = controlador.getMenu();
-		menu.getBebidas();
-		JPanel panel = new JPanel();
-	//	panel.setLayout()
-		elementosMenu = new JPanel[4];
-		elementosMenu[0] = new JPanel();
-		for (Consumicion c : menu.getBebidas()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[0].add(plato);
-		}
-		elementosMenu[1] = new JPanel();
-		for (Consumicion c : menu.getPrimeros()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[1].add(plato);
-		}
-		elementosMenu[2] = new JPanel();
-		for (Consumicion c : menu.getSegundos()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[2].add(plato);
-		}
-		elementosMenu[3] = new JPanel();
-		for (Consumicion c : menu.getPostres()){
-			CeldaPlato plato = new CeldaPlato(c);
-			elementosMenu[3].add(plato);
-		}
-		for (JPanel p : elementosMenu) panel.add(p);
-		this.add(panel);
-		this.setVisible(true);
-		//JFrame marco = new JFrame();
-		//marco.add(panel);
-	}
-	
-	private GUIController controlador;
-	private Menu menu;
-	private JPanel[] elementosMenu;
-}
- */
-		/*
-		 * Inicialización de los paneles que tendrán información de las consumiciones que se pueden pedir
-		 * 	y cuantas consumiciones se han pedido de cada tipo 
-		 */
 		inicializaPaneles();
-		
-		
 		this.setLayout(new BorderLayout());
 		JPanel tipoPlato = new JPanel();
 		panelCentral = new JPanel();
 		final CardLayout menu = new CardLayout();
-		panelCentral.setLayout(menu);
-		
-		
+		panelCentral.setLayout(menu);	
 		for (Integer i=0; i<4; i++)
 			panelCentral.add(this.elementosMenu[i], i.toString());
 		tipoPlato.setLayout(new GridLayout(4,1));
@@ -175,47 +122,22 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		this.add(tipoPlato, BorderLayout.WEST);
 		frame = new JFrame("Realizar Pedido");
 		this.add(panelCentral);
-		
         String[] nombresMesa = { "Mesa 1: 2 personas", "Mesa 2: 4 personas", "Mesa 3: 4 personas", "Mesa 4: 6 personas", "Mesa 5: 8 personas" };
-        
-        //Create the combo box, select the item at index 4.
-        //Indices start at 0, so 4 specifies the pig.
         mesas = new JComboBox(nombresMesa);
 		this.add(mesas, BorderLayout.SOUTH);
 		
 		JButton botonPedido = new JButton("Realizar Pedido"){
 			{
 				this.addActionListener(new ActionListener(){
-
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						frame.dispose();
-						//TODO, hay que hacer un restaurante
-						//restaurante.comunicarComanda(mesa, mes, dia, hora, minutos, cliente, numeroComensales);
-						//Mesa mesa = restaurante.getMesa(mesas.getSelectedIndex());
-						//comanda = new Comanda();
-						
-						//mesa.addPedido(comanda);
-
-						//restaurante.communicatePedido(año, mes, dia, hora, minutos, cliente, numeroComensales);
-
-
-					//	elementosMenu[1].
-
 					}
 					
 				});
 			}
-		};
-		
-	
-//		, BorderLayout.SOUTH);
-		
-//		this.add(new JButton(), BorderLayout.SOUTH);
-		
-		JPanel panelBotones = new JPanel();
-		
-		
+		};		
+		JPanel panelBotones = new JPanel();	
 		panelBotones.setLayout(new GridLayout(1,2));
 		panelBotones.add(botonPedido);
 		panelBotones.add(new JButton("Cancelar"){
@@ -236,19 +158,11 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		TitledBorder titled = new TitledBorder("Pedido");
 		text = new JTextArea("");
 		text.setEditable(false);
-			/** TODO Jaime, necesito ayuda aqui para meter las cosas que se van pidiendo en el textarea
-			 *  Porque básicamente no se donde leches estan los spinners esos ni como van
-			 *  Con lo que he cambiado de inicializaPaneles() ya tenemos los celdaPlato para sacar la informacion de ellos
-			 */
 		scroller = new JScrollPane(text);
         scroller.setPreferredSize(new Dimension(200,200));
-        scroller.setBorder(titled);
-        
-        this.add(scroller, BorderLayout.EAST);
-		
-		frame.setVisible(true);
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+        scroller.setBorder(titled);     
+        this.add(scroller, BorderLayout.EAST);		
+		frame.setVisible(true);	
 		frame.add(this);
 		frame.pack();
 
@@ -263,7 +177,6 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		
 	}
 
-	
 	public void inicializaPaneles(){
 		elementosMenu = new JPanel[4];
 		ArrayList<Consumicion> beb = this.restaurante.requestBebidas(),
@@ -273,8 +186,7 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 		bebidas = new CeldaPlato[beb.size()];
 		primeros = new CeldaPlato[prim.size()];
 		segundos = new CeldaPlato[seg.size()];
-		postres = new CeldaPlato[pos.size()];
-		
+		postres = new CeldaPlato[pos.size()];	
 		elementosMenu[0] = new JPanel();
 		int i = 0;
 		for (Consumicion c : beb){
@@ -302,11 +214,11 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	public void comandaHaCambiado(String comanda) {
 		this.text.setText(comanda);
 	}
+	
 	private CeldaPlato[] primeros;
 	private CeldaPlato[] segundos;
 	private CeldaPlato[] postres;
-	private CeldaPlato[] bebidas;
-	
+	private CeldaPlato[] bebidas;	
 	private JFrame frame;
 	private JPanel panelCentral;
 	private PlatosPanel platosPanel;
@@ -316,10 +228,8 @@ public class RealizarPedido extends JPanel implements ComandaObserver{
 	private JComboBox mesas;
 	private JPanel[] elementosMenu;
 	private ComandaInfo comanda;
-
 	private int numeroComanda;
-	private int numeroMesa;
-	
+	private int numeroMesa;	
 	private TipoPlatos tPlato;
 
 	@Override

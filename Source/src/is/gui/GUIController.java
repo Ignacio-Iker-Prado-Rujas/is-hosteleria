@@ -29,8 +29,6 @@ public class GUIController {
 
 	
 	public void crearComanda(){
-		
-	//	this.robot.requestStart();
 	} 
 	
 	public GUIController(Restaurante restaurante){
@@ -85,8 +83,6 @@ public class GUIController {
 		return this.restaurante.buscarReservas(nombre);
 	}
 	
-	//TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc
-	
 	public Mesa getMesa(int j) {
 		return restaurante.buscarMesa(j);
 		
@@ -134,7 +130,6 @@ public class GUIController {
 		restaurante.addComandaObserver(observer, numeroMesa, comandaSeleccionada);
 	}
 
-
 	public void registerMenuObserver(MenuObserver verMenu) {
 		restaurante.registerMenuObserver(verMenu);
 	}
@@ -159,8 +154,7 @@ public class GUIController {
 	private Restaurante restaurante;
 
 	public void addMesaObserver(MesaObserver mesa) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void eliminaUltimaComanda(int numeroMesa) {
