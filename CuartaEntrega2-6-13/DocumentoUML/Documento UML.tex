@@ -152,24 +152,33 @@
 		\includegraphics[scale=0.5]{DCvermenu.png}
 		\caption{Diagrama de comunicación del menú}
 		\end{figure}
+		Desde el menú principal se accede a la vista del menú que le solicita los datos a la clase Menú.
+		Requiere los tipos de plato existentes y las consumiciones de cada tipo de plato. 
 
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCeditarmenu.png}
 		\caption{Diagrama de comunicación de modificar el menú}
 		\end{figure}
+		Se accede  a la pestaña de ver menú que reúne los datos del Menú y te
+		permite editar los campos de las consumiciones que se quiera a través de una
+		interfaz.
 
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCanyadirconsumicion.png}
 		\caption{Diagrama de comunicación de añadir plato al menú}
 		\end{figure}
+		Accediendo a la pestaña ver menú, que reúne los datos de la clase Menú, te
+		permite añadir consumiciones a ésta a través de una interfaz.
 
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCeliminarconsumicion.png}
 		\caption{Diagrama de comunicación de eliminar consumición}
 		\end{figure}
+		A través de la interfaz de ver menú que reúne las consumiciones del menú, te permite
+		eliminar cualquier plato de este.
 
 		\subsection{Reservas del restaurante}
 
@@ -178,12 +187,15 @@
 		\includegraphics[scale=0.5]{DCreserva.png}
 		\caption{Diagrama de comunicación de reservar una mesa}
 		\end{figure}
+		A través de la interfaz realizar reserva, que te permite rellenar los campos de 
+		una, se añade al libro de reservas que acumula todas.
 
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCeliminarreserva.png}
  		\caption{Diagrama de comunicación de anular reserva del restaurante}
 		\end{figure}
+		Accediendo desde la ventana principal, ver reserva te ofrece la posibilidad de eliminar la reserva deseada del libro de reservas.
 
 		\subsection{Comandas del restaurante}
 
@@ -192,12 +204,15 @@
 		\includegraphics[scale=0.5]{DCcomanda.png}
 		\caption{Diagrama de comunicación de tomar comanda}
 		\end{figure}
+		Desde la ventana principal se accede a la vista de las mesas, que tras haber seleccionado una contacta con realizar
+		pedido que te permite crear una comanda. Una vez creada, la vista de las mesas se la envía a la mesa para que la almacene.
 
 		\begin{figure}[!h]
 		\centering
 		\includegraphics[scale=0.5]{DCeliminarcomanda.png}
-		\caption{Diagrama de comunicación de eliminarcomanda}
+		\caption{Diagrama de comunicación de eliminar comanda}
 		\end{figure}
+		Desde la vista de las mesas se selecciona una comanda y se notifica a la mesa su borrado.
 
 		\subsection{Factura del restaurante}
 
@@ -206,7 +221,8 @@
 		\includegraphics[scale=0.5]{DCfactura.png}
 		\caption{Diagrama de comunicación de generar factura del restaurante }
 		\end{figure}
-
+		Desde la ventana principal se accede a generar factura, donde se selecciona la mesa de la cual se quiere cobrar 
+		la factura, a quien se le solicita ésta para gestionarla desde generar factura.
 
 		\subsection{Incidencias de mantenimiento}
 
@@ -215,6 +231,7 @@
 		\includegraphics[scale=0.5]{DCanotarincidencias.png}
 		\caption{Diagrama de comunicación de mantenimiento}
 		\end{figure}
+		Se  crea una nota de texto al acceder a notificar incidencias que te permite indicar tu problema.
 
 
 
