@@ -65,9 +65,9 @@ public class List<Tipo extends Comparable<Tipo>> {
 		if (object == null)
 			return false;
 		int pos = binary(object, 0, size - 1);
-		if (object.compareTo((Tipo) list[pos]) == 0)
-			return false;
-		else {
+		//if (object.compareTo((Tipo) list[pos]) == 0)
+		//	return false;
+		//else {
 			if (size == list.length)
 				biggerList();
 			for (int i = size; i > pos; i--)
@@ -75,7 +75,7 @@ public class List<Tipo extends Comparable<Tipo>> {
 			list[pos] = object;
 			size++;
 			return true;
-		}
+		//}
 	}
 
 	/**
