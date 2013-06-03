@@ -22,9 +22,7 @@ public class PlatosPanel extends JPanel{
 	public PlatosPanel(Restaurante rest){
 		this.menu = rest.getMenu();
 
-	//	this.setLayout(new GridLayout(2, 1));
-
-		//TODO el grid layout tiene que tener el tamaño del menu que corresponda, pero ponemos un ancho fijo
+		//El grid layout tiene que tener el tamaño del menu que corresponda, pero ponemos un ancho fijo
 		this.setLayout(new GridLayout(4, 11));
 
 		
@@ -36,7 +34,7 @@ public class PlatosPanel extends JPanel{
 	
 	public PlatosPanel(int i, GUIController rest) {
 		this.menu = rest.getMenu();
-		// TODO Denotamos 0 bebidas 1 primero 2 segundo 3 postre
+		// Denotamos 0 bebidas 1 primero 2 segundo 3 postre
 		if (i == 0) platos = menu.getBebidas();
 		else if(i == 1) platos = menu.getPrimeros();
 		else if (i == 2)platos = menu.getSegundos();
@@ -45,19 +43,15 @@ public class PlatosPanel extends JPanel{
 	}
 
 	private void generarPanel() {
-		// TODO Auto-generated method stub
 		celdaPlatos = new ArrayList<CeldaPlato>();
 				for (Consumicion c: platos){
 					CeldaPlato cp = new CeldaPlato(null, c, 0, 0, null);
 					celdaPlatos.add(cp);
 					this.add(cp);
-				}
-		//	c.generarInfo();
-				
+				}				
 	}
 
 	private ArrayList<Consumicion> platos;
-	//hashtable de celdaPlatos, parecido al citypanel de pr4 y 5 private 
 	private Menu menu;
 	private ArrayList<CeldaPlato> celdaPlatos;
 	CeldaPlato[] celdas;

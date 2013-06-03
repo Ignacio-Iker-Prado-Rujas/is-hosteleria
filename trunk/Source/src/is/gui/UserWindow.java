@@ -39,55 +39,41 @@ public class UserWindow extends JFrame  {
 		ImageIcon kike = createImageIcon("images/kikeHost2.png", "KIKE");
 		logo = new JLabel(kike);
 		logo.setSize(20, 20);
-
 		this.add(logo, BorderLayout.NORTH);
 		front = new JPanel();
 		front.setLayout(new GridLayout(3,1, 3, 3));
-		//front.setLayout(new FlowLayout(3));
 		JPanel usuario = new JPanel();
-
 		usuario.setLayout(new GridLayout(2,1));
-		//usuario.setLayout(new FlowLayout(2));
-		
 		JPanel contrasena = new JPanel();
 		contrasena.setLayout(new GridLayout(2,1));
-		//contrasena.setLayout(new FlowLayout(2));
-		
 		JLabel textoUsuario = new JLabel("USUARIO");
 		textoUsuario.setOpaque(true);
 		usuario.add(textoUsuario, BorderLayout.NORTH);
 		user = new JTextField(10);
 		usuario.add(user);
-		
 		JLabel textoContrasena = new JLabel("CONTRASEÑA");
 		textoUsuario.setOpaque(true);
 		contrasena.add(textoContrasena, BorderLayout.NORTH);
 		password = new JPasswordField(10);
 		password.getPassword();
-		
 		contrasena.add(password);
 		front.add(usuario);
 		front.add(contrasena);
-
 		front.add(new JButton("Entrar") {
 			{
 				this.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//if (!user.getText().isEmpty()){
-							//if(registroCorrecto()) 
-						mostrarRestaurante();
-							/*
-							if (controler.buscaCliente(user.getText())){
-								if (controler.getCliente(user.getText()).passWord(password.getPassword())){
-									password.setText(null);
-									controller.iniciaSesion(user.getText());
-								}else showMessage("Usuario o contraseña incorrectos");
-								
-							}else showMessage("Usuario o contraseña incorrectos");
-							*/
-						//}
+						if (!user.getText().isEmpty()){
+							if(registroCorrecto()) 
+								mostrarRestaurante();
+							else notificar("Usuario o contraseña incorrectos");
+						}					
+					}
+
+					private void showMessage(String string) {
+						// TODO Auto-generated method stub
 						
 					}
 
@@ -111,9 +97,12 @@ public class UserWindow extends JFrame  {
 		this.setSize(800, 600);
 		initializeGUI();
 		usuarios = new Usuario[1];
-		usuarios[0] = new Usuario("Scrugo", "huelomal");
+		usuarios[0] = new Usuario("Usuario", "Contraseña");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
+	}
+	private void notificar(String message) {
+		JOptionPane.showMessageDialog(this, message);
 	}
 
 	private void mostrarRestaurante(){
@@ -128,7 +117,6 @@ public class UserWindow extends JFrame  {
 	}
 	private boolean registroCorrecto(){
 		boolean b = false;
-	//	for (Usuario u : usuarios)
 			for (int i = 0; i< usuarios.length && !b; i++){
 				if (user.getText().equals(usuarios[i].getId()) && passwordCorrecto(password.getPassword(), usuarios[i].getPassword()))  b = true;
 			}

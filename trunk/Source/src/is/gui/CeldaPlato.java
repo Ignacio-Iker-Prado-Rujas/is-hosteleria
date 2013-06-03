@@ -49,8 +49,6 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 		this.flechitas.setValue(0);
 		this.flechitas.addChangeListener(new ChangeListener() {
 
-			//TODO cada vez que se añade un plato, habrá que añadirlo a la lista de pedidos
-			//asi que hay que registrar como observador la parte derecha de realizar pedido, que es la lista final con todas las cosas
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				veces = (int) flechitas.getValue();
@@ -80,11 +78,8 @@ public class CeldaPlato extends JPanel implements ComandaObserver{
 	}
 	
 	public void incrementaVeces(){
-		//int numero = (int) this.flechitas.getValue();
-		//numero++;
 		this.veces++;
 		this.flechitas.setValue(this.veces);
-		//this.veces = numero;
 	}
 	
 	public int getVeces(){

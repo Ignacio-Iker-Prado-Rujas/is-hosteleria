@@ -35,12 +35,9 @@ public class GenerarFactura implements MesaObserver {
 		MesaInfo[] mesasRestaurante = controlador.requestMesas();
 
 		String[] stringMesas = new String[mesasRestaurante.length];
-		// { "Mesa", "Cat", "Dog", "Rabbit", "Pig" };
 		for (int i = 0; i < stringMesas.length; i++)
 			stringMesas[i] = "Mesa " + (i + 1);
 
-		// Create the combo box, select item at index 4.
-		// Indices start at 0, so 4 specifies the pig.
 		mesas = new JComboBox(stringMesas);
 		panel.add(mesas);
 		panel.add(new JButton("Generar Factura") {

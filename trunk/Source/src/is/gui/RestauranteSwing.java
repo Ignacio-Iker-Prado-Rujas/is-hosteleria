@@ -182,9 +182,6 @@ public class RestauranteSwing extends JPanel {
 		
 		for (JButton b : botones)
 			this.add(b);
-		// this.add(new JButton("Ver/modificar menú"));
-		// this.add(new JButton("Notificar incidencias"));
-
 	}
 
 	protected ImageIcon createImageIcon(String path, String description) {
