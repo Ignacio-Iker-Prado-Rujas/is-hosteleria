@@ -10,6 +10,8 @@ classinstance 129026 class_ref 143493 // Restaurante
  name ""  xyz 433 66 2000
 classinstance 129410 class_ref 146693 // LibroReservas
  name ""  xyz 428 197 2000
+note 129794 "Diagrama de comunicación cancelar reserva"
+  xyzwh 402.5 252.5 2000 243 37
 linkcanvas 128258
   from ref 128002 z 2001 to ref 128130
 dirscanvas 128386 z 1000 linkcanvas_ref 128258
