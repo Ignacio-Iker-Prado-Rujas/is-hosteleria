@@ -141,8 +141,9 @@ public class VerReserva implements LibroReservaObserver{
 						
 				}
 				else if (cuando.equalsIgnoreCase("semana")){
-					if(tSemana.getSelectedRow() >= 0){
-						int i= tTodas.getSelectedRow();
+					int i= tTodas.getSelectedRow();
+					
+					if(i >= 0){
 						new RealizarReserva(controlador,
 							tablaSemana.getValueAt(i, 0), 
 							tablaSemana.getValueAt(i, 1),
